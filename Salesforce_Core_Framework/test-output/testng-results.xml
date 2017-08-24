@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="46323" started-at="2017-08-23T12:34:42Z" finished-at="2017-08-23T12:35:28Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="46323" started-at="2017-08-23T12:34:42Z" finished-at="2017-08-23T12:35:28Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="1120" started-at="2017-08-23T18:04:41Z" finished-at="2017-08-23T18:04:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="108" started-at="2017-08-23T18:04:42Z" finished-at="2017-08-23T18:04:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckTestSkip -->
+        <test-method status="PASS" signature="queryExecute()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery@402a079c]" name="queryExecute" duration-ms="45191" started-at="2017-08-23T18:04:42Z" finished-at="2017-08-23T18:05:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- queryExecute -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="184" started-at="2017-08-23T18:05:27Z" finished-at="2017-08-23T18:05:27Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery@402a079c]" name="ReportTestResult" is-config="true" duration-ms="819" started-at="2017-08-23T18:05:27Z" finished-at="2017-08-23T18:05:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportTestResult -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite MonthlyCatA a">
+<test name="1">
+    <classes>
+        <class name="hrms_payroll.NI_MonthlyCatA.ExecuteQuery" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly" ></class>  
+    </classes>
+</test>
+<test name="4">
+    <classes>
+        <class name="hrms_payroll.NI_MonthlyCatA.TestReports" ></class>  
+    </classes>
+</test>
+</suite>
