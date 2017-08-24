@@ -911,7 +911,8 @@ public class TestBase {
 	public void openBrowser() throws Exception{
 		if(! IsbrowserOpened){
 			if(CONFIG.getProperty("browserType").equalsIgnoreCase("Mozilla")){
-				System.setProperty("webdriver.firefox.marionette","F:\\Automation XCD\\Webdriver\\geckodriver.exe");
+				//System.setProperty("webdriver.firefox.marionette","F:\\Automation XCD\\Webdriver\\geckodriver.exe");
+				System.setProperty("webdriver.firefox.marionette", System.getProperty("user.dir") + "//drivers//geckodriver.exe");
 				driver= new FirefoxDriver(FirefoxDriverProfile());
 
 			}else if(CONFIG.getProperty("browserType").equalsIgnoreCase("IE")){
