@@ -5,11 +5,9 @@
     <classes>
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery">
         <methods>
-          <include name="ReportDataSetResult"/>
           <include name="CheckSuiteSkip"/>
           <include name="queryExecute"/>
           <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery -->
     </classes>
