@@ -1381,8 +1381,9 @@ public class TestBase {
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("findReportTextboxLocator")))
+			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
 			{
+				getObject("findReportTextboxLocator").sendKeys("");
 				getObject("findReportTextboxLocator").sendKeys("");
 				Thread.sleep(1000L);
 				getObject("findReportTextboxLocator").sendKeys(TaxReport);
@@ -1732,15 +1733,18 @@ public class TestBase {
 	{
 
 		Thread.sleep(2000L);
-		if(existsElement(OR.getProperty("customEditbtn")))
+		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
 		{
 			System.out.println("Custom Edit button exists");
+			getObject("customEditbtn").sendKeys("");
+			getObject("customEditbtn").click();
 			getObject("customEditbtn").click();
 			Thread.sleep(1000L);
 		}
 
-		if(existsElement(OR.getProperty("customPayrollRecordid")))
+		if(existsElementchkFor1mts(OR.getProperty("customPayrollRecordid")))
 		{
+			getObject("customPayrollRecordid").sendKeys("");
 			getObject("customPayrollRecordid").clear();
 			/*
 			 * temporarily i am not passing parameter for payroll id 
@@ -1752,9 +1756,11 @@ public class TestBase {
 			//getObject("customPayrollRecordid").sendKeys(PayrollId);
 			Thread.sleep(1000L);
 			getObject("customOkbtn").click();
+			getObject("customOkbtn").click();
 			System.out.println("Payrun updated");
 			Thread.sleep(6000L);
 		}
+		getObject("customPayfrequencyEditbtn").sendKeys("");
 		getObject("customPayfrequencyEditbtn").click();
 		Thread.sleep(1000L);
 		getObject("customPayfrqncyTextfield").clear();
@@ -1838,7 +1844,9 @@ public	int rowMatched1=0;
 				
 			FileInputStream fis = new FileInputStream(
 					new File(
-							"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+							"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+							//"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+							
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
 			totalRows = spreadsheet.getLastRowNum();
@@ -2133,7 +2141,10 @@ public	int rowMatched1=0;
 		{
 			FileInputStream fis = new FileInputStream(
 					new File(
-							"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+							"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+
+							//"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));	
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(2);
 			totalRows = spreadsheet.getLastRowNum();
 			System.out.println("Total rows in the processpayrollforMonthlytax worksheet is :"+totalRows);
@@ -7705,7 +7716,10 @@ System.out.println(t.getMessage());
 			
 			FileInputStream fis = new FileInputStream(
 					new File(
-							"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+							"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+
+							//"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
 			totalRows = spreadsheet.getLastRowNum();
 			System.out.println("Total rows in the processpayrollforMonthlytax worksheet is :"+totalRows);
@@ -8164,8 +8178,8 @@ System.out.println(t.getMessage());
 							Payroll_4WeeklyCatZ_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 4WeeklyCatZ.xlsx");
 							NI_Payroll_4WeeklyCatZ_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatZ";
 							
-							Payroll_MonthlyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite MonthlyCatA.xlsx");
-							NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA";
+							//Payroll_MonthlyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite MonthlyCatA.xlsx");
+							//NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA";
 							
 							
 							Payroll_MonthlyCatB_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite MonthlyCatB.xlsx");

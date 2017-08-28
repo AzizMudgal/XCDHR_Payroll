@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="40676" started-at="2017-08-24T12:08:59Z" finished-at="2017-08-24T12:09:40Z">
+  <suite name="Default suite" duration-ms="60424" started-at="2017-08-28T07:30:21Z" finished-at="2017-08-28T07:31:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="40676" started-at="2017-08-24T12:08:59Z" finished-at="2017-08-24T12:09:40Z">
+    <test name="Default test" duration-ms="60424" started-at="2017-08-28T07:30:21Z" finished-at="2017-08-28T07:31:21Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="CheckSuiteSkip" is-config="true" duration-ms="1068" started-at="2017-08-24T17:38:58Z" finished-at="2017-08-24T17:38:59Z">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="CheckSuiteSkip" is-config="true" duration-ms="1117" started-at="2017-08-28T13:00:20Z" finished-at="2017-08-28T13:00:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="CheckTestSkip" is-config="true" duration-ms="105" started-at="2017-08-24T17:38:59Z" finished-at="2017-08-24T17:38:59Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="CheckTestSkip" is-config="true" duration-ms="105" started-at="2017-08-28T13:00:21Z" finished-at="2017-08-28T13:00:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="FAIL" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="38030" started-at="2017-08-24T17:38:59Z" data-provider="getData" finished-at="2017-08-24T17:39:37Z">
+        <test-method status="FAIL" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="51061" started-at="2017-08-28T13:00:21Z" data-provider="getData" finished-at="2017-08-28T13:01:12Z">
           <params>
             <param index="0">
               <value>
@@ -109,11 +109,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="ReportDataSetResult" is-config="true" duration-ms="144" started-at="2017-08-24T17:39:37Z" finished-at="2017-08-24T17:39:37Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="ReportDataSetResult" is-config="true" duration-ms="226" started-at="2017-08-28T13:01:12Z" finished-at="2017-08-28T13:01:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="ReportTestResult" is-config="true" duration-ms="2265" started-at="2017-08-24T17:39:37Z" finished-at="2017-08-24T17:39:40Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@3fee9989]" name="ReportTestResult" is-config="true" duration-ms="8865" started-at="2017-08-28T13:01:12Z" finished-at="2017-08-28T13:01:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->

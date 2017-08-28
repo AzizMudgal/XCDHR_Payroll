@@ -13,8 +13,9 @@ public class TestSuiteBase extends TestBase
 	@BeforeSuite
 	public void CheckSuiteSkip() throws Throwable 
 	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
 		initialize();
+		processDesiredTaxYearInputExcelFile(TaxYear);
+		
 		APP_LOGS.debug("Checking runmode of "+NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile);
 		if(! Test_Util.isSuiteRunnable(SuiteXls, NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile))
 		{

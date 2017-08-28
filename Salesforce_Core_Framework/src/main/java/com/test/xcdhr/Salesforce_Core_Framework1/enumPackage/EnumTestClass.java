@@ -2,7 +2,6 @@ package com.test.xcdhr.Salesforce_Core_Framework1.enumPackage;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestSuiteBase;
 
-//import hrms_Payroll_SAP_Statutory_Scenario.TestSuiteBase;
 
 public class EnumTestClass extends TestSuiteBase 
 {

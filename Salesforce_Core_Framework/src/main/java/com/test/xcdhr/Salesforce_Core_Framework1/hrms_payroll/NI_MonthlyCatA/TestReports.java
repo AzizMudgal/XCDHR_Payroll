@@ -25,7 +25,7 @@ import org.testng.annotations.Test;
 
 import atu.webdriver.utils.table.WebTable;
 
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
+//import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class TestReports extends TestSuiteBase
@@ -103,7 +103,7 @@ public class TestReports extends TestSuiteBase
 			getObject("reportTablocator").click();
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			//Thread.sleep(4000L);
+			Thread.sleep(4000L);
 			driver.navigate().refresh();
 		}
 
