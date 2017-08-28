@@ -14,11 +14,11 @@ import org.testng.annotations.Test;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-//import Salesforce_Util.Test_Util;
+
 
 public class ExecuteQuery extends TestSuiteBase
 {
-	//import Salesforce_Util.Test_Util; Added by Swamy12307
+	
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;

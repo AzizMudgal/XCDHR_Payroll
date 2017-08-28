@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB;
 
 
 import org.testng.Assert;
@@ -10,8 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-public class NIMonthlyCat_A extends TestSuiteBase
-{
+public class NIMonthlyCat_B extends TestSuiteBase {
 
 	String runmodes[] = null;
 	static int count = -1;
@@ -22,25 +21,26 @@ public class NIMonthlyCat_A extends TestSuiteBase
 	public static boolean IsTestPass=true;
 	public int Row_count;
 	public int rownum;
-	
-	
 
 	@BeforeTest
-	public void CheckTestSkip() throws Throwable
-	{
+	public void CheckTestSkip() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName())){
+		if(! Test_Util.IsTestcaseRunMode(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName())){
+
 			Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_MonthlyCatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_MonthlyCatB_SuiteXls, "first", Test_Util.GetRowNum(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
+
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
+
 		}
+
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName());
+
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName());
+
 	}
-	
-	
 
 	public String payfreqncy;
 	boolean employeeFirsttimeView = true;
@@ -53,19 +53,23 @@ public class NIMonthlyCat_A extends TestSuiteBase
 	{
 		//APP_LOGS.debug("Entering the Leave parameters");
 		APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
+
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y"))
-		{
+		if(! runmodes[count].equalsIgnoreCase("Y")){
+
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
+
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
+
 			driver.manage().window().maximize();
+
 			try
 			{
 				if(existsElement(OR.getProperty("Homepage_txt")))
@@ -80,11 +84,16 @@ public class NIMonthlyCat_A extends TestSuiteBase
 				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
+
 		}
+
 		/*************************************************************************/
+
 		// The script updates the NI Category for the Automation employees
 		UpdateEmployeeNICategory(EmpName,NICategory);
+
 		/*************************************************************************/
+
 	}
 
 
@@ -98,6 +107,7 @@ public class NIMonthlyCat_A extends TestSuiteBase
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+countCompensation);
 		}
+
 		/*************************************************************************/
 		// The script updates the Annual salary in the compensation Tab for the Automation employees
 		UpdateAnnualSalary(EmpName,AnnualSalary,PayFrequency);
@@ -106,32 +116,30 @@ public class NIMonthlyCat_A extends TestSuiteBase
 
 
 	@DataProvider
-	public Object[][] getData() throws Throwable
-	{
+	public Object[][] getData() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_MonthlyCatA_SuiteXls,"NIMonthlyCat_A");
+		return Test_Util.getData(Payroll_MonthlyCatB_SuiteXls,"NIMonthlyCat_B");
 	}
 
 
 	@AfterMethod
-	public void ReportDataSetResult() throws Throwable
-	{
+	public void ReportDataSetResult() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(Skip)
-		{
-			Test_Util.ReportDataSetResult(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}
-		else if(Fail)
-		{
+		if(Skip){
+			Test_Util.ReportDataSetResult(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+		}else if(Fail){
+
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+
+			Test_Util.ReportDataSetResult(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+		}else{
+			Test_Util.ReportDataSetResult(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-		else
-		{
-			Test_Util.ReportDataSetResult(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
-		}
+
 		Skip=false;
 		Fail=false;
+
+
 	}
 
 
@@ -139,17 +147,20 @@ public class NIMonthlyCat_A extends TestSuiteBase
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		if(IsTestPass)
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_MonthlyCatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_MonthlyCatB_SuiteXls, "first", Test_Util.GetRowNum(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_MonthlyCatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_MonthlyCatB_SuiteXls, "first", Test_Util.GetRowNum(Payroll_MonthlyCatB_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
+
 		closeBrowser();
 	}
+
 
 }

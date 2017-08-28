@@ -8443,12 +8443,11 @@ System.out.println(t.getMessage());
 							//Payroll_MonthlyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite MonthlyCatA201718.xlsx");
 							//Payroll_MonthlyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "F:\\Automation XCD\\Webdriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework\\salesforce_XLS_Files\\Payroll Suite MonthlyCatA201718.xlsx");
 					        Payroll_MonthlyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatA201718.xlsx");
-
 							NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA201718";
 							
 							
-							//Payroll_MonthlyCatB_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite MonthlyCatB201718.xlsx");
-						   // NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB201718";
+							Payroll_MonthlyCatB_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatB201718.xlsx");
+						    NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB201718";
 							
 							
 							//Payroll_MonthlyCatC_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite MonthlyCatC201718.xlsx");
