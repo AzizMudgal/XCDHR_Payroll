@@ -1,0 +1,18 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite MonthlyCatE e">
+<test name="1">
+    <classes>
+        <class name="hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="hrms_payroll.NI_MonthlyCatE.ProcessPayrollForNIMonthly" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="hrms_payroll.NI_MonthlyCatE.TestReports" ></class>  
+    </classes>
+</test>
+</suite>
