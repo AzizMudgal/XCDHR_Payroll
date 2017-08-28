@@ -101,7 +101,6 @@ public class TestReports extends TestSuiteBase
 		{
 			getObject("reportTablocator").sendKeys("");
 			getObject("reportTablocator").click();
-			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
 			Thread.sleep(4000L);
 			driver.navigate().refresh();

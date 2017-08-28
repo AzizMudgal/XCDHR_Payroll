@@ -1384,7 +1384,6 @@ public class TestBase {
 			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
 			{
 				getObject("findReportTextboxLocator").sendKeys("");
-				getObject("findReportTextboxLocator").sendKeys("");
 				Thread.sleep(1000L);
 				getObject("findReportTextboxLocator").sendKeys(TaxReport);
 				Thread.sleep(5000L);
@@ -1738,7 +1737,6 @@ public class TestBase {
 			System.out.println("Custom Edit button exists");
 			getObject("customEditbtn").sendKeys("");
 			getObject("customEditbtn").click();
-			getObject("customEditbtn").click();
 			Thread.sleep(1000L);
 		}
 
@@ -1755,7 +1753,6 @@ public class TestBase {
 
 			//getObject("customPayrollRecordid").sendKeys(PayrollId);
 			Thread.sleep(1000L);
-			getObject("customOkbtn").click();
 			getObject("customOkbtn").click();
 			System.out.println("Payrun updated");
 			Thread.sleep(6000L);
