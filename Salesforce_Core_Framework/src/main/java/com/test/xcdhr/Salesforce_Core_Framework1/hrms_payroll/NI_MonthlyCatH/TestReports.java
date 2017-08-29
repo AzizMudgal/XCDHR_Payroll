@@ -68,6 +68,7 @@ public class TestReports extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
+		/*
 		try
 		{
 			titlename = driver.getTitle();
@@ -81,6 +82,9 @@ public class TestReports extends TestSuiteBase
 			System.out.println("");
 			defaultWaitTime();
 		}
+		*/
+		Thread.sleep(4000L);
+
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
 			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
