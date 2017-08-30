@@ -6962,11 +6962,8 @@ public	int rowMatched1=0;
 		{
 			getObject("payrollTab").click();
 			System.out.println("The payroll tab got clicked");
-
 		}
 		Thread.sleep(5000L);
-		
-		
 		if(existsElement(OR.getProperty("payrollViewLocator")))
 		{
 			Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("payrollViewLocator"))));
@@ -7477,7 +7474,7 @@ public	int rowMatched1=0;
 
 	
 /////////////////
-	
+/*	
 public void PayrollForWeeklyTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String WeekName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw) throws Throwable
 {
 try
@@ -7501,6 +7498,7 @@ Thread.sleep(8000L);
  * Hence the following code finds the '2Weekly' payrun automatically from pagination
  * ProcessingTo2Weekly() method searches the required company name and payrun
  */
+	/*
 try
 {
 	WebElement table = driver.findElement(By.xpath(OR.getProperty("payroll2weeklytable")));
@@ -7533,9 +7531,193 @@ catch(Throwable t)
 System.out.println(t.getMessage());
 }
 }
+*/
 
+/*
+ * trail implementation of error.
+ */
+	
+	public void PayrollForWeeklyTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView) throws Throwable
+	{			
 
+		if (existsElement(OR.getProperty("payrollTab")))
+		{
+			getObject("payrollTab").click();
+			System.out.println("The payroll tab got clicked");
 
+		}
+		Thread.sleep(5000L);
+		
+		
+		if(existsElement(OR.getProperty("payrollViewLocator")))
+		{
+			Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("payrollViewLocator"))));
+			// This select by value needs to be called from OR.Properties
+			selectByValue.selectByValue(PayrollView);//"Current"
+		}
+		Thread.sleep(8000L);
+		/*
+		 * This code clicks to pagination from 1 to last page till it finds the '2Weekly' pay run 
+		 * Once it finds the '2Weekly' payrun, it clicks to it.
+		 * Hence the following code finds the '2Weekly' payrun automatically from pagination
+		 * ProcessingTo2Weekly() method searches the required company name and payrun
+		 */
+		try
+		{
+			if (existsElement(OR.getProperty("payroll2weeklytable")))
+			{
+			WebElement table = driver.findElement(By.xpath(OR.getProperty("payroll2weeklytable")));
+			if(existsWebElement(table))
+			{
+				System.out.println("payroll table existt");
+				/*
+				 * Since the pagination is changed and the next button holds 
+				 * constant value as 3 . i have taken this as locator element.
+				 */
+			//List<WebElement> allpages = driver.findElements(By.xpath(OR.getProperty("totalPages")));
+			System.out.println("Total pages :");
+			//
+			for(int i=2; i<=100; i++)
+			{
+				
+				if (existsElement(OR.getProperty("paginationElement")))
+				{
+					getObject("paginationNext").sendKeys("");
+					getObject("paginationNext").click();
+		    	//allpages.get(i).click();
+				}
+		    	List<WebElement> allrows = table.findElements(By.xpath(OR.getProperty("payroll2weeklytablerowss")));
+			
+					for(int row=1; row<=allrows.size(); row++)
+					{
+						ProcessForWeekTaxrate1(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollView);
+					}
+					
+				//
+				
+			}
+		}
+			}
+			
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+/*
+ * Trial implementation for ProcessForWeekTaxrate method
+ * 
+ */
+	
+
+	public void ProcessForWeekTaxrate1(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String PayrollView) throws Throwable
+	{
+		try
+		{
+			WebElement tableheader = getObject("payroll2weeklytable");
+			List<WebElement> th=tableheader.findElements(By.tagName("th"));
+			
+			    for(int i=0;i<th.size();i++)
+			    {
+			        	if("Payroll".equalsIgnoreCase(th.get(i).getText()))
+			        	{
+						payrollcol_position=i+1;
+			            break;
+			        	}
+				     }
+			    
+			        	 for(int j=0;j<th.size();j++) 
+			        	 {
+					        if("Employer".equalsIgnoreCase(th.get(j).getText()))
+					        {
+					            Emplpoyercol_position=j+1;
+					            break;
+     					     }
+					      
+			        	 }
+			        	 
+			        	 for(int k=0;k<th.size();k++) 
+			        	 {
+					        if("Frequency".equalsIgnoreCase(th.get(k).getText()))
+					        {
+								frequencyCol_Postition=k+1;
+					            break;
+							        
+						     }
+					      
+			        	 }
+			   		
+			WebElement niweeklyPayrollTable = getObject("payroll2weeklytable");
+			// need to check webelement exist
+			//WebTable table = WebTable.getTable(niweeklyPayrollTable);
+			List<WebElement> rows = niweeklyPayrollTable
+					.findElements(By
+							.xpath(OR.getProperty("payroll2weeklytablerows")));
+			
+			java.util.Iterator<WebElement> x = rows.iterator();
+			rownum = 1;
+			System.out.println("rownum is  :" + rownum);
+				while (x.hasNext())
+				{
+					WebElement emr1 = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ 		
+
+							"]" + "/" + "td["+Emplpoyercol_position+"]"));
+								String empr = emr1.getText();
+								
+								WebElement ffr = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + "td["+frequencyCol_Postition+"]"));
+								String ffr1 = ffr.getText();
+								
+								WebElement ppr1 = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + 		
+
+						"td["+payrollcol_position+"]"));
+								String ppr = ppr1.getText();
+								
+
+									payrollRecordId = "//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + "td["+payrollcol_position+"]"+"/" + "a";
+
+								if (empr != null && empr
+										.equalsIgnoreCase(EmployerName)
+										&& ppr.equalsIgnoreCase(Payrolid)&& ffr1.equalsIgnoreCase(Frquency))
+								{	
+									System.out.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
+
+						driver.findElement(By.xpath(payrollRecordId)).click();
+						if (existsElement(OR.getProperty("twoweeklyPayrolldetails")))
+						{
+							String pfrequencey = getObject("twoweeklyPayrolldetails").getText();
+							System.out.println("the employer name is :" + pfrequencey);
+							//paginForWeekstatFor1stPage(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath);
+							TaxPayRun_For_Week(MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath);
+
+							break;
+						 }
+						 break;
+					 }
+					else
+					{
+						System.out.println("payfrequency not matched");
+						
+					}
+					rownum++;
+				}
+		
+		}
+		catch(Throwable t)
+		{
+			t.getMessage().toString();
+			t.getStackTrace().toString();
+		}
+		
+	}
+	
+	
+
+	
+	
+	
 
 public void ProcessForWeekTaxrate(String EmployerName,String EmpName,String Payrolid,String Frquency,String WeekName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw) throws Throwable
 {
@@ -8082,8 +8264,9 @@ System.out.println(t.getMessage());
 							Payroll_CatZ_SuiteXls= new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite WeeklyCatZ.xlsx");
 							NI_Payroll_CatZ_SuiteXls_InputExcelFile="Payroll Suite WeeklyCatZ";
 
-						
-							Payroll_2WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 2WeeklyCatA.xlsx");
+				           //Payroll_MonthlyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatA.xlsx");
+
+							Payroll_2WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatA.xlsx");
 							NI_Payroll_2WeeklyCatA_SuiteXls_InputExcelFile="Payroll Suite 2WeeklyCatA";
 							
 							Payroll_2WeeklyCatB_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 2WeeklyCatB.xlsx");
@@ -8370,8 +8553,12 @@ System.out.println(t.getMessage());
 							//Payroll_IncomeTax_TCMonth12_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite Month12of204045VariablePayAnd50regulatoryLimit201718.xlsx");
 							//IncomeTax_TCMonth12_204045VariablePayANDMonthly50RL_InputExcelFile="Payroll Suite Month12of204045VariablePayAnd50regulatoryLimit201718";
 							
+			    	
+
 							//Payroll_CatA_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite WeeklyCatA201718.xlsx");
-							//NI_Payroll_CatA_SuiteXls_InputExcelFile="Payroll Suite WeeklyCatA201718";
+			    	
+	    	                Payroll_CatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatA201718.xlsx");
+							NI_Payroll_CatA_SuiteXls_InputExcelFile="Payroll Suite WeeklyCatA201718";
 							
 							//Payroll_CatB_SuiteXls= new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite WeeklyCatB201718.xlsx");
 							//NI_Payroll_CatB_SuiteXls_InputExcelFile="Payroll Suite WeeklyCatB201718";
@@ -8391,9 +8578,10 @@ System.out.println(t.getMessage());
 							//Payroll_CatZ_SuiteXls= new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite WeeklyCatZ201718.xlsx");
 							//NI_Payroll_CatZ_SuiteXls_InputExcelFile="Payroll Suite WeeklyCatZ201718";
 							
-							
+							Payroll_2WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatA201718.xlsx");
+							NI_Payroll_2WeeklyCatA_SuiteXls_InputExcelFile="Payroll Suite 2WeeklyCatA201718";
+
 							//Payroll_2WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 2WeeklyCatA201718.xlsx");
-							//NI_Payroll_2WeeklyCatA_SuiteXls_InputExcelFile="Payroll Suite 2WeeklyCatA201718";
 							
 							//Payroll_2WeeklyCatB_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 2WeeklyCatB201718.xlsx");
 						//	NI_Payroll_2WeeklyCatB_SuiteXls_InputExcelFile="Payroll Suite 2WeeklyCatB201718";

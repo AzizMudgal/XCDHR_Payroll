@@ -102,6 +102,7 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 				System.out.println(t.getStackTrace().toString());
 			}
 		}
+		
 		/*
 		 * This method is being called from the TestBase class.
 		 * This method selects the employee and performs the 
