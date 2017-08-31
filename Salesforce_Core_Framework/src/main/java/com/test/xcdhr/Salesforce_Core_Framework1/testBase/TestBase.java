@@ -7689,7 +7689,6 @@ System.out.println(t.getMessage());
 						{
 							String pfrequencey = getObject("twoweeklyPayrolldetails").getText();
 							System.out.println("the employer name is :" + pfrequencey);
-							//paginForWeekstatFor1stPage(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath);
 							TaxPayRun_For_Week(MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath);
 
 							break;
@@ -8309,8 +8308,8 @@ System.out.println(t.getMessage());
 							NI_Payroll_2WeeklyCatZ_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatZ";
 							
 							
-							
-							Payroll_4WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 4WeeklyCatA.xlsx");
+
+							Payroll_4WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatA.xlsx");
 							NI_Payroll_4WeeklyCatA_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatA";
 							
 							
@@ -8603,9 +8602,8 @@ System.out.println(t.getMessage());
 						//	Payroll_2WeeklyCatZ_SuiteXls= new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 2WeeklyCatZ201718.xlsx");
 							//NI_Payroll_2WeeklyCatZ_SuiteXls_InputExcelFile="Payroll Suite 2WeeklyCatZ201718";
 							
-								
-							//Payroll_4WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 4WeeklyCatA201718.xlsx");
-							//NI_Payroll_4WeeklyCatA_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatA201718";
+							Payroll_4WeeklyCatA_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatA201718.xlsx");
+							NI_Payroll_4WeeklyCatA_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatA201718";
 							
 							
 							//Payroll_4WeeklyCatB_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite 4WeeklyCatB201718.xlsx");

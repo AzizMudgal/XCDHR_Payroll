@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite 4WeeklyCatI f">
+
+<test name="1">
+    <classes>
+        <class name="hrms_payroll.NI_FourweeklyCatI.NI4WeeklyCat_I" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="hrms_payroll.NI_FourweeklyCatI.ProcessPayrollForNIWeekly" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="hrms_payroll.NI_FourweeklyCatI.TestReports" ></class>  
+    </classes>
+</test>
+</suite>
