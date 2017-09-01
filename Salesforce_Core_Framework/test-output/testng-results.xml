@@ -2,89 +2,44 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="128794" started-at="2017-08-31T10:43:55Z" finished-at="2017-08-31T10:46:03Z">
+  <suite name="Default suite" duration-ms="170126" started-at="2017-09-01T12:25:22Z" finished-at="2017-09-01T12:28:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="128794" started-at="2017-08-31T10:43:55Z" finished-at="2017-08-31T10:46:03Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth1.TestReportsApril">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth1.TestReportsApril@3fee9989]" name="CheckSuiteSkip" is-config="true" duration-ms="2846" started-at="2017-08-31T16:13:52Z" finished-at="2017-08-31T16:13:55Z">
+    <test name="Default test" duration-ms="170126" started-at="2017-09-01T12:25:22Z" finished-at="2017-09-01T12:28:12Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="CheckSuiteSkip" is-config="true" duration-ms="2202" started-at="2017-09-01T17:55:20Z" finished-at="2017-09-01T17:55:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth1.TestReportsApril@3fee9989]" name="CheckTestSkip" is-config="true" duration-ms="782" started-at="2017-08-31T16:13:55Z" finished-at="2017-08-31T16:13:55Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="CheckTestSkip" is-config="true" duration-ms="779" started-at="2017-09-01T17:55:22Z" finished-at="2017-09-01T17:55:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth1.TestReportsApril@3fee9989]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="117960" started-at="2017-08-31T16:13:56Z" data-provider="getData" finished-at="2017-08-31T16:15:54Z">
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="EmpsSetup_WithNICategory" duration-ms="166073" started-at="2017-09-01T17:55:24Z" data-provider="getData" finished-at="2017-09-01T17:58:10Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION SAP 101]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 101]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Monthly_Payroll]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Monthly]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[April-2017]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Payroll Suite NI Director as employee201718.xlsx]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[DO NOT TOUCH - Director as employee]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll NI Director's calculation Test result.xlsx]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[14]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[All]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[0]]>
+                <![CDATA[1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth1.TestReportsApril@3fee9989]" name="ReportDataSetResult" is-config="true" duration-ms="952" started-at="2017-08-31T16:15:54Z" finished-at="2017-08-31T16:15:55Z">
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="ReportDataSetResult" is-config="true" duration-ms="731" started-at="2017-09-01T17:58:10Z" finished-at="2017-09-01T17:58:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth1.TestReportsApril@3fee9989]" name="ReportTestResult" is-config="true" duration-ms="8421" started-at="2017-08-31T16:15:55Z" finished-at="2017-08-31T16:16:03Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="ReportTestResult" is-config="true" duration-ms="1834" started-at="2017-09-01T17:58:10Z" finished-at="2017-09-01T17:58:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth1.TestReportsApril -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

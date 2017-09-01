@@ -750,7 +750,7 @@ public class TestBase {
 	{
 		
 		try {
-			 WebDriverWait wait = new WebDriverWait(driver,20/*Timeout in seconds*/);
+			 WebDriverWait wait = new WebDriverWait(driver,60/*Timeout in seconds*/);
 			 element = wait.until(ExpectedConditions.elementToBeClickable((wid)));
 			 element.sendKeys("");
 			
@@ -8063,7 +8063,7 @@ System.out.println(t.getMessage());
 	 * loging into desired orgs
 	 */
 	
-	public int OrgFlag = 0;
+	public int OrgFlag = 1;
 
 	public void logingIntoDesiredORG(int OrgFlag)throws Throwable
 	{
@@ -8425,7 +8425,9 @@ System.out.println(t.getMessage());
 							Payroll_Statutory_maternitypay_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite StatutoryMaternityPay.xlsx");
 							Statutory_MaternityPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryMaternityPay";
 							
-							Payroll_Statutory_Adoption_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite StatutoryAdoptionPay.xlsx");
+							
+							//new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//
+							Payroll_Statutory_Adoption_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryAdoptionPay.xlsx");
 							Statutory_AdoptionPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryAdoptionPay";
 							
 							Payroll_Statutory_Paternitypay_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPay.xlsx");
@@ -8682,8 +8684,8 @@ System.out.println(t.getMessage());
 						//	LeaveDemo_SuiteXls  = new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite LeaveDemo201718.xlsx");
 							//LeaveDemo_Inputsheet = "Payroll Suite LeaveDemo201718";
 							
-							//Payroll_Statutory_Adoption_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite StatutoryAdoptionPay201718.xlsx");
-						//	Statutory_AdoptionPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryAdoptionPay201718";
+							Payroll_Statutory_Adoption_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryAdoptionPay201718.xlsx");
+							Statutory_AdoptionPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryAdoptionPay201718";
 							
 						//	Payroll_Statutory_Paternitypay_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPay201718.xlsx");
 						//	Statutory_StatutoryPaternityPay_InputExcelFile = "Payroll Suite StatutoryPaternityPay201718";
