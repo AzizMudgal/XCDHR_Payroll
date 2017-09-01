@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite NIDirector as employee_Month9">
+<test name="1">
+    <classes>
+        <class name="hrms_payroll.NI_DirectorAsEmployeeMonth9.PayrollForNIDirctorAsEmpDec" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="hrms_payroll.NI_DirectorAsEmployeeMonth9.TestReportsDecember" ></class>  
+    </classes>
+</test>
+</suite>

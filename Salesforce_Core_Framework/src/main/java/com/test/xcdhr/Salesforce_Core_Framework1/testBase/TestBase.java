@@ -1152,7 +1152,7 @@ public class TestBase {
 			WebElement username = driver.findElement(By.id(OR.getProperty("login_Username")));
 			username.sendKeys("payrolldemo@xcd.com.pydemoprsb");
 			WebElement password = driver.findElement(By.id(OR.getProperty("login_Password")));
-			password.sendKeys("Kolkata17");
+			password.sendKeys("london17");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
 
@@ -8400,7 +8400,8 @@ System.out.println(t.getMessage());
 				            Payroll_MonthlyCatZ_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatZ.xlsx");
 							NI_Payroll_MonthlyCatZ_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatZ";
 							
-							Payroll_NI_DirectorAsEmployee_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director as employee.xlsx");
+							//new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//
+							Payroll_NI_DirectorAsEmployee_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director as employee.xlsx");
 							Payroll_NI_DirectorAsEmployee_SuiteXls_InputExcelFile = "Payroll Suite NI Director as employee";
 
 							Payroll_NI_DirectorProrata_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director Prorata.xlsx");
@@ -8651,9 +8652,10 @@ System.out.println(t.getMessage());
 							Payroll_MonthlyCatZ_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatZ201718.xlsx");
 							NI_Payroll_MonthlyCatZ_SuiteXls_InputExcelFile="Payroll Suite MonthlyCatZ201718";
 							
-							
+							Payroll_NI_DirectorAsEmployee_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director as employee201718.xlsx");
+							Payroll_NI_DirectorAsEmployee_SuiteXls_InputExcelFile = "Payroll Suite NI Director as employee201718";
+
 							//Payroll_NI_DirectorAsEmployee_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director as employee201718.xlsx");
-							//Payroll_NI_DirectorAsEmployee_SuiteXls_InputExcelFile = "Payroll Suite NI Director as employee201718";
 
 							//Payroll_NI_DirectorProrata_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director Prorata201718.xlsx");
 							//Payroll_NI_DirectorAsProrata_SuiteXls_InputExcelFile = "Payroll Suite NI Director Prorata201718";
