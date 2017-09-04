@@ -2,22 +2,22 @@
 <suite name="Payroll Suite 2WeeklyCatA W">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_TwoweeklyCatA.NI2WeeklyCat_A" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.NI2WeeklyCat_A" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_TwoweeklyCatA.ProcessPayrollForNIWeekly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ProcessPayrollForNIWeekly" ></class>  
     </classes>
 </test>
 <test name="4">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_TwoweeklyCatA.TestReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.TestReports" ></class>  
     </classes>
 </test>
 </suite>

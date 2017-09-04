@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_TwoweeklyCatA;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA;
 
 import java.util.List;
 
@@ -9,7 +9,10 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
+
+
 
 public class ExecuteQuery extends TestSuiteBase {
 	String runmodes[] = null;

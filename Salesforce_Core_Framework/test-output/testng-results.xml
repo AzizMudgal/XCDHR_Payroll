@@ -2,44 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="170126" started-at="2017-09-01T12:25:22Z" finished-at="2017-09-01T12:28:12Z">
+  <suite name="Default suite" duration-ms="58017" started-at="2017-09-04T12:40:43Z" finished-at="2017-09-04T12:41:41Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="170126" started-at="2017-09-01T12:25:22Z" finished-at="2017-09-01T12:28:12Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="CheckSuiteSkip" is-config="true" duration-ms="2202" started-at="2017-09-01T17:55:20Z" finished-at="2017-09-01T17:55:22Z">
+    <test name="Default test" duration-ms="58017" started-at="2017-09-04T12:40:43Z" finished-at="2017-09-04T12:41:41Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="CheckSuiteSkip" is-config="true" duration-ms="2712" started-at="2017-09-04T18:10:41Z" finished-at="2017-09-04T18:10:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="CheckTestSkip" is-config="true" duration-ms="779" started-at="2017-09-01T17:55:22Z" finished-at="2017-09-01T17:55:23Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="CheckTestSkip" is-config="true" duration-ms="1123" started-at="2017-09-04T18:10:43Z" finished-at="2017-09-04T18:10:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="EmpsSetup_WithNICategory" duration-ms="166073" started-at="2017-09-01T17:55:24Z" data-provider="getData" finished-at="2017-09-01T17:58:10Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SAP 101]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="queryExecute()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="queryExecute" duration-ms="49548" started-at="2017-09-04T18:10:45Z" finished-at="2017-09-04T18:11:34Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="ReportDataSetResult" is-config="true" duration-ms="731" started-at="2017-09-01T17:58:10Z" finished-at="2017-09-01T17:58:10Z">
+        </test-method> <!-- queryExecute -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="ReportDataSetResult" is-config="true" duration-ms="1284" started-at="2017-09-04T18:11:34Z" finished-at="2017-09-04T18:11:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief@3fee9989]" name="ReportTestResult" is-config="true" duration-ms="1834" started-at="2017-09-01T17:58:10Z" finished-at="2017-09-01T17:58:12Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="ReportTestResult" is-config="true" duration-ms="6033" started-at="2017-09-04T18:11:35Z" finished-at="2017-09-04T18:11:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.SmallEmployerRelief -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
