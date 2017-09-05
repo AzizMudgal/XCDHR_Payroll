@@ -1,0 +1,19 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite 2WeeklyCatD Z">
+
+<test name="1">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatD.NI2WeeklyCat_D" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatD.ProcessPayrollForNIWeekly" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatD.TestReports" ></class>  
+    </classes>
+</test>
+</suite>

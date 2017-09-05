@@ -2,15 +2,30 @@
 <testng-results skipped="4" failed="0" ignored="0" total="4" passed="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Payroll Suite MonthlyCatE e" duration-ms="2288" started-at="2017-09-05T08:58:19Z" finished-at="2017-09-05T08:58:21Z">
+=======
+  <suite name="Default suite" duration-ms="58017" started-at="2017-09-04T12:40:43Z" finished-at="2017-09-04T12:41:41Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="1" duration-ms="1339" started-at="2017-09-05T08:58:19Z" finished-at="2017-09-05T08:58:20Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E">
         <test-method status="SKIP" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E@13deb50e]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2017-09-05T14:28:19Z" finished-at="2017-09-05T14:28:19Z">
+=======
+    <test name="Default test" duration-ms="58017" started-at="2017-09-04T12:40:43Z" finished-at="2017-09-04T12:41:41Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="CheckSuiteSkip" is-config="true" duration-ms="2712" started-at="2017-09-04T18:10:41Z" finished-at="2017-09-04T18:10:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="CheckTestSkip" is-config="true" duration-ms="1123" started-at="2017-09-04T18:10:43Z" finished-at="2017-09-04T18:10:45Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="SKIP" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E@13deb50e]" name="EmpsSetup_WithNICategory" duration-ms="0" started-at="2017-09-05T14:28:19Z" data-provider="getData" finished-at="2017-09-05T14:28:19Z">
           <exception class="java.lang.RuntimeException">
             <message>
@@ -55,8 +70,12 @@ Caused by: java.lang.NullPointerException
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.RuntimeException -->
+=======
+        <test-method status="PASS" signature="queryExecute()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="queryExecute" duration-ms="49548" started-at="2017-09-04T18:10:45Z" finished-at="2017-09-04T18:11:34Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- EmpsSetup_WithNICategory -->
         <test-method status="SKIP" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E@13deb50e]" name="EmpsSetup_WithAnnualSalary" duration-ms="0" started-at="2017-09-05T14:28:20Z" data-provider="getData" finished-at="2017-09-05T14:28:20Z">
           <exception class="java.lang.RuntimeException">
@@ -102,13 +121,23 @@ Caused by: java.lang.NullPointerException
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.RuntimeException -->
+=======
+        </test-method> <!-- queryExecute -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="ReportDataSetResult" is-config="true" duration-ms="1284" started-at="2017-09-04T18:11:34Z" finished-at="2017-09-04T18:11:35Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- EmpsSetup_WithAnnualSalary -->
         <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E@13deb50e]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2017-09-05T14:28:20Z" finished-at="2017-09-05T14:28:20Z">
+=======
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery@f6c48ac]" name="ReportTestResult" is-config="true" duration-ms="6033" started-at="2017-09-04T18:11:35Z" finished-at="2017-09-04T18:11:41Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E -->
     </test> <!-- 1 -->
     <test name="2" duration-ms="473" started-at="2017-09-05T08:58:20Z" finished-at="2017-09-05T08:58:21Z">
@@ -263,4 +292,9 @@ Caused by: java.lang.NullPointerException
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports -->
     </test> <!-- 3 -->
   </suite> <!-- Payroll Suite MonthlyCatE e -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatA.ExecuteQuery -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 </testng-results>

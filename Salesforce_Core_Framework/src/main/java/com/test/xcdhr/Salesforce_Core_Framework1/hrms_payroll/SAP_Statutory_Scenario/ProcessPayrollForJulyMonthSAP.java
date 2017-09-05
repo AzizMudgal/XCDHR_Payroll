@@ -1,4 +1,5 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_TwoweeklyCatA;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario;
+
 
 
 import org.testng.SkipException;
@@ -9,8 +10,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-
-public class ProcessPayrollForNIWeekly extends TestSuiteBase
+public class ProcessPayrollForJulyMonthSAP extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -19,23 +19,22 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 	public static boolean Fail = false;
 	public static boolean Skip = false;
 	public static boolean IsTestPass = true;
-	public String payrollRecordId;
-	public int rownum;
-	public String weekOneRecordId;
+	
 	
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if (!Test_Util.IsTestcaseRunMode(Payroll_2WeeklyCatA_SuiteXls, this
+
+		if (!Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this
 				.getClass().getSimpleName()))
 		{
 			Skip = true;
-			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatA_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_2WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this
 							.getClass().getSimpleName()), "Skipped");
-			// Test_Util.ReportDataSetResult(Payroll_2WeeklyCatA_SuiteXls,
+			// Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls,
 			// this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase"
 					+ this.getClass().getSimpleName()
@@ -51,7 +50,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 		}
 
 		// Load the runmodes of the tests
-		runmodes = Test_Util.getDataSetRunmodes(Payroll_2WeeklyCatA_SuiteXls, this
+		runmodes = Test_Util.getDataSetRunmodes(Payroll_Statutory_Adoption_SuiteXls, this
 				.getClass().getSimpleName());
 
 	}
@@ -62,9 +61,10 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 	boolean shouldOpenBrowser = true;
 
 	@Test(dataProvider = "getData")
-	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String WeekName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw) throws Throwable
+	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-		//APP_LOGS.debug(EmpName);
+		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		count++;
 		if (!runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -73,18 +73,24 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 					+ count);
 		}
 
-		APP_LOGS.debug("Executing the test case");
+		
 		if (shouldOpenBrowser) {
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
+
 			driver.manage().window().maximize();
 			try
 			{
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-				PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
+
+				
+				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+				// in base class need to update the method with new parameter
+				
+
 			}
 			catch (Throwable t)
 			{
@@ -92,57 +98,56 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 				System.out.println(t.getStackTrace().toString());
 			}
 		}
-		ExcludeIncludeEmp112(EmpName,ExcelInputSheet,worksheetNo);
-		
+		ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 		if (finalRows != dTRows)
 		{
 			Thread.sleep(3000L);
 			System.out.println("Since the app is not displaying employee records same"
 					+ " as excel file employees of this Tax worksheet");
-			ProcessPayrollForNIWeekly obj1 = new ProcessPayrollForNIWeekly();
+			ProcessPayrollForJulyMonthSAP obj1 = new ProcessPayrollForJulyMonthSAP();
 			
 			for(Repeat=2; Repeat < 5; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
-				obj1.PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
+				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 
-				obj1.ExcludeIncludeEmp112(EmpName,ExcelInputSheet,worksheetNo);
+				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
+		
 	}
-	
-	
-	
-	
-	
-	
+
+
+
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_2WeeklyCatA_SuiteXls,"ProcessPayrollForNIWeekly");
+
+		return Test_Util.getData(Payroll_Statutory_Adoption_SuiteXls,"ProcessPayrollForJulyMonthSAP");
 	}
 
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		if (Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
 		} else if (Fail)
 		{
 
 			IsTestPass = false;
 
-			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
 		} else
 		{
-			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
 
@@ -155,6 +160,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		if (IsTestPass)
 		{
 
@@ -163,15 +169,15 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 			// second worksheet fails, the test
 			// would be considered as fail.And the same would be updated.
 
-			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatA_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_2WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
 
 		} else
 		{
 
-			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatA_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_2WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
 
 		}
@@ -179,3 +185,4 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 	}
 
 }
+

@@ -3,10 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite MonthlyCatE e]">
   <test name="1(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatK.TestReports">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
+<<<<<<< HEAD
+=======
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <include name="CheckSuiteSkip"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports -->
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E">
         <methods>
@@ -14,6 +23,9 @@
           <include name="EmpsSetup_WithAnnualSalary"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatK.TestReports -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
   </test> <!-- 1(failed) -->
   <test name="2(failed)">
