@@ -1386,8 +1386,13 @@ public class TestBase {
 				getObject("findReportTextboxLocator").sendKeys("");
 				Thread.sleep(1000L);
 				getObject("findReportTextboxLocator").sendKeys(TaxReport);
-				Thread.sleep(5000L);
-				FetchReport();
+				Thread.sleep(2000L);
+				if(existsElementchkFor1mts(OR.getProperty("ReportTablelocator")))
+				{	
+					System.out.println("Entered FetchReport==========");
+					FetchReport();
+				}
+				
 			}
 		}
 		catch(Throwable t)
@@ -1406,7 +1411,7 @@ public class TestBase {
 		
 		try
 		{
-			
+			System.out.println("Entered FetchReport==========");
 			WebElement TableOfReportGrid = driver.findElement(By.xpath(OR.getProperty("ReportTablelocator")));
 			WebTable RTable = WebTable.getTable(TableOfReportGrid);
 			List<WebElement> Table_Report = TableOfReportGrid.findElements(By.xpath(OR.getProperty("ReportTableRows")));
@@ -1431,6 +1436,7 @@ public class TestBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
+		System.out.println("Exit FetchReport==========");
 	}
 	
 	/*
@@ -8063,7 +8069,7 @@ System.out.println(t.getMessage());
 	 * loging into desired orgs
 	 */
 	
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag)throws Throwable
 	{

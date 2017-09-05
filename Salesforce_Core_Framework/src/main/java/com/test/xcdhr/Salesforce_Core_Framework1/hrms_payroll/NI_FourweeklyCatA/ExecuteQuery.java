@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_FourweeklyCatA;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA;
 
 import java.util.List;
 

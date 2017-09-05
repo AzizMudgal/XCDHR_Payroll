@@ -1,6 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Payroll Suite 2WeeklyCatH Yh">
-
 <test name="1">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatH.NI2WeeklyCat_H" ></class>  

@@ -1,4 +1,6 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_FourweeklyCatA;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatK;
+
+
 
 
 import org.testng.SkipException;
@@ -7,8 +9,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
+import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class ProcessPayrollForNIWeekly extends TestSuiteBase
 {
@@ -28,14 +30,14 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if (!Test_Util.IsTestcaseRunMode(Payroll_4WeeklyCatA_SuiteXls, this
+		if (!Test_Util.IsTestcaseRunMode(Payroll_2WeeklyCatK_SuiteXls, this
 				.getClass().getSimpleName()))
 		{
 			Skip = true;
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_4WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatK_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_2WeeklyCatK_SuiteXls, this
 							.getClass().getSimpleName()), "Skipped");
-			// Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls,
+			// Test_Util.ReportDataSetResult(Payroll_2WeeklyCatK_SuiteXls,
 			// this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase"
 					+ this.getClass().getSimpleName()
@@ -51,7 +53,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 		}
 
 		// Load the runmodes of the tests
-		runmodes = Test_Util.getDataSetRunmodes(Payroll_4WeeklyCatA_SuiteXls, this
+		runmodes = Test_Util.getDataSetRunmodes(Payroll_2WeeklyCatK_SuiteXls, this
 				.getClass().getSimpleName());
 
 	}
@@ -111,6 +113,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 				obj1.ExcludeIncludeEmp112(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
+		
 	}
 	
 	
@@ -122,7 +125,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_4WeeklyCatA_SuiteXls,"ProcessPayrollForNIWeekly");
+		return Test_Util.getData(Payroll_2WeeklyCatK_SuiteXls,"ProcessPayrollForNIWeekly");
 	}
 
 	@AfterMethod
@@ -131,18 +134,18 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if (Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatK_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
 		} else if (Fail)
 		{
 
 			IsTestPass = false;
 
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatK_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
 		} else
 		{
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatK_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
 
@@ -163,15 +166,15 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 			// second worksheet fails, the test
 			// would be considered as fail.And the same would be updated.
 
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_4WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatK_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_2WeeklyCatK_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
 
 		} else
 		{
 
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_4WeeklyCatA_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatK_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_2WeeklyCatK_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
 
 		}
