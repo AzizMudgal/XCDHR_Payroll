@@ -2,17 +2,17 @@
 <suite name="Payroll Suite 4WeeklyCatD d">
 <test name="1">
     <classes>
-        <class name="hrms_payroll.NI_FourweeklyCatD.NI4WeeklyCat_D" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatD.NI4WeeklyCat_D" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="hrms_payroll.NI_FourweeklyCatD.ProcessPayrollForNIWeekly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatD.ProcessPayrollForNIWeekly" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="hrms_payroll.NI_FourweeklyCatD.TestReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatD.TestReports" ></class>  
     </classes>
 </test>
 </suite>

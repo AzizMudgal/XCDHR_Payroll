@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_FourweeklyCatA;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatM;
 
 
 import java.io.File;
@@ -22,11 +22,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import atu.webdriver.utils.table.WebTable;
-
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
-
 
 public class TestReports extends TestSuiteBase
 {
@@ -36,23 +33,22 @@ public class TestReports extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
-	public String titlename;
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(
-					Payroll_4WeeklyCatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+					Payroll_2WeeklyCatM_SuiteXls, "first", Test_Util.GetRowNum(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName());
 	}
 
 
@@ -69,20 +65,8 @@ public class TestReports extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-		try
-		{
-			titlename = driver.getTitle();
-			Assert.assertEquals(driver.getTitle(), titlename);
-			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
-			System.out.println("");
-		}
-		catch(Throwable t)
-		{
-			APP_LOGS.debug("Could not assert the home page title, Check for error");
-			System.out.println("");
-			defaultWaitTime();
-		}
-		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		Thread.sleep(4000L);
+		if(existsElement(OR.getProperty("reportTablocator")))
 		{
 			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
 		}
@@ -96,36 +80,35 @@ public class TestReports extends TestSuiteBase
 
 	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		if(existsElement(OR.getProperty("reportTablocator")))
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			Thread.sleep(4000L);
 			driver.navigate().refresh();
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+		if(existsElement(OR.getProperty("findReportTextboxLocator")))
 		{				
 			SearchReport(FirstReportNameInApplication);
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+		if(existsElement(OR.getProperty("reportCustomisebtn")))
 		{
 			editCustomButton();
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+		if(existsElement(OR.getProperty("customEditbtn")))
 		{				
 			UpdateReportPage(Payrolid,Frquency,MonthName);
 			System.out.println("");
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+		if(existsElement(OR.getProperty("customRunReport")))
 		{
 			RunReport();
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+		if(existsElement(OR.getProperty("reportTableLocatorNI")))
 		{
 			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
 			System.out.println("7> Entered the values and processed the Test Remarks");
@@ -138,7 +121,7 @@ public class TestReports extends TestSuiteBase
 	{
 		try
 		{
-			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+			if(existsElement(OR.getProperty("reportTableLocatorNI")))
 			{
 				//Get number of rows In table using table/tbody/tr
 				Row_count = driver.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI"))).size();
@@ -297,7 +280,7 @@ public class TestReports extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_4WeeklyCatA_SuiteXls,"TestReports");
+		return Test_Util.getData(Payroll_2WeeklyCatM_SuiteXls,"TestReports");
 	}
 
 
@@ -308,16 +291,16 @@ public class TestReports extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if(Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}
 		else if(Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -333,11 +316,11 @@ public class TestReports extends TestSuiteBase
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatM_SuiteXls, "first", Test_Util.GetRowNum(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_4WeeklyCatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_4WeeklyCatA_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_2WeeklyCatM_SuiteXls, "first", Test_Util.GetRowNum(Payroll_2WeeklyCatM_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}
 		System.out.println("closing the browser");
 		closeBrowser();

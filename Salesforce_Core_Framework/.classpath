@@ -22,6 +22,11 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="C:/Softwares/ATU_Selenium_Utilities_3.0 jar+javadoc+dll+jacob/ATUSeleniumUtilities.jar"/>
+=======
+	<classpathentry kind="lib" path="F:/Automation XCD/Webdriver/ATU_Selenium_Utilities_3.0 jar+javadoc+dll+jacob/ATU_Selenium_Utilities_3.0.jar"/>
+	<classpathentry kind="lib" path="F:/Automation XCD/Webdriver/ATU_Selenium_Utilities_3.0 jar+javadoc+dll+jacob/jacob.jar"/>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

@@ -3,17 +3,17 @@
 
 <test name="1">
     <classes>
-        <class name="hrms_payroll.NI_FourweeklyCatC.NI4WeeklyCat_C" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatC.NI4WeeklyCat_C" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="hrms_payroll.NI_FourweeklyCatC.ProcessPayrollForNIWeekly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatC.ProcessPayrollForNIWeekly" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="hrms_payroll.NI_FourweeklyCatC.TestReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatC.TestReports" ></class>  
     </classes>
 </test>
 </suite>
