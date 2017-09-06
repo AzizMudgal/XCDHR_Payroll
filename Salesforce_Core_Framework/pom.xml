@@ -54,6 +54,15 @@
 			<artifactId>extentreports</artifactId>
 			<version>2.40.2</version>
 		</dependency>
+		
+		<dependency>
+				<groupId>ATUSeleniumUtilities</groupId>
+			<artifactId>ATUSeleniumUtilities</artifactId>
+			<scope>system</scope>
+			<version>3.0</version>
+			<systemPath>${basedir}/libs/ATUSeleniumUtilities.jar</systemPath>
+		</dependency>
+		
 	</dependencies>
 
 	<build>
@@ -77,6 +86,8 @@
 
 				</configuration>
 			</plugin>
+
+
 
 		</plugins>
 
