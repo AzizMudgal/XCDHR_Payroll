@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite WeeklyCatA L]">
+  <test name="4(failed)">
+    <classes>
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.TestReports">
+        <methods>
+          <include name="CheckSuiteSkip"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+          <include name="CheckTestSkip"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.TestReports -->
+    </classes>
+  </test> <!-- 4(failed) -->
+</suite> <!-- Failed suite [Payroll Suite WeeklyCatA L] -->

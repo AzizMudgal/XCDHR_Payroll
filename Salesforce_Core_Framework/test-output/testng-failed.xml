@@ -1,55 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite MonthlyCatE e]">
-  <test name="1(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatK.TestReports">
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
-        <methods>
-<<<<<<< HEAD
-=======
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
-          <include name="CheckSuiteSkip"/>
-        </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E">
-        <methods>
-          <include name="EmpsSetup_WithNICategory"/>
-          <include name="EmpsSetup_WithAnnualSalary"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.NIMonthlyCat_E -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatK.TestReports -->
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
-    </classes>
-  </test> <!-- 1(failed) -->
-  <test name="2(failed)">
-    <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ExecuteQuery">
         <methods>
           <include name="CheckSuiteSkip"/>
+          <include name="CheckTestSkip"/>
+          <include name="queryExecute"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.ProcessPayrollForNIMonthly">
-        <methods>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.ProcessPayrollForNIMonthly -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ExecuteQuery -->
     </classes>
-  </test> <!-- 2(failed) -->
-  <test name="3(failed)">
-    <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports">
-        <methods>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-          <include name="CheckSuiteSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatE.TestReports -->
-    </classes>
-  </test> <!-- 3(failed) -->
-</suite> <!-- Failed suite [Payroll Suite MonthlyCatE e] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
