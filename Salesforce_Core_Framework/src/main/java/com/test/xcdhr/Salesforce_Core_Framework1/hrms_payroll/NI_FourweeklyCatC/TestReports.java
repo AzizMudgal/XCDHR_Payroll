@@ -22,6 +22,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+<<<<<<< HEAD
 
 import atu.webdriver.utils.table.WebTable;
 
@@ -141,6 +142,110 @@ public class TestReports extends TestSuiteBase
 		try
 		{
 			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+=======
+import atu.webdriver.utils.table.WebTable;
+import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
+
+
+
+public class TestReports extends TestSuiteBase
+{
+	String runmodes[] = null;
+	static int count = -1;
+	public static boolean Fail=false;
+	public static boolean Skip=false;
+	public static boolean IsTestPass=true;
+	public String firstCellOfBody;
+
+	@BeforeTest
+	public void CheckTestSkip() throws Throwable
+	{
+		processDesiredTaxYearInputExcelFile(TaxYear);
+		if(! Test_Util.IsTestcaseRunMode(Payroll_4WeeklyCatC_SuiteXls, this.getClass().getSimpleName()))
+		{
+			Skip=true;
+			Test_Util.ReportDataSetResult(
+					Payroll_4WeeklyCatC_SuiteXls, "first", Test_Util.GetRowNum(Payroll_4WeeklyCatC_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_4WeeklyCatC_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
+			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
+		}
+		// Load the runmodes of the tests
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_4WeeklyCatC_SuiteXls, this.getClass().getSimpleName());
+	}
+
+
+	@Test(dataProvider = "getData")
+	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
+	{
+		count++;
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
+			Skip=true;
+			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
+		}
+		APP_LOGS.debug("Executing the test case");
+		openBrowser();
+		logingIntoDesiredORG(OrgFlag);
+		driver.manage().window().maximize();
+		Thread.sleep(4000L);
+		if(existsElement(OR.getProperty("reportTablocator")))
+		{
+			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
+		}
+		else
+		{
+			System.out.println("Report Tab doesnot exist hence quitting this test");
+		}
+	}
+
+
+
+	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
+	{
+		if(existsElement(OR.getProperty("reportTablocator")))
+		{
+			getObject("reportTablocator").click();
+			System.out.println("2> Clicked to Report Tab");
+			driver.navigate().refresh();
+		}
+
+		if(existsElement(OR.getProperty("findReportTextboxLocator")))
+		{				
+			SearchReport(FirstReportNameInApplication);
+		}
+
+		if(existsElement(OR.getProperty("reportCustomisebtn")))
+		{
+			editCustomButton();
+		}
+
+		if(existsElement(OR.getProperty("customEditbtn")))
+		{				
+			UpdateReportPage(Payrolid,Frquency,MonthName);
+			System.out.println("");
+		}
+
+		if(existsElement(OR.getProperty("customRunReport")))
+		{
+			RunReport();
+		}
+
+		if(existsElement(OR.getProperty("reportTableLocatorNI")))
+		{
+			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
+			System.out.println("7> Entered the values and processed the Test Remarks");
+		}
+	}
+
+
+
+	public void processReport(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo)throws Throwable
+	{
+		try
+		{
+			if(existsElement(OR.getProperty("reportTableLocatorNI")))
+>>>>>>> refs/remotes/origin/master
 			{
 				//Get number of rows In table using table/tbody/tr
 				Row_count = driver.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI"))).size();

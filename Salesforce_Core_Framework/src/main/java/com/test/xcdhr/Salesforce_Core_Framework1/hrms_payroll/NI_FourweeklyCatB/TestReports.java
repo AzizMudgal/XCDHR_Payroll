@@ -69,6 +69,7 @@ public class TestReports extends TestSuiteBase
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
 		/*
+<<<<<<< HEAD
 		 * AFTER driver.manage.maximise put the validation of title code.New code Change Swamy.
 		 * And Replace existsElement method name with existsElementchkFor1mts
 		 */
@@ -107,6 +108,45 @@ public class TestReports extends TestSuiteBase
 			System.out.println("2> Clicked to Report Tab");
 			/*
 			 * Before driver.navigate, paste thread.sleep stmt.New code Change Swamy
+=======
+		 * AFTER driver.manage.maximise put the validation of title code.
+		 */
+		
+		try
+		{
+			titlename = driver.getTitle();
+			Assert.assertEquals(driver.getTitle(), titlename);
+			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
+			System.out.println("");
+		}
+		catch(Throwable t)
+		{
+			APP_LOGS.debug("Could not assert the home page title, Check for error");
+			System.out.println("");
+			defaultWaitTime();
+		}
+		Thread.sleep(4000L);
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		{
+			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
+		}
+		else
+		{
+			System.out.println("Report Tab doesnot exist hence quitting this test");
+		}
+	}
+
+
+
+	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
+	{
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		{
+			getObject("reportTablocator").click();
+			System.out.println("2> Clicked to Report Tab");
+			/*
+			 * Before driver.navigate, paste thread.sleep stmt.
+>>>>>>> refs/remotes/origin/master
 			 */
 			Thread.sleep(4000L);
 			driver.navigate().refresh();
