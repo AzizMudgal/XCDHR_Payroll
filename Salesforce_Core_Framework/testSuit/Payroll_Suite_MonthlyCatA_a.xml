@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Payroll Suite MonthlyCatA a">
-<test name="1">
+<!-- <test name="1">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ExecuteQuery" ></class>  
     </classes>
@@ -14,7 +14,7 @@
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly" ></class>  
     </classes>
-</test>
+</test> -->
 <test name="4">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports" ></class>  
