@@ -2,12 +2,12 @@
 <suite name="Payroll Suite NIDirector as employee_Month4">
 <test name="1">
     <classes>
-        <class name="hrms_payroll.NI_DirectorAsEmployeeMonth4.PayrollForNIDirctorAsEmpJuly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth4.PayrollForNIDirctorAsEmpJuly" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="hrms_payroll.NI_DirectorAsEmployeeMonth4.TestReportsJuly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_payroll.NI_hrms_payroll.NI_DirectorAsEmployeeMonth4.TestReportsJuly" ></class>  
     </classes>
 </test>
 </suite>

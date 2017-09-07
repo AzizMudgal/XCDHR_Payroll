@@ -68,11 +68,7 @@ public class TestReports extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-		/*
-<<<<<<< HEAD
-		 * AFTER driver.manage.maximise put the validation of title code.New code Change Swamy.
-		 * And Replace existsElement method name with existsElementchkFor1mts
-		 */
+		
 		
 		try
 		{
@@ -100,17 +96,17 @@ public class TestReports extends TestSuiteBase
 
 
 
-	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
+	/*public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			/*
+			
 			 * Before driver.navigate, paste thread.sleep stmt.New code Change Swamy
 =======
 		 * AFTER driver.manage.maximise put the validation of title code.
-		 */
+		 
 		
 		try
 		{
@@ -135,7 +131,7 @@ public class TestReports extends TestSuiteBase
 			System.out.println("Report Tab doesnot exist hence quitting this test");
 		}
 	}
-
+*/
 
 
 	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
@@ -146,7 +142,7 @@ public class TestReports extends TestSuiteBase
 			System.out.println("2> Clicked to Report Tab");
 			/*
 			 * Before driver.navigate, paste thread.sleep stmt.
->>>>>>> refs/remotes/origin/master
+
 			 */
 			Thread.sleep(4000L);
 			driver.navigate().refresh();
