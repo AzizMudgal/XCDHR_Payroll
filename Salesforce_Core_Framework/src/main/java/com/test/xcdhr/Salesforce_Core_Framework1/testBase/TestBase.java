@@ -1859,16 +1859,16 @@ public	int rowMatched1=0;
 			{
 				exlude = false;
 				Thread.sleep(3000L);
-				if(existsElement(OR.getProperty("genratedraftPayroll")))
+				if(existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
 				{
-					if(existsElement(OR.getProperty("excludeIncludeEmployees")))
+					if(existsElementchkFor5mts(OR.getProperty("excludeIncludeEmployees")))
 					{
 						getObject("excludeIncludeEmployees").click();
 						System.out.println("Exclude Include Employees link got clicked");
 						Thread.sleep(5000);
 					}
 				}
-				else if(existsElement(OR.getProperty("changeToDraft")))
+				else if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
 				{
 					System.out.println("yest the Change to Draft button exist");
 					retryForGenerateDraft();
@@ -1880,7 +1880,7 @@ public	int rowMatched1=0;
 				getObject("excludeAllemployees").click();
 				System.out.println("the exclude include check box got unchecked");
 			}
-			if(existsElement(OR.getProperty("excludeIncludeAllEmployees")))
+			if(existsElementchkFor5mts(OR.getProperty("excludeIncludeAllEmployees")))
 			{
 				WebElement excludeincludeTable = driver.findElement(By
 						.xpath(OR.getProperty("excludeIncludeAllEmployees")));
@@ -1925,11 +1925,11 @@ public	int rowMatched1=0;
 				
 				driver.switchTo().window(oldWindow);
 				Thread.sleep(4000L);
-				if (existsElement(OR.getProperty("genratedraftPayroll")))
+				if (existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
 				{			
 					getObject("genratedraftPayroll").sendKeys("");
 						getObject("genratedraftPayroll").click();
-						if(existsElement(OR.getProperty("progressBar")))
+						if(existsElementchkFor5mts(OR.getProperty("progressBar")))
 						{
 							System.out.println("The progress bar got displayed");
 							System.out.println("");
@@ -6516,7 +6516,7 @@ public	int rowMatched1=0;
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("progressBar")))
+			if(existsElementchkFor5mts(OR.getProperty("progressBar")))
 			{
 				System.out.println("Still generate draft payroll functionality execution did not completed...please wait");
 				payRunExecution();
@@ -6576,13 +6576,13 @@ public	int rowMatched1=0;
 	{
 		try
 		{
-		if (existsElement(OR.getProperty("genratedraftPayroll")))
+		if (existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
 				{					
 						getObject("genratedraftPayroll").click();
 						System.out.println("");
 						System.out.println("The generate draft button got clicked");
 						Thread.sleep(4000L);
-						if (existsElement(OR.getProperty("progressBarImage")))
+						if (existsElementchkFor5mts(OR.getProperty("progressBarImage")))
 						{
 							payRunExecution();	
 							System.out.println("The generate draft payroll functionality sucessfully executed"
