@@ -8414,14 +8414,14 @@ System.out.println(t.getMessage());
 							Payroll_NI_DirectorAsProrata_SuiteXls_InputExcelFile = "Payroll Suite NI Director Prorata";
 							
 							
-							Payroll_NI_CeaseandRecommence_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director Cease and recommence.xlsx");
+							Payroll_NI_CeaseandRecommence_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director Cease and recommence.xlsx");
 							Payroll_NI_CeaseandRecommence_SuiteXls_InputExcelFile="Payroll Suite NI Director Cease and recommence";
 
 							Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director ReachesPensionAge.xlsx");
 							Payroll_NI_ReachesANDPension_SuiteXls_InputExcelFile = "Payroll Suite NI Director ReachesPensionAge";
 
 							
-							Payroll_NI_Deferment_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director Deferment.xlsx");
+							Payroll_NI_Deferment_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director Deferment.xlsx");
 							Payroll_NI_Deferment_SuiteXls_InputExcelFile = "Payroll Suite NI Director Deferment";
 							
 							
@@ -8673,14 +8673,14 @@ System.out.println(t.getMessage());
 							//Payroll_NI_DirectorAsProrata_SuiteXls_InputExcelFile = "Payroll Suite NI Director Prorata201718";
 							
 							
-							//Payroll_NI_CeaseandRecommence_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director Cease and recommence201718.xlsx");
-							//Payroll_NI_CeaseandRecommence_SuiteXls_InputExcelFile = "Payroll Suite NI Director Cease and recommence201718";
+							Payroll_NI_CeaseandRecommence_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director Cease and recommence201718.xlsx");
+							Payroll_NI_CeaseandRecommence_SuiteXls_InputExcelFile = "Payroll Suite NI Director Cease and recommence201718";
 
 							Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director ReachesPensionAge201718.xlsx");
 							Payroll_NI_ReachesANDPension_SuiteXls_InputExcelFile = "Payroll Suite NI Director ReachesPensionAge201718";
 
-							//Payroll_NI_Deferment_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director Deferment201718.xlsx");
-							//Payroll_NI_Deferment_SuiteXls_InputExcelFile = "Payroll Suite NI Director Deferment201718";
+							Payroll_NI_Deferment_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director Deferment201718.xlsx");
+							Payroll_NI_Deferment_SuiteXls_InputExcelFile = "Payroll Suite NI Director Deferment201718";
 							
 							//Payroll_NI_Director_Under21_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite NI Director Under21201718.xlsx");
 							//Payroll_NI_Under21_SuiteXls_InputExcelFile = "Payroll Suite NI Director Under21201718";
