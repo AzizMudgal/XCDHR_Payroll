@@ -1,0 +1,8 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite ResetNICategory for TaxYear201718">
+<test name="1">
+    <classes>
+        <class name="hrms_payroll.Reset_Predefined_Conditions_Taxyear201718.ResetNICategory" ></class>  
+    </classes>
+</test>
+</suite>

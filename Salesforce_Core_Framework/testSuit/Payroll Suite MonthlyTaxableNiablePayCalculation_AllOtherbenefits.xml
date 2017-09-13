@@ -1,0 +1,88 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite MonthlyTaxableNiablePayCalculation_AllOtherbenefits">
+<test name="1">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.MonthlyAnnualSalary" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CreatCompnAndPensnRecord" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.OneOffPension" ></class>  
+    </classes>
+</test>
+<test name="4">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.RgularBenftOrDedun" ></class>  
+    </classes>
+</test>
+<test name="5">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Awards" ></class>  
+    </classes>
+</test>
+<test name="6">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.OneOffpymtOrDedun" ></class>  
+    </classes>
+</test>
+<test name="7">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Allowance" ></class>  
+    </classes>
+</test>
+<test name="8">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Benefit" ></class>  
+    </classes>
+</test>
+<test name="9">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrder" ></class>  
+    </classes>
+</test>
+<test name="10">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Deduction" ></class>  
+    </classes>
+</test>
+<test name="11">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrolln.Bonus" ></class>  
+    </classes>
+</test>
+<test name="12">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Commission" ></class>  
+    </classes>
+</test>
+<test name="13">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.OneOffBenefit" ></class>  
+    </classes>
+</test>
+<test name="14">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.OneOffDeduction" ></class>  
+    </classes>
+</test>
+<test name="15">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.OneOffPayment" ></class>  
+    </classes>
+</test>
+<test name="16">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProsesMnthlyTaxAndNiable" ></class>  
+    </classes>
+</test>
+<test name="17">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReports" ></class>  
+    </classes>
+</test>
+</suite>

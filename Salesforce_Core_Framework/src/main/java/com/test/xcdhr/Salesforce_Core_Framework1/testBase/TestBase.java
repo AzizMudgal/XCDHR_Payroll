@@ -838,8 +838,8 @@ public class TestBase {
 			
 			
 			
-						//Payroll_GenerateTaxrateWeekly_SuiteXls201718=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeWeekly201718.xlsx");
-			//Payroll_GenerateTaxrateMonthly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly.xlsx");
+						//Payroll_GenerateTaxrateWeekly_SuiteXls201718=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeWeekly201718.xlsx");
+			//Payroll_GenerateTaxrateMonthly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly.xlsx");
 			
 		
 			/* Weekly Tax Files*/
@@ -8122,36 +8122,36 @@ System.out.println(t.getMessage());
 			    case 201516 :
 			    	
 			    		
-			    			Payroll_GenerateTaxrateMonthly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly.xlsx");
+			    			Payroll_GenerateTaxrateMonthly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly.xlsx");
 			    			GenerateTaxrateMonthly_InputExcelFile="Payroll Suite GeneralAndLargeTaxcodeMonthly";
 			    			
-							Payroll_GenerateTaxrateWeekly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeWeekly.xlsx");
+							Payroll_GenerateTaxrateWeekly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeWeekly.xlsx");
 							GenerateTaxrateWeekly_InputExcelFile="Payroll Suite GeneralAndLargeTaxcodeWeekly";
 							
-							Payroll_GenerateTaxrateMonth1LD0D1BR_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth1LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateMonth1LD0D1BR_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth1LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateMonth1LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth1LDOD1BRNTOTK50percentRL";
 							
-							Payroll_GenerateTaxrateMonth2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth2LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateMonth2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth2LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateMonth2LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth2LDOD1BRNTOTK50percentRL";
 							
-							Payroll_GenerateTaxrateMonth3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth3LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateMonth3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth3LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateMonth3LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth3LDOD1BRNTOTK50percentRL";
 							
-							Payroll_GenerateTaxrateMonth4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth4LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateMonth4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth4LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateMonth4LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth4LDOD1BRNTOTK50percentRL";
 							
-							Payroll_GenerateTaxrateWeek1LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateWeek1LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateWeek1LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL";
 							
-							Payroll_GenerateTaxrateWeek2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek2LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateWeek2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek2LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateWeek2LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek2LDOD1BRNTOTK50percentRL";
 
 							
-							Payroll_GenerateTaxrateWeek3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek3LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateWeek3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek3LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateWeek3LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek3LDOD1BRNTOTK50percentRL";
 
 							
-							Payroll_GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL.xlsx");
+							Payroll_GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL";
 
 							Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL.xlsx");
@@ -8456,38 +8456,39 @@ System.out.println(t.getMessage());
 							
 			    break; // if you want to process desired Tax year's input sheet then pass that tax year as parameter 
 			    
-			    case 201718 ://Payroll_ResetCategory_Taxyear201718_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite ResetNICategory for TaxYear201718.xlsx");
-			    			//PayrollSuiteResetNICategory_InputExcelFile="Payroll Suite ResetNICategory for TaxYear201718";
+			    case 201718 :
+			    	        Payroll_ResetCategory_Taxyear201718_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ResetNICategory for TaxYear201718.xlsx");
+			    			PayrollSuiteResetNICategory_InputExcelFile="Payroll Suite ResetNICategory for TaxYear201718";
 			    			
-			    			//Payroll_GenerateTaxrateMonthly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly201718.xlsx");
-			    			//GenerateTaxrateMonthly_InputExcelFile="Payroll Suite GeneralAndLargeTaxcodeMonthly201718";
+			    			Payroll_GenerateTaxrateMonthly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly201718.xlsx");
+			    			GenerateTaxrateMonthly_InputExcelFile="Payroll Suite GeneralAndLargeTaxcodeMonthly201718";
 			    			
-			    			//Payroll_GenerateTaxrateWeekly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeWeekly201718.xlsx");
-							//GenerateTaxrateWeekly_InputExcelFile="Payroll Suite GeneralAndLargeTaxcodeWeekly201718";
+			    			Payroll_GenerateTaxrateWeekly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeWeekly201718.xlsx");
+							GenerateTaxrateWeekly_InputExcelFile="Payroll Suite GeneralAndLargeTaxcodeWeekly201718";
 			    			
-							///Payroll_GenerateTaxrateMonth1LD0D1BR_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth1LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateMonth1LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth1LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateMonth1LD0D1BR_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth1LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateMonth1LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth1LDOD1BRNTOTK50percentRL201718";
 							
-							//Payroll_GenerateTaxrateMonth2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth2LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateMonth2LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth2LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateMonth2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth2LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateMonth2LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth2LDOD1BRNTOTK50percentRL201718";
 							
-							//Payroll_GenerateTaxrateMonth3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth3LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateMonth3LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth3LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateMonth3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth3LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateMonth3LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth3LDOD1BRNTOTK50percentRL201718";
 							
-							//Payroll_GenerateTaxrateMonth4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth4LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateMonth4LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth4LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateMonth4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateMonth4LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateMonth4LD0D1BR_InputExcelFile="Payroll Suite GeneralTaxRateMonth4LDOD1BRNTOTK50percentRL201718";
 							
-							//Payroll_GenerateTaxrateWeek1LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateWeek1LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateWeek1LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateWeek1LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718";
 							
-							//Payroll_GenerateTaxrateWeek2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek2LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateWeek2LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek2LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateWeek2LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek2LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateWeek2LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek2LDOD1BRNTOTK50percentRL201718";
 							
-							//Payroll_GenerateTaxrateWeek3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek3LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateWeek3LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek3LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateWeek3LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek3LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateWeek3LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek3LDOD1BRNTOTK50percentRL201718";
 							
-							//Payroll_GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL201718.xlsx");
-							//GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL201718";
+							Payroll_GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL201718.xlsx");
+							GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL201718";
 
 							Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL201718.xlsx");
 							IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL201718";
