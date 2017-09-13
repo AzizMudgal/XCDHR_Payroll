@@ -842,19 +842,21 @@ public class TestBase {
 			//Payroll_GenerateTaxrateMonthly_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly.xlsx");
 			
 		
+			/* Weekly Tax Files*/
+			Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL.xlsx");
+			Payroll_IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL.xlsx");
 			
-			//Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL.xlsx");
-			//Payroll_IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL.xlsx");
+			/* Monyhly Tax Files*/
 			Payroll_IncomeTax_TCMonth2_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month2of204045VariablePayAnd50regulatoryLimit.xlsx");
 			Payroll_IncomeTax_TCMonth3_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month3of204045VariablePayAnd50regulatoryLimit.xlsx");
 			Payroll_IncomeTax_TCMonth4_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month4of204045VariablePayAnd50regulatoryLimit.xlsx");
@@ -868,6 +870,7 @@ public class TestBase {
 			Payroll_IncomeTax_TCMonth12_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month12of204045VariablePayAnd50regulatoryLimit.xlsx");
 			
 			Payroll_NI_Director_AtoD_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + " //src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director AtoD.xlsx");
+			
 			//Payroll_Monthly_Taxable_And_Niable_PayCalcn_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//monthlyTaxableNiablePaycalculn.xlsx");
 			//Payroll_Weekly_Taxable_And_Niable_PayCalcn_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//WeeklyTaxableNiablePaycalculn.xlsx");
 			//Product_NewJoiner_ScenNo1_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Product NewJoiner_ScenarioNo1.xlsx");
@@ -8151,41 +8154,41 @@ System.out.println(t.getMessage());
 							Payroll_GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL.xlsx");
 							GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL";
 
-							Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL";
 							
 			    	
-							Payroll_IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL";
 							
-							Payroll_IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL";
 
-							Payroll_IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL.xlsx");
+							Payroll_IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL.xlsx");
 							IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL";
 
 							
@@ -8486,43 +8489,43 @@ System.out.println(t.getMessage());
 							//Payroll_GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL201718.xlsx");
 							//GenerateTaxrateWeek4LDOD1BRNTOTK50percentRL_InputExcelFile="Payroll Suite GeneralTaxRateWeek4LDOD1BRNTOTK50percentRL201718";
 
-							//Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL201718";
 							
-							//Payroll_IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek2_204045VariablePay&Weekly50RL201718";
 							
-							//Payroll_IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek3_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek3_204045VariablePay&Weekly50RL201718";
 
-							//Payroll_IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL201718.xlsx");
-						   // IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL201718.xlsx");
+						   IncomeTax_TCWeek4_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek4_204045VariablePay&Weekly50RL201718";
 						    
 						    
-							//Payroll_IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek5_204045VariablePay&Weekly50RL201718";
 
-							//Payroll_IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek6_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek6_204045VariablePay&Weekly50RL201718";
 
-							//Payroll_IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL201718";
 						    // since 8 week not ran scripts for 2017-18
 
-							//Payroll_IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek8_204045VariablePay&Weekly50RL201718";
 
-							//Payroll_IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek9_204045VariablePay&Weekly50RL201718";
 
-							//Payroll_IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek10_204045VariablePay&Weekly50RL201718";
 
-							//Payroll_IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek11_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL201718";
 
-							//Payroll_IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL201718.xlsx");
-							//IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL201718";
+							Payroll_IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL201718.xlsx");
+							IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_InputExcelFile="Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL201718";
 							
 														
 							Payroll_IncomeTax_TCMonth1_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx");

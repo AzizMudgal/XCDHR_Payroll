@@ -2,17 +2,17 @@
 <suite name="Payroll Suite IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL">
 <test name="1">
     <classes>
-        <class name="hrms_payroll.IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.GeneralTaxRateWeekly" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="hrms_payroll.IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL.ProcessPayrollForWeeklyTax" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForWeeklyTax" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="hrms_payroll.IncomeTax_TCWeek10_204045VariablePayANDWeekly50RL.TestReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReports" ></class>  
     </classes>
 </test>
 </suite>
