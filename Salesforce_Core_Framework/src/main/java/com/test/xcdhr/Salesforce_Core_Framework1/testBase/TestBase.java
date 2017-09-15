@@ -8716,14 +8716,14 @@ System.out.println(t.getMessage());
 						//	Payroll_SSP_ProcessPayroll_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite Statutory SSP201718.xlsx");
 							//SSP_InputExcelFile = "Payroll Suite Statutory SSP201718";
 							
-							//Payroll_RecognitionScenarious_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Recognition Scenario201718.xlsx");
-							//PayrollRecognition_Inputsheet = "Payroll Recognition Scenario201718";
+							Payroll_RecognitionScenarious_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition Scenario201718.xlsx");
+							PayrollRecognition_Inputsheet = "Payroll Recognition Scenario201718";
 							
-							//Payroll_RecognitionScenarioTwo_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Recognition ScenarioTwo201718.xlsx");
-							//PayrollRecognitionScenario2_Inputsheet = "Payroll Recognition ScenarioTwo201718";
+							Payroll_RecognitionScenarioTwo_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition ScenarioTwo201718.xlsx");
+							PayrollRecognitionScenario2_Inputsheet = "Payroll Recognition ScenarioTwo201718";
 							
-							//Payroll_RecognitionScenarioThree_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Recognition ScenarioThree201718.xlsx");
-							//PayrollRecognitionScenario3_Inputsheet = "Payroll Recognition ScenarioThree201718";
+							Payroll_RecognitionScenarioThree_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition ScenarioThree201718.xlsx");
+							PayrollRecognitionScenario3_Inputsheet = "Payroll Recognition ScenarioThree201718";
 			    break; 
 			    
 			    default : System.out.println("not specified to run any specific tax year");
