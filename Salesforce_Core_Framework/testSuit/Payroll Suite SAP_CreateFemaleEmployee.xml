@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite SAP CreateFemaleEmployee">
+<test name="1">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ExecuteQuery" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CreateFemaleEmployee" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SmallEmployerRelief" ></class>  
+    </classes>
+</test>
+<test name="4">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.UpdateTaxCodeAndAnnualSalary" ></class>  
+    </classes>
+</test>
+</suite>

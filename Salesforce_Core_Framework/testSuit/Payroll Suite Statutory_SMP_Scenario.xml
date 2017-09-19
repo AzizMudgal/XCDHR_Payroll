@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payroll Suite Statutory SAP Scenario">
+<suite name="Payroll Suite Statutory SMP Scenario">
 <test name="1">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ExecuteQuery" ></class>  
@@ -22,32 +22,32 @@
 </test>
 <test name="5">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForJuneMonthSAP" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForAprilMonthSMP" ></class>  
     </classes>
 </test>
 <test name="6">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestJuneReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestAprilReports" ></class>  
     </classes>
 </test>
 <test name="7">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForJulyMonthSAP" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForMayMonthSMP" ></class>  
     </classes>
  </test>   
 <test name="8">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestJulyReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestMayReports" ></class>  
     </classes>
 </test>
 <test name="9">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForAugustMonthSAP" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForJuneMonthSMP" ></class>  
     </classes>
 </test>    
 <test name="10">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestAugustReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestJuneReports" ></class>  
     </classes>
 </test>
 <test name="11">
@@ -62,20 +62,30 @@
 </test>
 <test name="13">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForDecMonthSAP" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForNovMonthSMP" ></class>  
     </classes>
 </test>
 <test name="14">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestDecReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestNovReports" ></class>  
     </classes>
 </test>
 <test name="15">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForJan2016MontSAP" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForDecMonthSMP" ></class>  
     </classes>
 </test>
 <test name="16">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestDecReports" ></class>  
+    </classes>
+</test>
+<test name="17">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForJan2016MontSMP" ></class>  
+    </classes>
+</test>
+<test name="18">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestJan2016Reports" ></class>  
     </classes>
