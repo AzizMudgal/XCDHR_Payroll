@@ -1,0 +1,73 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite Statutory SAPP Scenario">
+<test name="1">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ExecuteQuery" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ResetData" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SmallEmployerRelief" ></class>  
+    </classes>
+</test>
+<test name="4">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.UpdateTaxCodeAndAnnualSalary" ></class>  
+    </classes>
+</test>
+<test name="5">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForJulyMonthSAPP" ></class>  
+    </classes>
+ </test>   
+<test name="6">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestJulyReports" ></class>  
+    </classes>
+</test>
+<test name="7">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForAugMonthSAPP" ></class>  
+    </classes>
+</test>
+<test name="8">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestAugReports" ></class>  
+    </classes>
+</test>
+<test name="9">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForSepMonthSAPP" ></class>  
+    </classes>
+</test>
+<test name="10">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestSepReports" ></class>  
+    </classes>
+</test>    
+<test name="11">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CreateLeaveRequest" ></class>  
+    </classes>
+</test>
+<test name="12">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.AverageWeeklyEarningsTestReport" ></class>  
+    </classes>
+</test>
+<test name="13">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForJan16MonthSAPP" ></class>  
+    </classes>
+</test>
+<test name="14">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestJan16Reports" ></class>  
+    </classes>
+</test>
+</suite>

@@ -3,13 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ExecuteQuery">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.TestJuneReports">
         <methods>
-          <include name="CheckSuiteSkip"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckTestSkip"/>
-          <include name="queryExecute"/>
+          <include name="CheckSuiteSkip"/>
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ExecuteQuery -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.SAP_Statutory_Scenario.TestJuneReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
