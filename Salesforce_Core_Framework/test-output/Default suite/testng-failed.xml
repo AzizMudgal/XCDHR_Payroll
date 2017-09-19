@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ExecuteQuery">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A">
         <methods>
+          <include name="EmpsSetup_WithAnnualSalary"/>
           <include name="CheckSuiteSkip"/>
           <include name="CheckTestSkip"/>
-          <include name="queryExecute"/>
+          <include name="EmpsSetup_WithNICategory"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ExecuteQuery -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
