@@ -869,7 +869,7 @@ public class TestBase {
 			Payroll_IncomeTax_TCMonth11_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month11of204045VariablePayAnd50regulatoryLimit.xlsx");
 			Payroll_IncomeTax_TCMonth12_204045VariablePayANDMonthly50RL_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month12of204045VariablePayAnd50regulatoryLimit.xlsx");
 			
-			Payroll_NI_Director_AtoD_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + " //src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director AtoD.xlsx");
+			Payroll_NI_Director_AtoD_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director AtoD.xlsx");
 			
 			//Payroll_Monthly_Taxable_And_Niable_PayCalcn_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//monthlyTaxableNiablePaycalculn.xlsx");
 			//Payroll_Weekly_Taxable_And_Niable_PayCalcn_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//WeeklyTaxableNiablePaycalculn.xlsx");
