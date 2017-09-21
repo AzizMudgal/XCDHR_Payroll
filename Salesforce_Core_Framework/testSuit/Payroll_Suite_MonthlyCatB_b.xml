@@ -2,15 +2,20 @@
 <suite name="Payroll Suite MonthlyCatB b">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.NIMonthlyCat_B" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.ExecuteQuery" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.ProcessPayrollForNIMonthly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.NIMonthlyCat_B" ></class>  
     </classes>
 </test>
 <test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.ProcessPayrollForNIMonthly" ></class>  
+    </classes>
+</test>
+<test name="4">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports" ></class>  
     </classes>
