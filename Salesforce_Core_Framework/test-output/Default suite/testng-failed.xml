@@ -3,16 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.NIDirector_ReachsPensonAgeMnth2">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Case2_Statutory_Scenario.TestJulyReports">
         <methods>
-          <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="1"/>
           <include name="CheckSuiteSkip"/>
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="1"/>
           <include name="ReportDataSetResult"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
+          <include name="CheckTestSkip"/>
           <include name="ReportTestResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.NIDirector_ReachsPensonAgeMnth2 -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Case2_Statutory_Scenario.TestJulyReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
