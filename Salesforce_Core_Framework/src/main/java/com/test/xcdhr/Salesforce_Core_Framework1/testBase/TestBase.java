@@ -889,13 +889,13 @@ public class TestBase {
 			//Payroll_ShPP_CreateLeaveRequest_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite ShPP CreateLeaveYear.xlsx");
 			
 			
-			//Payroll_AutoEnrolment_Initial_Setup_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite AutoEnrolment Initial Setup.xlsx");
-			//Payroll_AutoEnrolment_Starter_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite AutoEnrolment Starter.xlsx");
-			//Payroll_AutoEnrolment_Employee_Turns22_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite AutoEnrolment Employee Turns22.xlsx");
-			//Payroll_AutoEnrolment_Employee_ChangeInEarnings_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite AutoEnrolment Change in Earnings.xlsx");
-			//Payroll_AutoEnrolment_Employee_OptIn_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite AutoEnrolment OptIn.xlsx");
-			//Payroll_AutoEnrolment_Employee_Join_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite AutoEnrolment Join.xlsx");
-			//Payroll_AutoEnrolment_Employee_Cease_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//salesforce_XLS_Files//Payroll Suite AutoEnrolment Cease.xlsx");
+			Payroll_AutoEnrolment_Initial_Setup_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Initial Setup.xlsx");
+			Payroll_AutoEnrolment_Starter_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Starter.xlsx");
+			Payroll_AutoEnrolment_Employee_Turns22_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Employee Turns22.xlsx");
+			Payroll_AutoEnrolment_Employee_ChangeInEarnings_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Change in Earnings.xlsx");
+			Payroll_AutoEnrolment_Employee_OptIn_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment OptIn.xlsx");
+			Payroll_AutoEnrolment_Employee_Join_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Join.xlsx");
+			Payroll_AutoEnrolment_Employee_Cease_SuiteXls=new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Cease.xlsx");
 			
 			SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Suite.xlsx");
 			

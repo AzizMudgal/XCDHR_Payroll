@@ -1,0 +1,78 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite AutoEnrolment_Employee_Turns22">
+<test name="1">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ExecuteQuery" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ResetData" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.UpdateTaxCodeAndAnnualSalary" ></class>  
+    </classes>
+</test>
+<test name="4">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForApril" ></class>  
+    </classes>
+</test>
+<test name="5">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReportsForAprilPayroll" ></class>  
+    </classes>
+</test>
+<test name="6">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ReviewAutoEnrolmentForApril2016Payroll" ></class>  
+    </classes>
+</test>
+<test name="7">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ValidatePersonalTabFieldsForApril" ></class>  
+    </classes>
+</test>
+<test name="8">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForMay" ></class>  
+    </classes>
+</test>
+<test name="9">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReportsForMayPayroll" ></class>  
+    </classes>
+</test>
+<test name="10">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ReviewAutoEnrolmentForMay2016Payroll" ></class>  
+    </classes>
+</test>
+<test name="11">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ValidatePersonalAndCompnForMay" ></class>  
+    </classes>
+</test>
+<test name="12">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForAugust" ></class>  
+    </classes>
+</test>
+<test name="13">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReportsForAugustPayroll" ></class>  
+    </classes>
+</test>
+<test name="14">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ReviewAutoEnrolmentForAug2016Payroll" ></class>  
+    </classes>
+</test>
+<test name="15">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ValidatePersonalAndCompnForAug" ></class>  
+    </classes>
+</test>
+</suite>
