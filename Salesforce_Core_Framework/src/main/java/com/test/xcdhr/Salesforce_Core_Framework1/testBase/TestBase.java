@@ -328,7 +328,8 @@ public class TestBase {
 	public static String PayrollRTI_RecognitionReport="DO NOT TOUCH PAYROL RTI RECGNTION REPORT";
 	public static String PayrollRTI_RecognitionS2Report="DO NOT TOUCH PAYROL RTI SCENRIO2 REPORT";
 	public static String PayrollRTI_RecognitionS3Report="DO NOT TOUCH PAYROL RTI SCENRIO3 REPORT";
-
+	public static String PayrollRTI_RecognitionS4Report="DO NOT TOUCH PAYROL RTI SCENRIO4 REPORT";
+													
 	
 	
 	
@@ -1862,6 +1863,7 @@ public	int rowMatched1=0;
 			{
 				exlude = false;
 				Thread.sleep(3000L);
+				/*
 				if(existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
 				{
 					if(existsElementchkFor5mts(OR.getProperty("excludeIncludeEmployees")))
@@ -1871,7 +1873,8 @@ public	int rowMatched1=0;
 						Thread.sleep(5000);
 					}
 				}
-				else if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
+				else */
+				if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
 				{
 					System.out.println("yest the Change to Draft button exist");
 					retryForGenerateDraft();
@@ -6510,6 +6513,9 @@ public	int rowMatched1=0;
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS3Report)){
 			rpName="PayrollRTI_RecognitionS3Report";
 		}
+		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS4Report)){
+			rpName="PayrollRTI_RecognitionS4Report";
+		}
 		return rpName;
 	}
 	
@@ -8072,7 +8078,7 @@ System.out.println(t.getMessage());
 	 * loging into desired orgs
 	 */
 	
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag)throws Throwable
 	{
@@ -9126,18 +9132,30 @@ System.out.println(t.getMessage());
 		try
 		{
 			
-			if(!existsElement(OR.getProperty("genratedraftPayroll")))
+			if(existsElement(OR.getProperty("genratedraftPayroll")))
 			{
 				if(existsElement(OR.getProperty("changeToDraft")))
 				{
 					getObject("changeToDraft").sendKeys("");
 					getObject("changeToDraft").click();
-					Thread.sleep(5000L);
-					retryForGenerateDraft();
+					Thread.sleep(2000L);
+					///
+					if(existsElementchkFor1mts(OR.getProperty("statusPickList")))
+					{
+						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("statusPickList"))));
+						selectByValue.selectByVisibleText("Draft");
+					}
+					Thread.sleep(2000L);
+					if(existsElementchkFor1mts(OR.getProperty("payrollDraftSave")))
+					{
+						getObject("payrollDraftSave").sendKeys("");
+						getObject("payrollDraftSave").click();
+						System.out.println("The Save button got clicked");
+					}
 				}
-				if(existsElement(OR.getProperty("genratedraftPayroll")))
+				if(existsElementchkFor1mts(OR.getProperty("genratedraftPayroll")))
 				{
-					if(existsElement(OR.getProperty("excludeIncludeEmployees")))
+					if(existsElementchkFor1mts(OR.getProperty("excludeIncludeEmployees")))
 					{
 						getObject("excludeIncludeEmployees").click();
 						System.out.println("Exclude Include Employees link got clicked");

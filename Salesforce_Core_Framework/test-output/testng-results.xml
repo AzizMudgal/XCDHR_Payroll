@@ -2,22 +2,22 @@
 <testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="6013" started-at="2017-09-20T08:09:00Z" finished-at="2017-09-20T08:09:06Z">
+  <suite name="Default suite" duration-ms="5834" started-at="2017-10-06T07:04:36Z" finished-at="2017-10-06T07:04:42Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="6013" started-at="2017-09-20T08:09:00Z" finished-at="2017-09-20T08:09:06Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@598067a5]" name="CheckSuiteSkip" is-config="true" duration-ms="6598" started-at="2017-09-20T13:38:54Z" finished-at="2017-09-20T13:39:00Z">
+    <test name="Default test" duration-ms="5834" started-at="2017-10-06T07:04:36Z" finished-at="2017-10-06T07:04:42Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP@598067a5]" name="CheckSuiteSkip" is-config="true" duration-ms="7097" started-at="2017-10-06T12:34:29Z" finished-at="2017-10-06T12:34:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="FAIL" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@598067a5]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2017-09-20T13:39:00Z" finished-at="2017-09-20T13:39:00Z">
+        <test-method status="FAIL" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP@598067a5]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2017-10-06T12:34:36Z" finished-at="2017-10-06T12:34:36Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
 	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.getRowCount(Xls_Reader.java:51)
 	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.IsTestcaseRunMode(Test_Util.java:42)
-	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports.CheckTestSkip(TestReports.java:45)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP.CheckTestSkip(ProcessPayrollForJulyMonthSAP.java:32)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -47,7 +47,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="SKIP" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@598067a5]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="0" started-at="2017-09-20T13:39:06Z" data-provider="getData" finished-at="2017-09-20T13:39:06Z">
+        <test-method status="SKIP" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP@598067a5]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="0" started-at="2017-10-06T12:34:42Z" data-provider="getData" finished-at="2017-10-06T12:34:42Z">
           <exception class="java.lang.RuntimeException">
             <message>
               <![CDATA[java.lang.NullPointerException]]>
@@ -80,7 +80,7 @@
 Caused by: java.lang.NullPointerException
 	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.isSheetExist(Xls_Reader.java:459)
 	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.getData(Test_Util.java:77)
-	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports.getData(TestReports.java:302)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP.getData(ProcessPayrollForJulyMonthSAP.java:131)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -95,11 +95,11 @@ Caused by: java.lang.NullPointerException
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports@598067a5]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2017-09-20T13:39:06Z" finished-at="2017-09-20T13:39:06Z">
+        <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP@598067a5]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2017-10-06T12:34:42Z" finished-at="2017-10-06T12:34:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
