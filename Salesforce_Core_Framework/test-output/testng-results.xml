@@ -2,12 +2,12 @@
 <testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="4211" started-at="2017-10-09T08:12:46Z" finished-at="2017-10-09T08:12:50Z">
+  <suite name="Default suite" duration-ms="3640" started-at="2017-10-09T09:43:17Z" finished-at="2017-10-09T09:43:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="4211" started-at="2017-10-09T08:12:46Z" finished-at="2017-10-09T08:12:50Z">
+    <test name="Default test" duration-ms="3640" started-at="2017-10-09T09:43:17Z" finished-at="2017-10-09T09:43:20Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData">
-        <test-method status="FAIL" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="0" started-at="2017-10-09T13:42:38Z" finished-at="2017-10-09T13:42:38Z">
+        <test-method status="FAIL" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="0" started-at="2017-10-09T15:13:05Z" finished-at="2017-10-09T15:13:05Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Payroll suite is not going to execute as its being skipped]]>
@@ -40,11 +40,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="SKIP" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2017-10-09T13:42:46Z" finished-at="2017-10-09T13:42:46Z">
+        <test-method status="SKIP" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2017-10-09T15:13:17Z" finished-at="2017-10-09T15:13:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="SKIP" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="174" started-at="2017-10-09T13:42:50Z" data-provider="getData" finished-at="2017-10-09T13:42:50Z">
+        <test-method status="SKIP" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="212" started-at="2017-10-09T15:13:20Z" data-provider="getData" finished-at="2017-10-09T15:13:20Z">
           <params>
             <param index="0">
               <value>
@@ -129,11 +129,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="SKIP" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="0" started-at="2017-10-09T13:42:50Z" finished-at="2017-10-09T13:42:50Z">
+        <test-method status="SKIP" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="0" started-at="2017-10-09T15:13:20Z" finished-at="2017-10-09T15:13:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2017-10-09T13:42:50Z" finished-at="2017-10-09T13:42:50Z">
+        <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2017-10-09T15:13:20Z" finished-at="2017-10-09T15:13:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
