@@ -218,11 +218,12 @@ public class ResetEmployeeData extends TestSuiteBase
 				getObject("PersonalTabLocator").click();
 				System.out.println("The Personal Tab got clicked");
 			}
+			
 			if(existsElementchkFor1mts(OR.getProperty("currentAddressLink")))
 			{
 				getObject("currentAddressLink").sendKeys("");
 				getObject("currentAddressLink").click();
-				System.out.println("The Personal Tab got clicked");
+				System.out.println("The address link got clicked");
 			}
 		}
 		catch(Throwable t)
@@ -261,7 +262,8 @@ public class ResetEmployeeData extends TestSuiteBase
 	{
 		try
 		{
-     		if(existsElementchkFor1mts(OR.getProperty("fromDate")))
+     		
+			if(existsElementchkFor1mts(OR.getProperty("fromDate")))
 			{
 				getObject("fromDate").sendKeys("");
 				String dateStr = FromDate;
@@ -491,7 +493,7 @@ public class ResetEmployeeData extends TestSuiteBase
 								 * QA Org and shifting to Regress Org.
 								 */
 								WebElement Niablechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='j_id0:j_id2:j_id28:j_id62:j_id66:6:j_id67']"));
-								String tabindexval = Niablechkbox.getAttribute("tabindex");
+								String tabindexval = Niablechkbox.getAttribute("tabindex");														
 								System.out.println("tab index is :"+tabindexval);
 								boolean	Nblrchkbox = Niablechkbox.isSelected();
 								System.out.println("The checkbox selection is :"+Nblrchkbox);
@@ -569,7 +571,7 @@ public class ResetEmployeeData extends TestSuiteBase
 								 * QA Org and shifting to Regress Org.
 								 */
 								WebElement Taxblechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='j_id0:j_id2:j_id28:j_id62:j_id66:7:j_id67']"));
-								String tabindexval = Taxblechkbox.getAttribute("tabindex");
+								String tabindexval = Taxblechkbox.getAttribute("tabindex");													
 								System.out.println("tab index is :"+tabindexval);
 								boolean	Nblrchkbox = Taxblechkbox.isSelected();
 								System.out.println("The checkbox selection is :"+Nblrchkbox);
