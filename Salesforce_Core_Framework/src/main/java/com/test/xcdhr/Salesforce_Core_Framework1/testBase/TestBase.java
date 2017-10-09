@@ -7917,7 +7917,7 @@ System.out.println(t.getMessage());
 			totalRows = spreadsheet.getLastRowNum();
 			System.out.println("Total rows in the processpayrollforMonthlytax worksheet is :"+totalRows);
 			String oldWindow = driver.getWindowHandle();
-			if (exlude)
+			/*if (exlude)
 			{
 				exlude = false;
 				Thread.sleep(3000L);
@@ -7967,7 +7967,32 @@ System.out.println(t.getMessage());
 					
 				}
 
+			}*/
+			////
+			if (exlude)
+			{
+				exlude = false;
+				Thread.sleep(3000L);
+				/*
+				if(existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
+				{
+					if(existsElementchkFor5mts(OR.getProperty("excludeIncludeEmployees")))
+					{
+						getObject("excludeIncludeEmployees").click();
+						System.out.println("Exclude Include Employees link got clicked");
+						Thread.sleep(5000);
+					}
+				}
+				else */
+				if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
+				{
+					System.out.println("yest the Change to Draft button exist");
+					retryForGenerateDraft();
+				}
 			}
+			
+			
+			////
 			driver.switchTo().window(driver.getWindowHandle());
 			if (getObject("excludeAllemployees").isSelected())
 			{
