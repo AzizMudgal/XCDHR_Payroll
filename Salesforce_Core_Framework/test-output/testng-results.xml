@@ -2,89 +2,32 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1871541" started-at="2017-10-06T11:41:18Z" finished-at="2017-10-06T12:12:30Z">
+  <suite name="Payroll RTI Recogntion Scenario1Month1" duration-ms="79792" started-at="2017-10-09T13:52:06Z" finished-at="2017-10-09T13:53:26Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1871541" started-at="2017-10-06T11:41:18Z" finished-at="2017-10-06T12:12:30Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ProcessPayrolFor20FourWeeklySSP">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ProcessPayrolFor20FourWeeklySSP@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="7393" started-at="2017-10-06T17:11:11Z" finished-at="2017-10-06T17:11:18Z">
+    <test name="1" duration-ms="79792" started-at="2017-10-09T13:52:06Z" finished-at="2017-10-09T13:53:26Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month_April.ExecuteQuery">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month_April.ExecuteQuery@754ba872]" name="CheckSuiteSkip" is-config="true" duration-ms="5423" started-at="2017-10-09T19:22:00Z" finished-at="2017-10-09T19:22:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ProcessPayrolFor20FourWeeklySSP@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="3006" started-at="2017-10-06T17:11:18Z" finished-at="2017-10-06T17:11:21Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month_April.ExecuteQuery@754ba872]" name="CheckTestSkip" is-config="true" duration-ms="2774" started-at="2017-10-09T19:22:06Z" finished-at="2017-10-09T19:22:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ProcessPayrolFor20FourWeeklySSP@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1828328" started-at="2017-10-06T17:11:24Z" data-provider="getData" finished-at="2017-10-06T17:41:53Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SSP 101]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[FourWeekly_Payroll]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four Weekly]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Four Week-20]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Payroll Suite Statutory SSP201718.xlsx]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[DO NOT TOUCH SSP GROSS PAYMENTS]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\Statutory scenarios for 201718\\Automation Test Result for Statutory Scenarios201718.xlsx]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[4]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[All]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[18]]>
-              </value>
-            </param>
-          </params>
+        <test-method status="PASS" signature="queryExecute()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month_April.ExecuteQuery@754ba872]" name="queryExecute" duration-ms="69715" started-at="2017-10-09T19:22:09Z" finished-at="2017-10-09T19:23:18Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ProcessPayrolFor20FourWeeklySSP@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="8557" started-at="2017-10-06T17:41:53Z" finished-at="2017-10-06T17:42:01Z">
+        </test-method> <!-- queryExecute -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month_April.ExecuteQuery@754ba872]" name="ReportDataSetResult" is-config="true" duration-ms="2586" started-at="2017-10-09T19:23:18Z" finished-at="2017-10-09T19:23:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ProcessPayrolFor20FourWeeklySSP@239963d8]" name="ReportTestResult" is-config="true" duration-ms="28457" started-at="2017-10-06T17:42:01Z" finished-at="2017-10-06T17:42:30Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month_April.ExecuteQuery@754ba872]" name="ReportTestResult" is-config="true" duration-ms="4692" started-at="2017-10-09T19:23:21Z" finished-at="2017-10-09T19:23:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ProcessPayrolFor20FourWeeklySSP -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month_April.ExecuteQuery -->
+    </test> <!-- 1 -->
+  </suite> <!-- Payroll RTI Recogntion Scenario1Month1 -->
 </testng-results>

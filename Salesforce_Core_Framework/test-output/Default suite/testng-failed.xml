@@ -3,28 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month2.TestMayReports">
->>>>>>> refs/remotes/origin/master
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5.ExecuteQuery">
         <methods>
-<<<<<<< HEAD
-          <include name="CheckTestSkip"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-=======
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportTestResult"/>
->>>>>>> refs/remotes/origin/master
+          <include name="queryExecute"/>
           <include name="CheckSuiteSkip"/>
+          <include name="CheckTestSkip"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ProcessPayrollForJulyMonthSAP -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month2.TestMayReports -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5.ExecuteQuery -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
