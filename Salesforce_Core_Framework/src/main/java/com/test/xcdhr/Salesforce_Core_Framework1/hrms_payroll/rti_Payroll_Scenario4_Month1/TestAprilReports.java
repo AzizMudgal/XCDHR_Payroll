@@ -235,9 +235,10 @@ public class TestAprilReports extends TestSuiteBase
 						String taxCode= table.getTBody().getRow(rownum).getCell(19).getText();
 						System.out.println("taxCode is :"+taxCode);
 
+						/*
 						String taxRegimen = table.getTBody().getRow(rownum).getCell(20).getText();
 						System.out.println("taxBasis is :"+taxRegimen);
-
+						 */
 						
 						String taxablePayInPeriod = table.getTBody().getRow(rownum).getCell(21).getText();
 						System.out.println("taxablePayInPeriod is :"+taxablePayInPeriod);
@@ -249,9 +250,10 @@ public class TestAprilReports extends TestSuiteBase
 						String taxDeductedORrefunded = table.getTBody().getRow(rownum).getCell(23).getText();
 						System.out.println("taxDeductedORrefunded is :"+taxDeductedORrefunded);
 						
+						/*
 						String latePayeReportingReason = table.getTBody().getRow(rownum).getCell(24).getText();
 						System.out.println("taxDeductedORrefunded is :"+taxDeductedORrefunded);
-										
+						*/				
 					
 						String niCategory= table.getTBody().getRow(rownum).getCell(25).getText();
 						System.out.println("niCategory is :"+niCategory);
@@ -267,7 +269,7 @@ public class TestAprilReports extends TestSuiteBase
 
 						String earningsLELUpToIncludingPTYTD= table.getTBody().getRow(rownum).getCell(29).getText();
 						System.out.println("earningsLELUpToIncludingPTYTD is :"+earningsLELUpToIncludingPTYTD);
-
+						
 						String earningsPTIncludingUELYTD = table.getTBody().getRow(rownum).getCell(30).getText();
 						System.out.println("earningsPTIncludingUELYTD is :"+earningsPTIncludingUELYTD);
 
@@ -284,11 +286,11 @@ public class TestAprilReports extends TestSuiteBase
 						System.out.println("employeeContributionsPayableYTD is :"+employeeContributionsPayableYTD);
 						
 						//call the functions which reads the excel sheet.
-						ReadsExpectedData1(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxRegimen,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,latePayeReportingReason,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData1(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						ReadsExpectedData11a(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxRegimen,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,latePayeReportingReason,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData11a(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						ReadsExpectedData11(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxRegimen,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,latePayeReportingReason,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData11(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 					}
 					rownum++;
 				}
@@ -302,7 +304,7 @@ public class TestAprilReports extends TestSuiteBase
 
 
 
-	public void ReadsExpectedData1(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxRegimen,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String latePayeReportingReason,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData1(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		DecimalFormat df = new DecimalFormat("###.#");
@@ -374,8 +376,8 @@ public class TestAprilReports extends TestSuiteBase
 			value31 = cellToString(row.getCell(31));
 			value32 = cellToString(row.getCell(32));
 			value33 = cellToString(row.getCell(33));
-			value34 = cellToString(row.getCell(34));
-			value35 = cellToString(row.getCell(35));
+			//value34 = cellToString(row.getCell(34));
+			//value35 = cellToString(row.getCell(35));
 			
 			if(value1 != null && value1.equalsIgnoreCase(firstCellOfBody))
 			{
@@ -391,7 +393,7 @@ public class TestAprilReports extends TestSuiteBase
 	}
 	
 
-	public void ReadsExpectedData11a(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxRegimen,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String latePayeReportingReason,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData11a(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		DecimalFormat df = new DecimalFormat("###.#");
@@ -457,27 +459,27 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(19).setCellValue(numberOfNormalHoursWorke);
 				row.createCell(20).setCellValue(taxCode);
 				
-				row.createCell(21).setCellValue(taxRegimen);
+				//row.createCell(21).setCellValue(taxRegimen);
 
-				row.createCell(22).setCellValue(taxablePayInPeriod);
-				row.createCell(23).setCellValue(payAfterStatutoryDeductions);
-				row.createCell(24).setCellValue(taxDeductedORrefunded);
+				row.createCell(21).setCellValue(taxablePayInPeriod);
+				row.createCell(22).setCellValue(payAfterStatutoryDeductions);
+				row.createCell(23).setCellValue(taxDeductedORrefunded);
 				
-				row.createCell(25).setCellValue(latePayeReportingReason);
+				//row.createCell(25).setCellValue(latePayeReportingReason);
 
-				row.createCell(26).setCellValue(niCategory);
-				row.createCell(27).setCellValue(grossEarningsNICsInPeriod);
+				row.createCell(24).setCellValue(niCategory);
+				row.createCell(25).setCellValue(grossEarningsNICsInPeriod);
 
-				row.createCell(28).setCellValue(grossEarningsNICsInYTD);
-				row.createCell(29).setCellValue(earningsAtLowerEarningslimitYTD);
-				row.createCell(30).setCellValue(earningsLELUpToIncludingPTYTD);
+				row.createCell(26).setCellValue(grossEarningsNICsInYTD);
+				row.createCell(27).setCellValue(earningsAtLowerEarningslimitYTD);
+				row.createCell(28).setCellValue(earningsLELUpToIncludingPTYTD);
 
-				row.createCell(31).setCellValue(earningsPTIncludingUELYTD);
-				row.createCell(32).setCellValue(totalOfEmployerContributions);
-				row.createCell(33).setCellValue(totalOfEmployerContributionsYTD);
+				row.createCell(29).setCellValue(earningsPTIncludingUELYTD);
+				row.createCell(30).setCellValue(totalOfEmployerContributions);
+				row.createCell(31).setCellValue(totalOfEmployerContributionsYTD);
 
-				row.createCell(34).setCellValue(employeeContributionsPayable);
-				row.createCell(35).setCellValue(employeeContributionsPayableYTD);
+				row.createCell(32).setCellValue(employeeContributionsPayable);
+				row.createCell(33).setCellValue(employeeContributionsPayableYTD);
 				System.out.println("pasted actual Result data into the test result excel file");
 				break;
 			}
@@ -488,7 +490,7 @@ public class TestAprilReports extends TestSuiteBase
 	}
 	
 	
-	public void ReadsExpectedData11(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxRegimen,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String latePayeReportingReason,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData11(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 	System.out.println("This is ReadExpected data1");
 	double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
@@ -782,7 +784,7 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(20).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
+			/*
 			if(value21 != null && value21.equalsIgnoreCase(taxRegimen))
 			{
 				Cell cell1 = row.createCell(21);			
@@ -795,10 +797,24 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(21).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
+			*/
 			
 
-			if(value22 != null && value22.equalsIgnoreCase(taxablePayInPeriod))
+			if(value21 != null && value21.equalsIgnoreCase(taxablePayInPeriod))
+			{
+				Cell cell1 = row.createCell(21);			
+				row.createCell(21).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(21);
+				row.createCell(21).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+						
+
+			if(value22 != null && value22.equalsIgnoreCase(payAfterStatutoryDeductions))
 			{
 				Cell cell1 = row.createCell(22);			
 				row.createCell(22).setCellValue("TRUE");
@@ -810,9 +826,8 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(22).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-						
-
-			if(value23 != null && value23.equalsIgnoreCase(payAfterStatutoryDeductions))
+			
+			if(value23 != null && value23.equalsIgnoreCase(taxDeductedORrefunded))
 			{
 				Cell cell1 = row.createCell(23);			
 				row.createCell(23).setCellValue("TRUE");
@@ -825,19 +840,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 			
-			if(value24 != null && value24.equalsIgnoreCase(taxDeductedORrefunded))
-			{
-				Cell cell1 = row.createCell(24);			
-				row.createCell(24).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(24);
-				row.createCell(24).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			
+			/*
 			if(value25 != null && value25.equalsIgnoreCase(latePayeReportingReason))
 			{
 				Cell cell1 = row.createCell(25);			
@@ -850,9 +853,36 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(25).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
+			*/
 
-			if(value26 != null && value26.equalsIgnoreCase(niCategory))
+			if(value24 != null && value24.equalsIgnoreCase(niCategory))
+			{
+				Cell cell1 = row.createCell(24);			
+				row.createCell(24).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(24);
+				row.createCell(24).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value25 != null && value25.equalsIgnoreCase(grossEarningsNICsInPeriod))
+			{
+				Cell cell1 = row.createCell(25);			
+				row.createCell(25).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(25);
+				row.createCell(25).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+			
+			
+			if(value26 != null && value26.equalsIgnoreCase(grossEarningsNICsInYTD))
 			{
 				Cell cell1 = row.createCell(26);			
 				row.createCell(26).setCellValue("TRUE");
@@ -865,7 +895,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value27 != null && value27.equalsIgnoreCase(grossEarningsNICsInPeriod))
+			if(value27 != null && value27.equalsIgnoreCase(earningsAtLowerEarningslimitYTD))
 			{
 				Cell cell1 = row.createCell(27);			
 				row.createCell(27).setCellValue("TRUE");
@@ -877,9 +907,8 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(27).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			
-			if(value28 != null && value28.equalsIgnoreCase(grossEarningsNICsInYTD))
+
+			if(value28 != null && value28.equalsIgnoreCase(earningsLELUpToIncludingPTYTD))
 			{
 				Cell cell1 = row.createCell(28);			
 				row.createCell(28).setCellValue("TRUE");
@@ -892,7 +921,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value29 != null && value29.equalsIgnoreCase(earningsAtLowerEarningslimitYTD))
+			if(value29 != null && value29.equalsIgnoreCase(earningsPTIncludingUELYTD))
 			{
 				Cell cell1 = row.createCell(29);			
 				row.createCell(29).setCellValue("TRUE");
@@ -905,7 +934,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value30 != null && value30.equalsIgnoreCase(earningsLELUpToIncludingPTYTD))
+			if(value30 != null && value30.equalsIgnoreCase(totalOfEmployerContributions))
 			{
 				Cell cell1 = row.createCell(30);			
 				row.createCell(30).setCellValue("TRUE");
@@ -918,7 +947,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value31 != null && value31.equalsIgnoreCase(earningsPTIncludingUELYTD))
+			if(value31 != null && value31.equalsIgnoreCase(totalOfEmployerContributionsYTD))
 			{
 				Cell cell1 = row.createCell(31);			
 				row.createCell(31).setCellValue("TRUE");
@@ -931,7 +960,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value32 != null && value32.equalsIgnoreCase(totalOfEmployerContributions))
+			if(value32 != null && value32.equalsIgnoreCase(employeeContributionsPayable))
 			{
 				Cell cell1 = row.createCell(32);			
 				row.createCell(32).setCellValue("TRUE");
@@ -944,7 +973,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value33 != null && value33.equalsIgnoreCase(totalOfEmployerContributionsYTD))
+			if(value33 != null && value33.equalsIgnoreCase(employeeContributionsPayableYTD))
 			{
 				Cell cell1 = row.createCell(33);			
 				row.createCell(33).setCellValue("TRUE");
@@ -954,32 +983,6 @@ public class TestAprilReports extends TestSuiteBase
 			{
 				Cell cell1 = row.createCell(33);
 				row.createCell(33).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-
-			if(value34 != null && value34.equalsIgnoreCase(employeeContributionsPayable))
-			{
-				Cell cell1 = row.createCell(34);			
-				row.createCell(34).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(34);
-				row.createCell(34).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-
-			if(value35 != null && value35.equalsIgnoreCase(employeeContributionsPayableYTD))
-			{
-				Cell cell1 = row.createCell(35);			
-				row.createCell(35).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(35);
-				row.createCell(35).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
 			break;
