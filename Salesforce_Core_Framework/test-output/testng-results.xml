@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="149973" started-at="2017-10-09T10:38:03Z" finished-at="2017-10-09T10:40:33Z">
+  <suite name="Default suite" duration-ms="173203" started-at="2017-10-09T11:12:08Z" finished-at="2017-10-09T11:15:02Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="149973" started-at="2017-10-09T10:38:03Z" finished-at="2017-10-09T10:40:33Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="7374" started-at="2017-10-09T16:07:56Z" finished-at="2017-10-09T16:08:03Z">
+    <test name="Default test" duration-ms="173203" started-at="2017-10-09T11:12:08Z" finished-at="2017-10-09T11:15:02Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="10658" started-at="2017-10-09T16:41:58Z" finished-at="2017-10-09T16:42:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="3246" started-at="2017-10-09T16:08:03Z" finished-at="2017-10-09T16:08:06Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="3354" started-at="2017-10-09T16:42:08Z" finished-at="2017-10-09T16:42:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="134212" started-at="2017-10-09T16:08:09Z" data-provider="getData" finished-at="2017-10-09T16:10:23Z">
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@239963d8]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="90797" started-at="2017-10-09T16:42:15Z" data-provider="getData" finished-at="2017-10-09T16:43:45Z">
           <params>
             <param index="0">
               <value>
@@ -24,62 +24,82 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[04/01/2017]]>
+                <![CDATA[H Apprentices under the age of 25.]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[121 Monthly Mews]]>
+                <![CDATA[1210M]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[PAYE Town]]>
+                <![CDATA[Cumulative]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[England]]>
+                <![CDATA[24000.00]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[BS1 2PY]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Current home]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[H Apprentices under the age of 25.]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[0]]>
+                <![CDATA[Monthly]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="2844" started-at="2017-10-09T16:10:23Z" finished-at="2017-10-09T16:10:26Z">
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="2727" started-at="2017-10-09T16:43:45Z" finished-at="2017-10-09T16:43:48Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData@239963d8]" name="ReportTestResult" is-config="true" duration-ms="6886" started-at="2017-10-09T16:10:26Z" finished-at="2017-10-09T16:10:33Z">
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@239963d8]" name="EmpsSetup_WithAnnualSalary" duration-ms="61953" started-at="2017-10-09T16:43:51Z" data-provider="getData" finished-at="2017-10-09T16:44:53Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 104]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[H Apprentices under the age of 25.]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[1210M]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Cumulative]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[24000.00]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="2681" started-at="2017-10-09T16:44:53Z" finished-at="2017-10-09T16:44:55Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@239963d8]" name="ReportTestResult" is-config="true" duration-ms="6119" started-at="2017-10-09T16:44:55Z" finished-at="2017-10-09T16:45:02Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

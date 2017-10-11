@@ -6973,19 +6973,19 @@ public	int rowMatched1=0;
 	public void PayrollForStatutoryMonthly(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String PayrollView) throws Throwable
 	{			
 
-		if (existsElement(OR.getProperty("payrollTab")))
+		if (existsElementchkFor1mts(OR.getProperty("payrollTab")))
 		{
 			getObject("payrollTab").click();
 			System.out.println("The payroll tab got clicked");
 		}
 		Thread.sleep(5000L);
-		if(existsElement(OR.getProperty("payrollViewLocator")))
+		if(existsElementchkFor1mts(OR.getProperty("payrollViewLocator")))
 		{
 			Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("payrollViewLocator"))));
 			// This select by value needs to be called from OR.Properties
 			selectByValue.selectByValue(PayrollView);//"Current"
 		}
-		Thread.sleep(8000L);
+		Thread.sleep(2000L);
 		/*
 		 * This code clicks to pagination from 1 to last page till it finds the '2Weekly' pay run 
 		 * Once it finds the '2Weekly' payrun, it clicks to it.
@@ -6994,7 +6994,7 @@ public	int rowMatched1=0;
 		 */
 		try
 		{
-			if (existsElement(OR.getProperty("payroll2weeklytable")))
+			if (existsElementchkFor1mts(OR.getProperty("payroll2weeklytable")))
 			{
 			WebElement table = driver.findElement(By.xpath(OR.getProperty("payroll2weeklytable")));
 			if(existsWebElement(table))
@@ -7010,15 +7010,26 @@ public	int rowMatched1=0;
 			for(int i=2; i<=50; i++)
 			{
 				
+				List<WebElement> allrows = table.findElements(By.xpath(OR.getProperty("payroll2weeklytablerowss")));
+				
+				for(int row=1; row<=allrows.size(); row++)
+				{
+						ProcessingToWeeklyForStatutory1(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollView);
+						System.out.println("No record matched in first page hence clicked to next page");
+
+				}
+				
 				if (existsElement(OR.getProperty("paginationElement")))
 				{
 					getObject("paginationNext").sendKeys("");
 					getObject("paginationNext").click();
+					System.out.println("hence clicked to next page");
+
 		    	//allpages.get(i).click();
 				}
-		    	List<WebElement> allrows = table.findElements(By.xpath(OR.getProperty("payroll2weeklytablerowss")));
+		    	List<WebElement> allrows1 = table.findElements(By.xpath(OR.getProperty("payroll2weeklytablerowss")));
 			
-					for(int row=1; row<=allrows.size(); row++)
+					for(int row=1; row<=allrows1.size(); row++)
 					{
 							ProcessingToWeeklyForStatutory1(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollView);
 					}
@@ -7076,35 +7087,31 @@ public	int rowMatched1=0;
 						     }
 					      
 			        	 }
-			   		
+			   	Thread.sleep(4000L);	
 			WebElement niweeklyPayrollTable = getObject("payroll2weeklytable");
 			// need to check webelement exist
 			//WebTable table = WebTable.getTable(niweeklyPayrollTable);
 			List<WebElement> rows = niweeklyPayrollTable
 					.findElements(By
 							.xpath(OR.getProperty("payroll2weeklytablerows")));
-			
+			////
 			java.util.Iterator<WebElement> x = rows.iterator();
 			rownum = 1;
 			System.out.println("rownum is  :" + rownum);
 				while (x.hasNext())
 				{
-					WebElement emr1 = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ 		
-
-							"]" + "/" + "td["+Emplpoyercol_position+"]"));
+					WebElement emr1 = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + "td["+Emplpoyercol_position+"]"));
 								String empr = emr1.getText();
 								
 								WebElement ffr = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + "td["+frequencyCol_Postition+"]"));
 								String ffr1 = ffr.getText();
 								
-								WebElement ppr1 = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + 		
-
-						"td["+payrollcol_position+"]"));
+								WebElement ppr1 = driver.findElement(By.xpath("//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + "td["+payrollcol_position+"]"));
 								String ppr = ppr1.getText();
-								
+								//Thread.sleep(4000L);
 
-									payrollRecordId = "//table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + "td["+payrollcol_position+"]"+"/" + "a";
-
+									payrollRecordId = "//table/tbody/tr/td/form/div[1]/table[2]/" + "tbody/" + "tr" + "[" + (rownum + 1)+ "]" + "/" + "td["+payrollcol_position+"]"+"/" + "a";
+									                  //table[2]/tbody/tr[2]/td[1]/a
 								if (empr != null && empr
 										.equalsIgnoreCase(EmployerName)
 										&& ppr.equalsIgnoreCase(Payrolid)&& ffr1.equalsIgnoreCase(Frquency))
