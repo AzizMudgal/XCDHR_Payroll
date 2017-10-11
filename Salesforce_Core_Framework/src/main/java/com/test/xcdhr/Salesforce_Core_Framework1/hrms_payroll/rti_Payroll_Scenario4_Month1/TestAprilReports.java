@@ -240,14 +240,14 @@ public class TestAprilReports extends TestSuiteBase
 						System.out.println("taxBasis is :"+taxRegimen);
 						 */
 						
-						String taxablePayInPeriod = table.getTBody().getRow(rownum).getCell(21).getText();
+						String taxablePayInPeriod = table.getTBody().getRow(rownum).getCell(20).getText();
 						System.out.println("taxablePayInPeriod is :"+taxablePayInPeriod);
 
-						String payAfterStatutoryDeductions= table.getTBody().getRow(rownum).getCell(22).getText();
+						String payAfterStatutoryDeductions= table.getTBody().getRow(rownum).getCell(21).getText();
 						System.out.println("payAfterStatutoryDeductions is :"+payAfterStatutoryDeductions);
 						
 					
-						String taxDeductedORrefunded = table.getTBody().getRow(rownum).getCell(23).getText();
+						String taxDeductedORrefunded = table.getTBody().getRow(rownum).getCell(22).getText();
 						System.out.println("taxDeductedORrefunded is :"+taxDeductedORrefunded);
 						
 						/*
@@ -255,34 +255,34 @@ public class TestAprilReports extends TestSuiteBase
 						System.out.println("taxDeductedORrefunded is :"+taxDeductedORrefunded);
 						*/				
 					
-						String niCategory= table.getTBody().getRow(rownum).getCell(25).getText();
+						String niCategory= table.getTBody().getRow(rownum).getCell(23).getText();
 						System.out.println("niCategory is :"+niCategory);
 
-						String grossEarningsNICsInPeriod = table.getTBody().getRow(rownum).getCell(26).getText();
+						String grossEarningsNICsInPeriod = table.getTBody().getRow(rownum).getCell(24).getText();
 						System.out.println("grossEarningsNICsInPeriod is :"+grossEarningsNICsInPeriod);
 
-						String grossEarningsNICsInYTD= table.getTBody().getRow(rownum).getCell(27).getText();
+						String grossEarningsNICsInYTD= table.getTBody().getRow(rownum).getCell(25).getText();
 						System.out.println("grossEarningsNICsInYTD is :"+grossEarningsNICsInYTD);
 
-						String earningsAtLowerEarningslimitYTD = table.getTBody().getRow(rownum).getCell(28).getText();
+						String earningsAtLowerEarningslimitYTD = table.getTBody().getRow(rownum).getCell(26).getText();
 						System.out.println("earningsAtLowerEarningslimitYTD is :"+earningsAtLowerEarningslimitYTD);
 
-						String earningsLELUpToIncludingPTYTD= table.getTBody().getRow(rownum).getCell(29).getText();
+						String earningsLELUpToIncludingPTYTD= table.getTBody().getRow(rownum).getCell(27).getText();
 						System.out.println("earningsLELUpToIncludingPTYTD is :"+earningsLELUpToIncludingPTYTD);
 						
-						String earningsPTIncludingUELYTD = table.getTBody().getRow(rownum).getCell(30).getText();
+						String earningsPTIncludingUELYTD = table.getTBody().getRow(rownum).getCell(28).getText();
 						System.out.println("earningsPTIncludingUELYTD is :"+earningsPTIncludingUELYTD);
 
-						String totalOfEmployerContributions= table.getTBody().getRow(rownum).getCell(31).getText();
+						String totalOfEmployerContributions= table.getTBody().getRow(rownum).getCell(29).getText();
 						System.out.println("totalOfEmployerContributions is :"+totalOfEmployerContributions);
 
-						String totalOfEmployerContributionsYTD= table.getTBody().getRow(rownum).getCell(32).getText();
+						String totalOfEmployerContributionsYTD= table.getTBody().getRow(rownum).getCell(30).getText();
 						System.out.println("totalOfEmployerContributionsYTD is :"+totalOfEmployerContributionsYTD);
 
-						String employeeContributionsPayable= table.getTBody().getRow(rownum).getCell(33).getText();
+						String employeeContributionsPayable= table.getTBody().getRow(rownum).getCell(31).getText();
 						System.out.println("employeeContributionsPayable is :"+employeeContributionsPayable);
 
-						String employeeContributionsPayableYTD= table.getTBody().getRow(rownum).getCell(34).getText();
+						String employeeContributionsPayableYTD= table.getTBody().getRow(rownum).getCell(32).getText();
 						System.out.println("employeeContributionsPayableYTD is :"+employeeContributionsPayableYTD);
 						
 						//call the functions which reads the excel sheet.

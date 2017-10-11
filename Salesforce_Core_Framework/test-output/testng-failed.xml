@@ -3,30 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5.ExecuteQuery">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData">
->>>>>>> refs/remotes/origin/master
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.TestAprilReports">
         <methods>
-<<<<<<< HEAD
-          <include name="queryExecute"/>
-=======
->>>>>>> refs/remotes/origin/master
+          <include name="ReportDataSetResult"/>
           <include name="CheckSuiteSkip"/>
-<<<<<<< HEAD
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckTestSkip"/>
           <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-=======
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
->>>>>>> refs/remotes/origin/master
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5.ExecuteQuery -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ResetEmployeeData -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.TestAprilReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
