@@ -28,14 +28,14 @@ public class ProcessPayrollForJan extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if (!Test_Util.IsTestcaseRunMode(Payroll_RecognitionScenarioTwo_SuiteXls, this
+		if (!Test_Util.IsTestcaseRunMode(Payroll_RecognitionScenarioFive_SuiteXls, this
 				.getClass().getSimpleName()))
 		{
 			Skip = true;
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_RecognitionScenarioTwo_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_RecognitionScenarioFive_SuiteXls, this
 							.getClass().getSimpleName()), "Skipped");
-			// Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls,
+			// Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls,
 			// this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase"
 					+ this.getClass().getSimpleName()
@@ -49,7 +49,7 @@ public class ProcessPayrollForJan extends TestSuiteBase
 			// Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes = Test_Util.getDataSetRunmodes(Payroll_RecognitionScenarioTwo_SuiteXls, this
+		runmodes = Test_Util.getDataSetRunmodes(Payroll_RecognitionScenarioFive_SuiteXls, this
 				.getClass().getSimpleName());
 	}
 
@@ -116,7 +116,7 @@ public class ProcessPayrollForJan extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_RecognitionScenarioTwo_SuiteXls,"ProcessPayrollForJan");
+		return Test_Util.getData(Payroll_RecognitionScenarioFive_SuiteXls,"ProcessPayrollForJan");
 	}
 
 
@@ -126,18 +126,18 @@ public class ProcessPayrollForJan extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if (Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
 		} 
 		else if (Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
 		Skip = false;
@@ -155,14 +155,14 @@ public class ProcessPayrollForJan extends TestSuiteBase
 			// for that test case , even if one of the test data specified in
 			// second worksheet fails, the test
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_RecognitionScenarioTwo_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_RecognitionScenarioFive_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_RecognitionScenarioTwo_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_RecognitionScenarioFive_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
 		}
 		closeBrowser();

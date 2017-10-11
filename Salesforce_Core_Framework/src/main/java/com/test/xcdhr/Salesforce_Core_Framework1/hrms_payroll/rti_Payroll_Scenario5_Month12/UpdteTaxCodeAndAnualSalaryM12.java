@@ -29,16 +29,16 @@ public class UpdteTaxCodeAndAnualSalaryM12 extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName());
 	}
 
 
@@ -113,7 +113,7 @@ public class UpdteTaxCodeAndAnualSalaryM12 extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_RecognitionScenarioTwo_SuiteXls,"UpdteTaxCodeAndAnualSalaryM12");
+		return Test_Util.getData(Payroll_RecognitionScenarioFive_SuiteXls,"UpdteTaxCodeAndAnualSalaryM12");
 	}
 
 
@@ -124,16 +124,16 @@ public class UpdteTaxCodeAndAnualSalaryM12 extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if(Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}
 		else if(Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -149,11 +149,11 @@ public class UpdteTaxCodeAndAnualSalaryM12 extends TestSuiteBase
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioTwo_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioTwo_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFive_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioFive_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
 		closeBrowser();
 	}
