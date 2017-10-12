@@ -1851,8 +1851,8 @@ public	int rowMatched1=0;
 				
 			FileInputStream fis = new FileInputStream(
 					new File(
-							"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
-							//"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+							System.getProperty("user.dir") + "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"+Exclinputsheet));
+							
 							
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
@@ -2150,9 +2150,7 @@ public	int rowMatched1=0;
 		{
 			FileInputStream fis = new FileInputStream(
 					new File(
-							"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
-
-							//"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));	
+							System.getProperty("user.dir") + "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"+Exclinputsheet));
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(2);
 			totalRows = spreadsheet.getLastRowNum();
@@ -7916,8 +7914,8 @@ System.out.println(t.getMessage());
 			
 			FileInputStream fis = new FileInputStream(
 					new File(
-							"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
-
+							//"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
+							System.getProperty("user.dir") + "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"+Exclinputsheet));
 							//"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
@@ -8764,7 +8762,7 @@ System.out.println(t.getMessage());
 							PayrollRecognitionScenario3_Inputsheet = "Payroll Recognition ScenarioThree201718";
 							
 							Payroll_RecognitionScenarioFour_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition ScenarioFour201718.xlsx");
-							PayrollRecognitionScenario4_Inputsheet = "Payroll Recognition ScenarioFour201718";
+							PayrollRecognitionScenario4_Inputsheet = "Payroll Recognition ScenarioFour201718";																
 							
 							Payroll_RecognitionScenarioFive_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition ScenarioFive201718.xlsx");
 							PayrollRecognitionScenario5_Inputsheet = "Payroll Recognition ScenarioFive201718";							
