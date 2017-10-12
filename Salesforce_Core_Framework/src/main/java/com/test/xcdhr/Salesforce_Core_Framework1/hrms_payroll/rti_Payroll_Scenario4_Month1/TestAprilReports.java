@@ -235,26 +235,18 @@ public class TestAprilReports extends TestSuiteBase
 						String taxCode= table.getTBody().getRow(rownum).getCell(19).getText();
 						System.out.println("taxCode is :"+taxCode);
 
-						/*
-						String taxRegimen = table.getTBody().getRow(rownum).getCell(20).getText();
-						System.out.println("taxBasis is :"+taxRegimen);
-						 */
 						
 						String taxablePayInPeriod = table.getTBody().getRow(rownum).getCell(20).getText();
 						System.out.println("taxablePayInPeriod is :"+taxablePayInPeriod);
 
+						
 						String payAfterStatutoryDeductions= table.getTBody().getRow(rownum).getCell(21).getText();
 						System.out.println("payAfterStatutoryDeductions is :"+payAfterStatutoryDeductions);
 						
 					
 						String taxDeductedORrefunded = table.getTBody().getRow(rownum).getCell(22).getText();
 						System.out.println("taxDeductedORrefunded is :"+taxDeductedORrefunded);
-						
-						/*
-						String latePayeReportingReason = table.getTBody().getRow(rownum).getCell(24).getText();
-						System.out.println("taxDeductedORrefunded is :"+taxDeductedORrefunded);
-						*/				
-					
+									
 						String niCategory= table.getTBody().getRow(rownum).getCell(23).getText();
 						System.out.println("niCategory is :"+niCategory);
 
@@ -376,8 +368,7 @@ public class TestAprilReports extends TestSuiteBase
 			value31 = cellToString(row.getCell(31));
 			value32 = cellToString(row.getCell(32));
 			value33 = cellToString(row.getCell(33));
-			//value34 = cellToString(row.getCell(34));
-			//value35 = cellToString(row.getCell(35));
+		
 			
 			if(value1 != null && value1.equalsIgnoreCase(firstCellOfBody))
 			{
@@ -458,15 +449,9 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(18).setCellValue(numberOfEarningsperiodsCovered);
 				row.createCell(19).setCellValue(numberOfNormalHoursWorke);
 				row.createCell(20).setCellValue(taxCode);
-				
-				//row.createCell(21).setCellValue(taxRegimen);
-
 				row.createCell(21).setCellValue(taxablePayInPeriod);
 				row.createCell(22).setCellValue(payAfterStatutoryDeductions);
 				row.createCell(23).setCellValue(taxDeductedORrefunded);
-				
-				//row.createCell(25).setCellValue(latePayeReportingReason);
-
 				row.createCell(24).setCellValue(niCategory);
 				row.createCell(25).setCellValue(grossEarningsNICsInPeriod);
 
@@ -784,20 +769,7 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(20).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			/*
-			if(value21 != null && value21.equalsIgnoreCase(taxRegimen))
-			{
-				Cell cell1 = row.createCell(21);			
-				row.createCell(21).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(21);
-				row.createCell(21).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			*/
+			
 			
 
 			if(value21 != null && value21.equalsIgnoreCase(taxablePayInPeriod))
@@ -840,20 +812,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 			
-			/*
-			if(value25 != null && value25.equalsIgnoreCase(latePayeReportingReason))
-			{
-				Cell cell1 = row.createCell(25);			
-				row.createCell(25).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(25);
-				row.createCell(25).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			*/
+			
 
 			if(value24 != null && value24.equalsIgnoreCase(niCategory))
 			{
