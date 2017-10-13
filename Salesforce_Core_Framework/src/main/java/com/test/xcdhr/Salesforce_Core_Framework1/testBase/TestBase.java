@@ -2312,7 +2312,7 @@ public	int rowMatched1=0;
 		{
 			System.out.println("Now the new method 'verifyEmpRecordInPaySummaryTable()' "
 					+ "would execute to find out the employee record in PaySummary Table ");
-			Thread.sleep(2000L);
+			Thread.sleep(12000L);
 			if(existsElement(OR.getProperty("emprecordsTableAftergeneratedraft")))
 			{
 				System.out.println("The script recognised the tax generated employee table locator");
@@ -6514,6 +6514,7 @@ public	int rowMatched1=0;
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS4Report)){
 			rpName="PayrollRTI_RecognitionS4Report";
 		}
+		
 		return rpName;
 	}
 	
@@ -7914,9 +7915,7 @@ System.out.println(t.getMessage());
 			
 			FileInputStream fis = new FileInputStream(
 					new File(
-							//"F:\\Automation XCD\\WebDriver\\Salesforce_Core_Framework Code\\Salesforce_Core_Framework2\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
 							System.getProperty("user.dir") + "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"+Exclinputsheet));
-							//"F:\\Automation XCD\\eclipse\\WebDriver\\Salesforce_Core_Framework\\src\\salesforce_XLS_Files\\"+Exclinputsheet));
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
 			totalRows = spreadsheet.getLastRowNum();

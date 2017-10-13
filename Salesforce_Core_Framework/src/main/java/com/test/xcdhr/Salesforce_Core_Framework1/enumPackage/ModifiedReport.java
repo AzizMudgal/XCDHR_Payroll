@@ -42,7 +42,8 @@ public enum ModifiedReport
 	PayrollRTI_RecognitionReport("PayrollRTI_RecognitionReportLocator"),
 	PayrollRTI_RecognitionS2Report("PayrollRTI_RecognitionS2ReportLocator"),
 	PayrollRTI_RecognitionS3Report("PayrollRTI_RecognitionS3ReportLocator"),
-	PayrollRTI_RecognitionS4Report("PayrollRTI_RecognitionS4ReportLocator");
+	PayrollRTI_RecognitionS4Report("PayrollRTI_RecognitionS4ReportLocator"),
+	PayrollRTI_RecognitionS5Report("PayrollRTI_RecognitionS5ReportLocator");
 	
 	
 	
