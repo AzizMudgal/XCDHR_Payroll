@@ -8778,6 +8778,10 @@ System.out.println(t.getMessage());
 							Payroll_RecognitionScenarioFive_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition ScenarioFive201718.xlsx");
 							PayrollRecognitionScenario5_Inputsheet = "Payroll Recognition ScenarioFive201718";							
 
+							Payroll_RecognitionScenarioSix_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition ScenarioSix201718.xlsx");
+							PayrollRecognitionScenario6_Inputsheet = "Payroll Recognition ScenarioSix201718";							
+
+							
 							Payroll_RecognitionScenarioSeven_SuiteXls = new Xls_Reader(System.getProperty("user.dir") + "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition ScenarioSeven201718.xlsx");
 							PayrollRecognitionScenario7_Inputsheet = "Payroll Recognition ScenarioSeven201718";
 
