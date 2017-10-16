@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month4;
 
 
 import java.io.File;
@@ -22,15 +22,12 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import atu.webdriver.utils.table.WebTable;
-
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
 
-
-public class TestAprilReports extends TestSuiteBase
+public class TestJulyReports extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -44,17 +41,17 @@ public class TestAprilReports extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(
-					Payroll_RecognitionScenarioSeven_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+					Payroll_RecognitionScenarioFour_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName());
 	}
 
 
@@ -186,10 +183,7 @@ public class TestAprilReports extends TestSuiteBase
 
 						String Forename = table.getTBody().getRow(rownum).getCell(3).getText();
 						System.out.println("Forename is :"+Forename);
-						
-						/*String SecondForename = table.getTBody().getRow(rownum).getCell(4).getText();
-						System.out.println("Forename is :"+SecondForename);*/
-						
+											
 
 						String Surname= table.getTBody().getRow(rownum).getCell(4).getText();
 						System.out.println("Surname is :"+Surname);
@@ -209,121 +203,86 @@ public class TestAprilReports extends TestSuiteBase
 						String currentGender = table.getTBody().getRow(rownum).getCell(9).getText();
 						System.out.println("currentGender is :"+currentGender);
 
-						/*String payrollId= table.getTBody().getRow(rownum).getCell(11).getText();
-						System.out.println("payrollId is :"+payrollId);
+						String leavingDate= table.getTBody().getRow(rownum).getCell(10).getText();
+						System.out.println("leavingDate is :"+leavingDate);
 
-						String payrollIdChanged= table.getTBody().getRow(rownum).getCell(12).getText();
-						System.out.println("payrollIdChanged is :"+payrollIdChanged);
-
-						String oldPayrollId= table.getTBody().getRow(rownum).getCell(13).getText();
-						System.out.println("oldPayrollId is :"+oldPayrollId);
-
-						String leavingDate= table.getTBody().getRow(rownum).getCell(14).getText();
-						System.out.println("leavingDate is :"+leavingDate);*/
-
-						String taxablePay = table.getTBody().getRow(rownum).getCell(10).getText();
+						String taxablePay = table.getTBody().getRow(rownum).getCell(11).getText();
 						System.out.println("taxablePay is :"+taxablePay);
 
-						String totaltax= table.getTBody().getRow(rownum).getCell(11).getText();
+						String totaltax= table.getTBody().getRow(rownum).getCell(12).getText();
 						System.out.println("totaltax is :"+totaltax);
 						
-						/*String totalStudentLoan= table.getTBody().getRow(rownum).getCell(17).getText();
-						System.out.println("startingDeclaration is :"+totalStudentLoan);*/
-
-						String bacsHashcode = table.getTBody().getRow(rownum).getCell(12).getText();
+						
+						String bacsHashcode = table.getTBody().getRow(rownum).getCell(13).getText();
 						System.out.println("bacsHashcode is :"+bacsHashcode);
 
-						String PayFrequency= table.getTBody().getRow(rownum).getCell(13).getText();
+						String PayFrequency= table.getTBody().getRow(rownum).getCell(14).getText();
 						System.out.println("PayFrequency is :"+PayFrequency);
 
-						String paymentDate = table.getTBody().getRow(rownum).getCell(14).getText();
+						String paymentDate = table.getTBody().getRow(rownum).getCell(15).getText();
 						System.out.println("paymentDate is :"+paymentDate);
 
-						String taxMonthNumber= table.getTBody().getRow(rownum).getCell(15).getText();
+						String taxMonthNumber= table.getTBody().getRow(rownum).getCell(16).getText();
 						System.out.println("taxMonthNumber is :"+taxMonthNumber);
 
-						String numberOfEarningsperiodsCovered = table.getTBody().getRow(rownum).getCell(16).getText();
+						String numberOfEarningsperiodsCovered = table.getTBody().getRow(rownum).getCell(17).getText();
 						System.out.println("numberOfEarningsperiodsCovered is :"+numberOfEarningsperiodsCovered);
 
-						String numberOfNormalHoursWorked= table.getTBody().getRow(rownum).getCell(17).getText();
+						String numberOfNormalHoursWorked= table.getTBody().getRow(rownum).getCell(18).getText();
 						System.out.println("numberOfNormalHoursWorked is :"+numberOfNormalHoursWorked);
 
 						
-						String taxCode= table.getTBody().getRow(rownum).getCell(18).getText();
+						String taxCode= table.getTBody().getRow(rownum).getCell(19).getText();
 						System.out.println("taxCode is :"+taxCode);
-						
-						String  taxRegimeIndicator= table.getTBody().getRow(rownum).getCell(19).getText();
-						System.out.println("taxCode is :"+ taxRegimeIndicator);
-												
-						String  week1Month1IndicatorSortedAscending= table.getTBody().getRow(rownum).getCell(20).getText();
-						System.out.println("taxCode is :"+ week1Month1IndicatorSortedAscending);
 
-						String taxablePayInPeriod = table.getTBody().getRow(rownum).getCell(21).getText();
+						
+						String taxablePayInPeriod = table.getTBody().getRow(rownum).getCell(20).getText();
 						System.out.println("taxablePayInPeriod is :"+taxablePayInPeriod);
 
-						String payAfterStatutoryDeductions= table.getTBody().getRow(rownum).getCell(22).getText();
+						
+						String payAfterStatutoryDeductions= table.getTBody().getRow(rownum).getCell(21).getText();
 						System.out.println("payAfterStatutoryDeductions is :"+payAfterStatutoryDeductions);
 						
-						/*String studentLoanRepymt = table.getTBody().getRow(rownum).getCell(27).getText();
-						System.out.println("taxBasis is :"+studentLoanRepymt);*/
-
-						String taxDeductedORrefunded = table.getTBody().getRow(rownum).getCell(23).getText();
+					
+						String taxDeductedORrefunded = table.getTBody().getRow(rownum).getCell(22).getText();
 						System.out.println("taxDeductedORrefunded is :"+taxDeductedORrefunded);
-							
-						/*String SMPYtd = table.getTBody().getRow(rownum).getCell(29).getText();
-						System.out.println("taxBasis is :"+SMPYtd);
-
-						String ShPPYtd = table.getTBody().getRow(rownum).getCell(30).getText();
-						System.out.println("taxBasis is :"+ShPPYtd);
-
-						String PartnerSurname = table.getTBody().getRow(rownum).getCell(31).getText();
-						System.out.println("taxBasis is :"+PartnerSurname);
-
-						String PartnerForename = table.getTBody().getRow(rownum).getCell(32).getText();
-						System.out.println("taxBasis is :"+PartnerForename);
-
-						String Partner2ndForename = table.getTBody().getRow(rownum).getCell(33).getText();
-						System.out.println("taxBasis is :"+Partner2ndForename);
-
-						String PartnerNINO = table.getTBody().getRow(rownum).getCell(34).getText();
-						System.out.println("taxBasis is :"+PartnerNINO);
-
-						String niCategory= table.getTBody().getRow(rownum).getCell(35).getText();
+									
+						String niCategory= table.getTBody().getRow(rownum).getCell(23).getText();
 						System.out.println("niCategory is :"+niCategory);
 
-						String grossEarningsNICsInPeriod = table.getTBody().getRow(rownum).getCell(36).getText();
+						String grossEarningsNICsInPeriod = table.getTBody().getRow(rownum).getCell(24).getText();
 						System.out.println("grossEarningsNICsInPeriod is :"+grossEarningsNICsInPeriod);
 
-						String grossEarningsNICsInYTD= table.getTBody().getRow(rownum).getCell(37).getText();
+						String grossEarningsNICsInYTD= table.getTBody().getRow(rownum).getCell(25).getText();
 						System.out.println("grossEarningsNICsInYTD is :"+grossEarningsNICsInYTD);
 
-						String earningsAtLowerEarningslimitYTD = table.getTBody().getRow(rownum).getCell(38).getText();
+						String earningsAtLowerEarningslimitYTD = table.getTBody().getRow(rownum).getCell(26).getText();
 						System.out.println("earningsAtLowerEarningslimitYTD is :"+earningsAtLowerEarningslimitYTD);
 
-						String earningsLELUpToIncludingPTYTD= table.getTBody().getRow(rownum).getCell(39).getText();
+						String earningsLELUpToIncludingPTYTD= table.getTBody().getRow(rownum).getCell(27).getText();
 						System.out.println("earningsLELUpToIncludingPTYTD is :"+earningsLELUpToIncludingPTYTD);
-
-						String earningsPTIncludingUELYTD = table.getTBody().getRow(rownum).getCell(40).getText();
+						
+						String earningsPTIncludingUELYTD = table.getTBody().getRow(rownum).getCell(28).getText();
 						System.out.println("earningsPTIncludingUELYTD is :"+earningsPTIncludingUELYTD);
 
-						String totalOfEmployerContributions= table.getTBody().getRow(rownum).getCell(41).getText();
+						String totalOfEmployerContributions= table.getTBody().getRow(rownum).getCell(29).getText();
 						System.out.println("totalOfEmployerContributions is :"+totalOfEmployerContributions);
 
-						String totalOfEmployerContributionsYTD= table.getTBody().getRow(rownum).getCell(42).getText();
+						String totalOfEmployerContributionsYTD= table.getTBody().getRow(rownum).getCell(30).getText();
 						System.out.println("totalOfEmployerContributionsYTD is :"+totalOfEmployerContributionsYTD);
 
-						String employeeContributionsPayable= table.getTBody().getRow(rownum).getCell(43).getText();
+						String employeeContributionsPayable= table.getTBody().getRow(rownum).getCell(31).getText();
 						System.out.println("employeeContributionsPayable is :"+employeeContributionsPayable);
 
-						String employeeContributionsPayableYTD= table.getTBody().getRow(rownum).getCell(44).getText();
-						System.out.println("employeeContributionsPayableYTD is :"+employeeContributionsPayableYTD);*/
+						String employeeContributionsPayableYTD= table.getTBody().getRow(rownum).getCell(32).getText();
+						System.out.println("employeeContributionsPayableYTD is :"+employeeContributionsPayableYTD);
 						
 						//call the functions which reads the excel sheet.
-						ReadsExpectedData1(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxRegimeIndicator,week1Month1IndicatorSortedAscending,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData1(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						ReadsExpectedData11a(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxRegimeIndicator,week1Month1IndicatorSortedAscending,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData11a(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						ReadsExpectedData11(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxRegimeIndicator,week1Month1IndicatorSortedAscending,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData11(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,dateOfBirth,currentGender,leavingDate,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 					}
 					rownum++;
 				}
@@ -337,7 +296,7 @@ public class TestAprilReports extends TestSuiteBase
 
 
 
-	public void ReadsExpectedData1(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String taxRegimeIndicator,String week1Month1IndicatorSortedAscending,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData1(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		DecimalFormat df = new DecimalFormat("###.#");
@@ -373,8 +332,6 @@ public class TestAprilReports extends TestSuiteBase
 		System.out.println("The converted integer TestReportWorksheet value is  :"+expctdRowIntValue);
 
 
-
-
 		for(int i =expctdRowIntValue; i< rowNum1; i++) // getting the expected data from expected result data row
 		{
 			Row row = ws.getRow(i);
@@ -402,7 +359,6 @@ public class TestAprilReports extends TestSuiteBase
 			value22 = cellToString(row.getCell(22));
 			value23 = cellToString(row.getCell(23));
 			value24 = cellToString(row.getCell(24));
-			/*value24 = cellToString(row.getCell(24));
 			value25 = cellToString(row.getCell(25));
 			value26 = cellToString(row.getCell(26));
 			value27 = cellToString(row.getCell(27));
@@ -412,19 +368,8 @@ public class TestAprilReports extends TestSuiteBase
 			value31 = cellToString(row.getCell(31));
 			value32 = cellToString(row.getCell(32));
 			value33 = cellToString(row.getCell(33));
-			value34 = cellToString(row.getCell(34));
-			value35 = cellToString(row.getCell(35));
-			value36 = cellToString(row.getCell(36));
-			value37 = cellToString(row.getCell(37));
-			value38 = cellToString(row.getCell(38));
-			value39 = cellToString(row.getCell(39));
-			value40 = cellToString(row.getCell(40));
-			value41 = cellToString(row.getCell(41));
-			value42 = cellToString(row.getCell(42));
-			value43 = cellToString(row.getCell(43));
-			value44 = cellToString(row.getCell(44));
-			value45 = cellToString(row.getCell(45));
-*/
+		
+			
 			if(value1 != null && value1.equalsIgnoreCase(firstCellOfBody))
 			{
 				System.out.println("The employee name got matched");
@@ -437,11 +382,9 @@ public class TestAprilReports extends TestSuiteBase
 		webdata.close();
 		fis.close();
 	}
-
-	
 	
 
-	public void ReadsExpectedData11a(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String taxRegimeIndicator,String week1Month1IndicatorSortedAscending,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData11a(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		DecimalFormat df = new DecimalFormat("###.#");
@@ -492,23 +435,36 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(8).setCellValue(ukPostcode);
 				row.createCell(9).setCellValue(dateOfBirth);
 				row.createCell(10).setCellValue(currentGender);
-				row.createCell(11).setCellValue(taxablePay);
-				row.createCell(12).setCellValue(totaltax);
-				row.createCell(13).setCellValue(bacsHashcode);
 
-				row.createCell(14).setCellValue(PayFrequency);
-				row.createCell(15).setCellValue(paymentDate);
-				row.createCell(16).setCellValue(taxMonthNumber);
-				row.createCell(17).setCellValue(numberOfEarningsperiodsCovered);
-				row.createCell(18).setCellValue(numberOfNormalHoursWorked);
-				row.createCell(19).setCellValue(taxCode);
-				row.createCell(20).setCellValue(taxRegimeIndicator);
-				row.createCell(21).setCellValue(week1Month1IndicatorSortedAscending);
 				
-				row.createCell(22).setCellValue(taxablePayInPeriod);
-				row.createCell(23).setCellValue(payAfterStatutoryDeductions);
-				row.createCell(24).setCellValue(taxDeductedORrefunded);
-						
+				row.createCell(11).setCellValue(leavingDate);
+				row.createCell(12).setCellValue(taxablePay);
+				
+				row.createCell(13).setCellValue(totaltax);
+				row.createCell(14).setCellValue(bacsHashcode);
+
+				row.createCell(15).setCellValue(PayFrequency);
+				row.createCell(16).setCellValue(paymentDate);
+				row.createCell(17).setCellValue(taxMonthNumber);
+				row.createCell(18).setCellValue(numberOfEarningsperiodsCovered);
+				row.createCell(19).setCellValue(numberOfNormalHoursWorke);
+				row.createCell(20).setCellValue(taxCode);
+				row.createCell(21).setCellValue(taxablePayInPeriod);
+				row.createCell(22).setCellValue(payAfterStatutoryDeductions);
+				row.createCell(23).setCellValue(taxDeductedORrefunded);
+				row.createCell(24).setCellValue(niCategory);
+				row.createCell(25).setCellValue(grossEarningsNICsInPeriod);
+
+				row.createCell(26).setCellValue(grossEarningsNICsInYTD);
+				row.createCell(27).setCellValue(earningsAtLowerEarningslimitYTD);
+				row.createCell(28).setCellValue(earningsLELUpToIncludingPTYTD);
+
+				row.createCell(29).setCellValue(earningsPTIncludingUELYTD);
+				row.createCell(30).setCellValue(totalOfEmployerContributions);
+				row.createCell(31).setCellValue(totalOfEmployerContributionsYTD);
+
+				row.createCell(32).setCellValue(employeeContributionsPayable);
+				row.createCell(33).setCellValue(employeeContributionsPayableYTD);
 				System.out.println("pasted actual Result data into the test result excel file");
 				break;
 			}
@@ -517,11 +473,9 @@ public class TestAprilReports extends TestSuiteBase
 		webdata.close();
 		fis.close();
 	}
-
-
 	
 	
-	public void ReadsExpectedData11(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String taxRegimeIndicator,String week1Month1IndicatorSortedAscending,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData11(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String dateOfBirth,String currentGender,String leavingDate,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorke,String taxCode,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 	System.out.println("This is ReadExpected data1");
 	double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
@@ -600,8 +554,7 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(4).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			
+					
 
 			if(value5 != null && value5.equalsIgnoreCase(Surname))
 			{
@@ -679,10 +632,10 @@ public class TestAprilReports extends TestSuiteBase
 				Cell cell1 = row.createCell(10);
 				row.createCell(10).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
-			}	
-
+			}
 			
-			if(value11 != null && value11.equalsIgnoreCase(taxablePay))
+
+			if(value11 != null && value11.equalsIgnoreCase(leavingDate))
 			{
 				Cell cell1 = row.createCell(11);			
 				row.createCell(11).setCellValue("TRUE");
@@ -695,7 +648,8 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value12 != null && value12.equalsIgnoreCase(totaltax))
+			
+			if(value12 != null && value12.equalsIgnoreCase(taxablePay))
 			{
 				Cell cell1 = row.createCell(12);			
 				row.createCell(12).setCellValue("TRUE");
@@ -707,10 +661,8 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(12).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-		
 
-			
-			if(value13 != null && value13.equalsIgnoreCase(bacsHashcode))
+			if(value13 != null && value13.equalsIgnoreCase(totaltax))
 			{
 				Cell cell1 = row.createCell(13);			
 				row.createCell(13).setCellValue("TRUE");
@@ -722,8 +674,8 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(13).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-
-			if(value14 != null && value14.equalsIgnoreCase(PayFrequency))
+					
+			if(value14 != null && value14.equalsIgnoreCase(bacsHashcode))
 			{
 				Cell cell1 = row.createCell(14);			
 				row.createCell(14).setCellValue("TRUE");
@@ -736,7 +688,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value15 != null && value15.equalsIgnoreCase(paymentDate))
+			if(value15 != null && value15.equalsIgnoreCase(PayFrequency))
 			{
 				Cell cell1 = row.createCell(15);			
 				row.createCell(15).setCellValue("TRUE");
@@ -748,9 +700,8 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(15).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
 
-			if(value16 != null && value16.equalsIgnoreCase(taxMonthNumber))
+			if(value16 != null && value16.equalsIgnoreCase(paymentDate))
 			{
 				Cell cell1 = row.createCell(16);			
 				row.createCell(16).setCellValue("TRUE");
@@ -763,9 +714,8 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 			
-			
 
-			if(value17 != null && value17.equalsIgnoreCase(numberOfEarningsperiodsCovered))
+			if(value17 != null && value17.equalsIgnoreCase(taxMonthNumber))
 			{
 				Cell cell1 = row.createCell(17);			
 				row.createCell(17).setCellValue("TRUE");
@@ -777,8 +727,9 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(17).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			if(value18 != null && value18.equalsIgnoreCase(numberOfNormalHoursWorked))
+					
+
+			if(value18 != null && value18.equalsIgnoreCase(numberOfEarningsperiodsCovered))
 			{
 				Cell cell1 = row.createCell(18);			
 				row.createCell(18).setCellValue("TRUE");
@@ -790,9 +741,9 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(18).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			
-			if(value19 != null && value19.equalsIgnoreCase(taxCode))
+					
+
+			if(value19 != null && value19.equalsIgnoreCase(numberOfNormalHoursWorke))
 			{
 				Cell cell1 = row.createCell(19);			
 				row.createCell(19).setCellValue("TRUE");
@@ -804,8 +755,9 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(19).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			if(value20 != null && value20.equalsIgnoreCase(taxRegimeIndicator))
+					
+
+			if(value20 != null && value20.equalsIgnoreCase(taxCode))
 			{
 				Cell cell1 = row.createCell(20);			
 				row.createCell(20).setCellValue("TRUE");
@@ -818,7 +770,9 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 			
-			if(value21 != null && value21.equalsIgnoreCase(week1Month1IndicatorSortedAscending))
+			
+
+			if(value21 != null && value21.equalsIgnoreCase(taxablePayInPeriod))
 			{
 				Cell cell1 = row.createCell(21);			
 				row.createCell(21).setCellValue("TRUE");
@@ -830,10 +784,9 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(21).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			
+						
 
-			if(value22 != null && value22.equalsIgnoreCase(taxablePayInPeriod))
+			if(value22 != null && value22.equalsIgnoreCase(payAfterStatutoryDeductions))
 			{
 				Cell cell1 = row.createCell(22);			
 				row.createCell(22).setCellValue("TRUE");
@@ -846,9 +799,7 @@ public class TestAprilReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 			
-			
-
-			if(value23 != null && value23.equalsIgnoreCase(payAfterStatutoryDeductions))
+			if(value23 != null && value23.equalsIgnoreCase(taxDeductedORrefunded))
 			{
 				Cell cell1 = row.createCell(23);			
 				row.createCell(23).setCellValue("TRUE");
@@ -860,9 +811,10 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(23).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-						
+			
+			
 
-			if(value24 != null && value24.equalsIgnoreCase(taxDeductedORrefunded))
+			if(value24 != null && value24.equalsIgnoreCase(niCategory))
 			{
 				Cell cell1 = row.createCell(24);			
 				row.createCell(24).setCellValue("TRUE");
@@ -874,7 +826,124 @@ public class TestAprilReports extends TestSuiteBase
 				row.createCell(24).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-						
+
+			if(value25 != null && value25.equalsIgnoreCase(grossEarningsNICsInPeriod))
+			{
+				Cell cell1 = row.createCell(25);			
+				row.createCell(25).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(25);
+				row.createCell(25).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+			
+			
+			if(value26 != null && value26.equalsIgnoreCase(grossEarningsNICsInYTD))
+			{
+				Cell cell1 = row.createCell(26);			
+				row.createCell(26).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(26);
+				row.createCell(26).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value27 != null && value27.equalsIgnoreCase(earningsAtLowerEarningslimitYTD))
+			{
+				Cell cell1 = row.createCell(27);			
+				row.createCell(27).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(27);
+				row.createCell(27).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value28 != null && value28.equalsIgnoreCase(earningsLELUpToIncludingPTYTD))
+			{
+				Cell cell1 = row.createCell(28);			
+				row.createCell(28).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(28);
+				row.createCell(28).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value29 != null && value29.equalsIgnoreCase(earningsPTIncludingUELYTD))
+			{
+				Cell cell1 = row.createCell(29);			
+				row.createCell(29).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(29);
+				row.createCell(29).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value30 != null && value30.equalsIgnoreCase(totalOfEmployerContributions))
+			{
+				Cell cell1 = row.createCell(30);			
+				row.createCell(30).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(30);
+				row.createCell(30).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value31 != null && value31.equalsIgnoreCase(totalOfEmployerContributionsYTD))
+			{
+				Cell cell1 = row.createCell(31);			
+				row.createCell(31).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(31);
+				row.createCell(31).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value32 != null && value32.equalsIgnoreCase(employeeContributionsPayable))
+			{
+				Cell cell1 = row.createCell(32);			
+				row.createCell(32).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(32);
+				row.createCell(32).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value33 != null && value33.equalsIgnoreCase(employeeContributionsPayableYTD))
+			{
+				Cell cell1 = row.createCell(33);			
+				row.createCell(33).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(33);
+				row.createCell(33).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
 			break;
 		}
 	}	
@@ -883,7 +952,7 @@ public class TestAprilReports extends TestSuiteBase
 	webdata.close();
 	fis.close();
 	}
-
+	
 
 	public String cellToString(Cell cell)
 	{
@@ -912,15 +981,13 @@ public class TestAprilReports extends TestSuiteBase
 	}
 
 	
-	
-	
 
 
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_RecognitionScenarioSeven_SuiteXls,"TestAprilReports");
+		return Test_Util.getData(Payroll_RecognitionScenarioFour_SuiteXls,"TestJulyReports");
 	}
 
 
@@ -931,16 +998,16 @@ public class TestAprilReports extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if(Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}
 		else if(Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -956,11 +1023,11 @@ public class TestAprilReports extends TestSuiteBase
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioSeven_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFour_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioSeven_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioSeven_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_RecognitionScenarioFour_SuiteXls, "first", Test_Util.GetRowNum(Payroll_RecognitionScenarioFour_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}
 		System.out.println("closing the browser");
 		closeBrowser();
