@@ -329,6 +329,8 @@ public class TestBase {
 	public static String PayrollRTI_RecognitionS2Report="DO NOT TOUCH PAYROL RTI SCENRIO2 REPORT";
 	public static String PayrollRTI_RecognitionS3Report="DO NOT TOUCH PAYROL RTI SCENRIO3 REPORT";
 	public static String PayrollRTI_RecognitionS4Report="DO NOT TOUCH PAYROL RTI SCENRIO4 REPORT";
+	public static String PayrollRTI_RecognitionS5Report="DO NOT TOUCH PAYROL RTI SCENRIO5 REPORT";
+	public static String PayrollRTI_RecognitionS6Report="DO NOT TOUCH PAYROL RTI SCENRIO6 REPORT";
 	public static String PayrollRTI_RecognitionS7Report="DO NOT TOUCH PAYROL RTI SCENRIO7 REPORT";
 													
 	
@@ -6515,13 +6517,16 @@ public	int rowMatched1=0;
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS4Report)){
 			rpName="PayrollRTI_RecognitionS4Report";
 		}
-		
-<<<<<<< Upstream, based on origin/master
-=======
+		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS5Report)){
+			rpName="PayrollRTI_RecognitionS5Report";
+		}
+		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS6Report)){
+			rpName="PayrollRTI_RecognitionS6Report";
+		}
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS7Report)){
 			rpName="PayrollRTI_RecognitionS7Report";
 		}
->>>>>>> 0d9b500 RTI Scenario7 Reporting Code Checking
+
 		return rpName;
 	}
 	
