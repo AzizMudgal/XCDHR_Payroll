@@ -22,7 +22,6 @@ public class ProcessFinalPayrollForFeb extends TestSuiteBase
 	public static boolean Skip = false;
 	public static boolean IsTestPass = true;
 
-	
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
@@ -61,8 +60,6 @@ public class ProcessFinalPayrollForFeb extends TestSuiteBase
 	boolean exlude = true;
 	boolean compensationFirsttimeView = true;
 	boolean shouldOpenBrowser = true;
-	
-	
 
 	@Test(dataProvider = "getData")
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable

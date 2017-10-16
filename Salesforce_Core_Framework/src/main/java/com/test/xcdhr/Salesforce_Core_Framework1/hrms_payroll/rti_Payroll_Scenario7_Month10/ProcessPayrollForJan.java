@@ -8,7 +8,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
+import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ProcessPayrollForApril;
 
 
 
@@ -59,8 +61,6 @@ public class ProcessPayrollForJan extends TestSuiteBase
 	boolean exlude = true;
 	boolean compensationFirsttimeView = true;
 	boolean shouldOpenBrowser = true;
-	
-	
 
 	@Test(dataProvider = "getData")
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
@@ -73,6 +73,7 @@ public class ProcessPayrollForJan extends TestSuiteBase
 			throw new SkipException("Runmode for Test set data is set to 'NO' "
 					+ count);
 		}
+
 		if (shouldOpenBrowser)
 		{
 			shouldOpenBrowser = false;
@@ -98,7 +99,7 @@ public class ProcessPayrollForJan extends TestSuiteBase
 			Thread.sleep(3000L);
 			System.out.println("Since the app is not displaying employee records same"
 					+ " as excel file employees of this Tax worksheet");
-			ProcessPayrollForJan obj1 = new ProcessPayrollForJan();
+			ProcessPayrollForApril obj1 = new ProcessPayrollForApril();
 			for(Repeat=2; Repeat < 5; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
@@ -167,6 +168,5 @@ public class ProcessPayrollForJan extends TestSuiteBase
 		}
 		closeBrowser();
 	}
-
 }
 

@@ -82,8 +82,8 @@ public class ProcessFinalPayrollForJuly extends TestSuiteBase
 			{
 				System.out
 				.println("The test script logged in successfully into salesforce account");
-				System.out.println("The script now looks forward to execute the GENERATE FINAL PAYROLL functionality");
 				System.out.println("");
+				//PayrollForMonthlyTax(AugustMonth);
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 				// in base class need to update the method with new parameter
 			}
@@ -94,7 +94,6 @@ public class ProcessFinalPayrollForJuly extends TestSuiteBase
 			}
 		}
 		generateFinalDraft();
-		
 	}
 
 	
