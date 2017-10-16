@@ -3,15 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ProcessPayrollForApril">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month2.ProcessPayrollForMay">
         <methods>
           <include name="CheckSuiteSkip"/>
           <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
           <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ProcessPayrollForApril -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month2.ProcessPayrollForMay -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
