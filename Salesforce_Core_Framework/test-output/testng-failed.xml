@@ -3,23 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< Upstream, based on origin/master
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month2.ProcessPayrollForMay">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan">
->>>>>>> abed606 RTI Scenario 5 code Changes
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ExecuteQuery">
         <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportTestResult"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckSuiteSkip"/>
-          <include name="CheckTestSkip"/>
+          <include name="queryExecute"/>
         </methods>
-<<<<<<< Upstream, based on origin/master
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month2.ProcessPayrollForMay -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan -->
->>>>>>> abed606 RTI Scenario 5 code Changes
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ExecuteQuery -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

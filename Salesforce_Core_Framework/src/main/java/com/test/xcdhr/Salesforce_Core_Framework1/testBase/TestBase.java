@@ -118,6 +118,7 @@ public class TestBase {
 	public String value45;
 	
 	public String pymtAftrLeavingDate;
+	public String StudntLoanInd;
 	public String paymentAfterLeaving;
 
 	public String firstCellOfBody;
@@ -330,11 +331,8 @@ public class TestBase {
 	public static String PayrollRTI_RecognitionS3Report="DO NOT TOUCH PAYROL RTI SCENRIO3 REPORT";
 	public static String PayrollRTI_RecognitionS4Report="DO NOT TOUCH PAYROL RTI SCENRIO4 REPORT";
 	public static String PayrollRTI_RecognitionS5Report="DO NOT TOUCH PAYROL RTI SCENRIO5 REPORT";
-<<<<<<< Upstream, based on origin/master
 	public static String PayrollRTI_RecognitionS6Report="DO NOT TOUCH PAYROL RTI SCENRIO6 REPORT";
-=======
 	public static String PayrollRTI_RecognitionS5Report_ReJoin="DO NOT TOUCH PAYROL RTI SCENRIO5 REJOIN";
->>>>>>> abed606 RTI Scenario 5 code Changes
 	public static String PayrollRTI_RecognitionS7Report="DO NOT TOUCH PAYROL RTI SCENRIO7 REPORT";
 	public static String PayrollRTI_RecognitionS7Report_JuneToMarch="DO NOT TOUCH PAYROL RTI SCENRIO71 REPORT";
 													
@@ -6522,14 +6520,12 @@ public	int rowMatched1=0;
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS4Report)){
 			rpName="PayrollRTI_RecognitionS4Report";
 		}
-<<<<<<< Upstream, based on origin/master
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS5Report)){
 			rpName="PayrollRTI_RecognitionS5Report";
 		}
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS6Report)){
 			rpName="PayrollRTI_RecognitionS6Report";
 		}
-=======
 		
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS5Report)){
 			rpName="PayrollRTI_RecognitionS5Report";
@@ -6539,18 +6535,14 @@ public	int rowMatched1=0;
 			rpName="PayrollRTI_RecognitionS5Report_ReJoin";
 		}
 		
->>>>>>> abed606 RTI Scenario 5 code Changes
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS7Report)){
 			rpName="PayrollRTI_RecognitionS7Report";
 		}
-<<<<<<< Upstream, based on origin/master
 
-=======
 		
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS7Report_JuneToMarch)){
 			rpName="PayrollRTI_RecognitionS7Report_JuneToMarch";
 		}
->>>>>>> abed606 RTI Scenario 5 code Changes
 		return rpName;
 	}
 	

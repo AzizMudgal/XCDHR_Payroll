@@ -289,6 +289,25 @@ public class TestMarchReports extends TestSuiteBase
 						String employeeContributionsPayableYTD= table.getTBody().getRow(rownum).getCell(37).getText();
 						System.out.println("employeeContributionsPayableYTD is :"+employeeContributionsPayableYTD);
 						
+						/*
+						 * to check whether studentLoan Indicator is checked or not
+						 * 
+						 */
+						WebElement clkchkbox = driver.findElement(By.xpath(OR.getProperty("StudentLoanIndicator")));
+						String SLD = clkchkbox.getAttribute("title");
+						System.out.println("the value of the title is :"+SLD);
+						if(SLD.equalsIgnoreCase("Not Checked"))
+						{
+							StudntLoanInd = "No";
+						System.out.println("the Student loan indicator is :"+StudntLoanInd);
+						}
+						else if(SLD.equalsIgnoreCase("Checked"))
+						{
+							StudntLoanInd = "Yes";
+						System.out.println("the Student loan indicator is :"+StudntLoanInd);
+						}
+						
+						
 						//call the functions which reads the excel sheet.
 						ReadsExpectedData1(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,addressLine3,ukPostcode,dateOfBirth,currentGender,PayrollId,StDate,TwntyFourAStartDecln,StudntLoanInd,taxablePay,totaltax,StudntLoan,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxablePayInPeriod,payAfterStatutoryDeductions,StudntLoanInPerod,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
@@ -608,20 +627,7 @@ public class TestMarchReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value7 != null && value7.equalsIgnoreCase(addressLine3))
-			{
-				Cell cell1 = row.createCell(7);			
-				row.createCell(7).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(7);
-				row.createCell(7).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			
-			if(value8 != null && value8.equalsIgnoreCase(ukPostcode))
+			if(value8 != null && value8.equalsIgnoreCase(addressLine3))
 			{
 				Cell cell1 = row.createCell(8);			
 				row.createCell(8).setCellValue("TRUE");
@@ -633,8 +639,8 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(8).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-
-			if(value9 != null && value9.equalsIgnoreCase(dateOfBirth))
+			
+			if(value9 != null && value9.equalsIgnoreCase(ukPostcode))
 			{
 				Cell cell1 = row.createCell(9);			
 				row.createCell(9).setCellValue("TRUE");
@@ -647,7 +653,7 @@ public class TestMarchReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value10 != null && value10.equalsIgnoreCase(currentGender))
+			if(value10 != null && value10.equalsIgnoreCase(dateOfBirth))
 			{
 				Cell cell1 = row.createCell(10);			
 				row.createCell(10).setCellValue("TRUE");
@@ -659,69 +665,22 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(10).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			////
-			if(value10 != null && value10.equalsIgnoreCase(PayrollId))
-			{
-				Cell cell1 = row.createCell(10);			
-				row.createCell(10).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(10);
-				row.createCell(10).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			
-			if(value10 != null && value10.equalsIgnoreCase(StDate))
-			{
-				Cell cell1 = row.createCell(10);			
-				row.createCell(10).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(10);
-				row.createCell(10).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			
-			if(value10 != null && value10.equalsIgnoreCase(TwntyFourAStartDecln))
-			{
-				Cell cell1 = row.createCell(10);			
-				row.createCell(10).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(10);
-				row.createCell(10).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			
-			if(value10 != null && value10.equalsIgnoreCase(StudntLoanInd))
-			{
-				Cell cell1 = row.createCell(10);			
-				row.createCell(10).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(10);
-				row.createCell(10).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			
-		//	row.createCell(12).setCellValue(PayrollId);
-			//row.createCell(13).setCellValue(StDate);
-			//row.createCell(14).setCellValue(TwntyFourAStartDecln);
-			//row.createCell(15).setCellValue(StudntLoanInd);
-			////
-		
 
+			if(value11 != null && value11.equalsIgnoreCase(currentGender))
+			{
+				Cell cell1 = row.createCell(11);			
+				row.createCell(11).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(11);
+				row.createCell(11).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
 			
-			if(value12 != null && value12.equalsIgnoreCase(taxablePay))
+			////
+			if(value12 != null && value12.equalsIgnoreCase(PayrollId))
 			{
 				Cell cell1 = row.createCell(12);			
 				row.createCell(12).setCellValue("TRUE");
@@ -733,8 +692,8 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(12).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-
-			if(value13 != null && value13.equalsIgnoreCase(totaltax))
+			
+			if(value13 != null && value13.equalsIgnoreCase(StDate))
 			{
 				Cell cell1 = row.createCell(13);			
 				row.createCell(13).setCellValue("TRUE");
@@ -746,10 +705,27 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(13).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-					
 			
-
-			if(value15 != null && value15.equalsIgnoreCase(PayFrequency))
+			if(value14 != null && value14.equalsIgnoreCase(TwntyFourAStartDecln))
+			{
+				Cell cell1 = row.createCell(14);			
+				row.createCell(14).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(14);
+				row.createCell(14).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+		
+			/*
+			 * 
+			 * SMALL twik needs to be done
+			 */
+			
+			
+			if(value15 != null && value15.equalsIgnoreCase(StudntLoanInd))
 			{
 				Cell cell1 = row.createCell(15);			
 				row.createCell(15).setCellValue("TRUE");
@@ -761,8 +737,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(15).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-
-			if(value16 != null && value16.equalsIgnoreCase(paymentDate))
+			
+		
+			if(value16 != null && value16.equalsIgnoreCase(taxablePay))
 			{
 				Cell cell1 = row.createCell(16);			
 				row.createCell(16).setCellValue("TRUE");
@@ -774,9 +751,8 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(16).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
 
-			if(value17 != null && value17.equalsIgnoreCase(taxMonthNumber))
+			if(value17 != null && value17.equalsIgnoreCase(totaltax))
 			{
 				Cell cell1 = row.createCell(17);			
 				row.createCell(17).setCellValue("TRUE");
@@ -788,9 +764,8 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(17).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-					
-
-			if(value18 != null && value18.equalsIgnoreCase(numberOfEarningsperiodsCovered))
+			//StudntLoan		
+			if(value18 != null && value18.equalsIgnoreCase(StudntLoan))
 			{
 				Cell cell1 = row.createCell(18);			
 				row.createCell(18).setCellValue("TRUE");
@@ -802,9 +777,8 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(18).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-					
 
-			if(value19 != null && value19.equalsIgnoreCase(numberOfNormalHoursWorke))
+			if(value19 != null && value19.equalsIgnoreCase(PayFrequency))
 			{
 				Cell cell1 = row.createCell(19);			
 				row.createCell(19).setCellValue("TRUE");
@@ -816,9 +790,8 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(19).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-					
 
-			if(value20 != null && value20.equalsIgnoreCase(taxCode))
+			if(value20 != null && value20.equalsIgnoreCase(paymentDate))
 			{
 				Cell cell1 = row.createCell(20);			
 				row.createCell(20).setCellValue("TRUE");
@@ -831,9 +804,8 @@ public class TestMarchReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 			
-			
 
-			if(value21 != null && value21.equalsIgnoreCase(taxablePayInPeriod))
+			if(value21 != null && value21.equalsIgnoreCase(taxMonthNumber))
 			{
 				Cell cell1 = row.createCell(21);			
 				row.createCell(21).setCellValue("TRUE");
@@ -845,9 +817,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(21).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-						
+					
 
-			if(value22 != null && value22.equalsIgnoreCase(payAfterStatutoryDeductions))
+			if(value22 != null && value22.equalsIgnoreCase(numberOfEarningsperiodsCovered))
 			{
 				Cell cell1 = row.createCell(22);			
 				row.createCell(22).setCellValue("TRUE");
@@ -859,22 +831,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(22).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			if(value22 != null && value22.equalsIgnoreCase(StudntLoanInPerod))
-			{
-				Cell cell1 = row.createCell(22);			
-				row.createCell(22).setCellValue("TRUE");
-				cell1.setCellStyle(style);
-			}
-			else
-			{
-				Cell cell1 = row.createCell(22);
-				row.createCell(22).setCellValue("FALSE");
-				cell1.setCellStyle(styleFalse);
-			}
-			
-			//StudntLoanInPerod
-			if(value23 != null && value23.equalsIgnoreCase(taxDeductedORrefunded))
+					
+
+			if(value23 != null && value23.equalsIgnoreCase(numberOfNormalHoursWorke))
 			{
 				Cell cell1 = row.createCell(23);			
 				row.createCell(23).setCellValue("TRUE");
@@ -886,9 +845,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(23).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-				
+					
 
-			if(value24 != null && value24.equalsIgnoreCase(niCategory))
+			if(value24 != null && value24.equalsIgnoreCase(taxCode))
 			{
 				Cell cell1 = row.createCell(24);			
 				row.createCell(24).setCellValue("TRUE");
@@ -900,8 +859,10 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(24).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
+			
+			
 
-			if(value25 != null && value25.equalsIgnoreCase(grossEarningsNICsInPeriod))
+			if(value25 != null && value25.equalsIgnoreCase(taxablePayInPeriod))
 			{
 				Cell cell1 = row.createCell(25);			
 				row.createCell(25).setCellValue("TRUE");
@@ -913,9 +874,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(25).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-			
-			
-			if(value26 != null && value26.equalsIgnoreCase(grossEarningsNICsInYTD))
+						
+
+			if(value26 != null && value26.equalsIgnoreCase(payAfterStatutoryDeductions))
 			{
 				Cell cell1 = row.createCell(26);			
 				row.createCell(26).setCellValue("TRUE");
@@ -927,8 +888,8 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(26).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-
-			if(value27 != null && value27.equalsIgnoreCase(earningsAtLowerEarningslimitYTD))
+			
+			if(value27 != null && value27.equalsIgnoreCase(StudntLoanInPerod))
 			{
 				Cell cell1 = row.createCell(27);			
 				row.createCell(27).setCellValue("TRUE");
@@ -940,8 +901,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(27).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-
-			if(value28 != null && value28.equalsIgnoreCase(earningsLELUpToIncludingPTYTD))
+			
+			//StudntLoanInPerod
+			if(value28 != null && value28.equalsIgnoreCase(taxDeductedORrefunded))
 			{
 				Cell cell1 = row.createCell(28);			
 				row.createCell(28).setCellValue("TRUE");
@@ -953,8 +915,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(28).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
+				
 
-			if(value29 != null && value29.equalsIgnoreCase(earningsPTIncludingUELYTD))
+			if(value29 != null && value29.equalsIgnoreCase(niCategory))
 			{
 				Cell cell1 = row.createCell(29);			
 				row.createCell(29).setCellValue("TRUE");
@@ -967,7 +930,7 @@ public class TestMarchReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value30 != null && value30.equalsIgnoreCase(totalOfEmployerContributions))
+			if(value30 != null && value30.equalsIgnoreCase(grossEarningsNICsInPeriod))
 			{
 				Cell cell1 = row.createCell(30);			
 				row.createCell(30).setCellValue("TRUE");
@@ -979,8 +942,9 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(30).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
-
-			if(value31 != null && value31.equalsIgnoreCase(totalOfEmployerContributionsYTD))
+			
+			
+			if(value31 != null && value31.equalsIgnoreCase(grossEarningsNICsInYTD))
 			{
 				Cell cell1 = row.createCell(31);			
 				row.createCell(31).setCellValue("TRUE");
@@ -993,7 +957,7 @@ public class TestMarchReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value32 != null && value32.equalsIgnoreCase(employeeContributionsPayable))
+			if(value32 != null && value32.equalsIgnoreCase(earningsAtLowerEarningslimitYTD))
 			{
 				Cell cell1 = row.createCell(32);			
 				row.createCell(32).setCellValue("TRUE");
@@ -1006,7 +970,7 @@ public class TestMarchReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 
-			if(value33 != null && value33.equalsIgnoreCase(employeeContributionsPayableYTD))
+			if(value33 != null && value33.equalsIgnoreCase(earningsLELUpToIncludingPTYTD))
 			{
 				Cell cell1 = row.createCell(33);			
 				row.createCell(33).setCellValue("TRUE");
@@ -1016,6 +980,71 @@ public class TestMarchReports extends TestSuiteBase
 			{
 				Cell cell1 = row.createCell(33);
 				row.createCell(33).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value34 != null && value34.equalsIgnoreCase(earningsPTIncludingUELYTD))
+			{
+				Cell cell1 = row.createCell(34);			
+				row.createCell(34).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(34);
+				row.createCell(34).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value35 != null && value35.equalsIgnoreCase(totalOfEmployerContributions))
+			{
+				Cell cell1 = row.createCell(35);			
+				row.createCell(35).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(35);
+				row.createCell(35).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value36 != null && value36.equalsIgnoreCase(totalOfEmployerContributionsYTD))
+			{
+				Cell cell1 = row.createCell(36);			
+				row.createCell(36).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(36);
+				row.createCell(36).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value37 != null && value37.equalsIgnoreCase(employeeContributionsPayable))
+			{
+				Cell cell1 = row.createCell(37);			
+				row.createCell(37).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(37);
+				row.createCell(37).setCellValue("FALSE");
+				cell1.setCellStyle(styleFalse);
+			}
+
+			if(value38 != null && value38.equalsIgnoreCase(employeeContributionsPayableYTD))
+			{
+				Cell cell1 = row.createCell(38);			
+				row.createCell(38).setCellValue("TRUE");
+				cell1.setCellStyle(style);
+			}
+			else
+			{
+				Cell cell1 = row.createCell(38);
+				row.createCell(38).setCellValue("FALSE");
 				cell1.setCellStyle(styleFalse);
 			}
 			break;
