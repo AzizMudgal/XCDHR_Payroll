@@ -1,0 +1,23 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll RTI Recogntion Scenario4Month3">
+ <!-- <test name="1">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month3.UpdteTaxCodeAndAnualSalaryM3" ></class>  
+    </classes>										
+</test> -->
+<test name="2">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month3.ProcessPayrollForJune" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month3.ProcessFinalPayrollForJune" ></class>  
+    </classes>
+</test>
+<test name="4">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month3.TestJuneReports" ></class>  
+    </classes>
+</test>
+</suite>
