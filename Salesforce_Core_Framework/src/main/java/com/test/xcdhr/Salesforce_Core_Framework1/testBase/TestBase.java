@@ -6522,21 +6522,14 @@ public	int rowMatched1=0;
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS4Report)){
 			rpName="PayrollRTI_RecognitionS4Report";
 		}
-<<<<<<< HEAD
-=======
-		
->>>>>>> refs/remotes/origin/master
+
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS5Report)){
 			rpName="PayrollRTI_RecognitionS5Report";
 		}
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS6Report)){
 			rpName="PayrollRTI_RecognitionS6Report";
 		}
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/master
-		
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS5Report)){
 			rpName="PayrollRTI_RecognitionS5Report";
 		}
@@ -6545,19 +6538,11 @@ public	int rowMatched1=0;
 			rpName="PayrollRTI_RecognitionS5Report_ReJoin";
 		}
 		
-<<<<<<< HEAD
-=======
 
->>>>>>> refs/remotes/origin/master
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS7Report)){
 			rpName="PayrollRTI_RecognitionS7Report";
 		}
-<<<<<<< HEAD
 
-		
-=======
-	
->>>>>>> refs/remotes/origin/master
 		else if((NameOfReprt).equalsIgnoreCase(PayrollRTI_RecognitionS7Report_JuneToMarch)){
 			rpName="PayrollRTI_RecognitionS7Report_JuneToMarch";
 		}

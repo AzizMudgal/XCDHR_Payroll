@@ -45,11 +45,7 @@ public enum ModifiedReport
 	PayrollRTI_RecognitionS4Report("PayrollRTI_RecognitionS4ReportLocator"),
 	PayrollRTI_RecognitionS5Report("PayrollRTI_RecognitionS5ReportLocator"),
 	PayrollRTI_RecognitionS6Report("PayrollRTI_RecognitionS6ReportLocator"),
-<<<<<<< HEAD
-	//PayrollRTI_RecognitionS7Report("PayrollRTI_RecognitionS7ReportLocator"),
-=======
 	PayrollRTI_RecognitionS7Report("PayrollRTI_RecognitionS7ReportLocator"),
->>>>>>> refs/remotes/origin/master
 	PayrollRTI_RecognitionS5Report_ReJoin("PayrollRTI_RecognitionS5ReportLocator_ReJoin"),
 	PayrollRTI_RecognitionS7Report_JuneToMarch("PayrollRTI_RecognitionS7ReportLocator_JuneToMarch");
 	
