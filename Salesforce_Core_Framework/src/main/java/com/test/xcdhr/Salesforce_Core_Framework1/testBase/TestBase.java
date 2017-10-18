@@ -1869,17 +1869,7 @@ public	int rowMatched1=0;
 			{
 				exlude = false;
 				Thread.sleep(3000L);
-				/*
-				if(existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
-				{
-					if(existsElementchkFor5mts(OR.getProperty("excludeIncludeEmployees")))
-					{
-						getObject("excludeIncludeEmployees").click();
-						System.out.println("Exclude Include Employees link got clicked");
-						Thread.sleep(5000);
-					}
-				}
-				else */
+				
 				if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
 				{
 					System.out.println("yest the Change to Draft button exist");
@@ -1887,12 +1877,22 @@ public	int rowMatched1=0;
 				}
 			}
 			driver.switchTo().window(driver.getWindowHandle());
-			if (getObject("excludeAllemployees").isSelected())
+			if (getObject("excludeAllemployees").isDisplayed())
 			{
+				System.out.println("the exclude include check box is displayed");
+
 				getObject("excludeAllemployees").click();
-				System.out.println("the exclude include check box got unchecked");
+				System.out.println("the exclude include check box got checked");
+
+				Thread.sleep(4000L);
+				if (getObject("excludeAllemployees").isSelected())
+				{
+					getObject("excludeAllemployees").click();
+					System.out.println("the exclude include check box got UNchecked");
+					Thread.sleep(4000L);
+				}
 			}
-			if(existsElementchkFor5mts(OR.getProperty("excludeIncludeAllEmployees")))
+			if(existsElementchkFor1mts(OR.getProperty("excludeIncludeAllEmployees")))
 			{
 				WebElement excludeincludeTable = driver.findElement(By
 						.xpath(OR.getProperty("excludeIncludeAllEmployees")));
@@ -1903,15 +1903,18 @@ public	int rowMatched1=0;
 				while (x.hasNext())
 				{
 					WebElement appEmployes = driver.findElement(By
-							.xpath("//span/div[2]/div/table/tbody/tr[" + rownumx+ "]/td[2]/a"));
-									//span/div[2]/div/table/tbody/tr[1]/td[2]/a
+							.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td[2]/a"));
+					//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr/td[2]/a
+									//div[3]/div[1]/div/div/div[2]/table[2]/tbody/tr[1]/td[2]/a
 					String appEmployeesName = appEmployes.getText();
 					System.out.println("empname is  :"+appEmployeesName);
 					if (appEmployeesName != null && appEmployeesName.equalsIgnoreCase(EmpName))
 					{
 						rowMatched1++;
 						WebElement empchkBox = driver.findElement(By
-								.xpath("//span/div[2]/div/table/tbody/tr[" + rownumx+ "]/td/input"));
+								.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td/input"));
+						//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr/td/input
+										//div[3]/div[1]/div/div/div[2]/table[2]/tbody/tr[1]/td[1]/input
 						if(existsWebElement(empchkBox))
 						{
 						empchkBox.click();
@@ -1934,7 +1937,6 @@ public	int rowMatched1=0;
 					getObject("closeWindow").click();
 					System.out.println("close window got clicked");
 				}
-				
 				driver.switchTo().window(oldWindow);
 				Thread.sleep(4000L);
 				if (existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
