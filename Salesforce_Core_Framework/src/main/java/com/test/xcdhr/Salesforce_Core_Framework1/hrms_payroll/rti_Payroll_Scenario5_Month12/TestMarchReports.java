@@ -200,7 +200,7 @@ public class TestMarchReports extends TestSuiteBase
 						System.out.println("ukPostcode is :"+ukPostcode);
 						
 						String foreignCountry = table.getTBody().getRow(rownum).getCell(8).getText();
-						System.out.println("ukPostcode is :"+foreignCountry);
+						System.out.println("foreignCountry is :"+foreignCountry);
 
 						String dateOfBirth= table.getTBody().getRow(rownum).getCell(9).getText();
 						System.out.println("dateOfBirth is :"+dateOfBirth);
@@ -212,10 +212,10 @@ public class TestMarchReports extends TestSuiteBase
 						System.out.println("payrollId is :"+payrollId);
 
 						String startDate= table.getTBody().getRow(rownum).getCell(12).getText();
-						System.out.println("payrollIdChanged is :"+startDate);
+						System.out.println("startDate is :"+startDate);
 
 						String startingDeclaration= table.getTBody().getRow(rownum).getCell(13).getText();
-						System.out.println("oldPayrollId is :"+startingDeclaration);
+						System.out.println("startingDeclaration is :"+startingDeclaration);
 
 						String taxablePay = table.getTBody().getRow(rownum).getCell(14).getText();
 						System.out.println("taxablePay is :"+taxablePay);
@@ -244,8 +244,8 @@ public class TestMarchReports extends TestSuiteBase
 						String taxCode= table.getTBody().getRow(rownum).getCell(22).getText();
 						System.out.println("taxCode is :"+taxCode);
 						
-						String taxCodeBasisNonCum= table.getTBody().getRow(rownum).getCell(23).getText();
-						System.out.println("taxCode is :"+taxCodeBasisNonCum);
+						String week1Month1Indicator= table.getTBody().getRow(rownum).getCell(23).getText();
+						System.out.println("taxCode is :"+week1Month1Indicator);
 
 						String taxablePayInPeriod = table.getTBody().getRow(rownum).getCell(24).getText();
 						System.out.println("taxablePayInPeriod is :"+taxablePayInPeriod);
@@ -287,11 +287,11 @@ public class TestMarchReports extends TestSuiteBase
 						System.out.println("employeeContributionsPayableYTD is :"+employeeContributionsPayableYTD);
 						
 						//call the functions which reads the excel sheet.
-						ReadsExpectedData1(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,foreignCountry,dateOfBirth,currentGender,payrollId,startDate,startingDeclaration,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxCodeBasisNonCum,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData1(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,foreignCountry,dateOfBirth,currentGender,payrollId,startDate,startingDeclaration,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,week1Month1Indicator,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						ReadsExpectedData11a(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,foreignCountry,dateOfBirth,currentGender,payrollId,startDate,startingDeclaration,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxCodeBasisNonCum,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData11a(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,foreignCountry,dateOfBirth,currentGender,payrollId,startDate,startingDeclaration,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,week1Month1Indicator,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						ReadsExpectedData11(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,foreignCountry,dateOfBirth,currentGender,payrollId,startDate,startingDeclaration,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,taxCodeBasisNonCum,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedData11(EmpName,nationalInsurance,Title,Forename,Surname,addressLine1,addressLine2,ukPostcode,foreignCountry,dateOfBirth,currentGender,payrollId,startDate,startingDeclaration,taxablePay,totaltax,bacsHashcode,PayFrequency,paymentDate,taxMonthNumber,numberOfEarningsperiodsCovered,numberOfNormalHoursWorked,taxCode,week1Month1Indicator,taxablePayInPeriod,payAfterStatutoryDeductions,taxDeductedORrefunded,niCategory,grossEarningsNICsInPeriod,grossEarningsNICsInYTD,earningsAtLowerEarningslimitYTD,earningsLELUpToIncludingPTYTD,earningsPTIncludingUELYTD,totalOfEmployerContributions,totalOfEmployerContributionsYTD,employeeContributionsPayable,employeeContributionsPayableYTD,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 					}
 					rownum++;
 				}
@@ -305,7 +305,7 @@ public class TestMarchReports extends TestSuiteBase
 
 
 
-	public void ReadsExpectedData1(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String foreignCountry,String dateOfBirth,String currentGender,String payrollId,String startDate,String startingDeclaration,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String taxCodeBasisNonCum,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData1(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String foreignCountry,String dateOfBirth,String currentGender,String payrollId,String startDate,String startingDeclaration,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String week1Month1Indicator,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		DecimalFormat df = new DecimalFormat("###.#");
@@ -400,7 +400,7 @@ public class TestMarchReports extends TestSuiteBase
 	
 	
 
-	public void ReadsExpectedData11a(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String foreignCountry,String dateOfBirth,String currentGender,String payrollId,String startDate,String startingDeclaration,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String taxCodeBasisNonCum,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD ,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData11a(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String foreignCountry,String dateOfBirth,String currentGender,String payrollId,String startDate,String startingDeclaration,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String week1Month1Indicator,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD ,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		DecimalFormat df = new DecimalFormat("###.#");
@@ -467,7 +467,7 @@ public class TestMarchReports extends TestSuiteBase
 				row.createCell(21).setCellValue(numberOfEarningsperiodsCovered);
 				row.createCell(22).setCellValue(numberOfNormalHoursWorked);
 				row.createCell(23).setCellValue(taxCode);
-				row.createCell(24).setCellValue(taxCodeBasisNonCum);
+				row.createCell(24).setCellValue(week1Month1Indicator);
 				row.createCell(25).setCellValue(taxablePayInPeriod);
 				row.createCell(26).setCellValue(payAfterStatutoryDeductions);
 				row.createCell(27).setCellValue(taxDeductedORrefunded);
@@ -497,7 +497,7 @@ public class TestMarchReports extends TestSuiteBase
 
 	
 	
-	public void ReadsExpectedData11(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String foreignCountry,String dateOfBirth,String currentGender,String payrollId,String startDate,String startingDeclaration,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String taxCodeBasisNonCum,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD ,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedData11(String EmpName,String nationalInsurance,String Title,String Forename,String Surname,String addressLine1,String addressLine2,String ukPostcode,String foreignCountry,String dateOfBirth,String currentGender,String payrollId,String startDate,String startingDeclaration,String taxablePay,String totaltax,String bacsHashcode,String PayFrequency,String paymentDate,String taxMonthNumber,String numberOfEarningsperiodsCovered,String numberOfNormalHoursWorked,String taxCode,String week1Month1Indicator,String taxablePayInPeriod,String payAfterStatutoryDeductions,String taxDeductedORrefunded,String niCategory,String grossEarningsNICsInPeriod,String grossEarningsNICsInYTD,String earningsAtLowerEarningslimitYTD,String earningsLELUpToIncludingPTYTD,String earningsPTIncludingUELYTD,String totalOfEmployerContributions,String totalOfEmployerContributionsYTD,String employeeContributionsPayable,String employeeContributionsPayableYTD ,String TestResultExcelFilePath,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 	System.out.println("This is ReadExpected data1");
 	double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
@@ -833,7 +833,7 @@ public class TestMarchReports extends TestSuiteBase
 				cell1.setCellStyle(styleFalse);
 			}
 			
-			if(value24 != null && value24.equalsIgnoreCase(taxCodeBasisNonCum))
+			if(value24 != null && value24.equalsIgnoreCase(week1Month1Indicator))
 			{
 				Cell cell1 = row.createCell(24);			
 				row.createCell(24).setCellValue("TRUE");
