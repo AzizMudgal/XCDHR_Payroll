@@ -1904,8 +1904,6 @@ public	int rowMatched1=0;
 				{
 					WebElement appEmployes = driver.findElement(By
 							.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td[2]/a"));
-					//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr/td[2]/a
-									//div[3]/div[1]/div/div/div[2]/table[2]/tbody/tr[1]/td[2]/a
 					String appEmployeesName = appEmployes.getText();
 					System.out.println("empname is  :"+appEmployeesName);
 					if (appEmployeesName != null && appEmployeesName.equalsIgnoreCase(EmpName))
@@ -1913,8 +1911,7 @@ public	int rowMatched1=0;
 						rowMatched1++;
 						WebElement empchkBox = driver.findElement(By
 								.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td/input"));
-						//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr/td/input
-										//div[3]/div[1]/div/div/div[2]/table[2]/tbody/tr[1]/td[1]/input
+						
 						if(existsWebElement(empchkBox))
 						{
 						empchkBox.click();
