@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Payroll RTI Recogntion Scenario1Month4">
+<suite name="Payroll RTI Recogntion Scenario7Month4">
  <test name="1">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.UpdteTaxCodeAndAnualSalaryM4" ></class>  
