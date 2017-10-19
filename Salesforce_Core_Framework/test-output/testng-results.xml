@@ -2,20 +2,38 @@
 <testng-results skipped="0" failed="0" ignored="0" total="7" passed="7">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="323731" started-at="2017-10-18T13:27:19Z" finished-at="2017-10-18T13:32:43Z">
+=======
+  <suite name="Default suite" duration-ms="120239" started-at="2017-10-18T12:45:26Z" finished-at="2017-10-18T12:47:26Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="323731" started-at="2017-10-18T13:27:19Z" finished-at="2017-10-18T13:32:43Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="7854" started-at="2017-10-18T18:57:11Z" finished-at="2017-10-18T18:57:19Z">
+=======
+    <test name="Default test" duration-ms="120239" started-at="2017-10-18T12:45:26Z" finished-at="2017-10-18T12:47:26Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports@31ef45e3]" name="CheckSuiteSkip" is-config="true" duration-ms="5523" started-at="2017-10-18T18:15:20Z" finished-at="2017-10-18T18:15:26Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="3371" started-at="2017-10-18T18:57:19Z" finished-at="2017-10-18T18:57:22Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports@31ef45e3]" name="CheckTestSkip" is-config="true" duration-ms="2813" started-at="2017-10-18T18:15:26Z" finished-at="2017-10-18T18:15:29Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="276633" started-at="2017-10-18T18:57:26Z" data-provider="getData" finished-at="2017-10-18T19:02:02Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports@31ef45e3]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="107783" started-at="2017-10-18T18:15:31Z" data-provider="getData" finished-at="2017-10-18T18:17:19Z">
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
@@ -24,7 +42,11 @@
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 101]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 104]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="2">
@@ -39,17 +61,29 @@
             </param>
             <param index="4">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Week-1]]>
+=======
+                <![CDATA[February-2018]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="5">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Payroll Suite WeeklyCatA201718.xlsx]]>
+=======
+                <![CDATA[Payroll Recognition ScenarioFour201718.xlsx]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="6">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+=======
+                <![CDATA[DO NOT TOUCH PAYROL RTI SCENRIO4 REPORT]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="7">
@@ -59,7 +93,10 @@
             </param>
             <param index="8">
               <value>
+<<<<<<< HEAD
                 <![CDATA[2]]>
+=======
+                <![CDATA[38]]>
               </value>
             </param>
             <param index="9">
@@ -67,14 +104,46 @@
                 <![CDATA[All]]>
               </value>
             </param>
+            <param index="10">
+              <value>
+                <![CDATA[3]]>
+>>>>>>> refs/remotes/origin/master
+              </value>
+            </param>
+<<<<<<< HEAD
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+=======
+            <param index="11">
+              <value>
+                <![CDATA[101]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[102]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[103]]>
+>>>>>>> refs/remotes/origin/master
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="3995" started-at="2017-10-18T19:02:02Z" finished-at="2017-10-18T19:02:06Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports@31ef45e3]" name="ReportDataSetResult" is-config="true" duration-ms="2966" started-at="2017-10-18T18:17:19Z" finished-at="2017-10-18T18:17:22Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="823" started-at="2017-10-18T19:02:06Z" data-provider="getData" finished-at="2017-10-18T19:02:07Z">
           <params>
             <param index="0">
@@ -436,10 +505,17 @@
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@239963d8]" name="ReportTestResult" is-config="true" duration-ms="15572" started-at="2017-10-18T19:02:27Z" finished-at="2017-10-18T19:02:43Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports@31ef45e3]" name="ReportTestResult" is-config="true" duration-ms="4138" started-at="2017-10-18T18:17:22Z" finished-at="2017-10-18T18:17:26Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
