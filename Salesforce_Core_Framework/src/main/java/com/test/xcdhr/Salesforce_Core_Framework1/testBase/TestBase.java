@@ -1141,6 +1141,23 @@ public class TestBase {
 			Thread.sleep(2000L);
 			getObject("Submit_Button").click();
 			Thread.sleep(2000L);
+			
+			/*
+			 * Some TLS Continue button is being displayed
+			 * when we login into QA org. Hence written the
+			 * following code to click to 'CONTINUE' button
+			 * so as to proceed with intended execution of scripts.
+			 * 
+			 * Need to remove following code once Salesforce no longer
+			 * displays this TLS Message.
+			 */
+			if(existsElementchkFor1mts(OR.getProperty("afterLoginContinueButon")))
+			{
+				getObject("afterLoginContinueButon").click();
+				System.out.println("The TLS Continue button got clicked successfully");
+				Thread.sleep(2000L);
+			}
+			
 		}catch(Throwable t){
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
@@ -1845,7 +1862,7 @@ public class TestBase {
 	 * processes the 'Generate draft payroll' functionality
 	 */
 	/******************************************************/
-public	int rowMatched1=0;
+public	int rowMatchedDD=0;
 	public void ExcludeIncludeEmp(String EmpName,String Exclinputsheet,String worksheetNo) throws Throwable
 	{			
 		try
@@ -1866,153 +1883,99 @@ public	int rowMatched1=0;
 			totalRows = spreadsheet.getLastRowNum();
 			System.out.println("Total rows in the processpayrollforMonthlytax worksheet is :"+totalRows);
 			String oldWindow = driver.getWindowHandle();
-			if (exlude)
-			{
-				exlude = false;
-				Thread.sleep(3000L);
-				
-				if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
-				{
-					System.out.println("yest the Change to Draft button exist");
-					retryForGenerateDraft();
-				}
-			}
-			driver.switchTo().window(driver.getWindowHandle());
-			if (getObject("excludeAllemployees").isDisplayed())
-			{				//excludeIncludeEmployees
-				System.out.println("the exclude include check box is displayed");
-
-				getObject("excludeAllemployees").click();
-				System.out.println("the exclude include check box got checked");
-
-				Thread.sleep(1000L);
-				if (getObject("excludeAllemployees").isSelected())
-				{
-					getObject("excludeAllemployees").click();
-					System.out.println("the exclude include check box got UNchecked");
-					Thread.sleep(1000L);
-				}
-			  }
-			
-			if(existsElementchkFor1mts(OR.getProperty("excludeIncludeAllEmployees")))
-			{
-				WebElement excludeincludeTable = driver.findElement(By
-						.xpath(OR.getProperty("excludeIncludeAllEmployees")));
-				List<WebElement> rows = excludeincludeTable.findElements(By
-						.xpath(OR.getProperty("excludeIncludeAllEmployeesrows")));
-				java.util.Iterator<WebElement> x = rows.iterator();
-				 rownumx = 1;
-				while (x.hasNext())
-				{
-					WebElement appEmployes = driver.findElement(By
-							.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td[2]/a"));
-					String appEmployeesName = appEmployes.getText();
-					System.out.println("empname is  :"+appEmployeesName);
-					if (appEmployeesName != null && appEmployeesName.equalsIgnoreCase(EmpName))
+		///////
+					if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
 					{
-						rowMatched1++;
-						WebElement empchkBox = driver.findElement(By
-								.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td/input"));
-						
-						if(existsWebElement(empchkBox))
-						{
-						empchkBox.click();
-						System.out.println("The Employee name  : "+appEmployeesName+"  check box got clicked");
-						}
-						if (totalRows == rowMatched1)
-						{
-							break;
-						}
+						System.out.println("yest the Change to Draft button exist");
+						retryForGenerateDraft();
 					}
-					else
+					driver.switchTo().window(driver.getWindowHandle());
+					if(windowExclude)
 					{
-						System.out.println("employee name did not matched");
-					}
-					rownumx++;
-				}
-			}	
-				Thread.sleep(2000L);
-				if(existsElementchkFor5mts(OR.getProperty("closeWindow")))
-				{
-					getObject("closeWindow").click();
-					System.out.println("close window got clicked");
-				}
-			
-				driver.switchTo().window(oldWindow);
-				Thread.sleep(4000L);
-				if (existsElementchkFor5mts(OR.getProperty("genratedraftPayroll")))
-				{			
-					getObject("genratedraftPayroll").sendKeys("");
-						getObject("genratedraftPayroll").click();
-						if(existsElementchkFor5mts(OR.getProperty("progressBar")))
+						windowExclude = false;
+						if (getObject("excludeAllemployees").isDisplayed())
 						{
-							System.out.println("The progress bar got displayed");
-							System.out.println("");
-							System.out.println("The generate draft button got clicked");
-							Thread.sleep(4000L);
-							payRunExecution();
-							
-						}
-						
-						/*
-						 * This code is written to click the generate draft button once again
-						 */
-						/*else
-						{
-							System.out.println("The progress bar did not got displayed, hence clicking the generate button once again");
-
-							getObject("genratedraftPayroll").sendKeys("");
-							getObject("genratedraftPayroll").click();
-							if(existsElement(OR.getProperty("payRunProcessTo100Percent")))
+							System.out.println("the exclude include check box is displayed");
+							getObject("excludeAllemployees").click();
+							System.out.println("the exclude include check box got checked");
+							Thread.sleep(1000L);
+							if (getObject("excludeAllemployees").isSelected())
 							{
-								System.out.println("The progress bar got displayed");
-
-								System.out.println("");
-								System.out.println("The generate draft button got clicked");
-								Thread.sleep(4000L);
-								payRunExecution();
-								
+								getObject("excludeAllemployees").click();
+								System.out.println("After checking the chckbox onceagain the exclude include check box is made UNchecked");
+								//Thread.sleep(1000L);
 							}
-						}*/
-						
-						
-				}
-				else
-				{
-					System.out.println("generate button not being clicked");
-				}
-				/*
-				if (existsElement(OR.getProperty("genratedraftPayroll")))
-				{					
-					getObject("genratedraftPayroll").click();
-					System.out.println("");
-					System.out.println("The generate draft button got clicked");
-					Thread.sleep(4000L);
-					if (existsElement(OR.getProperty("progressBarImage")))
+						  }
+						}
+					if(existsElementchkFor1mts(OR.getProperty("excludeIncludeAllEmployees")))
 					{
-						payRunExecution();	
-						
-						System.out.println("The generate draft payroll functionality sucessfully executed"
-								+ "hence progress bar is no longer visible");
+						WebElement excludeincludeTable = driver.findElement(By
+								.xpath(OR.getProperty("excludeIncludeAllEmployees")));
+						List<WebElement> rows = excludeincludeTable.findElements(By
+								.xpath(OR.getProperty("excludeIncludeAllEmployeesrows")));
+						java.util.Iterator<WebElement> x = rows.iterator();
+						 rownumx = 1;
+						while (x.hasNext())
+						{
+							WebElement appEmployes = driver.findElement(By
+									.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td[2]/a"));
+							String appEmployeesName = appEmployes.getText();
+							System.out.println("empname is  :"+appEmployeesName);
+							if (appEmployeesName != null && appEmployeesName.equalsIgnoreCase(EmpName))
+							{
+								rowMatchedDD++;
+								WebElement empchkBox = driver.findElement(By
+										.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td/input"));
+								if(existsWebElement(empchkBox))
+								{
+								empchkBox.click();
+								System.out.println("");
+								System.out.println("The Employee name  : "+appEmployeesName+"  check box got clicked");
+								}
+								if (totalRows == rowMatchedDD)
+								{
+									System.out.println("The employees rows now matched,hence will now exit the window by saving the required employees");
+									break;
+								}
+							}
+							rownumx++;
+						}
+						if (existsElementchkFor1mts(OR.getProperty("closeWindow")))
+						{
+							getObject("closeWindow").click();
+							System.out.println("The save button of the popup window got clicked");
+							Thread.sleep(1000L);
+						}
+						driver.switchTo().window(oldWindow);
+						Thread.sleep(1000L);
+						if (existsElementchkFor1mts(OR.getProperty("genratedraftPayroll")))
+						{			
+							    getObject("genratedraftPayroll").sendKeys("");
+								getObject("genratedraftPayroll").click();
+								if(existsElementchkFor1mts(OR.getProperty("progressBar")))
+								{
+									System.out.println("");
+									System.out.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
+									Thread.sleep(4000L);
+									payRunExecution();
+								}
+							 }
 					}
-					
+					Thread.sleep(6000L);
+					if(existsElementchkFor1mts(OR.getProperty("emprecordsTableAftergeneratedraft")))
+					{
+						verifyEmpRecordInPaySummaryTable();
+					}
 				}
-				*/
-				
-		
-			Thread.sleep(15000L);
-			if(existsElement(OR.getProperty("emprecordsTableAftergeneratedraft")))
-			{
-				verifyEmpRecordInPaySummaryTable();
+				catch(Throwable t)
+				{
+					System.out.println(t.getMessage().toString());
+					System.out.println(t.getStackTrace().toString());
+				}
 			}
-
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
+		///////7
+	
+	
 	
 	/*
 	 * For autoenrolment payroll scripts
@@ -2314,35 +2277,31 @@ public	int rowMatched1=0;
 
 	
 	public int dTRows;
-	public int draftTotalRows=0;
+	public int draftTotalRows;
 	public void verifyEmpRecordInPaySummaryTable()throws Throwable
 	{
 		try
 		{
 			System.out.println("Now the new method 'verifyEmpRecordInPaySummaryTable()' "
-					+ "would execute to find out the employee record in PaySummary Table ");
-			Thread.sleep(12000L);
+					+ "would execute to find out the employee record in PaySummary Table after waiting period of 10 seconds");
+			Thread.sleep(6000L);
 			if(existsElement(OR.getProperty("emprecordsTableAftergeneratedraft")))
 			{
 				System.out.println("The script recognised the tax generated employee table locator");
-				Thread.sleep(3000L);
+				//Thread.sleep(3000L);
 				WebElement empTableAfterDraftgenerate= getObject("emprecordsTableAftergeneratedraft");
 				List<WebElement>draftRows=empTableAfterDraftgenerate.findElements(By.xpath(OR.getProperty("emprecordsTableRowsAftergeneratedraft")));
+				Thread.sleep(3000L);
 				draftTotalRows= draftRows.size();
-				System.out.println("Total rows is "+draftTotalRows);
+				System.out.println("Total rows are "+draftTotalRows);
 				if (totalRows==(draftTotalRows-1))
 				{
-					Thread.sleep(3000L);
+					Thread.sleep(1000L);
 					System.out.println("After generating draft payroll the app is displaying employee records same"
 							+ " as excel file employees of this Tax worksheet");
-
-					//Thread.sleep(3000L);
-				
-
 				}
 				else
 				{
-					//Assert.assertEquals("totalRows",draftTotalRows);
 					System.out.println(" the app is not displaying employee records same"
 							+ " as excel file employees of this Tax worksheet");
 					finalRows = totalRows;
@@ -2350,8 +2309,7 @@ public	int rowMatched1=0;
 					System.out.println("The Final rows in the table are :"+ finalRows);
 
 					System.out.println("The rows in the table are :"+ dTRows);
-					Thread.sleep(2000L);
-					//payRunExecution();
+					
 				}
 			}
 		}
@@ -6561,48 +6519,11 @@ public	int rowMatched1=0;
 				System.out.println("Still generate draft payroll functionality execution did not completed...please wait");
 				payRunExecution();
 			}
-			//else if(!existsElement(OR.getProperty("progressBar")))
 			else
 			{
 				System.out.println("progress bar is not being seen now..");
 				System.out.println("Finally  generate draft payroll functionality execution completed successfully");
 			}
-			/*
-			if(existsElement(OR.getProperty("payRunProcessTo100Percent")))
-			{
-				String tenPercent = getObject("payRunProcessTo100Percent").getText();
-				System.out.println(tenPercent);
-				if(tenPercent.equalsIgnoreCase("Pay run processing 0% Complete"))
-				{
-					boolean payrun100percent=getObject("payRunProcessTo100Percent").isDisplayed();
-
-					System.out.println("The first message of Progress bar :Pay run processing 0% Complete is displayed");
-					if(payrun100percent)
-					{
-						Thread.sleep(4000L);
-						if(!getObject("payRunProcessTo100Percent").getText().equalsIgnoreCase("Pay run processing 100% Complete"))
-						{
-							System.out.println("Still draft payroll did not completed to 100 percent");
-							payRunExecution();
-						}
-						else
-						{
-							System.out.println("Finally draft payroll completed to 100 percent successfully");
-
-						}
-						/*
-						if(!existsElement(OR.getProperty("payRunProcessTo100Percent")))
-						{
-							System.out.println("The payRunProcessTo100Percent after displaying got exit i.e DRAFT PAYROLL FUNCTIONALITY IS PERFORMED.");
-							payRunExecution();
-						}
-						*/
-					//}
-				//}
-				//System.out.println("The payRunProcessTo100Percent is now displayed.");
-
-			//}
-			
 		}
 		catch(Throwable t)
 		{
@@ -7931,7 +7852,7 @@ System.out.println(t.getMessage());
 	
 	
 	
-	int rowMatchedDD=0;
+	int rowMatchedDDWeek=0;
 	public void ExcludeIncludeEmp112(String EmpName,String Exclinputsheet,String worksheetNo) throws Throwable
 	{			
 		try
@@ -7950,7 +7871,7 @@ System.out.println(t.getMessage());
 			totalRows = spreadsheet.getLastRowNum();
 			System.out.println("Total rows in the processpayrollforMonthlytax worksheet is :"+totalRows);
 			String oldWindow = driver.getWindowHandle();
-	
+	///////
 			if(existsElementchkFor5mts(OR.getProperty("changeToDraft")))
 			{
 				System.out.println("yest the Change to Draft button exist");
@@ -7969,8 +7890,8 @@ System.out.println(t.getMessage());
 					if (getObject("excludeAllemployees").isSelected())
 					{
 						getObject("excludeAllemployees").click();
-						System.out.println("the exclude include check box got UNchecked");
-						Thread.sleep(1000L);
+						System.out.println("After checking the chckbox onceagain the exclude include check box is made UNchecked");
+						//Thread.sleep(1000L);
 					}
 				  }
 				}
@@ -7990,7 +7911,7 @@ System.out.println(t.getMessage());
 					System.out.println("empname is  :"+appEmployeesName);
 					if (appEmployeesName != null && appEmployeesName.equalsIgnoreCase(EmpName))
 					{
-						rowMatchedDD++;
+						rowMatchedDDWeek++;
 						WebElement empchkBox = driver.findElement(By
 								.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[" + rownumx+ "]/td/input"));
 						if(existsWebElement(empchkBox))
@@ -7999,9 +7920,9 @@ System.out.println(t.getMessage());
 						System.out.println("");
 						System.out.println("The Employee name  : "+appEmployeesName+"  check box got clicked");
 						}
-						if (totalRows == rowMatchedDD)
+						if (totalRows == rowMatchedDDWeek)
 						{
-							System.out.println("The employees rows now matched");
+							System.out.println("The employees rows now matched,hence will now exit the window by saving the required employees");
 							break;
 						}
 					}
@@ -8010,10 +7931,11 @@ System.out.println(t.getMessage());
 				if (existsElementchkFor1mts(OR.getProperty("closeWindow")))
 				{
 					getObject("closeWindow").click();
-					System.out.println("close window got clicked");
+					System.out.println("The save button of the popup window got clicked");
+					Thread.sleep(1000L);
 				}
 				driver.switchTo().window(oldWindow);
-				Thread.sleep(4000L);
+				Thread.sleep(1000L);
 				if (existsElementchkFor1mts(OR.getProperty("genratedraftPayroll")))
 				{			
 					    getObject("genratedraftPayroll").sendKeys("");
@@ -8021,17 +7943,13 @@ System.out.println(t.getMessage());
 						if(existsElementchkFor1mts(OR.getProperty("progressBar")))
 						{
 							System.out.println("");
-							System.out.println("The generate draft button got clicked, please wait till draft payroll gets executed");
+							System.out.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
 							Thread.sleep(4000L);
 							payRunExecution();
 						}
-						else if(!existsElementchkFor1mts(OR.getProperty("progressBar")))
-						{
-							System.out.println("The draft payroll got executed sucessfully");
-						}
-				 }
+					 }
 			}
-			Thread.sleep(60000L);
+			Thread.sleep(6000L);
 			if(existsElementchkFor1mts(OR.getProperty("emprecordsTableAftergeneratedraft")))
 			{
 				verifyEmpRecordInPaySummaryTable();
@@ -8043,7 +7961,7 @@ System.out.println(t.getMessage());
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-
+///////7
 	
 	
 	/*

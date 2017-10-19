@@ -1,45 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Payroll RTI Recogntion Scenario4Month1]">
-  <test name="6(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ExecuteQuery">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatD.ExecuteQuery">
         <methods>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ExecuteQuery -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ProcessFinalPayrollForApril">
-        <methods>
-          <include name="CheckTestSkip"/>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportTestResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ProcessFinalPayrollForApril -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ProcessPayrollForApril">
-        <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.ProcessPayrollForApril -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.TestAprilReports">
-        <methods>
-          <include name="ReportDataSetResult"/>
+          <include name="queryExecute"/>
           <include name="CheckSuiteSkip"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.TestAprilReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1">
-        <methods>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-          <include name="CheckTestSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1 -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatD.ExecuteQuery -->
     </classes>
-  </test> <!-- 6(failed) -->
-</suite> <!-- Failed suite [Payroll RTI Recogntion Scenario4Month1] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
