@@ -492,7 +492,8 @@ public class ResetEmployeeData extends TestSuiteBase
 								 * just change the value of tab indes if you are testing 
 								 * QA Org and shifting to Regress Org.
 								 */
-								WebElement Niablechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='j_id0:j_id2:j_id28:j_id62:j_id66:6:j_id67']"));
+								WebElement Niablechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='j_id0:j_id2:j_id28:j_id59:j_id60:5:j_id61']"));
+							//	WebElement Niablechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][contains(@id,'j_id0:j_id2')]"));														
 								String tabindexval = Niablechkbox.getAttribute("tabindex");														
 								System.out.println("tab index is :"+tabindexval);
 								boolean	Nblrchkbox = Niablechkbox.isSelected();
@@ -570,7 +571,7 @@ public class ResetEmployeeData extends TestSuiteBase
 								 * just change the value of tab indes if you are testing 
 								 * QA Org and shifting to Regress Org.
 								 */
-								WebElement Taxblechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='j_id0:j_id2:j_id28:j_id62:j_id66:7:j_id67']"));
+								WebElement Taxblechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='j_id0:j_id2:j_id28:j_id59:j_id60:6:j_id61']"));
 								String tabindexval = Taxblechkbox.getAttribute("tabindex");													
 								System.out.println("tab index is :"+tabindexval);
 								boolean	Nblrchkbox = Taxblechkbox.isSelected();
