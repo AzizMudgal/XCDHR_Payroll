@@ -5,6 +5,8 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scena
 import java.util.Iterator;
 import java.util.Set;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.SkipException;
@@ -107,6 +109,31 @@ public class ProcessFinalPayrollForMarch extends TestSuiteBase
 	{
 		try
 		{
+			if(existsElementchkFor2mts(OR.getProperty("editButttonInPayrollPage")))
+			{
+				boolean b=getObject("editButttonInPayrollPage").isDisplayed();
+				Assert.assertEquals(true, b);
+				getObject("editButttonInPayrollPage").sendKeys("");
+				getObject("editButttonInPayrollPage").click();
+				Thread.sleep(4000);
+				getObject("payRunDateLabel").isDisplayed();
+				System.out.println("====>payRunDateLabel Is Pressent<======");
+				getObject("payRunDate").isDisplayed();
+				Thread.sleep(4000);
+				System.out.println("====>payRunDate Is Pressent<======");
+				getObject("payRunDate").sendKeys("");
+				getObject("payRunDate").click();
+				System.out.println("====>payRunDate Is Clicked<======");
+				getObject("savePayrollButton").isDisplayed();
+				Thread.sleep(4000);
+				getObject("savePayrollButton").sendKeys("");
+				getObject("savePayrollButton").click();
+				System.out.println("====>Save Button Is Clicked<======");		
+			}
+			else
+			{
+				System.out.println("=========>Edit Button Is Not Pressent<=========");
+			}
 			Thread.sleep(3000L);
 			if(existsElement(OR.getProperty("generateFinalDraft")))
 			 {
