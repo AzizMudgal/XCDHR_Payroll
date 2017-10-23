@@ -355,12 +355,12 @@ public class ResetEmployeeData extends TestSuiteBase
 							{
 								Thread.sleep(4000L);
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								/*
-								 * You should provide the tabindex .
-								 * this tab index varies from org to org hence 
-								 * just change the value of tab indes if you are testing 
-								 * QA Org and shifting to Regress Org.
-								 */
+								
+								 /* You should provide the tabindex .*/
+								 /* this tab index varies from org to org hence */
+								/* just change the value of tab indes if you are testing */
+								/* QA Org and shifting to Regress Org.*/
+								 
 								WebElement Niablechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='00Nb0000009I798']"));
 								String tabindexval = Niablechkbox.getAttribute("tabindex");
 								System.out.println("tab index is :"+tabindexval);
@@ -434,12 +434,12 @@ public class ResetEmployeeData extends TestSuiteBase
 							{
 								Thread.sleep(4000L);
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								/*
-								 * You should provide the tabindex .
-								 * this tab index varies from org to org hence 
-								 * just change the value of tab indes if you are testing 
-								 * QA Org and shifting to Regress Org.
-								 */
+								
+								 /* You should provide the tabindex .*/
+								 /* this tab index varies from org to org hence*/ 
+								 /* just change the value of tab indes if you are testing*/ 
+								 /* QA Org and shifting to Regress Org.*/
+								 
 								WebElement Taxblechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='00Nb0000009I79g']"));
 								String tabindexval = Taxblechkbox.getAttribute("tabindex");
 								System.out.println("tab index is :"+tabindexval);

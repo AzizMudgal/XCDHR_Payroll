@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import junit.framework.Assert;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
@@ -220,8 +222,12 @@ public class ResetEmployeeData extends TestSuiteBase
 			if(existsElementchkFor1mts(OR.getProperty("currentAddressLink")))
 			{
 				getObject("currentAddressLink").sendKeys("");
+				boolean a= getObject("currentAddressLink").isDisplayed();
+				Thread.sleep(4000);
+				Assert.assertEquals(true, a);
+				System.out.println("==========>Assert Executed<=========");
 				getObject("currentAddressLink").click();
-				System.out.println("The Personal Tab got clicked");
+				System.out.println("The Address Link got clicked");
 			}
 		}
 		catch(Throwable t)

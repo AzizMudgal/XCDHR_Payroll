@@ -222,6 +222,9 @@ public class ResetEmployeeData extends TestSuiteBase
 			if(existsElementchkFor1mts(OR.getProperty("currentAddressLink")))
 			{
 				getObject("currentAddressLink").sendKeys("");
+				getObject("currentAddressLink").isDisplayed();
+				System.out.println("============>The Current Address Link Is Displayed<==========");
+				Thread.sleep(4000);
 				getObject("currentAddressLink").click();
 				System.out.println("The address link got clicked");
 			}

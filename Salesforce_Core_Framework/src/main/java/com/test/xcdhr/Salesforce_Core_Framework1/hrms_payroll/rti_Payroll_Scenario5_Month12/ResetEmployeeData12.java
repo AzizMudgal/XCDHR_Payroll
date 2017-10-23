@@ -89,7 +89,7 @@ public class ResetEmployeeData12 extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsPayroll_Setup_ForIncomeTax(String EmpName,String Payrolid) throws Throwable
+	public void EmpsPayroll_Setup_ForIncomeTax(String EmpName,String Payrolid,String Niable,String Taxable) throws Throwable
 	{								  //String empFirstName, String LastName,String Email, String UserName, String WorkMobile, String WorkPhone, String Profile, String ActivateLicense, String Post,String Company,String EmploymentType, String Location, String EmploymentStatus, String Department, String PatternType, String NoOfWorkingDays, String ContractualHours, String SpinalPoint, String Manager, String StartDate, String ContinousStdate, String PayrollStDate, String Rejoiner,  String EmpDOB,String Gender,String Nationality,String FromDate,String ToDate,String Address1,String  Address2,String Street,String City,String Country,String PostCode,String Region,String ParentLocation,String AddnalContrctualLeave,String MinimumYrsService,String HoursAM,String HoursPM,String WorkingDays,String AnnualSalary,String Bonus,String BonusOTE,String Commission,String CommissionOTE,String EmpContrbnPenSal,String EmployerContrbPenSal,String AddnalEmplyeeContrbn,String AddnalEmployerContrbn,String bonusNotes,String DailyRateOfPay,String Departmentt,String EmployeeSalarySacrifice,String EmployeeContbnlnLeiu,String Payfrequency,String CreateLeaveYrs
 		//APP_LOGS.debug("Entering the Leave parameters");
 		//APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
@@ -109,7 +109,7 @@ public class ResetEmployeeData12 extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				if(existsElementchkFor1mts(OR.getProperty("Homepage_txt")))
+				if(existsElement(OR.getProperty("Homepage_txt")))
 				{
 					//Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
 					System.out.println("The test script logged in successfully into salesforce account");
@@ -124,14 +124,14 @@ public class ResetEmployeeData12 extends TestSuiteBase
 		}
 		/*************************************************************************/
 
-		FetchEmployeeRecord(EmpName,Payrolid);
+		FetchEmployeeRecord(EmpName,Payrolid,Niable,Taxable);
 
 		/*************************************************************************/
 	}
 
 	
 
-	public void FetchEmployeeRecord(String EmpName,String Payrolid) throws Throwable
+	public void FetchEmployeeRecord(String EmpName,String Payrolid,String Niable,String Taxable) throws Throwable
 	{
 		try
 		{
@@ -140,13 +140,13 @@ public class ResetEmployeeData12 extends TestSuiteBase
 				employeeFirsttimeView = false;
 				getObject("PersonalTab").click();
 				System.out.println("I am in personal page");
-				if(existsElementchkFor1mts(OR.getProperty("EmployeeView")))
+				if(existsElement(OR.getProperty("EmployeeView")))
 				{
 					System.out.println("I recognised the Employee view");
 					Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
 					selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
 					Thread.sleep(2000L);
-					if(existsElementchkFor1mts(OR.getProperty("ViewGoButton")))
+					if(existsElement(OR.getProperty("ViewGoButton")))
 					{
 						getObject("ViewGoButton").sendKeys("");
 						getObject("ViewGoButton").click();
@@ -175,7 +175,7 @@ public class ResetEmployeeData12 extends TestSuiteBase
 				{
 					//Thread.sleep(2000L);
 					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
-					if(existsElementchkFor1mts(firstRowOfEmployeeColumn))
+					if(existsElement(firstRowOfEmployeeColumn))
 					{
 						WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
 						String tempEmp= tempElement.getText();
@@ -195,7 +195,7 @@ public class ResetEmployeeData12 extends TestSuiteBase
 				}
 			}
 			Thread.sleep(3000L);
-			empEmploymentTab(EmpName,Payrolid);
+			empEmploymentTab(EmpName,Payrolid,Niable,Taxable);
 			
 		}
 		catch(Throwable t)
@@ -210,11 +210,11 @@ public class ResetEmployeeData12 extends TestSuiteBase
 
 
 
-	public void empEmploymentTab(String EmpName,String Payrolid)throws Throwable
+	public void empEmploymentTab(String EmpName,String Payrolid,String Niable,String Taxable)throws Throwable
 	{
 		try
 		{
-			if(existsElementchkFor1mts(OR.getProperty("EmploymentTabLocator")))
+			if(existsElement(OR.getProperty("EmploymentTabLocator")))
 			{
 				getObject("EmploymentTabLocator").sendKeys("");
 				getObject("EmploymentTabLocator").click();
@@ -232,14 +232,14 @@ public class ResetEmployeeData12 extends TestSuiteBase
 		try
 		{
 			Thread.sleep(2000L);
-			if(existsElementchkFor1mts(OR.getProperty("emplymentTabEditBtn")))
+			if(existsElement(OR.getProperty("emplymentTabEditBtn")))
 			{
 				getObject("emplymentTabEditBtn").sendKeys("");
 				getObject("emplymentTabEditBtn").click();
 				System.out.println("The edit button of employer tab got clicked");
 			}
 			Thread.sleep(2000L);
-			if(existsElementchkFor1mts(OR.getProperty("empPayrollNumber")))
+			if(existsElement(OR.getProperty("empPayrollNumber")))
 			{
 				//getObject("empPayrollNumber").clear();
 				//Thread.sleep(2000L);
@@ -247,12 +247,13 @@ public class ResetEmployeeData12 extends TestSuiteBase
 				System.out.println("The payroll id got updated");
 			}
 			Thread.sleep(2000L);
-			if(existsElementchkFor1mts(OR.getProperty("emplymntSaveButn")))
+			if(existsElement(OR.getProperty("emplymntSaveButn")))
 			{
 				getObject("emplymntSaveButn").sendKeys("");
 				getObject("emplymntSaveButn").click();
 				System.out.println("The employement save button got clicked");
 			}
+			RewardTab(EmpName,Payrolid,Niable,Taxable);
 		}
 		catch(Throwable t)
 		{
@@ -263,6 +264,247 @@ public class ResetEmployeeData12 extends TestSuiteBase
 		}
 	}
 
+	
+
+	public void RewardTab(String EmpName,String Payrolid,String Niable,String Taxable)throws Throwable
+	{
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("rewardtabClk")))
+			{
+				getObject("rewardtabClk").sendKeys("");
+				getObject("rewardtabClk").click();
+				if(existsElement(OR.getProperty("compensationTableLocator")))
+				{
+					compensationLink(Niable, Taxable);
+				}
+				
+				if(existsElementchkFor1mts(OR.getProperty("compensationEditButtonLoctor")))
+				{
+					getObject("compensationEditButtonLoctor").sendKeys("");
+					getObject("compensationEditButtonLoctor").click();
+					Thread.sleep(5000L);
+				}
+			
+				if(existsElementchkFor1mts(OR.getProperty("compnNiableTaxableTable")))
+				{
+					selectNiableCheckbox(Niable, Taxable);
+				}
+				
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+	
+	
+	public void compensationLink(String Niable, String Taxable)throws Throwable
+	{
+		try
+		{
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("compensationTableLocator")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("compensation record table exists");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("compensationTableRowsLocator")));
+				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
+				WebElement compensationLink = driver.findElement(By.xpath("//div[2]/table[contains(@id, 'j_id0:rewardHelp:CompensationBlock')]/tbody/tr/td[1]/a"));
+				compensationLink.sendKeys("");
+				compensationLink.click();
+				System.out.println("The compensation record got clicked");
+			}
+			selectNiableCheckbox(Niable,Taxable);
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+			System.out.println("");	
+		}
+	}
+
+	
+	
+	public void selectNiableCheckbox(String Niable, String Taxable)throws Throwable
+	{
+		try
+		{
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("compnNiableTaxableTable")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("details table exists");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("compnNiableTaxableTableRows")));
+				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
+				int row_num,col_num;
+				row_num=1;
+				outerloop:
+					for(WebElement trElement : rows)
+					{
+						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
+						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
+						col_num=1;
+						for(WebElement tdElement : td_collection)
+						{
+							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("NI-able"))
+							{
+								Thread.sleep(4000L);
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								/*
+								 * You should provide the tabindex .
+								 * this tab index varies from org to org hence 
+								 * just change the value of tab indes if you are testing 
+								 * QA Org and shifting to Regress Org.
+								 */
+								WebElement Niablechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='00Nb0000009I798']"));
+								String tabindexval = Niablechkbox.getAttribute("tabindex");
+								System.out.println("tab index is :"+tabindexval);
+								boolean	Nblrchkbox = Niablechkbox.isSelected();
+								System.out.println("The checkbox selection is :"+Nblrchkbox);
+								boolean Nblrchkboxdisplyed = Niablechkbox.isDisplayed();
+								System.out.println("The checkbox is displayed :"+Nblrchkboxdisplyed);
+								Thread.sleep(4000L);
+
+								boolean smallIsEnabled = Niablechkbox.isEnabled();
+								System.out.println("The checkbox is isEnabled :"+smallIsEnabled);
+
+								double valueOfsmallReliefChkbox = Double.parseDouble(Niable);
+								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
+								if(valueOfsmallReliefChkbox== 1.0)
+								{
+									if(Nblrchkbox)
+									{
+										System.out.println("Niable checkbox was ALLREADY checked which is correct, Hence Condition now satisfied successfully");
+										break  outerloop;
+									}
+									else
+									{
+										Niablechkbox.sendKeys("");
+										Niablechkbox.click();
+										System.out.println("Niable checkbox was now checked, Hence our condition got satisfied");
+										break  outerloop;
+									}
+								}
+							}
+							col_num++;
+						}
+						row_num++;
+					} 
+			}
+			Thread.sleep(2000L);
+			selectTaxableCheckbox1(Niable, Taxable);
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+			System.out.println("");	
+		}
+	}
+	
+	
+	
+	public void selectTaxableCheckbox1(String Niable, String Taxable)throws Throwable
+	{
+		try
+		{
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("compnNiableTaxableTable")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("details table exists");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("compnNiableTaxableTableRows")));
+				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
+				int row_num,col_num;
+				row_num=1;
+				outerloop:
+					for(WebElement trElement : rows)
+					{
+						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
+						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
+						col_num=1;
+						for(WebElement tdElement : td_collection)
+						{
+							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Taxable"))
+							{
+								Thread.sleep(4000L);
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								/*
+								 * You should provide the tabindex .
+								 * this tab index varies from org to org hence 
+								 * just change the value of tab indes if you are testing 
+								 * QA Org and shifting to Regress Org.
+								 */
+								WebElement Taxblechkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='00Nb0000009I79g']"));
+								String tabindexval = Taxblechkbox.getAttribute("tabindex");
+								System.out.println("tab index is :"+tabindexval);
+								boolean	Nblrchkbox = Taxblechkbox.isSelected();
+								System.out.println("The checkbox selection is :"+Nblrchkbox);
+								boolean Nblrchkboxdisplyed = Taxblechkbox.isDisplayed();
+								System.out.println("The checkbox is displayed :"+Nblrchkboxdisplyed);
+								Thread.sleep(4000L);
+
+								boolean smallIsEnabled = Taxblechkbox.isEnabled();
+								System.out.println("The checkbox is isEnabled :"+smallIsEnabled);
+
+								double valueOfsmallReliefChkbox = Double.parseDouble(Taxable);
+								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
+								if(valueOfsmallReliefChkbox== 1.0)
+								{
+									if(Nblrchkbox)
+									{
+										System.out.println("Taxable checkbox was allready checked which is correct, Hence Condition now satisfied successfully");
+										break  outerloop;
+									}
+									else
+									{
+										Taxblechkbox.sendKeys("");
+										Taxblechkbox.click();
+										System.out.println("Taxable checkbox was now checked, Hence our condition got satisfied");
+										break  outerloop;
+									}
+								}
+							}
+							col_num++;
+						}
+						row_num++;
+					} 
+			}
+			Thread.sleep(2000L);
+			saveCompnRecord();
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+			System.out.println("");	
+		}
+	}
+	
+	
+	
+	
+	
+
+	public void saveCompnRecord()throws Throwable
+	{
+		try
+		{
+			getObject("SERsaveButtnCheckboxlocator").sendKeys("");
+			getObject("SERsaveButtnCheckboxlocator").click();
+			System.out.println("The save button got clicked successfully");
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+	
 
 	
 	
