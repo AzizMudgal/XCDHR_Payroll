@@ -3,12 +3,14 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scena
 
 
 
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -95,8 +97,79 @@ public class ProcessFinalPayrollForJan extends TestSuiteBase
 		}
 		generateFinalDraft();
 	}
-
 	
+	
+	public void generateFinalDraft()throws Throwable
+	{
+		try
+		{
+			if(existsElementchkFor2mts(OR.getProperty("editButttonInPayrollPage")))
+			{
+				boolean b=getObject("editButttonInPayrollPage").isDisplayed();
+				Assert.assertEquals(true, b);
+				getObject("editButttonInPayrollPage").sendKeys("");
+				getObject("editButttonInPayrollPage").click();
+				Thread.sleep(4000);
+				getObject("payRunDateLabel").isDisplayed();
+				System.out.println("====>payRunDateLabel Is Pressent<======");
+				getObject("payRunDate").isDisplayed();
+				Thread.sleep(4000);
+				System.out.println("====>payRunDate Is Pressent<======");
+				getObject("payRunDate").sendKeys("");
+				getObject("payRunDate").click();
+				System.out.println("====>payRunDate Is Clicked<======");
+				getObject("savePayrollButton").isDisplayed();
+				Thread.sleep(4000);
+				getObject("savePayrollButton").sendKeys("");
+				getObject("savePayrollButton").click();
+				System.out.println("====>Save Button Is Clicked<======");		
+			}
+			else
+			{
+				System.out.println("=========>Edit Button Is Not Pressent<=========");
+			}
+			if(existsElementchkFor2mts(OR.getProperty("generateFinalDraft")))
+			 {
+				System.out.println("Generate final draft button exists");
+				getObject("generateFinalDraft").sendKeys("");
+				getObject("generateFinalDraft").click();
+				System.out.println("The generate Final draft button got clicked");
+					if(existsElementchkFor3mts(OR.getProperty("progressBar")))
+					{
+						System.out.println("The progress bar got displayed , plz wait for FPS Button to display");
+						if(existsElementchkFor1mts(OR.getProperty("createFPS")))
+						{
+							System.out.println("The generate Final draft Functionality executed successfully");
+							System.out.println("And also Create FPS button got displayed");
+							System.out.println("");
+						}
+						else
+						{
+							payRunExecution1();
+						}
+					}
+					else
+					{
+						System.out.println("Still progressBar is not displayed");
+						System.out.println("");
+						generateFinalDraft();
+					}
+			}
+			if(existsElementchkFor2mts(OR.getProperty("createFPS")))
+			{
+			    createFPS();
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());	
+		}
+	}
+	
+	
+
+	/*
 	
 	public void generateFinalDraft()throws Throwable
 	{
@@ -140,7 +213,7 @@ public class ProcessFinalPayrollForJan extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());	
 		}
 	}
-	
+	*/
 	
 	public void payRunExecution1()throws Throwable
 	{
