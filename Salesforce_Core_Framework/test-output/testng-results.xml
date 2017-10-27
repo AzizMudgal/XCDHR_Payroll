@@ -2,9 +2,14 @@
 <testng-results skipped="1" failed="0" ignored="0" total="7" passed="6">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Payroll RTI Recogntion Scenario7Month1" duration-ms="1774930" started-at="2017-10-27T09:41:21Z" finished-at="2017-10-27T10:10:56Z">
+=======
+  <suite name="Default suite" duration-ms="336754" started-at="2017-10-24T05:57:34Z" finished-at="2017-10-24T06:03:11Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="1" duration-ms="2895" started-at="2017-10-27T09:41:21Z" finished-at="2017-10-27T09:41:24Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ExecuteQuery">
         <test-method status="FAIL" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ExecuteQuery@13deb50e]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2017-10-27T15:11:21Z" finished-at="2017-10-27T15:11:21Z">
@@ -41,9 +46,19 @@
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Exception -->
+=======
+    <test name="Default test" duration-ms="336754" started-at="2017-10-24T05:57:34Z" finished-at="2017-10-24T06:03:11Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month8.ProcessFinalPayrollForNov">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month8.ProcessFinalPayrollForNov@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="11401" started-at="2017-10-24T11:27:23Z" finished-at="2017-10-24T11:27:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month8.ProcessFinalPayrollForNov@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="3793" started-at="2017-10-24T11:27:34Z" finished-at="2017-10-24T11:27:38Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="SKIP" signature="queryExecute()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ExecuteQuery@13deb50e]" name="queryExecute" duration-ms="0" started-at="2017-10-27T15:11:24Z" finished-at="2017-10-27T15:11:24Z">
           <exception class="java.lang.Exception">
             <message>
@@ -232,6 +247,9 @@
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ProcessPayrollForApril@73846619]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="975529" started-at="2017-10-27T15:17:22Z" data-provider="getData" finished-at="2017-10-27T15:33:37Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month8.ProcessFinalPayrollForNov@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="315679" started-at="2017-10-24T11:27:42Z" data-provider="getData" finished-at="2017-10-24T11:32:57Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <params>
             <param index="0">
               <value>
@@ -255,7 +273,11 @@
             </param>
             <param index="4">
               <value>
+<<<<<<< HEAD
                 <![CDATA[April-2017]]>
+=======
+                <![CDATA[November-2017]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="5">
@@ -279,7 +301,11 @@
             </param>
             <param index="8">
               <value>
+<<<<<<< HEAD
                 <![CDATA[3]]>
+=======
+                <![CDATA[34]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="9">
@@ -296,14 +322,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ProcessPayrollForApril@73846619]" name="ReportDataSetResult" is-config="true" duration-ms="1906" started-at="2017-10-27T15:33:37Z" finished-at="2017-10-27T15:33:39Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month8.ProcessFinalPayrollForNov@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="4353" started-at="2017-10-24T11:32:57Z" finished-at="2017-10-24T11:33:02Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ProcessPayrollForApril@73846619]" name="ReportTestResult" is-config="true" duration-ms="2659" started-at="2017-10-27T15:33:39Z" finished-at="2017-10-27T15:33:42Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month8.ProcessFinalPayrollForNov@239963d8]" name="ReportTestResult" is-config="true" duration-ms="9248" started-at="2017-10-24T11:33:02Z" finished-at="2017-10-24T11:33:11Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ProcessPayrollForApril -->
     </test> <!-- 4 -->
     <test name="5" duration-ms="252106" started-at="2017-10-27T10:03:42Z" finished-at="2017-10-27T10:07:54Z">
@@ -480,4 +515,9 @@
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.TestAprilReports -->
     </test> <!-- 6 -->
   </suite> <!-- Payroll RTI Recogntion Scenario7Month1 -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month8.ProcessFinalPayrollForNov -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 </testng-results>
