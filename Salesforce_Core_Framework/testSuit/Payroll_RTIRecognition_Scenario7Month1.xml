@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Payroll RTI Recogntion Scenario7Month1">
-<test name="1">
+<!-- <test name="1">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ExecuteQuery" ></class>  
     </classes>
@@ -24,7 +24,7 @@
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ProcessFinalPayrollForApril" ></class>  
     </classes>
-</test>
+</test> -->
 <test name="6">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.TestAprilReports" ></class>  
