@@ -1151,12 +1151,12 @@ public class TestBase {
 			 * Need to remove following code once Salesforce no longer
 			 * displays this TLS Message.
 			 */
-			if(existsElementchkFor1mts(OR.getProperty("afterLoginContinueButon")))
+			/*if(existsElementchkFor1mts(OR.getProperty("afterLoginContinueButon")))
 			{
 				getObject("afterLoginContinueButon").click();
 				System.out.println("The TLS Continue button got clicked successfully");
 				Thread.sleep(2000L);
-			}
+			}*/
 			
 		}catch(Throwable t){
 			CaptureScreenshot(this.getClass().getSimpleName());
@@ -6514,7 +6514,7 @@ public	int rowMatchedDD=0;
 	{
 		try
 		{
-			if(existsElementchkFor5mts(OR.getProperty("progressBar")))
+			if(existsElementchkFor1mts(OR.getProperty("progressBar")))
 			{
 				System.out.println("Still generate draft payroll functionality execution did not completed...please wait");
 				payRunExecution();

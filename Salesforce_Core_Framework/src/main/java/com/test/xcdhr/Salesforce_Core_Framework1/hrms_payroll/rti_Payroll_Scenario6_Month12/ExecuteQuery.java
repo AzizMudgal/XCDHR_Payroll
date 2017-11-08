@@ -1,11 +1,15 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12;
 
+
+
+
 import java.util.List;
 
 
 
 
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -80,7 +84,7 @@ public class ExecuteQuery extends TestSuiteBase {
 			try
 			{
 				titlename = driver.getTitle();
-				Assert.assertEquals(driver.getTitle(), titlename);
+				Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
 				System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
 				System.out.println("");
 			}
@@ -93,83 +97,103 @@ public class ExecuteQuery extends TestSuiteBase {
 
 		
 			String ParentWindow = driver.getWindowHandle();
-			if(existsElement(OR.getProperty("Hover")))
+			if(existsElementchkFor1mts(OR.getProperty("Hover")))
 			{
 				getObject("Hover").click();
 				defaultWaitTime();
 			}
 
-			if(existsElement(OR.getProperty("developerConsole")))
+			if(existsElementchkFor1mts(OR.getProperty("developerConsole")))
 			{
 				getObject("developerConsole").click();
+				System.out.println("2> script clicked to Developer console.");
+
 				defaultWaitTime();
 			}
 
-			for(String winHandle : driver.getWindowHandles())
+			for(String childWindow : driver.getWindowHandles())
 			{
-				driver.switchTo().window(winHandle);
+				driver.switchTo().window(childWindow);
 				defaultWaitTime();
 			}
 			Thread.sleep(4000L);
-			System.out.println("2> script clicked to Developer console.");
-			if(existsElement(OR.getProperty("HoverDebug")))
+			if(existsElementchkFor1mts(OR.getProperty("HoverDebug")))
 			{
 				getObject("HoverDebug").sendKeys("");
 				getObject("HoverDebug").click();
+				System.out.println("2> script clicked to Hover Debug button");
+
 				defaultWaitTime();
 				
 			}
+			//String ParentWindow2 = driver.getWindowHandle();
 
-			if(existsElement(OR.getProperty("ExecuteLast")))
+			
+
+			if(existsElementchkFor1mts(OR.getProperty("openExecute")))
 			{
-				getObject("ExecuteLast").click();
-				defaultWaitTime();
+				getObject("openExecute").click();
 				System.out.println("3> Clicked to openExecute link from developer console");
-				if(existsElement(OR.getProperty("executeQuerySuccessTable")))
-				{
-					System.out.println("table got recognised");
-					WebElement successTable = driver.findElement(By.xpath(OR.getProperty("executeQuerySuccessTable")));
-					List<WebElement> Table_Report = successTable.findElements(By.xpath(OR.getProperty("executeQuerySuccessTablerows")));
-					java.util.Iterator<WebElement> Rx = Table_Report.iterator();
-					int Reportrownum = 2;
+			}
+			Thread.sleep(4000L);
+			for(String childWindow2 : driver.getWindowHandles())
+			{
+				driver.switchTo().window(childWindow2);
+				defaultWaitTime();
+			}
+			
+			WebElement targetElement = driver.findElement(By.xpath("//div[6]/div[1]/div/div/div/div[3]"));
+				int length = targetElement.toString().length();
+				System.out.println("The length of the string is "+length);
+				 List<WebElement> allOptions = targetElement.findElements(By.xpath("//div[6]/div[1]/div/div/div/div[3]/div/pre"));
+				 java.util.Iterator<WebElement> Rx = allOptions.iterator();
+				 int rowwwnum = 1;
 					while(Rx.hasNext())
 					{
-						String s = "//*[contains(@id,'gridview')]/table/tbody/tr"+"["+Reportrownum+"]"+"/td[6]/div";
-						WebElement ddd = driver.findElement(By.xpath(s));
-						String textfound = ddd.getText();
-						System.out.println("text found is  :"+textfound);
-						Thread.sleep(3000L);
-						if(textfound.equalsIgnoreCase("Success"))
-						{
-							System.out.println("Report status is matching:");
-							System.out.println("Hence the YTD Query executed successfully");
-							driver.close();
-							driver.switchTo().window(ParentWindow);
-							/*
-							defaultWaitTime();
-							if(existsElement(OR.getProperty("homePageEmpTxt")))
-							{
-								System.out.println("Main window also got closed successfully");
-							}
-							*/
-							break;
-						}
+						System.out.println("The row number now is "+rowwwnum);
+						 String s = "//div[6]/div[1]/div/div/div/div[3]/div"+"["+rowwwnum+"]"+"/pre";
+						WebElement wow = driver.findElement(By.xpath(s));
+						 int length1 = wow.toString().length();
+						 
+						// for (int i = 0; i < length1; i++)
+						// {
+							 //wow.click();
+							 wow.sendKeys(Keys.TAB);
+							 wow.sendKeys(Keys.DELETE,"value to set");
+							// wow.sendKeys("abc");
 						
-											
-					}
-					
-					
+							// wow.sendKeys(Keys.chord(Keys.CONTROL, "a"));
+							// wow.sendKeys(Keys.DELETE,"value to set");
+							 Thread.sleep(2000L);
+							// wow.clear();
+							// System.out.println("The row"+ rowwwnum+" got deleted now");
+						// }
+						 rowwwnum++;
+						 if(rowwwnum==4)
+						 {
+							 System.out.println("no more rows to delete,hence breaking out of loop");
+								wow.sendKeys("abc");
+							 break;
+						 }
+				    }
+					Thread.sleep(2000L);
+					getObject("scriptExecuteButton").sendKeys("");
+					getObject("scriptExecuteButton").click();
+					System.out.println("The butto got clicked");
+					Thread.sleep(4000L); 
 				}
-				
-			}
-			
-			
-		}
-				
-			
-		}
+			 	//driver.close();
+				//driver.switchTo().window(ParentWindow);
+	}
 	
 
+			
+				
+			
+	
+	
+	
+					
 
 
 	@AfterMethod

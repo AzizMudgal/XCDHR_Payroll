@@ -1,15 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+=======
 <testng-results skipped="0" failed="3" ignored="0" total="7" passed="4">
+>>>>>>> refs/remotes/origin/master
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
+  <suite name="Default suite" duration-ms="200336" started-at="2017-11-08T10:02:05Z" finished-at="2017-11-08T10:05:25Z">
+=======
   <suite name="Payroll RTI Recogntion Scenario5Month10" duration-ms="1085204" started-at="2017-11-06T13:07:06Z" finished-at="2017-11-06T13:25:11Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
+    <test name="Default test" duration-ms="200336" started-at="2017-11-08T10:02:05Z" finished-at="2017-11-08T10:05:25Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month1.TestAprilReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month1.TestAprilReports@239963d8]" name="CheckSuiteSkip" is-config="true" duration-ms="7868" started-at="2017-11-08T15:31:57Z" finished-at="2017-11-08T15:32:05Z">
+=======
     <test name="2" duration-ms="166503" started-at="2017-11-06T13:07:06Z" finished-at="2017-11-06T13:09:52Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10">
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10@31ef45e3]" name="CheckTestSkip" is-config="true" duration-ms="3001" started-at="2017-11-06T18:37:06Z" finished-at="2017-11-06T18:37:09Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month1.TestAprilReports@239963d8]" name="CheckTestSkip" is-config="true" duration-ms="3465" started-at="2017-11-08T15:32:05Z" finished-at="2017-11-08T15:32:08Z">
+=======
         </test-method> <!-- CheckTestSkip -->
         <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10@31ef45e3]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="119502" started-at="2017-11-06T18:37:11Z" data-provider="getData" finished-at="2017-11-06T18:39:11Z">
           <params>
@@ -404,17 +422,109 @@ Driver info: driver.version: RemoteWebDriver
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.NullPointerException -->
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- CheckTestSkip -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month1.TestAprilReports@239963d8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="185923" started-at="2017-11-08T15:32:11Z" data-provider="getData" finished-at="2017-11-08T15:35:17Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO HMRCS2 EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 102]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[HMRCS2_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Recognition ScenarioTwo201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROL RTI SCENRIO2 REPORT]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_RTI_TestReports201718\\201718 Payroll RTI Recognition Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[1]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+          </params>
+=======
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="1856" started-at="2017-11-06T18:43:18Z" finished-at="2017-11-06T18:43:20Z">
+>>>>>>> refs/remotes/origin/master
+          <reporter-output>
+          </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month1.TestAprilReports@239963d8]" name="ReportDataSetResult" is-config="true" duration-ms="3803" started-at="2017-11-08T15:35:17Z" finished-at="2017-11-08T15:35:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month1.TestAprilReports@239963d8]" name="ReportTestResult" is-config="true" duration-ms="4003" started-at="2017-11-08T15:35:21Z" finished-at="2017-11-08T15:35:25Z">
+=======
+        </test-method> <!-- ReportDataSetResult -->
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan@56ef9176]" name="ReportTestResult" is-config="true" duration-ms="2815" started-at="2017-11-06T18:43:20Z" finished-at="2017-11-06T18:43:23Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month1.TestAprilReports -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+=======
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan -->
     </test> <!-- 4 -->
     <test name="5" duration-ms="527356" started-at="2017-11-06T13:13:23Z" finished-at="2017-11-06T13:22:10Z">
@@ -591,4 +701,5 @@ Driver info: driver.version: RemoteWebDriver
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.TestJanReports -->
     </test> <!-- 6 -->
   </suite> <!-- Payroll RTI Recogntion Scenario5Month10 -->
+>>>>>>> refs/remotes/origin/master
 </testng-results>
