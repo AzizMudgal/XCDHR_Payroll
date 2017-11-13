@@ -276,7 +276,7 @@ public void FetchEmployeeRecord(String EmpName,String SmallEmployerRelief) throw
             {
                 System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
              
-                if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DO NOT TOUCH AUTO ENROLMENT TEST COMPANY 1"))
+                if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSMP COMPANY"))
 				{																	
 					System.out.println("Company name  :"+tdElement.getText()+ "  matched ");
 					tdElement.sendKeys("");
@@ -324,7 +324,7 @@ public void FetchEmployeeRecord(String EmpName,String SmallEmployerRelief) throw
 							String tempEmp1= tempElement1.getText();
 							System.out.println("Field name is :"+tempEmp1);
 							//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
-							if(tempEmp1!=null && tempEmp1.equalsIgnoreCase("DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18"))
+							if(tempEmp1!=null && tempEmp1.equalsIgnoreCase("DONT TOUCH AUTO DIRSMP EMPLOYER"))
 							{											
 								System.out.println("Employer name  :"+tempEmp1+ "  matched ");
 

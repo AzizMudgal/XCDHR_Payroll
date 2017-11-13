@@ -253,7 +253,9 @@ public class SmallEmployerRelief extends TestSuiteBase {
 					for(WebElement tdElement : td_collection)
 					{
 						System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DO NOT TOUCH AUTO ENROLMENT TEST COMPANY 1"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
+						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP COMPANY"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
+							//DONT TOUCH AUTO DIRSAPP COMPANY  DO NOT TOUCH AUTO ENROLMENT TEST COMPANY 1
+
 						{	
 							Thread.sleep(4000L);
 							System.out.println("Company name  :"+tdElement.getText()+ "  matched ");
@@ -315,7 +317,9 @@ public class SmallEmployerRelief extends TestSuiteBase {
 						{
 							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
 
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18"))
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP EMPLOYER"))
+								//DONT TOUCH AUTO DIRSMP EMPLOYER DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18
+
 							{
 								Thread.sleep(5000L);
 								System.out.println("Link name  :"+tdElement.getText()+ "  matched ");
