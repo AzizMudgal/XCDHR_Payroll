@@ -2,22 +2,22 @@
 <suite name="Payroll Suite GeneralAndLargeTaxcodeMonthly">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ExecuteQuery" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ExecuteQuery" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.GeneralTaxRateMonthly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.GeneralTaxRateMonthly" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForMonthlyTax" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ProcessPayrollForMonthlyTax" ></class>  
     </classes>
 </test>
 <test name="4">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports" ></class>  
     </classes>
 </test>
 </suite>
