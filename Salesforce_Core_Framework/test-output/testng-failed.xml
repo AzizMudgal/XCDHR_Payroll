@@ -1,106 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<<<<<<< HEAD
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
-=======
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll RTI Recogntion Scenario5Month10]">
-  <test name="3(failed)">
->>>>>>> refs/remotes/origin/master
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ExecuteQuery">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A">
         <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessFinalPayrollForJan">
-        <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportTestResult"/>
-          <include name="CheckTestSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessFinalPayrollForJan -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.TestJanReports">
->>>>>>> refs/remotes/origin/master
-        <methods>
-          <include name="CheckTestSkip"/>
-<<<<<<< HEAD
-=======
-          <include name="ReportTestResult"/>
->>>>>>> refs/remotes/origin/master
+          <include name="EmpsSetup_WithAnnualSalary"/>
           <include name="CheckSuiteSkip"/>
-<<<<<<< HEAD
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-          <include name="queryExecute"/>
-=======
-          <include name="ReportDataSetResult"/>
->>>>>>> refs/remotes/origin/master
-        </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ExecuteQuery -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.TestJanReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10">
-        <methods>
-          <include name="ReportTestResult"/>
-          <include name="ReportTestResult"/>
           <include name="CheckTestSkip"/>
-          <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_ForMonthlyTaxRate" invocation-numbers="0"/>
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="0"/>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportDataSetResult"/>
+          <include name="EmpsSetup_WithNICategory"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10 -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A -->
     </classes>
-<<<<<<< HEAD
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
-=======
-  </test> <!-- 3(failed) -->
-  <test name="4(failed)">
-    <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan">
-        <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessPayrollForJan -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessFinalPayrollForJan">
-        <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportTestResult"/>
-          <include name="CheckTestSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ProcessFinalPayrollForJan -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.TestJanReports">
-        <methods>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-          <include name="CheckSuiteSkip"/>
-          <include name="ReportDataSetResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.TestJanReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10">
-        <methods>
-          <include name="ReportTestResult"/>
-          <include name="ReportTestResult"/>
-          <include name="CheckTestSkip"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportDataSetResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10 -->
-    </classes>
-  </test> <!-- 4(failed) -->
-</suite> <!-- Failed suite [Payroll RTI Recogntion Scenario5Month10] -->
->>>>>>> refs/remotes/origin/master

@@ -50,7 +50,9 @@ import org.openqa.selenium.support.ui.Select;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.EnumTestClass;
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.ModifiedReport;
+
 import atu.webdriver.utils.table.WebTable;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader;
 
@@ -70,7 +72,8 @@ public class TestBase {
 	public String sbmtBtn;
 	public int rowtd;
 	WebElement element;
-	
+	public int rownumc;
+
 	public String value1;
 	public String value2;
 	public String value3;
@@ -554,7 +557,9 @@ public class TestBase {
 			Thread.sleep(1000L);
 			getObject("ViewGOClick").sendKeys("");
 			getObject("ViewGOClick").click();
-			Thread.sleep(4000L);
+			System.out.println("The compensation GO Button got clicked");
+
+			Thread.sleep(8000L);
 		}
 	}
 	
@@ -1136,7 +1141,7 @@ public class TestBase {
 			username.sendKeys("azizm@xcdhr.com");
 			Thread.sleep(2000L);
 			WebElement password = driver.findElement(By.id(OR.getProperty("login_Password")));
-			password.sendKeys("arsc10522");
+			password.sendKeys("arsbamrast*53");
 
 			Thread.sleep(2000L);
 			getObject("Submit_Button").click();
@@ -5565,7 +5570,7 @@ public	int rowMatchedDD=0;
 	 * for Taxworksheets and NI Worksheets
 	 * 
 	 */
-	public void UpdateEmployeeNICategory(String empName,String NICategory) throws Throwable
+	public void UpdateEmployeeNICategoryOld(String empName,String NICategory) throws Throwable
 	{
 		try
 		{
@@ -6737,7 +6742,7 @@ public	int rowMatchedDD=0;
 
 
 
-	public void UpdateAnnualSalary(String EmpName, String annualSalary, String PayFrequency) throws Throwable
+	public void UpdateAnnualSalaryOLD(String EmpName, String annualSalary, String PayFrequency) throws Throwable
 	{
 
 		try{
@@ -6977,7 +6982,7 @@ public	int rowMatchedDD=0;
 					getObject("paginationNext").click();
 					System.out.println("hence clicked to next page");
 
-		    	//allpages.get(i).click();
+		    	
 				}
 		    	List<WebElement> allrows1 = table.findElements(By.xpath(OR.getProperty("payroll2weeklytablerowss")));
 			
@@ -6985,8 +6990,7 @@ public	int rowMatchedDD=0;
 					{
 							ProcessingToWeeklyForStatutory1(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollView);
 					}
-					
-				//
+	
 				
 			}
 		}
@@ -10403,6 +10407,343 @@ System.out.println(t.getMessage());
 		return result.toString();
 	}
 
+	
+	/*
+	 * Payroll Tax,NI,etc input scripts methods.
+	 */
+	
+	public void UpdateEmployeeNICategory(String empName,String NICategory) throws Throwable
+	{
+		try
+		{
+			if(employeeFirsttimeView)
+			{
+				employeeFirsttimeView = false;
+				getObject("PersonalTab").click();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalText")))
+				{
+					System.out.println("I am in personal page");
+					if(existsElementchkFor1mts(OR.getProperty("EmployeeView")))
+					{
+						System.out.println("I recognised the Employee view");
+						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
+						selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
+						Thread.sleep(2000L);
+						if(existsElementchkFor1mts(OR.getProperty("ViewGoButton")))
+						{
+							getObject("ViewGoButton").sendKeys("");
+							getObject("ViewGoButton").click();
+							System.out.println("The Go button got clicked");
+						}
+						Thread.sleep(7000L);
+					}
+				}
+			}
+			Thread.sleep(2000L);
+			try
+			{
+				if (existsElementchkFor1mts(OR.getProperty("firstRecordOfTaxCodecoulmnTable")))
+				{
+					WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
+					if(existsWebElement(postsTable))
+					{
+						System.out.println("payroll table existt");
+						List<WebElement> allrows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+						searchEmployeeAndUpdateNICatgory(empName,NICategory);
+						if(allrows.size()>=200)
+						{
+							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject("paginationNextPersonal").sendKeys("");
+								getObject("paginationNextPersonal").click();
+								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep(8000L);
+								searchEmployeeAndUpdateNICatgory(empName,NICategory);
+							}
+						}
+					}
+				}
+			}
+			catch(Throwable t)
+			{
+				System.out.println(t.getStackTrace().toString());
+				System.out.println("");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace().toString());
+			System.out.println("");
+		}
+	}
+
+
+
+	public void searchEmployeeAndUpdateNICatgory(String empName,String NICategory)throws Throwable
+	{
+		try
+		{
+			WebElement tableheader = driver.findElement(By.xpath(OR.getProperty("PersonalAndCompensationHeadingTable")));
+			List<WebElement> th=tableheader.findElements(By.tagName("td"));
+			for(a=0;a<th.size();a++) 
+			{
+				if("Employee".equalsIgnoreCase(th.get(a).getText()))
+				{
+					empcolnum = a+1;
+					break;
+				}
+			}
+
+			for(b=0;b<th.size();b++) 
+			{
+				if("NI category".equalsIgnoreCase(th.get(b).getText()))
+				{
+					niCategoryColumn = b+1;
+					break;
+				}
+			}
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
+			List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+			java.util.Iterator<WebElement> x = rows.iterator();
+			rownum = 1;			
+			while(x.hasNext())
+			{
+				//Thread.sleep(2000L);
+				String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
+				WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+				String tempEmp= tempElement.getText();
+				System.out.println(tempEmp+"-------"+empName+"------"+rownum);
+				String firstRowOfTaxCode="//div["+rownum+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+niCategoryColumn+"]"+"/"+"div";
+				if(tempEmp!=null && tempEmp.equalsIgnoreCase(empName))
+				{
+					System.out.println("Employee name  :"+tempEmp+ "  matched ");
+					Thread.sleep(2000L);
+					if(existsElementchkFor1mts(firstRowOfTaxCode))
+					{
+						Actions action = new Actions(driver);
+						action.doubleClick(driver.findElement(By.xpath(firstRowOfTaxCode))).perform();
+						action.moveToElement(getObject("InlineDropdown")).perform();
+						//Thread.sleep(2000L);
+						if(existsElementchkFor1mts(OR.getProperty("InlineDropdown")))
+						{
+							getObject("InlineDropdown").sendKeys("");
+							getObject("InlineDropdown").sendKeys(NICategory);
+							System.out.println("Selected the NI Picklist item "+NICategory);
+							Thread.sleep(2000L);
+							if(existsElementchkFor1mts(OR.getProperty("InlineUpdateButn")))
+							{
+								getObject("InlineUpdateButn").click();
+								System.out.println("The update button got clicked and NI Category got saved");
+								Thread.sleep(5000L);
+								break;
+							}
+						}
+					}
+				}
+				rownum++;
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+	public void UpdateAnnualSalary(String empName, String annualSalary, String PayFrequency) throws Throwable
+	{
+		try
+		{
+			if(compensationFirsttimeView)
+			{
+				compensationFirsttimeView = false;
+				if(existsElement(OR.getProperty("CompensationTab")))
+				{
+					getObject("CompensationTab").click();
+					System.out.println("The compensation tab got clicked");
+					Thread.sleep(4000L);
+					/*
+					 * Calling the following method from the base class since "Select value is
+					 * not able to call the value from OR.Properties page.
+					 */
+					compensationSelectValue();
+				}
+			}
+			Thread.sleep(2000L);
+			try
+			{
+				if (existsElementchkFor1mts(OR.getProperty("firstRecordOfTaxCodecoulmnTable")))
+				{
+					WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
+					if(existsWebElement(postsTable))
+					{
+						System.out.println("payroll table existt");
+						List<WebElement> allrows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+						searchEmployeeAndUpdateAnnualSalAndFreqncy(empName, annualSalary, PayFrequency);
+						if(allrows.size()>=200)
+						{
+							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject("paginationNextPersonal").sendKeys("");
+								getObject("paginationNextPersonal").click();
+								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep(8000L);
+								searchEmployeeAndUpdateAnnualSalAndFreqncy(empName, annualSalary, PayFrequency);
+							}
+						}
+					}
+				}
+			}
+			catch(Throwable t)
+			{
+				System.out.println(t.getStackTrace().toString());
+				System.out.println("");
+			}
+
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace().toString());
+			System.out.println("");
+		}
+	}
+
+
+
+
+	public void searchEmployeeAndUpdateAnnualSalAndFreqncy(String empName, String annualSalary, String PayFrequency)throws Throwable
+	{
+		try
+		{
+			WebElement tableheader = driver.findElement(By.xpath(OR.getProperty("PersonalAndCompensationHeadingTable")));
+			List<WebElement> th=tableheader.findElements(By.tagName("td"));
+			for(a=0;a<th.size();a++) 
+			{
+				if("Employee".equalsIgnoreCase(th.get(a).getText()))
+				{
+					empcolnum = a+1;
+					break;
+				}
+			}
+
+			for(b=0;b<th.size();b++) 
+			{
+				if("Annual salary".equalsIgnoreCase(th.get(b).getText()))
+				{
+					compnAnnualSalColumn = b+1;
+					break;
+				}
+			}
+
+			for(c=0;c<th.size();c++) 
+			{
+				if("Payroll frequency".equalsIgnoreCase(th.get(c).getText()))
+				{
+					compPayfrequencyColumn = c+1;
+					break;
+				}
+			}
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
+			List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+			java.util.Iterator<WebElement> x = rows.iterator();
+			int totalRowws123=rows.size();
+			System.out.println("The row size is "+totalRowws123);
+			rownumc = 1;	
+			while(x.hasNext())
+			{
+				System.out.println("Now the row number is :"+rownumc);
+				String firstRowOfEmployeeColumn="//div["+rownumc+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
+				WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+				String tempEmp= tempElement.getText();
+				System.out.println(tempEmp+"-------"+empName+"------"+rownumc);
+				if(tempEmp!=null && tempEmp.equalsIgnoreCase(empName))
+				{
+					Thread.sleep(1000L);
+					String firstRowOfAnnualsalary="//div["+rownumc+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+compnAnnualSalColumn+"]"+"/"+"div";
+					if(existsElementchkFor1mts(firstRowOfAnnualsalary))
+					{
+						Actions action1 = new Actions(driver);
+						action1.doubleClick(driver.findElement(By.xpath(firstRowOfAnnualsalary))).perform();
+						WebElement updatesal = driver.findElement(By.xpath(OR.getProperty("annualSalTextField")));
+						action1.moveToElement(updatesal).perform();
+						Thread.sleep(1000L);
+						updatesal.clear();
+						Thread.sleep(1000L);
+						updatesal.sendKeys(annualSalary);
+						Thread.sleep(1000L);
+						if(existsElementchkFor1mts(OR.getProperty("CompnSavebuton")))
+						{
+							getObject("CompnSavebuton").sendKeys("");
+							getObject("CompnSavebuton").click();
+							System.out.println("The annual salary got saved");
+						}
+						Thread.sleep(3000L);
+					}
+					UpdatePayFrequency12(empName,annualSalary,PayFrequency);
+					Thread.sleep(5000L);
+					break;
+				}
+				else
+				{
+					System.out.println("Employee not matched");
+				}
+				rownumc++;
+			   }
+			
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+	public void UpdatePayFrequency12(String empName,String annualSalary,String PayFrequency) throws Throwable
+	{
+		try
+		{
+			Thread.sleep(2000L);
+			String firstRowOfPayFrequency = "//div["+rownumc+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+compPayfrequencyColumn+"]"+"/"+"div";
+			if(existsElementchkFor1mts(firstRowOfPayFrequency))
+			{
+				Actions action2 = new Actions(driver);
+				action2.doubleClick(driver.findElement(By.xpath(firstRowOfPayFrequency))).perform();
+				action2.moveToElement(getObject("payFrequencyDropdown")).perform();
+				Thread.sleep(2000L);
+				if(existsElementchkFor1mts(OR.getProperty("payFrequencyDropdown")))
+				{
+					getObject("payFrequencyDropdown").sendKeys("");
+					getObject("payFrequencyDropdown").sendKeys(PayFrequency);
+					System.out.println("Selected the PayFrequency item as :"+PayFrequency);
+					Thread.sleep(2000L);
+					if(existsElementchkFor1mts(OR.getProperty("payFrequencyUpdate")))
+					{
+						getObject("payFrequencyUpdate").click();
+						System.out.println("The update button got clicked and Pay frequency Category got saved");
+					}
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+
+	
+	
+	
+	
+	
+	
 	
 	
 
