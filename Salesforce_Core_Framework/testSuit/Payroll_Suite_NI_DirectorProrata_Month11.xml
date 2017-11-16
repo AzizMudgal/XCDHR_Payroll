@@ -2,17 +2,20 @@
 <suite name="Payroll Suite NIDirector Prorata_Month11">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NIDirector_ProrataMonth11" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Prorata_Month11
+        .NIDirector_ProrataMonth11" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.PayrollForNIDirctorAsProraFeb" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Prorata_Month11
+        .PayrollForNIDirctorAsProraFeb" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReportsFebruary" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Prorata_Month11
+        .TestReportsFebruary" ></class>  
     </classes>
 </test>
 </suite>

@@ -2,17 +2,17 @@
 <suite name="Payroll Suite IncomeTax_TCMnth7_204045VarblePayAnd50RL">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.GeneralTaxRateMonthly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth7_204045VarblePayAnd50RL.GeneralTaxRateMonthly" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForMonthlyTax" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth7_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth7_204045VarblePayAnd50RL.TestReports" ></class>  
     </classes>
 </test>
 </suite>

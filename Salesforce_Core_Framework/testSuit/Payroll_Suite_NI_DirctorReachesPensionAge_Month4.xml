@@ -2,17 +2,17 @@
 <suite name="Payroll Suite NI_DirctorReachesPensionAgeMonth4">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NIDirector_ReachsPensonAgeMnth4" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth4.NIDirector_ReachsPensonAgeMnth4" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.PayrollForNIDirctrAsRandPJuly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth4.PayrollForNIDirctrAsRandPJuly" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReportsJuly" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth4.TestReportsJuly" ></class>  
     </classes>
 </test>
 </suite>

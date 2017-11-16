@@ -2,17 +2,17 @@
 <suite name="Payroll Suite NIDirector AtoD_Month4">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NIDirector_AtoDMonth4" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_Director_AtoDMonth4.NIDirector_AtoDMonth4" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForNI_AtoD" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_Director_AtoDMonth4.ProcessPayrollForNI_AtoD" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_Director_AtoDMonth4.hrms_payroll.TestReports" ></class>  
     </classes>
 </test>
 </suite>

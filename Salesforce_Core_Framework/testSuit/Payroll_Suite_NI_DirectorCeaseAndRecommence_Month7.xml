@@ -2,17 +2,17 @@
 <suite name="Payroll Suite NI_Dirctor Cease and recommence Month7">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NIDirector_CeseAndRecomncMnth7" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_CeaseandRecommence_Month7.NIDirector_CeseAndRecomncMnth7" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.PayrollForNIDirctrAsCandROct" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_CeaseandRecommence_Month7.PayrollForNIDirctrAsCandROct" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestReportsOctober" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_CeaseandRecommence_Month7.TestReportsOctober" ></class>  
     </classes>
 </test>
 </suite>
