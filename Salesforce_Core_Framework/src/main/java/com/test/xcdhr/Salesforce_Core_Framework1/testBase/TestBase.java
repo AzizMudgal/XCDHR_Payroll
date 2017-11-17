@@ -10412,6 +10412,8 @@ System.out.println(t.getMessage());
 	 * Payroll Tax,NI,etc input scripts methods.
 	 */
 	
+
+
 	public void UpdateEmployeeNICategory(String empName,String NICategory) throws Throwable
 	{
 		try
@@ -10447,20 +10449,7 @@ System.out.println(t.getMessage());
 					WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
 					if(existsWebElement(postsTable))
 					{
-						System.out.println("payroll table existt");
-						List<WebElement> allrows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
 						searchEmployeeAndUpdateNICatgory(empName,NICategory);
-						if(allrows.size()>=200)
-						{
-							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
-							{
-								getObject("paginationNextPersonal").sendKeys("");
-								getObject("paginationNextPersonal").click();
-								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-								Thread.sleep(8000L);
-								searchEmployeeAndUpdateNICatgory(empName,NICategory);
-							}
-						}
 					}
 				}
 			}
@@ -10534,12 +10523,28 @@ System.out.println(t.getMessage());
 							{
 								getObject("InlineUpdateButn").click();
 								System.out.println("The update button got clicked and NI Category got saved");
-								Thread.sleep(5000L);
+								Thread.sleep(8000L);
 								break;
 							}
 						}
 					}
 				}
+				else if(rownum == 200 && tempEmp!=null && tempEmp!=(empName))
+				{
+					System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+							+ " Required Employee not found hence clicking the"
+							+ " pagination link so that Employee search continues for next page");
+					if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+					{
+						getObject("paginationNextPersonal").sendKeys("");
+						getObject("paginationNextPersonal").click();
+						System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+						Thread.sleep(8000L);
+						searchEmployeeAndUpdateNICatgory(empName,NICategory);
+					}
+				}
+				else
+					System.out.println("incrementing the row number");
 				rownum++;
 			}
 		}
@@ -10579,20 +10584,7 @@ System.out.println(t.getMessage());
 					WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
 					if(existsWebElement(postsTable))
 					{
-						System.out.println("payroll table existt");
-						List<WebElement> allrows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
 						searchEmployeeAndUpdateAnnualSalAndFreqncy(empName, annualSalary, PayFrequency);
-						if(allrows.size()>=200)
-						{
-							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
-							{
-								getObject("paginationNextPersonal").sendKeys("");
-								getObject("paginationNextPersonal").click();
-								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-								Thread.sleep(8000L);
-								searchEmployeeAndUpdateAnnualSalAndFreqncy(empName, annualSalary, PayFrequency);
-							}
-						}
 					}
 				}
 			}
@@ -10679,19 +10671,29 @@ System.out.println(t.getMessage());
 							getObject("CompnSavebuton").click();
 							System.out.println("The annual salary got saved");
 						}
-						Thread.sleep(3000L);
+						Thread.sleep(8000L);
 					}
 					UpdatePayFrequency12(empName,annualSalary,PayFrequency);
-					Thread.sleep(5000L);
+					Thread.sleep(8000L);
 					break;
 				}
-				else
+				else if(rownumc == 200 && tempEmp!=null && tempEmp!=(empName))
 				{
-					System.out.println("Employee not matched");
+					System.out.println("The row number of the page reached"+ rownumc +" to 200 and"
+							+ " Required Employee not found hence clicking the"
+							+ " pagination link so that Employee search continues for next page");
+					if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+					{
+						getObject("paginationNextPersonal").sendKeys("");
+						getObject("paginationNextPersonal").click();
+						System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+						Thread.sleep(8000L);
+						searchEmployeeAndUpdateAnnualSalAndFreqncy(empName, annualSalary, PayFrequency);
+					}
 				}
-				rownumc++;
-			   }
-			
+				else
+					rownumc++;
+			}
 		}
 		catch(Throwable t)
 		{
@@ -10734,7 +10736,6 @@ System.out.println(t.getMessage());
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-
 
 
 
