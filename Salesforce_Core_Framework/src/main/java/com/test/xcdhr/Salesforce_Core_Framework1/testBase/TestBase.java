@@ -73,7 +73,7 @@ public class TestBase {
 	public int rowtd;
 	WebElement element;
 	public int rownumc;
-
+	public int lastRowCount;
 	public String value1;
 	public String value2;
 	public String value3;
@@ -10493,6 +10493,7 @@ System.out.println(t.getMessage());
 			}
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
 			List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+			lastRowCount = rows.size();
 			java.util.Iterator<WebElement> x = rows.iterator();
 			rownum = 1;			
 			while(x.hasNext())
@@ -10529,8 +10530,9 @@ System.out.println(t.getMessage());
 						}
 					}
 				}
-				else if(rownum == 200 && tempEmp!=null && tempEmp!=(empName))
+				else if(rownum == lastRowCount && tempEmp!=null && tempEmp!=(empName))
 				{
+					rownum++;
 					System.out.println("The row number of the page reached"+ rownum +" to 200 and"
 							+ " Required Employee not found hence clicking the"
 							+ " pagination link so that Employee search continues for next page");
@@ -10640,8 +10642,8 @@ System.out.println(t.getMessage());
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
 			List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
 			java.util.Iterator<WebElement> x = rows.iterator();
-			int totalRowws123=rows.size();
-			System.out.println("The row size is "+totalRowws123);
+			lastRowCount=rows.size();
+			System.out.println("The row size is "+lastRowCount);
 			rownumc = 1;	
 			while(x.hasNext())
 			{
@@ -10677,8 +10679,9 @@ System.out.println(t.getMessage());
 					Thread.sleep(8000L);
 					break;
 				}
-				else if(rownumc == 200 && tempEmp!=null && tempEmp!=(empName))
+				else if(rownumc == lastRowCount && tempEmp!=null && tempEmp!=(empName))
 				{
+					rownumc++;
 					System.out.println("The row number of the page reached"+ rownumc +" to 200 and"
 							+ " Required Employee not found hence clicking the"
 							+ " pagination link so that Employee search continues for next page");
