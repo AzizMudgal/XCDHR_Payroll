@@ -26,6 +26,7 @@ import org.testng.annotations.Test;
 import atu.webdriver.utils.table.WebTable;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
+
 public class TestReportsMay extends TestSuiteBase
 {
 	String runmodes[] = null;
@@ -40,17 +41,17 @@ public class TestReportsMay extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(
-					Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+					Payroll_NI_CeaseandRecommence_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName());
 	}
 
 
@@ -67,8 +68,7 @@ public class TestReportsMay extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-		
-		/* Added by Swamy*/
+		Thread.sleep(4000L);
 		try
 		{
 			titlename = driver.getTitle();
@@ -82,15 +82,8 @@ public class TestReportsMay extends TestSuiteBase
 			System.out.println("");
 			defaultWaitTime();
 		}
-		Thread.sleep(4000L);
-		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
-		{
-			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
-		}
-		else
-		{
-			System.out.println("Report Tab doesnot exist hence quitting this test");
-		}
+		Thread.sleep(4000L);		
+		
 	}
 
 
@@ -101,7 +94,6 @@ public class TestReportsMay extends TestSuiteBase
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			Thread.sleep(4000L);
 			driver.navigate().refresh();
 		}
 
@@ -324,7 +316,7 @@ public class TestReportsMay extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls,"TestReportsMay");
+		return Test_Util.getData(Payroll_NI_CeaseandRecommence_SuiteXls,"TestReportsMay");
 	}
 
 
@@ -335,16 +327,16 @@ public class TestReportsMay extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if(Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}
 		else if(Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -360,11 +352,11 @@ public class TestReportsMay extends TestSuiteBase
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_NI_CeaseandRecommence_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_NI_CeaseandRecommence_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_CeaseandRecommence_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}
 		System.out.println("closing the browser");
 		closeBrowser();
