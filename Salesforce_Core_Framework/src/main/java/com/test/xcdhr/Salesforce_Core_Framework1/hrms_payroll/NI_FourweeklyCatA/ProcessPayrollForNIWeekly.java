@@ -101,14 +101,14 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 					+ " as excel file employees of this Tax worksheet");
 			ProcessPayrollForNIWeekly obj1 = new ProcessPayrollForNIWeekly();
 			
-			for(Repeat=2; Repeat < 5; Repeat++)
+			for(Repeat=3; Repeat < 5; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
 				obj1.PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
 
-				obj1.ExcludeIncludeEmp112(EmpName,ExcelInputSheet,worksheetNo);
+				//obj1.ExcludeIncludeEmp112(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
 	}
