@@ -5834,7 +5834,7 @@ public	int rowMatchedDD=0;
 	//////
 	
 	
-	public void UpdateEmployeeNICategory(String empName,String NICategory,String DirectorsNIBasis,String DirectorSince) throws Throwable
+	public void UpdateEmployeeNICategoryOld(String empName,String NICategory,String DirectorsNIBasis,String DirectorSince) throws Throwable
 	{
 		try
 		{
@@ -5974,9 +5974,9 @@ public	int rowMatchedDD=0;
 								
 							}
 		
-						UpdateDirectorsNIBasis(empName,NICategory,DirectorsNIBasis,DirectorSince);
+						UpdateDirectorsNIBasisOld(empName,NICategory,DirectorsNIBasis,DirectorSince);
 					Thread.sleep(3000L);
-					UpdateDirectorsSince(empName,NICategory,DirectorsNIBasis,DirectorSince);
+					UpdateDirectorsSinceOld(empName,NICategory,DirectorsNIBasis,DirectorSince);
 					
 					break;
 				}
@@ -6015,7 +6015,7 @@ public	int rowMatchedDD=0;
 	
 	//////
 
-	public void UpdateDirectorsNIBasis(String epName,String NICat,String DIBasis,String DtorSince) throws Throwable
+	public void UpdateDirectorsNIBasisOld(String epName,String NICat,String DIBasis,String DtorSince) throws Throwable
 	{
 		try
 		{
@@ -6068,7 +6068,7 @@ public	int rowMatchedDD=0;
 		}
 	}
 
-	public void UpdateDirectorsSince(String epName,String NICat,String DIBasis,String DtorSince) throws Throwable
+	public void UpdateDirectorsSinceOld(String epName,String NICat,String DIBasis,String DtorSince) throws Throwable
 	{
 		try
 		{
@@ -10559,7 +10559,7 @@ System.out.println(t.getMessage());
 
 
 
-	public void UpdateAnnualSalary(String empName, String annualSalary, String PayFrequency) throws Throwable
+	public void UpdateAnnualSalaryBySplittingInTwoMethods(String empName, String annualSalary, String PayFrequency) throws Throwable
 	{
 		try
 		{
@@ -10644,7 +10644,8 @@ System.out.println(t.getMessage());
 			java.util.Iterator<WebElement> x = rows.iterator();
 			lastRowCount=rows.size();
 			System.out.println("The row size is "+lastRowCount);
-			rownumc = 1;	
+			rownumc = 1;
+			outerbreak:
 			while(x.hasNext())
 			{
 				System.out.println("Now the row number is :"+rownumc);
@@ -10677,7 +10678,7 @@ System.out.println(t.getMessage());
 					}
 					UpdatePayFrequency12(empName,annualSalary,PayFrequency);
 					Thread.sleep(8000L);
-					break;
+					break outerbreak;
 				}
 				else if(rownumc == lastRowCount && tempEmp!=null && tempEmp!=(empName))
 				{
@@ -10706,6 +10707,149 @@ System.out.println(t.getMessage());
 	}
 
 
+	/*
+	 * The following method is better than above two methods
+	 * to process the annual salary. This is being used even for
+	 * Payroll Tax,NI,And other payroll modules where Annual salary 
+	 * and Pay Frequecny is needed to update.
+	 */
+	
+	public void UpdateAnnualSalary(String empName, String annualSalary, String PayFrequency) throws Throwable
+	{
+		try
+		{
+			if(compensationFirsttimeView)
+			{
+				compensationFirsttimeView = false;
+				if(existsElement(OR.getProperty("CompensationTab")))
+				{
+					getObject("CompensationTab").click();
+					System.out.println("The compensation tab got clicked");
+					Thread.sleep(4000L);
+					/*
+					 * Calling the following method from the base class since "Select value is
+					 * not able to call the value from OR.Properties page.
+					 */
+					compensationSelectValue();
+				}
+			}
+			Thread.sleep(2000L);
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace().toString());
+			System.out.println("");
+		}
+		
+		
+			WebElement tableheader = driver.findElement(By.xpath(OR.getProperty("PersonalAndCompensationHeadingTable")));
+			List<WebElement> th=tableheader.findElements(By.tagName("td"));
+			for(a=0;a<th.size();a++) 
+			{
+				if("Employee".equalsIgnoreCase(th.get(a).getText()))
+				{
+					empcolnum = a+1;
+					break;
+				}
+			}
+
+			for(b=0;b<th.size();b++) 
+			{
+				if("Annual salary".equalsIgnoreCase(th.get(b).getText()))
+				{
+					compnAnnualSalColumn = b+1;
+					break;
+				}
+			}
+
+			for(c=0;c<th.size();c++) 
+			{
+				if("Payroll frequency".equalsIgnoreCase(th.get(c).getText()))
+				{
+					compPayfrequencyColumn = c+1;
+					break;
+				}
+			}
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
+			List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+			java.util.Iterator<WebElement> x = rows.iterator();
+			lastRowCount=rows.size();
+			System.out.println("The row size is "+lastRowCount);
+			rownumc = 1;
+			outerbreak:
+			while(x.hasNext())
+			{
+				try
+				{
+				System.out.println("Now the row number is :"+rownumc);
+				String firstRowOfEmployeeColumn="//div["+rownumc+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
+				WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+				String tempEmp= tempElement.getText();
+				System.out.println(tempEmp+"-------"+empName+"------"+rownumc);
+				if(tempEmp!=null && tempEmp.equalsIgnoreCase(empName))
+				{
+					Thread.sleep(1000L);
+					String firstRowOfAnnualsalary="//div["+rownumc+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+compnAnnualSalColumn+"]"+"/"+"div";
+					if(existsElementchkFor1mts(firstRowOfAnnualsalary))
+					{
+						Actions action1 = new Actions(driver);
+						action1.doubleClick(driver.findElement(By.xpath(firstRowOfAnnualsalary))).perform();
+						WebElement updatesal = driver.findElement(By.xpath(OR.getProperty("annualSalTextField")));
+						action1.moveToElement(updatesal).perform();
+						Thread.sleep(1000L);
+						updatesal.clear();
+						Thread.sleep(1000L);
+						updatesal.sendKeys(annualSalary);
+						Thread.sleep(1000L);
+						if(existsElementchkFor1mts(OR.getProperty("CompnSavebuton")))
+						{
+							getObject("CompnSavebuton").sendKeys("");
+							getObject("CompnSavebuton").click();
+							System.out.println("The annual salary got saved");
+						}
+						Thread.sleep(8000L);
+					}
+					UpdatePayFrequency12(empName,annualSalary,PayFrequency);
+					break outerbreak;
+				}
+				else if(rownumc == lastRowCount && tempEmp!=null && tempEmp!=(empName))
+				{
+					System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+							+ " Required Employee not found hence clicking the"
+							+ " pagination link so that Employee search continues for next page");
+					if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+					{
+						getObject("paginationNextPersonal").sendKeys("");
+						getObject("paginationNextPersonal").click();
+						System.out.println("As the required employees are not found"
+								+ " in first page,hence clicked to next page"
+								+ " of personal Tab");
+						System.out.println("Since the next page First row starts "
+								+ "with 1 , So the rownum is being set to 0 "
+								+ "which subsequently gets incremented to 1 and starts"
+								+ "to compare the employee from first row.");
+						Thread.sleep(8000L);
+						rownumc = 0;
+					}
+				 }
+				 else
+				 System.out.println("incrementing the row number");
+				 rownumc++;
+				}
+					
+			catch(Throwable t)
+			{
+				System.out.println(t.getMessage());
+				System.out.println(t.getStackTrace().toString());
+			}
+	}
+}
+	  
+
+	
+	
+	
+	
 
 	public void UpdatePayFrequency12(String empName,String annualSalary,String PayFrequency) throws Throwable
 	{
@@ -10741,6 +10885,9 @@ System.out.println(t.getMessage());
 	}
 
 
+	
+	
+	
 
 	
 	/************Tax sub module pagination methods**************************/
@@ -10947,9 +11094,265 @@ System.out.println(t.getMessage());
 
 
 
+	/***************Director's NI As Employee related methods***************************************************/
 	
+	/*
+	 * The fllowing are Director as employee mehtods.Pagination code is implemented in the 
+	 * following methods where employee is based on 
+	 * pagination and processed required functionality.
+	 * 
+	 */
 
-	
+	public void UpdateEmployeeNICategory(String empName,String NICategory,String DirectorsNIBasis,String DirectorSince) throws Throwable
+	{
+		try
+		{
+			if(employeeFirsttimeView)
+			{
+				employeeFirsttimeView = false;
+				getObject("PersonalTab").click();
+				if(existsElement(OR.getProperty("PersonalText")))
+				{
+					System.out.println("I am in personal page");
+					if(existsElement(OR.getProperty("EmployeeView")))
+					{
+						System.out.println("I recognised the Employee view");
+						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
+						selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
+						Thread.sleep(2000L);
+						if(existsElement(OR.getProperty("ViewGoButton")))
+						{
+							getObject("ViewGoButton").sendKeys("");
+							getObject("ViewGoButton").click();
+						}
+						Thread.sleep(7000L);
+					}
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage());
+			System.out.println(t.getStackTrace().toString());
+		}
+		
+			WebElement tableheader = driver.findElement(By.xpath(OR.getProperty("PersonalAndCompensationHeadingTable")));
+			List<WebElement> th=tableheader.findElements(By.tagName("td"));
+			System.out.println("recognised the header");
+			for(a=0;a<th.size();a++) 
+			{
+				if("Employee".equalsIgnoreCase(th.get(a).getText()))
+				{
+					System.out.println("employee");
+					empcolnum = a+1;
+					break;
+				}
+			}
+			for(b=0;b<th.size();b++) 
+			{
+				if("NI category".equalsIgnoreCase(th.get(b).getText()))
+				{
+					System.out.println("ni category");
+					niCategoryColumn = b+1;
+					break;
+				}
+			}
+
+			for(d=0;d<th.size();d++) 
+			{
+				if("Director's NI basis".equalsIgnoreCase(th.get(d).getText()))
+				{
+					System.out.println("nibasis");
+					directorNIBasis = d+1;
+					break;
+				}
+			}
+
+			for(e=0;e<th.size();e++) 
+			{
+				if("Director since".equalsIgnoreCase(th.get(e).getText()))
+				{
+					System.out.println("directory since");
+					directorSince = e+1;
+					break;
+				}
+			}
+		//	Thread.sleep(2000L);
+
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("Found the table");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+				lastRowCount = rows.size();
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownum = 1;	
+				outerbreak:
+				while(x.hasNext())
+				{
+					try
+					{
+						//Thread.sleep(2000L);
+						String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
+						if(existsElement(firstRowOfEmployeeColumn))
+						{
+							WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+							String tempEmp= tempElement.getText();
+							System.out.println(tempEmp+"-------"+empName+"------"+rownum);
+							String firstRowOfTaxCode="//div["+rownum+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+niCategoryColumn+"]"+"/"+"div";
+							if(tempEmp!=null && tempEmp.equalsIgnoreCase(empName))
+							{
+								System.out.println("Employee name  :"+tempEmp+ "  matched ");
+								Thread.sleep(2000L);
+								if(existsElement(firstRowOfTaxCode))
+								{
+									Actions action = new Actions(driver);
+									action.doubleClick(driver.findElement(By.xpath(firstRowOfTaxCode))).perform();
+									action.moveToElement(getObject("InlineDropdown")).perform();
+									Thread.sleep(2000L);
+									if(existsElement(OR.getProperty("InlineDropdown")))
+									{
+										getObject("InlineDropdown").sendKeys("");
+										getObject("InlineDropdown").sendKeys(NICategory);
+										System.out.println("Selected the NI Picklist item "+NICategory);
+										Thread.sleep(2000L);
+										if(existsElement(OR.getProperty("InlineUpdateButn")))
+										{
+											getObject("InlineUpdateButn").click();
+											System.out.println("The update button got clicked and NI Category got saved");
+										}
+									 }
+								  }
+									UpdateDirectorsNIBasis(empName,NICategory,DirectorsNIBasis,DirectorSince);
+									Thread.sleep(3000L);
+									UpdateDirectorsSince(empName,NICategory,DirectorsNIBasis,DirectorSince);
+									break outerbreak;
+								}
+								else if(rownum == lastRowCount && tempEmp!=null && tempEmp!=(empName))
+								{
+									System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+											+ " Required Employee not found hence clicking the"
+											+ " pagination link so that Employee search continues for next page");
+									if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+									{
+										getObject("paginationNextPersonal").sendKeys("");
+										getObject("paginationNextPersonal").click();
+										System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+										Thread.sleep(8000L);
+										rownum = 0;
+									}
+								 }
+								 else
+								 System.out.println("incrementing the row number");
+								 rownum++;
+								}
+							}
+							catch(Throwable t)
+							{
+								System.out.println(t.getMessage());
+								System.out.println(t.getStackTrace().toString());
+							}
+					}
+				}
+					  
+		}
+		
+
+
+
+
+	public void UpdateDirectorsNIBasis(String epName,String NICat,String DIBasis,String DtorSince) throws Throwable
+	{
+		try
+		{
+			Thread.sleep(3000L);
+			String firstRowOfDirtorsNIbasisColumn="//div["+rownum+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+directorNIBasis+"]"+"/"+"div";
+			if(existsElement(firstRowOfDirtorsNIbasisColumn))
+			{
+				Actions action3a = new Actions(driver);
+				action3a.doubleClick(driver.findElement(By.xpath(firstRowOfDirtorsNIbasisColumn))).perform();
+				action3a.moveToElement(getObject("InlineDropdown")).perform();
+				Thread.sleep(2000L);
+				if(existsElement(OR.getProperty("InlineDropdown")))
+				{
+					getObject("InlineDropdown").sendKeys("");
+					getObject("InlineDropdown").sendKeys(DIBasis);
+					System.out.println("Selected the DI Basis item "+DIBasis);
+					Thread.sleep(2000L);
+					if(existsElement(OR.getProperty("InlineUpdateButn")))
+					{
+						getObject("InlineUpdateButn").click();
+						System.out.println("updated DirectorsNI Basis successfully");
+					}
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+
+	public void UpdateDirectorsSince(String epName,String NICat,String DIBasis,String DtorSince) throws Throwable
+	{
+		try
+		{
+			Thread.sleep(3000L);
+			String firstRowOfDirtorsSinceColumn="//div["+rownum+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+directorSince+"]"+"/"+"div";
+			if(existsElement(firstRowOfDirtorsSinceColumn))
+			{
+				Actions action4a = new Actions(driver);
+				action4a.doubleClick(driver.findElement(By.xpath(firstRowOfDirtorsSinceColumn))).perform();
+				action4a.moveToElement(getObject("directorsincetxtfild")).perform();
+				Thread.sleep(1000L);
+				getObject("directorsincetxtfild").sendKeys("");
+				getObject("directorsincetxtfild").clear();
+				String dateStr = DtorSince;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				String formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
+				System.out.println("The entered date is  " +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("directorsincetxtfild").sendKeys(formattedDate);
+				getObject("outersideclk").click();
+				Thread.sleep(1000L);
+				getObject("drsinceupdatebttn").click();
+				Thread.sleep(6000L);
+				System.out.println("updated DirectorsSince successfully");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+
+
+
+
 	
 	
 	
