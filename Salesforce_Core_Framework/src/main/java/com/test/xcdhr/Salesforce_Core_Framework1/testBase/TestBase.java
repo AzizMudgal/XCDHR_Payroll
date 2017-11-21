@@ -6130,7 +6130,7 @@ public	int rowMatchedDD=0;
 	/**********************Director reaches and pension**********************/
 	
 	
-	public void UpdateEmployeeNICategory(String empName,String NICategory,String DirectorsNIBasis,String DirectorSince,String DateOfBirth) throws Throwable
+	public void UpdateEmployeeNICategoryOld(String empName,String NICategory,String DirectorsNIBasis,String DirectorSince,String DateOfBirth) throws Throwable
 	{
 		try
 		{
@@ -6198,11 +6198,11 @@ public	int rowMatchedDD=0;
 								}
 								
 							}
-							UpdateDirectorsNIBasis(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+							UpdateDirectorsNIBasisOld(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
 							Thread.sleep(3000L);
-							UpdateDirectorsSince(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+							UpdateDirectorsSinceOld(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
 							Thread.sleep(3000L);
-							DateofBirth(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+							DateofBirthOld(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
 							break;
 							
 						}
@@ -6230,7 +6230,7 @@ public	int rowMatchedDD=0;
 
 	}
 	
-	public void UpdateDirectorsNIBasis(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
+	public void UpdateDirectorsNIBasisOld(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
 	{
 		try
 		{
@@ -6263,7 +6263,7 @@ public	int rowMatchedDD=0;
 	
 	
 
-	public void UpdateDirectorsSince(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
+	public void UpdateDirectorsSinceOld(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
 	{
 		try
 		{
@@ -6323,7 +6323,7 @@ public	int rowMatchedDD=0;
 	
 	
 	
-	public void DateofBirth(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
+	public void DateofBirthOld(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
 	{
 		try
 		{
@@ -11338,6 +11338,245 @@ System.out.println(t.getMessage());
 				getObject("drsinceupdatebttn").click();
 				Thread.sleep(6000L);
 				System.out.println("updated DirectorsSince successfully");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+	
+	
+	
+
+/********************************'Director_Under21Month1' method***************************/
+	
+	
+	public void UpdateEmployeeNICategory(String empName,String NICategory,String DirectorsNIBasis,String DirectorSince,String DateOfBirth) throws Throwable
+	{
+		try
+		{
+			if(employeeFirsttimeView)
+			{
+				employeeFirsttimeView = false;
+				getObject("PersonalTab").click();
+				if(existsElement(OR.getProperty("PersonalText")))
+				{
+					System.out.println("I am in personal page");
+					if(existsElement(OR.getProperty("EmployeeView")))
+					{
+						System.out.println("I recognised the Employee view");
+						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
+						selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
+						Thread.sleep(2000L);
+						getObject("ViewGoButton").sendKeys("");
+						getObject("ViewGoButton").click();
+						Thread.sleep(7000L);
+					}
+				}
+			}
+			Row_count = driver.findElements(By.xpath("//div[@id='ext-gen11']/div/table/tbody/tr")).size();
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTable")));
+			if(existsWebElement(postsTable))
+			{
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
+				lastRowCount = rows.size();
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownumNI = 1;
+				outerbreak:
+					while(x.hasNext())
+					{
+						String firstRowOfEmployeeColumn="//div["+rownumNI+"]/table/tbody/tr/td[4]/div/a/span";
+						if(existsElement(firstRowOfEmployeeColumn))
+						{
+							WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+							String AppnEmp= firstEmployee.getText();
+							System.out.println(AppnEmp+"-------"+empName+"------"+rownumNI);
+							if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(empName))
+							{
+								System.out.println("Employee matched");
+								Thread.sleep(3000L);
+								String firstRowOfNIColumn="//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"6]"+"/"+"div";
+								if(existsElement(firstRowOfNIColumn))
+								{
+									String rowNumberOfNIColumn = "//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"6]"+"/"+"div";
+									Actions action = new Actions(driver);
+									action.doubleClick(driver.findElement(By.xpath(rowNumberOfNIColumn))).perform();
+									action.moveToElement(getObject("InlineDropdown")).perform();
+									Thread.sleep(2000L);
+									if(existsElement(OR.getProperty("InlineDropdown")))
+									{
+										getObject("InlineDropdown").sendKeys(NICategory);
+										Thread.sleep(2000L);
+										getObject("InlineUpdateButn").click();
+										System.out.println("updated NI Category successfully");
+										Thread.sleep(6000L);
+									}
+								}
+								UpdateDirectorsNIBasis(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+								Thread.sleep(3000L);
+								UpdateDirectorsSince(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+								Thread.sleep(3000L);
+								DateofBirth(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+								break outerbreak;
+							}
+							else if(rownumNI == lastRowCount && AppnEmp!=null && AppnEmp!=(empName))
+							{
+								System.out.println("The row number of the page reached"+ rownumNI +" to 200 and"
+										+ " Required Employee not found hence clicking the"
+										+ " pagination link so that Employee search continues for next page");
+								if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+								{
+									getObject("paginationNextPersonal").sendKeys("");
+									getObject("paginationNextPersonal").click();
+									System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+									Thread.sleep(8000L);
+									rownumNI = 0;
+								}
+							}
+						}
+						rownumNI++;
+					}
+			}
+		}
+		catch(Throwable t)
+		{
+			APP_LOGS.debug(" Check for error in NI Category method");
+			System.out.println(t.getStackTrace().toString());
+			//ErrorUtil.addVerificationFailure(t);
+			System.out.println("");
+		}
+	}
+
+
+
+	public void UpdateDirectorsNIBasis(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
+	{
+		try
+		{
+			Thread.sleep(3000L);
+			String firstRowOfDirtorsNIbasisColumn="//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"9]"+"/"+"div";
+			if(existsElement(firstRowOfDirtorsNIbasisColumn))
+			{
+				String rowNumberOfDirctrNIbsisColumn = "//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"9]"+"/"+"div";
+				Actions action3a = new Actions(driver);
+				action3a.doubleClick(driver.findElement(By.xpath(rowNumberOfDirctrNIbsisColumn))).perform();
+				action3a.moveToElement(getObject("InlineDropdown")).perform();
+				Thread.sleep(2000L);
+				if(existsElement(OR.getProperty("InlineDropdown")))
+				{
+					getObject("InlineDropdown").sendKeys(DIBasis);
+					Thread.sleep(2000L);
+					getObject("InlineUpdateButn").click();
+					Thread.sleep(6000L);
+					System.out.println("updated DirectorsNI Basis successfully");
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+
+	public void UpdateDirectorsSince(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
+	{
+		try
+		{
+			Thread.sleep(3000L);
+			String firstRowOfDirtorsSinceColumn="//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"10]"+"/"+"div";
+			if(existsElement(firstRowOfDirtorsSinceColumn))
+			{
+				String rowNumberOfDirctrSinceColumn = "//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"10]"+"/"+"div";
+				Actions action4a = new Actions(driver);
+				action4a.doubleClick(driver.findElement(By.xpath(rowNumberOfDirctrSinceColumn))).perform();
+				action4a.moveToElement(getObject("directorsincetxtfild")).perform();
+				Thread.sleep(1000L);
+				getObject("directorsincetxtfild").sendKeys("");
+				String dateStr = DtorSince;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+				String formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
+				System.out.println("The entered date is  " +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("directorsincetxtfild").sendKeys(formattedDate);
+				getObject("outersideclk").click();
+				Thread.sleep(1000L);
+				getObject("drsinceupdatebttn").click();
+				Thread.sleep(6000L);
+				System.out.println("updated DirectorsSince successfully");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+
+	public void DateofBirth(String epName,String NICat,String DIBasis,String DtorSince,String DateOfBirth) throws Throwable
+	{
+		try
+		{
+			Thread.sleep(3000L);
+			String firstRowOfDirtorsSinceColumn="//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"11]"+"/"+"div";
+			if(existsElement(firstRowOfDirtorsSinceColumn))
+			{
+				String rowNumberOfDirctrSinceColumn = "//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"11]"+"/"+"div";
+				Actions action5a = new Actions(driver);
+				action5a.doubleClick(driver.findElement(By.xpath(rowNumberOfDirctrSinceColumn))).perform();
+				action5a.moveToElement(getObject("directorsincetxtfild")).perform();
+				Thread.sleep(1000L);
+				getObject("directorsincetxtfild").sendKeys("");
+				String dateStr = DateOfBirth;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				String formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
+				System.out.println("The entered date is  " +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("directorsincetxtfild").sendKeys(formattedDate);
+				getObject("outersideclk").click();
+				Thread.sleep(2000L);
+				getObject("drsinceupdatebttn").click();
+				Thread.sleep(6000L);
+				System.out.println("updated Directors DOB successfully");
 			}
 		}
 		catch(Throwable t)

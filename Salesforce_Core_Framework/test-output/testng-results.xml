@@ -1,565 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="18" passed="18">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="545676" started-at="2017-11-21T07:14:52Z" finished-at="2017-11-21T07:23:58Z">
+  <suite name="Default suite" duration-ms="268159" started-at="2017-11-21T11:02:46Z" finished-at="2017-11-21T11:07:14Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="545676" started-at="2017-11-21T07:14:52Z" finished-at="2017-11-21T07:23:58Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8013" started-at="2017-11-21T12:44:44Z" finished-at="2017-11-21T12:44:52Z">
+    <test name="Default test" duration-ms="268159" started-at="2017-11-21T11:02:46Z" finished-at="2017-11-21T11:07:14Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8609" started-at="2017-11-21T16:32:37Z" finished-at="2017-11-21T16:32:46Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3480" started-at="2017-11-21T12:44:52Z" finished-at="2017-11-21T12:44:56Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3627" started-at="2017-11-21T16:32:46Z" finished-at="2017-11-21T16:32:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="87352" started-at="2017-11-21T12:44:59Z" data-provider="getData" finished-at="2017-11-21T12:46:26Z">
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="183284" started-at="2017-11-21T16:32:53Z" data-provider="getData" finished-at="2017-11-21T16:35:56Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 494]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 605]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[A  All other employees]]>
+                <![CDATA[M Employees under 21 (attach passport/birth certificate)]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[8164.52]]>
+                <![CDATA[Annual]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Four Weekly]]>
+                <![CDATA[04/06/2017]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[06/19/1996]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[97968.48]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Monthly]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3167" started-at="2017-11-21T12:46:26Z" finished-at="2017-11-21T12:46:30Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3521" started-at="2017-11-21T16:35:56Z" finished-at="2017-11-21T16:36:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17619" started-at="2017-11-21T12:46:30Z" data-provider="getData" finished-at="2017-11-21T12:46:47Z">
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="62289" started-at="2017-11-21T16:36:03Z" data-provider="getData" finished-at="2017-11-21T16:37:05Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 495]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 605]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[A  All other employees]]>
+                <![CDATA[M Employees under 21 (attach passport/birth certificate)]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[8164.65]]>
+                <![CDATA[Annual]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Four  Weekly]]>
+                <![CDATA[04/06/2017]]>
               </value>
             </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3056" started-at="2017-11-21T12:46:47Z" finished-at="2017-11-21T12:46:50Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17724" started-at="2017-11-21T12:46:50Z" data-provider="getData" finished-at="2017-11-21T12:47:08Z">
-          <params>
-            <param index="0">
+            <param index="4">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 496]]>
+                <![CDATA[06/19/1996]]>
               </value>
             </param>
-            <param index="1">
+            <param index="5">
               <value>
-                <![CDATA[A  All other employees]]>
+                <![CDATA[97968.48]]>
               </value>
             </param>
-            <param index="2">
+            <param index="6">
               <value>
-                <![CDATA[8164.52]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2807" started-at="2017-11-21T12:47:08Z" finished-at="2017-11-21T12:47:11Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17673" started-at="2017-11-21T12:47:11Z" data-provider="getData" finished-at="2017-11-21T12:47:28Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 497]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[8164.65]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2394" started-at="2017-11-21T12:47:28Z" finished-at="2017-11-21T12:47:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17764" started-at="2017-11-21T12:47:31Z" data-provider="getData" finished-at="2017-11-21T12:47:49Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 498]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45006.52]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2751" started-at="2017-11-21T12:47:49Z" finished-at="2017-11-21T12:47:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17841" started-at="2017-11-21T12:47:51Z" data-provider="getData" finished-at="2017-11-21T12:48:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 499]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45006.65]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2376" started-at="2017-11-21T12:48:09Z" finished-at="2017-11-21T12:48:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17967" started-at="2017-11-21T12:48:12Z" data-provider="getData" finished-at="2017-11-21T12:48:30Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 500]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45009.77]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2734" started-at="2017-11-21T12:48:30Z" finished-at="2017-11-21T12:48:32Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="18027" started-at="2017-11-21T12:48:32Z" data-provider="getData" finished-at="2017-11-21T12:48:50Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 501]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45009.9]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2529" started-at="2017-11-21T12:48:50Z" finished-at="2017-11-21T12:48:53Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="18134" started-at="2017-11-21T12:48:53Z" data-provider="getData" finished-at="2017-11-21T12:49:11Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 502]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[63050.0]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3147" started-at="2017-11-21T12:49:11Z" finished-at="2017-11-21T12:49:14Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="58857" started-at="2017-11-21T12:49:16Z" data-provider="getData" finished-at="2017-11-21T12:50:15Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 494]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[8164.52]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four Weekly]]>
+                <![CDATA[Monthly]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2629" started-at="2017-11-21T12:50:15Z" finished-at="2017-11-21T12:50:18Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2888" started-at="2017-11-21T16:37:05Z" finished-at="2017-11-21T16:37:08Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24444" started-at="2017-11-21T12:50:18Z" data-provider="getData" finished-at="2017-11-21T12:50:42Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 495]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[8164.65]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2307" started-at="2017-11-21T12:50:42Z" finished-at="2017-11-21T12:50:45Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24616" started-at="2017-11-21T12:50:45Z" data-provider="getData" finished-at="2017-11-21T12:51:09Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 496]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[8164.52]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2672" started-at="2017-11-21T12:51:09Z" finished-at="2017-11-21T12:51:12Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24423" started-at="2017-11-21T12:51:12Z" data-provider="getData" finished-at="2017-11-21T12:51:36Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 497]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[8164.65]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2295" started-at="2017-11-21T12:51:36Z" finished-at="2017-11-21T12:51:39Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24630" started-at="2017-11-21T12:51:39Z" data-provider="getData" finished-at="2017-11-21T12:52:03Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 498]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45006.52]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2624" started-at="2017-11-21T12:52:03Z" finished-at="2017-11-21T12:52:06Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24867" started-at="2017-11-21T12:52:06Z" data-provider="getData" finished-at="2017-11-21T12:52:31Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 499]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45006.65]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2328" started-at="2017-11-21T12:52:31Z" finished-at="2017-11-21T12:52:33Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24833" started-at="2017-11-21T12:52:33Z" data-provider="getData" finished-at="2017-11-21T12:52:58Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 500]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45009.77]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2268" started-at="2017-11-21T12:52:58Z" finished-at="2017-11-21T12:53:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24570" started-at="2017-11-21T12:53:00Z" data-provider="getData" finished-at="2017-11-21T12:53:25Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 501]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[45009.9]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2612" started-at="2017-11-21T12:53:25Z" finished-at="2017-11-21T12:53:27Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="24718" started-at="2017-11-21T12:53:27Z" data-provider="getData" finished-at="2017-11-21T12:53:52Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 502]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[A  All other employees]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[63050.0]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four  Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2285" started-at="2017-11-21T12:53:52Z" finished-at="2017-11-21T12:53:54Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A@271053e1]" name="ReportTestResult" is-config="true" duration-ms="3766" started-at="2017-11-21T12:53:54Z" finished-at="2017-11-21T12:53:58Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="ReportTestResult" is-config="true" duration-ms="6207" started-at="2017-11-21T16:37:08Z" finished-at="2017-11-21T16:37:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.NI4WeeklyCat_A -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
