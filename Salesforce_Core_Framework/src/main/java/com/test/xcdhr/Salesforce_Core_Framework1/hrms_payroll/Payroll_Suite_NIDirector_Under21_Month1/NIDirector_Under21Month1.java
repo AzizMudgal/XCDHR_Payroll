@@ -1,6 +1,12 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1;
 
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -90,11 +96,115 @@ public class NIDirector_Under21Month1 extends TestSuiteBase
 		/*************************************************************************/
 
 		// The script updates the NI Category for the Automation employees
-		UpdateEmployeeNICategory(EmpName,NICategory,DirectorsNIBasis,DirectorSince,DOB);
+		UpdateEmployeeNICategoryDraft(EmpName,NICategory,DirectorsNIBasis,DirectorSince,DOB);
 
 		/*************************************************************************/
 	}
 
+	
+	
+	public void UpdateEmployeeNICategoryDraft(String empName,String NICategory,String DirectorsNIBasis,String DirectorSince,String DateOfBirth) throws Throwable
+	{
+		try
+		{
+			if(employeeFirsttimeView)
+			{
+				employeeFirsttimeView = false;
+				getObject("PersonalTab").click();
+				if(existsElement(OR.getProperty("PersonalText")))
+				{
+					System.out.println("I am in personal page");
+					if(existsElement(OR.getProperty("EmployeeView")))
+					{
+
+						System.out.println("I recognised the Employee view");
+
+						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
+						selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
+						Thread.sleep(2000L);
+						getObject("ViewGoButton").sendKeys("");
+						getObject("ViewGoButton").click();
+
+						Thread.sleep(7000L);
+					}
+
+				}
+
+			}
+
+			Row_count = driver.findElements(By.xpath("//div[@id='ext-gen11']/div/table/tbody/tr")).size();
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTable")));
+			if(existsWebElement(postsTable))
+			{
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
+	
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownumNI = 1;			
+				while(x.hasNext())
+				{
+					String firstRowOfEmployeeColumn="//div["+rownumNI+"]/table/tbody/tr/td[4]/div/a/span";
+					if(existsElement(firstRowOfEmployeeColumn))
+						{
+						WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+						String AppnEmp= firstEmployee.getText();
+						//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
+						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(empName))
+						{
+							System.out.println("Employee matched");
+							Thread.sleep(3000L);
+							String firstRowOfNIColumn="//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"6]"+"/"+"div";
+							if(existsElement(firstRowOfNIColumn))
+							{
+								String rowNumberOfNIColumn = "//div["+rownumNI+"]"+"/"+"table/"+"tbody/"+"tr/"+"td["+"6]"+"/"+"div";
+								Actions action = new Actions(driver);
+								action.doubleClick(driver.findElement(By.xpath(rowNumberOfNIColumn))).perform();
+								action.moveToElement(getObject("InlineDropdown")).perform();
+								Thread.sleep(2000L);
+								if(existsElement(OR.getProperty("InlineDropdown")))
+								{
+									getObject("InlineDropdown").sendKeys(NICategory);
+									Thread.sleep(2000L);
+									getObject("InlineUpdateButn").click();
+									System.out.println("updated NI Category successfully");
+									Thread.sleep(6000L);
+								}
+							}
+							UpdateDirectorsNIBasis(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+							Thread.sleep(3000L);
+							UpdateDirectorsSince(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+							Thread.sleep(3000L);
+							DateofBirth(empName,NICategory,DirectorsNIBasis,DirectorSince,DateOfBirth);
+							break;
+						}
+					
+					else if(rownumNI == lastRowCount && AppnEmp!=null && AppnEmp!=(empName))
+					{
+						System.out.println("The row number of the page reached"+ rownumNI +" to 200 and"
+								+ " Required Employee not found hence clicking the"
+								+ " pagination link so that Employee search continues for next page");
+						if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+						{
+							getObject("paginationNextPersonal").sendKeys("");
+							getObject("paginationNextPersonal").click();
+							System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+							Thread.sleep(8000L);
+							rownum = 0;
+						}
+					  }
+					}
+					rownumNI++;
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			APP_LOGS.debug(" Check for error in NI Category method");
+			System.out.println(t.getStackTrace().toString());
+			//ErrorUtil.addVerificationFailure(t);
+			System.out.println("");
+		}
+	}
+	
 
 
 
