@@ -121,13 +121,10 @@ public class SmallEmployerRelief extends TestSuiteBase {
 			{
 				employeeFirsttimeView = false;
 				getObject("PersonalTab").click();
-
 				System.out.println("I am in personal page");
 				if(existsElement(OR.getProperty("EmployeeView")))
 				{
-
 					System.out.println("I recognised the Employee view");
-
 					Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
 					selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
 					Thread.sleep(2000L);
@@ -136,38 +133,27 @@ public class SmallEmployerRelief extends TestSuiteBase {
 						getObject("ViewGoButton").sendKeys("");
 						getObject("ViewGoButton").click();
 					}
-
 					Thread.sleep(7000L);
-
 				}
-
-
-
 			}
-
-
 			WebElement tableheader = driver.findElement(By.xpath(OR.getProperty("PersonalAndCompensationHeadingTable")));
-
 			List<WebElement> th=tableheader.findElements(By.tagName("td"));
-
 			for(a=0;a<th.size();a++) 
 			{
 				if("Employee".equalsIgnoreCase(th.get(a).getText()))
 				{
 					empcolnum = a+1;
 					break;
-
 				}
-
 			}
-
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
 			if(existsWebElement(postsTable))
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
-
+				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
-				rownum = 1;			
+				rownum = 1;	
+				outerbreak:
 				while(x.hasNext())
 				{
 					//Thread.sleep(2000L);
@@ -175,32 +161,38 @@ public class SmallEmployerRelief extends TestSuiteBase {
 					if(existsElement(firstRowOfEmployeeColumn))
 					{
 						WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-						String tempEmp= tempElement.getText();
-						//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
-						if(tempEmp!=null && tempEmp.equalsIgnoreCase(EmpName))
+						String AppnEmp= tempElement.getText();
+						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
+						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 						{
-							System.out.println("Employee name  :"+tempEmp+ "  matched ");
-
+							System.out.println("Employee name  :"+AppnEmp+ "  matched ");
 							if(existsWebElement(tempElement))
 							{
 								tempElement.click();
-								System.out.println("The employee namely :"+tempEmp+"got clicked");
-								break;
+								System.out.println("The employee namely :"+AppnEmp+"got clicked");
+								break outerbreak;
 							}
-
 						}
-
-						rownum++;
+						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+						{
+							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+									+ " Required Employee not found hence clicking the"
+									+ " pagination link so that Employee search continues for next page");
+							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject("paginationNextPersonal").sendKeys("");
+								getObject("paginationNextPersonal").click();
+								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep(8000L);
+								rownum = 0;
+							}
+						 }
 					}
-
+					rownum++;
 				}
-
 			}
 			Thread.sleep(3000L);
-
 			empEmploymentTab(SmallEmployerRelief);
-
-
 		}
 		catch(Throwable t)
 		{
@@ -210,11 +202,9 @@ public class SmallEmployerRelief extends TestSuiteBase {
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
 		}
-
-
-		
-
 	}
+	
+	
 
 	public void empEmploymentTab(String SmallEmployerRelief)throws Throwable
 	{
@@ -251,9 +241,7 @@ public class SmallEmployerRelief extends TestSuiteBase {
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");	
 		}
-
-
-
+		
 		try
 		{
 			Thread.sleep(5000L);
@@ -262,7 +250,6 @@ public class SmallEmployerRelief extends TestSuiteBase {
 			{
 				System.out.println("details table exists");
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("jobRoleTablelocatorrows")));
-
 				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
 				int row_num,col_num;
 				row_num=1;
@@ -274,7 +261,6 @@ public class SmallEmployerRelief extends TestSuiteBase {
 					for(WebElement tdElement : td_collection)
 					{
 						System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-
 						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSPP COMPANY"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
 						{	
 							Thread.sleep(4000L);
@@ -289,8 +275,6 @@ public class SmallEmployerRelief extends TestSuiteBase {
 					row_num++;
 				} 
 			}
-			
-				
 		}
 		catch(Throwable t)
 		{
@@ -299,11 +283,9 @@ public class SmallEmployerRelief extends TestSuiteBase {
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");	
 			System.out.println("now searching for the employer link");
-
 		}
 			Thread.sleep(5000L);
 			employerClick();
-			
 			Thread.sleep(5000L);
 			selectCheckbox(SmallEmployerRelief);
 
@@ -330,17 +312,17 @@ public class SmallEmployerRelief extends TestSuiteBase {
 						{
 							System.out.println("Employer details table exists");
 							WebElement tempElement1= driver.findElement(By.xpath(EmployerName));
-							String tempEmp1= tempElement1.getText();
-							System.out.println("Field name is :"+tempEmp1);
-							//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
-							if(tempEmp1!=null && tempEmp1.equalsIgnoreCase("DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18"))
+							String AppnEmp1= tempElement1.getText();
+							System.out.println("Field name is :"+AppnEmp1);
+							//System.out.println(AppnEmp+"-------"+empName+"------"+rownum);
+							if(AppnEmp1!=null && AppnEmp1.equalsIgnoreCase("DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18"))
 							{											
-								System.out.println("Employer name  :"+tempEmp1+ "  matched ");
+								System.out.println("Employer name  :"+AppnEmp1+ "  matched ");
 
 								if(existsWebElement(tempElement1))
 								{
 									tempElement1.click();
-									System.out.println("The employee namely :"+tempEmp1+"got clicked");
+									System.out.println("The employee namely :"+AppnEmp1+"got clicked");
 									break;
 								}
 
