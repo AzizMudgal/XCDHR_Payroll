@@ -24,8 +24,8 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import atu.webdriver.utils.table.WebTable;
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
-
+import Salesforce_Util.ErrorUtil;
+import Salesforce_Util.Test_Util;
 
 public class TestReportsMay extends TestSuiteBase
 {
@@ -35,7 +35,6 @@ public class TestReportsMay extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
-	public String titlename;
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
@@ -69,56 +68,49 @@ public class TestReportsMay extends TestSuiteBase
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
 		Thread.sleep(4000L);
-		try
+		if(existsElement(OR.getProperty("reportTablocator")))
 		{
-			titlename = driver.getTitle();
-			Assert.assertEquals(driver.getTitle(), titlename);
-			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
-			System.out.println("");
+			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
 		}
-		catch(Throwable t)
+		else
 		{
-			APP_LOGS.debug("Could not assert the home page title, Check for error");
-			System.out.println("");
-			defaultWaitTime();
+			System.out.println("Report Tab doesnot exist hence quitting this test");
 		}
-		Thread.sleep(4000L);		
-		
 	}
 
 
 
 	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		if(existsElement(OR.getProperty("reportTablocator")))
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
 			driver.navigate().refresh();
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+		if(existsElement(OR.getProperty("findReportTextboxLocator")))
 		{				
 			SearchReport(FirstReportNameInApplication);
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+		if(existsElement(OR.getProperty("reportCustomisebtn")))
 		{
 			editCustomButton();
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+		if(existsElement(OR.getProperty("customEditbtn")))
 		{				
 			UpdateReportPage(Payrolid,Frquency,MonthName);
 			System.out.println("");
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+		if(existsElement(OR.getProperty("customRunReport")))
 		{
 			RunReport();
 		}
 
-		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+		if(existsElement(OR.getProperty("reportTableLocatorNI")))
 		{
 			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
 			System.out.println("7> Entered the values and processed the Test Remarks");
@@ -131,7 +123,7 @@ public class TestReportsMay extends TestSuiteBase
 	{
 		try
 		{
-			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+			if(existsElement(OR.getProperty("reportTableLocatorNI")))
 			{
 				//Get number of rows In table using table/tbody/tr
 				Row_count = driver.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI"))).size();
