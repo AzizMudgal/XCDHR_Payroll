@@ -160,28 +160,43 @@ public class SmallEmployerRelief extends TestSuiteBase
 			if(existsWebElement(postsTable))
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
-				rownum = 1;			
+				rownum = 1;	
+				outerbreak:
 				while(x.hasNext())
 				{
 					//Thread.sleep(2000L);
 					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
 					if(existsElementchkFor1mts(firstRowOfEmployeeColumn))
 					{
-						WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-						String tempEmp= tempElement.getText();
-						//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
-						if(tempEmp!=null && tempEmp.equalsIgnoreCase(EmpName))
+						WebElement employeeElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+						String AppnEmp= employeeElement.getText();
+						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
+						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 						{
-							System.out.println("Employee name  :"+tempEmp+ "  matched ");
-
-							if(existsWebElement(tempElement))
+							System.out.println("Employee name  :"+AppnEmp+ "  matched ");
+							if(existsWebElement(employeeElement))
 							{
-								tempElement.click();
-								System.out.println("The employee namely :"+tempEmp+"got clicked");
-								break;
+								employeeElement.click();
+								System.out.println("The employee namely :"+AppnEmp+"got clicked");
+								break outerbreak;
 							}
 						}
+						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+						{
+							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+									+ " Required Employee not found hence clicking the"
+									+ " pagination link so that Employee search continues for next page");
+							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject("paginationNextPersonal").sendKeys("");
+								getObject("paginationNextPersonal").click();
+								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep(8000L);
+								rownum = 0;
+							}
+						 }
 						rownum++;
 					}
 				}

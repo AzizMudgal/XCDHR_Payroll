@@ -1,115 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="268159" started-at="2017-11-21T11:02:46Z" finished-at="2017-11-21T11:07:14Z">
+  <suite name="Default suite" duration-ms="156963" started-at="2017-11-22T07:22:24Z" finished-at="2017-11-22T07:25:01Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="268159" started-at="2017-11-21T11:02:46Z" finished-at="2017-11-21T11:07:14Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8609" started-at="2017-11-21T16:32:37Z" finished-at="2017-11-21T16:32:46Z">
+    <test name="Default test" duration-ms="156963" started-at="2017-11-22T07:22:24Z" finished-at="2017-11-22T07:25:01Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7972" started-at="2017-11-22T12:52:16Z" finished-at="2017-11-22T12:52:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3627" started-at="2017-11-21T16:32:46Z" finished-at="2017-11-21T16:32:49Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3241" started-at="2017-11-22T12:52:24Z" finished-at="2017-11-22T12:52:27Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="183284" started-at="2017-11-21T16:32:53Z" data-provider="getData" finished-at="2017-11-21T16:35:56Z">
+        <test-method status="PASS" signature="ResetEmploymentAndLeaveTab(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData@271053e1]" name="ResetEmploymentAndLeaveTab" duration-ms="140490" started-at="2017-11-22T12:52:30Z" data-provider="getData" finished-at="2017-11-22T12:54:50Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 605]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION SAP 101]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[M Employees under 21 (attach passport/birth certificate)]]>
+                <![CDATA[06/01/2017]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Annual]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[04/06/2017]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[06/19/1996]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[97968.48]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Monthly]]>
+                <![CDATA[1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3521" started-at="2017-11-21T16:35:56Z" finished-at="2017-11-21T16:36:00Z">
+        </test-method> <!-- ResetEmploymentAndLeaveTab -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3766" started-at="2017-11-22T12:54:50Z" finished-at="2017-11-22T12:54:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="62289" started-at="2017-11-21T16:36:03Z" data-provider="getData" finished-at="2017-11-21T16:37:05Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 605]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[M Employees under 21 (attach passport/birth certificate)]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Annual]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[04/06/2017]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[06/19/1996]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[97968.48]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[Monthly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2888" started-at="2017-11-21T16:37:05Z" finished-at="2017-11-21T16:37:08Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1@271053e1]" name="ReportTestResult" is-config="true" duration-ms="6207" started-at="2017-11-21T16:37:08Z" finished-at="2017-11-21T16:37:14Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData@271053e1]" name="ReportTestResult" is-config="true" duration-ms="6446" started-at="2017-11-22T12:54:54Z" finished-at="2017-11-22T12:55:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1.NIDirector_Under21Month1 -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
