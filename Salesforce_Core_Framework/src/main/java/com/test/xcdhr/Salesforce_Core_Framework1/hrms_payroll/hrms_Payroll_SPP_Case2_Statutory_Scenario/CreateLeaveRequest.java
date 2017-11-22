@@ -145,16 +145,10 @@ public class CreateLeaveRequest extends TestSuiteBase
 							getObject("ViewGoButton").sendKeys("");
 							getObject("ViewGoButton").click();
 						}
-
 						Thread.sleep(7000L);
-
 					}
-
 				}
-
 			}
-
-
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTable")));
 			if(existsWebElement(postsTable))
 			{

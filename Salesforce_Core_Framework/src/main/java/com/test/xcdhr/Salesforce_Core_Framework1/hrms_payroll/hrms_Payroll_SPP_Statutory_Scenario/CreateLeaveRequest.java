@@ -135,9 +135,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 					System.out.println("I am in personal page");
 					if(existsElement(OR.getProperty("EmployeeView")))
 					{
-
 						System.out.println("I recognised the Employee view");
-
 						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
 						selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
 						Thread.sleep(2000L);
@@ -146,23 +144,18 @@ public class CreateLeaveRequest extends TestSuiteBase {
 							getObject("ViewGoButton").sendKeys("");
 							getObject("ViewGoButton").click();
 						}
-
 						Thread.sleep(7000L);
-
 					}
-
 				}
-
 			}
-
-
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTable")));
 			if(existsWebElement(postsTable))
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
-
+				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
-				int rownum = 1;			
+				int rownum = 1;	
+				outerbreak:
 				while(x.hasNext())
 				{
 					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
@@ -170,30 +163,36 @@ public class CreateLeaveRequest extends TestSuiteBase {
 					if(existsWebElement(firstEmployee))
 					{
 						String AppnEmp= firstEmployee.getText();
-						//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
+						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
 						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 						{
 							System.out.println("Employee matched");
 							System.out.println("Employee name is  :"+EmpName);
-
 							if(existsWebElement(firstEmployee))
 							{
 								firstEmployee.click();
 								System.out.println("The employee namely :"+AppnEmp+"got clicked");
-								break;
+								break outerbreak;
 							}
-
 						}
-
-						rownum++;
+						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+						{
+							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+									+ " Required Employee not found hence clicking the"
+									+ " pagination link so that Employee search continues for next page");
+							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject("paginationNextPersonal").sendKeys("");
+								getObject("paginationNextPersonal").click();
+								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep(8000L);
+								rownum = 0;
+							}
+						 }
 					}
-
+					rownum++;
 				}
-
 			}
-
-
-
 		}
 		catch(Throwable t)
 		{
@@ -203,13 +202,11 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
 		}
-
-
 		Thread.sleep(3000L);
 		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 		//Thread.sleep(3000L);
-
 	}
+	
 
 
 	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
@@ -222,7 +219,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 				getObject("leaveTabclk").click();
 				System.out.println("The leave tab got clicked");
 				Thread.sleep(3000L);
-
 			}
 		}
 		catch(Throwable t)
