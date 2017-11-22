@@ -25,8 +25,8 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class CreateLeaveRequest extends TestSuiteBase {
-
+public class CreateLeaveRequest extends TestSuiteBase
+{
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
@@ -51,20 +51,14 @@ public class CreateLeaveRequest extends TestSuiteBase {
 		processDesiredTaxYearInputExcelFile(TaxYear);
 
 		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName())){
-
 			Skip=true;
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Skipped");
 			//Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
-
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
-
 		}
-
 		// Load the runmodes of the tests
-
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName());
-
 	}
 
 	public String payfreqncy;
@@ -77,23 +71,19 @@ public class CreateLeaveRequest extends TestSuiteBase {
 	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-
 			driver.manage().window().maximize();
-
 			try
 			{
 				if(existsElement(OR.getProperty("Homepage_txt")))
@@ -108,15 +98,12 @@ public class CreateLeaveRequest extends TestSuiteBase {
 				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
-
 		}
-
 		/*************************************************************************/
 
 		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 
 		/*************************************************************************/
-
 	}
 
 
@@ -134,9 +121,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 					System.out.println("I am in personal page");
 					if(existsElement(OR.getProperty("EmployeeView")))
 					{
-
 						System.out.println("I recognised the Employee view");
-
 						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
 						selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
 						Thread.sleep(2000L);
@@ -145,21 +130,14 @@ public class CreateLeaveRequest extends TestSuiteBase {
 							getObject("ViewGoButton").sendKeys("");
 							getObject("ViewGoButton").click();
 						}
-
 						Thread.sleep(7000L);
-
 					}
-
 				}
-
 			}
-
-
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTable")));
 			if(existsWebElement(postsTable))
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
-
 				java.util.Iterator<WebElement> x = rows.iterator();
 				int rownum = 1;			
 				while(x.hasNext())
@@ -174,25 +152,17 @@ public class CreateLeaveRequest extends TestSuiteBase {
 						{
 							System.out.println("Employee matched");
 							System.out.println("Employee name is  :"+EmpName);
-
 							if(existsWebElement(firstEmployee))
 							{
 								firstEmployee.click();
 								System.out.println("The employee namely :"+AppnEmp+"got clicked");
 								break;
 							}
-
 						}
-
 						rownum++;
 					}
-
 				}
-
 			}
-
-
-
 		}
 		catch(Throwable t)
 		{
@@ -202,12 +172,8 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
 		}
-
-
 		Thread.sleep(3000L);
 		LeaveTab(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
-		//Thread.sleep(3000L);
-
 	}
 
 
@@ -221,7 +187,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 				getObject("leaveTabclk").click();
 				System.out.println("The leave tab got clicked");
 				Thread.sleep(3000L);
-
 			}
 		}
 		catch(Throwable t)
@@ -229,8 +194,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
-
 		selectLeaveYear(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 	}
 
@@ -239,7 +202,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 	{
 		try
 		{
-			
 			Thread.sleep(3000L);
 			bookLeave(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 		}
@@ -259,7 +221,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			{
 				getObject("bookLeavebuttonlocator").sendKeys("");
 				getObject("bookLeavebuttonlocator").click();
-
 			}
 		}
 		catch(Throwable t)
@@ -283,7 +244,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 				// This select by value needs to be called from OR.Properties
 				//selectByValue.selectByValue(LeaveCategory);
 				selectByValue.selectByVisibleText(LeaveCategory);
-
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
 			}
@@ -311,9 +271,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
 		enterLeaveDates(MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
-
 	}
 
 
@@ -333,14 +291,9 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
-
 		selectCheckbox(MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate);
-
 		selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
-
 		MaternitySavebutton();
-
 	}
 
 
@@ -349,7 +302,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 
 		String[] handles = driver.getWindowHandles().toArray(new String[0]); // To get the child window(s)
 		driver.switchTo().window(handles[handles.length - 1]); 
-
 		String axb=  driver.getTitle();
 		System.out.println(axb);
 		if (driver.getTitle().equalsIgnoreCase(axb))
@@ -380,11 +332,8 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			{
 				getObject("clkSortedone2").click();
 			}
-
 			System.out.println("I clicked the user finally");
-
 		}
-
 	}
 
 
@@ -399,7 +348,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 				System.out.println("");
 				System.out.println("The save button got clicked sucessfully");
 			}
-
 			Thread.sleep(4000L);
 		}
 		catch(Throwable t)
@@ -407,7 +355,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
 	}
 
 
@@ -435,25 +382,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			datefield2 = LeaveReqPageFieldNameStorage.get("Baby born date");
 		}
 
-		/*
-		WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
-		WebTable table = WebTable.getTable(postsTable);
-		String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
-		inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
-
-		String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
-		inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
-		System.out.println("The 5nd label name is :"+firstCellOfBody1);
-		System.out.println("The 7th label name is :"+firstCellOfBody2);
-
-		LeaveReqPageFieldNameStorage.put("Matching date", firstCellOfBody1);
-		LeaveReqPageFieldNameStorage.put("Expected placement date", firstCellOfBody2);
-
-		datefield1 = LeaveReqPageFieldNameStorage.get("Matching date");
-		datefield2 = LeaveReqPageFieldNameStorage.get("Expected placement date");
-		*/
 	
-		
 			try
 			{
 				if(existsElement(OR.getProperty("SAPmatchingDate")))
@@ -943,5 +872,23 @@ public class CreateLeaveRequest extends TestSuiteBase {
 		closeBrowser();
 	}
 
+	
+	/*
+	WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
+	WebTable table = WebTable.getTable(postsTable);
+	String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
+	inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
+
+	String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
+	inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
+	System.out.println("The 5nd label name is :"+firstCellOfBody1);
+	System.out.println("The 7th label name is :"+firstCellOfBody2);
+
+	LeaveReqPageFieldNameStorage.put("Matching date", firstCellOfBody1);
+	LeaveReqPageFieldNameStorage.put("Expected placement date", firstCellOfBody2);
+
+	datefield1 = LeaveReqPageFieldNameStorage.get("Matching date");
+	datefield2 = LeaveReqPageFieldNameStorage.get("Expected placement date");
+	*/
 
 }
