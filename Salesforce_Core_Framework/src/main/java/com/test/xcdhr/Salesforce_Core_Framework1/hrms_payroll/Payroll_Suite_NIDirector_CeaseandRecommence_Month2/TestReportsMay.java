@@ -24,8 +24,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import atu.webdriver.utils.table.WebTable;
-import Salesforce_Util.ErrorUtil;
-import Salesforce_Util.Test_Util;
+import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class TestReportsMay extends TestSuiteBase
 {
