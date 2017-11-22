@@ -112,9 +112,11 @@ public class ResetData extends TestSuiteBase
 	}
 
 
+/*
+ * pushed the following method to base class
+ */
 
-
-	public void DeleteLeavefunction(String EmpName,String firstXCDpayDate,String payinStartPeriod) throws Throwable
+	public void DeleteLeavefunctionDraft(String EmpName,String firstXCDpayDate,String payinStartPeriod) throws Throwable
 	{
 		try
 		{
@@ -169,35 +171,11 @@ public class ResetData extends TestSuiteBase
 		Thread.sleep(3000L);
 		try
 		{
-			/*
-			if(existsElement(OR.getProperty("employmentTab")))
-			{
-				getObject("employmentTab").sendKeys("");
-				getObject("employmentTab").click();
-				System.out.println("The employment tab got clicked");
-				Thread.sleep(4000L);
-			}
-
-			if(existsElement(OR.getProperty("employmentTabEdit")))
-			{
-				updateFirstXcdPayDate(firstXCDpayDate);
-				//Thread.sleep(2000L);
-				//getObject("makeWaytoDisplayChkbox").sendKeys("");
-				//getObject("makeWaytoDisplayChkbox").click();
-			}
-			
-			Thread.sleep(2000L);
-			if(existsElement(OR.getProperty("sspEditTable")))
-			{
-				selectPayinStartPeriod(payinStartPeriod);
-				Thread.sleep(4000L);
-			}
-			
-			*/
+		
 
 			if(existsElement(OR.getProperty("leaveTabclk")))
 			{
-				deleteLeaveRecords();
+				deleteLeaveRecordsDraft();
 				Thread.sleep(2000L);
 			}
 
@@ -221,7 +199,7 @@ public class ResetData extends TestSuiteBase
 	 */
 
 
-	public void deleteLeaveRecords()throws Throwable
+	public void deleteLeaveRecordsDraft()throws Throwable
 	{
 		try
 		{
@@ -287,79 +265,6 @@ public class ResetData extends TestSuiteBase
 
 
 
-	/*
-	public void deleteLeaveRecords()throws Throwable
-	{
-		try
-		{
-
-			if(compensationFirsttimeView)
-			{
-				compensationFirsttimeView=false;
-					if(existsElement(OR.getProperty("leaveTabclk")))
-					{
-						getObject("leaveTabclk").sendKeys("");
-						getObject("leaveTabclk").click();
-						Thread.sleep(3000L);
-					}
-
-			}
-
-			if(existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
-			{
-				WebElement AEnotifyNoticeTablelocator = driver.findElement(By.xpath(OR.getProperty("sppLeavSummaryTableLocator")));
-				List<WebElement> rows = AEnotifyNoticeTablelocator.findElements(By.xpath(OR.getProperty("sppLeavSummaryTableRowsLocator")));
-				int ttrows= rows.size();
-				System.out.println("Total Leave records are :"+ttrows);
-				java.util.Iterator<WebElement> x = rows.iterator();
-				int rownumv = rows.size();	
-				endSearchingCompnRecord:
-					while(x.hasNext())
-					{
-						System.out.println("the index of rownumv is  :"+rownumv);
-
-						if(existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
-						{
-							RowOfAttachementRecord="//form/table/tbody/tr[2]/td/table/tbody/tr/td/span/div[3]/div/div[2]/table/tbody/"+"tr["+rownumv+"]"+"/td[2]/a";
-							WebElement attachmentlink= driver.findElement(By.xpath(RowOfAttachementRecord));
-							attachmentlink.click();
-							System.out.println("attachment link got clicked");
-						}
-
-
-
-							if(existsElement(OR.getProperty("leaverecordDeleteLocator")))
-							{
-								getObject("leaverecordDeleteLocator").sendKeys("");
-								getObject("leaverecordDeleteLocator").click();
-								System.out.println("The leave record delete button got clicked");
-
-								Thread.sleep(3000L);
-								Alert alert = driver.switchTo().alert();
-								alert.accept();
-								System.out.println("The leave record deleted successfully");
-							}
-
-						rownumv--;
-						if(rownumv==0)
-						{
-							System.out.println("There are no attachments to delete");
-							break endSearchingCompnRecord;
-						}
-					}
-			}
-			else if(!existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
-			{
-				System.out.println("Threre are no leave records to delete");
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-	 */
 
 
 
@@ -464,5 +369,108 @@ public class ResetData extends TestSuiteBase
 		}	
 		closeBrowser();
 	}
+	
+	/*
+	if(existsElement(OR.getProperty("employmentTab")))
+	{
+		getObject("employmentTab").sendKeys("");
+		getObject("employmentTab").click();
+		System.out.println("The employment tab got clicked");
+		Thread.sleep(4000L);
+	}
+
+	if(existsElement(OR.getProperty("employmentTabEdit")))
+	{
+		updateFirstXcdPayDate(firstXCDpayDate);
+		//Thread.sleep(2000L);
+		//getObject("makeWaytoDisplayChkbox").sendKeys("");
+		//getObject("makeWaytoDisplayChkbox").click();
+	}
+	
+	Thread.sleep(2000L);
+	if(existsElement(OR.getProperty("sspEditTable")))
+	{
+		selectPayinStartPeriod(payinStartPeriod);
+		Thread.sleep(4000L);
+	}
+	
+	*/
+	
+	
+	/*
+	public void deleteLeaveRecords()throws Throwable
+	{
+		try
+		{
+
+			if(compensationFirsttimeView)
+			{
+				compensationFirsttimeView=false;
+					if(existsElement(OR.getProperty("leaveTabclk")))
+					{
+						getObject("leaveTabclk").sendKeys("");
+						getObject("leaveTabclk").click();
+						Thread.sleep(3000L);
+					}
+
+			}
+
+			if(existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
+			{
+				WebElement AEnotifyNoticeTablelocator = driver.findElement(By.xpath(OR.getProperty("sppLeavSummaryTableLocator")));
+				List<WebElement> rows = AEnotifyNoticeTablelocator.findElements(By.xpath(OR.getProperty("sppLeavSummaryTableRowsLocator")));
+				int ttrows= rows.size();
+				System.out.println("Total Leave records are :"+ttrows);
+				java.util.Iterator<WebElement> x = rows.iterator();
+				int rownumv = rows.size();	
+				endSearchingCompnRecord:
+					while(x.hasNext())
+					{
+						System.out.println("the index of rownumv is  :"+rownumv);
+
+						if(existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
+						{
+							RowOfAttachementRecord="//form/table/tbody/tr[2]/td/table/tbody/tr/td/span/div[3]/div/div[2]/table/tbody/"+"tr["+rownumv+"]"+"/td[2]/a";
+							WebElement attachmentlink= driver.findElement(By.xpath(RowOfAttachementRecord));
+							attachmentlink.click();
+							System.out.println("attachment link got clicked");
+						}
+
+
+
+							if(existsElement(OR.getProperty("leaverecordDeleteLocator")))
+							{
+								getObject("leaverecordDeleteLocator").sendKeys("");
+								getObject("leaverecordDeleteLocator").click();
+								System.out.println("The leave record delete button got clicked");
+
+								Thread.sleep(3000L);
+								Alert alert = driver.switchTo().alert();
+								alert.accept();
+								System.out.println("The leave record deleted successfully");
+							}
+
+						rownumv--;
+						if(rownumv==0)
+						{
+							System.out.println("There are no attachments to delete");
+							break endSearchingCompnRecord;
+						}
+					}
+			}
+			else if(!existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
+			{
+				System.out.println("Threre are no leave records to delete");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+	 */
+
+	
 
 }
