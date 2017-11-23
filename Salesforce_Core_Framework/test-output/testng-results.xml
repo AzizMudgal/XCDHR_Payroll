@@ -2,38 +2,69 @@
 <testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="778141" started-at="2017-11-23T12:18:15Z" finished-at="2017-11-23T12:31:13Z">
+=======
+  <suite name="Default suite" duration-ms="127924" started-at="2017-11-23T10:18:56Z" finished-at="2017-11-23T10:21:04Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="778141" started-at="2017-11-23T12:18:15Z" finished-at="2017-11-23T12:31:13Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="13988" started-at="2017-11-23T17:48:01Z" finished-at="2017-11-23T17:48:15Z">
+=======
+    <test name="Default test" duration-ms="127924" started-at="2017-11-23T10:18:56Z" finished-at="2017-11-23T10:21:04Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5876" started-at="2017-11-23T15:48:50Z" finished-at="2017-11-23T15:48:56Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3355" started-at="2017-11-23T17:48:15Z" finished-at="2017-11-23T17:48:18Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2407" started-at="2017-11-23T15:48:56Z" finished-at="2017-11-23T15:48:58Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="614690" started-at="2017-11-23T17:48:22Z" data-provider="getData" finished-at="2017-11-23T17:58:36Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="103779" started-at="2017-11-23T15:49:01Z" data-provider="getData" finished-at="2017-11-23T15:50:44Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 107]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 385]]>
+=======
+                <![CDATA[]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[2040M_Payroll]]>
+=======
+                <![CDATA[1]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="3">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Monthly]]>
               </value>
             </param>
@@ -65,16 +96,24 @@
             <param index="9">
               <value>
                 <![CDATA[All]]>
+=======
+                <![CDATA[1]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="9991" started-at="2017-11-23T17:58:37Z" finished-at="2017-11-23T17:58:47Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2625" started-at="2017-11-23T15:50:44Z" finished-at="2017-11-23T15:50:47Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="668" started-at="2017-11-23T17:58:47Z" data-provider="getData" finished-at="2017-11-23T17:58:47Z">
           <params>
             <param index="0">
@@ -316,10 +355,17 @@
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportTestResult" is-config="true" duration-ms="26608" started-at="2017-11-23T18:00:46Z" finished-at="2017-11-23T18:01:13Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="ReportTestResult" is-config="true" duration-ms="16647" started-at="2017-11-23T15:50:47Z" finished-at="2017-11-23T15:51:04Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
