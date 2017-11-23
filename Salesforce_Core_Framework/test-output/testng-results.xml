@@ -1,141 +1,325 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="53334" started-at="2017-11-23T07:10:39Z" finished-at="2017-11-23T07:11:32Z">
-=======
-<<<<<<< Upstream, based on origin/master
-  <suite name="Default suite" duration-ms="101694" started-at="2017-11-22T13:55:34Z" finished-at="2017-11-22T13:57:15Z">
-=======
-  <suite name="Default suite" duration-ms="145553" started-at="2017-11-22T10:54:10Z" finished-at="2017-11-22T10:56:36Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+  <suite name="Default suite" duration-ms="778141" started-at="2017-11-23T12:18:15Z" finished-at="2017-11-23T12:31:13Z">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test name="Default test" duration-ms="53334" started-at="2017-11-23T07:10:39Z" finished-at="2017-11-23T07:11:32Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5956" started-at="2017-11-23T12:40:33Z" finished-at="2017-11-23T12:40:39Z">
-=======
-<<<<<<< Upstream, based on origin/master
-    <test name="Default test" duration-ms="101694" started-at="2017-11-22T13:55:34Z" finished-at="2017-11-22T13:57:15Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="6002" started-at="2017-11-22T19:25:28Z" finished-at="2017-11-22T19:25:34Z">
-=======
-    <test name="Default test" duration-ms="145553" started-at="2017-11-22T10:54:10Z" finished-at="2017-11-22T10:56:36Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8085" started-at="2017-11-22T16:24:02Z" finished-at="2017-11-22T16:24:10Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+    <test name="Default test" duration-ms="778141" started-at="2017-11-23T12:18:15Z" finished-at="2017-11-23T12:31:13Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="13988" started-at="2017-11-23T17:48:01Z" finished-at="2017-11-23T17:48:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2319" started-at="2017-11-23T12:40:39Z" finished-at="2017-11-23T12:40:41Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2598" started-at="2017-11-22T19:25:34Z" finished-at="2017-11-22T19:25:36Z">
-=======
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3758" started-at="2017-11-22T16:24:10Z" finished-at="2017-11-22T16:24:14Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3355" started-at="2017-11-23T17:48:15Z" finished-at="2017-11-23T17:48:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="42254" started-at="2017-11-23T12:40:44Z" data-provider="getData" finished-at="2017-11-23T12:41:26Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="EmpsSetup_WithNICategory" duration-ms="90693" started-at="2017-11-22T19:25:39Z" data-provider="getData" finished-at="2017-11-22T19:27:09Z">
-=======
-        <test-method status="PASS" signature="ResetEmploymentAndLeaveTab(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="ResetEmploymentAndLeaveTab" duration-ms="126204" started-at="2017-11-22T16:24:17Z" data-provider="getData" finished-at="2017-11-22T16:26:23Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="614690" started-at="2017-11-23T17:48:22Z" data-provider="getData" finished-at="2017-11-23T17:58:36Z">
           <params>
             <param index="0">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 103]]>
-=======
-<<<<<<< Upstream, based on origin/master
-                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 102]]>
-=======
-                <![CDATA[DO NOT TOUCH AUTOMATION SAPP 101]]>
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
               </value>
             </param>
             <param index="1">
               <value>
-<<<<<<< HEAD
-                <![CDATA[C Employees over State pension age (attach passport/birth certificate)]]>
-=======
-<<<<<<< Upstream, based on origin/master
-                <![CDATA[2017]]>
-=======
-                <![CDATA[07/01/2017]]>
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 385]]>
               </value>
             </param>
             <param index="2">
               <value>
-<<<<<<< HEAD
-                <![CDATA[11/06/2017]]>
-=======
-<<<<<<< Upstream, based on origin/master
-                <![CDATA[Maternity]]>
+                <![CDATA[2040M_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[12/12/2017]]>
-=======
-                <![CDATA[1]]>
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2603" started-at="2017-11-23T12:41:26Z" finished-at="2017-11-23T12:41:29Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2461" started-at="2017-11-22T19:27:09Z" finished-at="2017-11-22T19:27:12Z">
-=======
-        </test-method> <!-- ResetEmploymentAndLeaveTab -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3202" started-at="2017-11-22T16:26:23Z" finished-at="2017-11-22T16:26:26Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="9991" started-at="2017-11-23T17:58:37Z" finished-at="2017-11-23T17:58:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3629" started-at="2017-11-23T12:41:29Z" finished-at="2017-11-23T12:41:32Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3366" started-at="2017-11-22T19:27:12Z" finished-at="2017-11-22T19:27:15Z">
-=======
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="ReportTestResult" is-config="true" duration-ms="9035" started-at="2017-11-22T16:26:27Z" finished-at="2017-11-22T16:26:36Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="668" started-at="2017-11-23T17:58:47Z" data-provider="getData" finished-at="2017-11-23T17:58:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 386]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="5842" started-at="2017-11-23T17:58:47Z" finished-at="2017-11-23T17:58:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="608" started-at="2017-11-23T17:58:53Z" data-provider="getData" finished-at="2017-11-23T17:58:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 387]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2726" started-at="2017-11-23T17:58:54Z" finished-at="2017-11-23T17:58:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="607" started-at="2017-11-23T17:58:56Z" data-provider="getData" finished-at="2017-11-23T17:58:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 388]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2691" started-at="2017-11-23T17:58:57Z" finished-at="2017-11-23T17:59:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="104154" started-at="2017-11-23T17:59:00Z" data-provider="getData" finished-at="2017-11-23T18:00:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 389]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2422" started-at="2017-11-23T18:00:44Z" finished-at="2017-11-23T18:00:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportTestResult" is-config="true" duration-ms="26608" started-at="2017-11-23T18:00:46Z" finished-at="2017-11-23T18:01:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov -->
-=======
-<<<<<<< Upstream, based on origin/master
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData -->
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

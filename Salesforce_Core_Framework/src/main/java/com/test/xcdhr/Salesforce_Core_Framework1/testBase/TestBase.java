@@ -1926,14 +1926,15 @@ public class TestBase {
 								.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
 						Thread.sleep(4000L);
 						payRunExecution();
+						Thread.sleep(6000L);
+						if (existsElementchkFor1mts(OR
+								.getProperty("emprecordsTableAftergeneratedraft"))) {
+							verifyEmpRecordInPaySummaryTable();
+						}
 					}
 				}
 			}
-			Thread.sleep(6000L);
-			if (existsElementchkFor1mts(OR
-					.getProperty("emprecordsTableAftergeneratedraft"))) {
-				verifyEmpRecordInPaySummaryTable();
-			}
+			
 		} catch (Throwable t) {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
@@ -2165,6 +2166,11 @@ public class TestBase {
 									.println("The generate draft button got clicked");
 							Thread.sleep(4000L);
 							payRunExecution();
+							Thread.sleep(6000L);
+							if (existsElement(OR
+									.getProperty("emprecordsTableAftergeneratedraft"))) {
+								verifyEmpRecordInPaySummaryTable();
+							}
 
 						}
 					}
@@ -2172,11 +2178,11 @@ public class TestBase {
 				}
 
 			}
-			Thread.sleep(6000L);
+			/*Thread.sleep(6000L);
 			if (existsElement(OR
 					.getProperty("emprecordsTableAftergeneratedraft"))) {
 				verifyEmpRecordInPaySummaryTable();
-			}
+			}*/
 
 		} catch (Throwable t) {
 			System.out.println(t.getMessage().toString());
@@ -5924,9 +5930,10 @@ public class TestBase {
 		try {
 			if (existsElementchkFor1mts(OR.getProperty("progressBar"))) {
 				System.out
-						.println("Still generate draft payroll functionality execution did not completed...please wait");
+						.println("Still generate draft payroll functionality execution did not completed...please wait.");
 				payRunExecution();
-			} else {
+			}
+			else {
 				System.out.println("progress bar is not being seen now..");
 				System.out
 						.println("Finally  generate draft payroll functionality execution completed successfully");
@@ -7274,14 +7281,15 @@ public class TestBase {
 								.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
 						Thread.sleep(4000L);
 						payRunExecution();
+						Thread.sleep(6000L);
+						if (existsElementchkFor1mts(OR
+								.getProperty("emprecordsTableAftergeneratedraft"))) {
+							verifyEmpRecordInPaySummaryTable();
+						}
 					}
 				}
 			}
-			Thread.sleep(6000L);
-			if (existsElementchkFor1mts(OR
-					.getProperty("emprecordsTableAftergeneratedraft"))) {
-				verifyEmpRecordInPaySummaryTable();
-			}
+			
 		} catch (Throwable t) {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
