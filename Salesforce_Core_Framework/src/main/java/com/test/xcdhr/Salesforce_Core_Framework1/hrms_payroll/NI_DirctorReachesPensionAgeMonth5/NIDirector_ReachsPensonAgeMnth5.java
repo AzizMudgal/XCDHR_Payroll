@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Case2_Statutory_Scenario;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth5;
 
 
 import org.testng.Assert;
@@ -11,9 +11,8 @@ import org.testng.annotations.Test;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-public class UpdateTaxCodeAndAnnualSalary extends TestSuiteBase
+public class NIDirector_ReachsPensonAgeMnth5 extends TestSuiteBase
 {
-
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
@@ -21,37 +20,44 @@ public class UpdateTaxCodeAndAnnualSalary extends TestSuiteBase
 	public static boolean Fail=false;
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
+	public int Row_count;
 	public int rownum;
-	
-	
+	public int rownumNI;
+
+
+
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_Case2_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName());
 	}
+
+
+
 
 	public String payfreqncy;
 	boolean employeeFirsttimeView = true;
 	boolean compensationFirsttimeView = true;
 	boolean shouldOpenBrowser = true; 
 
-
 	@Test(dataProvider="getData", priority=1)
-	public void EmpsSetup_ForMonthlyTaxRate(String EmpName,String Taxcode, String TaxBasis, String AnnualSalary,String PayFrequency) throws Throwable
+	public void EmpsSetup_WithNICategory(String EmpName,String NICategory,String DirectorsNIBasis,String DirectorSince,String DOB, String AnnualSalary, String PayFrequency ) throws Throwable
 	{
+		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		//APP_LOGS.debug("Entering the Leave parameters");
-		APP_LOGS.debug(EmpName+"--"+Taxcode+"--"+TaxBasis+"--"+AnnualSalary+"--"+PayFrequency);
+		//APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -80,74 +86,88 @@ public class UpdateTaxCodeAndAnnualSalary extends TestSuiteBase
 				System.out.println("");
 			}
 		}
+
 		/*************************************************************************/
+
 		// The script updates the NI Category for the Automation employees
-		UpdateEmployeeTaxCode(EmpName,Taxcode,TaxBasis);
+		UpdateEmployeeNICategory(EmpName,NICategory,DirectorsNIBasis,DirectorSince,DOB);
+
 		/*************************************************************************/
 	}
 
-	
+
+
+
+
 	@Test(dataProvider="getData", priority=2)
-	public void EmpsSetup_WithAnnualSalary(String EmpName,String Taxcode, String TaxBasis,String AnnualSalary,String PayFrequency) throws Throwable
+	public void EmpsSetup_WithAnnualSalary(String EmpName,String NICategory,String DirctorsNibasis,String DirectorSince,String DOB, String AnnualSalary,String PayFrequency) throws Throwable
 	{
+		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		countCompensation++;
 		if(! runmodes[countCompensation].equalsIgnoreCase("Y"))
 		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+countCompensation);
 		}
+
 		/*************************************************************************/
 		// The script updates the Annual salary in the compensation Tab for the Automation employees
 		UpdateAnnualSalary(EmpName,AnnualSalary,PayFrequency);
 		/*************************************************************************/
 	}
 
-	
+
 
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_Statutory_Paternitypay_Case2_SuiteXls,"UpdateTaxCodeAndAnnualSalary");
+
+		return Test_Util.getData(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls,"NIDirector_ReachsPensonAgeMnth5");
 	}
+
 
 
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		if(Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}else if(Fail)
+			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+		}
+		else if(Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
 	}
-	
+
+
 
 
 	@AfterTest
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
+
 		if(IsTestPass)
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_Case2_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_Case2_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Paternitypay_Case2_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_DirectorReachesFor_PensionAge_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
 		closeBrowser();
 	}

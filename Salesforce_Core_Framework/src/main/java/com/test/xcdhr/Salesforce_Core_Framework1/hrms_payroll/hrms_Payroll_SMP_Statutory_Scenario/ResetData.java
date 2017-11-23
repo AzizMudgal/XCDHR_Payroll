@@ -117,7 +117,7 @@ public class ResetData extends TestSuiteBase
 
 
 
-	public void DeleteLeavefunction(String EmpName,String firstXCDpayDate,String payinStartPeriod) throws Throwable
+	public void DeleteLeavefunctionDraft(String EmpName,String firstXCDpayDate,String payinStartPeriod) throws Throwable
 	{
 		try
 		{

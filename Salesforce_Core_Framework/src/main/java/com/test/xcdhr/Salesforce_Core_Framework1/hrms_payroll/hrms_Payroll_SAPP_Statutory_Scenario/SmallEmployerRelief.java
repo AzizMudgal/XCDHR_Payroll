@@ -143,9 +143,10 @@ public class SmallEmployerRelief extends TestSuiteBase
 			if(existsWebElement(postsTable))
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
-
+				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
-				rownum = 1;			
+				rownum = 1;
+				outerbreak:
 				while(x.hasNext())
 				{
 					//Thread.sleep(2000L);
@@ -154,25 +155,34 @@ public class SmallEmployerRelief extends TestSuiteBase
 					{
 						WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
 						String tempEmp= tempElement.getText();
-						//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
+						System.out.println(tempEmp+"-------"+EmpName+"------"+rownum);
 						if(tempEmp!=null && tempEmp.equalsIgnoreCase(EmpName))
 						{
 							System.out.println("Employee name  :"+tempEmp+ "  matched ");
-
 							if(existsWebElement(tempElement))
 							{
 								tempElement.click();
 								System.out.println("The employee namely :"+tempEmp+"got clicked");
-								break;
+								break outerbreak;
 							}
-
 						}
-
+						else if(rownum == lastRowCount && tempEmp!=null && tempEmp!=(EmpName))
+						{
+							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+									+ " Required Employee not found hence clicking the"
+									+ " pagination link so that Employee search continues for next page");
+							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject("paginationNextPersonal").sendKeys("");
+								getObject("paginationNextPersonal").click();
+								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep(8000L);
+								rownum = 0;
+							}
+						 }
 						rownum++;
 					}
-
 				}
-
 			}
 			Thread.sleep(3000L);
 			empEmploymentTab(SmallEmployerRelief);
