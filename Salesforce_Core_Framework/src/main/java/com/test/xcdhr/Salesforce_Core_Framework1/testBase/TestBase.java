@@ -1847,7 +1847,7 @@ public class TestBase {
 					.println("Total rows in the processpayrollforMonthlytax worksheet is :"
 							+ totalRows);
 			String oldWindow = driver.getWindowHandle();
-			// /////
+			
 			if (existsElementchkFor5mts(OR.getProperty("changeToDraft"))) {
 				System.out.println("yest the Change to Draft button exist");
 				retryForGenerateDraft();
@@ -1928,7 +1928,7 @@ public class TestBase {
 						payRunExecution();
 						Thread.sleep(6000L);
 						if (existsElementchkFor1mts(OR
-								.getProperty("emprecordsTableAftergeneratedraft"))) {
+								.getProperty("emprecordsTableRowsAftergeneratedraft"))) {
 							verifyEmpRecordInPaySummaryTable();
 						}
 					}
