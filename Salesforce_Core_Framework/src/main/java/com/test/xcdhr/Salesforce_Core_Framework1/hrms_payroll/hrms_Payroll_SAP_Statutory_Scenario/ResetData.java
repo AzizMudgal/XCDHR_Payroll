@@ -44,12 +44,7 @@ public class ResetData extends TestSuiteBase {
 	public static boolean Fail=false;
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
-	//public String firstRowOfCompnRecord;
-	//public String effectiveFrom;
-	//public String AutoEnrolNotifyAttahment;
-	//public String AutoEnrolNotifyAttahmentFalse;
-	//public String RowOfAttachementRecord;
-	//public int ttrows;
+	
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable

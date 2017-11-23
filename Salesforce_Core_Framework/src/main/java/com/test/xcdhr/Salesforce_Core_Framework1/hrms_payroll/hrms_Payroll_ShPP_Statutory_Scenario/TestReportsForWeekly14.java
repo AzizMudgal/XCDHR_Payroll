@@ -113,7 +113,6 @@ public class TestReportsForWeekly14 extends TestSuiteBase
 		}
 		Thread.sleep(4000L);
 
-		//DownloadReports(pn,PayFrequency,payrollMonth);
 		DownloadReports(EmpName,TestResultExcelFilePath,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestReportworksheetNo); // pn means payroll id. in this case 8512
   }
 

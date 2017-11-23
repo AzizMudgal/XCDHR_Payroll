@@ -95,7 +95,6 @@ public class TestJan16Reports extends TestSuiteBase
 			ErrorUtil.addVerificationFailure(t);
 			CaptureScreenshot("EmployeeProfile"+this.getClass().getSimpleName()+"  Due to this Error Could not Assert Title");
 		}*/
-		//DownloadReports(pn,PayFrequency,payrollMonth);
 		
 		/* Added by Swamy*/
 		try

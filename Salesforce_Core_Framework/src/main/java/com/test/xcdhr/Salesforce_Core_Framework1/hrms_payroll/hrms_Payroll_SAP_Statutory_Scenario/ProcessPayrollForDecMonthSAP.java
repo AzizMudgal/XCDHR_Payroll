@@ -29,7 +29,6 @@ public class ProcessPayrollForDecMonthSAP extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if (!Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this
 				.getClass().getSimpleName()))
 		{
@@ -49,13 +48,10 @@ public class ProcessPayrollForDecMonthSAP extends TestSuiteBase
 					+ "as it's Runmode is set to 'NO'"); // this msg would
 			// display in
 			// Reports.
-
 		}
-
 		// Load the runmodes of the tests
 		runmodes = Test_Util.getDataSetRunmodes(Payroll_Statutory_Adoption_SuiteXls, this
 				.getClass().getSimpleName());
-
 	}
 
 	public String payfreqncy;
@@ -67,7 +63,6 @@ public class ProcessPayrollForDecMonthSAP extends TestSuiteBase
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if (!runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -75,25 +70,19 @@ public class ProcessPayrollForDecMonthSAP extends TestSuiteBase
 			throw new SkipException("Runmode for Test set data is set to 'NO' "
 					+ count);
 		}
-
 		
-		if (shouldOpenBrowser) {
+		if (shouldOpenBrowser)
+		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-
 			driver.manage().window().maximize();
 			try
 			{
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-
-				//PayrollForMonthlyTax(DecemberMonth);
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
-				// in base class need to update the method with new parameter
-			
-
 			}
 			catch (Throwable t)
 			{
@@ -119,7 +108,6 @@ public class ProcessPayrollForDecMonthSAP extends TestSuiteBase
 				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
-		
 	}
 
 

@@ -40,12 +40,8 @@ public class TestDecReports extends TestSuiteBase
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
 	public String titlename;
-	/*
-	public int Row_count;
-	public static String payrollMonth= "June-2015";
-	public static String PayFrequency= "Monthly";
-	public String ReportName= "DO NOT TOUCH SAP GROSS PAYMENTS";
-	*/
+	
+	
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
@@ -127,9 +123,7 @@ public class TestDecReports extends TestSuiteBase
 		}
 		Thread.sleep(4000L);
 
-		//DownloadReports(pn,PayFrequency,payrollMonth);
 		DownloadReports(EmpName,TestResultExcelFilePath,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestReportworksheetNo); // pn means payroll id. in this case 8512
-
 
 }
 
@@ -232,7 +226,7 @@ public class TestDecReports extends TestSuiteBase
 				}
 				rownum++;
 			}
-			//
+			
 		}
 		catch(Throwable t)
 		{
@@ -268,7 +262,7 @@ public class TestDecReports extends TestSuiteBase
 		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
 		 
-		 ///
+		
 
 
 		FileOutputStream webdata = new FileOutputStream (TestResultExcelFilePath);

@@ -106,7 +106,6 @@ public class TestJuneReports extends TestSuiteBase
 		}
 		*/
 
-		//DownloadReports(pn,PayFrequency,payrollMonth);
 		
 		/* Added by Swamy*/
 		try

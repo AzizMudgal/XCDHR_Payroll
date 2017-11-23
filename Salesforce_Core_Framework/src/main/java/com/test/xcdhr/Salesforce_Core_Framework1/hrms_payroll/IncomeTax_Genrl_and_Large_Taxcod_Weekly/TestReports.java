@@ -68,7 +68,7 @@ public class TestReports extends TestSuiteBase
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
 		
-		/* Added by Swamy*/
+		
 		try
 		{
 			titlename = driver.getTitle();

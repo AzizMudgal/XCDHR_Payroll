@@ -40,44 +40,34 @@ public class TestReports extends TestSuiteBase {
 	
 
 	@BeforeTest
-	public void CheckTestSkip() throws Exception{
+	public void CheckTestSkip() throws Exception
+	{
 		if(! Test_Util.IsTestcaseRunMode(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName())){
-
 			Skip=true;
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName()),"Skipped");
 			//Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
-
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
-
 		}
-
 		// Load the runmodes of the tests
-
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName());
-
 	}
 
 
 	@Test
-	public void CompareReports() throws Throwable{
-
-
+	public void CompareReports() throws Throwable
+	{
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
-
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		//WebDriver driver = new FirefoxDriver(FirefoxDriverProfile());
 		openBrowser();
-
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-
 		/* Added by Swamy*/
 		try
 		{
@@ -93,10 +83,7 @@ public class TestReports extends TestSuiteBase {
 			defaultWaitTime();
 		}
 		Thread.sleep(4000L);
-
 		DownloadReports(pn,PayFrequency,payrollMonth);
-
-
 	}
 
 		public void DownloadReports(String pn,String payfreqncy,String payrollMonth) throws Throwable
@@ -105,31 +92,22 @@ public class TestReports extends TestSuiteBase {
 			System.out.println("2> Clicked to Report Tab");
 			Thread.sleep(4000L);
 			driver.navigate().refresh();
-			
-
 			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
 			{				
 				SearchReport(ReportName);
-							
 			}
-
 			
 			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
 			{
 				editCustomButton();
 			}
-
 			
 			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
 			{				
-
 				UpdateReportPage(pn,PayFrequency,payrollMonth);
 			}
-
-
 			System.out.println("");
 			System.out.println("3> Successfully customized the Report as required");
-
 		
 			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
 			{
@@ -141,8 +119,6 @@ public class TestReports extends TestSuiteBase {
 				processReport();
 				System.out.println("5> Entered the values and processed the Test Remarks");
 			}
-			
-
 		}
 		
 	
@@ -159,10 +135,8 @@ public class TestReports extends TestSuiteBase {
 			int Col_count = driver.findElements(By.xpath(OR.getProperty("reportTableColumnsNI"))).size();
 			System.out.println("Number Of Columns = "+Col_count); // DISPLAYING
 		}
-		
 		Thread.sleep(3000L);
 		WebElement threecolms = driver.findElement(By.xpath(OR.getProperty("reportTableLocatorNI")));
-		
 		WebTable table = WebTable.getTable(threecolms);
 		List<WebElement> rows = threecolms.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI")));
 		java.util.Iterator<WebElement> x = rows.iterator();
@@ -201,23 +175,17 @@ public class TestReports extends TestSuiteBase {
 		{
 			System.out.println(t.getMessage().toString());
 		}
-		
-		
 	}
 
 
 	public void ReadsExpectedData(String firstCellOfBody, String employeeNI, String employerNI, String employeeNIPaidYTD,String employerNIPaidYTD) throws Throwable
 	{
-
 		File excel = new File("F:\\Automation NI Reports\\HMRCTestData\\Automation Test Result for Directors_NI.xlsx");
 		FileInputStream fis = new FileInputStream(excel);
 		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
 		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(5);
-		
 		FileOutputStream webdata = new FileOutputStream ("F:\\Automation NI Reports\\HMRCTestData\\Automation Test Result for Directors_NI.xlsx");
-
 		int rowNum = ws.getLastRowNum()+1;
-		
 		for(int i =10; i< rowNum; i++)
 		{
 			Row row = ws.getRow(i);
@@ -270,19 +238,17 @@ public class TestReports extends TestSuiteBase {
 				{
 					row.createCell(21).setCellValue("FALSE");
 				} 
-				
 				break;
 			}
-			
 		}	
-		
 		wb.write(webdata);
 		webdata.close();
 		fis.close();
 	}
 
 
-	public String cellToString(Cell cell){
+	public String cellToString(Cell cell)
+	{
 		int type;
 		Object result;
 		type = cell.getCellType();
@@ -303,57 +269,47 @@ public class TestReports extends TestSuiteBase {
 		break;
 		default: 
 			throw new RuntimeException("there are no othe values");
-
-
 		}
-
 		return result.toString();
-
-
 	}
 
 
 	@AfterMethod
-	public void ReportDataSetResult(){
-		if(Skip){
+	public void ReportDataSetResult()
+	{
+		if(Skip)
+		{
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}else if(Fail){
-
+		}
+		else if(Fail)
+		{
 			IsTestPass = false;
-
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
-		}else{
+		}
+		else
+		{
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
-
-
 	}
 
 
 	@AfterTest
-	public void ReportTestResult(){
-
-		if(IsTestPass){
-
+	public void ReportTestResult()
+	{
+		if(IsTestPass)
+		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName()),"Pass");
-
-		}else{
-
+		}
+		else
+		{
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, "first", Test_Util.GetRowNum(Payroll_NI_Director_AtoD_SuiteXls, this.getClass().getSimpleName()),"Fail");
-
 		}	
 		closeBrowser();
-
 	}
-
-
-
 
 }
 

@@ -87,12 +87,7 @@ public class ProcessPayrollForJulyMonthSAP extends TestSuiteBase
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-
-				
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
-				// in base class need to update the method with new parameter
-				
-
 			}
 			catch (Throwable t)
 			{

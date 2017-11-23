@@ -85,7 +85,6 @@ public class ProcessPayrolFor46WeeklyShPP extends TestSuiteBase
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-				//PayrollNIWeekly(week);
 				PayrollForStatutoryMonthlyForWeekly45to48(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 			}
 			catch (Throwable t)
@@ -152,7 +151,6 @@ public class ProcessPayrolFor46WeeklyShPP extends TestSuiteBase
 				 * Since the pagination is changed and the next button holds 
 				 * constant value as 3 . i have taken this as locator element.
 				 */
-			//List<WebElement> allpages = driver.findElements(By.xpath(OR.getProperty("totalPages")));
 			System.out.println("Total pages :");
 			for(int i=2; i<=50; i++)
 			{

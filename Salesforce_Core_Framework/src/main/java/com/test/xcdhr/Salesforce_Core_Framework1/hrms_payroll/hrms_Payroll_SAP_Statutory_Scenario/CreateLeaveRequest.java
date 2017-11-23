@@ -182,10 +182,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 		catch(Throwable t)
 		{
-			APP_LOGS.debug(" Check for error in NI Category method");
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
-			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
 		}
 		Thread.sleep(3000L);

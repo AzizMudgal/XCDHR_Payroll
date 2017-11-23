@@ -109,7 +109,6 @@ public class TestAugReports extends TestSuiteBase
 			defaultWaitTime();
 		}
 		Thread.sleep(4000L);
-		//DownloadReports(pn,PayFrequency,payrollMonth);
 		DownloadReports(EmpName,TestResultExcelFilePath,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestReportworksheetNo); // pn means payroll id. in this case 8512
 	}
 	
@@ -194,7 +193,7 @@ public class TestAugReports extends TestSuiteBase
 				}
 				rownum++;
 			}
-			//
+		
 		}
 		catch(Throwable t)
 		{
