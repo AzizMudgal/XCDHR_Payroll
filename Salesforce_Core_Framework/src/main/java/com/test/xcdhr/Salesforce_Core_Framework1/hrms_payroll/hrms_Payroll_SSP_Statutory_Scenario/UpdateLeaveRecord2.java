@@ -107,7 +107,7 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 		/*************************************************************************/
 	}
 
-
+	/* Aziz Code*/
 	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String LeaveStDate, String StatutoryPaybasis,String ConditionSatisfied) throws Throwable
 	{
 		try
