@@ -1,39 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+>>>>>>> refs/remotes/origin/master
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="112594" started-at="2017-11-23T12:32:57Z" finished-at="2017-11-23T12:34:49Z">
+=======
+<<<<<<< HEAD
+  <suite name="Default suite" duration-ms="778141" started-at="2017-11-23T12:18:15Z" finished-at="2017-11-23T12:31:13Z">
+=======
+  <suite name="Default suite" duration-ms="127924" started-at="2017-11-23T10:18:56Z" finished-at="2017-11-23T10:21:04Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="112594" started-at="2017-11-23T12:32:57Z" finished-at="2017-11-23T12:34:49Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="6027" started-at="2017-11-23T18:02:51Z" finished-at="2017-11-23T18:02:57Z">
+=======
+<<<<<<< HEAD
+    <test name="Default test" duration-ms="778141" started-at="2017-11-23T12:18:15Z" finished-at="2017-11-23T12:31:13Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="13988" started-at="2017-11-23T17:48:01Z" finished-at="2017-11-23T17:48:15Z">
+=======
+    <test name="Default test" duration-ms="127924" started-at="2017-11-23T10:18:56Z" finished-at="2017-11-23T10:21:04Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5876" started-at="2017-11-23T15:48:50Z" finished-at="2017-11-23T15:48:56Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2494" started-at="2017-11-23T18:02:57Z" finished-at="2017-11-23T18:02:59Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3355" started-at="2017-11-23T17:48:15Z" finished-at="2017-11-23T17:48:18Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2407" started-at="2017-11-23T15:48:56Z" finished-at="2017-11-23T15:48:58Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="62482" started-at="2017-11-23T18:03:02Z" data-provider="getData" finished-at="2017-11-23T18:04:04Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="614690" started-at="2017-11-23T17:48:22Z" data-provider="getData" finished-at="2017-11-23T17:58:36Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="103779" started-at="2017-11-23T15:49:01Z" data-provider="getData" finished-at="2017-11-23T15:50:44Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 104]]>
+=======
+<<<<<<< HEAD
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 107]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[H Apprentices under the age of 25.]]>
+=======
+<<<<<<< HEAD
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 385]]>
+=======
+                <![CDATA[]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[1210M]]>
+=======
+<<<<<<< HEAD
+                <![CDATA[2040M_Payroll]]>
+=======
+                <![CDATA[1]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="3">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Cumulative]]>
               </value>
             </param>
@@ -45,16 +110,63 @@
             <param index="5">
               <value>
                 <![CDATA[Monthly]]>
+=======
+<<<<<<< HEAD
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+=======
+                <![CDATA[1]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2818" started-at="2017-11-23T18:04:04Z" finished-at="2017-11-23T18:04:07Z">
+=======
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< HEAD
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="9991" started-at="2017-11-23T17:58:37Z" finished-at="2017-11-23T17:58:47Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2625" started-at="2017-11-23T15:50:44Z" finished-at="2017-11-23T15:50:47Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="34620" started-at="2017-11-23T18:04:09Z" data-provider="getData" finished-at="2017-11-23T18:04:44Z">
           <params>
             <param index="0">
@@ -96,10 +208,265 @@
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3412" started-at="2017-11-23T18:04:46Z" finished-at="2017-11-23T18:04:49Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="668" started-at="2017-11-23T17:58:47Z" data-provider="getData" finished-at="2017-11-23T17:58:47Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 386]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="5842" started-at="2017-11-23T17:58:47Z" finished-at="2017-11-23T17:58:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="608" started-at="2017-11-23T17:58:53Z" data-provider="getData" finished-at="2017-11-23T17:58:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 387]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2726" started-at="2017-11-23T17:58:54Z" finished-at="2017-11-23T17:58:56Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="607" started-at="2017-11-23T17:58:56Z" data-provider="getData" finished-at="2017-11-23T17:58:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 388]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2691" started-at="2017-11-23T17:58:57Z" finished-at="2017-11-23T17:59:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="104154" started-at="2017-11-23T17:59:00Z" data-provider="getData" finished-at="2017-11-23T18:00:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 389]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[2040M_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2422" started-at="2017-11-23T18:00:44Z" finished-at="2017-11-23T18:00:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportTestResult" is-config="true" duration-ms="26608" started-at="2017-11-23T18:00:46Z" finished-at="2017-11-23T18:01:13Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="ReportTestResult" is-config="true" duration-ms="16647" started-at="2017-11-23T15:50:47Z" finished-at="2017-11-23T15:51:04Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month1.UpdteTaxCodeAndAnualSalaryM1 -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ProcessPayrollForMonthlyTax -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
