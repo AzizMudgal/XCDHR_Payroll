@@ -160,10 +160,16 @@ public class ResetEmployeeDataNov extends TestSuiteBase
 					break;
 				}
 			}
-			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNICatgorycoulmnTable")));
+			System.out.println("Control in ***************8");
+			//WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNICatgorycoulmnTable")));
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTable")));
+			System.out.println("Control in postsTable" +postsTable);
 			if(existsWebElement(postsTable))
-			{
-				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNICatgorycoulmnTableRows")));
+			{ 
+				System.out.println("Control in if Block*************");
+				//List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNICatgorycoulmnTableRows")));
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+				System.out.println("++++++++++++++++++++");
 				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownum = 1;	

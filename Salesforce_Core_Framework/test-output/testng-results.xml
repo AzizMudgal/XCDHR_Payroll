@@ -2,140 +2,54 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="53334" started-at="2017-11-23T07:10:39Z" finished-at="2017-11-23T07:11:32Z">
-=======
-<<<<<<< Upstream, based on origin/master
-  <suite name="Default suite" duration-ms="101694" started-at="2017-11-22T13:55:34Z" finished-at="2017-11-22T13:57:15Z">
-=======
-  <suite name="Default suite" duration-ms="145553" started-at="2017-11-22T10:54:10Z" finished-at="2017-11-22T10:56:36Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+  <suite name="Default suite" duration-ms="127924" started-at="2017-11-23T10:18:56Z" finished-at="2017-11-23T10:21:04Z">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test name="Default test" duration-ms="53334" started-at="2017-11-23T07:10:39Z" finished-at="2017-11-23T07:11:32Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5956" started-at="2017-11-23T12:40:33Z" finished-at="2017-11-23T12:40:39Z">
-=======
-<<<<<<< Upstream, based on origin/master
-    <test name="Default test" duration-ms="101694" started-at="2017-11-22T13:55:34Z" finished-at="2017-11-22T13:57:15Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="6002" started-at="2017-11-22T19:25:28Z" finished-at="2017-11-22T19:25:34Z">
-=======
-    <test name="Default test" duration-ms="145553" started-at="2017-11-22T10:54:10Z" finished-at="2017-11-22T10:56:36Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8085" started-at="2017-11-22T16:24:02Z" finished-at="2017-11-22T16:24:10Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+    <test name="Default test" duration-ms="127924" started-at="2017-11-23T10:18:56Z" finished-at="2017-11-23T10:21:04Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5876" started-at="2017-11-23T15:48:50Z" finished-at="2017-11-23T15:48:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2319" started-at="2017-11-23T12:40:39Z" finished-at="2017-11-23T12:40:41Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2598" started-at="2017-11-22T19:25:34Z" finished-at="2017-11-22T19:25:36Z">
-=======
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3758" started-at="2017-11-22T16:24:10Z" finished-at="2017-11-22T16:24:14Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2407" started-at="2017-11-23T15:48:56Z" finished-at="2017-11-23T15:48:58Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="42254" started-at="2017-11-23T12:40:44Z" data-provider="getData" finished-at="2017-11-23T12:41:26Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="EmpsSetup_WithNICategory" duration-ms="90693" started-at="2017-11-22T19:25:39Z" data-provider="getData" finished-at="2017-11-22T19:27:09Z">
-=======
-        <test-method status="PASS" signature="ResetEmploymentAndLeaveTab(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="ResetEmploymentAndLeaveTab" duration-ms="126204" started-at="2017-11-22T16:24:17Z" data-provider="getData" finished-at="2017-11-22T16:26:23Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="103779" started-at="2017-11-23T15:49:01Z" data-provider="getData" finished-at="2017-11-23T15:50:44Z">
           <params>
             <param index="0">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 103]]>
-=======
-<<<<<<< Upstream, based on origin/master
-                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 102]]>
-=======
-                <![CDATA[DO NOT TOUCH AUTOMATION SAPP 101]]>
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 107]]>
               </value>
             </param>
             <param index="1">
               <value>
-<<<<<<< HEAD
-                <![CDATA[C Employees over State pension age (attach passport/birth certificate)]]>
-=======
-<<<<<<< Upstream, based on origin/master
-                <![CDATA[2017]]>
-=======
-                <![CDATA[07/01/2017]]>
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+                <![CDATA[]]>
               </value>
             </param>
             <param index="2">
               <value>
-<<<<<<< HEAD
-                <![CDATA[11/06/2017]]>
-=======
-<<<<<<< Upstream, based on origin/master
-                <![CDATA[Maternity]]>
+                <![CDATA[1]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[12/12/2017]]>
-=======
                 <![CDATA[1]]>
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2603" started-at="2017-11-23T12:41:26Z" finished-at="2017-11-23T12:41:29Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2461" started-at="2017-11-22T19:27:09Z" finished-at="2017-11-22T19:27:12Z">
-=======
-        </test-method> <!-- ResetEmploymentAndLeaveTab -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3202" started-at="2017-11-22T16:26:23Z" finished-at="2017-11-22T16:26:26Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2625" started-at="2017-11-23T15:50:44Z" finished-at="2017-11-23T15:50:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3629" started-at="2017-11-23T12:41:29Z" finished-at="2017-11-23T12:41:32Z">
-=======
-<<<<<<< Upstream, based on origin/master
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3366" started-at="2017-11-22T19:27:12Z" finished-at="2017-11-22T19:27:15Z">
-=======
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData@271053e1]" name="ReportTestResult" is-config="true" duration-ms="9035" started-at="2017-11-22T16:26:27Z" finished-at="2017-11-22T16:26:36Z">
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData@402a079c]" name="ReportTestResult" is-config="true" duration-ms="16647" started-at="2017-11-23T15:50:47Z" finished-at="2017-11-23T15:51:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario3_Month8.ResetEmployeeDataNov -->
-=======
-<<<<<<< Upstream, based on origin/master
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario2_Month6.UpdateLeaveRecord -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.ResetData -->
->>>>>>> 8fca7dc committing SAPP Pagination work
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ResetEmployeeData -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
