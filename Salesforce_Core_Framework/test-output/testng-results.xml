@@ -1,95 +1,90 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="228854" started-at="2017-11-27T08:02:20Z" finished-at="2017-11-27T08:06:09Z">
+  <suite name="Default suite" duration-ms="62865" started-at="2017-11-28T13:12:20Z" finished-at="2017-11-28T13:13:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="228854" started-at="2017-11-27T08:02:20Z" finished-at="2017-11-27T08:06:09Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8222" started-at="2017-11-27T13:32:12Z" finished-at="2017-11-27T13:32:20Z">
+    <test name="Default test" duration-ms="62865" started-at="2017-11-28T13:12:20Z" finished-at="2017-11-28T13:13:22Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.AverageWeeklyEarningsTestReport">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.AverageWeeklyEarningsTestReport@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8047" started-at="2017-11-28T18:42:12Z" finished-at="2017-11-28T18:42:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3373" started-at="2017-11-27T13:32:20Z" finished-at="2017-11-27T13:32:24Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.AverageWeeklyEarningsTestReport@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3" started-at="2017-11-28T18:42:20Z" finished-at="2017-11-28T18:42:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="139868" started-at="2017-11-27T13:32:27Z" data-provider="getData" finished-at="2017-11-27T13:34:47Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.AverageWeeklyEarningsTestReport@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="59808" started-at="2017-11-28T18:42:20Z" data-provider="getData" finished-at="2017-11-28T18:43:19Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SMP 101]]>
+                <![CDATA[DONT TOUCH AUTO DIRSAP EMPLOYER]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[45L]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION SAP 101]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[Week1/Month1]]>
+                <![CDATA[DIRSAP_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[12000.0]]>
+                <![CDATA[Monthly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Monthly]]>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite StatutoryAdoptionPay201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH SAP AVERAGE WEEKLY EARNINGS]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_StatutoryScenarios 201718\\201718 Automation TestResult For Statutory Scenarios.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[9]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[4]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2642" started-at="2017-11-27T13:34:47Z" finished-at="2017-11-27T13:34:50Z">
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.AverageWeeklyEarningsTestReport@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="49" started-at="2017-11-28T18:43:19Z" finished-at="2017-11-28T18:43:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="69796" started-at="2017-11-27T13:34:53Z" data-provider="getData" finished-at="2017-11-27T13:36:02Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SMP 101]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[45L]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[Week1/Month1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[12000.0]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Monthly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2866" started-at="2017-11-27T13:36:02Z" finished-at="2017-11-27T13:36:05Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportTestResult" is-config="true" duration-ms="4031" started-at="2017-11-27T13:36:05Z" finished-at="2017-11-27T13:36:09Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.AverageWeeklyEarningsTestReport@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2977" started-at="2017-11-28T18:43:20Z" finished-at="2017-11-28T18:43:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.AverageWeeklyEarningsTestReport -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

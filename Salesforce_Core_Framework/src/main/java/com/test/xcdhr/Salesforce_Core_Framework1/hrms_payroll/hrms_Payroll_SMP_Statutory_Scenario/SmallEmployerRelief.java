@@ -303,7 +303,7 @@ public void FetchEmployeeRecord(String EmpName,String SmallEmployerRelief) throw
 				{
 					System.out.println("the count is "+rownum1);
 					try
-					{							///table/tbody/tr[2]/td[2]/a
+					{							
 						String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
 						if(existsElement(EmployerName))
 						{

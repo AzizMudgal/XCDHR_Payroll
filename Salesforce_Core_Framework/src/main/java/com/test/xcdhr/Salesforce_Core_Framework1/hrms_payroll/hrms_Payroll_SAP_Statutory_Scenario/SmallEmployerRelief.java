@@ -316,10 +316,52 @@ public class SmallEmployerRelief extends TestSuiteBase
 				System.out.println("eeee");
 
 				List<WebElement> rows11 = postsTable11.findElements(By.xpath(OR.getProperty("employerTableLocatorRows")));
-				//java.util.Iterator<WebElement> x1 = rows11.iterator();
+				java.util.Iterator<WebElement> x1 = rows11.iterator();
 				rownum1 = 1;
+				while(x1.hasNext())
+				{
+					System.out.println("the count is "+rownum1);
+					try
+					{							
+						String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
+						if(existsElement(EmployerName))
+						{
+							System.out.println("Employer details table exists");
+							WebElement tempElement1= driver.findElement(By.xpath(EmployerName));
+							String AppnEmp1= tempElement1.getText();
+							System.out.println("Field name is :"+AppnEmp1);
+							System.out.println(AppnEmp1+"-------"+EmpName+"------"+rownum);
+							if(AppnEmp1!=null && AppnEmp1.equalsIgnoreCase("DONT TOUCH AUTO DIRSAP EMPLOYER"))
+							{											
+								System.out.println("Employer name  :"+AppnEmp1+ "  matched ");
 
+								if(existsWebElement(tempElement1))
+								{
+									tempElement1.click();
+									System.out.println("The employee namely :"+AppnEmp1+"got clicked");
+									break;
+								}
 
+							}
+							else
+							{
+								System.out.println("Employer name did not matched");
+							}
+							
+						}
+					}
+					catch(Throwable t)
+					{
+						System.out.println("the specified employer name does not exist in this row");
+						System.out.println(t.getMessage().toString());
+						System.out.println(t.getStackTrace().toString());
+					}
+					
+					rownum1++;
+				}
+						
+
+				/*
 				int row_num,col_num;
 				row_num=1;
 				outerloop:
@@ -332,30 +374,21 @@ public class SmallEmployerRelief extends TestSuiteBase
 						for(WebElement tdElement : td_collection1)
 						{
 							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP EMPLOYER"))
-								//DONT TOUCH AUTO DIRSMP EMPLOYER DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18
-
 							{
 								Thread.sleep(5000L);
 								System.out.println("Link name  :"+tdElement.getText()+ "  matched ");
-
 								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a[@id='lookupa0Xb000000OaLioj_id0_j_id4100Nb0000009I76v']"));
 								Thread.sleep(2000L);
 								eplyrclkchkbox.click();
 								System.out.println("clicked to employer");
 								break  outerloop;
 							}
-
 						}
 						col_num++;
-
 					}
-				row_num++;
-
-
+				row_num++;*/
 			}
-
 		}
 		catch(Throwable t)
 		{
