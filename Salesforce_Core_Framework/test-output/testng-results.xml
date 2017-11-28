@@ -1,45 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="5" passed="5">
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+>>>>>>> refs/remotes/origin/master
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Payroll RTI Recogntion Scenario7Month3" duration-ms="1531400" started-at="2017-11-27T14:22:44Z" finished-at="2017-11-27T14:48:15Z">
+=======
+  <suite name="Default suite" duration-ms="228854" started-at="2017-11-27T08:02:20Z" finished-at="2017-11-27T08:06:09Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="1" duration-ms="115928" started-at="2017-11-27T14:22:44Z" finished-at="2017-11-27T14:24:40Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3">
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2532" started-at="2017-11-27T19:52:44Z" finished-at="2017-11-27T19:52:47Z">
+=======
+    <test name="Default test" duration-ms="228854" started-at="2017-11-27T08:02:20Z" finished-at="2017-11-27T08:06:09Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8222" started-at="2017-11-27T13:32:12Z" finished-at="2017-11-27T13:32:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3373" started-at="2017-11-27T13:32:20Z" finished-at="2017-11-27T13:32:24Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="63704" started-at="2017-11-27T19:52:49Z" data-provider="getData" finished-at="2017-11-27T19:53:53Z">
+=======
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="139868" started-at="2017-11-27T13:32:27Z" data-provider="getData" finished-at="2017-11-27T13:34:47Z">
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 107]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION SMP 101]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[A All other employees]]>
+=======
+                <![CDATA[45L]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[S45L]]>
+=======
+                <![CDATA[Week1/Month1]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="3">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Month 1]]>
+=======
+                <![CDATA[12000.0]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="4">
               <value>
+<<<<<<< HEAD
                 <![CDATA[31958.88]]>
               </value>
             </param>
             <param index="5">
               <value>
+=======
+>>>>>>> refs/remotes/origin/master
                 <![CDATA[Monthly]]>
               </value>
             </param>
@@ -47,39 +88,66 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2977" started-at="2017-11-27T19:53:53Z" finished-at="2017-11-27T19:53:56Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2642" started-at="2017-11-27T13:34:47Z" finished-at="2017-11-27T13:34:50Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="36233" started-at="2017-11-27T19:53:58Z" data-provider="getData" finished-at="2017-11-27T19:54:34Z">
+=======
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="69796" started-at="2017-11-27T13:34:53Z" data-provider="getData" finished-at="2017-11-27T13:36:02Z">
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 107]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION SMP 101]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[A All other employees]]>
+=======
+                <![CDATA[45L]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[S45L]]>
+=======
+                <![CDATA[Week1/Month1]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="3">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Month 1]]>
+=======
+                <![CDATA[12000.0]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="4">
               <value>
+<<<<<<< HEAD
                 <![CDATA[31958.88]]>
               </value>
             </param>
             <param index="5">
               <value>
+=======
+>>>>>>> refs/remotes/origin/master
                 <![CDATA[Monthly]]>
               </value>
             </param>
@@ -87,14 +155,23 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2067" started-at="2017-11-27T19:54:34Z" finished-at="2017-11-27T19:54:36Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2866" started-at="2017-11-27T13:36:02Z" finished-at="2017-11-27T13:36:05Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3560" started-at="2017-11-27T19:54:36Z" finished-at="2017-11-27T19:54:40Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportTestResult" is-config="true" duration-ms="4031" started-at="2017-11-27T13:36:05Z" finished-at="2017-11-27T13:36:09Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.UpdteTaxCodeAndAnualSalaryM3 -->
     </test> <!-- 1 -->
     <test name="2" duration-ms="697806" started-at="2017-11-27T14:24:40Z" finished-at="2017-11-27T14:36:18Z">
@@ -352,4 +429,9 @@
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month3.TestJuneReports -->
     </test> <!-- 4 -->
   </suite> <!-- Payroll RTI Recogntion Scenario7Month3 -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> refs/remotes/origin/master
 </testng-results>
