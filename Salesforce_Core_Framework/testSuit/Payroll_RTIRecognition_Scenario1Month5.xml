@@ -2,22 +2,22 @@
 <suite name="Payroll RTI Recogntion Scenario1Month5">
 <test name="1">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.UpdteTaxCodeAndAnualSalaryM5" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month5.UpdteTaxCodeAndAnualSalaryM5" ></class>  
     </classes>
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessPayrollForAug" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month5.ProcessPayrollForAug" ></class>  
     </classes>
 </test>
 <test name="3">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.ProcessFinalPayrollForAug" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month5.ProcessFinalPayrollForAug" ></class>  
     </classes>
 </test>
 <test name="4">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.TestAugReports" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month5.TestAugReports" ></class>  
     </classes>
 </test>
 </suite>
