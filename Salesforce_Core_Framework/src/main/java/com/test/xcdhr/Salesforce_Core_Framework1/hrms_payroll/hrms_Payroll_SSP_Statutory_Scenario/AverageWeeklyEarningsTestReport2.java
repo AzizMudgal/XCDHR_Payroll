@@ -109,9 +109,12 @@ public class AverageWeeklyEarningsTestReport2 extends TestSuiteBase
 	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 	
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			driver.navigate().refresh();
+			//driver.navigate().refresh();
+		}
 			if(existsElement(OR.getProperty("findReportTextboxLocator")))
 			{				
 				SearchReport(FirstReportNameInApplication);

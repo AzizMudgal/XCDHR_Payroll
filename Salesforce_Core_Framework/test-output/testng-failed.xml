@@ -3,12 +3,25 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll RTI Recogntion Scenario7Month1]">
   <test name="1(failed)">
     <classes>
+<<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestMayReports">
+=======
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.UpdteTaxCodeAndAnualSalaryM1">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
+=======
           <include name="CheckTestSkip"/>
+>>>>>>> refs/remotes/origin/master
           <include name="ReportTestResult"/>
           <include name="ReportDataSetResult"/>
+          <include name="CheckSuiteSkip"/>
+          <include name="CheckTestSkip"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
         </methods>
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestMayReports -->
+=======
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.UpdteTaxCodeAndAnualSalaryM1 -->
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.TestAprilReports">
         <methods>
@@ -45,6 +58,7 @@
           <include name="queryExecute"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month1.ExecuteQuery -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- 1(failed) -->
 </suite> <!-- Failed suite [Payroll RTI Recogntion Scenario7Month1] -->
