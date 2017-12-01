@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="8304" started-at="2017-12-01T07:58:40Z" finished-at="2017-12-01T07:58:48Z">
+  <suite name="Default suite" duration-ms="7952" started-at="2017-12-01T08:06:13Z" finished-at="2017-12-01T08:06:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="8304" started-at="2017-12-01T07:58:40Z" finished-at="2017-12-01T07:58:48Z">
+    <test name="Default test" duration-ms="7952" started-at="2017-12-01T08:06:13Z" finished-at="2017-12-01T08:06:21Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="6177" started-at="2017-12-01T13:28:33Z" finished-at="2017-12-01T13:28:40Z">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="17318" started-at="2017-12-01T13:35:56Z" finished-at="2017-12-01T13:36:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2714" started-at="2017-12-01T13:28:40Z" finished-at="2017-12-01T13:28:42Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2913" started-at="2017-12-01T13:36:13Z" finished-at="2017-12-01T13:36:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="FAIL" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="2801" started-at="2017-12-01T13:28:42Z" data-provider="getData" finished-at="2017-12-01T13:28:45Z">
+        <test-method status="FAIL" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="2269" started-at="2017-12-01T13:36:16Z" data-provider="getData" finished-at="2017-12-01T13:36:19Z">
           <exception class="org.testng.internal.reflect.MethodMatcherException">
             <message>
               <![CDATA[
@@ -54,7 +54,7 @@ Arguments: [(java.lang.String)DONT TOUCH AUTO HMRCS7 EMPLOYER,(java.lang.String)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="FAIL" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2017-12-01T13:28:45Z" finished-at="2017-12-01T13:28:45Z">
+        <test-method status="FAIL" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month5.ProcessFinalPayrollForAug@402a079c]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2017-12-01T13:36:19Z" finished-at="2017-12-01T13:36:19Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
               <![CDATA[java.lang.NullPointerException
