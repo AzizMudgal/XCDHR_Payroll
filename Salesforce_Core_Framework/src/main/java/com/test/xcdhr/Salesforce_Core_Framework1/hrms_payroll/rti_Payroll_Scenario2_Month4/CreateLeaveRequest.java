@@ -421,14 +421,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			
 			try
 			{
-				if(existsElementchkFor1mts(OR.getProperty("MatrnityAWE")))
-				{
-					getObject("MatrnityAWE").sendKeys("");
-					getObject("MatrnityAWE").sendKeys(AverageWeeklyEarnings);
-					System.out.println("");
-					System.out.println("The AWE Value was entered sucessfully");
-				}
-				
+								
 				if(existsElementchkFor1mts(OR.getProperty("PartnersFirstname")))
 				{
 					getObject("PartnersFirstname").sendKeys("");
@@ -459,6 +452,18 @@ public class CreateLeaveRequest extends TestSuiteBase
 					getObject("partnersNINO").sendKeys(PartnersNINONumber);
 					System.out.println("");
 					System.out.println("The partners nino no was entered sucessfully");
+				}
+				
+				if(existsElementchkFor1mts(OR.getProperty("MatrnityAWE")))
+				{
+					//double value = Double.parseDouble(AverageWeeklyEarnings);
+					//String AverageWeeklyEarningss=String.valueOf(value);  
+					getObject("MatrnityAWE").clear();
+					getObject("MatrnityAWE").sendKeys("");
+					getObject("MatrnityAWE").sendKeys(AverageWeeklyEarnings);
+					//getObject("MatrnityAWE").sendKeys(AverageWeeklyEarningss);
+					System.out.println("");
+					System.out.println("The AWE Value was entered sucessfully");
 				}
 			}
 			catch(Throwable t)
