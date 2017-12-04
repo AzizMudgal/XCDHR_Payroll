@@ -72,7 +72,7 @@ public class TestReports extends TestSuiteBase
 		driver.manage().window().maximize();
 		
 
-/* Added by Swamy*/
+
 		try
 		{
 			titlename = driver.getTitle();

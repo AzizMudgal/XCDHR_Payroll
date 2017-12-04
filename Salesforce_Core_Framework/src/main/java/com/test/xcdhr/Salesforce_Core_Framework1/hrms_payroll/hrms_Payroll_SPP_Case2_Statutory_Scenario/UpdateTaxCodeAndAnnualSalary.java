@@ -52,14 +52,12 @@ public class UpdateTaxCodeAndAnnualSalary extends TestSuiteBase
 	{
 		//APP_LOGS.debug("Entering the Leave parameters");
 		APP_LOGS.debug(EmpName+"--"+Taxcode+"--"+TaxBasis+"--"+AnnualSalary+"--"+PayFrequency);
-
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{

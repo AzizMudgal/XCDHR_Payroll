@@ -87,7 +87,7 @@ public class ExecuteQuery extends TestSuiteBase {
 			}
 			catch(Throwable t)
 			{
-				APP_LOGS.debug("Could not assert the home page title, Check for error");
+				//APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 				defaultWaitTime();
 			}
@@ -155,67 +155,52 @@ public class ExecuteQuery extends TestSuiteBase {
 							*/
 							break;
 						}
-						
-											
 					}
-					
-					
 				}
-				
 			}
-			
-			
 		}
-				
-			
-		}
+	}
 	
 
 
 
 	@AfterMethod
-	public void ReportDataSetResult() throws Throwable{
+	public void ReportDataSetResult() throws Throwable
+	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-		if(Skip){
+		if(Skip)
+		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}else if(Fail){
-
+		}
+		else if(Fail)
+		{
 			IsTestPass = false;
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
-		}else{
+		}
+		else
+		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
-
-
 	}
 
 
 	@AfterTest
-	public void ReportTestResult() throws Throwable{
+	public void ReportTestResult() throws Throwable
+	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-
-		if(IsTestPass){
-
+		if(IsTestPass)
+		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Pass");
-
-		}else{
-
+		}
+		else
+		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Fail");
-
 		}	
-
 		closeBrowser();
 	}
-
-
 
 }

@@ -108,7 +108,7 @@ public class TestAprilReports extends TestSuiteBase
 
 		
 		DownloadReports(EmpName,TestResultExcelFilePath,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestReportworksheetNo); // pn means payroll id. in this case 8512
-		//String Payrolid,String Frquency,String MonthName
+		
 	}
 
 	

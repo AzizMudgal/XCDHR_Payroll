@@ -12,11 +12,11 @@ public class TestSuiteBase extends TestBase{
 	public void CheckSuiteSkip() throws Throwable {
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		initialize();
-		APP_LOGS.debug("Checking runmode of "+Payroll_NI_DirectorAsEmployee_SuiteXls_InputExcelFile);
-		if(! Test_Util.isSuiteRunnable(SuiteXls, Payroll_NI_DirectorAsEmployee_SuiteXls_InputExcelFile)){
+		APP_LOGS.debug("Checking runmode of "+Payroll_NI_Deferment_SuiteXls_InputExcelFile);
+		if(! Test_Util.isSuiteRunnable(SuiteXls, Payroll_NI_Deferment_SuiteXls_InputExcelFile)){
 			APP_LOGS.debug("Setting the Payroll Suite to OFF as the runmode is set to 'N'");
 			throw new Exception("Payroll suite is not going to execute as its being skipped");
 		}
 	}
-// Payroll_NI_DirectorAsProrata_SuiteXls_InputExcelFile
+
 }

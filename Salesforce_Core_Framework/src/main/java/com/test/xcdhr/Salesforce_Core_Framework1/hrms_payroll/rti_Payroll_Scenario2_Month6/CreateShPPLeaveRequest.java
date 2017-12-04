@@ -133,8 +133,10 @@ public class CreateShPPLeaveRequest extends TestSuiteBase
 			if(existsWebElement(postsTable))
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
+				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
-				int rownum = 1;			
+				int rownum = 1;
+				outerbreak:
 				while(x.hasNext())
 				{
 					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
@@ -151,9 +153,27 @@ public class CreateShPPLeaveRequest extends TestSuiteBase
 							{
 								firstEmployee.click();
 								System.out.println("The employee namely :"+AppnEmp+"got clicked");
-								break;
+								break outerbreak;
 							}
 						}
+						
+						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+						{
+							System.out.println("The row number of the page reached"+ rownum +" to 200 and"+ " 	Required Employee not found "
+							+ "hence clicking the"	+ "	pagination link so that Employee search continues for next page");
+							if(existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject
+								("paginationNextPersonal").sendKeys("");
+								getObject
+								("paginationNextPersonal").click();
+								System.out.println("As the required employees are "
+								+ "not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep
+								(8000L);
+								rownum = 0;
+							}
+						 }
 						rownum++;
 					}
 				}

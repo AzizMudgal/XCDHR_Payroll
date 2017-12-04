@@ -26,7 +26,7 @@ public class PayrollForNIDirctrAsRandPMay extends TestSuiteBase
 	
 
 
-
+   /* Swamy Added*/
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{

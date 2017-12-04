@@ -1,6 +1,16 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Payroll_Suite_NIDirector_Under21_Month1;
 
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -26,7 +36,6 @@ public class NIDirector_Under21Month1 extends TestSuiteBase
 
 
 
-
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
@@ -42,9 +51,7 @@ public class NIDirector_Under21Month1 extends TestSuiteBase
 		// Load the runmodes of the tests
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_NI_Director_Under21_SuiteXls, this.getClass().getSimpleName());
 	}
-
-
-
+	
 
 	public String payfreqncy;
 	boolean employeeFirsttimeView = true;
@@ -97,13 +104,13 @@ public class NIDirector_Under21Month1 extends TestSuiteBase
 
 
 
+	
 
 
 	@Test(dataProvider="getData", priority=2)
 	public void EmpsSetup_WithAnnualSalary(String EmpName,String NICategory,String DirctorsNibasis,String DirectorSince,String DOB, String AnnualSalary,String PayFrequency) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		countCompensation++;
 		if(! runmodes[countCompensation].equalsIgnoreCase("Y"))
 		{
@@ -116,7 +123,6 @@ public class NIDirector_Under21Month1 extends TestSuiteBase
 		UpdateAnnualSalary(EmpName,AnnualSalary,PayFrequency);
 		/*************************************************************************/
 	}
-
 
 
 	@DataProvider
@@ -153,7 +159,6 @@ public class NIDirector_Under21Month1 extends TestSuiteBase
 
 
 
-
 	@AfterTest
 	public void ReportTestResult() throws Throwable
 	{
@@ -171,4 +176,6 @@ public class NIDirector_Under21Month1 extends TestSuiteBase
 		}	
 		closeBrowser();
 	}
+	
+	
 }

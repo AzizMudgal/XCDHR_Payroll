@@ -65,7 +65,6 @@ public class ProcessPayrollForAugustMonthSAP extends TestSuiteBase
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if (!runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -73,25 +72,19 @@ public class ProcessPayrollForAugustMonthSAP extends TestSuiteBase
 			throw new SkipException("Runmode for Test set data is set to 'NO' "
 					+ count);
 		}
-
 		
-		if (shouldOpenBrowser) {
+		if (shouldOpenBrowser)
+		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-
 			driver.manage().window().maximize();
 			try
 			{
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-
-				//PayrollForMonthlyTax(AugustMonth);
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
-				// in base class need to update the method with new parameter
-				
-
 			}
 			catch (Throwable t)
 			{
@@ -106,18 +99,15 @@ public class ProcessPayrollForAugustMonthSAP extends TestSuiteBase
 			System.out.println("Since the app is not displaying employee records same"
 					+ " as excel file employees of this Tax worksheet");
 			ProcessPayrollForAugustMonthSAP obj1 = new ProcessPayrollForAugustMonthSAP();
-			
 			for(Repeat=2; Repeat < 5; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
 				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
-
 				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
-		
 	}
 
 
@@ -128,61 +118,55 @@ public class ProcessPayrollForAugustMonthSAP extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		return Test_Util.getData(Payroll_Statutory_Adoption_SuiteXls,"ProcessPayrollForAugustMonthSAP");
 	}
+	
 
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if (Skip)
 		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
-		} else if (Fail)
+		}
+		else if (Fail)
 		{
-
 			IsTestPass = false;
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
-		} else
+		}
+		else
 		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
-
 		Skip = false;
 		Fail = false;
-
 	}
+	
+	
 
 	@AfterTest
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if (IsTestPass)
 		{
-
 			// This will update the testresult in the first worksheet where in
 			// for that test case , even if one of the test data specified in
 			// second worksheet fails, the test
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first",
 					Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
-
-		} else
+		}
+		else
 		{
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first",
 					Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
-
 		}
 		closeBrowser();
 	}
-
 }
 

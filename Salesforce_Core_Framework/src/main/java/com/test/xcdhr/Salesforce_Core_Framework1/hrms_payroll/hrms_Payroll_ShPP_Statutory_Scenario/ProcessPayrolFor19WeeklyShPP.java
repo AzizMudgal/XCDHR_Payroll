@@ -90,7 +90,6 @@ public class ProcessPayrolFor19WeeklyShPP extends TestSuiteBase
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-				//PayrollNIWeekly(week);
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 			}
 			catch (Throwable t)

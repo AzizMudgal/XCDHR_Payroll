@@ -135,7 +135,9 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
 				java.util.Iterator<WebElement> x = rows.iterator();
-				int rownum = 1;			
+				lastRowCount = rows.size();
+				int rownum = 1;	
+				outerbreak:
 				while(x.hasNext())
 				{
 					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
@@ -152,9 +154,27 @@ public class CreateLeaveRequest extends TestSuiteBase
 							{
 								firstEmployee.click();
 								System.out.println("The employee namely :"+AppnEmp+"got clicked");
-								break;
+								break outerbreak;
 							}
 						}
+						
+						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+						{
+							System.out.println("The row number of the page reached"+ rownum +" to 200 and"+ " 	Required Employee not found "
+							+ "hence clicking the"	+ "	pagination link so that Employee search continues for next page");
+							if(existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject
+								("paginationNextPersonal").sendKeys("");
+								getObject
+								("paginationNextPersonal").click();
+								System.out.println("As the required employees are "
+								+ "not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep
+								(8000L);
+								rownum = 0;
+							}
+						 }
 						rownum++;
 					}
 				}
@@ -401,14 +421,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			
 			try
 			{
-				if(existsElementchkFor1mts(OR.getProperty("MatrnityAWE")))
-				{
-					getObject("MatrnityAWE").sendKeys("");
-					getObject("MatrnityAWE").sendKeys(AverageWeeklyEarnings);
-					System.out.println("");
-					System.out.println("The AWE Value was entered sucessfully");
-				}
-				
+								
 				if(existsElementchkFor1mts(OR.getProperty("PartnersFirstname")))
 				{
 					getObject("PartnersFirstname").sendKeys("");
@@ -439,6 +452,18 @@ public class CreateLeaveRequest extends TestSuiteBase
 					getObject("partnersNINO").sendKeys(PartnersNINONumber);
 					System.out.println("");
 					System.out.println("The partners nino no was entered sucessfully");
+				}
+				
+				if(existsElementchkFor1mts(OR.getProperty("MatrnityAWE")))
+				{
+					//double value = Double.parseDouble(AverageWeeklyEarnings);
+					//String AverageWeeklyEarningss=String.valueOf(value);  
+					getObject("MatrnityAWE").clear();
+					getObject("MatrnityAWE").sendKeys("");
+					getObject("MatrnityAWE").sendKeys(AverageWeeklyEarnings);
+					//getObject("MatrnityAWE").sendKeys(AverageWeeklyEarningss);
+					System.out.println("");
+					System.out.println("The AWE Value was entered sucessfully");
 				}
 			}
 			catch(Throwable t)

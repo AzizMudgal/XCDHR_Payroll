@@ -74,15 +74,7 @@ public class TestReports2 extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-		/*Thread.sleep(4000L);
-		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
-		{
-			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
-		}
-		else
-		{
-			System.out.println("Report Tab doesnot exist hence quitting this test");
-		}*/
+		
 		
 		/* Added by Swamy*/
 		try

@@ -1,6 +1,12 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatZ;
 
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -8,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -115,6 +122,21 @@ public class NIWeeklyCat_Z extends TestSuiteBase {
 		UpdateAnnualSalary(EmpName,AnnualSalary,PayFrequency);
 		/*************************************************************************/
 	}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 	@DataProvider

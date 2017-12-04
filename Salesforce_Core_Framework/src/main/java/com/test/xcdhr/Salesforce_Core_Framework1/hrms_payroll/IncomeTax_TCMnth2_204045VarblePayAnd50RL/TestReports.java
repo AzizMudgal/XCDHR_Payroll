@@ -72,7 +72,7 @@ public class TestReports extends TestSuiteBase
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
 		
-		/* Added by Swamy*/
+		
 		try
 		{
 			titlename = driver.getTitle();
@@ -168,7 +168,6 @@ public class TestReports extends TestSuiteBase
 						System.out.println("4> Total count of Employee records displayed in the report are :"+rownum);
 						System.out.println("");
 						System.out.println("5> The script successfully read and output the values and accordingly gave the TEST REMARKS in NI-HMRC Excel file");
-						//CaptureScreenshot("TestReports"+this.getClass().getSimpleName());
 						break gotobreak;
 					} 
 					else

@@ -1,6 +1,12 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA;
 
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -21,8 +27,10 @@ public class NIWeeklyCat_A extends TestSuiteBase {
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public int Row_count;
+	public int rownumaz;
 	public int rownum;
-
+	public int rownumc;
+	public int rowSize;
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);
@@ -115,6 +123,9 @@ public class NIWeeklyCat_A extends TestSuiteBase {
 		/*************************************************************************/
 	}
 
+	
+	
+	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable{

@@ -85,7 +85,6 @@ public class ProcessPayrolFor28FourWeeklySSP extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				//PayrollForNIFourWeekly(FourWeekTwenty);
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 			}
 			catch (Throwable t)
@@ -94,7 +93,6 @@ public class ProcessPayrolFor28FourWeeklySSP extends TestSuiteBase
 				System.out.println("");
 			}
 		}
-		//ExcludeIncludeEmp(EmpName,ExcelInputSheet);
 		ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 		if (finalRows != dTRows)
 		{

@@ -1,5 +1,11 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -7,6 +13,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
+import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -22,6 +30,7 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public int rownum;
+	public int lastRowCount;
 
 
 	@BeforeTest
@@ -48,10 +57,10 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 
 	@Test(dataProvider="getData", priority=1)
-	public void EmpsSetup_ForMonthlyTaxRate(String EmpName,String Taxcode, String TaxBasis, String AnnualSalary,String PayFrequency) throws Throwable
+	public void EmpsSetup_ForMonthlyTaxRate(String empName,String Taxcode, String TaxBasis, String AnnualSalary,String PayFrequency) throws Throwable
 	{
 		//APP_LOGS.debug("Entering the Leave parameters");
-		APP_LOGS.debug(EmpName+"--"+Taxcode+"--"+TaxBasis+"--"+AnnualSalary+"--"+PayFrequency);
+		APP_LOGS.debug(empName+"--"+Taxcode+"--"+TaxBasis+"--"+AnnualSalary+"--"+PayFrequency);
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -92,12 +101,21 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 		 *   Automation employees. I am calling this method from the 'TestBase' class.
 		 * 
 		 */
-		UpdateEmployeeTaxCode(EmpName,Taxcode,TaxBasis);
+		UpdateEmployeeTaxCode(empName,Taxcode,TaxBasis);
 
 		/*************************************************************************/
 	}
 
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 	@Test(dataProvider="getData", priority=2)
 	public void EmpsSetup_WithAnnualSalary(String EmpName,String Taxcode, String TaxBasis,String AnnualSalary,String PayFrequency) throws Throwable
@@ -112,14 +130,16 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 		/*************************************************************************/
 		/*
 		 *  The method updates the Annual salary and Pay frequency for the
-		 *   Automation employees. I am calling this method from the 'TestBase' class.
+		 *  Automation employees. I am calling this method from the 'TestBase' class.
 		 * 
 		 */
 		UpdateAnnualSalary(EmpName,AnnualSalary,PayFrequency);
+		
 		/*************************************************************************/
 	}
 
 
+	
 
 
 	@DataProvider

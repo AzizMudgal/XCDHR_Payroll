@@ -126,22 +126,38 @@ public class ResetData extends TestSuiteBase
 			}
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTable")));
 			List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
+			lastRowCount = rows.size();
 			java.util.Iterator<WebElement> x = rows.iterator();
-			int rownum = 1;			
+			int rownum = 1;	
+			outerbreak:
 			while(x.hasNext())
 			{
 				String empRecord="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
 				WebElement empwebelement= driver.findElement(By.xpath(empRecord));
 				String AppnEmp= empwebelement.getText();
-				//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
+				System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
 				if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 				{
 					System.out.println("Employee matched");
 					System.out.println("Employee name is  :"+EmpName);
 					Thread.sleep(3000L);
 					empwebelement.click();
-					break;
+					break outerbreak;
 				}
+				else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+				{
+					System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+							+ " Required Employee not found hence clicking the"
+							+ " pagination link so that Employee search continues for next page");
+					if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+					{
+						getObject("paginationNextPersonal").sendKeys("");
+						getObject("paginationNextPersonal").click();
+						System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+						Thread.sleep(8000L);
+						rownum = 0;
+					}
+				 }
 				rownum++;
 			}
 		}
@@ -153,31 +169,7 @@ public class ResetData extends TestSuiteBase
 		Thread.sleep(3000L);
 		try
 		{
-			/*
-			if(existsElement(OR.getProperty("employmentTab")))
-			{
-				getObject("employmentTab").sendKeys("");
-				getObject("employmentTab").click();
-				System.out.println("The employment tab got clicked");
-				Thread.sleep(4000L);
-			}
-
-			if(existsElement(OR.getProperty("employmentTabEdit")))
-			{
-				updateFirstXcdPayDate(firstXCDpayDate,payinStartPeriod);
-				//Thread.sleep(2000L);
-				//getObject("makeWaytoDisplayChkbox").sendKeys("");
-				//getObject("makeWaytoDisplayChkbox").click();
-								
-			}
 			
-			Thread.sleep(2000L);
-			if(existsElement(OR.getProperty("sspEditTable")))
-			{
-				selectPayinStartPeriod(payinStartPeriod);
-				Thread.sleep(4000L);
-			}
-			*/
 			if(existsElement(OR.getProperty("leaveTabclk")))
 			{
 				deleteLeaveRecords(LeaveYear);
@@ -652,5 +644,33 @@ public class ResetData extends TestSuiteBase
 		}	
 		closeBrowser();
 	}
+	
+	
+	/*
+	if(existsElement(OR.getProperty("employmentTab")))
+	{
+		getObject("employmentTab").sendKeys("");
+		getObject("employmentTab").click();
+		System.out.println("The employment tab got clicked");
+		Thread.sleep(4000L);
+	}
+
+	if(existsElement(OR.getProperty("employmentTabEdit")))
+	{
+		updateFirstXcdPayDate(firstXCDpayDate,payinStartPeriod);
+		//Thread.sleep(2000L);
+		//getObject("makeWaytoDisplayChkbox").sendKeys("");
+		//getObject("makeWaytoDisplayChkbox").click();
+						
+	}
+	
+	Thread.sleep(2000L);
+	if(existsElement(OR.getProperty("sspEditTable")))
+	{
+		selectPayinStartPeriod(payinStartPeriod);
+		Thread.sleep(4000L);
+	}
+	*/
+	
 
 }

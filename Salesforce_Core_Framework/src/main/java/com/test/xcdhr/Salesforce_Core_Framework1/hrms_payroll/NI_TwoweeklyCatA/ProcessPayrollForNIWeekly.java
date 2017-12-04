@@ -103,7 +103,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 					+ " as excel file employees of this Tax worksheet");
 			ProcessPayrollForNIWeekly obj1 = new ProcessPayrollForNIWeekly();
 			
-			for(Repeat=2; Repeat < 5; Repeat++)
+			for(Repeat=2; Repeat < 3; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.

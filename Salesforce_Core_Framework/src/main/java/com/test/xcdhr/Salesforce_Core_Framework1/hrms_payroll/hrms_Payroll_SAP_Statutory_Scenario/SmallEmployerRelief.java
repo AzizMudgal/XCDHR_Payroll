@@ -18,8 +18,8 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class SmallEmployerRelief extends TestSuiteBase {
-
+public class SmallEmployerRelief extends TestSuiteBase
+{
 	String runmodes[] = null;
 	static int count = -1;
 	static int countAllowance = -1;
@@ -67,7 +67,8 @@ public class SmallEmployerRelief extends TestSuiteBase {
 
 	@Test(dataProvider="getData")
 	public void EmpsSetup_WithNICategory(String EmpName,String SmallEmployerRelief) throws Throwable
-	{								  //String empFirstName, String LastName,String Email, String UserName, String WorkMobile, String WorkPhone, String Profile, String ActivateLicense, String Post,String Company,String EmploymentType, String Location, String EmploymentStatus, String Department, String PatternType, String NoOfWorkingDays, String ContractualHours, String SpinalPoint, String Manager, String StartDate, String ContinousStdate, String PayrollStDate, String Rejoiner,  String EmpDOB,String Gender,String Nationality,String FromDate,String ToDate,String Address1,String  Address2,String Street,String City,String Country,String PostCode,String Region,String ParentLocation,String AddnalContrctualLeave,String MinimumYrsService,String HoursAM,String HoursPM,String WorkingDays,String AnnualSalary,String Bonus,String BonusOTE,String Commission,String CommissionOTE,String EmpContrbnPenSal,String EmployerContrbPenSal,String AddnalEmplyeeContrbn,String AddnalEmployerContrbn,String bonusNotes,String DailyRateOfPay,String Departmentt,String EmployeeSalarySacrifice,String EmployeeContbnlnLeiu,String Payfrequency,String CreateLeaveYrs
+	{								 
+		
 		//APP_LOGS.debug("Entering the Leave parameters");
 		//APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
 		processDesiredTaxYearInputExcelFile(TaxYear);
@@ -160,28 +161,43 @@ public class SmallEmployerRelief extends TestSuiteBase {
 			if(existsWebElement(postsTable))
 			{
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
+				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
-				rownum = 1;			
+				rownum = 1;	
+				outerbreak:
 				while(x.hasNext())
 				{
 					//Thread.sleep(2000L);
 					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
 					if(existsElementchkFor1mts(firstRowOfEmployeeColumn))
 					{
-						WebElement tempElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-						String tempEmp= tempElement.getText();
-						//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
-						if(tempEmp!=null && tempEmp.equalsIgnoreCase(EmpName))
+						WebElement employeeElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+						String AppnEmp= employeeElement.getText();
+						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
+						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 						{
-							System.out.println("Employee name  :"+tempEmp+ "  matched ");
-
-							if(existsWebElement(tempElement))
+							System.out.println("Employee name  :"+AppnEmp+ "  matched ");
+							if(existsWebElement(employeeElement))
 							{
-								tempElement.click();
-								System.out.println("The employee namely :"+tempEmp+"got clicked");
-								break;
+								employeeElement.click();
+								System.out.println("The employee namely :"+AppnEmp+"got clicked");
+								break outerbreak;
 							}
 						}
+						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+						{
+							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+									+ " Required Employee not found hence clicking the"
+									+ " pagination link so that Employee search continues for next page");
+							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+							{
+								getObject("paginationNextPersonal").sendKeys("");
+								getObject("paginationNextPersonal").click();
+								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								Thread.sleep(8000L);
+								rownum = 0;
+							}
+						 }
 						rownum++;
 					}
 				}
@@ -253,7 +269,9 @@ public class SmallEmployerRelief extends TestSuiteBase {
 					for(WebElement tdElement : td_collection)
 					{
 						System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DO NOT TOUCH AUTO ENROLMENT TEST COMPANY 1"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
+						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP COMPANY"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
+							//DONT TOUCH AUTO DIRSAPP COMPANY  DO NOT TOUCH AUTO ENROLMENT TEST COMPANY 1
+
 						{	
 							Thread.sleep(4000L);
 							System.out.println("Company name  :"+tdElement.getText()+ "  matched ");
@@ -298,10 +316,52 @@ public class SmallEmployerRelief extends TestSuiteBase {
 				System.out.println("eeee");
 
 				List<WebElement> rows11 = postsTable11.findElements(By.xpath(OR.getProperty("employerTableLocatorRows")));
-				//java.util.Iterator<WebElement> x1 = rows11.iterator();
+				java.util.Iterator<WebElement> x1 = rows11.iterator();
 				rownum1 = 1;
+				while(x1.hasNext())
+				{
+					System.out.println("the count is "+rownum1);
+					try
+					{							
+						String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
+						if(existsElement(EmployerName))
+						{
+							System.out.println("Employer details table exists");
+							WebElement tempElement1= driver.findElement(By.xpath(EmployerName));
+							String AppnEmp1= tempElement1.getText();
+							System.out.println("Field name is :"+AppnEmp1);
+							System.out.println(AppnEmp1+"-------"+EmpName+"------"+rownum);
+							if(AppnEmp1!=null && AppnEmp1.equalsIgnoreCase("DONT TOUCH AUTO DIRSAP EMPLOYER"))
+							{											
+								System.out.println("Employer name  :"+AppnEmp1+ "  matched ");
 
+								if(existsWebElement(tempElement1))
+								{
+									tempElement1.click();
+									System.out.println("The employee namely :"+AppnEmp1+"got clicked");
+									break;
+								}
 
+							}
+							else
+							{
+								System.out.println("Employer name did not matched");
+							}
+							
+						}
+					}
+					catch(Throwable t)
+					{
+						System.out.println("the specified employer name does not exist in this row");
+						System.out.println(t.getMessage().toString());
+						System.out.println(t.getStackTrace().toString());
+					}
+					
+					rownum1++;
+				}
+						
+
+				/*
 				int row_num,col_num;
 				row_num=1;
 				outerloop:
@@ -314,28 +374,21 @@ public class SmallEmployerRelief extends TestSuiteBase {
 						for(WebElement tdElement : td_collection1)
 						{
 							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18"))
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP EMPLOYER"))
 							{
 								Thread.sleep(5000L);
 								System.out.println("Link name  :"+tdElement.getText()+ "  matched ");
-
 								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a[@id='lookupa0Xb000000OaLioj_id0_j_id4100Nb0000009I76v']"));
 								Thread.sleep(2000L);
 								eplyrclkchkbox.click();
 								System.out.println("clicked to employer");
 								break  outerloop;
 							}
-
 						}
 						col_num++;
-
 					}
-				row_num++;
-
-
+				row_num++;*/
 			}
-
 		}
 		catch(Throwable t)
 		{

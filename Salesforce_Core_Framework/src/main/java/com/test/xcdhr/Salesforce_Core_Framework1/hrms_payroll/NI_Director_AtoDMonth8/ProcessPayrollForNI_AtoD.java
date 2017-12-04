@@ -85,9 +85,7 @@ public class ProcessPayrollForNI_AtoD extends TestSuiteBase
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-
 				PayrollForMonthlyTax(NovMonth);
-
 			}
 			catch (Throwable t)
 			{
@@ -103,7 +101,6 @@ public class ProcessPayrollForNI_AtoD extends TestSuiteBase
 	@DataProvider
 	public Object[][] getData()
 	{
-
 		return Test_Util.getData(Payroll_NI_Director_AtoD_SuiteXls,"ProcessPayrollForNI_AtoD");
 	}
 
@@ -114,49 +111,42 @@ public class ProcessPayrollForNI_AtoD extends TestSuiteBase
 		{
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
-		} else if (Fail)
+		} 
+		else if (Fail)
 		{
-
 			IsTestPass = false;
-
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
-		} else
+		}
+		else
 		{
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
-
 		Skip = false;
 		Fail = false;
-
 	}
+	
 
 	@AfterTest
 	public void ReportTestResult()
 	{
-
 		if (IsTestPass)
 		{
-
 			// This will update the testresult in the first worksheet where in
 			// for that test case , even if one of the test data specified in
 			// second worksheet fails, the test
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, "first",
 					Test_Util.GetRowNum(Payroll_NI_Director_AtoD_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
-
-		} else
+		}
+		else
 		{
-
 			Test_Util.ReportDataSetResult(Payroll_NI_Director_AtoD_SuiteXls, "first",
 					Test_Util.GetRowNum(Payroll_NI_Director_AtoD_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
-
 		}
 		closeBrowser();
 	}
-
 }

@@ -66,7 +66,6 @@ public class ProcessPayrollForJan2016MontSAP extends TestSuiteBase
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if (!runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -76,23 +75,18 @@ public class ProcessPayrollForJan2016MontSAP extends TestSuiteBase
 		}
 
 		
-		if (shouldOpenBrowser) {
+		if (shouldOpenBrowser)
+		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-
 			driver.manage().window().maximize();
 			try
 			{
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-
-				//PayrollForMonthlyTax(JanuaryMonth);
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
-				// in base class need to update the method with new parameter
-			
-
 			}
 			catch (Throwable t)
 			{
@@ -127,45 +121,41 @@ public class ProcessPayrollForJan2016MontSAP extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		return Test_Util.getData(Payroll_Statutory_Adoption_SuiteXls,"ProcessPayrollForJan2016MontSAP");
 	}
 
+	
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if (Skip)
 		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
-		} else if (Fail)
+		} 
+		else if (Fail)
 		{
-
 			IsTestPass = false;
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
-		} else
+		}
+		else
 		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
-
 		Skip = false;
 		Fail = false;
-
 	}
+	
 
 	@AfterTest
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if (IsTestPass)
 		{
-
 			// This will update the testresult in the first worksheet where in
 			// for that test case , even if one of the test data specified in
 			// second worksheet fails, the test
@@ -174,18 +164,15 @@ public class ProcessPayrollForJan2016MontSAP extends TestSuiteBase
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first",
 					Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
-
-		} else
+		} 
+		else
 		{
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first",
 					Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
-
 		}
 		closeBrowser();
 	}
-
 }
 
 

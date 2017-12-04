@@ -1,0 +1,93 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Payroll Suite Statutory SMP Scenario">
+<test name="1">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ExecuteQuery" ></class>  
+    </classes>
+</test>
+<test name="2">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData" ></class>  
+    </classes>
+</test>
+<test name="3">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief" ></class>  
+    </classes>
+</test>
+<test name="4">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary" ></class>  
+    </classes>
+</test>
+<test name="5">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ProcessPayrollForAprilMonthSMP" ></class>  
+    </classes>
+</test>
+<test name="6">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestAprilReports" ></class>  
+    </classes>
+</test>
+<test name="7">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ProcessPayrollForMayMonthSMP" ></class>  
+    </classes>
+ </test>   
+<test name="8">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestMayReports" ></class>  
+    </classes>
+</test>
+<test name="9">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ProcessPayrollForJuneMonthSMP" ></class>  
+    </classes>
+</test>    
+<test name="10">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJuneReports" ></class>  
+    </classes>
+</test>
+<test name="11">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.CreateLeaveRequest" ></class>  
+    </classes>
+</test>
+<test name="12">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.AverageWeeklyEarningsTestReport" ></class>  
+    </classes>
+</test>
+<test name="13">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ProcessPayrollForNovMonthSMP" ></class>  
+    </classes>
+</test>
+<test name="14">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestNovReports" ></class>  
+    </classes>
+</test>
+<test name="15">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ProcessPayrollForDecMonthSMP" ></class>  
+    </classes>
+</test>
+<test name="16">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestDecReports" ></class>  
+    </classes>
+</test>
+<test name="17">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ProcessPayrollForJan2016MontSMP" ></class>  
+    </classes>
+</test>
+<test name="18">
+    <classes>
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports" ></class>  
+    </classes>
+</test>
+</suite>
