@@ -101,7 +101,6 @@ public class ProcessPayrolFor11WeeklyShPP extends TestSuiteBase
 			System.out.println("Since the app is not displaying employee records same"
 					+ " as excel file employees of this Tax worksheet");
 			ProcessPayrolFor11WeeklyShPP obj1 = new ProcessPayrolFor11WeeklyShPP();
-			
 			for(Repeat=2; Repeat < 5; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
@@ -111,7 +110,6 @@ public class ProcessPayrolFor11WeeklyShPP extends TestSuiteBase
 				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
-		
 	}
 
 	

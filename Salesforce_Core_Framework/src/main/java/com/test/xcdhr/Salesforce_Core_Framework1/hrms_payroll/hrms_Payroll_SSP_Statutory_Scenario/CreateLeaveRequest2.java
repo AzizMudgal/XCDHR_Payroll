@@ -299,9 +299,17 @@ public class CreateLeaveRequest2 extends TestSuiteBase
 				Thread.sleep(4000L);
 				getObject("sickLeaveStDatelocator").sendKeys(formattedDate);
 				System.out.println("");
-				System.out.println("The leave st date was entered sucessfully");	
+				System.out.println("The leave st date was entered sucessfully");
+				Thread.sleep(3000L);
+				if(existsElement(OR.getProperty("clkOutsideCalndarPosin")))
+				{
+					getObject("clkOutsideCalndarPosin").sendKeys("");
+					getObject("clkOutsideCalndarPosin").click();
+					getObject("clkOutsideCalndarPosin").click();
+				}
+				submitSickleave();
 			}
-			submitSickleave();
+			
 		}
 		catch(Throwable t)
 		{
@@ -316,15 +324,17 @@ public class CreateLeaveRequest2 extends TestSuiteBase
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("sickleaveSubmitrequest")))
+			System.out.println("entereing in submit sick leave method");
+			Thread.sleep(2000L);
+			if(existsElementchkFor1mts(OR.getProperty("sickleaveSubmitrequest")))
 			{
 				getObject("sickleaveSubmitrequest").sendKeys("");
 				getObject("sickleaveSubmitrequest").click();
 				System.out.println("");
 				System.out.println("The submit leave request button got clicked sucessfully");
 			}
-			Thread.sleep(7000L);
-			comeoutofloop:
+			Thread.sleep(3000L);
+			comeoutofloop1:
 				if(existsElement(OR.getProperty("leaveRequstOkbutton")))
 				{
 					getObject("leaveRequstOkbutton").sendKeys("");
@@ -332,11 +342,13 @@ public class CreateLeaveRequest2 extends TestSuiteBase
 					System.out.println("");
 					System.out.println("The submit leave request ok button also got clicked sucessfully");
 					Thread.sleep(4000L);
-					break comeoutofloop;
+					break comeoutofloop1;
 				}
 				else if(!existsElement(OR.getProperty("leaveRequstOkbutton")))
 				{
+					System.out.println("could not find leaverequest ok button... plz wait ");
 					submitSickleave();
+					
 				}
 		}
 		catch(Throwable t)

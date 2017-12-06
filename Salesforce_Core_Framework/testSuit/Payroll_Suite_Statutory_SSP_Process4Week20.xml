@@ -77,7 +77,7 @@
 </test>
 <test name="16">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReport2" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2" ></class>  
     </classes>
 </test>
 <test name="17">

@@ -127,35 +127,28 @@ public class Test2ndTimeJan16Reports extends TestSuiteBase {
 
 	public void DownloadReports(String EmpName,String TestResultExcelFilePath,String Payrolid,String Frquency,String MonthName,String FirstReportNameInApplication,String TestReportworksheetNo) throws Throwable
 	{
-		getObject("reportTablocator").click();
-		System.out.println("2> Clicked to Report Tab");
-		Thread.sleep(4000L);
-		driver.navigate().refresh();
-		
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		{
+			getObject("reportTablocator").click();
+			System.out.println("2> Clicked to Report Tab");
+		}
 
 		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
 		{				
 			SearchReport(FirstReportNameInApplication);
-						
 		}
-
 		
 		if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
 		{
 			editCustomButton();
 		}
-
 		
 		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
 		{				
-
 			UpdateReportPage(Payrolid,Frquency,MonthName);
 		}
-
-
 		System.out.println("");
 		System.out.println("3> Successfully customized the Report as required");
-
 	
 		if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
 		{
@@ -167,12 +160,8 @@ public class Test2ndTimeJan16Reports extends TestSuiteBase {
 			processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
 			System.out.println("5> Entered the values and processed the Test Remarks");
 		}
-		
-
 	}
-	
-	
-	
+
 
 	
 	public void processReport(String EmpName,String TestResultExcelFilePath,String TestReportworksheetNo)throws Throwable
@@ -191,7 +180,6 @@ public class Test2ndTimeJan16Reports extends TestSuiteBase {
 
 			Thread.sleep(3000L);
 			WebElement threecolms = driver.findElement(By.xpath(OR.getProperty("reportTableLocatorNI")));
-
 			WebTable table = WebTable.getTable(threecolms);
 			List<WebElement> rows = threecolms.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI")));
 			java.util.Iterator<WebElement> x = rows.iterator();
