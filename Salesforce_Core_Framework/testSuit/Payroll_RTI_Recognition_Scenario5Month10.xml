@@ -8,7 +8,7 @@
 </test>
 <test name="2">
     <classes>
-        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.UpdteTaxCodeAndAnualSalaryM10" ></class>  
+        <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario5_Month10.ResetEmployeeData" ></class>  
     </classes>										
 </test>
  <test name="3">

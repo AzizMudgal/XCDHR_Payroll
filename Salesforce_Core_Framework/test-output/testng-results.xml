@@ -1,20 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+=======
+<testng-results skipped="0" failed="1" ignored="0" total="1" passed="0">
+>>>>>>> refs/remotes/origin/master
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="71897" started-at="2017-12-04T06:10:51Z" finished-at="2017-12-04T06:12:03Z">
+=======
+  <suite name="Default suite" duration-ms="47982" started-at="2017-12-05T12:17:36Z" finished-at="2017-12-05T12:18:24Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="71897" started-at="2017-12-04T06:10:51Z" finished-at="2017-12-04T06:12:03Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="10139" started-at="2017-12-04T11:40:41Z" finished-at="2017-12-04T11:40:51Z">
+=======
+    <test name="Default test" duration-ms="47982" started-at="2017-12-05T12:17:36Z" finished-at="2017-12-05T12:18:24Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="5739" started-at="2017-12-05T17:47:30Z" finished-at="2017-12-05T17:47:36Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3443" started-at="2017-12-04T11:40:51Z" finished-at="2017-12-04T11:40:54Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="2824" started-at="2017-12-05T17:47:36Z" finished-at="2017-12-05T17:47:38Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CompareReports(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="CompareReports" duration-ms="57434" started-at="2017-12-04T11:40:58Z" data-provider="getData" finished-at="2017-12-04T11:41:55Z">
           <params>
             <param index="0">
@@ -85,6 +104,77 @@
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2 -->
+=======
+        <test-method status="FAIL" signature="queryExecute()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery@271053e1]" name="queryExecute" duration-ms="38389" started-at="2017-12-05T17:47:38Z" finished-at="2017-12-05T17:48:17Z">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[Element <button style="height: 16px;" id="debugMenuEntry-btnEl" type="button" class="x-btn-center" hidefocus="true" role="button" autocomplete="off"></button> is not clickable at point (105, 13). Other element would receive the click: <div style="width: 1350px; height: 660px; left: 0px; top: 0px; z-index: 18997;" id="ext-gen1567" class="x-mask"></div>
+Command duration or timeout: 405 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'DESKTOP-OAEFISL', ip: '192.168.1.125', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0fadd2f6-8f29-4e2e-8e66-78d9d0d89200]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: Element <button style="height: 16px;" id="debugMenuEntry-btnEl" type="button" class="x-btn-center" hidefocus="true" role="button" autocomplete="off"></button> is not clickable at point (105, 13). Other element would receive the click: <div style="width: 1350px; height: 660px; left: 0px; top: 0px; z-index: 18997;" id="ext-gen1567" class="x-mask"></div>
+Command duration or timeout: 405 milliseconds
+Build info: version: '3.0.1', revision: '1969d75', time: '2016-10-18 09:49:13 -0700'
+System info: host: 'DESKTOP-OAEFISL', ip: '192.168.1.125', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_144'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{applicationCacheEnabled=true, rotatable=false, handlesAlerts=true, databaseEnabled=true, version=42.0, platform=WINDOWS, nativeEvents=false, acceptSslCerts=true, webStorageEnabled=true, locationContextEnabled=true, browserName=firefox, takesScreenshot=true, javascriptEnabled=true, cssSelectorsEnabled=true}]
+Session ID: 0fadd2f6-8f29-4e2e-8e66-78d9d0d89200
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.ErrorHandler.createThrowable(ErrorHandler.java:216)
+	at org.openqa.selenium.remote.ErrorHandler.throwIfResponseFailed(ErrorHandler.java:168)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:635)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:274)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:84)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery.queryExecute(ExecuteQuery.java:110)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- queryExecute -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2481" started-at="2017-12-05T17:48:17Z" finished-at="2017-12-05T17:48:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery@271053e1]" name="ReportTestResult" is-config="true" duration-ms="4280" started-at="2017-12-05T17:48:19Z" finished-at="2017-12-05T17:48:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportTestResult -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

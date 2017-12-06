@@ -1247,10 +1247,10 @@ public class TestBase {
 
 			WebElement username = driver.findElement(By.id(OR
 					.getProperty("login_Username")));
-			username.sendKeys("autoazizm@xcdhr.com");
+			username.sendKeys("payrollautoregress@xcdhr.com");
 			WebElement password = driver.findElement(By.id(OR
 					.getProperty("login_Password")));
-			password.sendKeys("robosel0617");
+			password.sendKeys("london2014");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
 
@@ -6464,6 +6464,8 @@ public class TestBase {
 						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
 						+ "td[" + payrollcol_position + "]" + "/" + "a";
 				// table[2]/tbody/tr[2]/td[1]/a
+				//payrollRecordId = "//*[@id='a2Qb0000000c7xp_00Nb0000009I7RA_body']/table/tbody/tr[11]/th/a";
+				
 				if (empr != null && empr.equalsIgnoreCase(EmployerName)
 						&& ppr.equalsIgnoreCase(Payrolid)
 						&& ffr1.equalsIgnoreCase(Frquency)) {
@@ -7303,7 +7305,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 0;
+	public int OrgFlag = 1;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {

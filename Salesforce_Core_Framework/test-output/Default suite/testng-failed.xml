@@ -3,13 +3,31 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReport2">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
           <include name="CompareReports" invocation-numbers="0"/>
           <include name="CheckSuiteSkip"/>
+=======
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
+>>>>>>> refs/remotes/origin/master
           <include name="CheckTestSkip"/>
+<<<<<<< HEAD
+=======
+          <include name="CheckSuiteSkip"/>
+          <include name="queryExecute"/>
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReport2 -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ExecuteQuery -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
