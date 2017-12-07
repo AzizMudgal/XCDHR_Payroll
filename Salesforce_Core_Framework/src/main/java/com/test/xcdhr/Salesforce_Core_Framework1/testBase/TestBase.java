@@ -6534,7 +6534,19 @@ public class TestBase {
 	public void TaxPayRun_For_Week1statFor1stPage(String MonthName)
 			throws Throwable {
 		try {
-			// Thread.sleep(4000L);
+			
+			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+			{
+				for(int i = 1; i<3; i++)
+				{
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					System.out.println("Inorder to show all the Months record, the expandable page got clicked for"+i+"st time");
+
+					Thread.sleep(4000L);
+				}
+			}
+		
 
 			WebElement payRunWeekOneTable = getObject("payRunWeekTable");
 			List<WebElement> rows = payRunWeekOneTable.findElements(By.xpath(OR
@@ -7136,6 +7148,17 @@ public class TestBase {
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {
+			
+			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+			{
+				for(int i = 1; i<6; i++)
+				{
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					System.out.println("The expandable page got clicked for"+i+"st time");
+					Thread.sleep(4000L);
+				}
+			}
 			Thread.sleep(4000L);
 			if (existsElement(OR.getProperty("payRunWeekTable"))) {
 				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
