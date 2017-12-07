@@ -1880,10 +1880,16 @@ public class TestBase {
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownumx = 1;
 				while (x.hasNext()) {
+					System.out.println("111@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 					WebElement appEmployes = driver
 							.findElement(By
 									.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
 											+ rownumx + "]/td[2]/a"));
+					/*WebElement appEmployes = driver
+							.findElement(By
+									.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr[1]/td[2]/a"));*/
+					
+					System.out.println("222@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 					String appEmployeesName = appEmployes.getText();
 					System.out.println("empname is  :" + appEmployeesName);
 					if (appEmployeesName != null
@@ -1893,6 +1899,11 @@ public class TestBase {
 								.findElement(By
 										.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
 												+ rownumx + "]/td/input"));
+						/*WebElement empchkBox = driver
+								.findElement(By
+										.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]//thead/tr/th["
+												+ rownumx + "]/input"));*/
+						System.out.println("empchkBox=====" +empchkBox);
 						if (existsWebElement(empchkBox)) {
 							empchkBox.click();
 							System.out.println("");
