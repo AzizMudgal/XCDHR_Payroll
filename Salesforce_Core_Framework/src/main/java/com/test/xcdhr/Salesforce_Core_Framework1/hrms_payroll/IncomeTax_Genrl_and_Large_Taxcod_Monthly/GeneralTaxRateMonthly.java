@@ -79,7 +79,7 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 			
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				if(existsElementchkFor1mts(OR.getProperty("Homepage_txt")))
 				{
 					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
 					System.out.println("The test script logged in successfully into salesforce account");

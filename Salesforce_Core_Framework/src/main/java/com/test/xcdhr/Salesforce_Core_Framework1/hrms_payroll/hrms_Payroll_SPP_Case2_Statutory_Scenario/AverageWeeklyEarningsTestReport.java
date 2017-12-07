@@ -111,7 +111,6 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 			{
 				getObject("reportTablocator").click();
 				System.out.println("2> Clicked to Report Tab");
-				//driver.navigate().refresh();
 			}
 
 			if(existsElement(OR.getProperty("findReportTextboxLocator")))

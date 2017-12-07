@@ -118,9 +118,11 @@ public class TestReportsForWeekly18 extends TestSuiteBase
 
 	public void DownloadReports(String EmpName,String TestResultExcelFilePath,String Payrolid,String Frquency,String MonthName,String FirstReportNameInApplication,String TestReportworksheetNo) throws Throwable
 	{
-		getObject("reportTablocator").click();
-		System.out.println("2> Clicked to Report Tab");
-		driver.navigate().refresh();
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		{
+			getObject("reportTablocator").click();
+			System.out.println("2> Clicked to Report Tab");
+		}
 		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
 		{				
 			SearchReport(FirstReportNameInApplication);

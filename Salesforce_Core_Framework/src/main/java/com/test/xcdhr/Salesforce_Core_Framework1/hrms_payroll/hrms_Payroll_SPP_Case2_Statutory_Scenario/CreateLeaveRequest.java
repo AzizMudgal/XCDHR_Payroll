@@ -77,23 +77,19 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y")){
 
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-
 			driver.manage().window().maximize();
-
 			try
 			{
 				if(existsElement(OR.getProperty("Homepage_txt")))
@@ -108,15 +104,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
-
 		}
-
 		/*************************************************************************/
 
 		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 
 		/*************************************************************************/
-
 	}
 
 
@@ -134,9 +127,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 					System.out.println("I am in personal page");
 					if(existsElement(OR.getProperty("EmployeeView")))
 					{
-
 						System.out.println("I recognised the Employee view");
-
 						Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("EmployeeView"))));
 						selectByValue.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
 						Thread.sleep(2000L);
@@ -761,13 +752,13 @@ public class CreateLeaveRequest extends TestSuiteBase
 									Thread.sleep(4000L);
 									if(smallERchekbox)
 									{
-										System.out.println("Small Employer relief checkbox was ALLREADY NOT checked, hence Condition now satisfied successfully");
+										System.out.println("Statutory conditions met - make payment checkbox was ALLREADY NOT checked, hence Condition now satisfied successfully");
 										break  outerloop;
 									}
 									else
 									{
 										clkchkbox.click();
-										System.out.println("Small Employer relief checkbox was allready checked, Hence our condition got satisfied");
+										System.out.println("Statutory conditions met - make payment checkbox was allready checked, Hence our condition got satisfied");
 										Thread.sleep(4000L);
 										break  outerloop;
 

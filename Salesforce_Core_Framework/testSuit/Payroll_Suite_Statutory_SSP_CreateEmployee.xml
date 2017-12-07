@@ -10,12 +10,12 @@
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.ResetData" ></class>  
     </classes>
 </test>
-<test name="3">
+<!-- <test name="3">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.CreateMaleEmployee" ></class>  
     </classes>
-</test>
-<test name="4">
+</test> -->
+<test name="3">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary" ></class>  
     </classes>

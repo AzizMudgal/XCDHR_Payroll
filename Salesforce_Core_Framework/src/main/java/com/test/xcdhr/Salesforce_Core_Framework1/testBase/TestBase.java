@@ -2209,12 +2209,13 @@ public class TestBase {
 			System.out
 					.println("Now the new method 'verifyEmpRecordInPaySummaryTable()' "
 							+ "would execute to find out the employee record in PaySummary Table after waiting period of 10 seconds");
-			Thread.sleep(6000L);
+			Thread.sleep(8000L);
 			if (existsElement(OR
 					.getProperty("emprecordsTableAftergeneratedraft"))) {
 				System.out
 						.println("The script recognised the tax generated employee table locator");
-				// Thread.sleep(3000L);
+				Thread.sleep(9000L);
+				System.out.println("Waited for 9 seconds");
 				WebElement empTableAfterDraftgenerate = getObject("emprecordsTableAftergeneratedraft");
 				List<WebElement> draftRows = empTableAfterDraftgenerate
 						.findElements(By.xpath(OR
@@ -6544,7 +6545,19 @@ public class TestBase {
 	public void TaxPayRun_For_Week1statFor1stPage(String MonthName)
 			throws Throwable {
 		try {
-			// Thread.sleep(4000L);
+			
+			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+			{
+				for(int i = 1; i<3; i++)
+				{
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					System.out.println("Inorder to show all the Months record, the expandable page got clicked for"+i+"st time");
+
+					Thread.sleep(4000L);
+				}
+			}
+		
 
 			WebElement payRunWeekOneTable = getObject("payRunWeekTable");
 			List<WebElement> rows = payRunWeekOneTable.findElements(By.xpath(OR
@@ -7146,6 +7159,17 @@ public class TestBase {
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {
+			
+			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+			{
+				for(int i = 1; i<6; i++)
+				{
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					System.out.println("The expandable page got clicked for"+i+"st time");
+					Thread.sleep(4000L);
+				}
+			}
 			Thread.sleep(4000L);
 			if (existsElement(OR.getProperty("payRunWeekTable"))) {
 				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
