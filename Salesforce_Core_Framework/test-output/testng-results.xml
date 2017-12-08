@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="14" passed="14">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="217063" started-at="2017-12-07T05:47:23Z" finished-at="2017-12-07T05:51:00Z">
+  <suite name="Default suite" duration-ms="284180" started-at="2017-12-08T06:22:37Z" finished-at="2017-12-08T06:27:21Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="217063" started-at="2017-12-07T05:47:23Z" finished-at="2017-12-07T05:51:00Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8909" started-at="2017-12-07T11:17:14Z" finished-at="2017-12-07T11:17:23Z">
+    <test name="Default test" duration-ms="284180" started-at="2017-12-08T06:22:37Z" finished-at="2017-12-08T06:27:21Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7942" started-at="2017-12-08T11:52:29Z" finished-at="2017-12-08T11:52:37Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3625" started-at="2017-12-07T11:17:23Z" finished-at="2017-12-07T11:17:27Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3589" started-at="2017-12-08T11:52:37Z" finished-at="2017-12-08T11:52:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="201748" started-at="2017-12-07T11:17:30Z" data-provider="getData" finished-at="2017-12-07T11:20:52Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="227532" started-at="2017-12-08T11:52:43Z" data-provider="getData" finished-at="2017-12-08T11:56:31Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO GLTM EMPLOYER]]>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 301]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 107]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[GLTM_Payroll]]>
+                <![CDATA[Weekly_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Monthly]]>
+                <![CDATA[Weekly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[April-2017]]>
+                <![CDATA[Week-1]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Payroll Suite GeneralAndLargeTaxcodeMonthly201718.xlsx]]>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
               </value>
             </param>
             <param index="6">
@@ -54,12 +54,12 @@
             </param>
             <param index="7">
               <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="9">
@@ -71,15 +71,795 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2743" started-at="2017-12-07T11:20:52Z" finished-at="2017-12-07T11:20:55Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2988" started-at="2017-12-08T11:56:31Z" finished-at="2017-12-08T11:56:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="5419" started-at="2017-12-07T11:20:55Z" finished-at="2017-12-07T11:21:00Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="684" started-at="2017-12-08T11:56:34Z" data-provider="getData" finished-at="2017-12-08T11:56:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 109]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2988" started-at="2017-12-08T11:56:35Z" finished-at="2017-12-08T11:56:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="698" started-at="2017-12-08T11:56:38Z" data-provider="getData" finished-at="2017-12-08T11:56:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 110]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2514" started-at="2017-12-08T11:56:38Z" finished-at="2017-12-08T11:56:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="699" started-at="2017-12-08T11:56:41Z" data-provider="getData" finished-at="2017-12-08T11:56:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 112]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2561" started-at="2017-12-08T11:56:42Z" finished-at="2017-12-08T11:56:44Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="686" started-at="2017-12-08T11:56:44Z" data-provider="getData" finished-at="2017-12-08T11:56:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 114]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2088" started-at="2017-12-08T11:56:45Z" finished-at="2017-12-08T11:56:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="701" started-at="2017-12-08T11:56:47Z" data-provider="getData" finished-at="2017-12-08T11:56:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 115]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2676" started-at="2017-12-08T11:56:48Z" finished-at="2017-12-08T11:56:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="686" started-at="2017-12-08T11:56:50Z" data-provider="getData" finished-at="2017-12-08T11:56:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 117]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2114" started-at="2017-12-08T11:56:51Z" finished-at="2017-12-08T11:56:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="741" started-at="2017-12-08T11:56:53Z" data-provider="getData" finished-at="2017-12-08T11:56:54Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 126]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2769" started-at="2017-12-08T11:56:54Z" finished-at="2017-12-08T11:56:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="802" started-at="2017-12-08T11:56:57Z" data-provider="getData" finished-at="2017-12-08T11:56:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 131]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2120" started-at="2017-12-08T11:56:57Z" finished-at="2017-12-08T11:56:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="709" started-at="2017-12-08T11:56:59Z" data-provider="getData" finished-at="2017-12-08T11:57:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 135]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2527" started-at="2017-12-08T11:57:00Z" finished-at="2017-12-08T11:57:03Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="711" started-at="2017-12-08T11:57:03Z" data-provider="getData" finished-at="2017-12-08T11:57:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 136]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2120" started-at="2017-12-08T11:57:03Z" finished-at="2017-12-08T11:57:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="842" started-at="2017-12-08T11:57:06Z" data-provider="getData" finished-at="2017-12-08T11:57:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 142]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2464" started-at="2017-12-08T11:57:06Z" finished-at="2017-12-08T11:57:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="804" started-at="2017-12-08T11:57:09Z" data-provider="getData" finished-at="2017-12-08T11:57:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 146]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2080" started-at="2017-12-08T11:57:10Z" finished-at="2017-12-08T11:57:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="801" started-at="2017-12-08T11:57:12Z" data-provider="getData" finished-at="2017-12-08T11:57:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 147]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2504" started-at="2017-12-08T11:57:13Z" finished-at="2017-12-08T11:57:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportTestResult" is-config="true" duration-ms="5835" started-at="2017-12-08T11:57:15Z" finished-at="2017-12-08T11:57:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

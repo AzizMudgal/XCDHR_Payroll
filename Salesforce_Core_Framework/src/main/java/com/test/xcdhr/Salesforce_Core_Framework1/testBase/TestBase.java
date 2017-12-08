@@ -6481,10 +6481,7 @@ public class TestBase {
 						System.out.println("the employer name is :"
 								+ pfrequencey);
 						TaxPayRun_For_Week1statFor1stPage(MonthName);
-						/*paginForWeekstatFor1stPage(EmployerName, EmpName,
-								Payrolid, Frquency, MonthName, ExcelInputSheet,
-								FirstReportNameInApplication,
-								TestResultExcelFilePath);*/
+						
 						break;
 					}
 					break;
@@ -7053,9 +7050,25 @@ public class TestBase {
 								"twoweeklyPayrolldetails").getText();
 						System.out.println("the employer name is :"
 								+ pfrequencey);
-						TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-								FirstReportNameInApplication,
-								TestResultExcelFilePath);
+						if(Frquency.equalsIgnoreCase("Four Weekly"))
+						{
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Two Weekly"))
+						{
+							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Weekly"))
+						{
+							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						
 
 						break;
 					}
@@ -7145,8 +7158,9 @@ public class TestBase {
 								.getText();
 						System.out.println("the payfrequency is :"
 								+ pfrequencey);
+						//TaxPayRun_For_Week1statFor1stPage(WeekName);
 
-						TaxPayRun_For_Week(WeekName, ExcelInputSheet,
+						TaxPayRun_For_FourWeek(WeekName, ExcelInputSheet,
 								FirstReportNameInApplication,
 								TestResultExcelFilePath);
 						break;
@@ -7164,15 +7178,16 @@ public class TestBase {
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-
-	public void TaxPayRun_For_Week(String WeekName, String ExcelInputSheet,
+	
+	
+	public void TaxPayRun_For_FourWeek(String WeekName, String ExcelInputSheet,
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {
 			
 			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
 			{
-				for(int i = 1; i<6; i++)
+				for(int i = 1; i<3; i++)
 				{
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
@@ -7222,7 +7237,127 @@ public class TestBase {
 		}
 	}
 
-	// ////////////////
+	
+	public void TaxPayRun_For_Week(String WeekName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			throws Throwable {
+		try {
+			
+			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+			{
+				for(int i = 1; i<5; i++)
+				{
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					System.out.println("The expandable page got clicked for"+i+"st time");
+					Thread.sleep(2000L);
+				}
+			}
+			Thread.sleep(4000L);
+			if (existsElementchkFor1mts(OR.getProperty("payRunWeekTable"))) {
+				System.out.println("table exists");
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				java.util.Iterator<WebElement> x = rows.iterator();
+				System.out.println("total number of week records are :"
+						+ rows.size());
+
+				rownum = 2;
+				while (x.hasNext()) {
+					WebElement Weekrecord = driver.findElement(By
+							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+									+ "div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+
+					String weekText = Weekrecord.getText();
+
+					if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
+						System.out.println("The week name" + WeekName
+								+ " matched");
+						Weekrecord.sendKeys("");
+						Weekrecord.click();
+						break;
+					} else {
+						System.out.println("payRun text " + WeekName
+								+ "did not matched");
+						rownum++;
+					}
+
+				}
+
+			}
+
+		} catch (Throwable t) {
+			System.out.println(t.getMessage());
+
+		}
+	}
+
+
+
+	
+	
+
+	public void TaxPayRun_For_TwoWeek(String WeekName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			throws Throwable {
+		try {
+			
+			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+			{
+				for(int i = 1; i<4; i++)
+				{
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					System.out.println("The expandable page got clicked for"+i+"st time");
+					Thread.sleep(2000L);
+				}
+			}
+			Thread.sleep(4000L);
+			if (existsElementchkFor1mts(OR.getProperty("payRunWeekTable"))) {
+				System.out.println("table exists");
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				java.util.Iterator<WebElement> x = rows.iterator();
+				System.out.println("total number of week records are :"
+						+ rows.size());
+
+				rownum = 2;
+				while (x.hasNext()) {
+					WebElement Weekrecord = driver.findElement(By
+							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+									+ "div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+
+					String weekText = Weekrecord.getText();
+
+					if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
+						System.out.println("The week name" + WeekName
+								+ " matched");
+						Weekrecord.sendKeys("");
+						Weekrecord.click();
+						break;
+					} else {
+						System.out.println("payRun text " + WeekName
+								+ "did not matched");
+						rownum++;
+					}
+
+				}
+
+			}
+
+		} catch (Throwable t) {
+			System.out.println(t.getMessage());
+
+		}
+	}
+
+
 
 	int rowMatchedDDWeek = 0;
 
