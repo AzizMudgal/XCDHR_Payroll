@@ -1828,6 +1828,7 @@ public class TestBase {
 	public void ExcludeIncludeEmp(String EmpName, String Exclinputsheet,
 			String worksheetNo) throws Throwable {
 		try {
+			System.out.println("entering into ExcludeIncludeEmp method");
 			double worksheetvalue = Double.parseDouble(worksheetNo);
 			DecimalFormat df = new DecimalFormat("###.#");
 			String worksheetNoWithoutDecimal = df.format(worksheetvalue);
@@ -6463,8 +6464,6 @@ public class TestBase {
 				payrollRecordId = "//table/tbody/tr/td/form/div[1]/table[2]/"
 						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
 						+ "td[" + payrollcol_position + "]" + "/" + "a";
-				// table[2]/tbody/tr[2]/td[1]/a
-				//payrollRecordId = "//*[@id='a2Qb0000000c7xp_00Nb0000009I7RA_body']/table/tbody/tr[11]/th/a";
 				
 				if (empr != null && empr.equalsIgnoreCase(EmployerName)
 						&& ppr.equalsIgnoreCase(Payrolid)
@@ -6473,15 +6472,19 @@ public class TestBase {
 							.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
 
 					driver.findElement(By.xpath(payrollRecordId)).click();
+					/*
+					 * ENTERING INTO NEXT PAGE
+					 */
 					if (existsElement(OR.getProperty("twoweeklyPayrolldetails"))) {
 						String pfrequencey = getObject(
 								"twoweeklyPayrolldetails").getText();
 						System.out.println("the employer name is :"
 								+ pfrequencey);
-						paginForWeekstatFor1stPage(EmployerName, EmpName,
+						TaxPayRun_For_Week1statFor1stPage(MonthName);
+						/*paginForWeekstatFor1stPage(EmployerName, EmpName,
 								Payrolid, Frquency, MonthName, ExcelInputSheet,
 								FirstReportNameInApplication,
-								TestResultExcelFilePath);
+								TestResultExcelFilePath);*/
 						break;
 					}
 					break;
@@ -6498,6 +6501,10 @@ public class TestBase {
 		}
 
 	}
+	
+	/*
+	 * FOLLOWING Method may needs to be deleted to check doing r&d
+	 */
 
 	public void paginForWeekstatFor1stPage(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
@@ -6521,10 +6528,21 @@ public class TestBase {
 				System.out.println("Total rows :" + allrows.size());
 				for (int row = 1; row <= allrows.size(); row++) {
 					TaxPayRun_For_Week1statFor1stPage(MonthName);
-
+					/*
+					 * I have replaced this method on dec 7 2017 .
+					 * If it wont work needs to be reverted back with
+					 * following method
+					 * //TaxPayRun_For_Week1statFor1stPage(MonthName);
+					 */
+					
+					/*TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+							FirstReportNameInApplication,
+							TestResultExcelFilePath);
+*/
 				}
 			}
-		} catch (Throwable t) {
+		} catch (Throwable t)
+		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
@@ -6541,18 +6559,21 @@ public class TestBase {
 				{
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
-					System.out.println("Inorder to show all the Months record, the expandable page got clicked for"+i+"st time");
-
 					Thread.sleep(4000L);
+					System.out.println("Inorder to show all the Months record, the expandable page got clicked for"+i+"st time");
 				}
 			}
 		
-
+			Thread.sleep(6000L);
+			if(existsElementchkFor1mts(OR.getProperty("payRunWeekTable")))
+			{
+				System.out.println("table exists");
+			}
 			WebElement payRunWeekOneTable = getObject("payRunWeekTable");
 			List<WebElement> rows = payRunWeekOneTable.findElements(By.xpath(OR
 					.getProperty("WeekOneTablerows")));
 			int totalRows = rows.size();
-			System.out.println("total no of week rows are " + totalRows);
+			System.out.println("total no of Month record rows are " + totalRows);
 			java.util.Iterator<WebElement> x = rows.iterator();
 
 			rownum = 1;
@@ -6568,11 +6589,11 @@ public class TestBase {
 					if (weekText != null
 							&& weekText.equalsIgnoreCase(MonthName)) {
 						System.out
-								.println("The week name is Matched i.e. the week name is  :"
+								.println("The Month name is Matched i.e. the Month name is  :"
 										+ weekText);
 						Week1.sendKeys("");
 						Week1.click();
-						System.out.println("the weekname got clicked");
+						System.out.println("the Month Name got clicked");
 						// break;
 					} else {
 						rownum++;
@@ -6583,7 +6604,7 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			System.out.println("some problem after click of weekname");
+			System.out.println("some problem after click of Month link");
 			System.out.println(t.getMessage());
 
 		}
@@ -7162,8 +7183,7 @@ public class TestBase {
 			Thread.sleep(4000L);
 			if (existsElement(OR.getProperty("payRunWeekTable"))) {
 				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
-				// WebElement Week1 = driver.findElement(By
-				// .xpath(OR.getProperty("WeekOneLocator")));
+				
 				List<WebElement> rows = payRunWeekOneTable.findElements(By
 						.xpath(OR.getProperty("WeekOneTablerows")));
 				java.util.Iterator<WebElement> x = rows.iterator();
@@ -7177,7 +7197,6 @@ public class TestBase {
 									+ "div/" + "div[" + "2]/" + "table/"
 									+ "tbody/tr[" + (rownum) + "]/" + "th/"
 									+ "a"));
-					// /div[5]/div[1]/div/div[2]/table/tbody/tr
 
 					String weekText = Weekrecord.getText();
 
