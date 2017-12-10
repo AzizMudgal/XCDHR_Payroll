@@ -1,35 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="147855" started-at="2017-12-08T13:24:29Z" finished-at="2017-12-08T13:26:57Z">
+=======
+<<<<<<< HEAD
+  <suite name="Default suite" duration-ms="130415" started-at="2017-12-08T14:08:03Z" finished-at="2017-12-08T14:10:13Z">
+=======
+<<<<<<< HEAD
+  <suite name="Default suite" duration-ms="67077" started-at="2017-12-07T18:29:11Z" finished-at="2017-12-07T18:30:18Z">
+=======
+<<<<<<< HEAD
+  <suite name="Default suite" duration-ms="284180" started-at="2017-12-08T06:22:37Z" finished-at="2017-12-08T06:27:21Z">
+=======
+<<<<<<< HEAD
+  <suite name="Default suite" duration-ms="309251" started-at="2017-12-06T12:35:11Z" finished-at="2017-12-06T12:40:20Z">
+=======
+  <suite name="Default suite" duration-ms="217063" started-at="2017-12-07T05:47:23Z" finished-at="2017-12-07T05:51:00Z">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="147855" started-at="2017-12-08T13:24:29Z" finished-at="2017-12-08T13:26:57Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5324" started-at="2017-12-08T18:54:24Z" finished-at="2017-12-08T18:54:29Z">
+=======
+<<<<<<< HEAD
+    <test name="Default test" duration-ms="130415" started-at="2017-12-08T14:08:03Z" finished-at="2017-12-08T14:10:13Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7623" started-at="2017-12-08T19:37:55Z" finished-at="2017-12-08T19:38:03Z">
+=======
+<<<<<<< HEAD
+    <test name="Default test" duration-ms="67077" started-at="2017-12-07T18:29:11Z" finished-at="2017-12-07T18:30:18Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="5563" started-at="2017-12-07T23:59:06Z" finished-at="2017-12-07T23:59:11Z">
+=======
+<<<<<<< HEAD
+    <test name="Default test" duration-ms="284180" started-at="2017-12-08T06:22:37Z" finished-at="2017-12-08T06:27:21Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7942" started-at="2017-12-08T11:52:29Z" finished-at="2017-12-08T11:52:37Z">
+=======
+<<<<<<< HEAD
+    <test name="Default test" duration-ms="309251" started-at="2017-12-06T12:35:11Z" finished-at="2017-12-06T12:40:20Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ProcessPayrollForApril">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ProcessPayrollForApril@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5561" started-at="2017-12-06T18:05:06Z" finished-at="2017-12-06T18:05:11Z">
+=======
+    <test name="Default test" duration-ms="217063" started-at="2017-12-07T05:47:23Z" finished-at="2017-12-07T05:51:00Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8909" started-at="2017-12-07T11:17:14Z" finished-at="2017-12-07T11:17:23Z">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="2681" started-at="2017-12-08T18:54:29Z" finished-at="2017-12-08T18:54:32Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3404" started-at="2017-12-08T19:38:03Z" finished-at="2017-12-08T19:38:06Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3025" started-at="2017-12-07T23:59:11Z" finished-at="2017-12-07T23:59:14Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3589" started-at="2017-12-08T11:52:37Z" finished-at="2017-12-08T11:52:40Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ProcessPayrollForApril@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="3148" started-at="2017-12-06T18:05:11Z" finished-at="2017-12-06T18:05:14Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3625" started-at="2017-12-07T11:17:23Z" finished-at="2017-12-07T11:17:27Z">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="79754" started-at="2017-12-08T18:54:34Z" data-provider="getData" finished-at="2017-12-08T18:55:54Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="117007" started-at="2017-12-08T19:38:10Z" data-provider="getData" finished-at="2017-12-08T19:40:07Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="queryExecute()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery@271053e1]" name="queryExecute" duration-ms="53270" started-at="2017-12-07T23:59:14Z" finished-at="2017-12-08T00:00:08Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="227532" started-at="2017-12-08T11:52:43Z" data-provider="getData" finished-at="2017-12-08T11:56:31Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ProcessPayrollForApril@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="298306" started-at="2017-12-06T18:05:17Z" data-provider="getData" finished-at="2017-12-06T18:10:15Z">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DONT TOUCH AUTO NIMCA EMPLOYER]]>
+=======
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 547]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 385]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[NIMCA_Payroll]]>
+=======
+                <![CDATA[2040M_Payroll]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="3">
@@ -44,17 +145,114 @@
             </param>
             <param index="5">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Payroll Suite MonthlyCatA201718.xlsx]]>
+=======
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="6">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+=======
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="7">
               <value>
+<<<<<<< HEAD
                 <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201718\\201718 Payroll National Insurance calculation Test result.xlsx]]>
+=======
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+>>>>>>> refs/remotes/origin/master
+          <reporter-output>
+          </reporter-output>
+<<<<<<< HEAD
+        </test-method> <!-- queryExecute -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="4914" started-at="2017-12-08T00:00:08Z" finished-at="2017-12-08T00:00:13Z">
+=======
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< HEAD
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3434" started-at="2017-12-08T19:40:07Z" finished-at="2017-12-08T19:40:10Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2988" started-at="2017-12-08T11:56:31Z" finished-at="2017-12-08T11:56:34Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ProcessPayrollForApril@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1997" started-at="2017-12-06T18:10:15Z" finished-at="2017-12-06T18:10:17Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2743" started-at="2017-12-07T11:20:52Z" finished-at="2017-12-07T11:20:55Z">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="3412" started-at="2017-12-08T19:40:10Z" finished-at="2017-12-08T19:40:13Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery@271053e1]" name="ReportTestResult" is-config="true" duration-ms="5820" started-at="2017-12-08T00:00:13Z" finished-at="2017-12-08T00:00:18Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="684" started-at="2017-12-08T11:56:34Z" data-provider="getData" finished-at="2017-12-08T11:56:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 109]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="8">
@@ -555,11 +753,284 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3108" started-at="2017-12-08T18:56:54Z" finished-at="2017-12-08T18:56:57Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="711" started-at="2017-12-08T11:57:03Z" data-provider="getData" finished-at="2017-12-08T11:57:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 136]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2120" started-at="2017-12-08T11:57:03Z" finished-at="2017-12-08T11:57:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="842" started-at="2017-12-08T11:57:06Z" data-provider="getData" finished-at="2017-12-08T11:57:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 142]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2464" started-at="2017-12-08T11:57:06Z" finished-at="2017-12-08T11:57:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="804" started-at="2017-12-08T11:57:09Z" data-provider="getData" finished-at="2017-12-08T11:57:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 146]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2080" started-at="2017-12-08T11:57:10Z" finished-at="2017-12-08T11:57:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="801" started-at="2017-12-08T11:57:12Z" data-provider="getData" finished-at="2017-12-08T11:57:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 147]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Weekly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-1]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite GeneralTaxRateWeek1LDOD1BRNTOTK50percentRL201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation NI Reports\\HMRCTestData\\Payroll Tax Test Report 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2504" started-at="2017-12-08T11:57:13Z" finished-at="2017-12-08T11:57:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax@271053e1]" name="ReportTestResult" is-config="true" duration-ms="5835" started-at="2017-12-08T11:57:15Z" finished-at="2017-12-08T11:57:21Z">
+=======
+<<<<<<< HEAD
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ProcessPayrollForApril@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3266" started-at="2017-12-06T18:10:17Z" finished-at="2017-12-06T18:10:20Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="5419" started-at="2017-12-07T11:20:55Z" finished-at="2017-12-07T11:21:00Z">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.ProcessPayrollForApril -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports -->
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

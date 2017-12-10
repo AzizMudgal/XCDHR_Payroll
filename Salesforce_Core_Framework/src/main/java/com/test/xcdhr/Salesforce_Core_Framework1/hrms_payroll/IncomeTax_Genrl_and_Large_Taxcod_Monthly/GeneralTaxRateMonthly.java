@@ -76,7 +76,6 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 			logingIntoDesiredORG(OrgFlag);
 			driver.manage().window().maximize();
 			Thread.sleep(3000L);
-			
 			try
 			{
 				if(existsElementchkFor1mts(OR.getProperty("Homepage_txt")))
@@ -105,15 +104,6 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 		/*************************************************************************/
 	}
-
-
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
@@ -140,7 +130,7 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 
 	
-
+	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable
