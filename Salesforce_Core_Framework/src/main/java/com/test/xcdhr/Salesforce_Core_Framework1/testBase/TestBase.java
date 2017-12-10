@@ -10795,6 +10795,7 @@ public class TestBase {
 				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownum = 1;
+				outerbreak:
 				while (x.hasNext()) {
 					// Thread.sleep(2000L);
 					String firstRowOfEmployeeColumn = "//div[" + rownum
@@ -10837,7 +10838,7 @@ public class TestBase {
 								Thread.sleep(6000L);
 							}
 							UpdateTaxBasisDraft(empName, Taxcode, TaxBasis);
-							break;
+							break outerbreak;
 						} else if (rownum == lastRowCount && tempEmp != null
 								&& tempEmp != (empName)) {
 							rownum++;
