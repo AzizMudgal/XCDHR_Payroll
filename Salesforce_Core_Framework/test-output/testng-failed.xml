@@ -3,15 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.GeneralTaxRateMonthly">
         <methods>
+          <include name="EmpsSetup_ForMonthlyTaxRate"/>
           <include name="CheckTestSkip"/>
-          <include name="queryExecute"/>
-          <include name="ReportTestResult"/>
           <include name="CheckSuiteSkip"/>
-          <include name="ReportDataSetResult"/>
+          <include name="EmpsSetup_WithAnnualSalary"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.ExecuteQuery -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.GeneralTaxRateMonthly -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
