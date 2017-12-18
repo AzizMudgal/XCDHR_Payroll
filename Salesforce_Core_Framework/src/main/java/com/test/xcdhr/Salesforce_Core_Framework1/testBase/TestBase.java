@@ -6490,14 +6490,38 @@ public class TestBase {
 								"twoweeklyPayrolldetails").getText();
 						System.out.println("the employer name is :"
 								+ pfrequencey);
-						TaxPayRun_For_Week1statFor1stPage(MonthName);
-						
+						if(Frquency.equalsIgnoreCase("Four Weekly"))
+						{
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Two Weekly"))
+						{
+							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Weekly"))
+						{
+							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Monthly"))
+						{
+							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+
 						break;
 					}
 					break;
-				} else {
+				}
+				else
+				{
 					System.out.println("payfrequency not matched");
-
 				}
 				rownum++;
 			}
@@ -6903,9 +6927,7 @@ public class TestBase {
 	 * catch(Throwable t) { System.out.println(t.getMessage()); } }
 	 */
 
-	/*
-	 * trail implementation of error.
-	 */
+	
 
 	public void PayrollForWeeklyTax(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
@@ -6980,10 +7002,7 @@ public class TestBase {
 		}
 	}
 
-	/*
-	 * Trial implementation for ProcessForWeekTaxrate method
-	 */
-
+	
 	public void ProcessForWeekTaxrate1(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
@@ -7197,7 +7216,7 @@ public class TestBase {
 			
 			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
 			{
-				for(int i = 1; i<3; i++)
+				for(int i = 1; i<2; i++)
 				{
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
@@ -7207,6 +7226,8 @@ public class TestBase {
 			}
 			Thread.sleep(4000L);
 			if (existsElement(OR.getProperty("payRunWeekTable"))) {
+				System.out.println("Thee table exists");
+				
 				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
 				
 				List<WebElement> rows = payRunWeekOneTable.findElements(By
@@ -7255,7 +7276,7 @@ public class TestBase {
 			
 			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
 			{
-				for(int i = 1; i<5; i++)
+				for(int i = 1; i<2; i++)
 				{
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
@@ -7486,7 +7507,7 @@ public class TestBase {
 		}
 	}
 
-	// /////7
+	
 
 	/*
 	 * loging into desired orgs
@@ -10327,6 +10348,7 @@ public class TestBase {
 			lastRowCount = rows.size();
 			java.util.Iterator<WebElement> x = rows.iterator();
 			rownum = 1;
+			outerbreak:
 			while (x.hasNext()) {
 				// Thread.sleep(2000L);
 				String firstRowOfEmployeeColumn = "//div[" + rownum
@@ -10365,7 +10387,7 @@ public class TestBase {
 								System.out
 										.println("The update button got clicked and NI Category got saved");
 								Thread.sleep(8000L);
-								break;
+								break outerbreak;
 							}
 						}
 					}
@@ -10387,7 +10409,19 @@ public class TestBase {
 						Thread.sleep(8000L);
 						searchEmployeeAndUpdateNICatgory(empName, NICategory);
 					}
-				} else
+					else
+					{
+						System.out.println("The employee which you are searching "
+								+ "is not available in all the pages"
+								+ "of this Personal / Compensation Tab "
+								+ "of the Application. Hence the script unfortunately is "
+								+ "not able to execute successfully. Please include the said employee"
+								+ "in the said Tab of the application and run once again the script");
+						closeBrowser();
+					}
+					
+				}
+				else
 					System.out.println("incrementing the row number");
 				rownum++;
 			}
@@ -11056,7 +11090,19 @@ public class TestBase {
 								Thread.sleep(8000L);
 								rownum = 0;
 							}
-						} else
+							else
+							{
+								System.out.println("The employee which you are searching "
+										+ "is not available in all the pages"
+										+ "of this Personal / Compensation Tab "
+										+ "of the Application. Hence the script unfortunately is "
+										+ "not able to execute successfully. Please include the said employee"
+										+ "in the said Tab of the application and run once again the script");
+								closeBrowser();
+							}
+							
+						}
+						else
 							System.out.println("incrementing the row number");
 						rownum++;
 					}
@@ -11721,6 +11767,17 @@ public class TestBase {
 									Thread.sleep(8000L);
 									rownum = 0;
 								}
+								else
+								{
+									System.out.println("The employee which you are searching "
+											+ "is not available in all the pages"
+											+ "of this Personal / Compensation Tab "
+											+ "of the Application. Hence the script unfortunately is "
+											+ "not able to execute successfully. Please include the said employee"
+											+ "in the said Tab of the application and run once again the script");
+									closeBrowser();
+								}
+								
 							}
 					} 
 					rownum++;
@@ -11900,6 +11957,16 @@ public class TestBase {
 											.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
 									Thread.sleep(8000L);
 									rownum = 0;
+								}
+								else
+								{
+									System.out.println("The employee which you are searching "
+											+ "is not available in all the pages"
+											+ "of this Personal / Compensation Tab "
+											+ "of the Application. Hence the script unfortunately is "
+											+ "not able to execute successfully. Please include the said employee"
+											+ "in the said Tab of the application and run once again the script");
+									closeBrowser();
 								}
 							}
 					} 

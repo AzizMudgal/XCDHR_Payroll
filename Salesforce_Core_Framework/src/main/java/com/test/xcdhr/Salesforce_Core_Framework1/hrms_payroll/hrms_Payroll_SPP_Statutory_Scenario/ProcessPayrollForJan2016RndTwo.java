@@ -3,6 +3,15 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_
 
 
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.text.DecimalFormat;
+import java.util.List;
+
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -24,7 +33,7 @@ public class ProcessPayrollForJan2016RndTwo extends TestSuiteBase
 	public String payrollRecordId;
 	public int rownum;
 	public String monthOneRecordId;
-	
+	boolean windowExclude = true;
 	
 	
 	
@@ -102,25 +111,55 @@ public class ProcessPayrollForJan2016RndTwo extends TestSuiteBase
 			}
 		}
 		
-		ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
-		if (finalRows != dTRows)
-		{
-			Thread.sleep(3000L);
-			System.out.println("Since the app is not displaying employee records same"
-					+ " as excel file employees of this Tax worksheet");
-			ProcessPayrollForJan2016RndTwo obj1 = new ProcessPayrollForJan2016RndTwo();
-			
-			for(Repeat=2; Repeat < 5; Repeat++)
-			{
-				// I have set 3 times to repeat the payroll script so that by the time it processess
-				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
-				System.out.println("The value of Repeat is "+Repeat);
-				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+		ExcludeIncludeEmpLocal(EmpName,ExcelInputSheet,worksheetNo);
+	
+	}
+	
+	public void ExcludeIncludeEmpLocal(String EmpName, String Exclinputsheet,
+			String worksheetNo) throws Throwable {
+		try {
+			System.out.println("entering into ExcludeIncludeEmp method");
+			double worksheetvalue = Double.parseDouble(worksheetNo);
+			DecimalFormat df = new DecimalFormat("###.#");
+			String worksheetNoWithoutDecimal = df.format(worksheetvalue);
+			int wNo = Integer.parseInt(worksheetNoWithoutDecimal);
+			System.out.println("The converted post value is  :" + wNo);
+			FileInputStream fis = new FileInputStream(
+					new File(
+							System.getProperty("user.dir")
+									+ "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"
+									+ Exclinputsheet));
 
-				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
+			totalRows = spreadsheet.getLastRowNum();
+			System.out
+					.println("Total rows in the processpayrollforMonthlytax worksheet is :"
+							+ totalRows);
+			Thread.sleep(1000L);
+				if (existsElementchkFor1mts(OR
+						.getProperty("genratedraftPayroll"))) {
+					getObject("genratedraftPayroll").sendKeys("");
+					getObject("genratedraftPayroll").click();
+					if (existsElementchkFor1mts(OR.getProperty("progressBar"))) {
+						System.out.println("");
+						System.out
+								.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
+						Thread.sleep(4000L);
+						payRunExecution();
+						Thread.sleep(6000L);
+						if (existsElementchkFor1mts(OR
+								.getProperty("emprecordsTableRowsAftergeneratedraft"))) {
+							verifyEmpRecordInPaySummaryTable();
+						}
+					}
+				}
 			}
-		}
-		
+			catch (Throwable t) 
+			{
+				System.out.println(t.getMessage().toString());
+				System.out.println(t.getStackTrace().toString());
+			}
 	}
 
 
@@ -132,6 +171,8 @@ public class ProcessPayrollForJan2016RndTwo extends TestSuiteBase
 		return Test_Util.getData(Payroll_Statutory_Paternitypay_SuiteXls,"ProcessPayrollForJan2016RndTwo");
 	}
 
+	
+	
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
@@ -159,6 +200,9 @@ public class ProcessPayrollForJan2016RndTwo extends TestSuiteBase
 
 	}
 
+	
+	
+	
 	@AfterTest
 	public void ReportTestResult() throws Throwable
 	{

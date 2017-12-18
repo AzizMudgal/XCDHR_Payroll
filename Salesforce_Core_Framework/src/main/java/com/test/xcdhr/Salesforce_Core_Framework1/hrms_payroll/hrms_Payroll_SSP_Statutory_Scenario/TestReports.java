@@ -75,7 +75,7 @@ public class TestReports extends TestSuiteBase
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
 		
-		
+		Thread.sleep(4000L);
 		/* Added by Swamy*/
 		try
 		{
@@ -88,9 +88,8 @@ public class TestReports extends TestSuiteBase
 		{
 			APP_LOGS.debug("Could not assert the home page title, Check for error");
 			System.out.println("");
-			defaultWaitTime();
+			
 		}
-		Thread.sleep(4000L);
 	}
 
 
@@ -102,7 +101,7 @@ public class TestReports extends TestSuiteBase
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
 			Thread.sleep(4000L);
-			driver.navigate().refresh();
+			//driver.navigate().refresh();
 		}
 
 		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
