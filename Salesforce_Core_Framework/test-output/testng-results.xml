@@ -1,46 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="28" passed="28">
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Payroll Suite WeeklyCatB M" duration-ms="1051515" started-at="2017-12-18T09:11:19Z" finished-at="2017-12-18T09:28:51Z">
+=======
+  <suite name="Default suite" duration-ms="100915" started-at="2017-12-18T07:50:33Z" finished-at="2017-12-18T07:52:14Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="1" duration-ms="641486" started-at="2017-12-18T09:11:19Z" finished-at="2017-12-18T09:22:01Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.NIWeeklyCat_B">
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.NIWeeklyCat_B@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3448" started-at="2017-12-18T14:41:19Z" finished-at="2017-12-18T14:41:22Z">
+=======
+    <test name="Default test" duration-ms="100915" started-at="2017-12-18T07:50:33Z" finished-at="2017-12-18T07:52:14Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="5645" started-at="2017-12-18T13:20:27Z" finished-at="2017-12-18T13:20:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="2733" started-at="2017-12-18T13:20:33Z" finished-at="2017-12-18T13:20:36Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.NIWeeklyCat_B@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="88088" started-at="2017-12-18T14:41:28Z" data-provider="getData" finished-at="2017-12-18T14:42:56Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="89622" started-at="2017-12-18T13:20:38Z" data-provider="getData" finished-at="2017-12-18T13:22:08Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 397]]>
+=======
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[B Married women and widows entitled to pay reduced NI (attach form CA4139/CF383/CF380A)]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 385]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[8166.08]]>
+=======
+                <![CDATA[2040M_Payroll]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="3">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Weekly]]>
+=======
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- EmpsSetup_WithNICategory -->
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.NIWeeklyCat_B@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="4925" started-at="2017-12-18T14:42:56Z" finished-at="2017-12-18T14:43:01Z">
+=======
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="ReportDataSetResult" is-config="true" duration-ms="2747" started-at="2017-12-18T13:22:08Z" finished-at="2017-12-18T13:22:11Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.NIWeeklyCat_B@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="21632" started-at="2017-12-18T14:43:01Z" data-provider="getData" finished-at="2017-12-18T14:43:23Z">
           <params>
             <param index="0">
@@ -552,9 +626,13 @@
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.NIWeeklyCat_B@271053e1]" name="ReportTestResult" is-config="true" duration-ms="13247" started-at="2017-12-18T14:51:47Z" finished-at="2017-12-18T14:52:01Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="ReportTestResult" is-config="true" duration-ms="3237" started-at="2017-12-18T13:22:11Z" finished-at="2017-12-18T13:22:14Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.NIWeeklyCat_B -->
     </test> <!-- 1 -->
     <test name="2" duration-ms="288071" started-at="2017-12-18T09:22:01Z" finished-at="2017-12-18T09:26:49Z">
@@ -1191,4 +1269,9 @@
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports -->
     </test> <!-- 3 -->
   </suite> <!-- Payroll Suite WeeklyCatB M -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 </testng-results>
