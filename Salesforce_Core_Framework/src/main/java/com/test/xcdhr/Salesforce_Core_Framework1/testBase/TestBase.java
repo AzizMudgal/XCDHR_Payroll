@@ -6510,7 +6510,7 @@ public class TestBase {
 						}
 						else if(Frquency.equalsIgnoreCase("Monthly"))
 						{
-							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
 									FirstReportNameInApplication,
 									TestResultExcelFilePath);
 						}
@@ -7216,7 +7216,7 @@ public class TestBase {
 			
 			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
 			{
-				for(int i = 1; i<2; i++)
+				for(int i = 1; i<3; i++)
 				{
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
@@ -7276,7 +7276,7 @@ public class TestBase {
 			
 			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
 			{
-				for(int i = 1; i<2; i++)
+				for(int i = 1; i<5; i++)
 				{
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
