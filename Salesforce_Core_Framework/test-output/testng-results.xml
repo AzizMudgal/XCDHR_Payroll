@@ -1,102 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
-=======
-<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
->>>>>>> refs/remotes/origin/master
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="111181" started-at="2017-12-13T18:33:03Z" finished-at="2017-12-13T18:34:54Z">
-=======
-  <suite name="Default suite" duration-ms="167996" started-at="2017-12-18T05:45:09Z" finished-at="2017-12-18T05:47:57Z">
->>>>>>> refs/remotes/origin/master
+  <suite name="Default suite" duration-ms="100915" started-at="2017-12-18T07:50:33Z" finished-at="2017-12-18T07:52:14Z">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test name="Default test" duration-ms="111181" started-at="2017-12-13T18:33:03Z" finished-at="2017-12-13T18:34:54Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.TestAprilReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.TestAprilReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="5380" started-at="2017-12-14T00:02:57Z" finished-at="2017-12-14T00:03:03Z">
-=======
-    <test name="Default test" duration-ms="167996" started-at="2017-12-18T05:45:09Z" finished-at="2017-12-18T05:47:57Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7681" started-at="2017-12-18T11:15:01Z" finished-at="2017-12-18T11:15:09Z">
->>>>>>> refs/remotes/origin/master
+    <test name="Default test" duration-ms="100915" started-at="2017-12-18T07:50:33Z" finished-at="2017-12-18T07:52:14Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="5645" started-at="2017-12-18T13:20:27Z" finished-at="2017-12-18T13:20:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.TestAprilReports@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="2737" started-at="2017-12-14T00:03:03Z" finished-at="2017-12-14T00:03:05Z">
-=======
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3432" started-at="2017-12-18T11:15:09Z" finished-at="2017-12-18T11:15:12Z">
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="2733" started-at="2017-12-18T13:20:33Z" finished-at="2017-12-18T13:20:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.TestAprilReports@42dafa95]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="93663" started-at="2017-12-14T00:03:08Z" data-provider="getData" finished-at="2017-12-14T00:04:42Z">
-=======
-        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly@271053e1]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="97515" started-at="2017-12-18T11:15:16Z" data-provider="getData" finished-at="2017-12-18T11:16:53Z">
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="89622" started-at="2017-12-18T13:20:38Z" data-provider="getData" finished-at="2017-12-18T13:22:08Z">
           <params>
             <param index="0">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DONT TOUCH AUTO HMRCS1 EMPLOYER
-]]>
-=======
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 384]]>
->>>>>>> refs/remotes/origin/master
+                <![CDATA[DONT TOUCH AUTO 2040M EMPLOYER]]>
               </value>
             </param>
             <param index="1">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 1
-]]>
-=======
-                <![CDATA[0T]]>
->>>>>>> refs/remotes/origin/master
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 385]]>
               </value>
             </param>
             <param index="2">
               <value>
-<<<<<<< HEAD
-                <![CDATA[HMRCS1_Payroll]]>
-=======
-                <![CDATA[wk1 / mth1]]>
->>>>>>> refs/remotes/origin/master
+                <![CDATA[2040M_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[26000.0]]>
+                <![CDATA[Monthly]]>
               </value>
             </param>
             <param index="4">
               <value>
-<<<<<<< HEAD
                 <![CDATA[April-2017]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Payroll Recognition Scenario201718.xlsx]]>
+                <![CDATA[Payroll Suite Month1of204045VariablePayAnd50regulatoryLimit201718.xlsx]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[DO NOT TOUCH PAYROL RTI RECGNTION REPORT]]>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_RTI_TestReports201718\\201718 Payroll RTI Recognition Test result.xlsx]]>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201718\\201718 Payroll Net Income tax calculation Test result.xlsx]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[5]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="9">
@@ -104,90 +67,19 @@
                 <![CDATA[All]]>
               </value>
             </param>
-            <param index="10">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[2]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[3]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[4]]>
-=======
-                <![CDATA[Weekly]]>
->>>>>>> refs/remotes/origin/master
-              </value>
-            </param>
           </params>
           <reporter-output>
           </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.TestAprilReports@42dafa95]" name="ReportDataSetResult" is-config="true" duration-ms="4560" started-at="2017-12-14T00:04:42Z" finished-at="2017-12-14T00:04:46Z">
-=======
-        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2998" started-at="2017-12-18T11:16:53Z" finished-at="2017-12-18T11:16:56Z">
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="ReportDataSetResult" is-config="true" duration-ms="2747" started-at="2017-12-18T13:22:08Z" finished-at="2017-12-18T13:22:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.TestAprilReports@42dafa95]" name="ReportTestResult" is-config="true" duration-ms="7709" started-at="2017-12-14T00:04:46Z" finished-at="2017-12-14T00:04:54Z">
-=======
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="48902" started-at="2017-12-18T11:16:59Z" data-provider="getData" finished-at="2017-12-18T11:17:48Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 384]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[0T]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[wk1 / mth1]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[26000.0]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Weekly]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2480" started-at="2017-12-18T11:17:48Z" finished-at="2017-12-18T11:17:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly@271053e1]" name="ReportTestResult" is-config="true" duration-ms="6292" started-at="2017-12-18T11:17:51Z" finished-at="2017-12-18T11:17:57Z">
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports@42dafa95]" name="ReportTestResult" is-config="true" duration-ms="3237" started-at="2017-12-18T13:22:11Z" finished-at="2017-12-18T13:22:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month1.TestAprilReports -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_204045VariablePayANDWeekly50RL.GeneralTaxRateWeekly -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.TestReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
