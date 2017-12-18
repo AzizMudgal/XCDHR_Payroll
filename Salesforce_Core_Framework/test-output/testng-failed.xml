@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite IncomeTax_TCWeek2LDOD1BRNTOTK50RL]">
+  <test name="3(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month10.UpdteTaxCodeAndAnualSalaryM10">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek2LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax">
+        <methods>
+          <include name="CheckTestSkip"/>
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek2LDOD1BRNTOTK50RL.ProcessPayrollForWeeklyTax -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek2LDOD1BRNTOTK50RL.TestReports">
         <methods>
           <include name="CheckSuiteSkip"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
           <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_ForMonthlyTaxRate"/>
-          <include name="EmpsSetup_WithAnnualSalary"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month10.UpdteTaxCodeAndAnualSalaryM10 -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek2LDOD1BRNTOTK50RL.TestReports -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek2LDOD1BRNTOTK50RL.GeneralTaxRateWeekly">
+        <methods>
+          <include name="CheckTestSkip"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek2LDOD1BRNTOTK50RL.GeneralTaxRateWeekly -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- 3(failed) -->
+</suite> <!-- Failed suite [Payroll Suite IncomeTax_TCWeek2LDOD1BRNTOTK50RL] -->
