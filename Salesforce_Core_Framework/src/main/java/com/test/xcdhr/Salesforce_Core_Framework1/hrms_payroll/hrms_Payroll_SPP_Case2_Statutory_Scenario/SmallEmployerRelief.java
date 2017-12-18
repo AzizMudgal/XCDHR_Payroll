@@ -261,7 +261,7 @@ public class SmallEmployerRelief extends TestSuiteBase {
 					for(WebElement tdElement : td_collection)
 					{
 						System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSPP COMPANY"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
+						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSPP2 COMPANY"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
 						{	
 							Thread.sleep(4000L);
 							System.out.println("Company name  :"+tdElement.getText()+ "  matched ");
@@ -385,12 +385,12 @@ public class SmallEmployerRelief extends TestSuiteBase {
 						{
 							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
 
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSPP EMPLOYER"))
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSPP2 EMPLOYER"))
 							{
 								Thread.sleep(5000L);
 								System.out.println("Link name  :"+tdElement.getText()+ "  matched ");
 
-								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a[@href='https://xcdlightning.my.salesforce.com/a0Xb000000OaLio']"));
+								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a"));
 								Thread.sleep(2000L);
 								eplyrclkchkbox.click();
 								System.out.println("clicked to employer");

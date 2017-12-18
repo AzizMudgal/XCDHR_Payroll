@@ -258,7 +258,7 @@ public class SmallEmployerRelief extends TestSuiteBase
 					{
 						System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
 
-						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAPP COMPANY"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
+						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAPP COMPANY"))
 						{	
 							Thread.sleep(4000L);
 							System.out.println("Company name  :"+tdElement.getText()+ "  matched ");
@@ -382,7 +382,7 @@ public class SmallEmployerRelief extends TestSuiteBase
 							{
 								Thread.sleep(5000L);
 								System.out.println("Link name  :"+tdElement.getText()+ "  matched ");
-								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a[@id='lookupa0Xb000000OaLioj_id0_j_id4100Nb0000009I76v']"));
+								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a"));
 								Thread.sleep(2000L);
 								eplyrclkchkbox.click();
 								System.out.println("clicked to employer");

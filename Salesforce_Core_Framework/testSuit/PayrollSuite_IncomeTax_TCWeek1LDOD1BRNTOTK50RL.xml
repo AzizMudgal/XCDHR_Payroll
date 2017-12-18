@@ -1,10 +1,10 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Payroll Suite IncomeTax_TCWeek1LDOD1BRNTOTK50RL">
-<test name="1">
+<!-- <test name="1">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.ExecuteQuery" ></class>  
     </classes>
-</test>
+</test> -->
 <test name="2">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1LDOD1BRNTOTK50RL.GeneralTaxRateWeekly" ></class>  

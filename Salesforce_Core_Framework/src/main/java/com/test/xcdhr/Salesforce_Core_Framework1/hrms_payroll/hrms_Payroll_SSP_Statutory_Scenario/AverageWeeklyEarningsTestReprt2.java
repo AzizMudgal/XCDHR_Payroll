@@ -30,7 +30,7 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
 
-public class AverageWeeklyEarningsTestReport2 extends TestSuiteBase
+public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -328,7 +328,7 @@ public class AverageWeeklyEarningsTestReport2 extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"AverageWeeklyEarningsTestReport2");
+		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"AverageWeeklyEarningsTestReprt2");
 	}
 
 

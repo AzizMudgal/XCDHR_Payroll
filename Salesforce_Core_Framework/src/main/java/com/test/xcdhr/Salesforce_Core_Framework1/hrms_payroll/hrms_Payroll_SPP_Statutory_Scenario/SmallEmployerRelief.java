@@ -400,7 +400,8 @@ public class SmallEmployerRelief extends TestSuiteBase {
 								Thread.sleep(5000L);
 								System.out.println("Link name  :"+tdElement.getText()+ "  matched ");
 
-								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a[@href='https://xcdlightning.my.salesforce.com/a0Xb000000OaLio']"));
+								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a"));
+								//[@href='https://xcdlightning.my.salesforce.com/a0Xb000000OaLio']
 								Thread.sleep(2000L);
 								eplyrclkchkbox.click();
 								System.out.println("clicked to employer");

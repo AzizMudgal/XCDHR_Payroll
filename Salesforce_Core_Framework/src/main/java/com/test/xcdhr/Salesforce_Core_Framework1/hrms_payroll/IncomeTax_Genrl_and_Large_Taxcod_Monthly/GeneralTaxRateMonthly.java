@@ -76,10 +76,9 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 			logingIntoDesiredORG(OrgFlag);
 			driver.manage().window().maximize();
 			Thread.sleep(3000L);
-			
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				if(existsElementchkFor1mts(OR.getProperty("Homepage_txt")))
 				{
 					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
 					System.out.println("The test script logged in successfully into salesforce account");
@@ -105,15 +104,6 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 		/*************************************************************************/
 	}
-
-
-	
-	
-	
-	
-	
-	
-	
 	
 	
 
@@ -140,7 +130,7 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 
 	
-
+	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable

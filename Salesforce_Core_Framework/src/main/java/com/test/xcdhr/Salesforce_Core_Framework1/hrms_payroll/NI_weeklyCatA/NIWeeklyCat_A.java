@@ -31,6 +31,8 @@ public class NIWeeklyCat_A extends TestSuiteBase {
 	public int rownum;
 	public int rownumc;
 	public int rowSize;
+
+	
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);

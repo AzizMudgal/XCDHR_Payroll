@@ -255,7 +255,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			{
 				getObject("bookLeavebuttonlocator").sendKeys("");
 				getObject("bookLeavebuttonlocator").click();
-
 			}
 		}
 		catch(Throwable t)
@@ -276,10 +275,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			if(existsElement(OR.getProperty("leaveCategorypicklistlocator")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("leaveCategorypicklistlocator"))));
-				// This select by value needs to be called from OR.Properties
-				//selectByValue.selectByValue(LeaveCategory);
 				selectByValue.selectByVisibleText(LeaveCategory);
-
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
 			}
@@ -307,9 +303,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
 		enterLeaveDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
-
 	}
 
 
@@ -329,12 +323,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
-
-		//selectCheckbox(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
 		selectDate(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,ConditionSatisfied,StatutoryPaybasis);
-		//selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
-
 		MaternitySavebutton();
 
 	}
@@ -376,11 +365,8 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			{
 				getObject("clkSortedone2").click();
 			}
-
 			System.out.println("I clicked the user finally");
-
 		}
-
 	}
 
 
@@ -403,7 +389,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
 	}
 
 
