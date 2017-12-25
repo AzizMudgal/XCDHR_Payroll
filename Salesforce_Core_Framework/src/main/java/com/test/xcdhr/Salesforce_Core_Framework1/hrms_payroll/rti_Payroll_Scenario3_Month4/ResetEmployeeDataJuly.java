@@ -240,7 +240,7 @@ public class ResetEmployeeDataJuly extends TestSuiteBase
 			{
 				getObject("currentAddressLink").sendKeys("");
 				getObject("currentAddressLink").click();
-				System.out.println("The Personal Tab got clicked");
+				System.out.println("The Address Link clicked");
 			}
 		}
 		catch(Throwable t)
@@ -258,7 +258,7 @@ public class ResetEmployeeDataJuly extends TestSuiteBase
 			{
 				getObject("compensationEditButtonLoctor").sendKeys("");
 				getObject("compensationEditButtonLoctor").click();
-				System.out.println("The edit button of employer tab got clicked");
+				System.out.println("The edit button of Address Change tab got clicked");
 			}
 			Thread.sleep(2000L);
 			updatePersonalAddress(EmpName,FromDate,AddressFirstLine,AddressSecondLine,City,PostCode,AddressType,TaxCode);
@@ -281,6 +281,7 @@ public class ResetEmployeeDataJuly extends TestSuiteBase
 		{
      		if(existsElementchkFor1mts(OR.getProperty("fromDate")))
 			{
+     			System.out.println("Inside Date Selection Functionality===========>");
 				getObject("fromDate").sendKeys("");
 				String dateStr = FromDate;
 				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
@@ -312,11 +313,14 @@ public class ResetEmployeeDataJuly extends TestSuiteBase
      		
      		if(existsElementchkFor1mts(OR.getProperty("labelRequired")))
 			{
+     			System.out.println("Inside Click Functionality===========>");
      			getObject("labelRequired").click();
 			}
      		Thread.sleep(2000);
 			if(existsElementchkFor1mts(OR.getProperty("addressOne")))
 			{
+
+     			System.out.println("Inside Address1 selections Functionality===========>");
 				getObject("addressOne").clear();
 				getObject("addressOne").sendKeys(AddressFirstLine);
 				System.out.println("The Address one was entered sucessfully");	
