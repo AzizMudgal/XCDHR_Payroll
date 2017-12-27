@@ -1,31 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll RTI Recogntion Scenario4Month11]">
-  <test name="3(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.ProcessFinalPayrollForFeb">
-        <methods>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.ProcessFinalPayrollForFeb -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.ProcessPayrollForFeb">
-        <methods>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-          <include name="CheckTestSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.ProcessPayrollForFeb -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ProcessFinalPayrollForMarch">
         <methods>
           <include name="ReportDataSetResult"/>
           <include name="ReportTestResult"/>
           <include name="CheckSuiteSkip"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckTestSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario4_Month11.TestFebReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ProcessFinalPayrollForMarch -->
     </classes>
-  </test> <!-- 3(failed) -->
-</suite> <!-- Failed suite [Payroll RTI Recogntion Scenario4Month11] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
