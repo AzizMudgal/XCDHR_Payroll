@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Dec 25 23:20:10 IST 2017</td>
+<td>Started on:</td><td>Tue Jan 02 14:55:06 IST 2018</td>
 </tr>
-<tr><td>Total time:</td><td>125 seconds (125359 ms)</td>
+<tr><td>Total time:</td><td>115 seconds (115681 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,18 +67,77 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports.EmpsPayroll_Setup_ForIncomeTax()'><b>EmpsPayroll_Setup_ForIncomeTax</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports<br>Parameters: DONT TOUCH AUTO HMRCS6 EMPLOYER, DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 6, HMRCS6_Payroll, Monthly, March-2018-Final, Payroll Recognition ScenarioSix201718.xlsx, DO NOT TOUCH PAYROL RTI SCENRIO6 REPORT, F:\\Automation_TestResults\\Payroll_Tax_RTI_TestReports201718\\201718 Payroll RTI Recognition Test result.xlsx, 5, All, 5, 2, 3, 4</td>
-<td></td>
-<td>109</td>
-<td>com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports@42dafa95</td></tr>
+<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports.EmpsPayroll_Setup_ForIncomeTax()'><b>EmpsPayroll_Setup_ForIncomeTax</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports<br>Parameters: DONT TOUCH AUTO HMRCS7 EMPLOYER, DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 7, HMRCS7_Payroll, Monthly, July-2017, Payroll Recognition ScenarioSeven201718.xlsx, DO NOT TOUCH PAYROL RTI SCENRIO71 REPORT, F:\\Automation_TestResults\\Payroll_Tax_RTI_TestReports201718\\201718 Payroll RTI Recognition Test result.xlsx, 17, All, 6, 23, 24, 25</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports.processReport1(TestJulyReports.java:296)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports.DownloadReports(TestJulyReports.java:139)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports.EmpsPayroll_Setup_ForIncomeTax(TestJulyReports.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace2134681162", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2134681162'><pre>java.lang.NullPointerException
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports.processReport1(TestJulyReports.java:296)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports.DownloadReports(TestJulyReports.java:139)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports.EmpsPayroll_Setup_ForIncomeTax(TestJulyReports.java:93)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:645)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:851)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1177)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>103</td>
+<td>com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports@42dafa95</td></tr>
 </table><p>
 </body>
 </html>

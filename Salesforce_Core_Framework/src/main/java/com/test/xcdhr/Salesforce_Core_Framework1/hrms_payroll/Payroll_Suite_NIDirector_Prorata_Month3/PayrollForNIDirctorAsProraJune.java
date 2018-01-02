@@ -111,7 +111,7 @@ public class PayrollForNIDirctorAsProraJune extends TestSuiteBase
 		 */
 		ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 		
-		if (totalRows != draftTotalRows)
+		if (totalRows != dTRows)
 		{
 			Thread.sleep(3000L);
 			System.out.println("After generating draft payroll the app is not displaying employee records same"

@@ -12,6 +12,7 @@ public class EnumTestClass extends TestSuiteBase
 		if(existsElement(OR.getProperty(locatorName)))
 		{
 			getObject(locatorName).sendKeys("");
+			Thread.sleep(2000L);
 			getObject(locatorName).click();
 		}
 		
