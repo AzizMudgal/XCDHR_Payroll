@@ -303,8 +303,10 @@ public void FetchEmployeeRecord(String EmpName,String SmallEmployerRelief) throw
 				{
 					System.out.println("the count is "+rownum1);
 					try
-					{							
-						String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
+					{			
+						//String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
+
+						String EmployerName = "//table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
 						if(existsElement(EmployerName))
 						{
 							System.out.println("Employer details table exists");
@@ -466,17 +468,20 @@ public void FetchEmployeeRecord(String EmpName,String SmallEmployerRelief) throw
                 if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Small employer relief"))
 				{
 					System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-					//String ckkkbox = "td/input";
-					
-					//String ckbox = "//label[contains(text(),'Small employer relief')]//following-sibling::td/input";
-					String ckbox ="//following-sibling::td[2]/input[@type='checkbox'][@tabindex='11']";
+				/*
+				 * giving the tabindex is must otherwise the script is not going to 
+				 * recognise the checkbox.
+				 * Hence while running sequential trigger / batch script first recognise the tab index
+				 * and update that value in the below statement , otherwise this functinality 
+				 * wont get executed properly.
+				 */
+					String ckbox ="//following-sibling::td/input[@tabindex='8']";
 					WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
 					boolean	smallERchekbox = clkchkbox.isSelected();
 					double valueOfsmallReliefChkbox = Double.parseDouble(SmallEmployerRelief);
 					System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
 					if(valueOfsmallReliefChkbox== 0.0)
 					{
-						
 							Thread.sleep(4000L);
 							if(smallERchekbox)
 							{
@@ -490,14 +495,10 @@ public void FetchEmployeeRecord(String EmpName,String SmallEmployerRelief) throw
 								System.out.println("Small Employer relief checkbox was allready unchecked, Hence our condition got satisfied");
 								break  outerloop;
 							}
-							 
 						}
-									
 				}
-             
-                col_num++;
-               
-            }
+                 col_num++;
+              }
             row_num++;
           
         } 

@@ -1,32 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite WeeklyCatM U]">
-  <test name="1(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.ProcessPayrollForNIWeekly">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember">
         <methods>
-          <include name="ReportTestResult"/>
-          <include name="CheckTestSkip"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="ReportDataSetResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.ProcessPayrollForNIWeekly -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.NIWeeklyCat_M">
-        <methods>
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="7 8 9 10 11 12 13 14"/>
-          <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="7 8 9 10 11 12 13 14"/>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.NIWeeklyCat_M -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.TestReports">
-        <methods>
           <include name="CheckTestSkip"/>
           <include name="ReportTestResult"/>
           <include name="CheckSuiteSkip"/>
-          <include name="ReportDataSetResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.TestReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember -->
     </classes>
-  </test> <!-- 1(failed) -->
-</suite> <!-- Failed suite [Payroll Suite WeeklyCatM U] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

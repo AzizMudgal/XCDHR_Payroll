@@ -24,6 +24,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import atu.webdriver.utils.table.WebTable;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class TestReportsJuly extends TestSuiteBase
@@ -34,6 +35,8 @@ public class TestReportsJuly extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
+	public String titlename;
+
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
@@ -66,8 +69,22 @@ public class TestReportsJuly extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
+		try
+		{
+			titlename = driver.getTitle();
+			Assert.assertEquals(driver.getTitle(), titlename);
+			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
+			System.out.println("");
+		}
+		catch(Throwable t)
+		{
+			APP_LOGS.debug("Could not assert the home page title, Check for error");
+			System.out.println("");
+			defaultWaitTime();
+		}
 		Thread.sleep(4000L);
-		if(existsElement(OR.getProperty("reportTablocator")))
+		Thread.sleep(4000L);
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
 			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
 		}
@@ -75,17 +92,18 @@ public class TestReportsJuly extends TestSuiteBase
 		{
 			System.out.println("Report Tab doesnot exist hence quitting this test");
 		}
+		
 	}
 
 
 
 	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-		if(existsElement(OR.getProperty("reportTablocator")))
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			driver.navigate().refresh();
+			Thread.sleep(4000L);
 		}
 
 		if(existsElement(OR.getProperty("findReportTextboxLocator")))

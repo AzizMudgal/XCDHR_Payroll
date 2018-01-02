@@ -24,6 +24,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import atu.webdriver.utils.table.WebTable;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class TestReportsOctober extends TestSuiteBase
@@ -34,6 +35,8 @@ public class TestReportsOctober extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
+	public String titlename;
+
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
@@ -66,6 +69,20 @@ public class TestReportsOctober extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
+		try
+		{
+			titlename = driver.getTitle();
+			Assert.assertEquals(driver.getTitle(), titlename);
+			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
+			System.out.println("");
+		}
+		catch(Throwable t)
+		{
+			APP_LOGS.debug("Could not assert the home page title, Check for error");
+			System.out.println("");
+			defaultWaitTime();
+		}
+		Thread.sleep(4000L);
 		Thread.sleep(4000L);
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
@@ -75,6 +92,7 @@ public class TestReportsOctober extends TestSuiteBase
 		{
 			System.out.println("Report Tab doesnot exist hence quitting this test");
 		}
+		
 	}
 
 
@@ -85,7 +103,7 @@ public class TestReportsOctober extends TestSuiteBase
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			driver.navigate().refresh();
+			Thread.sleep(4000L);
 		}
 
 		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))

@@ -102,9 +102,7 @@ public class TestReportsJuly extends TestSuiteBase
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			
 			Thread.sleep(4000L);
-			driver.navigate().refresh();
 		}
 
 		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
