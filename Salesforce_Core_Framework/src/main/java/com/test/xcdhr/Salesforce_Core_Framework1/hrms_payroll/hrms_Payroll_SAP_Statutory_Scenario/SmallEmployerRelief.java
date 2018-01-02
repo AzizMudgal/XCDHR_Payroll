@@ -323,7 +323,9 @@ public class SmallEmployerRelief extends TestSuiteBase
 					System.out.println("the count is "+rownum1);
 					try
 					{							
-						String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
+						//String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
+						String EmployerName = "//table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
+
 						if(existsElement(EmployerName))
 						{
 							System.out.println("Employer details table exists");
@@ -498,7 +500,14 @@ public class SmallEmployerRelief extends TestSuiteBase
 								 * just change the value of tab indes if you are testing 
 								 * QA Org and shifting to Regress Org.
 								 */
-								WebElement clkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@id='00Nb0000009I7Ey']"));//[@tabindex='13']
+								/*
+								 * giving the tabindex is must otherwise the script is not going to 
+								 * recognise the checkbox.
+								 * Hence while running sequential trigger / batch script first recognise the tab index
+								 * and update that value in the below statement , otherwise this functinality 
+								 * wont get executed properly.
+								 */
+								WebElement clkchkbox = driver.findElement(By.xpath("//following-sibling::td/input[@tabindex='8']"));
 								String tabindexval = clkchkbox.getAttribute("tabindex");
 								System.out.println("tab index is :"+tabindexval);
 								boolean	smallERchekbox = clkchkbox.isSelected();

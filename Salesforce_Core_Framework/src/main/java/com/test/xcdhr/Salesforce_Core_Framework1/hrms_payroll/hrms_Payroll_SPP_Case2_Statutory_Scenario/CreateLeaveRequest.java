@@ -830,7 +830,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Birth due date"))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td["+col_num+"]/span/input[@id='00Nb0000009I7Iy']";
+								sppbirthDueDate ="//following-sibling::td["+col_num+"]/span/input[@id='00N0O00000D0wHV']";
 								WebElement BDD = driver.findElement(By.xpath(sppbirthDueDate));
 								if(existsElement(sppbirthDueDate))
 								{
@@ -847,7 +847,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Baby born date"))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00Nb0000009I7Ix']";
+								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00N0O00000D0wHU']";
 								WebElement BBD = driver.findElement(By.xpath(sppbirthDueDate));
 								if(existsElement(sppbirthDueDate))
 								{
@@ -864,7 +864,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Start date"))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00Nb0000009I7Kl']";
+								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00N0O00000D0vvr']";
 								WebElement StD = driver.findElement(By.xpath(sppbirthDueDate));
 								if(existsElement(sppbirthDueDate))
 								{
@@ -881,7 +881,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("End date"))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00Nb0000009I7JO']";
+								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00N0O00000D0vvd']";
 								WebElement EndD = driver.findElement(By.xpath(sppbirthDueDate));
 								if(existsElement(sppbirthDueDate))
 								{
@@ -898,7 +898,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory payment conditions")))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								ckbox ="//following-sibling::td["+col_num+"]/input[@id='00Nb0000009I7J5']";//1
+								ckbox ="//following-sibling::td["+col_num+"]/input[@id='00N0O00000D0wHW']";//1
 								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
 								boolean	smallERchekbox = clkchkbox.isSelected();
 								if(smallERchekbox)

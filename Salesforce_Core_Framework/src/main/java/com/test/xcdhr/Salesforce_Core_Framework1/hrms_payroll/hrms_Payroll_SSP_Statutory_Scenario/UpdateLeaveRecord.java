@@ -457,7 +457,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment"))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								ckbox ="//following-sibling::td[1]/input[@id='00Nb0000009I7J5']";
+								ckbox ="//following-sibling::td[1]/input[@id='00N0O00000D0wHW']";
 								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
 								boolean	smallERchekbox = clkchkbox.isSelected();
 								if(smallERchekbox)

@@ -261,7 +261,6 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 		}
 	}
 
-	 
 
 
 	public void UpdateLeavedetails(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
@@ -435,7 +434,7 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 		            for(WebElement tdElement : td_collection)
 			        {
 				        System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-				        if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Absence pay basis"))
+				        if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payment basis"))
 						{
 				        	System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
 				        	String imglookup ="//following-sibling::td[1]/span/a/img";

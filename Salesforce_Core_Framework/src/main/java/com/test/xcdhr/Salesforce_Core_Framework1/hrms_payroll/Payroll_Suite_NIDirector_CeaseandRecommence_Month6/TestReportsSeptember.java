@@ -24,6 +24,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import atu.webdriver.utils.table.WebTable;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class TestReportsSeptember extends TestSuiteBase
@@ -67,8 +68,7 @@ public class TestReportsSeptember extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-		Thread.sleep(4000L);
-		
+		driver.manage().window().maximize();
 		try
 		{
 			titlename = driver.getTitle();
@@ -83,6 +83,16 @@ public class TestReportsSeptember extends TestSuiteBase
 			defaultWaitTime();
 		}
 		Thread.sleep(4000L);
+		Thread.sleep(4000L);
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		{
+			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
+		}
+		else
+		{
+			System.out.println("Report Tab doesnot exist hence quitting this test");
+		}
+		
 	}
 
 

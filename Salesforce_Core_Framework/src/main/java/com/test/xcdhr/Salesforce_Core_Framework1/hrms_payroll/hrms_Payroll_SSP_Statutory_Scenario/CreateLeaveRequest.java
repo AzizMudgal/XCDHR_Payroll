@@ -253,6 +253,17 @@ public class CreateLeaveRequest extends TestSuiteBase
 			}
 			Thread.sleep(3000L);
 			keyDates(leaveStDate,LeaveEndDate);
+			Thread.sleep(50000L);
+			try
+			{
+				submitSickleave();
+			}
+			catch(Throwable t)
+			{
+				System.out.println("There is some problem clicking the leave submit button");
+				System.out.println(t.getMessage().toString());
+				System.out.println(t.getStackTrace().toString());
+			}
 		}
 		catch(Throwable t)
 		{
@@ -333,15 +344,17 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The sick leave end date was entered sucessfully");
 				Thread.sleep(3000L);
+				getObject("clickingOutsideThedateCalender").click();
+				getObject("clickingOutsideThedateCalender").click();
+				Thread.sleep(3000L);
+				System.out.println("Focus is shifted from calender controll field");
 			}
-			submitSickleave();
 		}
 		catch(Throwable t)
 		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-					
 	}
 	
 	
@@ -349,21 +362,21 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{  
-			if(existsElement(OR.getProperty("sickleaveSubmitrequest")))
+			if(existsElementchkFor1mts(OR.getProperty("sickleaveSubmitrequest")))
 			{
 				getObject("sickleaveSubmitrequest").sendKeys("");
 				getObject("sickleaveSubmitrequest").click();
 				System.out.println("The submit leave request button got clicked sucessfully");				
 			}
-			Thread.sleep(7000L);
-			if(existsElement(OR.getProperty("leaveRequstOkbutton")))
+			Thread.sleep(2000L);
+			if(existsElementchkFor1mts(OR.getProperty("leaveRequstOkbutton")))
 			{
 				getObject("leaveRequstOkbutton").sendKeys("");
 				getObject("leaveRequstOkbutton").click();
 				System.out.println("");
 				System.out.println("The submit leave request ok button also got clicked sucessfully");
 			}
-			else if(!existsElement(OR.getProperty("leaveRequstOkbutton")))
+			else if(!existsElementchkFor1mts(OR.getProperty("leaveRequstOkbutton")))
 			{
 				submitSickleave();
 			}
@@ -373,7 +386,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
 	}
 	
 	
@@ -382,7 +394,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"CreateLeaveRequest");
 	}
 
@@ -392,7 +403,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(Skip)
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
@@ -406,7 +416,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
 	}
@@ -416,20 +425,16 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(IsTestPass)
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
-
 		closeBrowser();
 	 }
-
 }

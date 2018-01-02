@@ -3,15 +3,47 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports">
+=======
+<<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ProcessFinalPayrollForMarch">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="ReportDataSetResult"/>
+<<<<<<< HEAD
+=======
+          <include name="CheckTestSkip"/>
+=======
+          <include name="ReportDataSetResult"/>
+>>>>>>> refs/remotes/origin/master
+          <include name="ReportTestResult"/>
+>>>>>>> refs/remotes/origin/master
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
+=======
           <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckTestSkip"/>
+<<<<<<< HEAD
           <include name="ReportTestResult"/>
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario7_Month4.TestJulyReports -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ProcessFinalPayrollForMarch -->
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

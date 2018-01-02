@@ -83,6 +83,14 @@ public class TestReportsAugust extends TestSuiteBase
 			defaultWaitTime();
 		}
 		Thread.sleep(4000L);
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+		{
+			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
+		}
+		else
+		{
+			System.out.println("Report Tab doesnot exist hence quitting this test");
+		}
 	}
 
 
@@ -93,7 +101,7 @@ public class TestReportsAugust extends TestSuiteBase
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			driver.navigate().refresh();
+			Thread.sleep(4000L);
 		}
 
 		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
