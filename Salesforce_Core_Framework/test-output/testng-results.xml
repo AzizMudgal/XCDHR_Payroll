@@ -2,34 +2,64 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="165645" started-at="2017-12-29T14:36:32Z" finished-at="2017-12-29T14:39:18Z">
+=======
+  <suite name="Default suite" duration-ms="125359" started-at="2017-12-25T17:50:10Z" finished-at="2017-12-25T17:52:15Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="165645" started-at="2017-12-29T14:36:32Z" finished-at="2017-12-29T14:39:18Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember@553f17c]" name="CheckSuiteSkip" is-config="true" duration-ms="8011" started-at="2017-12-29T20:06:24Z" finished-at="2017-12-29T20:06:32Z">
+=======
+    <test name="Default test" duration-ms="125359" started-at="2017-12-25T17:50:10Z" finished-at="2017-12-25T17:52:15Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="5506" started-at="2017-12-25T23:20:04Z" finished-at="2017-12-25T23:20:10Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember@553f17c]" name="CheckTestSkip" is-config="true" duration-ms="3333" started-at="2017-12-29T20:06:32Z" finished-at="2017-12-29T20:06:35Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="2917" started-at="2017-12-25T23:20:10Z" finished-at="2017-12-25T23:20:12Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember@553f17c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="149676" started-at="2017-12-29T20:06:39Z" data-provider="getData" finished-at="2017-12-29T20:09:08Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports@42dafa95]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="109341" started-at="2017-12-25T23:20:15Z" data-provider="getData" finished-at="2017-12-25T23:22:04Z">
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DONT TOUCH AUTO DIRRPA EMPLOYER]]>
+=======
+                <![CDATA[DONT TOUCH AUTO HMRCS6 EMPLOYER]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 603]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 6]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DIRRPA_Payroll]]>
+=======
+                <![CDATA[HMRCS6_Payroll]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="3">
@@ -39,27 +69,47 @@
             </param>
             <param index="4">
               <value>
+<<<<<<< HEAD
                 <![CDATA[September-2017]]>
+=======
+                <![CDATA[March-2018-Final]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="5">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Payroll Suite NI Director ReachesPensionAge201718.xlsx]]>
+=======
+                <![CDATA[Payroll Recognition ScenarioSix201718.xlsx]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="6">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH - AUTOMN DIR REACHES PENSEN]]>
+=======
+                <![CDATA[DO NOT TOUCH PAYROL RTI SCENRIO6 REPORT]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="7">
               <value>
+<<<<<<< HEAD
                 <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201718\\201718 Payroll NI Director's calculation Test result.xlsx]]>
+=======
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_RTI_TestReports201718\\201718 Payroll RTI Recognition Test result.xlsx]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="8">
               <value>
+<<<<<<< HEAD
                 <![CDATA[18]]>
+=======
+                <![CDATA[5]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="9">
@@ -69,22 +119,53 @@
             </param>
             <param index="10">
               <value>
+<<<<<<< HEAD
                 <![CDATA[3]]>
+=======
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[4]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember@553f17c]" name="ReportDataSetResult" is-config="true" duration-ms="4299" started-at="2017-12-29T20:09:08Z" finished-at="2017-12-29T20:09:13Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports@42dafa95]" name="ReportDataSetResult" is-config="true" duration-ms="4687" started-at="2017-12-25T23:22:04Z" finished-at="2017-12-25T23:22:09Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember@553f17c]" name="ReportTestResult" is-config="true" duration-ms="5054" started-at="2017-12-29T20:09:13Z" finished-at="2017-12-29T20:09:18Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports@42dafa95]" name="ReportTestResult" is-config="true" duration-ms="5961" started-at="2017-12-25T23:22:09Z" finished-at="2017-12-25T23:22:15Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.TestMarchReports -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

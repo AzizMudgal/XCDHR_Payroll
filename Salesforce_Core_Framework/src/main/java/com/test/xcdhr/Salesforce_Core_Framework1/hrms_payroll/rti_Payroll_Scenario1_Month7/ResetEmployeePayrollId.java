@@ -229,11 +229,11 @@ public class ResetEmployeePayrollId extends TestSuiteBase
 				System.out.println("The edit button of employer tab got clicked");
 			}
 			Thread.sleep(2000L);
-			if(existsElement(OR.getProperty("empPayrollNumber")))
+			if(existsElement(OR.getProperty("employeeNumber")))
 			{
 				//getObject("empPayrollNumber").clear();
 				//Thread.sleep(2000L);
-				getObject("empPayrollNumber").sendKeys(Payrolid);
+				getObject("employeeNumber").sendKeys(Payrolid);
 				System.out.println("The payroll id got updated");
 			}
 			Thread.sleep(2000L);
