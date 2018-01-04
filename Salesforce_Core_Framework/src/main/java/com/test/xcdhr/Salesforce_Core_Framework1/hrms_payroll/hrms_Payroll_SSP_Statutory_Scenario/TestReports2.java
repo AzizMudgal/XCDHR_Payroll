@@ -91,6 +91,8 @@ public class TestReports2 extends TestSuiteBase
 			defaultWaitTime();
 		}
 		Thread.sleep(4000L);
+		DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
+
 	}
 
 

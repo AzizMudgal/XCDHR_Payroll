@@ -3,34 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ProcessFinalPayrollForMarch">
->>>>>>> refs/remotes/origin/master
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord2">
         <methods>
-<<<<<<< HEAD
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
-=======
->>>>>>> refs/remotes/origin/master
           <include name="ReportDataSetResult"/>
-<<<<<<< HEAD
-          <include name="CheckTestSkip"/>
-=======
->>>>>>> refs/remotes/origin/master
-          <include name="ReportTestResult"/>
           <include name="CheckSuiteSkip"/>
-<<<<<<< HEAD
-=======
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
+          <include name="EmpsSetup_WithNICategory" invocation-numbers="0"/>
+          <include name="ReportTestResult"/>
           <include name="CheckTestSkip"/>
->>>>>>> refs/remotes/origin/master
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth6.TestReportsSeptember -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario6_Month12.ProcessFinalPayrollForMarch -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord2 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

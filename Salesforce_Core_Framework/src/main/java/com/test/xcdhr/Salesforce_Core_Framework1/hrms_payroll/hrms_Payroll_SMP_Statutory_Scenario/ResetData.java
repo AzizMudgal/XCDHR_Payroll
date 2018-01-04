@@ -8,14 +8,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-
-
-
-
-
-
-
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -26,13 +18,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
 public class ResetData extends TestSuiteBase 
 {
-
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
@@ -50,7 +40,6 @@ public class ResetData extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName())){
 
 			Skip=true;
@@ -73,7 +62,6 @@ public class ResetData extends TestSuiteBase
 	public void ResetEmploymentAndLeaveTabs(String EmpName,String firstXCDpayDate,String payinStartPeriod) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -419,6 +407,272 @@ public class ResetData extends TestSuiteBase
 	}
 
 
+	public void PayrollForStatutoryMonthly(String EmployerName, String EmpName,
+			String Payrolid, String Frquency, String MonthName,
+			String ExcelInputSheet, String FirstReportNameInApplication,
+			String TestResultExcelFilePath, String PayrollView)
+			throws Throwable {
+
+		if (existsElementchkFor1mts(OR.getProperty("payrollTab"))) {
+			getObject("payrollTab").click();
+			System.out.println("The payroll tab got clicked");
+		}
+		Thread.sleep(5000L);
+		if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) {
+			Select selectByValue = new Select(driver.findElement(By.xpath(OR
+					.getProperty("payrollViewLocator"))));
+			// This select by value needs to be called from OR.Properties
+			selectByValue.selectByValue(PayrollView);// "Current"
+		}
+		Thread.sleep(2000L);
+		/*
+		 * This code clicks to pagination from 1 to last page till it finds the
+		 * '2Weekly' pay run Once it finds the '2Weekly' payrun, it clicks to
+		 * it. Hence the following code finds the '2Weekly' payrun automatically
+		 * from pagination ProcessingTo2Weekly() method searches the required
+		 * company name and payrun
+		 */
+		try {
+			if (existsElementchkFor1mts(OR.getProperty("payroll2weeklytable"))) {
+				WebElement table = driver.findElement(By.xpath(OR
+						.getProperty("payroll2weeklytable")));
+				if (existsWebElement(table)) {
+					System.out.println("payroll table existt");
+					/*
+					 * Since the pagination is changed and the next button holds
+					 * constant value as 3 . i have taken this as locator
+					 * element.
+					 */
+					// List<WebElement> allpages =
+					// driver.findElements(By.xpath(OR.getProperty("totalPages")));
+					System.out.println("Total pages :");
+					//
+					for (int i = 2; i <= 50; i++) {
+
+						List<WebElement> allrows = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows.size(); row++) {
+							ProcessingToWeeklyForStatutory1(EmployerName,
+									EmpName, Payrolid, Frquency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+							System.out
+									.println("No record matched in first page hence clicked to next page");
+
+						}
+
+						if (existsElement(OR.getProperty("paginationElement"))) {
+							getObject("paginationNext").sendKeys("");
+							getObject("paginationNext").click();
+							System.out.println("hence clicked to next page");
+
+						}
+						List<WebElement> allrows1 = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows1.size(); row++) {
+							ProcessingToWeeklyForStatutory1(EmployerName,
+									EmpName, Payrolid, Frquency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+						}
+
+					}
+				}
+			}
+
+		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+	
+	
+	public void ProcessingToWeeklyForStatutory1(String EmployerName,
+			String EmpName, String Payrolid, String Frquency, String MonthName,
+			String ExcelInputSheet, String FirstReportNameInApplication,
+			String TestResultExcelFilePath, String PayrollView)
+			throws Throwable {
+		try {
+			WebElement tableheader = getObject("payroll2weeklytable");
+			List<WebElement> th = tableheader.findElements(By.tagName("th"));
+
+			for (int i = 0; i < th.size(); i++) {
+				if ("Payroll".equalsIgnoreCase(th.get(i).getText())) {
+					payrollcol_position = i + 1;
+					break;
+				}
+			}
+
+			for (int j = 0; j < th.size(); j++) {
+				if ("Employer".equalsIgnoreCase(th.get(j).getText())) {
+					Emplpoyercol_position = j + 1;
+					break;
+				}
+
+			}
+
+			for (int k = 0; k < th.size(); k++) {
+				if ("Frequency".equalsIgnoreCase(th.get(k).getText())) {
+					frequencyCol_Postition = k + 1;
+					break;
+
+				}
+			}
+			Thread.sleep(4000L);
+			WebElement niweeklyPayrollTable = getObject("payroll2weeklytable");
+			// need to check webelement exist
+			// WebTable table = WebTable.getTable(niweeklyPayrollTable);
+			List<WebElement> rows = niweeklyPayrollTable.findElements(By
+					.xpath(OR.getProperty("payroll2weeklytablerows")));
+			// //
+			java.util.Iterator<WebElement> x = rows.iterator();
+			rownum = 1;
+			System.out.println("rownum is  :" + rownum);
+			while (x.hasNext()) {
+				WebElement emr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + Emplpoyercol_position + "]"));
+				String empr = emr1.getText();
+
+				WebElement ffr = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + frequencyCol_Postition + "]"));
+				String ffr1 = ffr.getText();
+
+				WebElement ppr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]"));
+				String ppr = ppr1.getText();
+				// Thread.sleep(4000L);
+
+				payrollRecordId = "//table/tbody/tr/td/form/div[1]/table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]" + "/" + "a";
+				
+				if (empr != null && empr.equalsIgnoreCase(EmployerName)
+						&& ppr.equalsIgnoreCase(Payrolid)
+						&& ffr1.equalsIgnoreCase(Frquency)) {
+					System.out
+							.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
+
+					driver.findElement(By.xpath(payrollRecordId)).click();
+					/*
+					 * ENTERING INTO NEXT PAGE
+					 */
+					if (existsElement(OR.getProperty("twoweeklyPayrolldetails"))) {
+						String pfrequencey = getObject(
+								"twoweeklyPayrolldetails").getText();
+						System.out.println("the employer name is :"
+								+ pfrequencey);
+						if(Frquency.equalsIgnoreCase("Four Weekly"))
+						{
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Two Weekly"))
+						{
+							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Weekly"))
+						{
+							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if(Frquency.equalsIgnoreCase("Monthly"))
+						{
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						break;
+					}
+					break;
+				}
+				else
+				{
+					System.out.println("payfrequency not matched");
+				}
+				rownum++;
+			}
+		} catch (Throwable t) {
+			t.getMessage().toString();
+			t.getStackTrace().toString();
+		}
+	}
+	
+	
+	public void TaxPayRun_For_FourWeek(String WeekName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			throws Throwable {
+		try {
+			
+			if(existsElementchkFor1mts(OR.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+			{
+				for(int i = 1; i<3; i++)
+				{
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					System.out.println("The expandable page got clicked for"+i+"st time");
+					Thread.sleep(4000L);
+				}
+			}
+			Thread.sleep(4000L);
+			if (existsElement(OR.getProperty("payRunWeekTable"))) {
+				System.out.println("Thee table exists");
+				
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+				
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				java.util.Iterator<WebElement> x = rows.iterator();
+				System.out.println("total number of week records are :"
+						+ rows.size());
+
+				rownum = 2;
+				while (x.hasNext()) {
+					WebElement Weekrecord = driver.findElement(By
+							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+									+ "div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+
+					String weekText = Weekrecord.getText();
+
+					if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
+						System.out.println("The week name" + WeekName
+								+ " matched");
+						Weekrecord.sendKeys("");
+						Weekrecord.click();
+						break;
+					}
+					else 
+					{
+						System.out.println("payRun text " + WeekName
+								+ "did not matched");
+						rownum++;
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage());
+		}
+	}
+	
+	
+	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable
