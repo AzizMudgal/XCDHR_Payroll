@@ -1,5 +1,6 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -129,6 +130,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					{
 						getObject("ViewGoButton").sendKeys("");
 						getObject("ViewGoButton").click();
+						System.out.println("view button got clicked");
 					}
 					Thread.sleep(7000L);
 				}
@@ -208,10 +210,10 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			}
 			
 
-			/*
-			if(existsElement(OR.getProperty("leaveYrVal")))
+			
+			if(existsElementchkFor1mts(OR.getProperty("leaveYrVal")))
 			{
-				
+				System.out.println("recognised the leave year value");
 				double levyeear = Double.parseDouble(LeaveYear);
 				DecimalFormat df = new DecimalFormat("###.#");
 				String LeaveYrconvert= df.format(levyeear);
@@ -224,16 +226,14 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					payRunExecutionForLeaveYear(StatutoryPaybasis,ConditionSatisfied);
 				}
 			}
-			*/
+			
 		}
 		catch(Throwable t)
 		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
 		UpdateLeavedetails(StatutoryPaybasis,ConditionSatisfied);
-
 	}
 
 
@@ -283,7 +283,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 		{
 			Thread.sleep(4000L);
 			System.out.println("i am now in Updateleave details method");
-			if(existsElement(OR.getProperty("sspLeavSummaryTableLocator")))
+			if(existsElementchkFor1mts(OR.getProperty("sspLeavSummaryTableLocator")))
 			{
 				WebElement LeaveTable = driver.findElement(By.xpath(OR.getProperty("sspLeavSummaryTableLocator")));
 				System.out.println("The table exists");
@@ -386,8 +386,11 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			getObject("searchField").sendKeys(StatutoryPaybasis);
 			System.out.println("I entered the statutory pay basis reading from excel sheet");
 			Thread.sleep(1000);
+			if(existsElement(OR.getProperty("Gobutton")))
+			{
 			getObject("Gobutton").click();
 			System.out.println("I clicked Go button");
+			}
 			Thread.sleep(3000);
 			driver.switchTo().defaultContent();        // now that you encountered one more frame hence switch back to main page
 			WebElement dddframe2 = driver.findElement(By.id("resultsFrame"));// and save the frame id and 
@@ -471,7 +474,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 									Thread.sleep(4000L);
 									if(smallERchekbox)
 									{
-										System.out.println("Small Employer relief checkbox was allready checked, Hence our condition got satisfied");
+										System.out.println("Statutory conditions met - make paymentcheckbox was allready checked, Hence our condition got satisfied");
 										System.out.println("Save button got clicked and all data saved sucessfully");
 										//SickSavebutton();
 										//System.out.println("Save button got clicked and all data saved sucessfully");
@@ -481,7 +484,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 									{
 										clkchkbox.sendKeys("");
 										clkchkbox.click();
-										System.out.println("Small Employer relief checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
+										System.out.println("Statutory conditions met - make payment checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
 										//SickSavebutton();
 										//System.out.println("Save button got clicked and all data saved sucessfully");
 										break  outerloop;
