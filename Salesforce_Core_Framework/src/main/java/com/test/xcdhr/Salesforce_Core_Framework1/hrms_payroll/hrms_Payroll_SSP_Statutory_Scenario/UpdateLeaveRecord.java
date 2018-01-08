@@ -249,7 +249,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 				{
 					System.out.println("The please wait message is displayed");
 					boolean payrun100percent=getObject("PlzWaitFor2015leaveYear").isDisplayed();
-					
 					if(payrun100percent)
 					{
 						Thread.sleep(2000L);
@@ -258,7 +257,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 							System.out.println("The progress bar PLEASE WAIT got exited");
 							System.out.println("The Leave year 2015 now got selected");
 							UpdateLeavedetails(StatutoryPaybasis,ConditionSatisfied);
-							
 						}
 						else
 						{
@@ -293,15 +291,16 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					java.util.Iterator<WebElement> x = rows.iterator();
 					System.out.println("total rows are "+rows.size());
 					int rownum = 0;	
+					outerbreak1:
 					while(x.hasNext())
 					{
+						
 						String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum + 1)+"]/td[2]/a";
 						WebElement LeavReqRecord= driver.findElement(By.xpath(leaveReqId));
 						LeavReqRecord.sendKeys("");
 						LeavReqRecord.click();
 						Thread.sleep(4000L);
 						sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied);	
-						break;
 						/*
 						leaveRequestId= table.getTBody().getRow(rownum).getCell(1).getText();
 						System.out.println("The leave start date is "+leaveRequestId);
@@ -325,7 +324,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 						}
 						 */
 
-						//rownum++;
+						rownum++;
 					}
 				}
 			}
@@ -385,14 +384,13 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			Thread.sleep(1000);
 			getObject("searchField").sendKeys(StatutoryPaybasis);
 			System.out.println("I entered the statutory pay basis reading from excel sheet");
-			Thread.sleep(1000);
-			if(existsElement(OR.getProperty("Gobutton")))
-			{
-			getObject("Gobutton").click();
-			System.out.println("I clicked Go button");
-			}
+			Thread.sleep(2000);
+			driver.findElement(By.xpath("//div[2]/input[2]")).click();
+			//getObject("Gobutton").click();
 			Thread.sleep(3000);
-			driver.switchTo().defaultContent();        // now that you encountered one more frame hence switch back to main page
+			System.out.println("I clicked Go button");
+			
+			driver.switchTo().defaultContent();   // now that you encountered one more frame hence switch back to main page
 			WebElement dddframe2 = driver.findElement(By.id("resultsFrame"));// and save the frame id and 
 			driver.switchTo().frame(dddframe2); // switch to the other frame and perform the operations
 			System.out.println("I switched to Results Frame");
@@ -475,9 +473,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 									if(smallERchekbox)
 									{
 										System.out.println("Statutory conditions met - make paymentcheckbox was allready checked, Hence our condition got satisfied");
-										System.out.println("Save button got clicked and all data saved sucessfully");
-										//SickSavebutton();
-										//System.out.println("Save button got clicked and all data saved sucessfully");
+									
 										break  outerloop;
 									}
 									else
@@ -485,8 +481,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 										clkchkbox.sendKeys("");
 										clkchkbox.click();
 										System.out.println("Statutory conditions met - make payment checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
-										//SickSavebutton();
-										//System.out.println("Save button got clicked and all data saved sucessfully");
 										break  outerloop;
 									}
 								}	
@@ -504,6 +498,8 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	} 
+	
+	
 	
 	public void StatutoryPaybasis(String StatutoryPaybasis)throws Throwable
 	{
@@ -530,7 +526,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payment basis"))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								String imglookup ="//following-sibling::td[1]/span/a/img";
+								String imglookup ="//following-sibling::td[1]/span/a[@id='CF00N0O00000D0w79_lkwgt']/img";
 								WebElement clkchkbox = driver.findElement(By.xpath(imglookup));
 								clkchkbox.sendKeys("");
 								clkchkbox.click();
@@ -544,6 +540,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 								Thread.sleep(2000L);
 								SickSavebutton();
 								System.out.println("Save button got clicked and all data saved sucessfully");
+								closeBrowser();
 							}
 							col_num++;
 						}
@@ -607,7 +604,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
-		closeBrowser();
+		//closeBrowser();
 	}
 
 }
