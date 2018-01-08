@@ -385,8 +385,8 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			getObject("searchField").sendKeys(StatutoryPaybasis);
 			System.out.println("I entered the statutory pay basis reading from excel sheet");
 			Thread.sleep(2000);
-			driver.findElement(By.xpath("//div[2]/input[2]")).click();
-			//getObject("Gobutton").click();
+			//driver.findElement(By.xpath("//div[2]/input[2]")).click();
+			getObject("Gobutton").click();
 			Thread.sleep(3000);
 			System.out.println("I clicked Go button");
 			
