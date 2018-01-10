@@ -1045,7 +1045,9 @@ public class TestBase {
 		return profile;
 	}
 
-	public void closeBrowser() {
+	public void closeBrowser() 
+	{
+		System.out.println("The script now is going to close the browser");	
 		driver.close();
 		driver.quit();
 	}
@@ -7494,10 +7496,12 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
+		// if you want to login to QA org then
+		// choose org flag as 0
 		case 0:
 			login_To_Application();
 
