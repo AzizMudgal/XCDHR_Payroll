@@ -3,43 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ResetData">
-=======
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL.ProcessPayrollForWeeklyTax">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord2">
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
-<<<<<<< HEAD
-=======
-          <include name="ReportDataSetResult"/>
-          <include name="CheckSuiteSkip"/>
-<<<<<<< HEAD
-          <include name="ReportTestResult"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
-=======
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="0"/>
-          <include name="ReportTestResult"/>
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <include name="CheckTestSkip"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
           <include name="CheckSuiteSkip"/>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
         </methods>
-<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ResetData -->
-=======
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL.ProcessPayrollForWeeklyTax -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord2 -->
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
