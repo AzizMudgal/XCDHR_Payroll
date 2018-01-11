@@ -82,10 +82,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -148,7 +150,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 							if(existsWebElement(firstEmployee))
 							{
 								firstEmployee.click();
-								System.out.println("The employee namely :"+AppnEmp+"got clicked");
+								System.out.println("The employee namely :"+AppnEmp+" got clicked successfully and displaying employee record");
 								break outerbreak;
 							}
 						}
@@ -179,7 +181,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
 		}
-		Thread.sleep(3000L);
+		//Thread.sleep(3000L);
 		LeaveTab(LeaveYear,LeaveCategory,leaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 	}
 
@@ -188,11 +190,17 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("leaveTabclk")))
+			if(existsElementchkFor1mts(OR.getProperty("leaveTabclk")))
 			{
 				getObject("leaveTabclk").sendKeys("");
 				getObject("leaveTabclk").click();
-				Thread.sleep(3000L);
+				//Thread.sleep(3000L);
+				/*if(existsElementchkFor1mts(OR.getProperty("periodStarts")))
+				{
+					String periodText = getObject("periodStarts").getText();
+					Assert.assertEquals("Period starts", periodText);
+					System.out.println("The leave tab of the employee's Record got clicked successfully");
+				}*/
 			}
 		}
 		catch(Throwable t)
@@ -209,20 +217,25 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("bookLeavebuttonlocator")))
+			if(existsElementchkFor1mts(OR.getProperty("bookLeavebuttonlocator")))
 			{
-				getObject("bookLeavebuttonlocator").sendKeys("");
-				getObject("bookLeavebuttonlocator").click();
+					String bookLeaveText = getObject("bookLeavebuttonlocator").getAttribute("value");
+					System.out.println("the book leave button text is :"+bookLeaveText);
+					Assert.assertEquals("Book leave", bookLeaveText);
+					System.out.println("The book leave button of the leave tab of the employee's Record is displayed successfully");
+					getObject("bookLeavebuttonlocator").sendKeys("");
+					getObject("bookLeavebuttonlocator").click();
+					System.out.println("Book leave button got clicked");
 			}
-			Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("leaveCategorypicklistlocator")))
+			
+			//Thread.sleep(3000L);
+			if(existsElementchkFor1mts(OR.getProperty("leaveCategorypicklistlocator")))
 			{
 				selectMaternityLeave(LeaveYear,LeaveCategory,leaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 			}
 		}
 		catch(Throwable t)
 		{
-			System.out.println("Book leave button did not got clicked");
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
@@ -233,6 +246,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{
+			if(existsElementchkFor1mts(OR.getProperty("sickleaveSubmitrequest")))
+			{
+				String submitLeaveRequestBtnText = getObject("sickleaveSubmitrequest").getAttribute("value");
+				System.out.println("The sick leave submit request button is displayed successfully");
+				Assert.assertEquals("Submit leave request", submitLeaveRequestBtnText);
+			}
 			if(existsElement(OR.getProperty("leaveCategorypicklistlocator")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("leaveCategorypicklistlocator"))));
@@ -241,9 +260,9 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The Sick leave ITEM got selected sucessfully");
 			}
-			Thread.sleep(3000L);
+			//Thread.sleep(3000L);
 			//illnessForSickleave
-			if(existsElement(OR.getProperty("illnessForSickleave")))
+			if(existsElementchkFor1mts(OR.getProperty("illnessForSickleave")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("illnessForSickleave"))));
 				// This select by value needs to be called from OR.Properties
@@ -251,8 +270,23 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The illness ITEM got selected sucessfully");
 			}
-			Thread.sleep(3000L);
+			//Thread.sleep(3000L);
 			keyDates(leaveStDate,LeaveEndDate);
+			Thread.sleep(10000L);
+			try
+			{
+				if(existsElementchkFor1mts(OR.getProperty("sickleaveSubmitrequest")))
+				{
+					submitSickleave();
+					System.out.println("Hence the sick leave got created sucessfully");
+				}
+			}
+			catch(Throwable t)
+			{
+				System.out.println("There is some problem clicking the leave submit button");
+				System.out.println(t.getMessage().toString());
+				System.out.println(t.getStackTrace().toString());
+			}
 		}
 		catch(Throwable t)
 		{
@@ -267,7 +301,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("sickLeaveStDatelocator")))
+			if(existsElementchkFor1mts(OR.getProperty("sickLeaveStDatelocator")))
 			{
 				getObject("sickLeaveStDatelocator").sendKeys("");
 				getObject("sickLeaveStDatelocator").clear();
@@ -301,10 +335,10 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		Thread.sleep(3000L);
+		//Thread.sleep(3000L);
 		try
 		{
-			if(existsElement(OR.getProperty("sickLeaveEndDatelocator")))
+			if(existsElementchkFor1mts(OR.getProperty("sickLeaveEndDatelocator")))
 			{
 				getObject("sickLeaveEndDatelocator").sendKeys("");
 				getObject("sickLeaveEndDatelocator").clear();
@@ -333,15 +367,17 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The sick leave end date was entered sucessfully");
 				Thread.sleep(3000L);
+				getObject("clickingOutsideThedateCalender").click();
+				getObject("clickingOutsideThedateCalender").click();
+				Thread.sleep(3000L);
+				System.out.println("Focus is shifted from calender controll field");
 			}
-			submitSickleave();
 		}
 		catch(Throwable t)
 		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-					
 	}
 	
 	
@@ -349,22 +385,23 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{  
-			if(existsElement(OR.getProperty("sickleaveSubmitrequest")))
+			if(existsElementchkFor1mts(OR.getProperty("sickleaveSubmitrequest")))
 			{
 				getObject("sickleaveSubmitrequest").sendKeys("");
 				getObject("sickleaveSubmitrequest").click();
-				System.out.println("The submit leave request button got clicked sucessfully");				
+				System.out.println("The submit leave request button got clicked sucessfully");
+				if(existsElementchkFor1mts(OR.getProperty("leaveRequstOkbutton")))
+				{
+					getObject("leaveRequstOkbutton").sendKeys("");
+					getObject("leaveRequstOkbutton").click();
+					System.out.println("");
+					System.out.println("The submit leave request ok button also got clicked sucessfully");
+				}
 			}
-			Thread.sleep(7000L);
-			if(existsElement(OR.getProperty("leaveRequstOkbutton")))
+			//Thread.sleep(2000L);
+			else if(!existsElementchkFor1mts(OR.getProperty("sickleaveSubmitrequest")))
 			{
-				getObject("leaveRequstOkbutton").sendKeys("");
-				getObject("leaveRequstOkbutton").click();
-				System.out.println("");
-				System.out.println("The submit leave request ok button also got clicked sucessfully");
-			}
-			else if(!existsElement(OR.getProperty("leaveRequstOkbutton")))
-			{
+				System.out.println("waiting for the submit button to be dispalyed please wait..");
 				submitSickleave();
 			}
 		}
@@ -373,7 +410,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
 	}
 	
 	
@@ -382,7 +418,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"CreateLeaveRequest");
 	}
 
@@ -392,7 +427,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(Skip)
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
@@ -406,7 +440,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
 	}
@@ -416,20 +449,16 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(IsTestPass)
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
-
 		closeBrowser();
 	 }
-
 }

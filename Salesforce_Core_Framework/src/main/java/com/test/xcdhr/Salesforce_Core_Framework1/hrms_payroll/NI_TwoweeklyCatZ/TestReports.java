@@ -22,7 +22,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import atu.webdriver.utils.table.WebTable;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -82,10 +84,11 @@ public class TestReports extends TestSuiteBase
 
 	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-		if(existsElement(OR.getProperty("reportTablocator")))
+		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
+			Thread.sleep(4000L);
 			driver.navigate().refresh();
 		}
 
@@ -163,7 +166,6 @@ public class TestReports extends TestSuiteBase
 					}
 					rownum++;
 				}
-
 		}
 		catch(Throwable t)
 		{

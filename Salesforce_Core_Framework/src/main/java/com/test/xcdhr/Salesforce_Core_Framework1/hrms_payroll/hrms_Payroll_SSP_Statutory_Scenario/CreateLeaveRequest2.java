@@ -263,6 +263,17 @@ public class CreateLeaveRequest2 extends TestSuiteBase
 		}
 		Thread.sleep(3000L);
 		keyDates(LeaveStDate);
+		Thread.sleep(50000L);
+		try
+		{
+			submitSickleave();
+		}
+		catch(Throwable t)
+		{
+			System.out.println("There is some problem clicking the leave submit button");
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
 	}
 
 
@@ -301,13 +312,10 @@ public class CreateLeaveRequest2 extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The leave st date was entered sucessfully");
 				Thread.sleep(3000L);
-				if(existsElement(OR.getProperty("clkOutsideCalndarPosin")))
-				{
-					getObject("clkOutsideCalndarPosin").sendKeys("");
-					getObject("clkOutsideCalndarPosin").click();
-					getObject("clkOutsideCalndarPosin").click();
-				}
-				submitSickleave();
+				getObject("clickingOutsideThedateCalender").click();
+				getObject("clickingOutsideThedateCalender").click();
+				Thread.sleep(3000L);
+				System.out.println("Focus is shifted from calender controll field");
 			}
 			
 		}

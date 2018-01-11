@@ -498,7 +498,7 @@ public class SmallEmployerRelief extends TestSuiteBase
 								 * just change the value of tab indes if you are testing 
 								 * QA Org and shifting to Regress Org.
 								 */
-								WebElement clkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/input[@type='checkbox'][@tabindex='11']"));//[@tabindex='13']
+								WebElement clkchkbox = driver.findElement(By.xpath("//following-sibling::td/input[@tabindex='8']"));
 								String tabindexval = clkchkbox.getAttribute("tabindex");
 								System.out.println("tab index is :"+tabindexval);
 								boolean	smallERchekbox = clkchkbox.isSelected();
