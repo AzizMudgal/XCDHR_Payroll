@@ -3,30 +3,15 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.GeneralTaxRateMonthly">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month10.UpdteTaxCodeAndAnualSalaryM10">
->>>>>>> refs/remotes/origin/master
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL.ProcessPayrollForWeeklyTax">
         <methods>
-<<<<<<< HEAD
-          <include name="EmpsSetup_ForMonthlyTaxRate"/>
-          <include name="CheckTestSkip"/>
-=======
->>>>>>> refs/remotes/origin/master
+          <include name="ReportDataSetResult"/>
           <include name="CheckSuiteSkip"/>
-<<<<<<< HEAD
-=======
+          <include name="ReportTestResult"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_ForMonthlyTaxRate"/>
->>>>>>> refs/remotes/origin/master
-          <include name="EmpsSetup_WithAnnualSalary"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_204045VarblePayAnd50RL.GeneralTaxRateMonthly -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month10.UpdteTaxCodeAndAnualSalaryM10 -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek5_204045VariablePayANDWeekly50RL.ProcessPayrollForWeeklyTax -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
