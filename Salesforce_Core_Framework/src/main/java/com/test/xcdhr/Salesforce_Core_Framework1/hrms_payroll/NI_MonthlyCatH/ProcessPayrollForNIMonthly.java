@@ -30,6 +30,7 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 	public String payrollRecordId;
 	public int rownum;
 	public String monthOneRecordId;
+	public int counter;
 		
 
 	@BeforeTest
@@ -100,8 +101,7 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 				 * the appropriate company,payrun and pay frequency
 				 * 
 				 */
-				//PayrollForMonthlyTax(AprilMonth);
-				PayrollForStatutoryMonthlyd(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+				PayrollForRequiredPayruns(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 			}
 			catch (Throwable t)
 			{
@@ -122,22 +122,20 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 			System.out.println("Since the app is not displaying employee records same"
 					+ " as excel file employees of this Tax worksheet");
 			ProcessPayrollForNIMonthly obj1 = new ProcessPayrollForNIMonthly();
-			
 			for(Repeat=2; Repeat < 5; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
-				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
-
+				obj1.PayrollForRequiredPayruns(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
-		
 	}
 
+	
 
-	public void PayrollForStatutoryMonthlyd(String EmployerName, String EmpName,
+	public void PayrollForRequiredPayruns(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
 			String TestResultExcelFilePath, String PayrollView)
@@ -184,7 +182,7 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 										.getProperty("payroll2weeklytablerowss")));
 
 						for (int row = 1; row <= allrows.size(); row++) {
-							ProcessingToWeeklyForStatutory1d(EmployerName,
+							ProcessingToRequiredPayruns(EmployerName,
 									EmpName, Payrolid, Frquency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
@@ -205,13 +203,12 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 										.getProperty("payroll2weeklytablerowss")));
 
 						for (int row = 1; row <= allrows1.size(); row++) {
-							ProcessingToWeeklyForStatutory1d(EmployerName,
+							ProcessingToRequiredPayruns(EmployerName,
 									EmpName, Payrolid, Frquency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
 									TestResultExcelFilePath, PayrollView);
 						}
-
 					}
 				}
 			}
@@ -222,7 +219,9 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 		}
 	}
 
-	public void ProcessingToWeeklyForStatutory1d(String EmployerName,
+	
+	
+	public void ProcessingToRequiredPayruns(String EmployerName,
 			String EmpName, String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
 			String TestResultExcelFilePath, String PayrollView)
@@ -313,7 +312,7 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 									FirstReportNameInApplication,
 									TestResultExcelFilePath);
 						} else if (Frquency.equalsIgnoreCase("Monthly")) {
-							TaxPayRun_For_MonthlyPayrun(MonthName, ExcelInputSheet,
+							Payroll_MonthlyPayrun(MonthName, ExcelInputSheet,
 									FirstReportNameInApplication,
 									TestResultExcelFilePath);
 						}
@@ -335,12 +334,13 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 	}
 
 	
-	public void TaxPayRun_For_MonthlyPayrun(String MonthName, String ExcelInputSheet,
+	
+	public void Payroll_MonthlyPayrun(String MonthName, String ExcelInputSheet,
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {
-				Thread.sleep(4000L);
-				if (existsElementchkFor1mts(OR.getProperty("payRunWeekTable")))
+				//Thread.sleep(2000L);
+				if (existsElement(OR.getProperty("payRunWeekTable")))
 				{
 				System.out.println("Thee table exists");
 
@@ -352,58 +352,62 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 				System.out.println("The total pay run records for the page is equal to : "+lastRowCount);
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownum = 2;
+			counter = 1;
 				while (x.hasNext())
 				{
+					//Thread.sleep(2000L);
 					System.out.println("Now the count of Rownum is : "+ rownum);
 					WebElement MonthPayRun_Record = driver.findElement(By
 							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
 									+ "div/" + "div[" + "2]/" + "table/"
 									+ "tbody/tr[" + (rownum) + "]/" + "th/"
 									+ "a"));
-
+					
+					if (existsWebElement(MonthPayRun_Record)) {
+						System.out.println("first payroll table record existt");
 					String PayRunTextName = MonthPayRun_Record.getText();
 					System.out.println("The Month name is :" + PayRunTextName);
 					if (PayRunTextName != null && PayRunTextName.equalsIgnoreCase(MonthName))
 					{
-						System.out.println("The Month name" + MonthName
+						System.out.println("The Month name" + PayRunTextName
 								+ " matched");
 						MonthPayRun_Record.sendKeys("");
-						Thread.sleep(4000L);
+						//Thread.sleep(1000L);
 						MonthPayRun_Record.click();
+						System.out.println("The Payrun record whose Month name is " + MonthName
+								+ "successfully clicked for processing payroll");
+
 						break;
 					}
-					else if (rownum == lastRowCount && PayRunTextName != null
-							&& PayRunTextName != (MonthName))
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 12 && rownum == 6|| rownum >10 && PayRunTextName != null
+								&& PayRunTextName != (MonthName))
 						{
-						System.out
-								.println("The row number of the page reached"
-								+ rownum
-								
-								+ " Required payrun not found hence clicking the"
-								+ " pagination link so that payrun search continues for next page");
+							System.out
+									.println("The row number of the page reached"
+									+ rownum
+									
+									+ " Required payrun not found hence clicking the"
+									+ " pagination link so that payrun search continues for next page");
+						
 						if (existsElementchkFor1mts(OR
-								.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
-						{
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
-							System.out
-									.println("As the required Payrun is not found in first page,hence clicked to next page of personal Tab");
-							Thread.sleep(8000L);
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+							{
+								getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+								getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+								System.out
+										.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+		
+							}
 						}
-						else
-						{
-							System.out
-							.println("The Pay run record which you are searching "
-									+ "is not available in all the pages"
-									+ "of this Pay run page "
-									+ "of the Application. Hence the script unfortunately is "
-									+ "not able to perform required functionality.");
-						}
-					}
-				else
+							
 				System.out.println("Payrun not matched hence incrementing the row number");
 				rownum++;
+				counter++;
 				}
+			 }
 		   }
 		 }
 		 catch (Throwable t)
@@ -411,163 +415,8 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 			System.out.println(t.getMessage());
 		 }
 	}
-
+		
 	
-	
-	
-	/////Format method needs to be deleted after testing
-	
-	public void UpdateEmployeeNICategoryd(String empName, String NICategory)
-			throws Throwable {
-		try {
-			if (employeeFirsttimeView) {
-				employeeFirsttimeView = false;
-				getObject("PersonalTab").click();
-				if (existsElementchkFor1mts(OR.getProperty("PersonalText"))) {
-					System.out.println("I am in personal page");
-					if (existsElementchkFor1mts(OR.getProperty("EmployeeView"))) {
-						System.out.println("I recognised the Employee view");
-						Select selectByValue = new Select(driver.findElement(By
-								.xpath(OR.getProperty("EmployeeView"))));
-						selectByValue
-								.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
-						Thread.sleep(2000L);
-						if (existsElementchkFor1mts(OR
-								.getProperty("ViewGoButton"))) {
-							getObject("ViewGoButton").sendKeys("");
-							getObject("ViewGoButton").click();
-							System.out.println("The Go button got clicked");
-						}
-						Thread.sleep(7000L);
-					}
-				}
-			}
-			Thread.sleep(2000L);
-			try {
-				if (existsElementchkFor1mts(OR
-						.getProperty("firstRecordOfTaxCodecoulmnTable"))) {
-					WebElement postsTable = driver.findElement(By.xpath(OR
-							.getProperty("firstRecordOfTaxCodecoulmnTable")));
-					if (existsWebElement(postsTable)) {
-						searchEmployeeAndUpdateNICatgory(empName, NICategory);
-					}
-				}
-			} catch (Throwable t) {
-				System.out.println(t.getStackTrace().toString());
-				System.out.println("");
-			}
-		} catch (Throwable t) {
-			System.out.println(t.getStackTrace().toString());
-			System.out.println("");
-		}
-	}
-
-	public void searchEmployeeAndUpdateNICatgory(String empName,
-			String NICategory) throws Throwable {
-		try {
-			WebElement tableheader = driver.findElement(By.xpath(OR
-					.getProperty("PersonalAndCompensationHeadingTable")));
-			List<WebElement> th = tableheader.findElements(By.tagName("td"));
-			for (a = 0; a < th.size(); a++) {
-				if ("Employee".equalsIgnoreCase(th.get(a).getText())) {
-					empcolnum = a + 1;
-					break;
-				}
-			}
-
-			for (b = 0; b < th.size(); b++) {
-				if ("NI category".equalsIgnoreCase(th.get(b).getText())) {
-					niCategoryColumn = b + 1;
-					break;
-				}
-			}
-			WebElement postsTable = driver.findElement(By.xpath(OR
-					.getProperty("firstRecordOfTaxCodecoulmnTable")));
-			List<WebElement> rows = postsTable.findElements(By.xpath(OR
-					.getProperty("firstRecordOfTaxCodecoulmnTableRows")));
-			lastRowCount = rows.size();
-			java.util.Iterator<WebElement> x = rows.iterator();
-			rownum = 1;
-			outerbreak: while (x.hasNext()) {
-				// Thread.sleep(2000L);
-				String firstRowOfEmployeeColumn = "//div[" + rownum
-						+ "]/table/tbody/tr/td" + "[" + empcolnum + "]" + "/"
-						+ "div/a/span";
-				WebElement tempElement = driver.findElement(By
-						.xpath(firstRowOfEmployeeColumn));
-				String tempEmp = tempElement.getText();
-				System.out.println(tempEmp + "-------" + empName + "------"
-						+ rownum);
-				String firstRowOfTaxCode = "//div[" + rownum + "]" + "/"
-						+ "table/" + "tbody/" + "tr/" + "td["
-						+ niCategoryColumn + "]" + "/" + "div";
-				if (tempEmp != null && tempEmp.equalsIgnoreCase(empName)) {
-					System.out.println("Employee name  :" + tempEmp
-							+ "  matched ");
-					Thread.sleep(2000L);
-					if (existsElementchkFor1mts(firstRowOfTaxCode)) {
-						Actions action = new Actions(driver);
-						action.doubleClick(
-								driver.findElement(By.xpath(firstRowOfTaxCode)))
-								.perform();
-						action.moveToElement(getObject("InlineDropdown"))
-								.perform();
-						// Thread.sleep(2000L);
-						if (existsElementchkFor1mts(OR
-								.getProperty("InlineDropdown"))) {
-							getObject("InlineDropdown").sendKeys("");
-							getObject("InlineDropdown").sendKeys(NICategory);
-							System.out.println("Selected the NI Picklist item "
-									+ NICategory);
-							Thread.sleep(2000L);
-							if (existsElementchkFor1mts(OR
-									.getProperty("InlineUpdateButn"))) {
-								getObject("InlineUpdateButn").click();
-								System.out
-										.println("The update button got clicked and NI Category got saved");
-								Thread.sleep(8000L);
-								break outerbreak;
-							}
-						}
-					}
-				} else if (rownum == lastRowCount && tempEmp != null
-						&& tempEmp != (empName)) {
-					rownum++;
-					System.out
-							.println("The row number of the page reached"
-									+ rownum
-									+ " to 200 and"
-									+ " Required Employee not found hence clicking the"
-									+ " pagination link so that Employee search continues for next page");
-					if (existsElementchkFor1mts(OR
-							.getProperty("paginationElementPersonal"))) {
-						getObject("paginationNextPersonal").sendKeys("");
-						getObject("paginationNextPersonal").click();
-						System.out
-								.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-						Thread.sleep(8000L);
-						searchEmployeeAndUpdateNICatgory(empName, NICategory);
-					} else {
-						System.out
-								.println("The employee which you are searching "
-										+ "is not available in all the pages"
-										+ "of this Personal / Compensation Tab "
-										+ "of the Application. Hence the script unfortunately is "
-										+ "not able to execute successfully. Please include the said employee"
-										+ "in the said Tab of the application and run once again the script");
-						closeBrowser();
-					}
-
-				} else
-					System.out.println("incrementing the row number");
-				rownum++;
-			}
-		} catch (Throwable t) {
-			System.out.println(t.getMessage());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
