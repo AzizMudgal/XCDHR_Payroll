@@ -6,7 +6,7 @@
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ResetData">
         <methods>
           <include name="CheckTestSkip"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
           <include name="CheckSuiteSkip"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ResetData -->
