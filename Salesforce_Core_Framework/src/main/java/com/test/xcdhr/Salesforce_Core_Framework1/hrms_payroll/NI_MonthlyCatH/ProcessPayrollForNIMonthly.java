@@ -339,22 +339,9 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {
-
-		/*	if (existsElementchkFor1mts(OR
-					.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
-				for (int i = 1; i < 3; i++) {
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.sendKeys("");
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.click();
-					System.out.println("The expandable page got clicked for"
-							+ i + "st time");
-					Thread.sleep(4000L);
-				}
-			}*/
-			Thread.sleep(4000L);
-			if (existsElementchkFor1mts(OR.getProperty("payRunWeekTable")))
-			{
+				Thread.sleep(4000L);
+				if (existsElementchkFor1mts(OR.getProperty("payRunWeekTable")))
+				{
 				System.out.println("Thee table exists");
 
 				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
@@ -411,13 +398,11 @@ public class ProcessPayrollForNIMonthly extends TestSuiteBase
 									+ "of this Pay run page "
 									+ "of the Application. Hence the script unfortunately is "
 									+ "not able to perform required functionality.");
-							//closeBrowser();
 						}
 					}
 				else
 				System.out.println("Payrun not matched hence incrementing the row number");
 				rownum++;
-				
 				}
 		   }
 		 }
