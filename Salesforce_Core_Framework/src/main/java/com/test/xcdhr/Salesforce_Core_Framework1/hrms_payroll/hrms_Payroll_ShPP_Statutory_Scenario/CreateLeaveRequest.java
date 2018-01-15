@@ -32,7 +32,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public static boolean Fail=false;
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
-	
+	public String formattedDate;
 	
 
 	@BeforeTest
@@ -77,10 +77,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -261,10 +263,15 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("bookLeavebuttonlocator")))
+			if(existsElementchkFor1mts(OR.getProperty("bookLeavebuttonlocator")))
 			{
-				getObject("bookLeavebuttonlocator").sendKeys("");
-				getObject("bookLeavebuttonlocator").click();
+					String bookLeaveText = getObject("bookLeavebuttonlocator").getAttribute("value");
+					System.out.println("the book leave button text is :"+bookLeaveText);
+					Assert.assertEquals("Book leave", bookLeaveText);
+					System.out.println("The book leave button of the leave tab of the employee's Record is displayed successfully");
+					getObject("bookLeavebuttonlocator").sendKeys("");
+					getObject("bookLeavebuttonlocator").click();
+					System.out.println("Book leave button got clicked");
 			}
 		}
 		catch(Throwable t)
@@ -284,6 +291,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{
+			if(existsElementchkFor1mts(OR.getProperty("sickleaveSubmitrequest")))
+			{
+				String submitLeaveRequestBtnText = getObject("sickleaveSubmitrequest").getAttribute("value");
+				System.out.println("The leave submit request button is displayed successfully");
+				Assert.assertEquals("Submit leave request", submitLeaveRequestBtnText);
+			}
 			if(existsElement(OR.getProperty("leaveCategorypicklistlocator")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("leaveCategorypicklistlocator"))));
@@ -292,7 +305,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
 			}
-			Thread.sleep(3000L);
+			Thread.sleep(8000L);
 			if(existsElement(OR.getProperty("submitLeaverqstlocator")))
 			{
 				getObject("submitLeaverqstlocator").sendKeys("");
@@ -322,14 +335,23 @@ public class CreateLeaveRequest extends TestSuiteBase
 	
 
 
-	public void enterLeaveDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	public void enterLeaveDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("materinityEditbuttonlocator")))
+
+			if(existsElement(OR.getProperty("sickLeaveEditbuttnLocator")))
 			{
-				getObject("materinityEditbuttonlocator").sendKeys("");
-				getObject("materinityEditbuttonlocator").click();
+				getObject("sickLeaveEditbuttnLocator").sendKeys("");
+				getObject("sickLeaveEditbuttnLocator").click();
+				Thread.sleep(6000L);
+				Thread.sleep(6000L);
+				if(existsElement(OR.getProperty("leaveRecordEditMode")))
+				{
+					String empLabelTxtInLeaveEditMode = getObject("leaveRecordEditMode").getText();
+					Assert.assertEquals("Employee", empLabelTxtInLeaveEditMode);
+					System.out.println("We are in the sick record edit mode");
+				}
 			}
 		}
 		catch(Throwable t)
@@ -338,11 +360,22 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
+		
+		/*
+		 * The following methods enters the required dates,selects the statutory
+		 * conditions and pics the pymt basis by reading from input
+		 * script and creates the leave requests.
+		 * 
+		 */
+		
 		keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
-		statutoryPay(StatutoryPaybasis,Conditionsatisfd);
+		
+		if(existsElement(OR.getProperty("sspEditTable")))
+		{
+			selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
+			StatutoryPaybasis(StatutoryPaybasis);
+		}
 	}
-	
-	
 
 
 	public void keyDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate)throws Throwable
@@ -353,29 +386,19 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				getObject("birthduedatelocator").sendKeys("");
 				String dateStr = BirthdueDate;
-				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-				Date date = null;				
-				try 
-				{
-					date = readFormat.parse( dateStr.trim() );
-					System.out.println(date.toString());
-				} 
-				catch ( ParseException e ) 
-				{
-					System.out.println(e.getMessage());
-				}
-
-				String formattedDate = null;
-				if( date != null ) 
-				{
-					formattedDate = writeFormat.format( date );
-				}
-				System.out.println("The entered date is  " +formattedDate);		
-				Thread.sleep(4000L);
+				dateFormaterMethod(dateStr);
 				getObject("birthduedatelocator").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Birth due date was entered sucessfully");	
+			}
+			else if(existsElement(OR.getProperty("QAOrgbirthduedatelocator")))
+			{
+				getObject("QAOrgbirthduedatelocator").sendKeys("");
+				String dateStr = BirthdueDate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgbirthduedatelocator").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("selected from qa org locator The Birth due date was entered sucessfully");	
 			}
 		}
 		catch(Throwable t)
@@ -390,29 +413,20 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				getObject("babyBornDatelocator").sendKeys("");
 				String dateStr = BabyBorndate;
-				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-				Date date = null;				
-				try 
-				{
-					date = readFormat.parse( dateStr.trim() );
-					System.out.println(date.toString());
-				} 
-				catch ( ParseException e ) 
-				{
-					System.out.println(e.getMessage());
-				}
-
-				String formattedDate = null;
-				if( date != null ) 
-				{
-					formattedDate = writeFormat.format( date );
-				}
-				System.out.println("The entered date is  " +formattedDate);		
-				Thread.sleep(4000L);
+				dateFormaterMethod(dateStr);
 				getObject("babyBornDatelocator").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The baby born date was entered sucessfully");
+				Thread.sleep(3000L);
+			}
+			else if(existsElement(OR.getProperty("QAOrgbabyBornDatelocator")))
+			{
+				getObject("QAOrgbabyBornDatelocator").sendKeys("");
+				String dateStr = BabyBorndate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgbabyBornDatelocator").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("selected from qa org locator The baby born date was entered sucessfully");
 				Thread.sleep(3000L);
 			}
 		}
@@ -429,31 +443,24 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 				getObject("leaveReqstStdate").sendKeys("");
 				String dateStr = LeaveStDate;
-				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-				Date date = null;				
-				try 
-				{
-					date = readFormat.parse( dateStr.trim() );
-					System.out.println(date.toString());
-				} 
-				catch ( ParseException e ) 
-				{
-					System.out.println(e.getMessage());
-				}
-
-				String formattedDate = null;
-				if( date != null ) 
-				{
-					formattedDate = writeFormat.format( date );
-				}
-				System.out.println("The entered date is  " +formattedDate);		
-				Thread.sleep(4000L);
+				dateFormaterMethod(dateStr);
 				getObject("leaveReqstStdate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Leave request start date was entered sucessfully");
 				Thread.sleep(3000L);
 			}
+			else if(existsElement(OR.getProperty("QAOrgleaveReqstStdate")))
+			{
+				getObject("QAOrgleaveReqstStdate").sendKeys("");
+				String dateStr = LeaveStDate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgleaveReqstStdate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Leave request start date was entered sucessfully");
+				Thread.sleep(3000L);
+				
+			}
+
 
 		}
 		catch(Throwable t)
@@ -470,27 +477,18 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				getObject("leaveReqstEndDate").sendKeys("");
 				String dateStr = LeaveEndDate;
-				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-				Date date = null;				
-				try 
-				{
-					date = readFormat.parse( dateStr.trim() );
-					System.out.println(date.toString());
-				} 
-				catch ( ParseException e ) 
-				{
-					System.out.println(e.getMessage());
-				}
-
-				String formattedDate = null;
-				if( date != null ) 
-				{
-					formattedDate = writeFormat.format( date );
-				}
-				System.out.println("The entered date is  " +formattedDate);		
-				Thread.sleep(4000L);
+				dateFormaterMethod(dateStr);
 				getObject("leaveReqstEndDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Leave request end date was entered sucessfully");
+				Thread.sleep(3000L);
+			}
+			else if(existsElement(OR.getProperty("QAOrgleaveReqstEndDate")))
+			{
+				getObject("QAOrgleaveReqstEndDate").sendKeys("");
+				String dateStr = LeaveEndDate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgleaveReqstEndDate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Leave request end date was entered sucessfully");
 				Thread.sleep(3000L);
@@ -505,97 +503,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	
 
 
-	public void statutoryPay(String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
-	{
-		try
-		{
-			PymtAmtNIOrTaxpay(Conditionsatisfd);
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-		ProcessStatutorypay(StatutoryPaybasis);
-		MaternitySavebutton();
-	}
-	
-	
-
-	public void ProcessStatutorypay(String StatutoryPaybasis)throws Throwable
-	{
-		Thread.sleep(2000L);
-		getObject("statutoryGobuttonlocator").click();
-		System.out.println("I clicked Go button");
-		Thread.sleep(5000);
-		String ParentWindow = driver.getWindowHandle(); // To save the parent window
-		// create one more method for reading employee from excel sheet.
-		ReadStatutoryPayBasis(StatutoryPaybasis);
-		Thread.sleep(2000L);
-		driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
-		Thread.sleep(2000L);
-	}
-
-	
-	
-	public void PymtAmtNIOrTaxpay(String Conditionsatisfd)throws Throwable
-	{
-		try
-		{
-			boolean	CondnSatisfiedchekbox = getObject("conditionsSatisfied").isSelected();
-			double valueOfCondnChkbox = Double.parseDouble(Conditionsatisfd);
-			System.out.println("converted condition satisfied value is :"+valueOfCondnChkbox);
-			if(valueOfCondnChkbox== 1.0)
-			{
-				Thread.sleep(4000L);
-				isConditionSatisfiedchecked(CondnSatisfiedchekbox);
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-	
-	
-
-
-	public boolean isConditionSatisfiedchecked(boolean Condnchecked)throws Throwable
-	{
-		if(Condnchecked)
-		{
-			System.out.println("Condition checkbox is already checked, hence successfully satisfied as per specification");
-			Thread.sleep(2000L);
-		}
-		else
-		{
-			getObject("conditionsSatisfied").click();
-			System.out.println("Condition checkbox was not Checked But now is checked successfully");
-		}
-		return Condnchecked;
-	}
-	
-	
-	/*
-	public boolean MakeConditionSatisfiedFalse(boolean Condnchecked)throws Throwable
-	{
-		if(Condnchecked)
-		{
-			System.out.println("Condition checkbox is already checked, hence unchecking");
-			getObject("conditionsSatisfied").click();
-		}
-		else
-		{
-			System.out.println("Condition checkbox was not Checked hence satisified the precondition");
-			Thread.sleep(2000L);
-		}
-			
-		return Condnchecked;
-	}
-	*/
-
-	public void ReadStatutoryPayBasis(String StatutoryPaybasis)throws Throwable
+	public void ReadStatutoryPayBasis1(String StatutoryPaybasis)throws Throwable
 	{
 		String[] handles = driver.getWindowHandles().toArray(new String[0]); // To get the child window(s)
 		driver.switchTo().window(handles[handles.length - 1]); 
@@ -635,17 +543,29 @@ public class CreateLeaveRequest extends TestSuiteBase
 	
 	
 	
-	public void MaternitySavebutton()throws Throwable
+	public void dateFormaterMethod(String dateStr)throws Throwable
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("maternitySavelocator")))
+			DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+			DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+			Date date = null;				
+			try 
 			{
-				getObject("maternitySavelocator").sendKeys("");
-				getObject("maternitySavelocator").click();
-				System.out.println("");
-				System.out.println("The save button got clicked sucessfully");
+				date = readFormat.parse( dateStr.trim() );
+				System.out.println(date.toString());
+			} 
+			catch ( ParseException e ) 
+			{
+				System.out.println(e.getMessage());
 			}
+
+			formattedDate = null;
+			if( date != null ) 
+			{
+				formattedDate = writeFormat.format( date );
+			}
+			System.out.println("The entered date is  " +formattedDate);		
 			Thread.sleep(4000L);
 		}
 		catch(Throwable t)
@@ -656,6 +576,206 @@ public class CreateLeaveRequest extends TestSuiteBase
 	}
 	
 
+	
+	public void selectCheckbox(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(4000L);
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("sspEditTable")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("details table exists");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("sspEditTableRows")));	
+				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
+				int row_num,col_num;
+				row_num=1;
+				outerloop:
+					for(WebElement trElement : rows)
+					{
+						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
+						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
+						col_num=1;
+						for(WebElement tdElement : td_collection)
+						{
+							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment"))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								ckbox ="//following-sibling::td[1][@class='dataCol col02']/input[@type='checkbox'][@value='1']";
+								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
+								boolean	smallERchekbox = clkchkbox.isSelected();
+								if(smallERchekbox)
+								{
+									System.out.println("yes the condition is checked");
+								}
+								double valueOfsmallReliefChkbox = Double.parseDouble(ConditionSatisfied);
+								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
+								if(valueOfsmallReliefChkbox == 1.0)
+								{
+									Thread.sleep(4000L);
+									if(smallERchekbox)
+									{
+										System.out.println("Statutory conditions met - make paymentcheckbox was allready checked, Hence our condition got satisfied");
+										break  outerloop;
+									}
+									else
+									{
+										clkchkbox.sendKeys("");
+										clkchkbox.click();
+										System.out.println("Statutory conditions met - make payment checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
+										break  outerloop;
+									}
+								}	
+
+								col_num++;
+							}
+							row_num++;
+						}
+					}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	} 
+
+
+
+	public void StatutoryPaybasis(String StatutoryPaybasis)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(4000L);
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("sspEditTable")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("details table exists");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("sspEditTableRows")));	
+				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
+				int row_num,col_num;
+				row_num=1;
+				outerloop:
+					for(WebElement trElement : rows)
+					{
+						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
+						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
+						col_num=1;
+						for(WebElement tdElement : td_collection)
+						{
+							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payment basis"))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								//String imglookup ="//following-sibling::td[1]/span/a[@id='CF00N0O00000D0w79_lkwgt']/img";
+								String imglookup ="//following-sibling::td[1]/span/a[contains(@id,'_lkwgt')][@title='Payment basis Lookup (New Window)']/img";
+
+								WebElement clkchkbox = driver.findElement(By.xpath(imglookup));
+								clkchkbox.sendKeys("");
+								clkchkbox.click();
+								System.out.println("I clicked Go button");
+								Thread.sleep(5000);
+								String ParentWindow = driver.getWindowHandle(); // To save the parent window
+								// create one more method for reading employee from excel sheet.
+								ReadStatutoryPayBasis(StatutoryPaybasis);
+								Thread.sleep(2000L);
+								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
+								Thread.sleep(2000L);
+								SickSavebutton();
+								System.out.println("Save button got clicked and all data saved sucessfully");
+							}
+							col_num++;
+						}
+						row_num++;
+					}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	} 
+
+
+
+	public void ReadStatutoryPayBasis(String StatutoryPaybasis)throws Throwable
+	{
+
+		String[] handles = driver.getWindowHandles().toArray(new String[0]); // To get the child window(s)
+		driver.switchTo().window(handles[handles.length - 1]); 
+		String axb=  driver.getTitle();
+		System.out.println(axb);
+		if(driver.getTitle().equalsIgnoreCase(axb))
+		{
+			WebElement dddframe1 = driver.findElement(By.id("searchFrame"));  // you encountered two frames so, find the frame id and save as webelement
+			driver.switchTo().frame(dddframe1); // now using the frame id and switch to the frame
+			System.out.println("title is matching");
+			System.out.println("I am now in the child window");
+			Thread.sleep(3000);
+			getObject("searchField").clear();
+			Thread.sleep(1000);
+			getObject("searchField").sendKeys(StatutoryPaybasis);
+			System.out.println("I entered the statutory pay basis reading from excel sheet");
+			Thread.sleep(2000);
+			getObject("Gobutton").click();
+			Thread.sleep(3000);
+			System.out.println("I clicked Go button");
+
+			driver.switchTo().defaultContent();   // now that you encountered one more frame hence switch back to main page
+			WebElement dddframe2 = driver.findElement(By.id("resultsFrame"));// and save the frame id and 
+			driver.switchTo().frame(dddframe2); // switch to the other frame and perform the operations
+			System.out.println("I switched to Results Frame");
+			Thread.sleep(2000L);
+			if(existsElement(OR.getProperty("clkSortedone1")))
+			{
+				getObject("clkSortedone1").click();
+				String PymtBasisGotSelected = "PymtGotSelected";
+				Assert.assertEquals("PymtGotSelected", PymtBasisGotSelected);
+				System.out.println("The statutory pay basis got selected successfully");
+				Thread.sleep(2000L);
+			}
+			else if(existsElement(OR.getProperty("clkSortedone2")))
+			{
+				getObject("clkSortedone2").click();
+				String PymtBasisGotSelected = "PymtGotSelected";
+				Assert.assertEquals("PymtGotSelected", PymtBasisGotSelected);
+				System.out.println("The statutory pay basis got selected successfully");
+				Thread.sleep(2000L);
+			}
+		}
+	}
+
+	
+
+	public void SickSavebutton()throws Throwable
+	{
+		try
+		{
+			if(existsElement(OR.getProperty("sickSaveButton")))
+			{
+				getObject("sickSaveButton").sendKeys("");
+				getObject("sickSaveButton").click();
+				System.out.println("");
+				System.out.println("The sick save button got clicked sucessfully");
+			}
+			else
+			{
+				System.out.println("Save button did not got clicked Hence the "
+						+ "Leave record did not got updated as per the requirment");
+				Thread.sleep(3000L);
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable

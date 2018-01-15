@@ -2,89 +2,44 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="101219" started-at="2018-01-15T07:21:37Z" finished-at="2018-01-15T07:23:18Z">
+  <suite name="Default suite" duration-ms="208980" started-at="2018-01-15T14:43:00Z" finished-at="2018-01-15T14:46:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="101219" started-at="2018-01-15T07:21:37Z" finished-at="2018-01-15T07:23:18Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7460" started-at="2018-01-15T12:51:29Z" finished-at="2018-01-15T12:51:37Z">
+    <test name="Default test" duration-ms="208980" started-at="2018-01-15T14:43:00Z" finished-at="2018-01-15T14:46:29Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8091" started-at="2018-01-15T20:12:52Z" finished-at="2018-01-15T20:13:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="4" started-at="2018-01-15T12:51:37Z" finished-at="2018-01-15T12:51:37Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3544" started-at="2018-01-15T20:13:00Z" finished-at="2018-01-15T20:13:04Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="CompareReports(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="CompareReports" duration-ms="91818" started-at="2018-01-15T12:51:40Z" data-provider="getData" finished-at="2018-01-15T12:53:12Z">
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="185694" started-at="2018-01-15T20:13:06Z" data-provider="getData" finished-at="2018-01-15T20:16:12Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO DIRSSP EMPLOYER]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION ShPP 101]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SSP 101]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[DIRSSP_Payroll]]>
-              </value>
-            </param>
-            <param index="3">
-              <value>
-                <![CDATA[Four Weekly]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Four Week-24]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Payroll Suite Statutory SSP201718.xlsx]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[DO NOT TOUCH SSP AVERAGE WEEKLY EARNGS2]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_StatutoryScenarios 201718\\201718 Automation TestResult For Statutory Scenarios.xlsx]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[14]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[All]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[21]]>
+                <![CDATA[0]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CompareReports -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="87" started-at="2018-01-15T12:53:12Z" finished-at="2018-01-15T12:53:12Z">
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3407" started-at="2018-01-15T20:16:12Z" finished-at="2018-01-15T20:16:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2@271053e1]" name="ReportTestResult" is-config="true" duration-ms="6037" started-at="2018-01-15T12:53:12Z" finished-at="2018-01-15T12:53:18Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportTestResult" is-config="true" duration-ms="13466" started-at="2018-01-15T20:16:16Z" finished-at="2018-01-15T20:16:29Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.AverageWeeklyEarningsTestReprt2 -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
