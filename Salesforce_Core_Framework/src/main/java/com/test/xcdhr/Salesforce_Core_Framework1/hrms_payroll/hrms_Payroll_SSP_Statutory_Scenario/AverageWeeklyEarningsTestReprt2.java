@@ -30,33 +30,33 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
 
-public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
-{
+public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase {
 	String runmodes[] = null;
 	static int count = -1;
 	public static boolean Fail=false;
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
-	public String firstCellOfBody;
+	public String EmployeeName;
 	public int Row_count;
-	
-	
+
 
 	@BeforeTest
-	public void CheckTestSkip() throws Throwable
-	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
+	public void CheckTestSkip() throws Exception{
+		if(! Test_Util.IsTestcaseRunMode(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName())){
 
-		if(! Test_Util.IsTestcaseRunMode(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()))
-		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Skipped");
 			//Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
+
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
+
 		}
+
 		// Load the runmodes of the tests
+
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName());
+
 	}
 
 
@@ -72,7 +72,6 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
 		APP_LOGS.debug("Executing the test case");
-		//WebDriver driver = new FirefoxDriver(FirefoxDriverProfile());
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
@@ -104,55 +103,29 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 		}
 	}
 
-	
-	
 	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-	
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			//driver.navigate().refresh();
 		}
-			if(existsElement(OR.getProperty("findReportTextboxLocator")))
-			{				
-				SearchReport(FirstReportNameInApplication);
-			}
 
-			/*
-			if(existsElement(OR.getProperty("reportCustomisebtn")))
-			{
-				editCustomButton();
-			}
-
-			
-			if(existsElement(OR.getProperty("customEditbtn")))
-			{				
-
-				UpdateReportPage(pn,PayFrequency,payrollMonth);
-			}
-
-
-			System.out.println("");
-			System.out.println("3> Successfully customized the Report as required");
-
-		
-			if(existsElement(OR.getProperty("customRunReport")))
-			{
-				RunReport();
-			}
-			*/
-			
-			if(existsElement(OR.getProperty("reportTableLocatorNI")))
-			{
-				processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
-				System.out.println("7> Entered the values and processed the Test Remarks");
-			}
+		if(existsElement(OR.getProperty("findReportTextboxLocator")))
+		{				
+			SearchReport(FirstReportNameInApplication);
 		}
+			
+		if(existsElement(OR.getProperty("reportTableLocatorNI")))
+		{
+			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
+			System.out.println("7> Entered the values and processed the Test Remarks");
+		}
+	}
 		
 		
 	
+
 	public void processReport(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo)throws Throwable
 	{
 		try
@@ -166,8 +139,10 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 			int Col_count = driver.findElements(By.xpath(OR.getProperty("reportTableColumnsNI"))).size();
 			System.out.println("Number Of Columns = "+Col_count); // DISPLAYING
 		}
+		
 		Thread.sleep(3000L);
 		WebElement threecolms = driver.findElement(By.xpath(OR.getProperty("reportTableLocatorNI")));
+		
 		WebTable table = WebTable.getTable(threecolms);
 		List<WebElement> rows = threecolms.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI")));
 		java.util.Iterator<WebElement> x = rows.iterator();
@@ -184,31 +159,34 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 			}
 			else
 			{
-				firstCellOfBody= table.getTBody().getRow(rownum).getCell(0).getText();
-				System.out.println("firstCellOfBody is :"+firstCellOfBody);
-				String employeeNI= table.getTBody().getRow(rownum).getCell(1).getText();
-				 System.out.println("employeeNI is :"+employeeNI);
-				String employerNI= table.getTBody().getRow(rownum).getCell(2).getText();
-				System.out.println("employerNI is :"+employerNI);
-				String employeeNIPaidYTD= table.getTBody().getRow(rownum).getCell(3).getText();
-				System.out.println("employeeNIPaidYTD is :"+employeeNIPaidYTD);
-				//System.out.println("Third cell of body is :"+employerNI);
+				EmployeeName= table.getTBody().getRow(rownum).getCell(0).getText();
+				System.out.println("EmployeeName is :"+EmployeeName);
+				String PIW2= table.getTBody().getRow(rownum).getCell(1).getText();
+				 System.out.println("PIW2 is :"+PIW2);
+				String AWE= table.getTBody().getRow(rownum).getCell(2).getText();
+				System.out.println("AWE is :"+AWE);
+				String LeaveRequest= table.getTBody().getRow(rownum).getCell(3).getText();
+				System.out.println("LeaveRequest is :"+LeaveRequest);
+				String LeaveYear=table.getTBody().getRow(rownum).getCell(4).getText();
+				System.out.println("LeaveRequest is :"+LeaveYear);
+				
+				
 				//call the function which reads the excel sheet.
-				ReadsExpectedData(firstCellOfBody, employeeNI, employerNI,employeeNIPaidYTD,TestResultExcelFilePath,TestReportworksheetNo);
+				ReadsExpectedData(EmployeeName, PIW2, AWE,LeaveRequest,LeaveYear,TestResultExcelFilePath,TestReportworksheetNo);
+				//ReadsExpectedData(firstCellOfBody, employeeNI, employerNI,employeeNIPaidYTD,TestResultExcelFilePath,TestReportworksheetNo);
+
 			}
 			rownum++;
-		  }
-		
+			}
 		}
 		catch(Throwable t)
 		{
 			System.out.println(t.getMessage().toString());
 		}
-		
 	}
 
 
-	public void ReadsExpectedData(String firstCellOfBody, String employeeNI, String employerNI, String employeeNIPaidYTD,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
+	public void ReadsExpectedData(String EmployeeName, String PIW2, String AWE, String LeaveRequest,String LeaveYear,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
 	{
 		 double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		 DecimalFormat df = new DecimalFormat("###.#");
@@ -221,8 +199,8 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 		FileInputStream fis = new FileInputStream(excel);
 		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
 		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
-
-	
+		
+		
 		 CellStyle style = wb.createCellStyle();
 		 style.setFillPattern(CellStyle.ALIGN_FILL);
 		 style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
@@ -234,59 +212,81 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 		 CellStyle styleFalse = wb.createCellStyle();
 		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
-		 
-				
-		FileOutputStream webdata = new FileOutputStream (TestResultExcelFilePath);
-		int rowNum = ws.getLastRowNum()+1;
+	
+		
+		 FileOutputStream webdata = new FileOutputStream (TestResultExcelFilePath);
+		 int rowNum = ws.getLastRowNum()+1;
+		
 		for(int i =2; i< rowNum; i++)
 		{
 			Row row = ws.getRow(i);
 			String value1 = cellToString(row.getCell(1));
 			String value2 = cellToString(row.getCell(7));
 			String value4 = cellToString(row.getCell(9));
-			if(value1 != null && value1.equalsIgnoreCase(firstCellOfBody))
+		
+			if(value1 != null && value1.equalsIgnoreCase(EmployeeName))
 			{
-				row.createCell(8).setCellValue(employerNI);
-				row.createCell(10).setCellValue(employeeNI);
-				row.createCell(11).setCellValue(employerNI);
-				row.createCell(12).setCellValue(employeeNIPaidYTD);
-				if(value2 != null && value2.equalsIgnoreCase(employeeNI))
+				row.createCell(6).setCellValue(PIW2);
+				row.createCell(8).setCellValue(LeaveRequest);
+				row.createCell(10).setCellValue(PIW2);
+				row.createCell(11).setCellValue(AWE);
+				row.createCell(12).setCellValue(LeaveRequest);
+				row.createCell(13).setCellValue(LeaveYear);
+				
+				String piwval = cellToString(row.getCell(10));
+				if(piwval != null && piwval.equalsIgnoreCase(PIW2))
 				{
-					 Cell cell1 = row.createCell(13);	
-			 		 row.createCell(13).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(14);	
+			 		row.createCell(14).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}
 				else
 				{
-					 Cell cell1 = row.createCell(13);	
-					 row.createCell(13).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(14);	
+					row.createCell(14).setCellValue("FALSE");
 					 cell1.setCellStyle(styleFalse);
 				}
-				String value3 = cellToString(row.getCell(8));
-				if(value3 != null && value3.equalsIgnoreCase(employerNI))
+				
+				
+				if(value2 != null && value2.equalsIgnoreCase(AWE))
 				{
-					 Cell cell1 = row.createCell(14);
-					 row.createCell(14).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(15);
+					row.createCell(15).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(14);
-					 row.createCell(14).setCellValue("FALSE");
-					 cell1.setCellStyle(styleFalse);
+					 Cell cell1 = row.createCell(15);
+					row.createCell(15).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
 				} 
 				
-				if(value4 != null && value4.equalsIgnoreCase(employeeNIPaidYTD))
+				
+				String value3 = cellToString(row.getCell(12));
+				if(value3 != null && value3.equalsIgnoreCase(LeaveRequest))
 				{
-					 Cell cell1 = row.createCell(15);
-					 row.createCell(15).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(16);
+					row.createCell(16).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(15);
-					 row.createCell(15).setCellValue("FALSE");
-					 cell1.setCellStyle(styleFalse);
+					 Cell cell1 = row.createCell(16);
+					row.createCell(16).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				
+				if(value4 != null && value4.equalsIgnoreCase(LeaveYear))
+				{
+					 Cell cell1 = row.createCell(17);
+					row.createCell(17).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(17);
+					row.createCell(17).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
 				} 
 				break;
 			}
@@ -303,6 +303,7 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 		type = cell.getCellType();
 		switch(type)
 		{
+
 			case 0: // to get numeric value from the cell 
 				result = Double.toString(cell.getNumericCellValue());
 				break;
@@ -319,24 +320,21 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 			default: 
 				throw new RuntimeException("there are no othe values");
 		}
-		return result.toString();
+	return result.toString();
 	}
-	
-	
 	
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"AverageWeeklyEarningsTestReprt2");
+		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"AverageWeeklyEarningsTestReport");
 	}
 
 
-	@AfterMethod
-	public void ReportDataSetResult() throws Throwable
-	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
 
+	@AfterMethod
+	public void ReportDataSetResult()
+	{
 		if(Skip)
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
@@ -350,17 +348,15 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase
 		{
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
 	}
 
+	
 
 	@AfterTest
-	public void ReportTestResult() throws Throwable
+	public void ReportTestResult()
 	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(IsTestPass)
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
