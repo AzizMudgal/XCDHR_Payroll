@@ -327,7 +327,7 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase {
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"AverageWeeklyEarningsTestReport");
+		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"AverageWeeklyEarningsTestReprt2");
 	}
 
 
