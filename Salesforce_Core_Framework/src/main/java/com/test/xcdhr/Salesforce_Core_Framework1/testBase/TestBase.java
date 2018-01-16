@@ -7503,10 +7503,6 @@ public class TestBase {
 	 */
 
 	public int OrgFlag = 0;
-<<<<<<< HEAD
-	//public String env="Automation";
-=======
->>>>>>> refs/remotes/origin/master
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
