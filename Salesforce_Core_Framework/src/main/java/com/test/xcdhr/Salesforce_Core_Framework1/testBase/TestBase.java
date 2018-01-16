@@ -1242,6 +1242,7 @@ public class TestBase {
 
 	public boolean login_To_TestOrg() throws Throwable {
 		try {
+						
 			driver.get(CONFIG.getProperty("testOrg"));
 
 			WebElement username = driver.findElement(By.id(OR
@@ -1252,7 +1253,8 @@ public class TestBase {
 			password.sendKeys("london2014");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
-
+		
+			
 		} catch (Throwable t) {
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
@@ -7197,9 +7199,10 @@ public class TestBase {
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {
-
-			if (existsElementchkFor1mts(OR
-					.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
+            
+			 if (existsElementchkFor1mts(OR
+					.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+					{
 				for (int i = 1; i < 3; i++) {
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
 							.sendKeys("");
@@ -7209,7 +7212,10 @@ public class TestBase {
 							+ i + "st time");
 					Thread.sleep(4000L);
 				}
+				
 			}
+					
+			
 			Thread.sleep(4000L);
 			if (existsElement(OR.getProperty("payRunWeekTable"))) {
 				System.out.println("Thee table exists");
@@ -7494,7 +7500,8 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
+	//public String env="Automation";
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {

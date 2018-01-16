@@ -1,203 +1,2335 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="66" passed="66">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="146400" started-at="2018-01-04T10:41:33Z" finished-at="2018-01-04T10:44:00Z">
-=======
-  <suite name="Default suite" duration-ms="24" started-at="2018-01-02T13:47:34Z" finished-at="2018-01-02T13:47:34Z">
->>>>>>> refs/remotes/origin/master
+  <suite name="Default suite" duration-ms="1662427" started-at="2018-01-10T07:57:54Z" finished-at="2018-01-10T08:25:36Z">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test name="Default test" duration-ms="146400" started-at="2018-01-04T10:41:33Z" finished-at="2018-01-04T10:44:00Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@553f17c]" name="CheckSuiteSkip" is-config="true" duration-ms="8155" started-at="2018-01-04T16:11:25Z" finished-at="2018-01-04T16:11:33Z">
-=======
-    <test name="Default test" duration-ms="24" started-at="2018-01-02T13:47:34Z" finished-at="2018-01-02T13:47:34Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestFebReports">
-        <test-method status="FAIL" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestFebReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="0" started-at="2018-01-02T19:17:33Z" finished-at="2018-01-02T19:17:33Z">
-          <exception class="java.lang.IllegalAccessError">
-            <message>
-              <![CDATA[tried to access method org.apache.poi.util.POILogger.log(ILjava/lang/Object;)V from class org.apache.poi.openxml4j.opc.PackageRelationshipCollection]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.IllegalAccessError: tried to access method org.apache.poi.util.POILogger.log(ILjava/lang/Object;)V from class org.apache.poi.openxml4j.opc.PackageRelationshipCollection
-	at org.apache.poi.openxml4j.opc.PackageRelationshipCollection.parseRelationshipsPart(PackageRelationshipCollection.java:313)
-	at org.apache.poi.openxml4j.opc.PackageRelationshipCollection.<init>(PackageRelationshipCollection.java:163)
-	at org.apache.poi.openxml4j.opc.PackageRelationshipCollection.<init>(PackageRelationshipCollection.java:131)
-	at org.apache.poi.openxml4j.opc.PackagePart.loadRelationships(PackagePart.java:559)
-	at org.apache.poi.openxml4j.opc.PackagePart.<init>(PackagePart.java:112)
-	at org.apache.poi.openxml4j.opc.PackagePart.<init>(PackagePart.java:83)
-	at org.apache.poi.openxml4j.opc.PackagePart.<init>(PackagePart.java:128)
-	at org.apache.poi.openxml4j.opc.ZipPackagePart.<init>(ZipPackagePart.java:78)
-	at org.apache.poi.openxml4j.opc.ZipPackage.getPartsImpl(ZipPackage.java:243)
-	at org.apache.poi.openxml4j.opc.OPCPackage.getParts(OPCPackage.java:673)
-	at org.apache.poi.openxml4j.opc.OPCPackage.open(OPCPackage.java:274)
-	at org.apache.poi.util.PackageHelper.open(PackageHelper.java:37)
-	at org.apache.poi.xssf.usermodel.XSSFWorkbook.<init>(XSSFWorkbook.java:258)
-	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.<init>(Xls_Reader.java:34)
-	at com.test.xcdhr.Salesforce_Core_Framework1.testBase.TestBase.initialize(TestBase.java:823)
-	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestSuiteBase.CheckSuiteSkip(TestSuiteBase.java:14)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:144)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:326)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.IllegalAccessError -->
->>>>>>> refs/remotes/origin/master
+    <test name="Default test" duration-ms="1662427" started-at="2018-01-10T07:57:54Z" finished-at="2018-01-10T08:25:36Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5614" started-at="2018-01-10T13:27:48Z" finished-at="2018-01-10T13:27:54Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@553f17c]" name="CheckTestSkip" is-config="true" duration-ms="3313" started-at="2018-01-04T16:11:33Z" finished-at="2018-01-04T16:11:36Z">
-=======
-        <test-method status="SKIP" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestFebReports@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2018-01-02T19:17:34Z" finished-at="2018-01-02T19:17:34Z">
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="3049" started-at="2018-01-10T13:27:54Z" finished-at="2018-01-10T13:27:57Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@553f17c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="126680" started-at="2018-01-04T16:11:39Z" data-provider="getData" finished-at="2018-01-04T16:13:46Z">
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="64884" started-at="2018-01-10T13:27:59Z" data-provider="getData" finished-at="2018-01-10T13:29:04Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO DIRSSP EMPLOYER]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 101]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SSP 101]]>
+                <![CDATA[45L]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[DIRSSP_Payroll]]>
+                <![CDATA[wk1 / mth1]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Four Weekly]]>
+                <![CDATA[180000.0]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Four Week-40]]>
-              </value>
-            </param>
-            <param index="5">
-              <value>
-                <![CDATA[Payroll Suite Statutory SSP201718.xlsx]]>
-              </value>
-            </param>
-            <param index="6">
-              <value>
-                <![CDATA[DO NOT TOUCH SSP Payment]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_StatutoryScenarios 201718\\201718 Automation TestResult For Statutory Scenarios.xlsx]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[15]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[All]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[20]]>
+                <![CDATA[Monthly]]>
               </value>
             </param>
           </params>
-=======
-        <test-method status="SKIP" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestFebReports@42dafa95]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="0" started-at="2018-01-02T19:17:34Z" data-provider="getData" finished-at="2018-01-02T19:17:34Z">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[java.lang.NullPointerException]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException
-	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
-	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:111)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1293)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1020)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1110)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-Caused by: java.lang.NullPointerException
-	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.getData(Test_Util.java:77)
-	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestFebReports.getData(TestFebReports.java:137)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-	at java.lang.reflect.Method.invoke(Method.java:498)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
-	... 22 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
->>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@553f17c]" name="ReportDataSetResult" is-config="true" duration-ms="7021" started-at="2018-01-04T16:13:46Z" finished-at="2018-01-04T16:13:53Z">
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2221" started-at="2018-01-10T13:29:04Z" finished-at="2018-01-10T13:29:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@553f17c]" name="ReportTestResult" is-config="true" duration-ms="6362" started-at="2018-01-04T16:13:53Z" finished-at="2018-01-04T16:14:00Z">
-=======
-        <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestFebReports@42dafa95]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2018-01-02T19:17:34Z" finished-at="2018-01-02T19:17:34Z">
->>>>>>> refs/remotes/origin/master
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="20713" started-at="2018-01-10T13:29:06Z" data-provider="getData" finished-at="2018-01-10T13:29:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 102]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2016" started-at="2018-01-10T13:29:27Z" finished-at="2018-01-10T13:29:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="21004" started-at="2018-01-10T13:29:29Z" data-provider="getData" finished-at="2018-01-10T13:29:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 103]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[5652.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1816" started-at="2018-01-10T13:29:50Z" finished-at="2018-01-10T13:29:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="20889" started-at="2018-01-10T13:29:52Z" data-provider="getData" finished-at="2018-01-10T13:30:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 104]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1807" started-at="2018-01-10T13:30:13Z" finished-at="2018-01-10T13:30:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="20988" started-at="2018-01-10T13:30:15Z" data-provider="getData" finished-at="2018-01-10T13:30:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 105]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1698" started-at="2018-01-10T13:30:36Z" finished-at="2018-01-10T13:30:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="20991" started-at="2018-01-10T13:30:37Z" data-provider="getData" finished-at="2018-01-10T13:30:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 106]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[100L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1720" started-at="2018-01-10T13:30:58Z" finished-at="2018-01-10T13:31:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="21358" started-at="2018-01-10T13:31:00Z" data-provider="getData" finished-at="2018-01-10T13:31:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 108]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[168006.36]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1707" started-at="2018-01-10T13:31:22Z" finished-at="2018-01-10T13:31:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="21599" started-at="2018-01-10T13:31:23Z" data-provider="getData" finished-at="2018-01-10T13:31:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 111]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[8409.24]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1710" started-at="2018-01-10T13:31:45Z" finished-at="2018-01-10T13:31:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="21915" started-at="2018-01-10T13:31:47Z" data-provider="getData" finished-at="2018-01-10T13:32:08Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 113]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[168006.36]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1827" started-at="2018-01-10T13:32:08Z" finished-at="2018-01-10T13:32:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22063" started-at="2018-01-10T13:32:10Z" data-provider="getData" finished-at="2018-01-10T13:32:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 116]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[8409.24]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1703" started-at="2018-01-10T13:32:32Z" finished-at="2018-01-10T13:32:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22198" started-at="2018-01-10T13:32:34Z" data-provider="getData" finished-at="2018-01-10T13:32:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 118]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1440.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1940" started-at="2018-01-10T13:32:56Z" finished-at="2018-01-10T13:32:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22969" started-at="2018-01-10T13:32:58Z" data-provider="getData" finished-at="2018-01-10T13:33:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 120]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1849" started-at="2018-01-10T13:33:21Z" finished-at="2018-01-10T13:33:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22386" started-at="2018-01-10T13:33:23Z" data-provider="getData" finished-at="2018-01-10T13:33:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 121]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[180000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1859" started-at="2018-01-10T13:33:45Z" finished-at="2018-01-10T13:33:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22449" started-at="2018-01-10T13:33:47Z" data-provider="getData" finished-at="2018-01-10T13:34:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 122]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[8040.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1853" started-at="2018-01-10T13:34:10Z" finished-at="2018-01-10T13:34:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22892" started-at="2018-01-10T13:34:12Z" data-provider="getData" finished-at="2018-01-10T13:34:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 123]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6600.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1718" started-at="2018-01-10T13:34:34Z" finished-at="2018-01-10T13:34:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="23381" started-at="2018-01-10T13:34:36Z" data-provider="getData" finished-at="2018-01-10T13:35:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 124]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7202.88]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1726" started-at="2018-01-10T13:35:00Z" finished-at="2018-01-10T13:35:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22981" started-at="2018-01-10T13:35:01Z" data-provider="getData" finished-at="2018-01-10T13:35:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 125]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[400L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[18000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1966" started-at="2018-01-10T13:35:24Z" finished-at="2018-01-10T13:35:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="22073" started-at="2018-01-10T13:35:26Z" data-provider="getData" finished-at="2018-01-10T13:35:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 119]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1451.88]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1775" started-at="2018-01-10T13:35:48Z" finished-at="2018-01-10T13:35:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="23201" started-at="2018-01-10T13:35:50Z" data-provider="getData" finished-at="2018-01-10T13:36:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 127]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2204" started-at="2018-01-10T13:36:13Z" finished-at="2018-01-10T13:36:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="25982" started-at="2018-01-10T13:36:16Z" data-provider="getData" finished-at="2018-01-10T13:36:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 144]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[900L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1729" started-at="2018-01-10T13:36:41Z" finished-at="2018-01-10T13:36:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="23478" started-at="2018-01-10T13:36:43Z" data-provider="getData" finished-at="2018-01-10T13:37:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 128]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1735" started-at="2018-01-10T13:37:07Z" finished-at="2018-01-10T13:37:08Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="23785" started-at="2018-01-10T13:37:08Z" data-provider="getData" finished-at="2018-01-10T13:37:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 129]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[400L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9240.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1714" started-at="2018-01-10T13:37:32Z" finished-at="2018-01-10T13:37:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="24023" started-at="2018-01-10T13:37:34Z" data-provider="getData" finished-at="2018-01-10T13:37:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 130]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9240.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1785" started-at="2018-01-10T13:37:58Z" finished-at="2018-01-10T13:38:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="24509" started-at="2018-01-10T13:38:00Z" data-provider="getData" finished-at="2018-01-10T13:38:24Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 132]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0T]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1500.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2032" started-at="2018-01-10T13:38:24Z" finished-at="2018-01-10T13:38:26Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="24476" started-at="2018-01-10T13:38:26Z" data-provider="getData" finished-at="2018-01-10T13:38:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 133]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0T]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10200.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1735" started-at="2018-01-10T13:38:51Z" finished-at="2018-01-10T13:38:53Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="26218" started-at="2018-01-10T13:38:53Z" data-provider="getData" finished-at="2018-01-10T13:39:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 145]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[900L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1770" started-at="2018-01-10T13:39:19Z" finished-at="2018-01-10T13:39:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="24416" started-at="2018-01-10T13:39:20Z" data-provider="getData" finished-at="2018-01-10T13:39:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 134]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[508L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12600.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1717" started-at="2018-01-10T13:39:45Z" finished-at="2018-01-10T13:39:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="24921" started-at="2018-01-10T13:39:47Z" data-provider="getData" finished-at="2018-01-10T13:40:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 137]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K427]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6120.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1673" started-at="2018-01-10T13:40:12Z" finished-at="2018-01-10T13:40:13Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="25179" started-at="2018-01-10T13:40:13Z" data-provider="getData" finished-at="2018-01-10T13:40:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 138]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K427]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7320.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1665" started-at="2018-01-10T13:40:38Z" finished-at="2018-01-10T13:40:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="24991" started-at="2018-01-10T13:40:40Z" data-provider="getData" finished-at="2018-01-10T13:41:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 139]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K427]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6120.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1805" started-at="2018-01-10T13:41:05Z" finished-at="2018-01-10T13:41:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="25155" started-at="2018-01-10T13:41:07Z" data-provider="getData" finished-at="2018-01-10T13:41:32Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 140]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K417]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7200.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1714" started-at="2018-01-10T13:41:32Z" finished-at="2018-01-10T13:41:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="25411" started-at="2018-01-10T13:41:34Z" data-provider="getData" finished-at="2018-01-10T13:41:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 141]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0T]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1716" started-at="2018-01-10T13:41:59Z" finished-at="2018-01-10T13:42:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="26061" started-at="2018-01-10T13:42:01Z" data-provider="getData" finished-at="2018-01-10T13:42:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 143]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[900L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1681" started-at="2018-01-10T13:42:27Z" finished-at="2018-01-10T13:42:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="36664" started-at="2018-01-10T13:42:30Z" data-provider="getData" finished-at="2018-01-10T13:43:07Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 101]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[180000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1734" started-at="2018-01-10T13:43:07Z" finished-at="2018-01-10T13:43:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="19422" started-at="2018-01-10T13:43:09Z" data-provider="getData" finished-at="2018-01-10T13:43:28Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 102]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1682" started-at="2018-01-10T13:43:28Z" finished-at="2018-01-10T13:43:30Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="18593" started-at="2018-01-10T13:43:30Z" data-provider="getData" finished-at="2018-01-10T13:43:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 103]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[5652.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1685" started-at="2018-01-10T13:43:48Z" finished-at="2018-01-10T13:43:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="19457" started-at="2018-01-10T13:43:50Z" data-provider="getData" finished-at="2018-01-10T13:44:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 104]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1706" started-at="2018-01-10T13:44:09Z" finished-at="2018-01-10T13:44:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="19033" started-at="2018-01-10T13:44:11Z" data-provider="getData" finished-at="2018-01-10T13:44:30Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 105]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[45L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1947" started-at="2018-01-10T13:44:30Z" finished-at="2018-01-10T13:44:32Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="19832" started-at="2018-01-10T13:44:32Z" data-provider="getData" finished-at="2018-01-10T13:44:52Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 106]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[100L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1760" started-at="2018-01-10T13:44:52Z" finished-at="2018-01-10T13:44:54Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="18904" started-at="2018-01-10T13:44:54Z" data-provider="getData" finished-at="2018-01-10T13:45:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 108]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[168006.36]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1686" started-at="2018-01-10T13:45:13Z" finished-at="2018-01-10T13:45:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="19317" started-at="2018-01-10T13:45:14Z" data-provider="getData" finished-at="2018-01-10T13:45:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 111]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D0]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[8409.24]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1695" started-at="2018-01-10T13:45:34Z" finished-at="2018-01-10T13:45:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="20272" started-at="2018-01-10T13:45:35Z" data-provider="getData" finished-at="2018-01-10T13:45:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 113]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[168006.36]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1845" started-at="2018-01-10T13:45:56Z" finished-at="2018-01-10T13:45:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21415" started-at="2018-01-10T13:45:58Z" data-provider="getData" finished-at="2018-01-10T13:46:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 116]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[D1]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[8409.24]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1716" started-at="2018-01-10T13:46:19Z" finished-at="2018-01-10T13:46:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="20676" started-at="2018-01-10T13:46:21Z" data-provider="getData" finished-at="2018-01-10T13:46:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 118]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1440.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1741" started-at="2018-01-10T13:46:41Z" finished-at="2018-01-10T13:46:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="20900" started-at="2018-01-10T13:46:43Z" data-provider="getData" finished-at="2018-01-10T13:47:04Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 120]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1682" started-at="2018-01-10T13:47:04Z" finished-at="2018-01-10T13:47:06Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21627" started-at="2018-01-10T13:47:06Z" data-provider="getData" finished-at="2018-01-10T13:47:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 121]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[180000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1699" started-at="2018-01-10T13:47:27Z" finished-at="2018-01-10T13:47:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="20461" started-at="2018-01-10T13:47:29Z" data-provider="getData" finished-at="2018-01-10T13:47:49Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 122]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[8040.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1724" started-at="2018-01-10T13:47:50Z" finished-at="2018-01-10T13:47:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21002" started-at="2018-01-10T13:47:51Z" data-provider="getData" finished-at="2018-01-10T13:48:12Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 123]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6600.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1698" started-at="2018-01-10T13:48:12Z" finished-at="2018-01-10T13:48:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21863" started-at="2018-01-10T13:48:14Z" data-provider="getData" finished-at="2018-01-10T13:48:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 124]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7202.88]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1677" started-at="2018-01-10T13:48:36Z" finished-at="2018-01-10T13:48:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21417" started-at="2018-01-10T13:48:37Z" data-provider="getData" finished-at="2018-01-10T13:48:59Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 125]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[400L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[18000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1685" started-at="2018-01-10T13:48:59Z" finished-at="2018-01-10T13:49:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="20837" started-at="2018-01-10T13:49:01Z" data-provider="getData" finished-at="2018-01-10T13:49:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 119]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[BR]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1451.88]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1693" started-at="2018-01-10T13:49:21Z" finished-at="2018-01-10T13:49:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21201" started-at="2018-01-10T13:49:23Z" data-provider="getData" finished-at="2018-01-10T13:49:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 127]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1710" started-at="2018-01-10T13:49:44Z" finished-at="2018-01-10T13:49:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="23587" started-at="2018-01-10T13:49:46Z" data-provider="getData" finished-at="2018-01-10T13:50:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 144]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[900L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1759" started-at="2018-01-10T13:50:10Z" finished-at="2018-01-10T13:50:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21992" started-at="2018-01-10T13:50:11Z" data-provider="getData" finished-at="2018-01-10T13:50:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 128]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1685" started-at="2018-01-10T13:50:33Z" finished-at="2018-01-10T13:50:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21726" started-at="2018-01-10T13:50:35Z" data-provider="getData" finished-at="2018-01-10T13:50:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 129]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[400L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9240.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1704" started-at="2018-01-10T13:50:57Z" finished-at="2018-01-10T13:50:59Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21626" started-at="2018-01-10T13:50:59Z" data-provider="getData" finished-at="2018-01-10T13:51:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 130]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9240.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1685" started-at="2018-01-10T13:51:20Z" finished-at="2018-01-10T13:51:22Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="23078" started-at="2018-01-10T13:51:22Z" data-provider="getData" finished-at="2018-01-10T13:51:45Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 132]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0T]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[1500.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1689" started-at="2018-01-10T13:51:45Z" finished-at="2018-01-10T13:51:47Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="22473" started-at="2018-01-10T13:51:47Z" data-provider="getData" finished-at="2018-01-10T13:52:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 133]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0T]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[10200.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1731" started-at="2018-01-10T13:52:09Z" finished-at="2018-01-10T13:52:11Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="24222" started-at="2018-01-10T13:52:11Z" data-provider="getData" finished-at="2018-01-10T13:52:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 145]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[900L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1724" started-at="2018-01-10T13:52:35Z" finished-at="2018-01-10T13:52:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="22751" started-at="2018-01-10T13:52:37Z" data-provider="getData" finished-at="2018-01-10T13:53:00Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 134]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[508L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12600.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1743" started-at="2018-01-10T13:53:00Z" finished-at="2018-01-10T13:53:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="21892" started-at="2018-01-10T13:53:01Z" data-provider="getData" finished-at="2018-01-10T13:53:23Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 137]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K427]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6120.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2000" started-at="2018-01-10T13:53:23Z" finished-at="2018-01-10T13:53:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="23022" started-at="2018-01-10T13:53:25Z" data-provider="getData" finished-at="2018-01-10T13:53:48Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 138]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K427]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[wk1 / mth1]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7320.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1764" started-at="2018-01-10T13:53:48Z" finished-at="2018-01-10T13:53:50Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="23637" started-at="2018-01-10T13:53:50Z" data-provider="getData" finished-at="2018-01-10T13:54:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 139]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K427]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[6120.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1713" started-at="2018-01-10T13:54:14Z" finished-at="2018-01-10T13:54:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="23739" started-at="2018-01-10T13:54:15Z" data-provider="getData" finished-at="2018-01-10T13:54:39Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 140]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[K417]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[7200.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1722" started-at="2018-01-10T13:54:39Z" finished-at="2018-01-10T13:54:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="24934" started-at="2018-01-10T13:54:41Z" data-provider="getData" finished-at="2018-01-10T13:55:06Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 141]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[0T]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[9000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1694" started-at="2018-01-10T13:55:06Z" finished-at="2018-01-10T13:55:07Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_WithAnnualSalary" duration-ms="23690" started-at="2018-01-10T13:55:07Z" data-provider="getData" finished-at="2018-01-10T13:55:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 143]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[900L]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1781" started-at="2018-01-10T13:55:31Z" finished-at="2018-01-10T13:55:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportTestResult" is-config="true" duration-ms="2973" started-at="2018-01-10T13:55:33Z" finished-at="2018-01-10T13:55:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6 -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.rti_Payroll_Scenario1_Month11.TestFebReports -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
