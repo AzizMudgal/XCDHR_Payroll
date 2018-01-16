@@ -1,29 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="66" passed="66">
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+>>>>>>> refs/remotes/origin/master
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="1662427" started-at="2018-01-10T07:57:54Z" finished-at="2018-01-10T08:25:36Z">
+=======
+  <suite name="Default suite" duration-ms="208980" started-at="2018-01-15T14:43:00Z" finished-at="2018-01-15T14:46:29Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="1662427" started-at="2018-01-10T07:57:54Z" finished-at="2018-01-10T08:25:36Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="5614" started-at="2018-01-10T13:27:48Z" finished-at="2018-01-10T13:27:54Z">
+=======
+    <test name="Default test" duration-ms="208980" started-at="2018-01-15T14:43:00Z" finished-at="2018-01-15T14:46:29Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8091" started-at="2018-01-15T20:12:52Z" finished-at="2018-01-15T20:13:00Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="3049" started-at="2018-01-10T13:27:54Z" finished-at="2018-01-10T13:27:57Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3544" started-at="2018-01-15T20:13:00Z" finished-at="2018-01-15T20:13:04Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="64884" started-at="2018-01-10T13:27:59Z" data-provider="getData" finished-at="2018-01-10T13:29:04Z">
+=======
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="185694" started-at="2018-01-15T20:13:06Z" data-provider="getData" finished-at="2018-01-15T20:16:12Z">
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 101]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION ShPP 101]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[45L]]>
               </value>
             </param>
@@ -40,16 +67,25 @@
             <param index="4">
               <value>
                 <![CDATA[Monthly]]>
+=======
+                <![CDATA[0]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2221" started-at="2018-01-10T13:29:04Z" finished-at="2018-01-10T13:29:06Z">
+=======
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3407" started-at="2018-01-15T20:16:12Z" finished-at="2018-01-15T20:16:16Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="20713" started-at="2018-01-10T13:29:06Z" data-provider="getData" finished-at="2018-01-10T13:29:27Z">
           <params>
             <param index="0">
@@ -2326,10 +2362,17 @@
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly@402a079c]" name="ReportTestResult" is-config="true" duration-ms="2973" started-at="2018-01-10T13:55:33Z" finished-at="2018-01-10T13:55:36Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportTestResult" is-config="true" duration-ms="13466" started-at="2018-01-15T20:16:16Z" finished-at="2018-01-15T20:16:29Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1LDOD1BRNTOTK50RL.GeneralTaxRateMonthly -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
