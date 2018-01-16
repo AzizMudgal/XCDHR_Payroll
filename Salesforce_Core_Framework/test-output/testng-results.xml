@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="208980" started-at="2018-01-15T14:43:00Z" finished-at="2018-01-15T14:46:29Z">
+  <suite name="Default suite" duration-ms="257098" started-at="2018-01-16T14:07:17Z" finished-at="2018-01-16T14:11:34Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="208980" started-at="2018-01-15T14:43:00Z" finished-at="2018-01-15T14:46:29Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8091" started-at="2018-01-15T20:12:52Z" finished-at="2018-01-15T20:13:00Z">
+    <test name="Default test" duration-ms="257098" started-at="2018-01-16T14:07:17Z" finished-at="2018-01-16T14:11:34Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.CreateLeaveRequest">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.CreateLeaveRequest@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="4332" started-at="2018-01-16T19:37:12Z" finished-at="2018-01-16T19:37:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3544" started-at="2018-01-15T20:13:00Z" finished-at="2018-01-15T20:13:04Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.CreateLeaveRequest@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="2095" started-at="2018-01-16T19:37:17Z" finished-at="2018-01-16T19:37:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="185694" started-at="2018-01-15T20:13:06Z" data-provider="getData" finished-at="2018-01-15T20:16:12Z">
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.CreateLeaveRequest@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="246802" started-at="2018-01-16T19:37:21Z" data-provider="getData" finished-at="2018-01-16T19:41:27Z">
           <params>
             <param index="0">
               <value>
@@ -24,22 +24,57 @@
             </param>
             <param index="1">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[2017]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Shared Parental]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[11/30/2017]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[11/30/2017]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[02/14/2018]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[03/02/2018]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION BASIS - SPP/ShPP]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="3407" started-at="2018-01-15T20:16:12Z" finished-at="2018-01-15T20:16:16Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.CreateLeaveRequest@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2357" started-at="2018-01-16T19:41:27Z" finished-at="2018-01-16T19:41:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportTestResult" is-config="true" duration-ms="13466" started-at="2018-01-15T20:16:16Z" finished-at="2018-01-15T20:16:29Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.CreateLeaveRequest@271053e1]" name="ReportTestResult" is-config="true" duration-ms="4066" started-at="2018-01-16T19:41:30Z" finished-at="2018-01-16T19:41:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.SmallEmployerRelief -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.CreateLeaveRequest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

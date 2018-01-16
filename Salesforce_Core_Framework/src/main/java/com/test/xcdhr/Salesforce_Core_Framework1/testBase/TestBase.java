@@ -1209,6 +1209,8 @@ public class TestBase {
 
 			Thread.sleep(2000L);
 			getObject("Submit_Button").click();
+			System.out.println("Logged into the QA Org");
+
 			Thread.sleep(2000L);
 
 			/*
@@ -1254,6 +1256,8 @@ public class TestBase {
 			password.sendKeys("london2014");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
+			System.out.println("Logged into the New Automation Org");
+
 
 		} catch (Throwable t) {
 			CaptureScreenshot(this.getClass().getSimpleName());
@@ -7496,7 +7500,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 0;
+	public int OrgFlag = 1;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {

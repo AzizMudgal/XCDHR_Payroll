@@ -305,6 +305,7 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 					int rownum = 1;	
 					while(x.hasNext())
 					{
+						Thread.sleep(3000L);
 						String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum + 1)+"]/td[2]/a";
 						WebElement firstEmployee= driver.findElement(By.xpath(leaveReqId));
 						leaveRequestId= table.getTBody().getRow(rownum).getCell(1).getText();
@@ -547,7 +548,8 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment"))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								ckbox ="//following-sibling::td[2]/input[@type='checkbox']";
+								//ckbox ="//following-sibling::td[2]/input[@type='checkbox']";
+								ckbox ="//following-sibling::td[1][@class='dataCol col02']/input[@type='checkbox'][@value='1']";
 								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
 								boolean	smallERchekbox = clkchkbox.isSelected();
 								if(smallERchekbox)

@@ -21,6 +21,9 @@ import java.util.List;
 
 
 
+
+
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -38,7 +41,6 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class ResetData extends TestSuiteBase
 {
-
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
@@ -96,10 +98,12 @@ public class ResetData extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -117,7 +121,11 @@ public class ResetData extends TestSuiteBase
 
 
 
-
+/*
+ * Following are the functions which are not used in this script. 
+ * From Base class it will come.
+ * 
+ */
 	public void DeleteLeavefunctionDraft(String EmpName,String firstXCDpayDate,String payinStartPeriod) throws Throwable
 	{
 		try
@@ -157,6 +165,7 @@ public class ResetData extends TestSuiteBase
 					System.out.println("Employee name is  :"+EmpName);
 					Thread.sleep(3000L);
 					empwebelement.click();
+					System.out.println("Employee "+EmpName+" got clicked to reset the data");
 					break;
 				}
 				rownum++;
@@ -170,31 +179,6 @@ public class ResetData extends TestSuiteBase
 		Thread.sleep(3000L);
 		try
 		{
-			/*
-			if(existsElement(OR.getProperty("employmentTab")))
-			{
-				getObject("employmentTab").sendKeys("");
-				getObject("employmentTab").click();
-				System.out.println("The employment tab got clicked");
-				Thread.sleep(4000L);
-			}
-
-			if(existsElement(OR.getProperty("employmentTabEdit")))
-			{
-				updateFirstXcdPayDate(firstXCDpayDate);
-				//Thread.sleep(2000L);
-				//getObject("makeWaytoDisplayChkbox").sendKeys("");
-				//getObject("makeWaytoDisplayChkbox").click();
-			}
-			
-			Thread.sleep(2000L);
-			if(existsElement(OR.getProperty("sspEditTable")))
-			{
-				selectPayinStartPeriod(payinStartPeriod);
-				Thread.sleep(4000L);
-			}
-			*/
-
 			if(existsElement(OR.getProperty("leaveTabclk")))
 			{
 				deleteLeaveRecords();
@@ -224,15 +208,20 @@ public class ResetData extends TestSuiteBase
 	{
 		try
 		{
-			if(compensationFirsttimeView)
+			if(existsElement(OR.getProperty("leaveTabclk")))
 			{
-				compensationFirsttimeView=false;
-				if(existsElement(OR.getProperty("leaveTabclk")))
-				{
-					getObject("leaveTabclk").sendKeys("");
-					getObject("leaveTabclk").click();
-					Thread.sleep(3000L);
-				}
+				getObject("leaveTabclk").sendKeys("");
+				getObject("leaveTabclk").click();
+				Thread.sleep(3000L);
+			}
+			
+			if(existsElementchkFor1mts(OR.getProperty("bookLeavebuttonlocator")))
+			{
+				String bookLeaveText = getObject("bookLeavebuttonlocator").getAttribute("value");
+				System.out.println("the book leave button text is :"+bookLeaveText);
+				Assert.assertEquals("Book leave", bookLeaveText);
+				System.out.println("The book leave button of the leave tab of the employee's Record is displayed successfully");
+
 			}
 
 			if(existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
@@ -263,7 +252,6 @@ public class ResetData extends TestSuiteBase
 							Thread.sleep(5000L);
 							isAlertPresent();
 						}
-
 						rownumv--;
 						if(rownumv==1)
 						{
@@ -283,82 +271,6 @@ public class ResetData extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-
-
-
-	/*
-	public void deleteLeaveRecords()throws Throwable
-	{
-		try
-		{
-
-			if(compensationFirsttimeView)
-			{
-				compensationFirsttimeView=false;
-					if(existsElement(OR.getProperty("leaveTabclk")))
-					{
-						getObject("leaveTabclk").sendKeys("");
-						getObject("leaveTabclk").click();
-						Thread.sleep(3000L);
-					}
-
-			}
-
-			if(existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
-			{
-				WebElement AEnotifyNoticeTablelocator = driver.findElement(By.xpath(OR.getProperty("sppLeavSummaryTableLocator")));
-				List<WebElement> rows = AEnotifyNoticeTablelocator.findElements(By.xpath(OR.getProperty("sppLeavSummaryTableRowsLocator")));
-				int ttrows= rows.size();
-				System.out.println("Total Leave records are :"+ttrows);
-				java.util.Iterator<WebElement> x = rows.iterator();
-				int rownumv = rows.size();	
-				endSearchingCompnRecord:
-					while(x.hasNext())
-					{
-						System.out.println("the index of rownumv is  :"+rownumv);
-
-						if(existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
-						{
-							RowOfAttachementRecord="//form/table/tbody/tr[2]/td/table/tbody/tr/td/span/div[3]/div/div[2]/table/tbody/"+"tr["+rownumv+"]"+"/td[2]/a";
-							WebElement attachmentlink= driver.findElement(By.xpath(RowOfAttachementRecord));
-							attachmentlink.click();
-							System.out.println("attachment link got clicked");
-						}
-
-
-
-							if(existsElement(OR.getProperty("leaverecordDeleteLocator")))
-							{
-								getObject("leaverecordDeleteLocator").sendKeys("");
-								getObject("leaverecordDeleteLocator").click();
-								System.out.println("The leave record delete button got clicked");
-
-								Thread.sleep(3000L);
-								Alert alert = driver.switchTo().alert();
-								alert.accept();
-								System.out.println("The leave record deleted successfully");
-							}
-
-						rownumv--;
-						if(rownumv==0)
-						{
-							System.out.println("There are no attachments to delete");
-							break endSearchingCompnRecord;
-						}
-					}
-			}
-			else if(!existsElement(OR.getProperty("sppLeavSummaryTableLocator")))
-			{
-				System.out.println("Threre are no leave records to delete");
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-	 */
 
 
 	public void updateFirstXcdPayDate(String firstXCDpayDate)throws Throwable

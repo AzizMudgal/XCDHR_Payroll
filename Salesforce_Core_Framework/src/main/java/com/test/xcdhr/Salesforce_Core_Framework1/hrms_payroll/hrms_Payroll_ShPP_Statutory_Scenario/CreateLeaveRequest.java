@@ -199,64 +199,13 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		selectLeaveYear(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
-	}
-	
-	
-
-
-	public void selectLeaveYear(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
-	{
-		/*
-		try
-		{
-
-			if(existsElement(OR.getProperty("selectLeaveYearpicklist")))
-			{
-				double levyeear = Double.parseDouble(LeaveYear);
-				DecimalFormat df = new DecimalFormat("###.#");
-				String LeaveYrconvert= df.format(levyeear);
-
-				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("selectLeaveYearpicklist"))));
-				// This select by value needs to be called from OR.Properties
-				selectByValue.selectByValue(LeaveYrconvert);
-				Thread.sleep(9000L);
-				WebElement leaveYearSectionTableLocator = driver.findElement(By.xpath(OR.getProperty("leaveYearSectionTable")));
-				if(existsWebElement(leaveYearSectionTableLocator))
-				{
-					WebTable Leavetable = WebTable.getTable(leaveYearSectionTableLocator);
-					leaveYear= Leavetable.getTBody().getRow(0).getCell(0).getText();
-					leaveYearStatus=Leavetable.getTBody().getRow(0).getCell(1).getText();
-					System.out.println("Leave year is :"+leaveYear);
-					System.out.println("Leave year status is :"+leaveYearStatus);
-
-					try
-					{
-						Assert.assertEquals(leaveYear, "2015");
-						System.out.println("Selected leave year 2015 picklist item successfully");
-					}
-					catch(Throwable t)
-					{
-						APP_LOGS.debug("Leave year not matching with 2015");
-						//selectLeaveYear(LeaveYear);
-					}
-
-				}
-
-			}
-
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-		*/
 		Thread.sleep(3000L);
 		bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
-	}
+		}
 	
 	
+
+
 
 
 	public void bookLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
@@ -305,23 +254,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
 			}
-			Thread.sleep(8000L);
-			if(existsElement(OR.getProperty("submitLeaverqstlocator")))
+			Thread.sleep(2000L);
+			if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
 			{
-				getObject("submitLeaverqstlocator").sendKeys("");
-				getObject("submitLeaverqstlocator").click();
-				System.out.println("");
-				System.out.println("The submit leave request button got clicked sucessfully");
+				submitSickleave();
+				System.out.println("Hence the sick leave got created sucessfully");
 			}
-			Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("leaveRequstOkbutton")))
-			{
-				getObject("leaveRequstOkbutton").sendKeys("");
-				getObject("leaveRequstOkbutton").click();
-				System.out.println("");
-				System.out.println("The submit leave request ok button also got clicked sucessfully");
-			}
-			Thread.sleep(9000L);
 		}
 		catch(Throwable t)
 		{
@@ -377,6 +315,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
+	
 
 	public void keyDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate)throws Throwable
 	{
@@ -500,48 +439,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
 
 
-	public void ReadStatutoryPayBasis1(String StatutoryPaybasis)throws Throwable
-	{
-		String[] handles = driver.getWindowHandles().toArray(new String[0]); // To get the child window(s)
-		driver.switchTo().window(handles[handles.length - 1]); 
-				String axb=  driver.getTitle();
-				System.out.println(axb);
-				if (driver.getTitle().equalsIgnoreCase(axb))
-				{
-					WebElement dddframe1 = driver.findElement(By.id("searchFrame"));  // you encountered two frames so, find the frame id and save as webelement
-					driver.switchTo().frame(dddframe1); // now using the frame id and switch to the frame
-					System.out.println("title is matching");
-						System.out.println("I am now in the child window");
-						Thread.sleep(3000);
-						getObject("searchField").clear();
-						Thread.sleep(1000);
-						getObject("searchField").sendKeys(StatutoryPaybasis);
-						System.out.println("I entered the statutory pay basis reading from excel sheet");
-						Thread.sleep(1000);
-						getObject("Gobutton").click();
-						System.out.println("I clicked Go button");
-						Thread.sleep(3000);
-						driver.switchTo().defaultContent();        // now that you encountered one more frame hence switch back to main page
-						WebElement dddframe2 = driver.findElement(By.id("resultsFrame"));// and save the frame id and 
-						driver.switchTo().frame(dddframe2); // switch to the other frame and perform the operations
-						System.out.println("I switched to Results Frame");
-						Thread.sleep(2000L);
-						if(existsElement(OR.getProperty("clkSortedone1")))
-						{
-							getObject("clkSortedone1").click();
-						}
-						else if(existsElement(OR.getProperty("clkSortedone2")))
-						{
-							getObject("clkSortedone2").click();
-						}
-						System.out.println("I clicked the user finally");
-				}
-	}
-	
-	
 	
 	public void dateFormaterMethod(String dateStr)throws Throwable
 	{
@@ -775,6 +674,36 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
+	
+	public void submitSickleave()throws Throwable
+	{
+		try
+		{  												
+			if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
+			{
+				getObject("submitLeaverqstlocator").sendKeys("");
+				getObject("submitLeaverqstlocator").click();
+				System.out.println("The submit leave request button got clicked sucessfully");
+				if(existsElementchkFor1mts(OR.getProperty("leaveRequstOkbutton")))
+				{			
+					getObject("leaveRequstOkbutton").sendKeys("");
+					getObject("leaveRequstOkbutton").click();
+					System.out.println("");
+					System.out.println("The submit leave request ok button also got clicked sucessfully");
+				}
+			}
+			else if(!existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
+			{
+				System.out.println("waiting for the submit button to be dispalyed please wait..");
+				submitSickleave();
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
 	
 
 	@DataProvider

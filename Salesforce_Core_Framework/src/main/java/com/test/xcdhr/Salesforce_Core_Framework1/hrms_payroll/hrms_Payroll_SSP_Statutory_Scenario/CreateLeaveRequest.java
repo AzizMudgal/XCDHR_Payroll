@@ -194,13 +194,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				getObject("leaveTabclk").sendKeys("");
 				getObject("leaveTabclk").click();
-				//Thread.sleep(3000L);
-				/*if(existsElementchkFor1mts(OR.getProperty("periodStarts")))
-				{
-					String periodText = getObject("periodStarts").getText();
-					Assert.assertEquals("Period starts", periodText);
-					System.out.println("The leave tab of the employee's Record got clicked successfully");
-				}*/
+				Thread.sleep(3000L);
+				
 			}
 		}
 		catch(Throwable t)
