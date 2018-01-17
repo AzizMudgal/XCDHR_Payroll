@@ -1258,14 +1258,11 @@ public class TestBase {
 			password.sendKeys("london2014");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
-<<<<<<< HEAD
+
 			System.out.println("Logged into the New Automation Org");
 
 
-=======
-		
-			
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+
 		} catch (Throwable t) {
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);

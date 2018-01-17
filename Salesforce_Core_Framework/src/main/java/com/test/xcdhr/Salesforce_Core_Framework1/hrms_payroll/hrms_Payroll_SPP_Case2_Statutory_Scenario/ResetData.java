@@ -38,7 +38,6 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class ResetData extends TestSuiteBase
 {
-
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
