@@ -1196,10 +1196,10 @@ public class TestBase {
 
 	}
 
-	public boolean login_To_Application() throws Throwable {
+	public boolean login_To_QA_Org() throws Throwable {
 		try {
 
-			driver.get(CONFIG.getProperty("testSiteName"));
+			driver.get(CONFIG.getProperty("test_QA_Org"));
 			// Thread.sleep(6000L);
 			WebElement username = driver.findElement(By.id(OR
 					.getProperty("login_Username")));
@@ -1246,10 +1246,10 @@ public class TestBase {
 	 * 
 	 */
 
-	public boolean login_To_TestOrg() throws Throwable {
+	public boolean login_To_Automation_RegOrg() throws Throwable {
 		try {
 						
-			driver.get(CONFIG.getProperty("testOrg"));
+			driver.get(CONFIG.getProperty("test_Automation_Reg_Org"));
 
 			WebElement username = driver.findElement(By.id(OR
 					.getProperty("login_Username")));
@@ -1261,8 +1261,11 @@ public class TestBase {
 			Thread.sleep(1000L);
 
 			System.out.println("Logged into the New Automation Org");
+<<<<<<< HEAD
+=======
 
 
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 
 		} catch (Throwable t) {
 			CaptureScreenshot(this.getClass().getSimpleName());
@@ -7492,7 +7495,7 @@ public class TestBase {
 			throws Throwable {
 		try {
 
-			if (existsElementchkFor1mts(OR
+			/*if (existsElementchkFor1mts(OR
 					.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
 				for (int i = 1; i < 4; i++) {
 					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
@@ -7540,7 +7543,83 @@ public class TestBase {
 
 			}
 
-		} catch (Throwable t) {
+		}*/ 
+			
+//Code Added By Swamy
+			
+			//Thread.sleep(2000L);
+			if (existsElement(OR.getProperty("payRunWeekTable")))
+			{
+			System.out.println("Thee table exists");
+
+			WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+
+			List<WebElement> rows = payRunWeekOneTable.findElements(By
+					.xpath(OR.getProperty("WeekOneTablerows")));
+			lastRowCount = rows.size();
+			System.out.println("The total pay run records for the page is equal to : "+lastRowCount);
+			java.util.Iterator<WebElement> x = rows.iterator();
+			rownum = 2;
+		counter = 1;
+			while (x.hasNext())
+			{
+				//Thread.sleep(2000L);
+				System.out.println("Now the count of Rownum is : "+ rownum);
+				WebElement MonthPayRun_Record = driver.findElement(By
+						.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+								+ "div/" + "div[" + "2]/" + "table/"
+								+ "tbody/tr[" + (rownum) + "]/" + "th/"
+								+ "a"));
+				
+				if (existsWebElement(MonthPayRun_Record)) {
+					System.out.println("first payroll table record existt");
+				String PayRunTextName = MonthPayRun_Record.getText();
+				System.out.println("The Month name is :" + PayRunTextName);
+				if (PayRunTextName != null && PayRunTextName.equalsIgnoreCase(WeekName))
+				{
+					System.out.println("The Month name" + PayRunTextName
+							+ " matched");
+					MonthPayRun_Record.sendKeys("");
+					//Thread.sleep(1000L);
+					MonthPayRun_Record.click();
+					System.out.println("The Payrun record whose Month name is " + WeekName
+							+ "successfully clicked for processing payroll");
+
+					break;
+				}
+					System.out.println("The Month name" + PayRunTextName
+							+ " is not matched");
+					if (counter < 27 && rownum == 6|| rownum >10 && PayRunTextName != null
+							&& PayRunTextName != (WeekName))
+					{
+						System.out
+								.println("The row number of the page reached"
+								+ rownum
+								
+								+ " Required payrun not found hence clicking the"
+								+ " pagination link so that payrun search continues for next page");
+					
+					if (existsElementchkFor1mts(OR
+								.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+						{
+							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
+							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+							System.out
+									.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+							Thread.sleep(5000L);
+	
+						}
+					}
+						
+			System.out.println("Payrun not matched hence incrementing the row number");
+			rownum++;
+			counter++;
+			}
+		 }
+	   }
+	 	
+		}
+			catch (Throwable t) {
 			System.out.println(t.getMessage());
 
 		}
@@ -7674,12 +7753,12 @@ public class TestBase {
 		// if you want to login to QA org then
 		// choose org flag as 0
 		case 0:
-			login_To_Application();
+			login_To_QA_Org();
 
 			break; // if you want to login to Regress and automation org then
 					// choose org flag as 1
 		case 1:
-			login_To_TestOrg();
+			login_To_Automation_RegOrg();
 
 			break;
 		default:
