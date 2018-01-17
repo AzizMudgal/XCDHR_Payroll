@@ -69,7 +69,7 @@ public class TestReportsForAugustPayroll extends TestSuiteBase
 		//WebDriver driver = new FirefoxDriver(FirefoxDriverProfile());
 		openBrowser();
 		driver.get(CONFIG.getProperty("testSiteName"));
-		login_To_Application();
+		login_To_QA_Org();
 		driver.manage().window().maximize();
 		/*try
 		{

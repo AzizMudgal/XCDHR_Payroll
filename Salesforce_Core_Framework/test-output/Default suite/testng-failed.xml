@@ -3,13 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.ProcessPayrollForNIWeekly">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatE.ProcessPayrollForNIWeekly">
         <methods>
-          <include name="CheckSuiteSkip"/>
           <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-          <include name="CheckTestSkip"/>
+          <include name="CheckSuiteSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.ProcessPayrollForNIWeekly -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatE.ProcessPayrollForNIWeekly -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

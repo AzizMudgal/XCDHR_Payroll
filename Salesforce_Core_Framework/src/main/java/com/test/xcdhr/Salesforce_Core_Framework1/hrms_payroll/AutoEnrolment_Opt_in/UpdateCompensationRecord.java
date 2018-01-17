@@ -74,7 +74,7 @@ public class UpdateCompensationRecord extends TestSuiteBase {
 			shouldOpenBrowser = false;
 			openBrowser();
 			driver.get(CONFIG.getProperty("testSiteName"));
-			login_To_Application();
+			login_To_QA_Org();
 
 			driver.manage().window().maximize();
 
