@@ -1260,6 +1260,11 @@ public class TestBase {
 			Thread.sleep(1000L);
 
 			System.out.println("Logged into the New Automation Org");
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 
 		} catch (Throwable t) {
 			CaptureScreenshot(this.getClass().getSimpleName());
