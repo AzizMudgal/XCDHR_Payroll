@@ -280,6 +280,7 @@ public class TestBase {
 	public static boolean IsbrowserOpened = false;
 	boolean exlude = true;
 	boolean windowExclude = true;
+	public String PayRunTextName;
 
 	public static String TaxReport = "DO NOT TOUCH - TAX PAYROLL AUTOMATION";
 	public static String NIReport = "DO NOT TOUCH - PAYROLL AUTOMATION CHECK";
@@ -6515,7 +6516,6 @@ public class TestBase {
 									FirstReportNameInApplication,
 									TestResultExcelFilePath);
 						}
-
 						break;
 					}
 					break;
@@ -7334,7 +7334,10 @@ public class TestBase {
 		}
 	}
 
-	public void TaxPayRun_For_Week(String WeekName, String ExcelInputSheet,
+	/*
+	 * The following method needs to be deleted 
+	 */
+/*	public void TaxPayRun_For_Week(String WeekName, String ExcelInputSheet,
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {
@@ -7392,7 +7395,88 @@ public class TestBase {
 
 		}
 	}
+*/
+	
+	
+	
+	public void TaxPayRun_For_Week(String WeekName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			throws Throwable
+	{
+		try {
+				Thread.sleep(4000L);
+				if (existsElementchkFor1mts(OR.getProperty("payRunWeekTable"))) 
+				{
+				System.out.println("table exists");
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				java.util.Iterator<WebElement> x = rows.iterator();
+				System.out.println("total number of week records are :"
+						+ rows.size());
+				counter = 1;
+				rownum = 2;
+				while (x.hasNext())
+				{
+					WebElement Weekrecord = driver.findElement(By
+							.xpath("//div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+					if (existsWebElement(Weekrecord))
+					{
+					System.out.println("first payroll table record existt");
+					PayRunTextName = Weekrecord.getText();
+					System.out.println("The Week name is :" + PayRunTextName);
+					if (PayRunTextName != null && PayRunTextName.equalsIgnoreCase(WeekName))
+					{
+						System.out.println("The week name" + PayRunTextName
+								+ " matched");
+						Weekrecord.sendKeys("");
+						Weekrecord.click();
+						System.out.println("payRun text " + PayRunTextName
+								+ "got clicked successfully");
+						break;
+					}
+					System.out.println("The Week name" + PayRunTextName
+							+ " is not matched");
+					System.out.println("The count of the Record now is :"+rownum);
+					System.out.println("The count of the Counter now is :"+counter);
+					if (counter < 53 && rownum == 6 && PayRunTextName != null
+							&& PayRunTextName != (WeekName))
+					{
+						System.out
+								.println("The row number of the page reached"
+								+ rownum
+								
+								+ " Required payrun not found hence clicking the"
+								+ " pagination link so that payrun search continues for next page");
+						Thread.sleep(3000L);
 
+					if (existsElementchkFor1mts(OR
+								.getProperty("payrollWeeekSubPaginToDisplayAllRecords")))
+						{
+							getObject("payrollWeeekSubPaginToDisplayAllRecords").sendKeys("");
+							getObject("payrollWeeekSubPaginToDisplayAllRecords").click();
+							System.out
+									.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+							Thread.sleep(5000L);
+						}
+					}
+				System.out.println("Payrun not matched hence incrementing the row number");
+				rownum++;
+				}
+				counter++;
+			  }
+	       }
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage());
+		}
+	}
+
+	
+	
 	public void TaxPayRun_For_TwoWeek(String WeekName, String ExcelInputSheet,
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {

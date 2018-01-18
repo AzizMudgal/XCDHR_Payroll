@@ -3,12 +3,24 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.ProcessPayrollForNIWeekly">
+=======
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatE.ProcessPayrollForNIWeekly">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
           <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+<<<<<<< HEAD
+          <include name="CheckTestSkip"/>
+=======
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <include name="CheckSuiteSkip"/>
         </methods>
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.ProcessPayrollForNIWeekly -->
+=======
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatE.ProcessPayrollForNIWeekly -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

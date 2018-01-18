@@ -1,12 +1,19 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario;
 
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -21,7 +28,7 @@ public class ProcessPayrolFor11WeeklyShPP extends TestSuiteBase
 	public String payrollRecordId;
 	public int rownum;
 	public String weekOneRecordId;
-
+	public String PayRunTextName;
 	
 
 	@BeforeTest
@@ -78,18 +85,27 @@ public class ProcessPayrolFor11WeeklyShPP extends TestSuiteBase
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
 			driver.manage().window().maximize();
+			Thread.sleep(3000L);
+
 			try
 			{
-				System.out
-				.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+				{
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+					System.out.println("");
+				}
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+
 			}
 			catch (Throwable t)
 			{
 				System.out.println(t.getMessage().toString());
 			}
 		}
+		
 		/*
 		 *Following two methods goes to 'Generate draft details page' and process the 'Payroll for required employees' .
 		 */
@@ -112,6 +128,7 @@ public class ProcessPayrolFor11WeeklyShPP extends TestSuiteBase
 		}
 	}
 
+	
 	
 
 	@DataProvider
