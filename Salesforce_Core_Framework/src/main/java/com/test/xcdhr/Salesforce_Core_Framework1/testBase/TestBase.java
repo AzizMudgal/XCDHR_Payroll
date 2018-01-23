@@ -1259,28 +1259,24 @@ public class TestBase {
 			password.sendKeys("london2014");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
-
 			System.out.println("Logged into the New Automation Org");
-<<<<<<< HEAD
-=======
-
-
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
-
-		} catch (Throwable t) {
+		} 
+		catch (Throwable t) 
+		{
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Login unsuccessfull");
 			return false;
 		}
 		return true;
-
 	}
 
 	// Notification mail verification
 	public boolean login_To_Gmail(String Username, String Password)
-			throws Throwable {
-		try {
+			throws Throwable
+	{
+		try
+		{
 			WebElement username = driver.findElement(By.xpath(OR
 					.getProperty("gmaillogin_Username")));
 			username.sendKeys(Username);
@@ -1288,15 +1284,17 @@ public class TestBase {
 					.getProperty("gmaillogin_Password")));
 			password.sendKeys(Password);
 
-		} catch (Throwable t) {
+		}
+		catch (Throwable t)
+		{
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Gmail Login unsuccessfull");
 			return false;
 		}
 		return true;
-
 	}
+	
 
 	public WebElement getObject(String xpathkey) {
 		try {
