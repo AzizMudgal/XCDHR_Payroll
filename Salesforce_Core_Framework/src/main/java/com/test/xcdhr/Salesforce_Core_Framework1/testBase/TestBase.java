@@ -1047,9 +1047,8 @@ public class TestBase {
 		return profile;
 	}
 
-	public void closeBrowser() 
-	{
-		System.out.println("The script now is going to close the browser");	
+	public void closeBrowser() {
+		System.out.println("The script now is going to close the browser");
 		driver.close();
 		driver.quit();
 	}
@@ -1248,7 +1247,7 @@ public class TestBase {
 
 	public boolean login_To_Automation_RegOrg() throws Throwable {
 		try {
-						
+
 			driver.get(CONFIG.getProperty("test_Automation_Reg_Org"));
 
 			WebElement username = driver.findElement(By.id(OR
@@ -1260,9 +1259,14 @@ public class TestBase {
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
 			System.out.println("Logged into the New Automation Org");
+<<<<<<< HEAD
 		} 
 		catch (Throwable t) 
 		{
+=======
+
+		} catch (Throwable t) {
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Login unsuccessfull");
@@ -6340,7 +6344,7 @@ public class TestBase {
 	}
 
 	/******************* Statutory scenarios weekly payroll methods for first page *********************************/
-     /*PayrollForRequiredPayruns*/ 
+	/* PayrollForRequiredPayruns */
 	public void PayrollForStatutoryMonthly(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
@@ -7208,24 +7212,53 @@ public class TestBase {
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 			throws Throwable {
 		try {/*
-            
-			 if (existsElementchkFor1mts(OR
-					.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
-					{
-				for (int i = 1; i < 3; i++) {
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.sendKeys("");
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.click();
-					System.out.println("The expandable page got clicked for"
-							+ i + "st time");
-					Thread.sleep(4000L);
-				}
-				
-			}
-					
-			
-			Thread.sleep(4000L);
+			 * 
+			 * if (existsElementchkFor1mts(OR
+			 * .getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
+			 * for (int i = 1; i < 3; i++) {
+			 * getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
+			 * .sendKeys("");
+			 * getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
+			 * .click();
+			 * System.out.println("The expandable page got clicked for" + i +
+			 * "st time"); Thread.sleep(4000L); }
+			 * 
+			 * }
+			 * 
+			 * 
+			 * Thread.sleep(4000L); if
+			 * (existsElement(OR.getProperty("payRunWeekTable"))) {
+			 * System.out.println("Thee table exists");
+			 * 
+			 * WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+			 * 
+			 * List<WebElement> rows = payRunWeekOneTable.findElements(By
+			 * .xpath(OR.getProperty("WeekOneTablerows")));
+			 * java.util.Iterator<WebElement> x = rows.iterator();
+			 * System.out.println("total number of week records are :" +
+			 * rows.size());
+			 * 
+			 * rownum = 2; while (x.hasNext()) { WebElement Weekrecord =
+			 * driver.findElement(By .xpath("//div[" + "5" + "]/" + "div[" +
+			 * "1]/" + "div/" + "div[" + "2]/" + "table/" + "tbody/tr[" +
+			 * (rownum) + "]/" + "th/" + "a"));
+			 * 
+			 * String weekText = Weekrecord.getText();
+			 * 
+			 * if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
+			 * System.out.println("The week name" + WeekName + " matched");
+			 * Weekrecord.sendKeys(""); Thread.sleep(4000L); Weekrecord.click();
+			 * break; } else { System.out.println("payRun text " + WeekName +
+			 * "did not matched"); rownum++; }
+			 * 
+			 * }
+			 * 
+			 * }
+			 */
+
+			// Code Added By Swamy
+
+			// Thread.sleep(2000L);
 			if (existsElement(OR.getProperty("payRunWeekTable"))) {
 				System.out.println("Thee table exists");
 
@@ -7233,112 +7266,77 @@ public class TestBase {
 
 				List<WebElement> rows = payRunWeekOneTable.findElements(By
 						.xpath(OR.getProperty("WeekOneTablerows")));
+				lastRowCount = rows.size();
+				System.out
+						.println("The total pay run records for the page is equal to : "
+								+ lastRowCount);
 				java.util.Iterator<WebElement> x = rows.iterator();
-				System.out.println("total number of week records are :"
-						+ rows.size());
-
 				rownum = 2;
+				counter = 1;
 				while (x.hasNext()) {
-					WebElement Weekrecord = driver.findElement(By
+					// Thread.sleep(2000L);
+					System.out
+							.println("Now the count of Rownum is : " + rownum);
+					WebElement MonthPayRun_Record = driver.findElement(By
 							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
 									+ "div/" + "div[" + "2]/" + "table/"
 									+ "tbody/tr[" + (rownum) + "]/" + "th/"
 									+ "a"));
 
-					String weekText = Weekrecord.getText();
-
-					if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
-						System.out.println("The week name" + WeekName
-								+ " matched");
-						Weekrecord.sendKeys("");
-						Thread.sleep(4000L);
-						Weekrecord.click();
-						break;
-					} else {
-						System.out.println("payRun text " + WeekName
-								+ "did not matched");
-						rownum++;
-					}
-
-				}
-
-			}
-
-		*/
-
-			//Code Added By Swamy
-			
-			//Thread.sleep(2000L);
-			if (existsElement(OR.getProperty("payRunWeekTable")))
-			{
-			System.out.println("Thee table exists");
-
-			WebElement payRunWeekOneTable = getObject("payRunWeekTable");
-
-			List<WebElement> rows = payRunWeekOneTable.findElements(By
-					.xpath(OR.getProperty("WeekOneTablerows")));
-			lastRowCount = rows.size();
-			System.out.println("The total pay run records for the page is equal to : "+lastRowCount);
-			java.util.Iterator<WebElement> x = rows.iterator();
-			rownum = 2;
-		counter = 1;
-			while (x.hasNext())
-			{
-				//Thread.sleep(2000L);
-				System.out.println("Now the count of Rownum is : "+ rownum);
-				WebElement MonthPayRun_Record = driver.findElement(By
-						.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
-								+ "div/" + "div[" + "2]/" + "table/"
-								+ "tbody/tr[" + (rownum) + "]/" + "th/"
-								+ "a"));
-				
-				if (existsWebElement(MonthPayRun_Record)) {
-					System.out.println("first payroll table record existt");
-				String PayRunTextName = MonthPayRun_Record.getText();
-				System.out.println("The Month name is :" + PayRunTextName);
-				if (PayRunTextName != null && PayRunTextName.equalsIgnoreCase(MonthName))
-				{
-					System.out.println("The Month name" + PayRunTextName
-							+ " matched");
-					MonthPayRun_Record.sendKeys("");
-					//Thread.sleep(1000L);
-					MonthPayRun_Record.click();
-					System.out.println("The Payrun record whose Month name is " + MonthName
-							+ "successfully clicked for processing payroll");
-
-					break;
-				}
-					System.out.println("The Month name" + PayRunTextName
-							+ " is not matched");
-					if (counter < 12 && rownum == 6|| rownum >10 && PayRunTextName != null
-							&& PayRunTextName != (MonthName))
-					{
-						System.out
-								.println("The row number of the page reached"
-								+ rownum
-								
-								+ " Required payrun not found hence clicking the"
-								+ " pagination link so that payrun search continues for next page");
-					
-					if (existsElementchkFor1mts(OR
-								.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
-						{
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					if (existsWebElement(MonthPayRun_Record)) {
+						System.out.println("first payroll table record existt");
+						String PayRunTextName = MonthPayRun_Record.getText();
+						System.out.println("The Month name is :"
+								+ PayRunTextName);
+						if (PayRunTextName != null
+								&& PayRunTextName.equalsIgnoreCase(MonthName)) {
+							System.out.println("The Month name"
+									+ PayRunTextName + " matched");
+							MonthPayRun_Record.sendKeys("");
+							// Thread.sleep(1000L);
+							MonthPayRun_Record.click();
 							System.out
-									.println("As the required Payrun is not found in first page,hence clicked to pagination link");
-							Thread.sleep(5000L);
-	
+									.println("The Payrun record whose Month name is "
+											+ MonthName
+											+ "successfully clicked for processing payroll");
+
+							break;
 						}
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 12 && rownum == 6 || rownum > 10
+								&& PayRunTextName != null
+								&& PayRunTextName != (MonthName)) {
+							System.out
+									.println("The row number of the page reached"
+											+ rownum
+
+											+ " Required payrun not found hence clicking the"
+											+ " pagination link so that payrun search continues for next page");
+
+							if (existsElementchkFor1mts(OR
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.sendKeys("");
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.click();
+								System.out
+										.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+
+							}
+						}
+
+						System.out
+								.println("Payrun not matched hence incrementing the row number");
+						rownum++;
+						counter++;
 					}
-						
-			System.out.println("Payrun not matched hence incrementing the row number");
-			rownum++;
-			counter++;
+				}
 			}
-		 }
-	   }
-	 	
+
 		} catch (Throwable t) {
 			System.out.println(t.getMessage());
 
@@ -7493,131 +7491,127 @@ public class TestBase {
 			throws Throwable {
 		try {
 
-			/*if (existsElementchkFor1mts(OR
-					.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
-				for (int i = 1; i < 4; i++) {
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.sendKeys("");
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.click();
-					System.out.println("The expandable page got clicked for"
-							+ i + "st time");
-					Thread.sleep(2000L);
-				}
-			}
-			Thread.sleep(4000L);
-			if (existsElementchkFor1mts(OR.getProperty("payRunWeekTable"))) {
-				System.out.println("table exists");
+			/*
+			 * if (existsElementchkFor1mts(OR
+			 * .getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
+			 * for (int i = 1; i < 4; i++) {
+			 * getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
+			 * .sendKeys("");
+			 * getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
+			 * .click();
+			 * System.out.println("The expandable page got clicked for" + i +
+			 * "st time"); Thread.sleep(2000L); } } Thread.sleep(4000L); if
+			 * (existsElementchkFor1mts(OR.getProperty("payRunWeekTable"))) {
+			 * System.out.println("table exists"); WebElement payRunWeekOneTable
+			 * = getObject("payRunWeekTable"); List<WebElement> rows =
+			 * payRunWeekOneTable.findElements(By
+			 * .xpath(OR.getProperty("WeekOneTablerows")));
+			 * java.util.Iterator<WebElement> x = rows.iterator();
+			 * System.out.println("total number of week records are :" +
+			 * rows.size());
+			 * 
+			 * rownum = 2; while (x.hasNext()) { WebElement Weekrecord =
+			 * driver.findElement(By .xpath("//div[" + "5" + "]/" + "div[" +
+			 * "1]/" + "div/" + "div[" + "2]/" + "table/" + "tbody/tr[" +
+			 * (rownum) + "]/" + "th/" + "a"));
+			 * 
+			 * String weekText = Weekrecord.getText();
+			 * 
+			 * if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
+			 * System.out.println("The week name" + WeekName + " matched");
+			 * Weekrecord.sendKeys(""); Weekrecord.click(); break; } else {
+			 * System.out.println("payRun text " + WeekName +
+			 * "did not matched"); rownum++; }
+			 * 
+			 * }
+			 * 
+			 * }
+			 * 
+			 * }
+			 */
+
+			// Code Added By Swamy
+
+			// Thread.sleep(2000L);
+			if (existsElement(OR.getProperty("payRunWeekTable"))) {
+				System.out.println("Thee table exists");
+
 				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+
 				List<WebElement> rows = payRunWeekOneTable.findElements(By
 						.xpath(OR.getProperty("WeekOneTablerows")));
+				lastRowCount = rows.size();
+				System.out
+						.println("The total pay run records for the page is equal to : "
+								+ lastRowCount);
 				java.util.Iterator<WebElement> x = rows.iterator();
-				System.out.println("total number of week records are :"
-						+ rows.size());
-
 				rownum = 2;
+				counter = 1;
 				while (x.hasNext()) {
-					WebElement Weekrecord = driver.findElement(By
+					// Thread.sleep(2000L);
+					System.out
+							.println("Now the count of Rownum is : " + rownum);
+					WebElement MonthPayRun_Record = driver.findElement(By
 							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
 									+ "div/" + "div[" + "2]/" + "table/"
 									+ "tbody/tr[" + (rownum) + "]/" + "th/"
 									+ "a"));
 
-					String weekText = Weekrecord.getText();
-
-					if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
-						System.out.println("The week name" + WeekName
-								+ " matched");
-						Weekrecord.sendKeys("");
-						Weekrecord.click();
-						break;
-					} else {
-						System.out.println("payRun text " + WeekName
-								+ "did not matched");
-						rownum++;
-					}
-
-				}
-
-			}
-
-		}*/ 
-			
-//Code Added By Swamy
-			
-			//Thread.sleep(2000L);
-			if (existsElement(OR.getProperty("payRunWeekTable")))
-			{
-			System.out.println("Thee table exists");
-
-			WebElement payRunWeekOneTable = getObject("payRunWeekTable");
-
-			List<WebElement> rows = payRunWeekOneTable.findElements(By
-					.xpath(OR.getProperty("WeekOneTablerows")));
-			lastRowCount = rows.size();
-			System.out.println("The total pay run records for the page is equal to : "+lastRowCount);
-			java.util.Iterator<WebElement> x = rows.iterator();
-			rownum = 2;
-		counter = 1;
-			while (x.hasNext())
-			{
-				//Thread.sleep(2000L);
-				System.out.println("Now the count of Rownum is : "+ rownum);
-				WebElement MonthPayRun_Record = driver.findElement(By
-						.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
-								+ "div/" + "div[" + "2]/" + "table/"
-								+ "tbody/tr[" + (rownum) + "]/" + "th/"
-								+ "a"));
-				
-				if (existsWebElement(MonthPayRun_Record)) {
-					System.out.println("first payroll table record existt");
-				String PayRunTextName = MonthPayRun_Record.getText();
-				System.out.println("The Month name is :" + PayRunTextName);
-				if (PayRunTextName != null && PayRunTextName.equalsIgnoreCase(WeekName))
-				{
-					System.out.println("The Month name" + PayRunTextName
-							+ " matched");
-					MonthPayRun_Record.sendKeys("");
-					//Thread.sleep(1000L);
-					MonthPayRun_Record.click();
-					System.out.println("The Payrun record whose Month name is " + WeekName
-							+ "successfully clicked for processing payroll");
-
-					break;
-				}
-					System.out.println("The Month name" + PayRunTextName
-							+ " is not matched");
-					if (counter < 27 && rownum == 6|| rownum >10 && PayRunTextName != null
-							&& PayRunTextName != (WeekName))
-					{
-						System.out
-								.println("The row number of the page reached"
-								+ rownum
-								
-								+ " Required payrun not found hence clicking the"
-								+ " pagination link so that payrun search continues for next page");
-					
-					if (existsElementchkFor1mts(OR
-								.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
-						{
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					if (existsWebElement(MonthPayRun_Record)) {
+						System.out.println("first payroll table record existt");
+						String PayRunTextName = MonthPayRun_Record.getText();
+						System.out.println("The Month name is :"
+								+ PayRunTextName);
+						if (PayRunTextName != null
+								&& PayRunTextName.equalsIgnoreCase(WeekName)) {
+							System.out.println("The Month name"
+									+ PayRunTextName + " matched");
+							MonthPayRun_Record.sendKeys("");
+							// Thread.sleep(1000L);
+							MonthPayRun_Record.click();
 							System.out
-									.println("As the required Payrun is not found in first page,hence clicked to pagination link");
-							Thread.sleep(5000L);
-	
+									.println("The Payrun record whose Month name is "
+											+ WeekName
+											+ "successfully clicked for processing payroll");
+
+							break;
 						}
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 27 && rownum == 6 || rownum > 10
+								&& PayRunTextName != null
+								&& PayRunTextName != (WeekName)) {
+							System.out
+									.println("The row number of the page reached"
+											+ rownum
+
+											+ " Required payrun not found hence clicking the"
+											+ " pagination link so that payrun search continues for next page");
+
+							if (existsElementchkFor1mts(OR
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.sendKeys("");
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.click();
+								System.out
+										.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+
+							}
+						}
+
+						System.out
+								.println("Payrun not matched hence incrementing the row number");
+						rownum++;
+						counter++;
 					}
-						
-			System.out.println("Payrun not matched hence incrementing the row number");
-			rownum++;
-			counter++;
+				}
 			}
-		 }
-	   }
-	 	
-		}
-			catch (Throwable t) {
+
+		} catch (Throwable t) {
 			System.out.println(t.getMessage());
 
 		}
@@ -12218,28 +12212,57 @@ public class TestBase {
 
 	}
 
-	public void TaxPayRun_For_FourWeek(String FourWeekly, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePath)
-			throws Throwable {
+	public void TaxPayRun_For_FourWeek(String FourWeekly,
+			String ExcelInputSheet, String FirstReportNameInApplication,
+			String TestResultExcelFilePath) throws Throwable {
 		try {/*
-            
-			 if (existsElementchkFor1mts(OR
-					.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
-					{
-				for (int i = 1; i < 3; i++) {
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.sendKeys("");
-					getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
-							.click();
-					System.out.println("The expandable page got clicked for"
-							+ i + "st time");
-					Thread.sleep(4000L);
-				}
-				
-			}
-					
-			
-			Thread.sleep(4000L);
+			 * 
+			 * if (existsElementchkFor1mts(OR
+			 * .getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
+			 * for (int i = 1; i < 3; i++) {
+			 * getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
+			 * .sendKeys("");
+			 * getObject("payrollMonthWeeekSubPaginToDisplayAllRecords")
+			 * .click();
+			 * System.out.println("The expandable page got clicked for" + i +
+			 * "st time"); Thread.sleep(4000L); }
+			 * 
+			 * }
+			 * 
+			 * 
+			 * Thread.sleep(4000L); if
+			 * (existsElement(OR.getProperty("payRunWeekTable"))) {
+			 * System.out.println("Thee table exists");
+			 * 
+			 * WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+			 * 
+			 * List<WebElement> rows = payRunWeekOneTable.findElements(By
+			 * .xpath(OR.getProperty("WeekOneTablerows")));
+			 * java.util.Iterator<WebElement> x = rows.iterator();
+			 * System.out.println("total number of week records are :" +
+			 * rows.size());
+			 * 
+			 * rownum = 2; while (x.hasNext()) { WebElement Weekrecord =
+			 * driver.findElement(By .xpath("//div[" + "5" + "]/" + "div[" +
+			 * "1]/" + "div/" + "div[" + "2]/" + "table/" + "tbody/tr[" +
+			 * (rownum) + "]/" + "th/" + "a"));
+			 * 
+			 * String weekText = Weekrecord.getText();
+			 * 
+			 * if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
+			 * System.out.println("The week name" + WeekName + " matched");
+			 * Weekrecord.sendKeys(""); Thread.sleep(4000L); Weekrecord.click();
+			 * break; } else { System.out.println("payRun text " + WeekName +
+			 * "did not matched"); rownum++; }
+			 * 
+			 * }
+			 * 
+			 * }
+			 */
+
+			// Code Added By Swamy
+
+			// Thread.sleep(2000L);
 			if (existsElement(OR.getProperty("payRunWeekTable"))) {
 				System.out.println("Thee table exists");
 
@@ -12247,112 +12270,77 @@ public class TestBase {
 
 				List<WebElement> rows = payRunWeekOneTable.findElements(By
 						.xpath(OR.getProperty("WeekOneTablerows")));
+				lastRowCount = rows.size();
+				System.out
+						.println("The total pay run records for the page is equal to : "
+								+ lastRowCount);
 				java.util.Iterator<WebElement> x = rows.iterator();
-				System.out.println("total number of week records are :"
-						+ rows.size());
-
 				rownum = 2;
+				counter = 1;
 				while (x.hasNext()) {
-					WebElement Weekrecord = driver.findElement(By
+					// Thread.sleep(2000L);
+					System.out
+							.println("Now the count of Rownum is : " + rownum);
+					WebElement MonthPayRun_Record = driver.findElement(By
 							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
 									+ "div/" + "div[" + "2]/" + "table/"
 									+ "tbody/tr[" + (rownum) + "]/" + "th/"
 									+ "a"));
 
-					String weekText = Weekrecord.getText();
-
-					if (weekText != null && weekText.equalsIgnoreCase(WeekName)) {
-						System.out.println("The week name" + WeekName
-								+ " matched");
-						Weekrecord.sendKeys("");
-						Thread.sleep(4000L);
-						Weekrecord.click();
-						break;
-					} else {
-						System.out.println("payRun text " + WeekName
-								+ "did not matched");
-						rownum++;
-					}
-
-				}
-
-			}
-
-		*/
-
-			//Code Added By Swamy
-			
-			//Thread.sleep(2000L);
-			if (existsElement(OR.getProperty("payRunWeekTable")))
-			{
-			System.out.println("Thee table exists");
-
-			WebElement payRunWeekOneTable = getObject("payRunWeekTable");
-
-			List<WebElement> rows = payRunWeekOneTable.findElements(By
-					.xpath(OR.getProperty("WeekOneTablerows")));
-			lastRowCount = rows.size();
-			System.out.println("The total pay run records for the page is equal to : "+lastRowCount);
-			java.util.Iterator<WebElement> x = rows.iterator();
-			rownum = 2;
-		counter = 1;
-			while (x.hasNext())
-			{
-				//Thread.sleep(2000L);
-				System.out.println("Now the count of Rownum is : "+ rownum);
-				WebElement MonthPayRun_Record = driver.findElement(By
-						.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
-								+ "div/" + "div[" + "2]/" + "table/"
-								+ "tbody/tr[" + (rownum) + "]/" + "th/"
-								+ "a"));
-				
-				if (existsWebElement(MonthPayRun_Record)) {
-					System.out.println("first payroll table record existt");
-				String PayRunTextName = MonthPayRun_Record.getText();
-				System.out.println("The Month name is :" + PayRunTextName);
-				if (PayRunTextName != null && PayRunTextName.equalsIgnoreCase(FourWeekly))
-				{
-					System.out.println("The Month name" + PayRunTextName
-							+ " matched");
-					MonthPayRun_Record.sendKeys("");
-					//Thread.sleep(1000L);
-					MonthPayRun_Record.click();
-					System.out.println("The Payrun record whose Month name is " + FourWeekly
-							+ "successfully clicked for processing payroll");
-
-					break;
-				}
-					System.out.println("The Month name" + PayRunTextName
-							+ " is not matched");
-					if (counter < 14 && rownum == 6|| rownum >10 && PayRunTextName != null
-							&& PayRunTextName != (FourWeekly))
-					{
-						System.out
-								.println("The row number of the page reached"
-								+ rownum
-								
-								+ " Required payrun not found hence clicking the"
-								+ " pagination link so that payrun search continues for next page");
-					
-					if (existsElementchkFor1mts(OR
-								.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
-						{
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").sendKeys("");
-							getObject("payrollMonthWeeekSubPaginToDisplayAllRecords").click();
+					if (existsWebElement(MonthPayRun_Record)) {
+						System.out.println("first payroll table record existt");
+						String PayRunTextName = MonthPayRun_Record.getText();
+						System.out.println("The Month name is :"
+								+ PayRunTextName);
+						if (PayRunTextName != null
+								&& PayRunTextName.equalsIgnoreCase(FourWeekly)) {
+							System.out.println("The Month name"
+									+ PayRunTextName + " matched");
+							MonthPayRun_Record.sendKeys("");
+							// Thread.sleep(1000L);
+							MonthPayRun_Record.click();
 							System.out
-									.println("As the required Payrun is not found in first page,hence clicked to pagination link");
-							Thread.sleep(5000L);
-	
+									.println("The Payrun record whose Month name is "
+											+ FourWeekly
+											+ "successfully clicked for processing payroll");
+
+							break;
 						}
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 14 && rownum == 6 || rownum > 10
+								&& PayRunTextName != null
+								&& PayRunTextName != (FourWeekly)) {
+							System.out
+									.println("The row number of the page reached"
+											+ rownum
+
+											+ " Required payrun not found hence clicking the"
+											+ " pagination link so that payrun search continues for next page");
+
+							if (existsElementchkFor1mts(OR
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords"))) {
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.sendKeys("");
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.click();
+								System.out
+										.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+
+							}
+						}
+
+						System.out
+								.println("Payrun not matched hence incrementing the row number");
+						rownum++;
+						counter++;
 					}
-						
-			System.out.println("Payrun not matched hence incrementing the row number");
-			rownum++;
-			counter++;
+				}
 			}
-		 }
-	   }
-	 	
+
 		} catch (Throwable t) {
 			System.out.println(t.getMessage());
 
