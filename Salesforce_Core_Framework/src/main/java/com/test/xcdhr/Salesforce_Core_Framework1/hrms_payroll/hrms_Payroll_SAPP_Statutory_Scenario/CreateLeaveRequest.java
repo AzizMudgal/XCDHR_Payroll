@@ -228,8 +228,14 @@ public class CreateLeaveRequest extends TestSuiteBase
 				selectByValue.selectByValue(LeaveCategory);
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
+				Thread.sleep(3000L);
+				if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
+				{
+					submitSickleave();
+					System.out.println("Hence the sick leave got created sucessfully");
+				}
 			}
-			Thread.sleep(3000L);
+			/*Thread.sleep(3000L);
 			if(existsElement(OR.getProperty("submitLeaverqstlocator")))
 			{
 				getObject("submitLeaverqstlocator").sendKeys("");
@@ -245,7 +251,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The submit leave request ok button also got clicked sucessfully");
 			}
-			Thread.sleep(9000L);
+			Thread.sleep(9000L);*/
 		}
 		catch(Throwable t)
 		{

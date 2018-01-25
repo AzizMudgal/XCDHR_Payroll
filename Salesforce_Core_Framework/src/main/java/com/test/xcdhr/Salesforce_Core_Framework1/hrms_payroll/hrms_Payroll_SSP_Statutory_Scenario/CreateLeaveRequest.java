@@ -24,7 +24,6 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class CreateLeaveRequest extends TestSuiteBase
 {
-
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
@@ -39,7 +38,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public String leaveCategory;
 	public String leaveType;
 	public String leaveapprovalStatus;
-	
+
 
 
 	@BeforeTest
@@ -102,7 +101,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		/*************************************************************************/
 	}
 
-	
+
 
 	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String leaveStDate, String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
 	{
@@ -135,42 +134,42 @@ public class CreateLeaveRequest extends TestSuiteBase
 				java.util.Iterator<WebElement> x = rows.iterator();
 				int rownum = 1;	
 				outerbreak:
-				while(x.hasNext())
-				{
-					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
-					WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-					if(existsWebElement(firstEmployee))
+					while(x.hasNext())
 					{
-						String AppnEmp= firstEmployee.getText();
-						//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
-						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
+						String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
+						WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+						if(existsWebElement(firstEmployee))
 						{
-							System.out.println("Employee matched");
-							System.out.println("Employee name is  :"+EmpName);
-							if(existsWebElement(firstEmployee))
+							String AppnEmp= firstEmployee.getText();
+							//System.out.println(tempEmp+"-------"+empName+"------"+rownum);
+							if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 							{
-								firstEmployee.click();
-								System.out.println("The employee namely :"+AppnEmp+" got clicked successfully and displaying employee record");
-								break outerbreak;
+								System.out.println("Employee matched");
+								System.out.println("Employee name is  :"+EmpName);
+								if(existsWebElement(firstEmployee))
+								{
+									firstEmployee.click();
+									System.out.println("The employee namely :"+AppnEmp+" got clicked successfully and displaying employee record");
+									break outerbreak;
+								}
+							}
+							else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+							{
+								System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+										+ " Required Employee not found hence clicking the"
+										+ " pagination link so that Employee search continues for next page");
+								if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+								{
+									getObject("paginationNextPersonal").sendKeys("");
+									getObject("paginationNextPersonal").click();
+									System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+									Thread.sleep(8000L);
+									rownum = 0;
+								}
 							}
 						}
-						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
-						{
-							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
-									+ " Required Employee not found hence clicking the"
-									+ " pagination link so that Employee search continues for next page");
-							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
-							{
-								getObject("paginationNextPersonal").sendKeys("");
-								getObject("paginationNextPersonal").click();
-								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-								Thread.sleep(8000L);
-								rownum = 0;
-							}
-						 }
+						rownum++;
 					}
-					rownum++;
-				}
 			}
 		}
 		catch(Throwable t)
@@ -195,7 +194,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("leaveTabclk").sendKeys("");
 				getObject("leaveTabclk").click();
 				Thread.sleep(3000L);
-				
+
 			}
 		}
 		catch(Throwable t)
@@ -207,22 +206,22 @@ public class CreateLeaveRequest extends TestSuiteBase
 	}
 
 
-	
+
 	public void bookLeave(String LeaveYear,String LeaveCategory,String leaveStDate, String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
 	{
 		try
 		{
 			if(existsElementchkFor1mts(OR.getProperty("bookLeavebuttonlocator")))
 			{
-					String bookLeaveText = getObject("bookLeavebuttonlocator").getAttribute("value");
-					System.out.println("the book leave button text is :"+bookLeaveText);
-					Assert.assertEquals("Book leave", bookLeaveText);
-					System.out.println("The book leave button of the leave tab of the employee's Record is displayed successfully");
-					getObject("bookLeavebuttonlocator").sendKeys("");
-					getObject("bookLeavebuttonlocator").click();
-					System.out.println("Book leave button got clicked");
+				String bookLeaveText = getObject("bookLeavebuttonlocator").getAttribute("value");
+				System.out.println("the book leave button text is :"+bookLeaveText);
+				Assert.assertEquals("Book leave", bookLeaveText);
+				System.out.println("The book leave button of the leave tab of the employee's Record is displayed successfully");
+				getObject("bookLeavebuttonlocator").sendKeys("");
+				getObject("bookLeavebuttonlocator").click();
+				System.out.println("Book leave button got clicked");
 			}
-			
+
 			//Thread.sleep(3000L);
 			if(existsElementchkFor1mts(OR.getProperty("leaveCategorypicklistlocator")))
 			{
@@ -247,7 +246,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("The sick leave submit request button is displayed successfully");
 				Assert.assertEquals("Submit leave request", submitLeaveRequestBtnText);
 			}
-			if(existsElement(OR.getProperty("leaveCategorypicklistlocator")))
+			if(existsElementchkFor1mts(OR.getProperty("leaveCategorypicklistlocator")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("leaveCategorypicklistlocator"))));
 				// This select by value needs to be called from OR.Properties
@@ -255,8 +254,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The Sick leave ITEM got selected sucessfully");
 			}
-			//Thread.sleep(3000L);
-			//illnessForSickleave
+
 			if(existsElementchkFor1mts(OR.getProperty("illnessForSickleave")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("illnessForSickleave"))));
@@ -265,7 +263,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println("");
 				System.out.println("The illness ITEM got selected sucessfully");
 			}
-			//Thread.sleep(3000L);
 			keyDates(leaveStDate,LeaveEndDate);
 			Thread.sleep(10000L);
 			try
@@ -290,7 +287,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
+
 
 	public void keyDates(String leaveStDate, String LeaveEndDate)throws Throwable
 	{
@@ -374,8 +371,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
+
+
 	public void submitSickleave()throws Throwable
 	{
 		try
@@ -406,9 +403,9 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
-			
+
+
+
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
@@ -416,8 +413,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"CreateLeaveRequest");
 	}
 
-	
-	
+
+
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
@@ -455,5 +452,5 @@ public class CreateLeaveRequest extends TestSuiteBase
 			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
 		closeBrowser();
-	 }
+	}
 }

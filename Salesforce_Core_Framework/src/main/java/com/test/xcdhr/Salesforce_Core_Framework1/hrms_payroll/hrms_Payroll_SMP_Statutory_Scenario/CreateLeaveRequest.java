@@ -34,7 +34,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public String inputdatetwo;
 	public String ckbox;
 
-	
+
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
@@ -132,42 +132,42 @@ public class CreateLeaveRequest extends TestSuiteBase
 				java.util.Iterator<WebElement> x = rows.iterator();
 				int rownum = 1;
 				outerbreak:
-				while(x.hasNext())
-				{
-					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
-					WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-					if(existsWebElement(firstEmployee))
+					while(x.hasNext())
 					{
-						String AppnEmp= firstEmployee.getText();
-						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
-						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
+						String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
+						WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+						if(existsWebElement(firstEmployee))
 						{
-							System.out.println("Employee matched");
-							System.out.println("Employee name is  :"+EmpName);
-							if(existsWebElement(firstEmployee))
+							String AppnEmp= firstEmployee.getText();
+							System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
+							if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 							{
-								firstEmployee.click();
-								System.out.println("The employee namely :"+AppnEmp+"got clicked");
-								break outerbreak;
+								System.out.println("Employee matched");
+								System.out.println("Employee name is  :"+EmpName);
+								if(existsWebElement(firstEmployee))
+								{
+									firstEmployee.click();
+									System.out.println("The employee namely :"+AppnEmp+"got clicked");
+									break outerbreak;
+								}
+							}
+							else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+							{
+								System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+										+ " Required Employee not found hence clicking the"
+										+ " pagination link so that Employee search continues for next page");
+								if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+								{
+									getObject("paginationNextPersonal").sendKeys("");
+									getObject("paginationNextPersonal").click();
+									System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+									Thread.sleep(8000L);
+									rownum = 0;
+								}
 							}
 						}
-						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
-						{
-							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
-									+ " Required Employee not found hence clicking the"
-									+ " pagination link so that Employee search continues for next page");
-							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
-							{
-								getObject("paginationNextPersonal").sendKeys("");
-								getObject("paginationNextPersonal").click();
-								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-								Thread.sleep(8000L);
-								rownum = 0;
-							}
-						 }
+						rownum++;
 					}
-					rownum++;
-				}
 			}
 		}
 		catch(Throwable t)
@@ -242,8 +242,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 		selectMaternityLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
 	}
 
-	
-	
+
+
 	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
 	{
 		try
@@ -290,14 +290,14 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
+
 		keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
-		
+
 		selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
-		
+
 		MaternitySavebutton();
 	}
-	
+
 
 
 	public void ReadStatutoryPayBasis(String StatutoryPaybasis)throws Throwable
@@ -338,7 +338,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
-	
+
 
 	public void MaternitySavebutton()throws Throwable
 	{
@@ -361,7 +361,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	}
 
 
-	
+
 	public void keyDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate)throws Throwable
 	{
 		try
@@ -478,6 +478,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	}
 
 
+
 	public void selectStatutoryPayAndCondnSatisfy(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
 	{
 		try
@@ -565,8 +566,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		return Test_Util.getData(Payroll_Statutory_maternitypay_SuiteXls,"CreateLeaveRequest");
 	}
-	
-	
+
+
 
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
@@ -588,6 +589,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		Skip=false;
 		Fail=false;
 	}
+
 
 
 	@AfterTest
