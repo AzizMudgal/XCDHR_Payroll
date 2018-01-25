@@ -202,12 +202,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 		Thread.sleep(3000L);
 		bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 		}
+
 	
-	
-
-
-
-
 	public void bookLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
 	{
 		try
@@ -253,13 +249,14 @@ public class CreateLeaveRequest extends TestSuiteBase
 				selectByValue.selectByValue(LeaveCategory);
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
+				Thread.sleep(2000L);
+				if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
+				{
+					submitSickleave();
+					System.out.println("Hence the sick leave got created sucessfully");
+				}
 			}
-			Thread.sleep(2000L);
-			if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
-			{
-				submitSickleave();
-				System.out.println("Hence the sick leave got created sucessfully");
-			}
+			
 		}
 		catch(Throwable t)
 		{

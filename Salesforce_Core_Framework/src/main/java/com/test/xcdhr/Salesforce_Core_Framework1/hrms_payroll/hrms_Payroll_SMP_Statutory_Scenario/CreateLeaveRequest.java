@@ -1,12 +1,8 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario;
 
-import java.text.DateFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+
 import java.util.List;
 import java.util.HashMap;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -17,11 +13,9 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import atu.webdriver.utils.table.WebTable;
-
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
+
 
 public class CreateLeaveRequest extends TestSuiteBase
 {
@@ -81,10 +75,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -98,8 +94,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 		/*************************************************************************/
 	}
-	
-	
+
 
 
 	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
@@ -186,7 +181,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		Thread.sleep(3000L);
 		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 	}
-	
+
 
 
 	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
@@ -208,8 +203,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 		selectLeaveYear(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
 	}
-	
-	
+
 
 
 	public void selectLeaveYear(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
@@ -225,8 +219,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
+
 
 
 	public void bookLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
@@ -248,10 +241,9 @@ public class CreateLeaveRequest extends TestSuiteBase
 		Thread.sleep(3000L);
 		selectMaternityLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
 	}
+
 	
 	
-
-
 	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
 	{
 		try
@@ -260,28 +252,16 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("leaveCategorypicklistlocator"))));
 				// This select by value needs to be called from OR.Properties
-				//selectByValue.selectByValue(LeaveCategory);
 				selectByValue.selectByVisibleText(LeaveCategory);
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
+				Thread.sleep(3000L);
+				if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
+				{
+					submitSickleave();
+					System.out.println("Hence the sick leave got created sucessfully");
+				}
 			}
-			Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("submitLeaverqstlocator")))
-			{
-				getObject("submitLeaverqstlocator").sendKeys("");
-				getObject("submitLeaverqstlocator").click();
-				System.out.println("");
-				System.out.println("The submit leave request button got clicked sucessfully");
-			}
-			Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("leaveRequstOkbutton")))
-			{
-				getObject("leaveRequstOkbutton").sendKeys("");
-				getObject("leaveRequstOkbutton").click();
-				System.out.println("");
-				System.out.println("The submit leave request ok button also got clicked sucessfully");
-			}
-			Thread.sleep(9000L);
 		}
 		catch(Throwable t)
 		{
@@ -291,8 +271,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 		enterLeaveDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
 	}
-	
-	
+
 
 
 	public void enterLeaveDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
@@ -311,11 +290,13 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		selectCheckbox(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
+		
+		keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
+		
 		selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
+		
 		MaternitySavebutton();
 	}
-	
 	
 
 
@@ -357,6 +338,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
+	
 
 	public void MaternitySavebutton()throws Throwable
 	{
@@ -379,184 +361,119 @@ public class CreateLeaveRequest extends TestSuiteBase
 	}
 
 
-	public void selectCheckbox(String BirthdueDate,String BabyBorndate,String LeaveStDate,String LeaveEndDate)throws Throwable
+	
+	public void keyDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate)throws Throwable
 	{
-		if(existsElement(OR.getProperty("keyDatesTablelocator")))
+		try
 		{
-			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
-			WebTable table = WebTable.getTable(postsTable);
-			String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
-			inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
-			String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
-			inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
-			System.out.println("The 5nd label name is :"+firstCellOfBody1);
-			System.out.println("The 7th label name is :"+firstCellOfBody2);
-			
-			LeaveReqPageFieldNameStorage.put("Birth Start date", firstCellOfBody1);
-			LeaveReqPageFieldNameStorage.put("Baby End date", firstCellOfBody2);
-		
-			datefield1 = LeaveReqPageFieldNameStorage.get("Birth Start date");
-			datefield2 = LeaveReqPageFieldNameStorage.get("Baby End date");
+			if(existsElement(OR.getProperty("Smpbirthduedatelocator")))
+			{
+				getObject("Smpbirthduedatelocator").sendKeys("");
+				String dateStr = BirthdueDate;
+				dateFormaterMethod(dateStr);
+				getObject("Smpbirthduedatelocator").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Birth due date was entered sucessfully");	
+			}
+			else if(existsElement(OR.getProperty("QAOrgSmpbirthduedatelocator")))
+			{
+				getObject("QAOrgSmpbirthduedatelocator").sendKeys("");
+				String dateStr = BirthdueDate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgSmpbirthduedatelocator").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("selected from qa org locator The Birth due date was entered sucessfully");	
+			}
 		}
-	
-		
-		/*
-		WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
-		WebTable table = WebTable.getTable(postsTable);
-		String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
-		inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
-
-		String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
-		inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
-		System.out.println("The 5nd label name is :"+firstCellOfBody1);
-		System.out.println("The 7th label name is :"+firstCellOfBody2);
-
-		LeaveReqPageFieldNameStorage.put("Birth due date", firstCellOfBody1);
-		LeaveReqPageFieldNameStorage.put("Baby born date", firstCellOfBody2);
-
-		datefield1 = LeaveReqPageFieldNameStorage.get("Birth due date");
-		datefield2 = LeaveReqPageFieldNameStorage.get("Baby born date");
-		*/
-	
-			try
-			{
-				if(existsElement(OR.getProperty("newdateonefieldlocator")))
-				{
-					getObject("newdateonefieldlocator").sendKeys("");
-					String dateStr = BirthdueDate;
-					DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-					DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-					Date date = null;				
-					try 
-					{
-						date = readFormat.parse( dateStr.trim() );
-						System.out.println(date.toString());
-					} 
-					catch ( ParseException e ) 
-					{
-						System.out.println(e.getMessage());
-					}
-
-					String formattedDate = null;
-					if( date != null ) 
-					{
-						formattedDate = writeFormat.format( date );
-					}
-					System.out.println("The entered date is  " +formattedDate);		
-					Thread.sleep(4000L);
-					getObject("newdateonefieldlocator").sendKeys(formattedDate);
-					System.out.println("");
-					System.out.println("The Birth due date was entered sucessfully");	
-					Thread.sleep(2000);
-				}
-			}
-			catch(Throwable t)
-			{
-				System.out.println(t.getMessage().toString());
-				System.out.println(t.getStackTrace().toString());
-			}
-
-			
-			try
-			{
-				if(existsElement(OR.getProperty("newdatetwofieldlocator")))
-				{
-					getObject("newdatetwofieldlocator").sendKeys("");
-					String dateStr = BirthdueDate;
-					DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-					DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-					Date date = null;				
-					try 
-					{
-						date = readFormat.parse( dateStr.trim() );
-						System.out.println(date.toString());
-					} 
-					catch ( ParseException e ) 
-					{
-						System.out.println(e.getMessage());
-					}
-
-					String formattedDate = null;
-					if( date != null ) 
-					{
-						formattedDate = writeFormat.format( date );
-					}
-					System.out.println("The entered date is  " +formattedDate);		
-					Thread.sleep(4000L);
-					getObject("newdatetwofieldlocator").sendKeys(formattedDate);
-					System.out.println("");
-					System.out.println("The Birth due date was entered sucessfully");	
-					Thread.sleep(2000);
-				}
-			}
-			catch(Throwable t)
-			{
-				System.out.println(t.getMessage().toString());
-				System.out.println(t.getStackTrace().toString());
-			}
-		
-		/*
-		 * Code for Start date and End date fields
-		 */
-		if(existsElement(OR.getProperty("newdatethreefieldlocator")))
+		catch(Throwable t)
 		{
-			getObject("newdatethreefieldlocator").sendKeys("");
-			String dateStr = LeaveStDate;
-			DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-			DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-			Date date = null;				
-			try 
-			{
-				date = readFormat.parse( dateStr.trim() );
-				System.out.println(date.toString());
-			} 
-			catch ( ParseException e ) 
-			{
-				System.out.println(e.getMessage());
-			}
-
-			String formattedDate = null;
-			if( date != null ) 
-			{
-				formattedDate = writeFormat.format( date );
-			}
-			System.out.println("The entered Start date is  " +formattedDate);		
-			Thread.sleep(4000L);
-			getObject("newdatethreefieldlocator").sendKeys(formattedDate);
-			System.out.println("");
-			System.out.println("The Leave request start date was entered sucessfully");
-			Thread.sleep(3000L);
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
-
-		if(existsElement(OR.getProperty("newdatefourfieldlocator")))
+		try
 		{
-			getObject("newdatefourfieldlocator").sendKeys("");
-			String dateStr = LeaveEndDate;
-			DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-			DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-			Date date = null;				
-			try 
+			if(existsElement(OR.getProperty("SmpbabyBornDatelocator")))
 			{
-				date = readFormat.parse( dateStr.trim() );
-				System.out.println(date.toString());
-			} 
-			catch ( ParseException e ) 
-			{
-				System.out.println(e.getMessage());
+				getObject("SmpbabyBornDatelocator").sendKeys("");
+				String dateStr = BabyBorndate;
+				dateFormaterMethod(dateStr);
+				getObject("SmpbabyBornDatelocator").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The baby born date was entered sucessfully");
+				Thread.sleep(3000L);
 			}
-
-			String formattedDate = null;
-			if( date != null ) 
+			else if(existsElement(OR.getProperty("QAOrgSmpbabyBornDatelocator")))
 			{
-				formattedDate = writeFormat.format( date );
+				getObject("QAOrgSmpbabyBornDatelocator").sendKeys("");
+				String dateStr = BabyBorndate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgSmpbabyBornDatelocator").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("selected from qa org locator The baby born date was entered sucessfully");
+				Thread.sleep(3000L);
 			}
-			System.out.println("The entered End date is  " +formattedDate);		
-			Thread.sleep(4000L);
-			getObject("newdatefourfieldlocator").sendKeys(formattedDate);
-			System.out.println("");
-			System.out.println("The Leave request end date was entered sucessfully");
-			Thread.sleep(3000L);
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+		try
+		{
+			if(existsElement(OR.getProperty("SmpleaveReqstStdate")))
+			{
+				getObject("SmpleaveReqstStdate").sendKeys("");
+				String dateStr = LeaveStDate;
+				dateFormaterMethod(dateStr);
+				getObject("SmpleaveReqstStdate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Leave request start date was entered sucessfully");
+				Thread.sleep(3000L);
+			}
+			else if(existsElement(OR.getProperty("QAOrgSmpleaveReqstStdate")))
+			{
+				getObject("QAOrgSmpleaveReqstStdate").sendKeys("");
+				String dateStr = LeaveStDate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgSmpleaveReqstStdate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Leave request start date was entered sucessfully");
+				Thread.sleep(3000L);
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+		try
+		{
+			if(existsElement(OR.getProperty("SmpleaveReqstEndDate")))
+			{
+				getObject("SmpleaveReqstEndDate").sendKeys("");
+				String dateStr = LeaveEndDate;
+				dateFormaterMethod(dateStr);
+				getObject("SmpleaveReqstEndDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Leave request end date was entered sucessfully");
+				Thread.sleep(3000L);
+			}
+			else if(existsElement(OR.getProperty("QAOrgSmpleaveReqstEndDate")))
+			{
+				getObject("QAOrgSmpleaveReqstEndDate").sendKeys("");
+				String dateStr = LeaveEndDate;
+				dateFormaterMethod(dateStr);
+				getObject("QAOrgSmpleaveReqstEndDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Leave request end date was entered sucessfully");
+				Thread.sleep(3000L);
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 	}
 
