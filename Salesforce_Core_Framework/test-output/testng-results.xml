@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="147644" started-at="2018-01-29T09:13:39Z" finished-at="2018-01-29T09:16:07Z">
+  <suite name="Default suite" duration-ms="185756" started-at="2018-01-29T13:55:42Z" finished-at="2018-01-29T13:58:47Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="147644" started-at="2018-01-29T09:13:39Z" finished-at="2018-01-29T09:16:07Z">
+    <test name="Default test" duration-ms="185756" started-at="2018-01-29T13:55:42Z" finished-at="2018-01-29T13:58:47Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="8139" started-at="2018-01-29T14:43:31Z" finished-at="2018-01-29T14:43:39Z">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="5757" started-at="2018-01-29T19:25:36Z" finished-at="2018-01-29T19:25:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1" started-at="2018-01-29T14:43:39Z" finished-at="2018-01-29T14:43:39Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3" started-at="2018-01-29T19:25:42Z" finished-at="2018-01-29T19:25:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="144783" started-at="2018-01-29T14:43:39Z" data-provider="getData" finished-at="2018-01-29T14:46:04Z">
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="180630" started-at="2018-01-29T19:25:42Z" data-provider="getData" finished-at="2018-01-29T19:28:43Z">
           <params>
             <param index="0">
               <value>
@@ -34,12 +34,12 @@
             </param>
             <param index="3">
               <value>
-                <![CDATA[rtiemployee101@xcdgmail.com]]>
+                <![CDATA[rtiemployee1001@xcdgmail.com]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[rtiemployee101@xcdgmail.com]]>
+                <![CDATA[rtiemployee1001@xcdgmail.com]]>
               </value>
             </param>
             <param index="5">
@@ -206,11 +206,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="23" started-at="2018-01-29T14:46:04Z" finished-at="2018-01-29T14:46:04Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="27" started-at="2018-01-29T19:28:43Z" finished-at="2018-01-29T19:28:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2764" started-at="2018-01-29T14:46:04Z" finished-at="2018-01-29T14:46:07Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportTestResult" is-config="true" duration-ms="4764" started-at="2018-01-29T19:28:43Z" finished-at="2018-01-29T19:28:47Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
