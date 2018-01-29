@@ -2,28 +2,51 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="95967" started-at="2018-01-24T15:13:52Z" finished-at="2018-01-24T15:15:28Z">
+=======
+  <suite name="Default suite" duration-ms="57040" started-at="2018-01-25T13:33:17Z" finished-at="2018-01-25T13:34:14Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="95967" started-at="2018-01-24T15:13:52Z" finished-at="2018-01-24T15:15:28Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="5411" started-at="2018-01-24T20:43:46Z" finished-at="2018-01-24T20:43:52Z">
+=======
+    <test name="Default test" duration-ms="57040" started-at="2018-01-25T13:33:17Z" finished-at="2018-01-25T13:34:14Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.SmallEmployerRelief">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7372" started-at="2018-01-25T19:03:10Z" finished-at="2018-01-25T19:03:17Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1" started-at="2018-01-24T20:43:52Z" finished-at="2018-01-24T20:43:52Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3303" started-at="2018-01-25T19:03:17Z" finished-at="2018-01-25T19:03:21Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="93568" started-at="2018-01-24T20:43:52Z" data-provider="getData" finished-at="2018-01-24T20:45:25Z">
+=======
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="43288" started-at="2018-01-25T19:03:24Z" data-provider="getData" finished-at="2018-01-25T19:04:08Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DONT TOUCH AUTO HMRCS1 COMPANY]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION SAP 101]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Draft DO NOT TOUCH]]>
               </value>
             </param>
@@ -200,21 +223,36 @@
             <param index="36">
               <value>
                 <![CDATA[End of contract]]>
+=======
+                <![CDATA[1]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithNICategory -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="53" started-at="2018-01-24T20:45:25Z" finished-at="2018-01-24T20:45:25Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2852" started-at="2018-01-25T19:04:08Z" finished-at="2018-01-25T19:04:11Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2317" started-at="2018-01-24T20:45:25Z" finished-at="2018-01-24T20:45:28Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportTestResult" is-config="true" duration-ms="3880" started-at="2018-01-25T19:04:11Z" finished-at="2018-01-25T19:04:14Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.SmallEmployerRelief -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

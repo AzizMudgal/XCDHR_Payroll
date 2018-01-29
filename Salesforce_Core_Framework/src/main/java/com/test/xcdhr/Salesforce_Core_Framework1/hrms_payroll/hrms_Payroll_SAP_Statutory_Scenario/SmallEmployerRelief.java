@@ -89,6 +89,7 @@ public class SmallEmployerRelief extends TestSuiteBase
 
 
 			driver.manage().window().maximize();
+			Thread.sleep(6000L);
 
 			try
 			{
@@ -269,9 +270,7 @@ public class SmallEmployerRelief extends TestSuiteBase
 					for(WebElement tdElement : td_collection)
 					{
 						System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP COMPANY"))// DO NOT TOUCH AUTO ENROLMENT TEST COMPANY
-							//DONT TOUCH AUTO DIRSAPP COMPANY  DO NOT TOUCH AUTO ENROLMENT TEST COMPANY 1
-
+						if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP COMPANY"))
 						{	
 							Thread.sleep(4000L);
 							System.out.println("Company name  :"+tdElement.getText()+ "  matched ");
@@ -323,9 +322,7 @@ public class SmallEmployerRelief extends TestSuiteBase
 					System.out.println("the count is "+rownum1);
 					try
 					{							
-						//String EmployerName = "//div[2]/div[5]/table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
 						String EmployerName = "//table/tbody/tr"+"["+rownum1+"]"+"/td[2]/a";
-
 						if(existsElement(EmployerName))
 						{
 							System.out.println("Employer details table exists");
@@ -358,45 +355,14 @@ public class SmallEmployerRelief extends TestSuiteBase
 						System.out.println(t.getMessage().toString());
 						System.out.println(t.getStackTrace().toString());
 					}
-					
 					rownum1++;
 				}
-						
-
-				/*
-				int row_num,col_num;
-				row_num=1;
-				outerloop:
-					for(WebElement trElement1 : rows11)
-					{
-						List<WebElement> td_collection1=trElement1.findElements(By.xpath("td"));
-						System.out.println("NUMBER OF COLUMNS="+td_collection1.size());
-						col_num=1;
-
-						for(WebElement tdElement : td_collection1)
-						{
-							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DONT TOUCH AUTO DIRSAP EMPLOYER"))
-							{
-								Thread.sleep(5000L);
-								System.out.println("Link name  :"+tdElement.getText()+ "  matched ");
-								WebElement eplyrclkchkbox = driver.findElement(By.xpath("//following-sibling::td[1]/a[@id='lookupa0Xb000000OaLioj_id0_j_id4100Nb0000009I76v']"));
-								Thread.sleep(2000L);
-								eplyrclkchkbox.click();
-								System.out.println("clicked to employer");
-								break  outerloop;
-							}
-						}
-						col_num++;
-					}
-				row_num++;*/
 			}
 		}
 		catch(Throwable t)
 		{
 
 		}
-		
 		Thread.sleep(5000L);
 		if(existsElementchkFor1mts(OR.getProperty("EditButtonLocator")))
 		{
@@ -406,51 +372,6 @@ public class SmallEmployerRelief extends TestSuiteBase
 		}
 	}
 
-
-/*
-	public void toCheckSER(String SmallEmployerRelief)throws Throwable
-	{
-		try
-		{
-			boolean	smallERchekbox = getObject("SERcheckboxLocator").isSelected();
-			double valueOfsmallReliefChkbox = Double.parseDouble(SmallEmployerRelief);
-			System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
-			if(valueOfsmallReliefChkbox== 0.0)
-			{
-				if(existsElementchkFor1mts(OR.getProperty("SERcheckboxLocator")))
-				{
-					Thread.sleep(4000L);
-					issmallEmplyrchecBox(smallERchekbox);
-				}
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-
-	}
-
-
-
-
-	public boolean issmallEmplyrchecBox(boolean smallERchekbox)throws Throwable
-	{
-		if(smallERchekbox)
-		{
-			System.out.println("Small Employer relief checkbox is already checked, Hence unchecking now");
-			getObject("SERcheckboxLocator").click();
-			System.out.println("Condition checkbox got unchecked successfully");
-		}
-		else
-		{
-			System.out.println("Small Employer relief checkbox was 'NOT Checked' by default, hence our condition got satisfied as per functioanlity requirement");
-			Thread.sleep(2000L);
-		}
-		return smallERchekbox;
-	}
-*/
 
 
 	public void saveSmallEmployerRbtn()throws Throwable
@@ -515,15 +436,12 @@ public class SmallEmployerRelief extends TestSuiteBase
 								boolean smallERchekboxdisplyed = clkchkbox.isDisplayed();
 								System.out.println("The checkbox is displayed :"+smallERchekboxdisplyed);
 								Thread.sleep(4000L);
-
 								boolean smallIsEnabled = clkchkbox.isEnabled();
 								System.out.println("The checkbox is isEnabled :"+smallIsEnabled);
-
 								double valueOfsmallReliefChkbox = Double.parseDouble(SmallEmployerRelief);
 								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
 								if(valueOfsmallReliefChkbox== 1.0)
 								{
-
 									//Thread.sleep(4000L);
 									if(smallERchekbox)
 									{
@@ -537,22 +455,15 @@ public class SmallEmployerRelief extends TestSuiteBase
 										System.out.println("Small Employer relief checkbox was not checked and now checked hence Condition now satisfied successfully");
 										break  outerloop;
 									}
-
 								}
-										
 							}
-
 							col_num++;
-
 						}
 						row_num++;
-
 					} 
 			}
-			
 			Thread.sleep(2000L);
 			saveSmallEmployerRbtn();
-
 		}
 		catch(Throwable t)
 		{
@@ -564,13 +475,10 @@ public class SmallEmployerRelief extends TestSuiteBase
 	}
 
 
-
-
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		return Test_Util.getData(Payroll_Statutory_Adoption_SuiteXls,"SmallEmployerRelief");
 	}
 
@@ -579,50 +487,39 @@ public class SmallEmployerRelief extends TestSuiteBase
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-		if(Skip){
-			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}else if(Fail)
+		if(Skip)
 		{
-
+			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+		}
+		else if(Fail)
+		{
 			IsTestPass = false;
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
-		}else
+		}
+		else
 		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
-
-
 	}
 
 
 	@AfterTest
-	public void ReportTestResult() throws Throwable{
+	public void ReportTestResult() throws Throwable
+	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-
-		if(IsTestPass){
-
+		if(IsTestPass)
+		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Pass");
-
-		}else{
-
+		}
+		else
+		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Fail");
-
 		}	
-
 		closeBrowser();
 	}
-
-
-
-
 }
 

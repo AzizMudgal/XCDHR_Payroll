@@ -6,6 +6,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -39,7 +40,6 @@ public class SmallEmployerRelief extends TestSuiteBase
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName())){
 
 			Skip=true;
@@ -48,13 +48,9 @@ public class SmallEmployerRelief extends TestSuiteBase
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
-
 		}
-
 		// Load the runmodes of the tests
-
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName());
-
 	}
 	
 	public String payfreqncy;
@@ -83,16 +79,16 @@ public class SmallEmployerRelief extends TestSuiteBase
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-			
-
 			driver.manage().window().maximize();
-			
+			Thread.sleep(9000L);
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					//Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -474,8 +470,10 @@ public void FetchEmployeeRecord(String EmpName,String SmallEmployerRelief) throw
 				 * Hence while running sequential trigger / batch script first recognise the tab index
 				 * and update that value in the below statement , otherwise this functinality 
 				 * wont get executed properly.
+				 * 
+				 * dtd jan 25, the tab index is same for both orgs hence this will work for both orgs
 				 */
-					String ckbox ="//following-sibling::td/input[@tabindex='8']";
+					String ckbox ="//following-sibling::td[@class='dataCol']/input[@tabindex='8']";
 					WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
 					boolean	smallERchekbox = clkchkbox.isSelected();
 					double valueOfsmallReliefChkbox = Double.parseDouble(SmallEmployerRelief);

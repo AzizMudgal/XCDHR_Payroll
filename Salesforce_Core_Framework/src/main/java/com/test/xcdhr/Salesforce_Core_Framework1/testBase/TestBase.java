@@ -64,6 +64,7 @@ public class TestBase {
 	public static Properties OR = null;
 	public static Xls_Reader SuiteXls = null;
 	public String compnDonottouch;
+	public String formattedDate;
 
 	public String payfreqncy;
 	public String sbmtBtn;
@@ -1247,11 +1248,11 @@ public class TestBase {
 	 * 
 	 */
 
-	public boolean login_To_Automation_RegOrg() throws Throwable {
-		try {
-
+	public boolean login_To_Automation_RegOrg() throws Throwable
+	{
+		try
+		{
 			driver.get(CONFIG.getProperty("test_Automation_Reg_Org"));
-
 			WebElement username = driver.findElement(By.id(OR
 					.getProperty("login_Username")));
 			username.sendKeys("payrollautoregress@xcdhr.com");
@@ -1261,21 +1262,25 @@ public class TestBase {
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
 			System.out.println("Logged into the New Automation Org");
-
-		} catch (Throwable t) {
+		} 
+		catch (Throwable t)
+		{
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Login unsuccessfull");
 			return false;
 		}
 		return true;
-
 	}
+	
+	
 
 	// Notification mail verification
 	public boolean login_To_Gmail(String Username, String Password)
-			throws Throwable {
-		try {
+			throws Throwable
+	{
+		try
+		{
 			WebElement username = driver.findElement(By.xpath(OR
 					.getProperty("gmaillogin_Username")));
 			username.sendKeys(Username);
@@ -1283,15 +1288,17 @@ public class TestBase {
 					.getProperty("gmaillogin_Password")));
 			password.sendKeys(Password);
 
-		} catch (Throwable t) {
+		}
+		catch (Throwable t)
+		{
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Gmail Login unsuccessfull");
 			return false;
 		}
 		return true;
-
 	}
+	
 
 	public WebElement getObject(String xpathkey) {
 		try {
@@ -7731,7 +7738,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
@@ -12345,5 +12352,73 @@ public class TestBase {
 
 		}
 	}
+	
+	
+	public void dateFormaterMethod(String dateStr)throws Throwable
+	{
+		try
+		{
+			DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+			DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+			Date date = null;				
+			try 
+			{
+				date = readFormat.parse( dateStr.trim() );
+				System.out.println(date.toString());
+			} 
+			catch ( ParseException e ) 
+			{
+				System.out.println(e.getMessage());
+			}
+
+			formattedDate = null;
+			if( date != null ) 
+			{
+				formattedDate = writeFormat.format( date );
+			}
+			System.out.println("The entered date is  " +formattedDate);		
+			Thread.sleep(4000L);
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+	
+
+	public void submitSickleave()throws Throwable
+	{
+		try
+		{  												
+			if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
+			{
+				getObject("submitLeaverqstlocator").sendKeys("");
+				getObject("submitLeaverqstlocator").click();
+				System.out.println("The submit leave request button got clicked sucessfully");
+				if(existsElementchkFor1mts(OR.getProperty("leaveRequstOkbutton")))
+				{			
+					getObject("leaveRequstOkbutton").sendKeys("");
+					getObject("leaveRequstOkbutton").click();
+					System.out.println("");
+					System.out.println("The submit leave request ok button also got clicked sucessfully");
+				}
+			}
+			else if(!existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
+			{
+				System.out.println("waiting for the submit button to be dispalyed please wait..");
+				submitSickleave();
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+	
+	
+	
+	
 
 }

@@ -77,12 +77,12 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase
 		driver.manage().window().maximize();
 		try
 		{
-			WaitforElement(("Homepage_txt"));
-			if(existsElement(OR.getProperty("Homepage_txt")))
+			if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 			{
-				Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-				System.out.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
+				String personalTab = getObject("PersonalTab").getText();
+				System.out.println("Tab name is :"+ personalTab);
+				Assert.assertEquals("Personal", personalTab);
+				System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 				System.out.println("");
 			}
 		}
