@@ -258,6 +258,7 @@ public class TestBase {
 
 	public static Xls_Reader LeaveDemo_SuiteXls = null;
 	public String LeaveDemo_Inputsheet;
+	public static Xls_Reader Payroll_CreateEmployees_For_RecognitionScenarious_SuiteXls = null;
 
 	public static Xls_Reader Payroll_RecognitionScenarious_SuiteXls = null;
 	public static Xls_Reader Payroll_RecognitionScenarioTwo_SuiteXls = null;
@@ -268,6 +269,7 @@ public class TestBase {
 	public static Xls_Reader Payroll_RecognitionScenarioSeven_SuiteXls = null;
 
 	public String PayrollRecognition_Inputsheet;
+	public String EmployeeCreation_For_PayrollRecognition_Inputsheet;
 	public String PayrollRecognitionScenario2_Inputsheet;
 	public String PayrollRecognitionScenario3_Inputsheet;
 	public String PayrollRecognitionScenario4_Inputsheet;
@@ -8634,6 +8636,11 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP201718.xlsx");
 				SSP_InputExcelFile = "Payroll Suite Statutory SSP201718";
 
+				Payroll_CreateEmployees_For_RecognitionScenarious_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Create RTI Employees201718.xlsx");
+		EmployeeCreation_For_PayrollRecognition_Inputsheet = "Create RTI Employees201718";
+				
 				Payroll_RecognitionScenarious_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Recognition Scenario201718.xlsx");
@@ -9034,7 +9041,8 @@ public class TestBase {
 				getObject("PersonalTab").click();
 				if (existsElementchkFor1mts(OR.getProperty("PersonalText"))) {
 					System.out.println("I am in personal page");
-					if (existsElementchkFor1mts(OR.getProperty("EmployeeView"))) {
+					if (existsElementchkFor1mts(OR.getProperty("EmployeeView")))
+					{
 						System.out.println("I recognised the Employee view");
 						Select selectByValue = new Select(driver.findElement(By
 								.xpath(OR.getProperty("EmployeeView"))));
