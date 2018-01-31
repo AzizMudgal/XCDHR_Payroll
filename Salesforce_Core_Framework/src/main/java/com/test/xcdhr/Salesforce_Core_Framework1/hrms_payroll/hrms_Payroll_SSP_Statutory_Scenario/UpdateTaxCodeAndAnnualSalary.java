@@ -67,6 +67,8 @@ public class UpdateTaxCodeAndAnnualSalary extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
+				closePopupWindow();
+
 				if(existsElement(OR.getProperty("Homepage_txt")))
 				{
 					Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");

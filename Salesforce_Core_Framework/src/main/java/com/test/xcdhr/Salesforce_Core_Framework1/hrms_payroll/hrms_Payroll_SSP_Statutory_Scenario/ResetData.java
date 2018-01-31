@@ -3,6 +3,7 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_
 
 import java.text.DecimalFormat;
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -13,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -74,6 +76,21 @@ public class ResetData extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
+				closePopupWindow();
+				/*Thread.sleep(5000L);
+				if(existsElementchkFor1mts(OR.getProperty("popupwindowAfterLoginSuccess")))
+				{
+					String oldWindow = driver.getWindowHandle();
+					driver.switchTo().window(driver.getWindowHandle());
+					getObject("popupwindowAfterLoginSuccess").click();
+					//driver.findElement(By.xpath("//div/a[@id='tryLexDialogX']")).click();
+					System.out.println("The Popup window got closed");
+					driver.switchTo().window(oldWindow);
+				}
+				else
+				{
+					System.out.println("The Popwindow does not exist in this Org");
+				}*/
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();

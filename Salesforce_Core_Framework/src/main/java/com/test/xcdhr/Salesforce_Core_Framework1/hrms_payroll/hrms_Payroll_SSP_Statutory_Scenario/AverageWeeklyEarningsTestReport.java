@@ -77,6 +77,7 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase
 		driver.manage().window().maximize();
 		try
 		{
+			closePopupWindow();
 			if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 			{
 				String personalTab = getObject("PersonalTab").getText();

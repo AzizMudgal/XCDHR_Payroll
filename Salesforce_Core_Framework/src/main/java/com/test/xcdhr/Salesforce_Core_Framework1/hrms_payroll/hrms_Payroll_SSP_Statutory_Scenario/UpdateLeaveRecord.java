@@ -86,6 +86,8 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 			try
 			{
+				closePopupWindow();
+
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();

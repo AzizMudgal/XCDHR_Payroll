@@ -2,219 +2,89 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="185756" started-at="2018-01-29T13:55:42Z" finished-at="2018-01-29T13:58:47Z">
+  <suite name="Default suite" duration-ms="122645" started-at="2018-01-31T10:34:40Z" finished-at="2018-01-31T10:36:43Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="185756" started-at="2018-01-29T13:55:42Z" finished-at="2018-01-29T13:58:47Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="5757" started-at="2018-01-29T19:25:36Z" finished-at="2018-01-29T19:25:42Z">
+    <test name="Default test" duration-ms="122645" started-at="2018-01-31T10:34:40Z" finished-at="2018-01-31T10:36:43Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="4310" started-at="2018-01-31T16:04:36Z" finished-at="2018-01-31T16:04:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="3" started-at="2018-01-29T19:25:42Z" finished-at="2018-01-29T19:25:42Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1950" started-at="2018-01-31T16:04:40Z" finished-at="2018-01-31T16:04:42Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="180630" started-at="2018-01-29T19:25:42Z" data-provider="getData" finished-at="2018-01-29T19:28:43Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="113295" started-at="2018-01-31T16:04:44Z" data-provider="getData" finished-at="2018-01-31T16:06:37Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO HMRCS1 COMPANY]]>
+                <![CDATA[DONT TOUCH AUTO DIRSSP EMPLOYER]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Draft DO NOT TOUCH]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION SSP 101]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[RTI employee 101]]>
+                <![CDATA[DIRSSP_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[rtiemployee1001@xcdgmail.com]]>
+                <![CDATA[Four Weekly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[rtiemployee1001@xcdgmail.com]]>
+                <![CDATA[Four Week-40]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[HRMS Employee]]>
+                <![CDATA[Payroll Suite Statutory SSP201718.xlsx]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[No]]>
+                <![CDATA[DO NOT TOUCH SSP Payment]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[Software Tester]]>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_StatutoryScenarios 201718\\201718 Automation TestResult For Statutory Scenarios.xlsx]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[DONT TOUCH AUTO HMRCS1 COMPANY]]>
+                <![CDATA[15]]>
               </value>
             </param>
             <param index="9">
               <value>
-                <![CDATA[Full time]]>
+                <![CDATA[All]]>
               </value>
             </param>
             <param index="10">
               <value>
-                <![CDATA[Permanent]]>
-              </value>
-            </param>
-            <param index="11">
-              <value>
-                <![CDATA[Regular work pattern - days]]>
-              </value>
-            </param>
-            <param index="12">
-              <value>
-                <![CDATA[5.0]]>
-              </value>
-            </param>
-            <param index="13">
-              <value>
-                <![CDATA[40.0]]>
-              </value>
-            </param>
-            <param index="14">
-              <value>
-                <![CDATA[Amjad Khan]]>
-              </value>
-            </param>
-            <param index="15">
-              <value>
-                <![CDATA[01/01/2017]]>
-              </value>
-            </param>
-            <param index="16">
-              <value>
-                <![CDATA[01/01/2017]]>
-              </value>
-            </param>
-            <param index="17">
-              <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION HMRC RECOGNITION EMPLOYEE 1001]]>
-              </value>
-            </param>
-            <param index="18">
-              <value>
-                <![CDATA[01/01/1985]]>
-              </value>
-            </param>
-            <param index="19">
-              <value>
-                <![CDATA[Male]]>
-              </value>
-            </param>
-            <param index="20">
-              <value>
-                <![CDATA[45000]]>
-              </value>
-            </param>
-            <param index="21">
-              <value>
-                <![CDATA[Annual]]>
-              </value>
-            </param>
-            <param index="22">
-              <value>
-                <![CDATA[Permanent]]>
-              </value>
-            </param>
-            <param index="23">
-              <value>
-                <![CDATA[Monthly]]>
-              </value>
-            </param>
-            <param index="24">
-              <value>
-                <![CDATA[OT]]>
-              </value>
-            </param>
-            <param index="25">
-              <value>
-                <![CDATA[Week1/Month1]]>
-              </value>
-            </param>
-            <param index="26">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="27">
-              <value>
-                <![CDATA[H Apprentices under the age of 25.]]>
-              </value>
-            </param>
-            <param index="28">
-              <value>
-                <![CDATA[01/06/2017]]>
-              </value>
-            </param>
-            <param index="29">
-              <value>
-                <![CDATA[0]]>
-              </value>
-            </param>
-            <param index="30">
-              <value>
-                <![CDATA[1]]>
-              </value>
-            </param>
-            <param index="31">
-              <value>
-                <![CDATA[JS123456B]]>
-              </value>
-            </param>
-            <param index="32">
-              <value>
-                <![CDATA[B]]>
-              </value>
-            </param>
-            <param index="33">
-              <value>
-                <![CDATA[28/11/2017]]>
-              </value>
-            </param>
-            <param index="34">
-              <value>
-                <![CDATA[28/02/2018]]>
-              </value>
-            </param>
-            <param index="35">
-              <value>
-                <![CDATA[28/02/2018]]>
-              </value>
-            </param>
-            <param index="36">
-              <value>
-                <![CDATA[End of contract]]>
+                <![CDATA[20]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="27" started-at="2018-01-29T19:28:43Z" finished-at="2018-01-29T19:28:43Z">
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="2729" started-at="2018-01-31T16:06:37Z" finished-at="2018-01-31T16:06:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees@271053e1]" name="ReportTestResult" is-config="true" duration-ms="4764" started-at="2018-01-29T19:28:43Z" finished-at="2018-01-29T19:28:47Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2767" started-at="2018-01-31T16:06:40Z" finished-at="2018-01-31T16:06:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6 -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

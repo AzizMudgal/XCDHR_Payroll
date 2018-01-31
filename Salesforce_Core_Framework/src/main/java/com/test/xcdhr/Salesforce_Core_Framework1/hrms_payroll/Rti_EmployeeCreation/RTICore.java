@@ -10,7 +10,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
@@ -300,9 +299,50 @@ public class RTICore extends CreateNewRTIEmployees
 				Thread.sleep(4000L);
 				getObject("DOBofNextPage").sendKeys(formattedDate);
 				System.out.println("The DOB got entered successfully");
-				
 			}
-			Thread.sleep(4000L);
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("genderOfNextPage")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("genderOfNextPage"))));
+				selectByValue.selectByVisibleText(Gender);
+				System.out.println("Gender got selected successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("RegularPayOfNextPage")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("RegularPayOfNextPage"))));
+				selectByValue.selectByVisibleText(RegularPay);
+				System.out.println("Regular pay got selected successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("PeriodOfNextPage")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("PeriodOfNextPage"))));
+				selectByValue.selectByVisibleText(Period);
+				System.out.println("Period got selected successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("PayrollEligibilityOfNextPage")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("PayrollEligibilityOfNextPage"))));
+				selectByValue.selectByVisibleText(PayrollEligibility);
+				System.out.println("PayrollEligibility got selected successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("PayrollFrequencyOfNextPage")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("PayrollFrequencyOfNextPage"))));
+				selectByValue.selectByVisibleText(PayrollFrequency);
+				System.out.println("PayrollFrequency got selected successfully");
+			}
+			
+			
+		/*	
 			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("SaapLeaveTablelocator")));
 			if(existsWebElement(postsTable))
 			{
@@ -327,7 +367,9 @@ public class RTICore extends CreateNewRTIEmployees
 								WebElement enterKnownName = driver.findElement(By.xpath(knownNamee));
 								enterKnownName.sendKeys(KnownName);
 								System.out.println("The Known name got entered successfully");
-							}
+							}//genderOfNextPage
+							
+							
 							
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DOB"))
 							{
@@ -351,7 +393,7 @@ public class RTICore extends CreateNewRTIEmployees
 								Select selectByValue = new Select(driver.findElement(By.xpath(gender)));
 								selectByValue.selectByVisibleText(Gender);
 								System.out.println("Gender got selected successfully");
-							}
+							}//RegularPayOfNextPage
 							
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Regular pay"))
 							{
@@ -392,7 +434,7 @@ public class RTICore extends CreateNewRTIEmployees
 						}
 				row_num++;
 				}
-			}
+			}*/
 		}
 		catch(Throwable t)
 		{
