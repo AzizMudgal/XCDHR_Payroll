@@ -304,6 +304,7 @@ public class RTICore extends CreateNewRTIEmployees
 			Thread.sleep(2000L);
 			if (existsElementchkFor1mts(OR.getProperty("genderOfNextPage")))
 			{
+				// Select(driver.findElement(By.xpath(OR.getProperty("Profile"))));
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("genderOfNextPage"))));
 				selectByValue.selectByVisibleText(Gender);
 				System.out.println("Gender got selected successfully");
@@ -733,7 +734,6 @@ public class RTICore extends CreateNewRTIEmployees
 			System.out.println("I clicked the user finally");
 		}
 	}
-
 	
 	
 	public void keyDates(String StartDate,String ContinousStdate)throws Throwable
@@ -814,7 +814,6 @@ public class RTICore extends CreateNewRTIEmployees
 		
 		
 	}
-	
 	
 	
 	public void EnrDOB(String EmpDOB) throws Throwable
@@ -934,7 +933,6 @@ public class RTICore extends CreateNewRTIEmployees
 	}
 	
 	
-	
 	public void TestRejoinerchkbox(String Rejoiner)throws Throwable
 	{
 		boolean	Rejoinerchekbox = getObject("rejoinerLocator").isSelected();
@@ -964,7 +962,6 @@ public class RTICore extends CreateNewRTIEmployees
 			}
 		}
 	}
-
 
 	
 	public boolean isRejoinerchecked(boolean Rejoinerchekbox)throws Throwable
