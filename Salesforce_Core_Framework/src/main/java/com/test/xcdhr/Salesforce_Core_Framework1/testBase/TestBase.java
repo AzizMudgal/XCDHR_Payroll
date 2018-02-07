@@ -6881,7 +6881,7 @@ public class TestBase {
 				getObject("employmentTabSave").sendKeys("");
 				getObject("employmentTabSave").click();
 				System.out
-						.println("The employment tab edit button got clicked");
+						.println("The employment save button got clicked");
 				Thread.sleep(4000L);
 			}
 		} catch (Throwable t) {
@@ -7728,7 +7728,8 @@ public class TestBase {
 				}
 			}
 
-		} catch (Throwable t) {
+		} catch (Throwable t)
+		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}

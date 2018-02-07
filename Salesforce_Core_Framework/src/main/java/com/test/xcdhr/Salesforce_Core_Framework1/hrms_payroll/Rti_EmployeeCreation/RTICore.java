@@ -59,7 +59,6 @@ public class RTICore extends CreateNewRTIEmployees
 			if(existsWebElement(postsTable))
 			{
 				System.out.println("The table rows got recognised");
-
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("firstRecordOfNIcoulmnTableRows")));
 				lastRowCount = rows.size();
 				java.util.Iterator<WebElement> x = rows.iterator();
@@ -112,8 +111,10 @@ public class RTICore extends CreateNewRTIEmployees
 			System.out.println("");
 		}
 		CreateNewJoiner(CompanyName, FirstName, LastName, Email, UserName, Profile, ActivateLicense, JobTitle, Company, EmploymentType, EmploymentStatus, PatternType, NoOfWorkingDays, ContractualHours, Manager, StartDate, ContinousStDate, KnownName, DOB, Gender, RegularPay, Period, PayrollEligibility, PayrollFrequency, TaxCode, TaxBasis, StudentLoan, NICategory, EffectiveFrom, StudentLoanPlan, PayinStartPeriod, NINO, StartDeclaration, DateOfNoticeOfTermination, LeavingDate, LastWorkingDate, ReasonForLeaving);
-		EmployeeCreationNextPage(KnownName,DOB,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency );
+		EmployeeCreationNextPage(KnownName,DOB,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency, TaxCode, TaxBasis, StudentLoan, NICategory,StartDeclaration );
 		employmentSavebutton();
+		UpdateEmployeePersonalPage(KnownName,NINO);
+		ProcessLeaver(DateOfNoticeOfTermination,LeavingDate,LastWorkingDate,ReasonForLeaving);
 	}
 	
 	
@@ -124,13 +125,11 @@ public class RTICore extends CreateNewRTIEmployees
 			{
 				Thread.sleep(4000L);
 				System.out.println("I am in CreateNewJoiner method");
-
 				if(existsElementchkFor1mts(OR.getProperty("companyNewjoiner")))
 				{
 					Thread.sleep(1000L);
 					getObject("companyNewjoiner").click();
 					System.out.println("New joiner button got clicked successfully");
-
 					Thread.sleep(4000L);
 				}
 				
@@ -138,7 +137,6 @@ public class RTICore extends CreateNewRTIEmployees
 				{
 					getObject("FirstName").sendKeys(FirstName);
 					System.out.println("First name got entered successfully");
-
 				}
 				Thread.sleep(2000L);
 				
@@ -146,7 +144,6 @@ public class RTICore extends CreateNewRTIEmployees
 				{
 					getObject("LastName").sendKeys(LastName);
 					System.out.println("Last name got entered successfully");
-
 				}
 				Thread.sleep(2000L);
 				
@@ -154,7 +151,6 @@ public class RTICore extends CreateNewRTIEmployees
 				{
 					getObject("Email").sendKeys(Email);
 					System.out.println("Email got entered successfully");
-
 				}
 				Thread.sleep(2000L);
 				
@@ -162,7 +158,6 @@ public class RTICore extends CreateNewRTIEmployees
 				{
 					getObject("UserName").sendKeys(UserName);
 					System.out.println("User name got entered successfully");
-
 				}
 				Thread.sleep(2000L);
 				
@@ -172,7 +167,6 @@ public class RTICore extends CreateNewRTIEmployees
 					// This select by value needs to be called from OR.Properties
 					selectByValue.selectByVisibleText(Profile);
 					System.out.println("Profile got selected successfully");
-
 				}
 				Thread.sleep(2000L);
 				
@@ -181,7 +175,6 @@ public class RTICore extends CreateNewRTIEmployees
 					Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("ActivateLicense"))));
 					selectByValue.selectByVisibleText(ActivateLicense);
 					System.out.println("Activate license got set to NO successfully");
-
 				}
 				
 				Thread.sleep(2000L);
@@ -222,14 +215,22 @@ public class RTICore extends CreateNewRTIEmployees
 					selectByValue.selectByVisibleText(PatternType);
 					System.out.println("Pattern got selected successfully");
 				}
+				Thread.sleep(2000L);
+				if(existsElementchkFor1mts(OR.getProperty("ContractualHours")))
+				{
+					getObject("ContractualHours").clear();
+					getObject("ContractualHours").sendKeys(ContractualHours);
+					System.out.println("No of Contractual hours got entered successfully");
+				}
 			/*	
 				Thread.sleep(2000L);
 				if(existsElementchkFor1mts(OR.getProperty("NoOffWorkingDays")))
 				{
 					getObject("NoOffWorkingDays").sendKeys(NoOfWorkingDays);
 					System.out.println("No of working days got entered successfully");
-
 				}
+				
+				
 				Thread.sleep(2000L);
 				if(existsElementchkFor1mts(OR.getProperty("ContractualHours")))
 				{
@@ -237,7 +238,12 @@ public class RTICore extends CreateNewRTIEmployees
 					getObject("ContractualHours").sendKeys(ContractualHours);
 					System.out.println("No of Contractual hours got entered successfully");
 
-				}	*/
+				}
+				
+				
+					*/
+				
+				
 				Thread.sleep(2000);
 				if(existsElementchkFor1mts(OR.getProperty("SelectManager")))
 				{
@@ -249,13 +255,11 @@ public class RTICore extends CreateNewRTIEmployees
 					Thread.sleep(2000L);
 					driver.switchTo().window(mainHandle3); // finally switch back to parent window and perform the operations.
 					System.out.println("The Manager got selected successfully");
-
 					Thread.sleep(2000L);
 				}
 				System.out.println("Still emp start date needs to input");
 				keyDates(StartDate,ContinousStDate);
 				System.out.println("The keydates got entered successfully");
-
 				Thread.sleep(2000L);
 				if(existsElementchkFor1mts(OR.getProperty("JoinerNext")))
 				{
@@ -270,23 +274,10 @@ public class RTICore extends CreateNewRTIEmployees
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
-	/*public void EmployeeCreationNextPage()throws Throwable
-	{
-		try
-		{
-			
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());	
-		}
-	}*/
+
 	
 	@Test(dependsOnMethods={"FetchCompanyRecord"})
-	public void EmployeeCreationNextPage(String KnownName, String DOB, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency )throws Throwable
+	public void EmployeeCreationNextPage(String KnownName, String DOB, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String StartDeclaration )throws Throwable
 	{
 		try
 		{
@@ -300,22 +291,61 @@ public class RTICore extends CreateNewRTIEmployees
 				getObject("DOBofNextPage").sendKeys(formattedDate);
 				System.out.println("The DOB got entered successfully");
 			}
-			
 			Thread.sleep(2000L);
 			if (existsElementchkFor1mts(OR.getProperty("genderOfNextPage")))
 			{
-				// Select(driver.findElement(By.xpath(OR.getProperty("Profile"))));
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("genderOfNextPage"))));
 				selectByValue.selectByVisibleText(Gender);
 				System.out.println("Gender got selected successfully");
+			}
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("starterDeclaration")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("starterDeclaration"))));
+				selectByValue.selectByVisibleText(StartDeclaration);
+				System.out.println("Starter decalration got selected successfully");
+			}
+			
+         /*	Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("starterDeclaration")))
+			{
+				// Select(driver.findElement(By.xpath(OR.getProperty("Profile"))));
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("starterDeclaration"))));
+				selectByValue.selectByVisibleText(StartDeclaration);
+				System.out.println("Starter decalration got selected successfully");
+			}
+		*/	
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("Taxbasis")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("Taxbasis"))));
+				selectByValue.selectByVisibleText(TaxBasis);
+				System.out.println("Taxbasis got selected successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("Taxcode")))
+			{
+				getObject("Taxcode").sendKeys("");
+				getObject("Taxcode").sendKeys(TaxCode);
+				System.out.println("Tax code is entered successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("NICategory")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("NICategory"))));
+				selectByValue.selectByVisibleText(NICategory);
+				System.out.println("NICategory got selected successfully");
 			}
 			
 			Thread.sleep(2000L);
 			if (existsElementchkFor1mts(OR.getProperty("RegularPayOfNextPage")))
 			{
-				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("RegularPayOfNextPage"))));
-				selectByValue.selectByVisibleText(RegularPay);
-				System.out.println("Regular pay got selected successfully");
+				getObject("RegularPayOfNextPage").sendKeys("");
+				getObject("RegularPayOfNextPage").clear();
+				getObject("RegularPayOfNextPage").sendKeys(RegularPay);
+				System.out.println("Regular pay got entered successfully");
 			}
 			
 			Thread.sleep(2000L);
@@ -341,101 +371,6 @@ public class RTICore extends CreateNewRTIEmployees
 				selectByValue.selectByVisibleText(PayrollFrequency);
 				System.out.println("PayrollFrequency got selected successfully");
 			}
-			
-			
-		/*	
-			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("SaapLeaveTablelocator")));
-			if(existsWebElement(postsTable))
-			{
-				System.out.println("details table exists");
-				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("SaapLeaveTablelocatorRows")));
-				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
-				int row_num,col_num;
-				row_num=1;
-				outerloop:
-					for(WebElement trElement : rows)
-					{
-						List<WebElement> td_collection=trElement.findElements(By.xpath("th"));
-						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
-						col_num=1;
-						for(WebElement tdElement : td_collection)
-						{
-							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Known name"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								knownNamee ="//following-sibling::td[1]/input";
-								WebElement enterKnownName = driver.findElement(By.xpath(knownNamee));
-								enterKnownName.sendKeys(KnownName);
-								System.out.println("The Known name got entered successfully");
-							}//genderOfNextPage
-							
-							
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("DOB"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								dob ="//following-sibling::td[1]/input";
-								WebElement enterdob = driver.findElement(By.xpath(dob));
-								enterdob.sendKeys("");
-								String dateStr = DOB;
-								dateFormaterMethod(dateStr);
-								System.out.println("The stdate entered is  " +formattedDate);		
-								Thread.sleep(4000L);
-								enterdob.sendKeys(formattedDate);
-								System.out.println("The DOB got entered successfully");
-							}
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Gender"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								gender ="//following-sibling::td[1]/input";
-								
-								Select selectByValue = new Select(driver.findElement(By.xpath(gender)));
-								selectByValue.selectByVisibleText(Gender);
-								System.out.println("Gender got selected successfully");
-							}//RegularPayOfNextPage
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Regular pay"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								regularPay ="//following-sibling::td[1]/input";
-								WebElement enterKnownName = driver.findElement(By.xpath(knownNamee));
-								enterKnownName.sendKeys(KnownName);
-								System.out.println("The Known name got entered successfully");
-							}
-
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Period"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								period ="//following-sibling::td[1]/input";
-								Select selectByValue = new Select(driver.findElement(By.xpath(period)));
-								selectByValue.selectByVisibleText(Period);
-								System.out.println("Period got selected successfully");
-							}
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payroll frequency"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								payrollFrequency ="//following-sibling::td[1]/input";
-								Select selectByValue = new Select(driver.findElement(By.xpath(payrollFrequency)));
-								selectByValue.selectByVisibleText(PayrollFrequency);
-								System.out.println("Payroll frequency got selected successfully");
-							}
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payroll eligibility"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								payrollElegiblty ="//following-sibling::td[1]/input";
-								Select selectByValue = new Select(driver.findElement(By.xpath(payrollElegiblty)));
-								selectByValue.selectByVisibleText(PayrollEligibility);
-								System.out.println("Payroll eligibility got selected successfully");
-							}
-							col_num++;
-						}
-				row_num++;
-				}
-			}*/
 		}
 		catch(Throwable t)
 		{
@@ -445,6 +380,115 @@ public class RTICore extends CreateNewRTIEmployees
 	} 
 
 
+	@Test(dependsOnMethods={"EmployeeCreationNextPage"})
+	public void UpdateEmployeePersonalPage(String KnownName,String NINO)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("personalTab")))
+			{
+				getObject("personalTab").sendKeys("");
+				getObject("personalTab").click();
+				System.out.println("Personal tab got clicked successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("personalEditBtn")))
+			{
+				getObject("personalEditBtn").sendKeys("");
+				getObject("personalEditBtn").click();
+				System.out.println("Personal edit button got clicked successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("legalNameOrKnownName")))
+			{
+				getObject("legalNameOrKnownName").sendKeys("");
+				getObject("legalNameOrKnownName").clear();
+				getObject("legalNameOrKnownName").sendKeys(KnownName);
+				System.out.println("legal name or known name got entered successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("nino")))
+			{
+				getObject("nino").sendKeys("");
+				getObject("nino").clear();
+				getObject("nino").sendKeys(NINO);
+				System.out.println("NINO got entered successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("personalSavebutton")))
+			{
+				getObject("personalSavebutton").sendKeys("");
+				getObject("personalSavebutton").click();
+				System.out.println("Personal page Save button got clicked successfully");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());	
+		}
+	}
+	
+	/*
+	 * @Test(dependsOnMethods={"EmployeeCreationNextPage"})
+	public void UpdateEmployeePersonalPage(String KnownN
+	 * 
+	 */
+	 @Test(dependsOnMethods={"UpdateEmployeePersonalPage"})
+	public void ProcessLeaver(String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("processLeaver")))
+			{
+				getObject("processLeaver").sendKeys("");
+				getObject("processLeaver").click();
+				System.out.println("Process Leaver button got clicked successfully");
+			}
+			Thread.sleep(2000L);
+			System.out.println("Still emp start date needs to input");
+			keyDates(DateOfNoticeOfTermination,LeavingDate,LastWorkingDate);
+			System.out.println("The keydates got entered successfully");
+			Thread.sleep(2000L);
+			if(existsElementchkFor1mts(OR.getProperty("reasonForLeaving")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("reasonForLeaving"))));
+				selectByValue.selectByVisibleText(ReasonForLeaving);
+				System.out.println("Reason for leaving got selected successfully");
+			}
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("ProcessleaverButton")))
+			{
+				getObject("ProcessleaverButton").sendKeys("");
+				getObject("ProcessleaverButton").click();
+				System.out.println("Process Leaver button got clicked successfully");
+			}
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("CompleteProcessButton")))
+			{
+				getObject("CompleteProcessButton").sendKeys("");
+				getObject("CompleteProcessButton").click();
+				System.out.println("Complete Process button got clicked successfully");
+				Thread.sleep(3000L);
+				isAlertPresent();
+				System.out.println("Process leaver functionality got executed successfully");
+			}
+			
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+	
+	
 	public void CreateCompenLeavedetails(String EmpDOB,String Gender,String Nationality,String FromDate,String ToDate,String Address1,String  Address2,String Street,String City,String Country,String PostCode,String Region,String AddrssType,String ParentLocation,String MinimumYrsService,String HoursAM,String HoursPM,String WorkingDays,String AnnualSalary,String Bonus,String BonusOTE,String Commission,String CommissionOTE,String EmpContrbnPenSal,String EmployerContrbPenSal,String ReglrSalary,String AddnalEmplyeeContrbn,String AddnalEmployerContrbn,String bonusNotes,String DailyRateOfPay, String Period,String Departmentt,String EmployeeSalarySacrifice,String EmployeeContbnlnLeiu,String Payfrequency,String CreateLeaveYrs)throws Throwable
 	{
 		try
@@ -740,30 +784,11 @@ public class RTICore extends CreateNewRTIEmployees
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("newJoinerStDate")))
+			if(existsElementchkFor1mts(OR.getProperty("newJoinerStDate")))
 			{
 				getObject("newJoinerStDate").sendKeys("");
 				String dateStr = StartDate;
 				dateFormaterMethod(dateStr);
-/*
-				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-				Date date = null;				
-				try 
-				{
-					date = readFormat.parse( dateStr.trim() );
-					System.out.println(date.toString());
-				} 
-				catch ( ParseException e ) 
-				{
-					System.out.println(e.getMessage());
-				}
-
-				String formattedDate = null;
-				if( date != null ) 
-				{
-					formattedDate = writeFormat.format( date );
-				}*/
 				System.out.println("The stdate entered is  " +formattedDate);		
 				Thread.sleep(4000L);
 				getObject("newJoinerStDate").sendKeys(formattedDate);
@@ -777,33 +802,57 @@ public class RTICore extends CreateNewRTIEmployees
 	
 		try
 		{
-			if(existsElement(OR.getProperty("newJoinerContnousStDate")))
+			if(existsElementchkFor1mts(OR.getProperty("newJoinerContnousStDate")))
 			{
 				getObject("newJoinerContnousStDate").sendKeys("");
 				String dateStr = ContinousStdate;
 				dateFormaterMethod(dateStr);
-				/*DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-				Date date = null;				
-				try 
-				{
-					date = readFormat.parse( dateStr.trim() );
-					System.out.println(date.toString());
-				} 
-				catch ( ParseException e ) 
-				{
-					System.out.println(e.getMessage());
-				}
-
-				String formattedDate = null;
-				if( date != null ) 
-				{
-					formattedDate = writeFormat.format( date );
-				}*/
 				System.out.println("The continous start date entered is" +formattedDate);		
 				Thread.sleep(4000L);
 				getObject("newJoinerContnousStDate").sendKeys(formattedDate);
-					Thread.sleep(3000L);
+				Thread.sleep(3000L);
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+	
+	public void keyDates(String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(4000L);
+
+			if(existsElementchkFor1mts(OR.getProperty("noticeOfTermination")))
+			{
+				getObject("noticeOfTermination").sendKeys("");
+				String dateStr = DateOfNoticeOfTermination;
+				dateFormaterMethod(dateStr);
+				System.out.println("The stdate entered is  " +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("noticeOfTermination").sendKeys(formattedDate);
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("leavingDate")))
+			{
+				getObject("leavingDate").sendKeys("");
+				String dateStr = LeavingDate;
+				dateFormaterMethod(dateStr);
+				System.out.println("The continous start date entered is" +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("leavingDate").sendKeys(formattedDate);
+				Thread.sleep(3000L);
 			}
 		}
 		catch(Throwable t)
@@ -812,7 +861,24 @@ public class RTICore extends CreateNewRTIEmployees
 			System.out.println(t.getStackTrace().toString());
 		}
 		
-		
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("lastWorkingDate")))
+			{
+				getObject("lastWorkingDate").sendKeys("");
+				String dateStr = LastWorkingDate;
+				dateFormaterMethod(dateStr);
+				System.out.println("The continous start date entered is" +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("lastWorkingDate").sendKeys(formattedDate);
+				Thread.sleep(3000L);
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
 	}
 	
 	
@@ -820,7 +886,7 @@ public class RTICore extends CreateNewRTIEmployees
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("empDOB")))
+			if(existsElementchkFor1mts(OR.getProperty("empDOB")))
 			{
 				getObject("empDOB").sendKeys("");
 				String dateStr = EmpDOB;
@@ -859,7 +925,7 @@ public class RTICore extends CreateNewRTIEmployees
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("fromDate")))
+			if(existsElementchkFor1mts(OR.getProperty("fromDate")))
 			{
 				getObject("fromDate").sendKeys("");
 				String dateStr = fromDate;
@@ -898,7 +964,7 @@ public class RTICore extends CreateNewRTIEmployees
 	{
 		try
 		{
-			if(existsElement(OR.getProperty("toDate")))
+			if(existsElementchkFor1mts(OR.getProperty("toDate")))
 			{
 				getObject("toDate").sendKeys("");
 				String dateStr = toDate;

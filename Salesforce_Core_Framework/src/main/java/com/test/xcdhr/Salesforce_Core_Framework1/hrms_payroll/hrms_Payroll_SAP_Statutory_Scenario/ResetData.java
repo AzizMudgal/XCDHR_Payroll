@@ -33,12 +33,11 @@ import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class ResetData extends TestSuiteBase {
-
+public class ResetData extends TestSuiteBase 
+{
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
-
 	public static boolean Fail=false;
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
@@ -48,9 +47,8 @@ public class ResetData extends TestSuiteBase {
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName())){
-
+		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()))
+		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Skipped");
 			//Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
@@ -76,7 +74,6 @@ public class ResetData extends TestSuiteBase {
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
@@ -84,7 +81,6 @@ public class ResetData extends TestSuiteBase {
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
 			driver.manage().window().maximize();
-
 			try
 			{
 				if(existsElement(OR.getProperty("Homepage_txt")))
@@ -99,16 +95,11 @@ public class ResetData extends TestSuiteBase {
 				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
-
 		}
-
 		/*************************************************************************/
-
 		// The script updates the compensation record for the Automation employees
 		DeleteLeavefunction(EmpName,firstXCDpayDate,payinStartPeriod);
-
 		/*************************************************************************/
-
 	}
 
 
@@ -250,7 +241,6 @@ public class ResetData extends TestSuiteBase {
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		return Test_Util.getData(Payroll_Statutory_Adoption_SuiteXls,"ResetData");
 	}
 
@@ -259,7 +249,6 @@ public class ResetData extends TestSuiteBase {
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(Skip)
 		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
@@ -273,7 +262,6 @@ public class ResetData extends TestSuiteBase {
 		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
 	}
@@ -284,7 +272,6 @@ public class ResetData extends TestSuiteBase {
 	public void ReportTestResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(IsTestPass)
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
@@ -297,5 +284,4 @@ public class ResetData extends TestSuiteBase {
 		}	
 		closeBrowser();
 	}
-
 }
