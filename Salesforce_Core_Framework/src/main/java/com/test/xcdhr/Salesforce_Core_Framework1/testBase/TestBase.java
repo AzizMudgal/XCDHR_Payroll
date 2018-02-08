@@ -502,7 +502,7 @@ public class TestBase {
 		try {
 			Alert alert = driver.switchTo().alert();
 			alert.accept();
-			System.out.println("The leave record deleted successfully");
+			System.out.println("The ok button of the popup alert dialog box got accepted successfully");
 			return true;
 		} catch (NoAlertPresentException Ex) {
 			System.out
