@@ -25,7 +25,6 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class ResetEmployeeData extends TestSuiteBase
 {
-
 	String runmodes[] = null;
 	static int count = -1;
 	static int countAllowance = -1;

@@ -2,10 +2,12 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreat
 
 
 import java.util.List;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 
 
@@ -13,6 +15,7 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 public class RTICore extends CreateNewRTIEmployees
 {
 	public boolean companyFirsttimeView = true;
+	public boolean PLD = true;
 	public String knownNamee;
 	public String dob;
 	public String gender;
@@ -22,7 +25,7 @@ public class RTICore extends CreateNewRTIEmployees
 	public String payrollElegiblty;
 
 
-	public void FetchCompanyRecord(String CompanyName,String FirstName, String LastName,String Email, String UserName, String Profile, String ActivateLicense, String JobTitle, String Company,String EmploymentType, String EmploymentStatus,String PatternType,String NoOfWorkingDays, String ContractualHours, String Manager, String StartDate, String ContinousStDate, String KnownName, String DOB, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String EffectiveFrom,String StudentLoanPlan,String PayinStartPeriod,String NINO,String StartDeclaration,String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving) throws Throwable
+	public void FetchCompanyRecord(String CompanyName,String Title,String FirstName, String LastName,String Email, String UserName, String Profile, String ActivateLicense, String JobTitle,String EmploymentType, String EmploymentStatus,String PatternType,String NoOfWorkingDays, String ContractualHours, String Manager, String StartDate, String ContinousStDate, String KnownName, String DOB,String FromDate,String AddressLine1,String AddressLine2,String City,String UKPostCode,String Country,String AddressType,String PayrollId, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String EffectiveFrom,String StudentLoanPlan,String PayinStartPeriod,String NINO,String StartDeclaration,String ProcessLeaverNeeded, String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving,String LastPayrunDate) throws Throwable
 	{
 		try
 		{
@@ -32,7 +35,7 @@ public class RTICore extends CreateNewRTIEmployees
 				System.out.println("I am in FetchCompany Record");
 				if(companyFirsttimeView)
 				{
-					companyFirsttimeView = false;
+					//companyFirsttimeView = false;
 					getObject("MyCompanyTab").click();
 					Thread.sleep(2000L);
 					if(existsElementchkFor1mts(OR.getProperty("ViewGoButton")))
@@ -106,16 +109,30 @@ public class RTICore extends CreateNewRTIEmployees
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
 		}
-		CreateNewJoiner(CompanyName, FirstName, LastName, Email, UserName, Profile, ActivateLicense, JobTitle, Company, EmploymentType, EmploymentStatus, PatternType, NoOfWorkingDays, ContractualHours, Manager, StartDate, ContinousStDate, KnownName, DOB, Gender, RegularPay, Period, PayrollEligibility, PayrollFrequency, TaxCode, TaxBasis, StudentLoan, NICategory, EffectiveFrom, StudentLoanPlan, PayinStartPeriod, NINO, StartDeclaration, DateOfNoticeOfTermination, LeavingDate, LastWorkingDate, ReasonForLeaving);
-		EmployeeCreationNextPage(KnownName,DOB,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency, TaxCode, TaxBasis, StudentLoan, NICategory,StartDeclaration );
+		CreateNewJoiner(CompanyName,Title,FirstName,LastName,Email,UserName,Profile,ActivateLicense,JobTitle,EmploymentType,EmploymentStatus,PatternType,NoOfWorkingDays,ContractualHours,Manager,StartDate,ContinousStDate,KnownName,DOB,FromDate,AddressLine1,AddressLine2,City,UKPostCode,Country,AddressType,PayrollId,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency,TaxCode,TaxBasis,StudentLoan,NICategory,EffectiveFrom,StudentLoanPlan,PayinStartPeriod,NINO,StartDeclaration,ProcessLeaverNeeded,DateOfNoticeOfTermination,LeavingDate,LastWorkingDate,ReasonForLeaving,LastPayrunDate);
+		
+		EmployeeCreationNextPage(CompanyName,Title,FirstName,LastName,Email,UserName,Profile,ActivateLicense,JobTitle,EmploymentType,EmploymentStatus,PatternType,NoOfWorkingDays,ContractualHours,Manager,StartDate,ContinousStDate,KnownName,DOB,FromDate,AddressLine1,AddressLine2,City,UKPostCode,Country,AddressType,PayrollId,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency,TaxCode,TaxBasis,StudentLoan,NICategory,EffectiveFrom,StudentLoanPlan,PayinStartPeriod,NINO,StartDeclaration,ProcessLeaverNeeded,DateOfNoticeOfTermination,LeavingDate,LastWorkingDate,ReasonForLeaving,LastPayrunDate);
+		
 		employmentSavebutton();
-		UpdateEmployeePersonalPage(KnownName,NINO);
-		ProcessLeaver(DateOfNoticeOfTermination,LeavingDate,LastWorkingDate,ReasonForLeaving);
+		
+		UpdateEmployeePersonalPage(CompanyName,Title,FirstName,LastName,Email,UserName,Profile,ActivateLicense,JobTitle,EmploymentType,EmploymentStatus,PatternType,NoOfWorkingDays,ContractualHours,Manager,StartDate,ContinousStDate,KnownName,DOB,FromDate,AddressLine1,AddressLine2,City,UKPostCode,Country,AddressType,PayrollId,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency,TaxCode,TaxBasis,StudentLoan,NICategory,EffectiveFrom,StudentLoanPlan,PayinStartPeriod,NINO,StartDeclaration,ProcessLeaverNeeded,DateOfNoticeOfTermination,LeavingDate,LastWorkingDate,ReasonForLeaving,LastPayrunDate);
+		
+		double PLD = Double.parseDouble(ProcessLeaverNeeded);
+		System.out.println("converted smallER value is :"+PLD);
+		if(PLD==0)
+		{
+			System.out.println("Processing the" + "PROCESS LEAVER FUNCTIONALITY"+"is not needed for this scenario");
+		}
+		else
+		{
+			ProcessLeaver(CompanyName,Title,FirstName,LastName,Email,UserName,Profile,ActivateLicense,JobTitle,EmploymentType,EmploymentStatus,PatternType,NoOfWorkingDays,ContractualHours,Manager,StartDate,ContinousStDate,KnownName,DOB,FromDate,AddressLine1,AddressLine2,City,UKPostCode,Country,AddressType,PayrollId,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency,TaxCode,TaxBasis,StudentLoan,NICategory,EffectiveFrom,StudentLoanPlan,PayinStartPeriod,NINO,StartDeclaration,ProcessLeaverNeeded,DateOfNoticeOfTermination,LeavingDate,LastWorkingDate,ReasonForLeaving,LastPayrunDate);
+		}
+		
 	}
 
 
 	@Test(dependsOnMethods={"FetchCompanyRecord"})
-	public void CreateNewJoiner(String CompanyName,String FirstName, String LastName,String Email, String UserName, String Profile, String ActivateLicense, String JobTitle, String Company,String EmploymentType, String EmploymentStatus,String PatternType,String NoOfWorkingDays, String ContractualHours, String Manager, String StartDate, String ContinousStDate, String KnownName, String DOB, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String EffectiveFrom,String StudentLoanPlan,String PayinStartPeriod,String NINO,String StartDeclaration,String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving) throws Throwable
+	public void CreateNewJoiner(String CompanyName,String Title,String FirstName, String LastName,String Email, String UserName, String Profile, String ActivateLicense, String JobTitle,String EmploymentType, String EmploymentStatus,String PatternType,String NoOfWorkingDays, String ContractualHours, String Manager, String StartDate, String ContinousStDate, String KnownName, String DOB,String FromDate,String AddressLine1,String AddressLine2,String City,String UKPostCode,String Country,String AddressType,String PayrollId, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String EffectiveFrom,String StudentLoanPlan,String PayinStartPeriod,String NINO,String StartDeclaration,String ProcessLeaverNeeded, String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving,String LastPayrunDate) throws Throwable
 	{
 		try
 		{
@@ -183,7 +200,7 @@ public class RTICore extends CreateNewRTIEmployees
 			if(existsElementchkFor1mts(OR.getProperty("CompanySelection")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("CompanySelection"))));
-				selectByValue.selectByVisibleText(Company);
+				selectByValue.selectByVisibleText(CompanyName);
 				System.out.println("Company got selected successfully");
 			}
 
@@ -251,7 +268,7 @@ public class RTICore extends CreateNewRTIEmployees
 
 
 	@Test(dependsOnMethods={"FetchCompanyRecord"})
-	public void EmployeeCreationNextPage(String KnownName, String DOB, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String StartDeclaration )throws Throwable
+	public void EmployeeCreationNextPage(String CompanyName,String Title,String FirstName, String LastName,String Email, String UserName, String Profile, String ActivateLicense, String JobTitle,String EmploymentType, String EmploymentStatus,String PatternType,String NoOfWorkingDays, String ContractualHours, String Manager, String StartDate, String ContinousStDate, String KnownName, String DOB,String FromDate,String AddressLine1,String AddressLine2,String City,String UKPostCode,String Country,String AddressType,String PayrollId, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String EffectiveFrom,String StudentLoanPlan,String PayinStartPeriod,String NINO,String StartDeclaration,String ProcessLeaverNeeded, String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving,String LastPayrunDate)throws Throwable
 	{
 		try
 		{
@@ -302,6 +319,70 @@ public class RTICore extends CreateNewRTIEmployees
 				selectByValue.selectByVisibleText(NICategory);
 				System.out.println("NICategory got selected successfully");
 			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("FromDate")))
+			{
+				getObject("FromDate").sendKeys("");
+				String dateStr = DOB;
+				dateFormaterMethod(dateStr);
+				System.out.println("The stdate entered is  " +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("FromDate").sendKeys(formattedDate);
+				System.out.println("The From date got entered successfully");
+			}
+
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("AddressLineOne")))
+			{
+				getObject("AddressLineOne").sendKeys("");
+				getObject("AddressLineOne").clear();
+				getObject("AddressLineOne").sendKeys(AddressLine1);
+				System.out.println("Address line one got entered successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("AddressLineTwo")))
+			{
+				getObject("AddressLineTwo").sendKeys("");
+				getObject("AddressLineTwo").clear();
+				getObject("AddressLineTwo").sendKeys(AddressLine2);
+				System.out.println("Address line2 got entered successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("ACity")))
+			{
+				getObject("ACity").sendKeys("");
+				getObject("ACity").clear();
+				getObject("ACity").sendKeys(City);
+				System.out.println("City got selected successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("ACountry")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("ACountry"))));
+				selectByValue.selectByVisibleText(Country);
+				System.out.println("Country got selected successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("UKPostCodee")))
+			{
+				getObject("UKPostCodee").sendKeys("");
+				getObject("UKPostCodee").clear();
+				getObject("UKPostCodee").sendKeys(AddressLine2);
+				System.out.println("UK Postcode got entered successfully");
+			}
+			
+			Thread.sleep(2000L);
+			if (existsElementchkFor1mts(OR.getProperty("AAddressType")))
+			{
+				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("AAddressType"))));
+				selectByValue.selectByVisibleText(AddressType);
+				System.out.println("AddressType got selected successfully");
+			}
 
 			Thread.sleep(2000L);
 			if (existsElementchkFor1mts(OR.getProperty("RegularPayOfNextPage")))
@@ -345,7 +426,7 @@ public class RTICore extends CreateNewRTIEmployees
 
 
 	@Test(dependsOnMethods={"EmployeeCreationNextPage"})
-	public void UpdateEmployeePersonalPage(String KnownName,String NINO)throws Throwable
+	public void UpdateEmployeePersonalPage(String CompanyName,String Title,String FirstName, String LastName,String Email, String UserName, String Profile, String ActivateLicense, String JobTitle,String EmploymentType, String EmploymentStatus,String PatternType,String NoOfWorkingDays, String ContractualHours, String Manager, String StartDate, String ContinousStDate, String KnownName, String DOB,String FromDate,String AddressLine1,String AddressLine2,String City,String UKPostCode,String Country,String AddressType,String PayrollId, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String EffectiveFrom,String StudentLoanPlan,String PayinStartPeriod,String NINO,String StartDeclaration,String ProcessLeaverNeeded, String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving,String LastPayrunDate)throws Throwable
 	{
 		try
 		{
@@ -382,7 +463,52 @@ public class RTICore extends CreateNewRTIEmployees
 				getObject("nino").sendKeys(NINO);
 				System.out.println("NINO got entered successfully");
 			}
-
+			double valueOfStudentLoanNeeded = Double.parseDouble(StudentLoan);
+			System.out.println("converted smallER value is :"+valueOfStudentLoanNeeded);
+			if(valueOfStudentLoanNeeded== 1.0)
+			{
+				System.out.println("Yes for this scenario, Student Loan check box to check"
+						+ " and Student loan plan needs to be selected");
+				boolean	studentLoanchekbox = getObject("studentLoan").isSelected();
+				System.out.println("The studentLoanchekbox selection is :"+studentLoanchekbox);
+				boolean studentLoanchekboxdisplyed = getObject("studentLoan").isDisplayed();
+				System.out.println("The studentLoanchekboxdisplyed is displayed :"+studentLoanchekboxdisplyed);
+				Thread.sleep(4000L);
+				boolean studentLoanchkboxIsEnabled = getObject("studentLoan").isEnabled();
+				System.out.println("The studentLoanchkboxIsEnabled is isEnabled :"+studentLoanchkboxIsEnabled);
+				double valueOfStudentLoanChkbox = Double.parseDouble(StudentLoan);
+				System.out.println("converted smallER value is :"+valueOfStudentLoanChkbox);
+				outerloop:
+				if(valueOfStudentLoanChkbox== 1.0)
+				{
+					Thread.sleep(2000L);
+					if(studentLoanchekbox)
+					{
+						System.out.println("Student loan checkbox was allready checked, Hence our condition got satisfied");
+						break outerloop;
+					}
+					else
+					{
+						getObject("studentLoan").sendKeys("");
+						getObject("studentLoan").click();
+						System.out.println("Student loan checkbox was not checked and now checked hence Condition now satisfied successfully");
+						Thread.sleep(2000L);
+						if (existsElementchkFor1mts(OR.getProperty("studentLoanPlann")))
+						{
+							Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("studentLoanPlann"))));
+							selectByValue.selectByVisibleText(StudentLoanPlan);
+							System.out.println("Student Loan Plan got selected successfully");
+						}
+						break outerloop;
+					}
+				}
+			}
+			else
+			{
+				System.out.println("As per the requirment spec for this scenario,"
+						+ " Student Loan check box check"
+						+ " and Student loan plan selection is not needed");
+			}
 			Thread.sleep(2000L);
 			if (existsElementchkFor1mts(OR.getProperty("personalSavebutton")))
 			{
@@ -400,7 +526,7 @@ public class RTICore extends CreateNewRTIEmployees
 
 
 	@Test(dependsOnMethods={"UpdateEmployeePersonalPage"})
-	public void ProcessLeaver(String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving)throws Throwable
+	public void ProcessLeaver(String CompanyName,String Title,String FirstName, String LastName,String Email, String UserName, String Profile, String ActivateLicense, String JobTitle,String EmploymentType, String EmploymentStatus,String PatternType,String NoOfWorkingDays, String ContractualHours, String Manager, String StartDate, String ContinousStDate, String KnownName, String DOB,String FromDate,String AddressLine1,String AddressLine2,String City,String UKPostCode,String Country,String AddressType,String PayrollId, String Gender, String RegularPay, String Period, String PayrollEligibility, String PayrollFrequency,String TaxCode,String TaxBasis,String StudentLoan,String NICategory,String EffectiveFrom,String StudentLoanPlan,String PayinStartPeriod,String NINO,String StartDeclaration,String ProcessLeaverNeeded, String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate,String ReasonForLeaving,String LastPayrunDate)throws Throwable
 	{
 		try
 		{
@@ -413,7 +539,7 @@ public class RTICore extends CreateNewRTIEmployees
 			}
 			Thread.sleep(2000L);
 			System.out.println("Still emp start date needs to input");
-			keyDates(DateOfNoticeOfTermination,LeavingDate,LastWorkingDate);
+			keyDates(DateOfNoticeOfTermination,LeavingDate,LastPayrunDate,LastWorkingDate);
 			System.out.println("The keydates got entered successfully");
 			Thread.sleep(2000L);
 			if(existsElementchkFor1mts(OR.getProperty("reasonForLeaving")))
@@ -529,7 +655,8 @@ public class RTICore extends CreateNewRTIEmployees
 		}
 	}
 
-	public void keyDates(String DateOfNoticeOfTermination,String LeavingDate,String LastWorkingDate)throws Throwable
+	
+	public void keyDates(String DateOfNoticeOfTermination,String LeavingDate,String LastPayrunDate,String LastWorkingDate)throws Throwable
 	{
 		try
 		{
@@ -540,7 +667,7 @@ public class RTICore extends CreateNewRTIEmployees
 				getObject("noticeOfTermination").sendKeys("");
 				String dateStr = DateOfNoticeOfTermination;
 				dateFormaterMethod(dateStr);
-				System.out.println("The stdate entered is  " +formattedDate);		
+				System.out.println("The notice of termination entered is  " +formattedDate);		
 				Thread.sleep(4000L);
 				getObject("noticeOfTermination").sendKeys(formattedDate);
 			}
@@ -558,7 +685,7 @@ public class RTICore extends CreateNewRTIEmployees
 				getObject("leavingDate").sendKeys("");
 				String dateStr = LeavingDate;
 				dateFormaterMethod(dateStr);
-				System.out.println("The continous start date entered is" +formattedDate);		
+				System.out.println("The leaving date entered is" +formattedDate);		
 				Thread.sleep(4000L);
 				getObject("leavingDate").sendKeys(formattedDate);
 				Thread.sleep(3000L);
@@ -569,6 +696,26 @@ public class RTICore extends CreateNewRTIEmployees
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
+		
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("lastPayRun")))
+			{
+				getObject("lastPayRun").sendKeys("");
+				String dateStr = LastPayrunDate;
+				dateFormaterMethod(dateStr);
+				System.out.println("The Last Pay run date entered is" +formattedDate);		
+				Thread.sleep(4000L);
+				getObject("lastPayRun").sendKeys(formattedDate);
+				Thread.sleep(3000L);
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+
 
 		try
 		{
@@ -577,7 +724,7 @@ public class RTICore extends CreateNewRTIEmployees
 				getObject("lastWorkingDate").sendKeys("");
 				String dateStr = LastWorkingDate;
 				dateFormaterMethod(dateStr);
-				System.out.println("The continous start date entered is" +formattedDate);		
+				System.out.println("The lastworking date entered is" +formattedDate);		
 				Thread.sleep(4000L);
 				getObject("lastWorkingDate").sendKeys(formattedDate);
 				Thread.sleep(3000L);
