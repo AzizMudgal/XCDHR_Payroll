@@ -1258,7 +1258,7 @@ public class TestBase {
 			username.sendKeys("payrollautoregress@xcdhr.com");
 			WebElement password = driver.findElement(By.id(OR
 					.getProperty("login_Password")));
-			password.sendKeys("london2014");
+			password.sendKeys("xcdhrms2018");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
 			System.out.println("Logged into the New Automation Org");
@@ -7739,7 +7739,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 0;
+	public int OrgFlag = 1;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
