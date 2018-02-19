@@ -273,7 +273,15 @@ public class TestBase {
 	
 	
 	public static Xls_Reader TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxMonth2CSBRNTK50PercentRegulatory_SuiteXls = null;
+	
+	public static Xls_Reader TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls = null;
+
+
 	public String TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet;
+	
+	
+	public String TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_Inputsheet;
 	
 	
 	
@@ -8713,6 +8721,18 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx");
 				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek1CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek1CSBRNTK50PercentRegulatory201819";
+				
+				
+				
+				
+				
+				
+				
 					break;	
 					
 			default:
