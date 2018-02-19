@@ -188,7 +188,7 @@ public class CreateNewRTIEmployees extends TestSuiteBase
 							}
 						}
 						rownum++;
-					}
+				}
 			}
 		}
 		catch(Throwable t)
@@ -217,7 +217,6 @@ public class CreateNewRTIEmployees extends TestSuiteBase
 		{
 			ProcessLeaver(CompanyName,Title,FirstName,LastName,Email,UserName,Profile,ActivateLicense,JobTitle,EmploymentType,EmploymentStatus,PatternType,NoOfWorkingDays,ContractualHours,Manager,StartDate,ContinousStDate,KnownName,DOB,FromDate,AddressLine1,AddressLine2,City,UKPostCode,Country,AddressType,PayrollId,Gender,RegularPay,Period,PayrollEligibility,PayrollFrequency,TaxCode,TaxBasis,StudentLoan,NICategory,EffectiveFrom,StudentLoanPlan,PayinStartPeriod,NINO,StartDeclaration,ProcessLeaverNeeded,DateOfNoticeOfTermination,LeavingDate,LastWorkingDate,ReasonForLeaving,LastPayrunDate);
 		}
-		
 	}
 
 
