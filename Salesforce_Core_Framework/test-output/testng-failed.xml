@@ -3,13 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1_CSBRNTK50RL.GeneralTaxRateWeekly">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1_CSBRNTK50RL.TestReports">
         <methods>
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10"/>
-          <include name="EmpsSetup_ForMonthlyTaxRate" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10"/>
+          <include name="ReportTestResult"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+          <include name="CheckTestSkip"/>
           <include name="CheckSuiteSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1_CSBRNTK50RL.GeneralTaxRateWeekly -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1_CSBRNTK50RL.TestReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

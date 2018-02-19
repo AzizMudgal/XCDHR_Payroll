@@ -280,7 +280,6 @@ public class TestBase {
 
 	public String TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet;
 	
-	//public static Xls_Reader TaxPayroll_TaxMonth2CSBRNTK50PercentRegulatory_SuiteXls = null;
 	public String TaxPayroll_TaxMonth2CSBRNTK50PercentRegulatory_Inputsheet;
 	
 
