@@ -461,7 +461,7 @@ public class CreateNewRTIEmployees extends TestSuiteBase
 			{
 				getObject("UKPostCodee").sendKeys("");
 				getObject("UKPostCodee").clear();
-				getObject("UKPostCodee").sendKeys(AddressLine2);
+				getObject("UKPostCodee").sendKeys(UKPostCode);
 				System.out.println("UK Postcode got entered successfully");
 			}
 			

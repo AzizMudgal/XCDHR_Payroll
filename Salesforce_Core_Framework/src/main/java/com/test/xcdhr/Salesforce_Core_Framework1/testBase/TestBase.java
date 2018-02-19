@@ -268,6 +268,16 @@ public class TestBase {
 	public static Xls_Reader Payroll_RecognitionScenarioFive_SuiteXls = null;
 	public static Xls_Reader Payroll_RecognitionScenarioSix_SuiteXls = null;
 	public static Xls_Reader Payroll_RecognitionScenarioSeven_SuiteXls = null;
+	
+	
+	
+	
+	public static Xls_Reader TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public String TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet;
+	
+	
+	
+	
 
 	public String PayrollRecognition_Inputsheet;
 	public String EmployeeCreation_For_PayrollRecognition_Inputsheet;
@@ -7739,7 +7749,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
@@ -7774,7 +7784,7 @@ public class TestBase {
 	 * 2017183 = In Regress Org for 201718
 	 */
 
-	public int TaxYear = 201718;
+	public int TaxYear = 201819;
 
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
 			throws Throwable {
@@ -8647,7 +8657,7 @@ public class TestBase {
 				Payroll_CreateEmployees_For_RecognitionScenarious_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Create RTI Employees201718.xlsx");
-		EmployeeCreation_For_PayrollRecognition_Inputsheet = "Create RTI Employees201718";
+				EmployeeCreation_For_PayrollRecognition_Inputsheet = "Create RTI Employees201718";
 				
 				Payroll_RecognitionScenarious_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -8685,7 +8695,26 @@ public class TestBase {
 				PayrollRecognitionScenario7_Inputsheet = "Payroll Recognition ScenarioSeven201718";
 
 				break;
+						
+			case 201819:
+				System.out
+				.println("You have specified to run tax year 201819");
+				/*Payroll_GenerateTaxrateMonthly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeMonthly201819.xlsx");
+				GenerateTaxrateMonthly_InputExcelFile = "Payroll Suite TaxGeneralAndLargeTaxcodeMonthly201819";			
 
+				Payroll_GenerateTaxrateWeekly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819.xlsx");
+				GenerateTaxrateWeekly_InputExcelFile = "Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819";
+*/
+				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819";
+					break;	
+					
 			default:
 				System.out
 						.println("not specified to run any specific tax year");

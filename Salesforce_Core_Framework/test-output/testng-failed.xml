@@ -3,20 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.GeneralTaxRateMonthly">
         <methods>
-          <include name="ReportTestResult"/>
-          <include name="FetchCompanyRecord"/>
-          <include name="ProcessLeaver"/>
-          <include name="ReportDataSetResult"/>
-          <include name="UpdateEmployeePersonalPage"/>
-          <include name="CreateNewJoiner"/>
-          <include name="CheckTestSkip"/>
-          <include name="EmployeeCreationNextPage"/>
-          <include name="EmpsSetup_WithNICategory"/>
+          <include name="EmpsSetup_ForMonthlyTaxRate"/>
+          <include name="EmpsSetup_WithAnnualSalary"/>
           <include name="CheckSuiteSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.Rti_EmployeeCreation.CreateNewRTIEmployees -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.GeneralTaxRateMonthly -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
