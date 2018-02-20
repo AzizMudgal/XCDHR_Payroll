@@ -8805,7 +8805,16 @@ public class TestBase {
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxMonth10CSBRNTK50PercentRegulatory201819.xlsx");
 				TaxPayroll_TaxMonth10CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxMonth10CSBRNTK50PercentRegulatory201819";
 
-				
+				Payroll_GenerateTaxrateMonthly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeMonthly201819.xlsx");
+				GenerateTaxrateMonthly_InputExcelFile = "Payroll Suite TaxGeneralAndLargeTaxcodeMonthly201819";
+
+				Payroll_GenerateTaxrateWeekly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819.xlsx");
+				GenerateTaxrateWeekly_InputExcelFile = "Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819";
+
 				
 					break;	
 					

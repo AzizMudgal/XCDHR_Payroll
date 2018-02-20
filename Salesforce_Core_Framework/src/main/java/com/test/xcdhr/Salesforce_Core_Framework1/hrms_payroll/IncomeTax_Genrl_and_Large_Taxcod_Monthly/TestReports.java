@@ -5,6 +5,7 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_a
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
+import java.text.DecimalFormat;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -27,7 +28,6 @@ import atu.webdriver.utils.table.WebTable;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-
 public class TestReports extends TestSuiteBase
 {
 	String runmodes[] = null;
@@ -37,9 +37,9 @@ public class TestReports extends TestSuiteBase
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
 	public String titlename;
-	
-	
 
+	
+	
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
@@ -59,7 +59,7 @@ public class TestReports extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw) throws Throwable
+	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
@@ -75,10 +75,15 @@ public class TestReports extends TestSuiteBase
 		/* Added by Swamy*/
 		try
 		{
-			titlename = driver.getTitle();
-			Assert.assertEquals(driver.getTitle(), titlename);
-			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
-			System.out.println("");
+			closePopupWindow();
+			if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+			{
+				String personalTab = getObject("PersonalTab").getText();
+				System.out.println("Tab name is :"+ personalTab);
+				Assert.assertEquals("Personal", personalTab);
+				System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+				System.out.println("");
+			}
 		}
 		catch(Throwable t)
 		{
@@ -89,7 +94,7 @@ public class TestReports extends TestSuiteBase
 		Thread.sleep(4000L);
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
-			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw); // pn means payroll id. in this case 8512
+			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
 		}
 		else
 		{
@@ -99,7 +104,7 @@ public class TestReports extends TestSuiteBase
 
 
 
-	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw) throws Throwable
+	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
@@ -132,16 +137,15 @@ public class TestReports extends TestSuiteBase
 
 		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
 		{
-			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
+			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
 			System.out.println("7> Entered the values and processed the Test Remarks");
 		}
 	}
 
 
 
-	public void processReport(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw)throws Throwable
+	public void processReport(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo)throws Throwable
 	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
 		try
 		{
 			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
@@ -168,7 +172,6 @@ public class TestReports extends TestSuiteBase
 						System.out.println("4> Total count of Employee records displayed in the report are :"+rownum);
 						System.out.println("");
 						System.out.println("5> The script successfully read and output the values and accordingly gave the TEST REMARKS in NI-HMRC Excel file");
-						//CaptureScreenshot("TestReports"+this.getClass().getSimpleName());
 						break gotobreak;
 					} 
 					else
@@ -180,7 +183,7 @@ public class TestReports extends TestSuiteBase
 						String statutoryMaternityPay= table.getTBody().getRow(rownum).getCell(2).getText();
 						System.out.println("statutoryMaternityPay is :"+statutoryMaternityPay);
 						//call the function which reads the excel sheet.
-						ReadsExpectedData(EmpName,statutoryAdoptionPay,statutoryMaternityPay,TestResultExcelFilePath);
+						ReadsExpectedData(EmpName,statutoryAdoptionPay,statutoryMaternityPay,TestResultExcelFilePath,TestReportworksheetNo);
 					}
 					rownum++;
 				}
@@ -195,13 +198,20 @@ public class TestReports extends TestSuiteBase
 
 
 
-	public void ReadsExpectedData(String EmpName,String statutoryAdoptionPay,String statutoryMaternityPay,String TestResultExcelFilePath) throws Throwable
+	public void ReadsExpectedData(String EmpName,String statutoryAdoptionPay,String statutoryMaternityPay,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
 	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
+		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
+		DecimalFormat df = new DecimalFormat("###.#");
+		String worksheetNoWithoutDecimal= df.format(worksheetvalue);
+		int TRwNo=Integer.parseInt(worksheetNoWithoutDecimal);
+		System.out.println("The converted post value is  :"+TRwNo);
+	
+		
+		
 		File excel = new File(TestResultExcelFilePath);
 		FileInputStream fis = new FileInputStream(excel);
 		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
-		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(0);
+		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
 
 		CellStyle style = wb.createCellStyle();
 		style.setFillPattern(CellStyle.ALIGN_FILL);
