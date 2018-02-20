@@ -276,7 +276,23 @@ public class TestBase {
 	public static Xls_Reader TaxPayroll_TaxMonth2CSBRNTK50PercentRegulatory_SuiteXls = null;
 	
 	public static Xls_Reader TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek2CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek3CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek4CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek5CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek6CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek7CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek8CSBRNTK50PercentRegulatory_SuiteXls = null;
 
+	public static Xls_Reader TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public static Xls_Reader TaxPayroll_TaxWeek10CSBRNTK50PercentRegulatory_SuiteXls = null;
+
+	
+	
+	
+	
+	
+	
 
 	public String TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet;
 	
@@ -284,7 +300,16 @@ public class TestBase {
 	
 
 	public String TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_Inputsheet;
-	
+	public String TaxPayroll_TaxWeek2CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek3CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek4CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek5CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek6CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek7CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek8CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_Inputsheet;
+	public String TaxPayroll_TaxWeek10CSBRNTK50PercentRegulatory_Inputsheet;
+
 	
 
 	public static Xls_Reader TaxPayroll_TaxMonth3CSBRNTK50PercentRegulatory_SuiteXls = null;
@@ -8754,6 +8779,61 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek1CSBRNTK50PercentRegulatory201819.xlsx");
 				TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek1CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek2CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek2CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek2CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek2CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek3CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek3CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek3CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek3CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek4CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek4CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek4CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek4CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek5CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek5CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek5CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek5CSBRNTK50PercentRegulatory201819";
+				
+				
+				TaxPayroll_TaxWeek6CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek6CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek6CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek6CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek7CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek7CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek7CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek7CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek8CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek8CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek8CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek8CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek9CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek9CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxWeek10CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek10CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxWeek10CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek10CSBRNTK50PercentRegulatory201819";
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 				
 				
