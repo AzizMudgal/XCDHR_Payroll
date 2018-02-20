@@ -663,7 +663,7 @@ public class TestBase {
 
 	public boolean existsElementchkFor1mts(String id) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 60/*
+			WebDriverWait wait = new WebDriverWait(driver, 120/*
 															 * Timeout in
 															 * seconds
 															 */);
@@ -774,7 +774,7 @@ public class TestBase {
 	public boolean existsWebElement(WebElement wid) {
 
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 60/*
+			WebDriverWait wait = new WebDriverWait(driver, 120/*
 															 * Timeout in
 															 * seconds
 															 */);
@@ -1968,12 +1968,14 @@ public class TestBase {
 						 * + rownumx + "]/input"));
 						 */
 						System.out.println("empchkBox=====" + empchkBox);
+						
 						if (existsWebElement(empchkBox)) {
 							empchkBox.click();
 							System.out.println("");
 							System.out.println("The Employee name  : "
 									+ appEmployeesName
 									+ "  check box got clicked");
+							System.out.println("The rowMatchedDD------>:" +rowMatchedDD);
 						}
 						if (totalRows == rowMatchedDD) {
 							System.out
@@ -1983,6 +1985,8 @@ public class TestBase {
 					}
 					rownumx++;
 				}
+				
+				
 				if (existsElementchkFor1mts(OR.getProperty("closeWindow"))) {
 					getObject("closeWindow").click();
 					System.out
