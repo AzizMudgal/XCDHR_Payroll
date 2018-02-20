@@ -1,10 +1,5 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1_CSBRNTK50RL;
 
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -13,13 +8,9 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-
-
-public class GeneralTaxRateMonthly extends TestSuiteBase
-{
+public class GeneralTaxRateWeekly extends TestSuiteBase {
 
 	String runmodes[] = null;
 	static int count = -1;
@@ -29,23 +20,27 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public int rownum;
-	public int lastRowCount;
-
+	
+	
 
 	@BeforeTest
-	public void CheckTestSkip() throws Throwable
-	{
+	public void CheckTestSkip() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName()))
-		{
-		    Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_GenerateTaxrateMonthly_SuiteXls, "first", Test_Util.GetRowNum(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+		if(! Test_Util.IsTestcaseRunMode(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName())){
+
+			Skip=true;
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, "first", Test_Util.GetRowNum(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
+
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
+
 		}
+
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName());
+
+		runmodes=Test_Util.getDataSetRunmodes(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName());
+
 	}
 
 	public String payfreqncy;
@@ -54,15 +49,15 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 	boolean shouldOpenBrowser = true; 
 
 
-
 	@Test(dataProvider="getData", priority=1)
-	public void EmpsSetup_ForMonthlyTaxRate(String empName,String Taxcode, String TaxBasis, String AnnualSalary,String PayFrequency) throws Throwable
+	public void EmpsSetup_ForMonthlyTaxRate(String EmpName,String Taxcode, String TaxBasis, String AnnualSalary,String PayFrequency) throws Throwable
 	{
 		//APP_LOGS.debug("Entering the Leave parameters");
-		APP_LOGS.debug(empName+"--"+Taxcode+"--"+TaxBasis+"--"+AnnualSalary+"--"+PayFrequency);
+		APP_LOGS.debug(EmpName+"--"+Taxcode+"--"+TaxBasis+"--"+AnnualSalary+"--"+PayFrequency);
+
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y"))
-		{
+		if(! runmodes[count].equalsIgnoreCase("Y")){
+
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
@@ -71,10 +66,12 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 		if(shouldOpenBrowser)
 		{
 			shouldOpenBrowser = false;
+			
 			openBrowser();
+						
 			logingIntoDesiredORG(OrgFlag);
+			
 			driver.manage().window().maximize();
-			Thread.sleep(3000L);
 			try
 			{
 				closePopupWindow();
@@ -86,27 +83,21 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
+
 			}
 			catch(Throwable t)
 			{
-				APP_LOGS.debug("Could not assert the home page title");
+				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
-
 		}
 
 		/*************************************************************************/
-
-		/*
-		 *  The method updates the Taxcode and TaxBasis for the
-		 *   Automation employees. I am calling this method from the 'TestBase' class.
-		 * 
-		 */
-		UpdateEmployeeTaxCode(empName,Taxcode,TaxBasis);
-
+		// The script updates the NI Category for the Automation employees
+		UpdateEmployeeTaxCode(EmpName,Taxcode,TaxBasis);
 		/*************************************************************************/
 	}
-	
+
 	
 
 	@Test(dataProvider="getData", priority=2)
@@ -118,47 +109,33 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+countCompensation);
 		}
-
 		/*************************************************************************/
-		/*
-		 *  The method updates the Annual salary and Pay frequency for the
-		 *  Automation employees. I am calling this method from the 'TestBase' class.
-		 * 
-		 */
+		// The script updates the Annual salary in the compensation Tab for the Automation employees
 		UpdateAnnualSalary(EmpName,AnnualSalary,PayFrequency);
-		
 		/*************************************************************************/
 	}
 
 
-	
-	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_GenerateTaxrateMonthly_SuiteXls,"GeneralTaxRateMonthly");
+		return Test_Util.getData(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls,"GeneralTaxRateWeekly");
 	}
-
 
 
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(Skip)
-		{
-			Test_Util.ReportDataSetResult(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}
-		else if(Fail)
-		{
+		if(Skip){
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+		}else if(Fail){
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
-		}
-		else
-		{
-			Test_Util.ReportDataSetResult(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+		}else{
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -166,20 +143,23 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 
 	@AfterTest
-	public void ReportTestResult() throws Throwable
-	{
+	public void ReportTestResult() throws Throwable{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(IsTestPass)
-		{
+		if(IsTestPass){
+
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_GenerateTaxrateMonthly_SuiteXls, "first", Test_Util.GetRowNum(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName()),"Pass");
-		}
-		else
-		{
-			Test_Util.ReportDataSetResult(Payroll_GenerateTaxrateMonthly_SuiteXls, "first", Test_Util.GetRowNum(Payroll_GenerateTaxrateMonthly_SuiteXls, this.getClass().getSimpleName()),"Fail");
+
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, "first", Test_Util.GetRowNum(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName()),"Pass");
+
+		}else{
+
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, "first", Test_Util.GetRowNum(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this.getClass().getSimpleName()),"Fail");
+
 		}	
+
 		closeBrowser();
 	}
+
 
 }
