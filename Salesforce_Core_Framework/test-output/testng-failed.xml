@@ -3,13 +3,61 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.GeneralTaxRateMonthly">
+=======
+<<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth7_204045VarblePayAnd50RL.GeneralTaxRateMonthly">
+=======
+<<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth2_CSBRNTK50RL.GeneralTaxRateMonthly">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth3_CSBRNTK50RL.GeneralTaxRateMonthly">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
+<<<<<<< HEAD
           <include name="EmpsSetup_ForMonthlyTaxRate" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10 11"/>
           <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10 11"/>
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+          <include name="EmpsSetup_ForMonthlyTaxRate" invocation-numbers="0 1 2 3"/>
+          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="0 1 2 3"/>
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="0 1 2 3 4"/>
+          <include name="EmpsSetup_ForMonthlyTaxRate" invocation-numbers="0 1 2 3 4"/>
+=======
+<<<<<<< HEAD
+          <include name="EmpsSetup_WithAnnualSalary"/>
+          <include name="EmpsSetup_ForMonthlyTaxRate"/>
+=======
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.GeneralTaxRateMonthly -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth7_204045VarblePayAnd50RL.GeneralTaxRateMonthly -->
+=======
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth2_CSBRNTK50RL.GeneralTaxRateMonthly -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth3_CSBRNTK50RL.GeneralTaxRateMonthly -->
+>>>>>>> refs/remotes/origin/master
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
