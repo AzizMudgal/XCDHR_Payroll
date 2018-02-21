@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek1_CSBRNTK50RL;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL;
 import java.io.File;
 import java.io.FileInputStream;
 import java.text.DecimalFormat;
@@ -37,14 +37,14 @@ public class ProcessPayrollForWeeklyTax extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if (!Test_Util.IsTestcaseRunMode(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+		if (!Test_Util.IsTestcaseRunMode(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 				.getClass().getSimpleName()))
 		{
 			Skip = true;
-			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, "first",
-					Test_Util.GetRowNum(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, "first",
+					Test_Util.GetRowNum(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 							.getClass().getSimpleName()), "Skipped");
-			// Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls,
+			// Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls,
 			// this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase"
 					+ this.getClass().getSimpleName()
@@ -60,7 +60,7 @@ public class ProcessPayrollForWeeklyTax extends TestSuiteBase
 		}
 
 		// Load the runmodes of the tests
-		runmodes = Test_Util.getDataSetRunmodes(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+		runmodes = Test_Util.getDataSetRunmodes(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 				.getClass().getSimpleName());
 
 	}
@@ -140,7 +140,7 @@ public class ProcessPayrollForWeeklyTax extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls,"ProcessPayrollForWeeklyTax");
+		return Test_Util.getData(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls,"ProcessPayrollForWeeklyTax");
 	}
 
 	@AfterMethod
@@ -149,17 +149,17 @@ public class ProcessPayrollForWeeklyTax extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if (Skip)
 		{
-			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
 		} else if (Fail)
 		{
 			IsTestPass = false;
 
-			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
 		} else
 		{
-			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
 		Skip = false;
@@ -179,15 +179,15 @@ public class ProcessPayrollForWeeklyTax extends TestSuiteBase
 			// second worksheet fails, the test
 			// would be considered as fail.And the same would be updated.
 
-			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, "first",
-					Test_Util.GetRowNum(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, "first",
+					Test_Util.GetRowNum(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
 
 		} else
 		{
 
-			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, "first",
-					Test_Util.GetRowNum(TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls, this
+			Test_Util.ReportDataSetResult(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, "first",
+					Test_Util.GetRowNum(TaxPayroll_TaxWeek9CSBRNTK50PercentRegulatory_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
 
 		}
