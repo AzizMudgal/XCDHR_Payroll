@@ -8412,7 +8412,6 @@ public class TestBase {
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL201718.xlsx");
 				IncomeTax_TCWeek7_204045VariablePayANDWeekly50RL_InputExcelFile = "Payroll Suite IncomeTax_TCWeek7_204045VariablePay&Weekly50RL201718";
-				// since 8 week not ran scripts for 2017-18
 
 				Payroll_IncomeTax_TCWeek8_204045VariablePayANDWeekly50RL_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -8644,10 +8643,7 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director as employee201718.xlsx");
 				Payroll_NI_DirectorAsEmployee_SuiteXls_InputExcelFile = "Payroll Suite NI Director as employee201718";
 
-				// Payroll_NI_DirectorAsEmployee_SuiteXls=new
-				// Xls_Reader(System.getProperty("user.dir") +
-				// "//src//salesforce_XLS_Files//Payroll Suite NI Director as employee201718.xlsx");
-
+			
 				Payroll_NI_DirectorProrata_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director Prorata201718.xlsx");
@@ -8683,10 +8679,6 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryMaternityPay201718.xlsx");
 				Statutory_MaternityPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryMaternityPay201718";
 
-				// LeaveDemo_SuiteXls = new
-				// Xls_Reader(System.getProperty("user.dir") +
-				// "//src//salesforce_XLS_Files//Payroll Suite LeaveDemo201718.xlsx");
-				// LeaveDemo_Inputsheet = "Payroll Suite LeaveDemo201718";
 
 				Payroll_Statutory_Adoption_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -8759,26 +8751,19 @@ public class TestBase {
 				PayrollRecognitionScenario7_Inputsheet = "Payroll Recognition ScenarioSeven201718";
 
 				break;
+				
+				
+				
 						
 			case 201819:
 				System.out
 				.println("You have specified to run tax year 201819");
-				/*Payroll_GenerateTaxrateMonthly_SuiteXls = new Xls_Reader(
-						System.getProperty("user.dir")
-								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeMonthly201819.xlsx");
-				GenerateTaxrateMonthly_InputExcelFile = "Payroll Suite TaxGeneralAndLargeTaxcodeMonthly201819";			
-
-				Payroll_GenerateTaxrateWeekly_SuiteXls = new Xls_Reader(
-						System.getProperty("user.dir")
-								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819.xlsx");
-				GenerateTaxrateWeekly_InputExcelFile = "Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819";
-*/
-				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
-						System.getProperty("user.dir")
-						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx");
-				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819";
 				
-
+				/*
+				 * Payroll Tax TaxMonth1CSBRNTK50PercentRegulatory Weekly SuiteXls for 201819 F.Y
+				 * 	
+				 */
+				
 				TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek1CSBRNTK50PercentRegulatory201819.xlsx");
@@ -8830,20 +8815,17 @@ public class TestBase {
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek10CSBRNTK50PercentRegulatory201819.xlsx");
 				TaxPayroll_TaxWeek10CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxWeek10CSBRNTK50PercentRegulatory201819";
 				
+				/*
+				 * Payroll Tax TaxMonth1CSBRNTK50PercentRegulatory monthly SuiteXls for 201819 F.Y
+				 * 	
+				 */
 				
 				
+				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxMonth1CSBRNTK50PercentRegulatory201819";
 				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-				
-
 				TaxPayroll_TaxMonth2CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxMonth2CSBRNTK50PercentRegulatory201819.xlsx");
@@ -8889,6 +8871,11 @@ public class TestBase {
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxMonth10CSBRNTK50PercentRegulatory201819.xlsx");
 				TaxPayroll_TaxMonth10CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite TaxMonth10CSBRNTK50PercentRegulatory201819";
 
+				/*
+				 * Payroll Tax General Tax rate monthly and weekly SuiteXls for 201819 F.Y
+				 * 	
+				 */
+				
 				Payroll_GenerateTaxrateMonthly_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeMonthly201819.xlsx");
@@ -8899,8 +8886,184 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819.xlsx");
 				GenerateTaxrateWeekly_InputExcelFile = "Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819";
 
+				/*
+				 * Payroll NI Weekly SuiteXls for 201819 F.Y
+				 * 	
+				 */
 				
-					break;	
+				Payroll_CatA_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatA201819.xlsx");
+					
+				NI_Payroll_CatA_SuiteXls_InputExcelFile = "Payroll Suite WeeklyCatA201819";
+
+				
+				Payroll_CatB_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatB201819.xlsx");
+					
+				NI_Payroll_CatB_SuiteXls_InputExcelFile = "Payroll Suite WeeklyCatB201819";
+				
+				Payroll_CatC_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatC201819.xlsx");
+					
+				NI_Payroll_CatC_SuiteXls_InputExcelFile = "Payroll Suite WeeklyCatC201819";
+				
+				Payroll_CatH_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatH201819.xlsx");
+					
+				NI_Payroll_CatH_SuiteXls_InputExcelFile = "Payroll Suite WeeklyCatH201819";
+				
+				Payroll_CatJ_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatJ201819.xlsx");
+					
+				NI_Payroll_CatJ_SuiteXls_InputExcelFile = "Payroll Suite WeeklyCatJ201819";
+				
+				Payroll_CatM_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatM201819.xlsx");
+					
+				NI_Payroll_CatM_SuiteXls_InputExcelFile = "Payroll Suite WeeklyCatM201819";
+				
+				
+				Payroll_CatZ_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite WeeklyCatZ201819.xlsx");
+					
+				NI_Payroll_CatZ_SuiteXls_InputExcelFile = "Payroll Suite WeeklyCatZ201819";
+				
+				
+				/*
+				 * Payroll NI 2Weekly SuiteXls for 201819 F.Y
+				 * 	
+				 */
+				
+				Payroll_2WeeklyCatA_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatA201819.xlsx");
+				NI_Payroll_2WeeklyCatA_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatA201819";
+
+				Payroll_2WeeklyCatB_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatB201819.xlsx");
+				NI_Payroll_2WeeklyCatB_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatB201819";
+
+				Payroll_2WeeklyCatC_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatC201819.xlsx");
+				NI_Payroll_2WeeklyCatC_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatC201819";
+
+				Payroll_2WeeklyCatH_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatH201819.xlsx");
+				NI_Payroll_2WeeklyCatH_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatH201819";
+
+				Payroll_2WeeklyCatJ_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatJ201819.xlsx");
+				NI_Payroll_2WeeklyCatJ_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatJ201819";
+
+				Payroll_2WeeklyCatM_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatM201819.xlsx");
+				NI_Payroll_2WeeklyCatM_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatM201819";
+
+				Payroll_2WeeklyCatZ_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatZ201819.xlsx");
+				NI_Payroll_2WeeklyCatZ_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatZ201819";
+				
+				
+				/*
+				 * Payroll NI 4Weekly SuiteXls for 201819 F.Y
+				 * 	
+				 */
+
+				Payroll_4WeeklyCatA_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatA201819.xlsx");
+				NI_Payroll_4WeeklyCatA_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatA201819";
+
+				Payroll_4WeeklyCatB_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatB201819.xlsx");
+				NI_Payroll_4WeeklyCatB_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatB201819";
+
+				Payroll_4WeeklyCatC_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatC201819.xlsx");
+				NI_Payroll_4WeeklyCatC_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatC201819";
+
+				Payroll_4WeeklyCatH_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatH201819.xlsx");
+				NI_Payroll_4WeeklyCatH_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatH201819";
+
+				Payroll_4WeeklyCatJ_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatJ201819.xlsx");
+				NI_Payroll_4WeeklyCatJ_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatJ201819";
+
+				Payroll_4WeeklyCatM_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatM201819.xlsx");
+				NI_Payroll_4WeeklyCatM_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatM201819";
+				
+				
+			/*
+			 * Payroll NI Monthly SuiteXls for 201819 F.Y
+			 * 	
+			 */
+				
+				Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatA201819.xlsx");
+				NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA201819";
+
+				Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatB201819.xlsx");
+				NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB201819";
+
+				Payroll_MonthlyCatC_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatC201819.xlsx");
+				NI_Payroll_MonthlyCatC_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatC201819";
+
+				Payroll_MonthlyCatH_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatH201819.xlsx");
+				NI_Payroll_MonthlyCatH_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatH201819";
+
+				Payroll_MonthlyCatJ_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatJ201819.xlsx");
+				NI_Payroll_MonthlyCatJ_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatJ201819";
+
+				Payroll_MonthlyCatM_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatM201819.xlsx");
+				NI_Payroll_MonthlyCatM_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatM201819";
+
+				Payroll_MonthlyCatZ_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatZ201819.xlsx");
+				NI_Payroll_MonthlyCatZ_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatZ201819";
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				break;	
 					
 			default:
 				System.out
