@@ -80,13 +80,15 @@ public class NIWeeklyCat_A extends TestSuiteBase {
 			logingIntoDesiredORG(OrgFlag);
 
 			driver.manage().window().maximize();
-
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -95,16 +97,13 @@ public class NIWeeklyCat_A extends TestSuiteBase {
 				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
-
 		}
-
 		/*************************************************************************/
 
 		// The script updates the NI Category for the Automation employees
 		UpdateEmployeeNICategory(EmpName,NICategory);
 
 		/*************************************************************************/
-
 	}
 
 
