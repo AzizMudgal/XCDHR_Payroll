@@ -3,13 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.NIWeeklyCat_A">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.NIWeeklyCat_J">
         <methods>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="9 10 11 12 13 14 15 16 17 18"/>
           <include name="CheckSuiteSkip"/>
-          <include name="EmpsSetup_WithNICategory"/>
-          <include name="EmpsSetup_WithAnnualSalary"/>
+          <include name="EmpsSetup_WithNICategory" invocation-numbers="9 10 11 12 13 14 15 16 17 18"/>
+          <include name="CheckTestSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.NIWeeklyCat_A -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.NIWeeklyCat_J -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
