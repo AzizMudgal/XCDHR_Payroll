@@ -644,7 +644,7 @@ public class TestBase {
 
 	public boolean existsElement(String id) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 30/*
+			WebDriverWait wait = new WebDriverWait(driver, 60/*
 															 * Timeout in
 															 * seconds
 															 */);
