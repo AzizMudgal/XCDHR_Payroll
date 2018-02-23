@@ -4596,6 +4596,14 @@ public class TestBase {
 			selectByValue.selectByValue("All");
 		}
 		Thread.sleep(8000L);
+		
+		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
+		{
+			System.out.println("The payroll search field is displayed");
+			getObject("payrollSearchField").sendKeys("");
+			getObject("payrollSearchField").sendKeys(pn);
+		}
+		Thread.sleep(5000L);
 		/*
 		 * This code clicks to pagination from 1 to last page till it finds the
 		 * '2Weekly' pay run Once it finds the '2Weekly' payrun, it clicks to
@@ -6437,6 +6445,15 @@ public class TestBase {
 			selectByValue.selectByValue(PayrollView);// "Current"
 		}
 		Thread.sleep(2000L);
+		
+		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
+		{
+			System.out.println("The payroll search field is displayed");
+			getObject("payrollSearchField").sendKeys("");
+			getObject("payrollSearchField").sendKeys(Payrolid);
+		}
+		Thread.sleep(5000L);
+		
 		/*
 		 * This code clicks to pagination from 1 to last page till it finds the
 		 * '2Weekly' pay run Once it finds the '2Weekly' payrun, it clicks to
@@ -6476,9 +6493,10 @@ public class TestBase {
 
 						}
 
-						if (existsElement(OR.getProperty("paginationElement"))) {
-							getObject("paginationNext").sendKeys("");
-							getObject("paginationNext").click();
+						if (existsElement(OR.getProperty("paginationElement")))
+						{
+							//getObject("paginationNext").sendKeys("");
+							//getObject("paginationNext").click();
 							System.out.println("hence clicked to next page");
 
 						}
@@ -7016,14 +7034,14 @@ public class TestBase {
 			String TestResultExcelFilePath, String worksheetNo,
 			String PayrollView) throws Throwable {
 
-		if (existsElement(OR.getProperty("payrollTab"))) {
+		if (existsElementchkFor1mts(OR.getProperty("payrollTab"))) {
 			getObject("payrollTab").click();
 			System.out.println("The payroll tab got clicked");
 
 		}
 		Thread.sleep(5000L);
 
-		if (existsElement(OR.getProperty("payrollViewLocator"))) {
+		if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) {
 			Select selectByValue = new Select(driver.findElement(By.xpath(OR
 					.getProperty("payrollViewLocator"))));
 			// This select by value needs to be called from OR.Properties
@@ -7035,10 +7053,18 @@ public class TestBase {
 		 * '2Weekly' pay run Once it finds the '2Weekly' payrun, it clicks to
 		 * it. Hence the following code finds the '2Weekly' payrun automatically
 		 * from pagination ProcessingTo2Weekly() method searches the required
-		 * company name and payrun
+		 * company name and payrun //payrollSearchField
 		 */
+		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
+		{
+			System.out.println("The payroll search field is displayed");
+			getObject("payrollSearchField").sendKeys("");
+			getObject("payrollSearchField").sendKeys(Payrolid);
+		}
+		Thread.sleep(5000L);
+		
 		try {
-			if (existsElement(OR.getProperty("payroll2weeklytable"))) {
+			if (existsElementchkFor1mts(OR.getProperty("payroll2weeklytable"))) {
 				WebElement table = driver.findElement(By.xpath(OR
 						.getProperty("payroll2weeklytable")));
 				if (existsWebElement(table)) {
@@ -7054,9 +7080,10 @@ public class TestBase {
 					//
 					for (int i = 2; i <= 100; i++) {
 
-						if (existsElement(OR.getProperty("paginationElement"))) {
-							getObject("paginationNext").sendKeys("");
-							getObject("paginationNext").click();
+						if (existsElement(OR.getProperty("paginationElement")))
+						{
+							//getObject("paginationNext").sendKeys("");
+							//getObject("paginationNext").click();
 							// allpages.get(i).click();
 						}
 						List<WebElement> allrows = table

@@ -1,12 +1,14 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA;
 
 
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -81,9 +83,15 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				System.out
-				.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+				{
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+					System.out.println("");
+				}
 				PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
 			}
 			catch (Throwable t)
