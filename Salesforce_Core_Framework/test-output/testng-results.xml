@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<<<<<<< Upstream, based on origin/master
 =======
 <<<<<<< HEAD
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
@@ -8,8 +8,11 @@
 <testng-results skipped="0" failed="0" ignored="0" total="9" passed="9">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+>>>>>>> b51d62d Code checkin for closing Popwindow
   <reporter-output>
   </reporter-output>
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
   <suite name="Default suite" duration-ms="131406" started-at="2018-02-22T13:45:48Z" finished-at="2018-02-22T13:47:59Z">
 =======
@@ -19,8 +22,12 @@
   <suite name="Default suite" duration-ms="122349" started-at="2018-02-22T09:41:04Z" finished-at="2018-02-22T09:43:06Z">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+  <suite name="Default suite" duration-ms="126825" started-at="2018-02-23T07:27:19Z" finished-at="2018-02-23T07:29:26Z">
+>>>>>>> b51d62d Code checkin for closing Popwindow
     <groups>
     </groups>
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
     <test name="Default test" duration-ms="131406" started-at="2018-02-22T13:45:48Z" finished-at="2018-02-22T13:47:59Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports">
@@ -36,9 +43,15 @@
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2090" started-at="2018-02-22T15:11:02Z" finished-at="2018-02-22T15:11:04Z">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+    <test name="Default test" duration-ms="126825" started-at="2018-02-23T07:27:19Z" finished-at="2018-02-23T07:29:26Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.TestReports@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="3817" started-at="2018-02-23T12:57:16Z" finished-at="2018-02-23T12:57:19Z">
+>>>>>>> b51d62d Code checkin for closing Popwindow
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="790" started-at="2018-02-22T19:15:48Z" finished-at="2018-02-22T19:15:49Z">
 =======
@@ -48,9 +61,13 @@
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="452" started-at="2018-02-22T15:11:04Z" finished-at="2018-02-22T15:11:04Z">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.TestReports@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="1254" started-at="2018-02-23T12:57:19Z" finished-at="2018-02-23T12:57:21Z">
+>>>>>>> b51d62d Code checkin for closing Popwindow
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="127625" started-at="2018-02-22T19:15:49Z" data-provider="getData" finished-at="2018-02-22T19:17:57Z">
 =======
@@ -60,9 +77,13 @@
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="107137" started-at="2018-02-22T15:11:05Z" data-provider="getData" finished-at="2018-02-22T15:12:52Z">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.TestReports@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="121428" started-at="2018-02-23T12:57:22Z" data-provider="getData" finished-at="2018-02-23T12:59:23Z">
+>>>>>>> b51d62d Code checkin for closing Popwindow
           <params>
             <param index="0">
               <value>
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
                 <![CDATA[DONT TOUCH AUTO NIWCB EMPLOYER]]>
 =======
@@ -72,10 +93,14 @@
                 <![CDATA[DONT TOUCH AUTO NIWCA EMPLOYER]]>
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+                <![CDATA[DONT TOUCH AUTO NI4WCB EMPLOYER]]>
+>>>>>>> b51d62d Code checkin for closing Popwindow
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 399
 ]]>
@@ -86,10 +111,14 @@
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 390]]>
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 505]]>
+>>>>>>> b51d62d Code checkin for closing Popwindow
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
                 <![CDATA[NIWCB_Payroll]]>
 =======
@@ -99,29 +128,24 @@
                 <![CDATA[NIWCA_Payroll]]>
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+                <![CDATA[NI4WCB_Payroll]]>
+>>>>>>> b51d62d Code checkin for closing Popwindow
               </value>
             </param>
             <param index="3">
               <value>
-<<<<<<< HEAD
-                <![CDATA[Monthly]]>
+                <![CDATA[Four Weekly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[January-2019]]>
-=======
-                <![CDATA[Weekly]]>
-              </value>
-            </param>
-            <param index="4">
-              <value>
-                <![CDATA[Week-1]]>
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+                <![CDATA[Four Week-4]]>
               </value>
             </param>
             <param index="5">
               <value>
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
                 <![CDATA[Payroll Suite WeeklyCatB201819.xlsx]]>
 =======
@@ -131,6 +155,9 @@
                 <![CDATA[Payroll Suite WeeklyCatA201819.xlsx]]>
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+                <![CDATA[Payroll Suite 4WeeklyCatB201819.xlsx]]>
+>>>>>>> b51d62d Code checkin for closing Popwindow
               </value>
             </param>
             <param index="6">
@@ -153,12 +180,12 @@
                 <![CDATA[All]]>
               </value>
             </param>
-<<<<<<< HEAD
             <param index="10">
 =======
 <<<<<<< HEAD
             <param index="10">
               <value>
+<<<<<<< Upstream, based on origin/master
                 <![CDATA[11]]>
               </value>
             </param>
@@ -185,16 +212,24 @@
 >>>>>>> refs/remotes/origin/master
               <value>
                 <![CDATA[1]]>
+=======
+                <![CDATA[15]]>
+>>>>>>> b51d62d Code checkin for closing Popwindow
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< Upstream, based on origin/master
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="697" started-at="2018-02-22T19:17:57Z" finished-at="2018-02-22T19:17:58Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.TestReports@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1085" started-at="2018-02-23T12:59:23Z" finished-at="2018-02-23T12:59:24Z">
+>>>>>>> b51d62d Code checkin for closing Popwindow
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1453" started-at="2018-02-22T19:17:58Z" finished-at="2018-02-22T19:17:59Z">
 =======
@@ -621,9 +656,13 @@
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1824" started-at="2018-02-22T15:13:04Z" finished-at="2018-02-22T15:13:06Z">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.TestReports@402a079c]" name="ReportTestResult" is-config="true" duration-ms="1772" started-at="2018-02-23T12:59:24Z" finished-at="2018-02-23T12:59:26Z">
+>>>>>>> b51d62d Code checkin for closing Popwindow
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports -->
 =======
@@ -633,6 +672,9 @@
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.ProcessPayrollForNIWeekly -->
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 >>>>>>> refs/remotes/origin/master
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatB.TestReports -->
+>>>>>>> b51d62d Code checkin for closing Popwindow
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
