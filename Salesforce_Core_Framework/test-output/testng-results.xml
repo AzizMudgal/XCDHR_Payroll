@@ -2,49 +2,49 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="338306" started-at="2018-02-23T13:34:50Z" finished-at="2018-02-23T13:40:28Z">
+  <suite name="Default suite" duration-ms="137431" started-at="2018-03-05T14:51:32Z" finished-at="2018-03-05T14:53:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="338306" started-at="2018-02-23T13:34:50Z" finished-at="2018-02-23T13:40:28Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="3070" started-at="2018-02-23T19:04:47Z" finished-at="2018-02-23T19:04:50Z">
+    <test name="Default test" duration-ms="137431" started-at="2018-03-05T14:51:32Z" finished-at="2018-03-05T14:53:50Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="3041" started-at="2018-03-05T20:21:29Z" finished-at="2018-03-05T20:21:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="883" started-at="2018-02-23T19:04:50Z" finished-at="2018-02-23T19:04:51Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="814" started-at="2018-03-05T20:21:32Z" finished-at="2018-03-05T20:21:33Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="333852" started-at="2018-02-23T19:04:52Z" data-provider="getData" finished-at="2018-02-23T19:10:26Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="130403" started-at="2018-03-05T20:21:34Z" data-provider="getData" finished-at="2018-03-05T20:23:44Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO NIWCJ EMPLOYER]]>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 420]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 489]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[NIWCJ_Payroll]]>
+                <![CDATA[NI2WCZ_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Weekly]]>
+                <![CDATA[Two Weekly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Week-1]]>
+                <![CDATA[Two Week-2]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Payroll Suite WeeklyCatJ201819.xlsx]]>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
               </value>
             </param>
             <param index="6">
@@ -69,22 +69,22 @@
             </param>
             <param index="10">
               <value>
-                <![CDATA[4]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="948" started-at="2018-02-23T19:10:26Z" finished-at="2018-02-23T19:10:27Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1018" started-at="2018-03-05T20:23:44Z" finished-at="2018-03-05T20:23:45Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1706" started-at="2018-02-23T19:10:27Z" finished-at="2018-02-23T19:10:28Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="4317" started-at="2018-03-05T20:23:45Z" finished-at="2018-03-05T20:23:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.TestReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
