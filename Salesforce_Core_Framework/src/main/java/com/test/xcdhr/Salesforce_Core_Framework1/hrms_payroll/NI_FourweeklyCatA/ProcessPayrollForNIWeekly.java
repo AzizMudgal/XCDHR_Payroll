@@ -95,12 +95,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 
 				System.out
 				.println("The test script logged in successfully into salesforce account");
-<<<<<<< HEAD
 				System.out.println("");
-=======
-				System.out.println("");
-
->>>>>>> refs/remotes/origin/master
 				PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
 			}
 			catch (Throwable t)
