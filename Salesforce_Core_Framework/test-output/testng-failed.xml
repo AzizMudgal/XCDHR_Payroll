@@ -3,13 +3,29 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite NI_DirctorReachesPensionAgeMonth2]">
   <test name="1(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.TestReportsMay">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.NIWeeklyCat_J">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
           <include name="CheckTestSkip"/>
           <include name="ReportTestResult"/>
-          <include name="CheckSuiteSkip"/>
+=======
+          <include name="ReportTestResult"/>
           <include name="ReportDataSetResult"/>
+          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="9 10 11 12 13 14 15 16 17 18"/>
+>>>>>>> refs/remotes/origin/master
+          <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
+          <include name="ReportDataSetResult"/>
+=======
+          <include name="EmpsSetup_WithNICategory" invocation-numbers="9 10 11 12 13 14 15 16 17 18"/>
+          <include name="CheckTestSkip"/>
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.TestReportsMay -->
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.PayrollForNIDirctrAsRandPMay">
         <methods>
@@ -27,6 +43,9 @@
           <include name="ReportTestResult"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.NIDirector_ReachsPensonAgeMnth2 -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.NIWeeklyCat_J -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- 1(failed) -->
 </suite> <!-- Failed suite [Payroll Suite NI_DirctorReachesPensionAgeMonth2] -->
