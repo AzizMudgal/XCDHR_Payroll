@@ -96,7 +96,6 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-
 				PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
 			}
 			catch (Throwable t)
