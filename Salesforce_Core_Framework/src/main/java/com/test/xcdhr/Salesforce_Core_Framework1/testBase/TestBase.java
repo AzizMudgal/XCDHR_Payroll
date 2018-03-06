@@ -7840,7 +7840,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
@@ -7875,11 +7875,15 @@ public class TestBase {
 	 * 2017183 = In Regress Org for 201718
 	 */
 
+<<<<<<< Upstream, based on origin/master
 <<<<<<< HEAD
 	public int TaxYear = 201819;
 	public String aa = "UK";
 =======
 	public int TaxYear = 201718;
+=======
+	public int TaxYear = 201819;
+>>>>>>> 3b4e12c Test Base class is updated for 2018-2019 run
 	
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 
