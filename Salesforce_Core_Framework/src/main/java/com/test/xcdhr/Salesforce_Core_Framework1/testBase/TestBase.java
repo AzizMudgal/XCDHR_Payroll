@@ -7840,7 +7840,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
@@ -7875,13 +7875,9 @@ public class TestBase {
 	 * 2017183 = In Regress Org for 201718
 	 */
 
-<<<<<<< HEAD
-	public int TaxYear = 201819;
-	public String aa = "UK";
-=======
-	public int TaxYear = 201718;
-	
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+
+	public int TaxYear = 2018192;
+
 
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
 			throws Throwable {
@@ -9091,12 +9087,22 @@ public class TestBase {
 				
 				/*
 				 * 2018192 belongs to "Payroll Scottish Tax Module" which 
-				 * has come to implemenation from 2018-19 F.Y  
+				 * has come to implementation from 2018-19 F.Y  
 				 * 
 				 */
 			case 2018192:
 				
-				
+				Payroll_GenerateTaxrateMonthly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxGeneralAndLargeTaxcodeMonthly201819.xlsx");
+				GenerateTaxrateMonthly_InputExcelFile = "Payroll Suite ScottishTaxGeneralAndLargeTaxcodeMonthly201819";
+
+				Payroll_GenerateTaxrateWeekly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxGeneralAndLargeTaxcodeWeekly201819.xlsx");
+				GenerateTaxrateWeekly_InputExcelFile = "Payroll Suite ScottishTaxGeneralAndLargeTaxcodeWeekly201819";
+
+			
 				
 				
 				
