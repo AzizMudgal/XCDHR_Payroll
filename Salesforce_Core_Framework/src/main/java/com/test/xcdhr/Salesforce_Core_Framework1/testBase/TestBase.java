@@ -8781,27 +8781,11 @@ public class TestBase {
 				break;
 				
 				
-				
+				/*
+				 * case 201819: belongs to "UK Payroll Tax Module" 
+				 */	
 						
 			case 201819:
-				if(aa.equalsIgnoreCase("UK"))
-				{
-					Payroll_2WeeklyCatA_SuiteXls = new Xls_Reader(
-							System.getProperty("user.dir")
-									+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatA201819.xlsx");
-					NI_Payroll_2WeeklyCatA_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatA201819";
-				}
-				else
-				{
-					
-				}
-				System.out
-				.println("You have specified to run tax year 201819");
-				
-				/*
-				 * Payroll Tax TaxMonth1CSBRNTK50PercentRegulatory Weekly SuiteXls for 201819 F.Y
-				 * 	
-				 */
 				
 				TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -8980,6 +8964,11 @@ public class TestBase {
 				 * 	
 				 */
 				
+				Payroll_2WeeklyCatA_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 2WeeklyCatA201819.xlsx");
+				NI_Payroll_2WeeklyCatA_SuiteXls_InputExcelFile = "Payroll Suite 2WeeklyCatA201819";
+
 				
 				Payroll_2WeeklyCatB_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -9088,8 +9077,15 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatZ201819.xlsx");
 				NI_Payroll_MonthlyCatZ_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatZ201819";
 
+				break;
 				
 				
+				/*
+				 * 2018192 belongs to "Payroll Scottish Tax Module" which 
+				 * has come to implemenation from 2018-19 F.Y  
+				 * 
+				 */
+			case 2018192:
 				
 				
 				

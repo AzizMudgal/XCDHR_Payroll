@@ -48,7 +48,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
-processDesiredTaxYearInputExcelFile(TaxYear);
+		processDesiredTaxYearInputExcelFile(TaxYear);
 
 		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName())){
 			Skip=true;
