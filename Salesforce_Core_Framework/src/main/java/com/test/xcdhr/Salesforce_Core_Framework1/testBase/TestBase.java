@@ -7876,9 +7876,15 @@ public class TestBase {
 	 */
 
 
+<<<<<<< HEAD
 	public int TaxYear = 2018192;
 
 
+=======
+	public int TaxYear = 201819;
+	public String aa = "UK";
+	
+>>>>>>> refs/remotes/origin/master
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
 			throws Throwable {
 		try {
