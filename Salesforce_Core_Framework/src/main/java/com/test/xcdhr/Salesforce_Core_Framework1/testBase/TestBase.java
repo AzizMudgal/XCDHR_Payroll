@@ -688,7 +688,7 @@ public class TestBase {
 
 	public boolean existsElementchkFor1mts(String id) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, 120/*
+			WebDriverWait wait = new WebDriverWait(driver,30/*
 															 * Timeout in
 															 * seconds
 															 */);
@@ -1328,7 +1328,7 @@ public class TestBase {
 			username.sendKeys("payrollautoregress@xcdhr.com");
 			WebElement password = driver.findElement(By.id(OR
 					.getProperty("login_Password")));
-			password.sendKeys("xcdhrms2018");
+			password.sendKeys("bristol2018");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
 			System.out.println("Logged into the New Automation Org");
@@ -7840,7 +7840,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 0;
+	public int OrgFlag = 1;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
@@ -7875,7 +7875,8 @@ public class TestBase {
 	 * 2017183 = In Regress Org for 201718
 	 */
 
-	public int TaxYear = 201819;
+	public int TaxYear = 201718;
+	
 
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
 			throws Throwable {
@@ -8625,7 +8626,7 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatM201718.xlsx");
 				NI_Payroll_4WeeklyCatM_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatM201718";
 
-				Payroll_4WeeklyCatM_SuiteXls = new Xls_Reader(
+				Payroll_4WeeklyCatZ_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatZ201718.xlsx");
 				NI_Payroll_4WeeklyCatZ_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatZ201718";
@@ -9039,6 +9040,10 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatM201819.xlsx");
 				NI_Payroll_4WeeklyCatM_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatM201819";
 				
+				Payroll_4WeeklyCatZ_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatZ201819.xlsx");
+				NI_Payroll_4WeeklyCatZ_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatZ201819";
 				
 			/*
 			 * Payroll NI Monthly SuiteXls for 201819 F.Y

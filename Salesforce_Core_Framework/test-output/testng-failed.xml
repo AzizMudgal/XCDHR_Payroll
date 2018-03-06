@@ -1,15 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite NI_DirctorReachesPensionAgeMonth2]">
+  <test name="1(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.NIWeeklyCat_A">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.TestReportsMay">
         <methods>
+          <include name="CheckTestSkip"/>
+          <include name="ReportTestResult"/>
           <include name="CheckSuiteSkip"/>
-          <include name="EmpsSetup_WithNICategory"/>
-          <include name="EmpsSetup_WithAnnualSalary"/>
+          <include name="ReportDataSetResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatA.NIWeeklyCat_A -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.TestReportsMay -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.PayrollForNIDirctrAsRandPMay">
+        <methods>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+          <include name="CheckTestSkip"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.PayrollForNIDirctrAsRandPMay -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.NIDirector_ReachsPensonAgeMnth2">
+        <methods>
+          <include name="CheckTestSkip"/>
+          <include name="EmpsSetup_WithNICategory" invocation-numbers="1"/>
+          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="1"/>
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.NIDirector_ReachsPensonAgeMnth2 -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- 1(failed) -->
+</suite> <!-- Failed suite [Payroll Suite NI_DirctorReachesPensionAgeMonth2] -->
