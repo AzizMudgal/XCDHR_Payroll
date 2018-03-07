@@ -7876,9 +7876,10 @@ public class TestBase {
 	 */
 
 
+
 	public int TaxYear = 201819;
-	public String aa = "UK";
-	
+
+
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
 			throws Throwable {
 		try {
@@ -9087,12 +9088,22 @@ public class TestBase {
 				
 				/*
 				 * 2018192 belongs to "Payroll Scottish Tax Module" which 
-				 * has come to implemenation from 2018-19 F.Y  
+				 * has come to implementation from 2018-19 F.Y  
 				 * 
 				 */
 			case 2018192:
 				
-				
+				Payroll_GenerateTaxrateMonthly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxGeneralAndLargeTaxcodeMonthly201819.xlsx");
+				GenerateTaxrateMonthly_InputExcelFile = "Payroll Suite ScottishTaxGeneralAndLargeTaxcodeMonthly201819";
+
+				Payroll_GenerateTaxrateWeekly_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxGeneralAndLargeTaxcodeWeekly201819.xlsx");
+				GenerateTaxrateWeekly_InputExcelFile = "Payroll Suite ScottishTaxGeneralAndLargeTaxcodeWeekly201819";
+
+			
 				
 				
 				
