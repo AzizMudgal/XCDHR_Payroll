@@ -1,66 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="12" passed="12">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="131360" started-at="2018-03-07T07:09:34Z" finished-at="2018-03-07T07:11:45Z">
+  <suite name="Default suite" duration-ms="129106" started-at="2018-03-07T12:20:11Z" finished-at="2018-03-07T12:22:20Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="131360" started-at="2018-03-07T07:09:34Z" finished-at="2018-03-07T07:11:45Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2671" started-at="2018-03-07T12:39:31Z" finished-at="2018-03-07T12:39:34Z">
+    <test name="Default test" duration-ms="129106" started-at="2018-03-07T12:20:11Z" finished-at="2018-03-07T12:22:20Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="1673" started-at="2018-03-07T17:50:10Z" finished-at="2018-03-07T17:50:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1007" started-at="2018-03-07T12:39:34Z" finished-at="2018-03-07T12:39:35Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="94" started-at="2018-03-07T17:50:11Z" finished-at="2018-03-07T17:50:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="127195" started-at="2018-03-07T12:39:36Z" data-provider="getData" finished-at="2018-03-07T12:41:43Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="126643" started-at="2018-03-07T17:50:12Z" data-provider="getData" finished-at="2018-03-07T17:52:18Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO NIWCB EMPLOYER]]>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 399
-]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 125]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[NIWCB_Payroll]]>
+                <![CDATA[Monthly_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Weekly]]>
+                <![CDATA[Monthly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Week-1]]>
+                <![CDATA[April-2018]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Payroll Suite WeeklyCatB201819.xlsx]]>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="9">
@@ -68,24 +67,679 @@
                 <![CDATA[All]]>
               </value>
             </param>
-            <param index="10">
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="95" started-at="2018-03-07T17:52:18Z" finished-at="2018-03-07T17:52:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1" started-at="2018-03-07T17:52:18Z" data-provider="getData" finished-at="2018-03-07T17:52:18Z">
+          <params>
+            <param index="0">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 126]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="986" started-at="2018-03-07T12:41:43Z" finished-at="2018-03-07T12:41:44Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="73" started-at="2018-03-07T17:52:18Z" finished-at="2018-03-07T17:52:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1465" started-at="2018-03-07T12:41:44Z" finished-at="2018-03-07T12:41:45Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1" started-at="2018-03-07T17:52:18Z" data-provider="getData" finished-at="2018-03-07T17:52:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 127]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="94" started-at="2018-03-07T17:52:18Z" finished-at="2018-03-07T17:52:18Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1" started-at="2018-03-07T17:52:18Z" data-provider="getData" finished-at="2018-03-07T17:52:18Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 128]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="72" started-at="2018-03-07T17:52:18Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="2" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 129]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="66" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 130]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="68" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 131]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="65" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="2" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 132]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="64" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="2" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 133]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="64" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="2" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 134]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="70" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 135]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="153" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="1" started-at="2018-03-07T17:52:19Z" data-provider="getData" finished-at="2018-03-07T17:52:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 136]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Monthly_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Scottish TaxMonth1CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="60" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:19Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1309" started-at="2018-03-07T17:52:19Z" finished-at="2018-03-07T17:52:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

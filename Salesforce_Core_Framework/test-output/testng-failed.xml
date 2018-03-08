@@ -1,67 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite NI_DirctorReachesPensionAgeMonth2]">
-  <test name="1(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z">
-=======
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.TestReportsMay">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.NIWeeklyCat_J">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax">
         <methods>
-<<<<<<< HEAD
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="0 1 2 3 4 5 6"/>
-=======
-<<<<<<< HEAD
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-=======
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="9 10 11 12 13 14 15 16 17 18"/>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
           <include name="CheckSuiteSkip"/>
-<<<<<<< HEAD
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="0 1 2 3 4 5 6"/>
-=======
-<<<<<<< HEAD
-          <include name="ReportDataSetResult"/>
-=======
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="9 10 11 12 13 14 15 16 17 18"/>
-          <include name="CheckTestSkip"/>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z -->
-=======
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.TestReportsMay -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.PayrollForNIDirctrAsRandPMay">
-        <methods>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-          <include name="CheckTestSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.PayrollForNIDirctrAsRandPMay -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.NIDirector_ReachsPensonAgeMnth2">
-        <methods>
-          <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="1"/>
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="1"/>
-          <include name="ReportDataSetResult"/>
-          <include name="ReportTestResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_DirctorReachesPensionAgeMonth2.NIDirector_ReachsPensonAgeMnth2 -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatJ.NIWeeklyCat_J -->
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax -->
     </classes>
-  </test> <!-- 1(failed) -->
-</suite> <!-- Failed suite [Payroll Suite NI_DirctorReachesPensionAgeMonth2] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
