@@ -1,14 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<<<<<<< HEAD
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
+=======
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite 2WeeklyCatB X]">
+  <test name="1(failed)">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.ProcessPayrollForNIWeekly">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
+<<<<<<< HEAD
           <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+=======
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
+          <include name="CheckTestSkip"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.ProcessPayrollForNIWeekly -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.TestReports">
+        <methods>
+          <include name="CheckTestSkip"/>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax -->
+=======
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.TestReports -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B">
+        <methods>
+          <include name="EmpsSetup_WithNICategory" invocation-numbers="9 10 11 12 13 14"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+          <include name="CheckTestSkip"/>
+          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="9 10 11 12 13 14"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
+<<<<<<< HEAD
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
+=======
+  </test> <!-- 1(failed) -->
+</suite> <!-- Failed suite [Payroll Suite 2WeeklyCatB X] -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
