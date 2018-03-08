@@ -1,51 +1,914 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="22" passed="22">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="131360" started-at="2018-03-07T07:09:34Z" finished-at="2018-03-07T07:11:45Z">
+  <suite name="Payroll Suite 2WeeklyCatZ Zg" duration-ms="779051" started-at="2018-03-07T09:53:39Z" finished-at="2018-03-07T10:06:38Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="131360" started-at="2018-03-07T07:09:34Z" finished-at="2018-03-07T07:11:45Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2671" started-at="2018-03-07T12:39:31Z" finished-at="2018-03-07T12:39:34Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1007" started-at="2018-03-07T12:39:34Z" finished-at="2018-03-07T12:39:35Z">
+    <test name="1" duration-ms="397485" started-at="2018-03-07T09:53:39Z" finished-at="2018-03-07T10:00:16Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1883" started-at="2018-03-07T15:23:39Z" finished-at="2018-03-07T15:23:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="127195" started-at="2018-03-07T12:39:36Z" data-provider="getData" finished-at="2018-03-07T12:41:43Z">
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="78092" started-at="2018-03-07T15:23:42Z" data-provider="getData" finished-at="2018-03-07T15:25:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO NIWCB EMPLOYER]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 489]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 399
-]]>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[NIWCB_Payroll]]>
+                <![CDATA[8,431.54]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Weekly]]>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1513" started-at="2018-03-07T15:25:00Z" finished-at="2018-03-07T15:25:01Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17465" started-at="2018-03-07T15:25:01Z" data-provider="getData" finished-at="2018-03-07T15:25:19Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 490]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8,431.8]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1229" started-at="2018-03-07T15:25:19Z" finished-at="2018-03-07T15:25:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17392" started-at="2018-03-07T15:25:20Z" data-provider="getData" finished-at="2018-03-07T15:25:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 491]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,359.04]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="957" started-at="2018-03-07T15:25:37Z" finished-at="2018-03-07T15:25:38Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17618" started-at="2018-03-07T15:25:38Z" data-provider="getData" finished-at="2018-03-07T15:25:56Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 492]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,359.3]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1116" started-at="2018-03-07T15:25:56Z" finished-at="2018-03-07T15:25:57Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17371" started-at="2018-03-07T15:25:57Z" data-provider="getData" finished-at="2018-03-07T15:26:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 493]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,365.54]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="896" started-at="2018-03-07T15:26:14Z" finished-at="2018-03-07T15:26:15Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17468" started-at="2018-03-07T15:26:15Z" data-provider="getData" finished-at="2018-03-07T15:26:33Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 494]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,365.8]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="977" started-at="2018-03-07T15:26:33Z" finished-at="2018-03-07T15:26:34Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="17511" started-at="2018-03-07T15:26:34Z" data-provider="getData" finished-at="2018-03-07T15:26:51Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 495]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[66,170.00]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="883" started-at="2018-03-07T15:26:51Z" finished-at="2018-03-07T15:26:52Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="63887" started-at="2018-03-07T15:26:53Z" data-provider="getData" finished-at="2018-03-07T15:27:57Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 489]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8,431.54]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="860" started-at="2018-03-07T15:27:57Z" finished-at="2018-03-07T15:27:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="21863" started-at="2018-03-07T15:27:58Z" data-provider="getData" finished-at="2018-03-07T15:28:20Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 490]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[8,431.8]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="904" started-at="2018-03-07T15:28:20Z" finished-at="2018-03-07T15:28:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="21560" started-at="2018-03-07T15:28:20Z" data-provider="getData" finished-at="2018-03-07T15:28:42Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 491]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,359.04]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="940" started-at="2018-03-07T15:28:42Z" finished-at="2018-03-07T15:28:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="21620" started-at="2018-03-07T15:28:43Z" data-provider="getData" finished-at="2018-03-07T15:29:05Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 492]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,359.3]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="853" started-at="2018-03-07T15:29:05Z" finished-at="2018-03-07T15:29:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="21981" started-at="2018-03-07T15:29:05Z" data-provider="getData" finished-at="2018-03-07T15:29:27Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 493]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,365.54]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="855" started-at="2018-03-07T15:29:27Z" finished-at="2018-03-07T15:29:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="21766" started-at="2018-03-07T15:29:28Z" data-provider="getData" finished-at="2018-03-07T15:29:50Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 494]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[46,365.8]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="956" started-at="2018-03-07T15:29:50Z" finished-at="2018-03-07T15:29:51Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="22529" started-at="2018-03-07T15:29:51Z" data-provider="getData" finished-at="2018-03-07T15:30:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 495]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[Z Employees under 21 deferring NI/paying in another job (attach deferment certificate per tax year)]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[66,170.00]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="835" started-at="2018-03-07T15:30:14Z" finished-at="2018-03-07T15:30:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1645" started-at="2018-03-07T15:30:14Z" finished-at="2018-03-07T15:30:16Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportTestResult -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.NI2WeeklyCat_Z -->
+    </test> <!-- 1 -->
+    <test name="2" duration-ms="248037" started-at="2018-03-07T10:00:16Z" finished-at="2018-03-07T10:04:24Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="CheckTestSkip" is-config="true" duration-ms="1466" started-at="2018-03-07T15:30:16Z" finished-at="2018-03-07T15:30:17Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckTestSkip -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="196566" started-at="2018-03-07T15:30:18Z" data-provider="getData" finished-at="2018-03-07T15:33:35Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 489]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[Week-1]]>
+                <![CDATA[Two Week-2]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Payroll Suite WeeklyCatB201819.xlsx]]>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="822" started-at="2018-03-07T15:33:35Z" finished-at="2018-03-07T15:33:36Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="660" started-at="2018-03-07T15:33:36Z" data-provider="getData" finished-at="2018-03-07T15:33:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 490]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Two Week-2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="971" started-at="2018-03-07T15:33:36Z" finished-at="2018-03-07T15:33:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="680" started-at="2018-03-07T15:33:37Z" data-provider="getData" finished-at="2018-03-07T15:33:38Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 491]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Two Week-2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="879" started-at="2018-03-07T15:33:38Z" finished-at="2018-03-07T15:33:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="629" started-at="2018-03-07T15:33:39Z" data-provider="getData" finished-at="2018-03-07T15:33:40Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 492]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Two Week-2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="824" started-at="2018-03-07T15:33:40Z" finished-at="2018-03-07T15:33:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="661" started-at="2018-03-07T15:33:40Z" data-provider="getData" finished-at="2018-03-07T15:33:41Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 493]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Two Week-2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="783" started-at="2018-03-07T15:33:41Z" finished-at="2018-03-07T15:33:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="651" started-at="2018-03-07T15:33:42Z" data-provider="getData" finished-at="2018-03-07T15:33:43Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 494]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Two Week-2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="886" started-at="2018-03-07T15:33:43Z" finished-at="2018-03-07T15:33:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="38556" started-at="2018-03-07T15:33:43Z" data-provider="getData" finished-at="2018-03-07T15:34:22Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 495]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Two Week-2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll National Insurance calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportDataSetResult" is-config="true" duration-ms="810" started-at="2018-03-07T15:34:22Z" finished-at="2018-03-07T15:34:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly@56ef9176]" name="ReportTestResult" is-config="true" duration-ms="1229" started-at="2018-03-07T15:34:23Z" finished-at="2018-03-07T15:34:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportTestResult -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.ProcessPayrollForNIWeekly -->
+    </test> <!-- 2 -->
+    <test name="3" duration-ms="133494" started-at="2018-03-07T10:04:24Z" finished-at="2018-03-07T10:06:38Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@3159c4b8]" name="CheckSuiteSkip" is-config="true" duration-ms="5421" started-at="2018-03-07T15:23:33Z" finished-at="2018-03-07T15:23:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@3159c4b8]" name="CheckTestSkip" is-config="true" duration-ms="890" started-at="2018-03-07T15:34:24Z" finished-at="2018-03-07T15:34:25Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckTestSkip -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@3159c4b8]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="129749" started-at="2018-03-07T15:34:26Z" data-provider="getData" finished-at="2018-03-07T15:36:36Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NI2WCZ EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 489]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NI2WCZ_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Two Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Two Week-2]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite 2WeeklyCatZ201819.xlsx]]>
               </value>
             </param>
             <param index="6">
@@ -70,22 +933,22 @@
             </param>
             <param index="10">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[13]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="986" started-at="2018-03-07T12:41:43Z" finished-at="2018-03-07T12:41:44Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@3159c4b8]" name="ReportDataSetResult" is-config="true" duration-ms="825" started-at="2018-03-07T15:36:36Z" finished-at="2018-03-07T15:36:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1465" started-at="2018-03-07T12:41:44Z" finished-at="2018-03-07T12:41:45Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports@3159c4b8]" name="ReportTestResult" is-config="true" duration-ms="1212" started-at="2018-03-07T15:36:36Z" finished-at="2018-03-07T15:36:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatB.TestReports -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatZ.TestReports -->
+    </test> <!-- 3 -->
+  </suite> <!-- Payroll Suite 2WeeklyCatZ Zg -->
 </testng-results>
