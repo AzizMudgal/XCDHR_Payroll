@@ -1,24 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <<<<<<< HEAD
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite 4WeeklyCatM m]">
+  <test name="2(failed)">
+=======
+<<<<<<< HEAD
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
 =======
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite 2WeeklyCatB X]">
   <test name="1(failed)">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
     <classes>
+<<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatM.TestReports">
+=======
 <<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax">
 =======
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.ProcessPayrollForNIWeekly">
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
+=======
 <<<<<<< HEAD
           <include name="EmpsPayroll_Setup_ForIncomeTax"/>
 =======
+>>>>>>> refs/remotes/origin/master
           <include name="ReportDataSetResult"/>
           <include name="ReportTestResult"/>
+<<<<<<< HEAD
+=======
           <include name="CheckTestSkip"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.ProcessPayrollForNIWeekly -->
@@ -26,14 +40,35 @@
         <methods>
           <include name="CheckTestSkip"/>
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
+          <include name="CheckTestSkip"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatM.TestReports -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatM.ProcessPayrollForNIWeekly">
+        <methods>
+=======
 <<<<<<< HEAD
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth1_CSBRNTK50RL.ProcessPayrollForMonthlyTax -->
 =======
+>>>>>>> refs/remotes/origin/master
           <include name="ReportDataSetResult"/>
           <include name="ReportTestResult"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
+          <include name="CheckTestSkip"/>
         </methods>
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatM.ProcessPayrollForNIWeekly -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatM.NI4WeeklyCat_M">
+        <methods>
+          <include name="CheckTestSkip"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatM.NI4WeeklyCat_M -->
+=======
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.TestReports -->
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B">
         <methods>
@@ -45,7 +80,12 @@
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B -->
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
     </classes>
+<<<<<<< HEAD
+  </test> <!-- 2(failed) -->
+</suite> <!-- Failed suite [Payroll Suite 4WeeklyCatM m] -->
+=======
 <<<<<<< HEAD
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
@@ -53,3 +93,4 @@
   </test> <!-- 1(failed) -->
 </suite> <!-- Failed suite [Payroll Suite 2WeeklyCatB X] -->
 >>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+>>>>>>> refs/remotes/origin/master
