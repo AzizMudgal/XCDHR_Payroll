@@ -336,7 +336,9 @@ public class TestBase {
 	public static Xls_Reader TaxPayroll_TaxMonth10CSBRNTK50PercentRegulatory_SuiteXls = null;
 	public String TaxPayroll_TaxMonth10CSBRNTK50PercentRegulatory_Inputsheet;
 
-	
+	public static Xls_Reader TaxPayroll_TaxMonth11CSBRNTK50PercentRegulatory_SuiteXls = null;
+	public String TaxPayroll_TaxMonth11CSBRNTK50PercentRegulatory_Inputsheet;
+
 	
 
 	public String PayrollRecognition_Inputsheet;
@@ -7877,7 +7879,7 @@ public class TestBase {
 
 
 
-	public int TaxYear = 201819;
+	public int TaxYear = 2018192;
 
 
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
@@ -9104,10 +9106,64 @@ public class TestBase {
 				GenerateTaxrateWeekly_InputExcelFile = "Payroll Suite ScottishTaxGeneralAndLargeTaxcodeWeekly201819";
 
 			
+				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth1CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth1CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxMonth2CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth2CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth2CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth2CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxMonth3CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth3CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth3CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth3CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxMonth4CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth4CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth4CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth4CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxMonth5CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth5CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth5CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth5CSBRNTK50PercentRegulatory201819";
 				
 				
+				TaxPayroll_TaxMonth6CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth6CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth6CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth6CSBRNTK50PercentRegulatory201819";
 				
 				
+				TaxPayroll_TaxMonth7CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth7CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth7CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth7CSBRNTK50PercentRegulatory201819";
+				
+				
+				TaxPayroll_TaxMonth8CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth8CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth8CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth8CSBRNTK50PercentRegulatory201819";
+				
+				
+				TaxPayroll_TaxMonth9CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth9CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth9CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth9CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxMonth10CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth10CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth10CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth10CSBRNTK50PercentRegulatory201819";
+				
+				TaxPayroll_TaxMonth11CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite ScottishTaxMonth11CSBRNTK50PercentRegulatory201819.xlsx");
+				TaxPayroll_TaxMonth11CSBRNTK50PercentRegulatory_Inputsheet = "Payroll Suite ScottishTaxMonth11CSBRNTK50PercentRegulatory201819";
 				
 				
 				break;	
