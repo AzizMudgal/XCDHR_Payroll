@@ -7879,7 +7879,7 @@ public class TestBase {
 
 
 
-	public int TaxYear = 2018192;
+	public int TaxYear = 201819;
 
 
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
@@ -8791,6 +8791,9 @@ public class TestBase {
 						
 			case 201819:
 				
+				System.out.println("You have set the payroll 201819 scenarios Tax year to run");
+			
+				
 				TaxPayroll_TaxWeek1CSBRNTK50PercentRegulatory_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite TaxWeek1CSBRNTK50PercentRegulatory201819.xlsx");
@@ -9110,6 +9113,8 @@ public class TestBase {
 				 * 
 				 */
 			case 2018192:
+				
+				System.out.println("You have set the Scottish payroll 201819 Tax year to run");
 				
 				Payroll_GenerateTaxrateMonthly_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")

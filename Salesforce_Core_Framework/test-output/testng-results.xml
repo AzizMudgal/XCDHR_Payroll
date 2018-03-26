@@ -2,12 +2,12 @@
 <testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="693" started-at="2018-03-26T07:39:47Z" finished-at="2018-03-26T07:39:47Z">
+  <suite name="Default suite" duration-ms="579" started-at="2018-03-26T07:59:21Z" finished-at="2018-03-26T07:59:22Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="693" started-at="2018-03-26T07:39:47Z" finished-at="2018-03-26T07:39:47Z">
+    <test name="Default test" duration-ms="579" started-at="2018-03-26T07:59:21Z" finished-at="2018-03-26T07:59:22Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData">
-        <test-method status="FAIL" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="CheckSuiteSkip" is-config="true" duration-ms="0" started-at="2018-03-26T13:09:43Z" finished-at="2018-03-26T13:09:43Z">
+        <test-method status="FAIL" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="CheckSuiteSkip" is-config="true" duration-ms="0" started-at="2018-03-26T13:29:19Z" finished-at="2018-03-26T13:29:19Z">
           <exception class="java.lang.Exception">
             <message>
               <![CDATA[Payroll suite is not going to execute as its being skipped]]>
@@ -40,11 +40,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="SKIP" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2018-03-26T13:09:47Z" finished-at="2018-03-26T13:09:47Z">
+        <test-method status="SKIP" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2018-03-26T13:29:21Z" finished-at="2018-03-26T13:29:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="SKIP" signature="ResetEmploymentAndLeaveTabs(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="ResetEmploymentAndLeaveTabs" duration-ms="0" started-at="2018-03-26T13:09:47Z" data-provider="getData" finished-at="2018-03-26T13:09:47Z">
+        <test-method status="SKIP" signature="ResetEmploymentAndLeaveTabs(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="ResetEmploymentAndLeaveTabs" duration-ms="0" started-at="2018-03-26T13:29:22Z" data-provider="getData" finished-at="2018-03-26T13:29:22Z">
           <exception class="java.lang.RuntimeException">
             <message>
               <![CDATA[java.lang.NullPointerException]]>
@@ -91,7 +91,7 @@ Caused by: java.lang.NullPointerException
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ResetEmploymentAndLeaveTabs -->
-        <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2018-03-26T13:09:47Z" finished-at="2018-03-26T13:09:47Z">
+        <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData@55d56113]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2018-03-26T13:29:22Z" finished-at="2018-03-26T13:29:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
