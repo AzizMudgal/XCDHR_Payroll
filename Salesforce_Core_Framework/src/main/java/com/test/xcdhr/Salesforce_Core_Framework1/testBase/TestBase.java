@@ -9084,6 +9084,22 @@ public class TestBase {
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatZ201819.xlsx");
 				NI_Payroll_MonthlyCatZ_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatZ201819";
+				
+				/*
+				 * 2018-19 Statutory scenario input sheet loacation
+				 * 
+				 */
+					
+				Payroll_Statutory_maternitypay_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryMaternityPay201819.xlsx");
+				Statutory_MaternityPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryMaternityPay201819";
+		
+				
+				
+				
+				
+				
 
 				break;
 				
