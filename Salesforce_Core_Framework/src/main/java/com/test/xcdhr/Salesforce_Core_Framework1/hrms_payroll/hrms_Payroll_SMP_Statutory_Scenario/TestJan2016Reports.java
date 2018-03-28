@@ -26,12 +26,12 @@ import org.testng.annotations.Test;
 
 import atu.webdriver.utils.table.WebTable;
 
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
 
-public class TestJan2016Reports extends TestSuiteBase {
+public class TestJan2016Reports extends TestSuiteBase
+{
 	String runmodes[] = null;
 	static int count = -1;
 	public static boolean Fail=false;
@@ -39,7 +39,6 @@ public class TestJan2016Reports extends TestSuiteBase {
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
 	public String titlename;
-	
 	
 
 	@BeforeTest
@@ -63,9 +62,7 @@ public class TestJan2016Reports extends TestSuiteBase {
 	@Test(dataProvider = "getData")
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-	
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -87,19 +84,7 @@ public class TestJan2016Reports extends TestSuiteBase {
 			System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 			System.out.println("");
 		}/* Added by Swamy*/
-		try
-		{
-			titlename = driver.getTitle();
-			Assert.assertEquals(driver.getTitle(), titlename);
-			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
-			System.out.println("");
-		}
-		catch(Throwable t)
-		{
-			APP_LOGS.debug("Could not assert the home page title, Check for error");
-			System.out.println("");
-			defaultWaitTime();
-		}
+		
 		Thread.sleep(4000L);
 		DownloadReports(EmpName,TestResultExcelFilePath,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestReportworksheetNo); // pn means payroll id. in this case 8512
 	}
@@ -113,36 +98,35 @@ public class TestJan2016Reports extends TestSuiteBase {
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
 		}
-			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
-			{				
-				SearchReport(FirstReportNameInApplication);
-			}
-
-			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
-			{
-				editCustomButton();
-			}
-			
-			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
-			{				
-				UpdateReportPage(Payrolid,Frquency,MonthName);
-			}
-
-			System.out.println("");
-			System.out.println("3> Successfully customized the Report as required");
-		
-			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
-			{
-				RunReport();
-			}
-						
-			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
-			{
-				processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
-				System.out.println("5> Entered the values and processed the Test Remarks");
-			}
-		
+		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+		{				
+			SearchReport(FirstReportNameInApplication);
 		}
+
+		if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+		{
+			editCustomButton();
+		}
+		
+		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+		{				
+			UpdateReportPage(Payrolid,Frquency,MonthName);
+		}
+
+		System.out.println("");
+		System.out.println("3> Successfully customized the Report as required");
+	
+		if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+		{
+			RunReport();
+		}
+					
+		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+		{
+			processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
+			System.out.println("5> Entered the values and processed the Test Remarks");
+		}
+	}
 		
 		
 	
@@ -159,7 +143,6 @@ public class TestJan2016Reports extends TestSuiteBase {
 			int Col_count = driver.findElements(By.xpath(OR.getProperty("reportTableColumnsNI"))).size();
 			System.out.println("Number Of Columns = "+Col_count); // DISPLAYING
 		}
-		
 		Thread.sleep(3000L);
 		WebElement threecolms = driver.findElement(By.xpath(OR.getProperty("reportTableLocatorNI")));
 		
@@ -181,20 +164,26 @@ public class TestJan2016Reports extends TestSuiteBase {
 			{
 				firstCellOfBody= table.getTBody().getRow(rownum).getCell(0).getText();
 				System.out.println("firstCellOfBody is :"+firstCellOfBody);
+				
 				String employeeNI= table.getTBody().getRow(rownum).getCell(1).getText();
 				 System.out.println("employeeNI is :"+employeeNI);
+				 
 				String employerNI= table.getTBody().getRow(rownum).getCell(2).getText();
 				System.out.println("employerNI is :"+employerNI);
+				
 				String employeeNIPaidYTD= table.getTBody().getRow(rownum).getCell(3).getText();
 				System.out.println("employeeNIPaidYTD is :"+employeeNIPaidYTD);
 				
-				//System.out.println("Third cell of body is :"+employerNI);
-				//call the function which reads the excel sheet.
-				ReadsExpectedData(EmpName,TestResultExcelFilePath, employeeNI, employerNI,employeeNIPaidYTD,TestReportworksheetNo);
+				String baseSalary= table.getTBody().getRow(rownum).getCell(4).getText();
+				System.out.println("base salary is :"+baseSalary);
+				
+				String occupationalPay= table.getTBody().getRow(rownum).getCell(5).getText();
+				System.out.println("occupationalPay is :"+occupationalPay);
+		
+				ReadsExpectedData(EmpName,TestResultExcelFilePath, employeeNI, employerNI,employeeNIPaidYTD,baseSalary,occupationalPay,TestReportworksheetNo);
 			}
 			rownum++;
-		}
-		
+			}
 		}
 		catch(Throwable t)
 		{
@@ -204,32 +193,28 @@ public class TestJan2016Reports extends TestSuiteBase {
 	}
 
 
-	public void ReadsExpectedData(String EmpName,String TestResultExcelFilePath, String employeeNI, String employerNI, String employeeNIPaidYTD,String TestReportworksheetNo) throws Throwable
+	public void ReadsExpectedData(String EmpName,String TestResultExcelFilePath, String employeeNI, String employerNI, String employeeNIPaidYTD,String baseSalary,String occupationalPay,String TestReportworksheetNo) throws Throwable
 	{
 
-		 double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
-		  DecimalFormat df = new DecimalFormat("###.#");
-		  String worksheetNoWithoutDecimal= df.format(worksheetvalue);
-		  int TRwNo=Integer.parseInt(worksheetNoWithoutDecimal);
-		  System.out.println("The converted post value is  :"+TRwNo);
+	   double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
+	   DecimalFormat df = new DecimalFormat("###.#");
+	   String worksheetNoWithoutDecimal= df.format(worksheetvalue);
+	   int TRwNo=Integer.parseInt(worksheetNoWithoutDecimal);
+	   System.out.println("The converted post value is  :"+TRwNo);
 
-			File excel = new File(TestResultExcelFilePath);
-			FileInputStream fis = new FileInputStream(excel);
-			org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
-			org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
-	
+		File excel = new File(TestResultExcelFilePath);
+		FileInputStream fis = new FileInputStream(excel);
+		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
+		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
+
 		 CellStyle style = wb.createCellStyle();
-		 style.setFillPattern(CellStyle.ALIGN_FILL);
 		 style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
 		 Font font = wb.createFont();	
 		 font.setColor(IndexedColors.BLACK.getIndex());
 		 style.setFont(font);
-		
-		
+	
 		 CellStyle styleFalse = wb.createCellStyle();
-		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
-		 
 				
 		FileOutputStream webdata = new FileOutputStream (TestResultExcelFilePath);
 
@@ -242,57 +227,84 @@ public class TestJan2016Reports extends TestSuiteBase {
 			String value2 = cellToString(row.getCell(7));
 			String value3 = cellToString(row.getCell(8));
 			String value4 = cellToString(row.getCell(9));
-					
+			String value5 = cellToString(row.getCell(10));
+			String value6 = cellToString(row.getCell(11));
+		
 			if(value1 != null && value1.equalsIgnoreCase(EmpName))
 			{
-				row.createCell(10).setCellValue(employeeNI);
-				row.createCell(11).setCellValue(employerNI);
-				row.createCell(12).setCellValue(employeeNIPaidYTD);
-			
+				row.createCell(12).setCellValue(employeeNI);
+				row.createCell(13).setCellValue(employerNI);
+				row.createCell(14).setCellValue(employeeNIPaidYTD);
+				row.createCell(15).setCellValue(baseSalary);
+				row.createCell(16).setCellValue(occupationalPay);
+				
 				if(value2 != null && value2.equalsIgnoreCase(employeeNI))
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}
 				else
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("FALSE");
 					 cell1.setCellStyle(styleFalse);
 				}
 
 				if(value3 != null && value3.equalsIgnoreCase(employerNI))
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				
 				if(value4 != null && value4.equalsIgnoreCase(employeeNIPaidYTD))
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				
+				if(value5 != null && value5.equalsIgnoreCase(baseSalary))
+				{
+					 Cell cell1 = row.createCell(20);
+					row.createCell(20).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(20);
+					row.createCell(20).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				
+				if(value6 != null && value6.equalsIgnoreCase(occupationalPay))
+				{
+					 Cell cell1 = row.createCell(21);
+					row.createCell(21).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(21);
+					row.createCell(21).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
 				break;
 			}
-			
 		}	
-		
 		wb.write(webdata);
 		webdata.close();
 		fis.close();
@@ -303,27 +315,26 @@ public class TestJan2016Reports extends TestSuiteBase {
 		int type;
 		Object result;
 		type = cell.getCellType();
-		switch(type){
-
-		case 0: // to get numeric value from the cell 
-			result = Double.toString(cell.getNumericCellValue());
+		switch(type)
+		{
+	
+			case 0: // to get numeric value from the cell 
+				result = Double.toString(cell.getNumericCellValue());
+				break;
+			case 1: // to get string value from the cell
+				result = cell.getStringCellValue();
+				break;
+			case 2: result=cell.getCellFormula();
 			break;
-		case 1: // to get string value from the cell
-			result = cell.getStringCellValue();
+			case 3: result= cell==null;
+			break;	
+	
+			case 4: result=cell.getRichStringCellValue();
 			break;
-		case 2: result=cell.getCellFormula();
-		break;
-		case 3: result= cell==null;
-		break;	
-
-		case 4: result=cell.getRichStringCellValue();
-		break;
-		default: 
-			throw new RuntimeException("there are no othe values");
-
+			default: 
+				throw new RuntimeException("there are no othe values");
 		}
-		return result.toString();
-
+			return result.toString();
 	}
 	
 	

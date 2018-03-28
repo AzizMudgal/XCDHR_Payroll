@@ -211,7 +211,6 @@ public class TestNovReports extends TestSuiteBase
 				
 	
 		 CellStyle style = wb.createCellStyle();
-		 style.setFillPattern(CellStyle.ALIGN_FILL);
 		 style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
 		 Font font = wb.createFont();	
 		 font.setColor(IndexedColors.BLACK.getIndex());
@@ -219,7 +218,6 @@ public class TestNovReports extends TestSuiteBase
 		
 		
 		 CellStyle styleFalse = wb.createCellStyle();
-		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
 		 
 				
@@ -237,46 +235,46 @@ public class TestNovReports extends TestSuiteBase
 					
 			if(value1 != null && value1.equalsIgnoreCase(EmpName))
 			{
-				row.createCell(10).setCellValue(employeeNI);
-				row.createCell(11).setCellValue(employerNI);
-				row.createCell(12).setCellValue(employeeNIPaidYTD);
+				row.createCell(12).setCellValue(employeeNI);
+				row.createCell(13).setCellValue(employerNI);
+				row.createCell(14).setCellValue(employeeNIPaidYTD);
 			
 				if(value2 != null && value2.equalsIgnoreCase(employeeNI))
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}
 				else
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("FALSE");
 					 cell1.setCellStyle(styleFalse);
 				}
 
 				if(value3 != null && value3.equalsIgnoreCase(employerNI))
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				
 				if(value4 != null && value4.equalsIgnoreCase(employeeNIPaidYTD))
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				
