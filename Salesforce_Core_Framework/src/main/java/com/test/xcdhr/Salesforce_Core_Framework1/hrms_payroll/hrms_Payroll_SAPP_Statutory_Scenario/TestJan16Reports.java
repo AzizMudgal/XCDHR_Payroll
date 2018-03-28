@@ -185,16 +185,24 @@ public class TestJan16Reports extends TestSuiteBase
 			{
 				firstCellOfBody= table.getTBody().getRow(rownum).getCell(0).getText();
 				System.out.println("firstCellOfBody is :"+firstCellOfBody);
-				String employeeNI= table.getTBody().getRow(rownum).getCell(1).getText();
-				 System.out.println("employeeNI is :"+employeeNI);
-				String employerNI= table.getTBody().getRow(rownum).getCell(2).getText();
-				System.out.println("employerNI is :"+employerNI);
-				String employeeNIPaidYTD= table.getTBody().getRow(rownum).getCell(3).getText();
-				System.out.println("employeeNIPaidYTD is :"+employeeNIPaidYTD);
+				String statutoryPaternityPay= table.getTBody().getRow(rownum).getCell(1).getText();
+				System.out.println("employeeNI is :"+statutoryPaternityPay);
+				
+				String statutoryPaternityPayRecovered = table.getTBody().getRow(rownum).getCell(2).getText();
+				System.out.println("employerNI is :"+statutoryPaternityPayRecovered );
+				
+				String baseSalary= table.getTBody().getRow(rownum).getCell(3).getText();
+				System.out.println("employerNI is :"+baseSalary);
+				
+				String occupationalPay= table.getTBody().getRow(rownum).getCell(4).getText();
+				System.out.println("employerNI is :"+occupationalPay);
+				
+				String taxablePay= table.getTBody().getRow(rownum).getCell(5).getText();
+				System.out.println("employeeNIPaidYTD is :"+taxablePay);
 				
 				//System.out.println("Third cell of body is :"+employerNI);
 				//call the function which reads the excel sheet.
-				ReadsExpectedData(firstCellOfBody, employeeNI, employerNI,employeeNIPaidYTD,TestResultExcelFilePath,TestReportworksheetNo);
+				ReadsExpectedData(firstCellOfBody, statutoryPaternityPay, statutoryPaternityPayRecovered ,baseSalary,occupationalPay,taxablePay,TestResultExcelFilePath,TestReportworksheetNo);
 			}
 			rownum++;
 		}
@@ -209,7 +217,7 @@ public class TestJan16Reports extends TestSuiteBase
 	
 
 
-	public void ReadsExpectedData(String firstCellOfBody, String employeeNI, String employerNI, String employeeNIPaidYTD,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
+	public void ReadsExpectedData(String firstCellOfBody,String statutoryPaternityPay,String statutoryPaternityPayRecovered,String baseSalary,String occupationalPay,String taxablePay,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
 	{
 		 double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		 DecimalFormat df = new DecimalFormat("###.#");
@@ -245,48 +253,78 @@ public class TestJan16Reports extends TestSuiteBase
 			String value2 = cellToString(row.getCell(7));
 			String value3 = cellToString(row.getCell(8));
 			String value4 = cellToString(row.getCell(9));
+			String value5 = cellToString(row.getCell(10));
+			String value6 = cellToString(row.getCell(11));
 			
 			if(value1 != null && value1.equalsIgnoreCase(firstCellOfBody))
 			{
-				row.createCell(10).setCellValue(employeeNI);
-				row.createCell(11).setCellValue(employerNI);
-				row.createCell(12).setCellValue(employeeNIPaidYTD);
-				if(value2 != null && value2.equalsIgnoreCase(employeeNI))
+				row.createCell(12).setCellValue(statutoryPaternityPay);
+				row.createCell(13).setCellValue(statutoryPaternityPayRecovered );
+				row.createCell(14).setCellValue(baseSalary);
+				row.createCell(15).setCellValue(occupationalPay);				
+				row.createCell(16).setCellValue(taxablePay);
+				if(value2 != null && value2.equalsIgnoreCase(statutoryPaternityPay))
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}
 				else
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("FALSE");
 					 cell1.setCellStyle(styleFalse);
 				}
 
-				if(value3 != null && value3.equalsIgnoreCase(employerNI))
+				if(value3 != null && value3.equalsIgnoreCase(statutoryPaternityPayRecovered))
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				
-				if(value4 != null && value4.equalsIgnoreCase(employeeNIPaidYTD))
+				if(value4 != null && value4.equalsIgnoreCase(baseSalary))
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				
+				if(value5 != null && value4.equalsIgnoreCase(occupationalPay))
+				{
+					 Cell cell1 = row.createCell(20);
+					row.createCell(20).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(20);
+					row.createCell(20).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				
+				if(value6 != null && value4.equalsIgnoreCase(taxablePay))
+				{
+					 Cell cell1 = row.createCell(21);
+					row.createCell(21).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(21);
+					row.createCell(21).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				break;
