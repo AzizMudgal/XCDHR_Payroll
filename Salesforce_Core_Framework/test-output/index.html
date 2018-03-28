@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Default_suite">
-              <span class="suite-name border-passed">Default suite</span>
+              <span class="suite-name border-skipped">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -49,7 +49,11 @@
               <ul>
                 <li>
                   <a href="#" class="navigator-link " panel-name="test-xml-Default_suite">
+<<<<<<< HEAD
                     <span>C:\Users\XCDHR\AppData\Local\Temp\testng-eclipse--1760541100\testng-customsuite.xml</span>
+=======
+                    <span>C:\Users\Admin\AppData\Local\Temp\testng-eclipse-679975518\testng-customsuite.xml</span>
+>>>>>>> refs/remotes/origin/master
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -91,21 +95,26 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">1 method,  1 skipped,  </span>
                   </li>
                   <li>
-                    <span class="method-list-title passed">Passed methods</span>
-                    <span class="show-or-hide-methods passed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
+                    <span class="method-list-title skipped">Skipped methods</span>
+                    <span class="show-or-hide-methods skipped">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods skipped suite-Default_suite"> (hide)</a> <!-- hide-methods skipped suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods skipped suite-Default_suite"> (show)</a> <!-- show-methods skipped suite-Default_suite -->
                     </span>
-                    <div class="method-list-content passed suite-Default_suite">
+                    <div class="method-list-content skipped suite-Default_suite">
                       <span>
+<<<<<<< HEAD
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth11_CSBRNTK50RL.TestReports" hash-for-method="EmpsPayroll_Setup_ForIncomeTax(DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18, DO NOT TOUCH AUTOMATION EMP 125, Monthly_Payroll, Mo...)">EmpsPayroll_Setup_ForIncomeTax(DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18, DO NOT TOUCH AUTOMATION EMP 125, Monthly_Payroll, Mo...)</a> <!-- method navigator-link -->
+=======
+                        <img width="3%" src="skipped.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Default_suite" title="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData" hash-for-method="ResetEmploymentAndLeaveTabs">ResetEmploymentAndLeaveTabs</a> <!-- method navigator-link -->
+>>>>>>> refs/remotes/origin/master
                       </span>
                       <br/>
-                    </div> <!-- method-list-content passed suite-Default_suite -->
+                    </div> <!-- method-list-content skipped suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,26 +126,78 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-passed">
+          <div class="suite-Default_suite-class-skipped">
             <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
               <img src="passed.png"/>
               <span class="class-name">com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth11_CSBRNTK50RL.TestReports</span>
+=======
+              <img src="skipped.png"/>
+              <span class="class-name">com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData</span>
+>>>>>>> refs/remotes/origin/master
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
+<<<<<<< HEAD
                   <a name="EmpsPayroll_Setup_ForIncomeTax(DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18, DO NOT TOUCH AUTOMATION EMP 125, Monthly_Payroll, Mo...)">
                   </a> <!-- EmpsPayroll_Setup_ForIncomeTax(DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18, DO NOT TOUCH AUTOMATION EMP 125, Monthly_Payroll, Mo...) -->
                   <span class="method-name">EmpsPayroll_Setup_ForIncomeTax</span>
                   <span class="parameters">(DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18, DO NOT TOUCH AUTOMATION EMP 125, Monthly_Payroll, Monthly, February-2019, Payroll Suite ScottishTaxMonth11CSBRNTK50PercentRegulatory201819.xlsx, DO NOT TOUCH - TAX PAYROLL AUTOMATION, F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx, 3, All, 12)</span>
+=======
+                  <a name="ResetEmploymentAndLeaveTabs">
+                  </a> <!-- ResetEmploymentAndLeaveTabs -->
+                  <span class="method-name">ResetEmploymentAndLeaveTabs</span>
+                  <div class="stack-trace">java.lang.RuntimeException: java.lang.NullPointerException
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:111)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1293)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1020)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1110)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.NullPointerException
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.getData(Test_Util.java:77)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData.getData(ResetData.java:685)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
+	... 22 more
+
+</div> <!-- stack-trace -->
+>>>>>>> refs/remotes/origin/master
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-passed -->
+          </div> <!-- suite-Default_suite-class-skipped -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
+<<<<<<< HEAD
             <span class="header-content">C:\Users\XCDHR\AppData\Local\Temp\testng-eclipse--1760541100\testng-customsuite.xml</span>
+=======
+            <span class="header-content">C:\Users\Admin\AppData\Local\Temp\testng-eclipse-679975518\testng-customsuite.xml</span>
+>>>>>>> refs/remotes/origin/master
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,7 +206,11 @@
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Default suite&quot;&gt;
   &lt;test verbose=&quot;2&quot; name=&quot;Default test&quot;&gt;
     &lt;classes&gt;
+<<<<<<< HEAD
       &lt;class name=&quot;com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth11_CSBRNTK50RL.TestReports&quot;/&gt;
+=======
+      &lt;class name=&quot;com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData&quot;/&gt;
+>>>>>>> refs/remotes/origin/master
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -187,14 +252,24 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
+<<<<<<< HEAD
 data.setCell(0, 1, 'EmpsPayroll_Setup_ForIncomeTax')
 data.setCell(0, 2, 'com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth11_CSBRNTK50RL.TestReports')
 data.setCell(0, 3, 131200);
+=======
+data.setCell(0, 1, 'ResetEmploymentAndLeaveTabs')
+data.setCell(0, 2, 'com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData')
+data.setCell(0, 3, 0);
+>>>>>>> refs/remotes/origin/master
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
+<<<<<<< HEAD
               <span class="suite-total-time">Total running time: 2 minutes</span>
+=======
+              <span class="suite-total-time">Total running time: 0 ms</span>
+>>>>>>> refs/remotes/origin/master
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -220,11 +295,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
+<<<<<<< HEAD
               <div class="chronological-class-name">com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCMnth11_CSBRNTK50RL.TestReports</div> <!-- chronological-class-name -->
+=======
+              <div class="chronological-class-name">com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.ResetData</div> <!-- chronological-class-name -->
+>>>>>>> refs/remotes/origin/master
               <div class="configuration-suite before">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">CheckSuiteSkip</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
+<<<<<<< HEAD
               <div class="configuration-test before">
                 <span class="method-name">CheckTestSkip</span>
                 <span class="method-start">4083 ms</span>
@@ -241,6 +323,8 @@ return data;
                 <span class="method-name">ReportTestResult</span>
                 <span class="method-start">137185 ms</span>
               </div> <!-- configuration-test after -->
+=======
+>>>>>>> refs/remotes/origin/master
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
