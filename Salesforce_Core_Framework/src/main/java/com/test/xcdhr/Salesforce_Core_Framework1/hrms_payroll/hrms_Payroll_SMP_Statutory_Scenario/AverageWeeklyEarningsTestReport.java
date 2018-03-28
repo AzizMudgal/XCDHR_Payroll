@@ -41,23 +41,19 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 	
 
 	@BeforeTest
-	public void CheckTestSkip() throws Throwable{
+	public void CheckTestSkip() throws Throwable
+	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName())){
-
+		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName()))
+		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(Payroll_Statutory_maternitypay_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName()),"Skipped");
 			//Test_Util.ReportDataSetResult(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
-
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
-
 		}
-
 		// Load the runmodes of the tests
-
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_Statutory_maternitypay_SuiteXls, this.getClass().getSimpleName());
-
 	}
 
 
@@ -66,31 +62,24 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
-
 		}
-
 		APP_LOGS.debug("Executing the test case");
-		
 		openBrowser();
-
 		logingIntoDesiredORG(OrgFlag);
-
 		driver.manage().window().maximize();
-
 		try
 		{
-			WaitforElement(("Homepage_txt"));
-			if(existsElement(OR.getProperty("Homepage_txt")))
+			closePopupWindow();
+			if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 			{
-
-				Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-				System.out.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
-				
+				String personalTab = getObject("PersonalTab").getText();
+				System.out.println("Tab name is :"+ personalTab);
+				Assert.assertEquals("Personal", personalTab);
+				System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 				System.out.println("");
 			}
 		}catch(Throwable t)
@@ -168,15 +157,22 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 			{
 				firstCellOfBody= table.getTBody().getRow(rownum).getCell(0).getText();
 				System.out.println("firstCellOfBody is :"+firstCellOfBody);
+				
 				String employeeNI= table.getTBody().getRow(rownum).getCell(1).getText();
 				 System.out.println("employeeNI is :"+employeeNI);
+				 
 				String employerNI= table.getTBody().getRow(rownum).getCell(2).getText();
 				System.out.println("employerNI is :"+employerNI);
+				
 				String employeeNIPaidYTD= table.getTBody().getRow(rownum).getCell(3).getText();
 				System.out.println("employeeNIPaidYTD is :"+employeeNIPaidYTD);
+				
+				String employeeNIPaidYTD123= table.getTBody().getRow(rownum).getCell(4).getText();
+				System.out.println("employeeNIPaidYTD is :"+employeeNIPaidYTD123);
+				
 							
 				//call the function which reads the excel sheet.
-				ReadsExpectedData(EmpName, TestResultExcelFilePath,employeeNI, employerNI,employeeNIPaidYTD,TestReportworksheetNo);
+				ReadsExpectedData(EmpName, TestResultExcelFilePath,employeeNI, employerNI,employeeNIPaidYTD,employeeNIPaidYTD123,TestReportworksheetNo);
 			}
 			rownum++;
 		}
@@ -190,7 +186,7 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 	}
 
 
-	public void ReadsExpectedData(String EmpName,String TestResultExcelFilePath, String employeeNI, String employerNI, String employeeNIPaidYTD,String TestReportworksheetNo) throws Throwable
+	public void ReadsExpectedData(String EmpName,String TestResultExcelFilePath, String employeeNI, String employerNI, String employeeNIPaidYTD,String employeeNIPaidYTD123,String TestReportworksheetNo) throws Throwable
 	{
 
 		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
@@ -227,51 +223,65 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 			String value1 = cellToString(row.getCell(1));
 			String value2 = cellToString(row.getCell(7));
 			
-			String value4 = cellToString(row.getCell(9));
+			String value4 = cellToString(row.getCell(8));
+			String value5 = cellToString(row.getCell(10));
 					
 			if(value1 != null && value1.equalsIgnoreCase(EmpName))
 			{
-				row.createCell(8).setCellValue(employerNI);
-				row.createCell(10).setCellValue(employeeNI);
-				row.createCell(11).setCellValue(employerNI);
-				row.createCell(12).setCellValue(employeeNIPaidYTD);
-			
+				row.createCell(9).setCellValue(employeeNIPaidYTD);
+				
+				row.createCell(11).setCellValue(employeeNI);
+				row.createCell(12).setCellValue(employerNI);
+				row.createCell(13).setCellValue(employeeNIPaidYTD);
+				row.createCell(14).setCellValue(employeeNIPaidYTD123);
 				if(value2 != null && value2.equalsIgnoreCase(employeeNI))
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("TRUE");
-					 cell1.setCellStyle(style);
-				}
-				else
-				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("FALSE");
-					 cell1.setCellStyle(styleFalse);
-				}
-				String value3 = cellToString(row.getCell(8));
-				if(value3 != null && value3.equalsIgnoreCase(employerNI))
-				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("TRUE");
-					 cell1.setCellStyle(style);
-				}   
-				else
-				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				} 
-				
-				if(value4 != null && value4.equalsIgnoreCase(employeeNIPaidYTD))
-				{
-					 Cell cell1 = row.createCell(15);
+					 Cell cell1 = row.createCell(15);	
 					row.createCell(15).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
+				}
+				else
+				{
+					 Cell cell1 = row.createCell(15);	
+					row.createCell(15).setCellValue("FALSE");
+					 cell1.setCellStyle(styleFalse);
+				}
+			
+				if(value4 != null && value4.equalsIgnoreCase(employerNI))
+				{
+					 Cell cell1 = row.createCell(16);
+					row.createCell(16).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(16);
+					row.createCell(16).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				String value3 = cellToString(row.getCell(13));
+				if(value3 != null && value3.equalsIgnoreCase(employeeNIPaidYTD))
+				{
+					 Cell cell1 = row.createCell(17);
+					row.createCell(17).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(17);
+					row.createCell(17).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				if(value5 != null && value5.equalsIgnoreCase(employeeNIPaidYTD123))
+				{
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				break;

@@ -80,6 +80,7 @@ public class ResetData extends TestSuiteBase
 			Thread.sleep(9000L);
 			try
 			{
+				closePopupWindow();
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();
