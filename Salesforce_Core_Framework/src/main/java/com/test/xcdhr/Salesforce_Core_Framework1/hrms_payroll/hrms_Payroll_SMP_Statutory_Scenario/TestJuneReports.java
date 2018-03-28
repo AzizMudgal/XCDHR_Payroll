@@ -75,24 +75,16 @@ public class TestJuneReports extends TestSuiteBase
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
 
-		/*try
+		closePopupWindow();
+		if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 		{
-			WaitforElement(("Homepage_txt"));
-			if(existsElementchkFor1mts(OR.getProperty("Homepage_txt")))
-			{
-				Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-				System.out.println("1> The test script logged in successfully into salesforce account");
-				System.out.println("");
-			}
-		}catch(Throwable t){
-			APP_LOGS.debug("1> Could not assert the home page title due to unsuccessfull login account");
+			String personalTab = getObject("PersonalTab").getText();
+			System.out.println("Tab name is :"+ personalTab);
+			Assert.assertEquals("Personal", personalTab);
+			System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 			System.out.println("");
-			ErrorUtil.addVerificationFailure(t);
-			CaptureScreenshot("EmployeeProfile"+this.getClass().getSimpleName()+"  Due to this Error Could not Assert Title");
-		}*/
-		
-		/* Added by Swamy*/
-		try
+		}
+		/*try
 		{
 			titlename = driver.getTitle();
 			Assert.assertEquals(driver.getTitle(), titlename);
@@ -104,7 +96,7 @@ public class TestJuneReports extends TestSuiteBase
 			APP_LOGS.debug("Could not assert the home page title, Check for error");
 			System.out.println("");
 			defaultWaitTime();
-		}
+		}*/
 		Thread.sleep(4000L);
 		
 		DownloadReports(EmpName,TestResultExcelFilePath,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestReportworksheetNo); // pn means payroll id. in this case 8512

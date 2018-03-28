@@ -3,6 +3,7 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_
 
 import java.util.List;
 import java.util.HashMap;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -13,6 +14,7 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
@@ -57,7 +59,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
+	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		count++;
@@ -75,6 +77,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
+				closePopupWindow();
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();
@@ -91,13 +94,13 @@ public class CreateLeaveRequest extends TestSuiteBase
 			}
 		}
 		/*************************************************************************/
-		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 		/*************************************************************************/
 	}
 
 
 
-	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
+	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
 	{
 		try
 		{
@@ -179,12 +182,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println("");
 		}
 		Thread.sleep(3000L);
-		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
 
-	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -201,31 +204,36 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		selectLeaveYear(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		
+/*		selectLeaveYear(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
+*/
+		bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
+	
 	}
 
 
 
-	public void selectLeaveYear(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	/*public void selectLeaveYear(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
-			Thread.sleep(3000L);
-			bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+			Thread.sleep(1000L);
+			bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 		}
 		catch(Throwable t)
 		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-	}
+	}*/
 
 
 
-	public void bookLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void bookLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
+			Thread.sleep(1000L);
 			if(existsElement(OR.getProperty("bookLeavebuttonlocator")))
 			{
 				getObject("bookLeavebuttonlocator").sendKeys("");
@@ -238,16 +246,17 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		Thread.sleep(3000L);
-		selectMaternityLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
+		Thread.sleep(1000L);
+		selectMaternityLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
 
-	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
+			Thread.sleep(1000L);
 			if(existsElement(OR.getProperty("leaveCategorypicklistlocator")))
 			{
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("leaveCategorypicklistlocator"))));
@@ -255,7 +264,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				selectByValue.selectByVisibleText(LeaveCategory);
 				System.out.println("");
 				System.out.println("The MATERNITY PICK LIST ITEM got selected sucessfully");
-				Thread.sleep(3000L);
+				Thread.sleep(1000L);
 				if(existsElementchkFor1mts(OR.getProperty("submitLeaverqstlocator")))
 				{
 					submitSickleave();
@@ -269,12 +278,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		enterLeaveDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
+		enterLeaveDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
 
-	public void enterLeaveDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void enterLeaveDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -282,7 +291,16 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				getObject("materinityEditbuttonlocator").sendKeys("");
 				getObject("materinityEditbuttonlocator").click();
+				System.out.println("Edit button of leave record got clicked");
 			}
+			Thread.sleep(1000L);
+			keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
+			Thread.sleep(1000L);
+			selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
+			Thread.sleep(1000L);
+			updateFinancialControlFeatures(employeeTaxable,employeeNiable);
+			Thread.sleep(1000L);
+			MaternitySavebutton();
 		}
 		catch(Throwable t)
 		{
@@ -291,11 +309,13 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 
-		keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
+		/*keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
 
 		selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
+		
+		updateFinancialControlFeatures(employeeTaxable,employeeNiable);
 
-		MaternitySavebutton();
+		MaternitySavebutton();*/
 	}
 
 
@@ -401,7 +421,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("SmpbabyBornDatelocator").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The baby born date was entered sucessfully");
-				Thread.sleep(3000L);
+				Thread.sleep(1000L);
 			}
 			else if(existsElement(OR.getProperty("QAOrgSmpbabyBornDatelocator")))
 			{
@@ -411,7 +431,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("QAOrgSmpbabyBornDatelocator").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("selected from qa org locator The baby born date was entered sucessfully");
-				Thread.sleep(3000L);
+				Thread.sleep(1000L);
 			}
 		}
 		catch(Throwable t)
@@ -429,7 +449,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("SmpleaveReqstStdate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Leave request start date was entered sucessfully");
-				Thread.sleep(3000L);
+				Thread.sleep(1000L);
 			}
 			else if(existsElement(OR.getProperty("QAOrgSmpleaveReqstStdate")))
 			{
@@ -439,7 +459,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("QAOrgSmpleaveReqstStdate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Leave request start date was entered sucessfully");
-				Thread.sleep(3000L);
+				Thread.sleep(1000L);
 			}
 		}
 		catch(Throwable t)
@@ -457,7 +477,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("SmpleaveReqstEndDate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Leave request end date was entered sucessfully");
-				Thread.sleep(3000L);
+				Thread.sleep(1000L);
 			}
 			else if(existsElement(OR.getProperty("QAOrgSmpleaveReqstEndDate")))
 			{
@@ -467,7 +487,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("QAOrgSmpleaveReqstEndDate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Leave request end date was entered sucessfully");
-				Thread.sleep(3000L);
+				Thread.sleep(1000L);
 			}
 		}
 		catch(Throwable t)
@@ -514,17 +534,17 @@ public class CreateLeaveRequest extends TestSuiteBase
 								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
 								if(valueOfsmallReliefChkbox == 1.0)
 								{
-									Thread.sleep(4000L);
+									Thread.sleep(2000L);
 									if(smallERchekbox)
 									{
-										System.out.println("Small Employer relief checkbox was allready checked, Hence our condition got satisfied");
+										System.out.println("Statutory conditions met - make payment checkbox was allready checked, Hence our condition got satisfied");
 										break  outerloop;
 									}
 									else
 									{
 										clkchkbox.sendKeys("");
 										clkchkbox.click();
-										System.out.println("Small Employer relief checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
+										System.out.println("Statutory conditions met - make payment checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
 									}
 								}	
 							}
@@ -538,6 +558,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 								clkchkbox.click();
 								System.out.println("I clicked Go button");
 								Thread.sleep(5000);
+								//Thread.sleep(5000);
 								String ParentWindow = driver.getWindowHandle(); // To save the parent window
 								// create one more method for reading employee from excel sheet.
 								ReadStatutoryPayBasis(StatutoryPaybasis);
@@ -554,11 +575,129 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 		catch(Throwable t)
 		{
-
+			System.out.println(t.getStackTrace());
+			System.out.println(t.getMessage());
 		}
 	} 
 
 
+	
+	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(4000L);
+			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
+			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
+
+			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
+			
+			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
+			
+			if(valueOfemployeeTaxableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
+				{
+					isemployeeTaxablechecBox(empTaxableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
+				{
+					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
+				}
+			}
+			
+			if(valueOfemployeeNiableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
+				{
+					isemployeeNiablechecBox(empNiableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
+				{
+					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+	
+	
+	public boolean isemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
+	{
+		if(empTaxableChekbox)
+		{
+			System.out.println("From QA Org--employee Taxable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeTaxablecheckboxLocator").click();
+			System.out.println("From QA Org--employee Taxable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empTaxableChekbox;
+	}
+	
+	
+	public boolean isemployeeNiablechecBox(boolean empNiableChekbox)throws Throwable
+	{
+		if(empNiableChekbox)
+		{
+			System.out.println("From QA Org--employee Niable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeNiablecheckboxLocator").click();
+			System.out.println("From QA Org--employee Niable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empNiableChekbox;
+	}
+	
+	
+	public boolean RegressOrgisemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
+	{
+		if(empTaxableChekbox)
+		{
+			System.out.println("From Regress Org--employee Taxable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("RegressOrgemployeeTaxablecheckboxLocator").click();
+			System.out.println("From Regress Org--employee Taxable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empTaxableChekbox;
+	}
+	
+	
+	public boolean RegressOrgisemployeeNiablechecBox(boolean empTaxableChekbox)throws Throwable
+	{
+		if(empTaxableChekbox)
+		{
+			System.out.println("From Regress Org--employee Taxable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("RegressOrgemployeeNiablecheckboxLocator").click();
+			System.out.println("From Regress Org--employee Taxable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empTaxableChekbox;
+	}
+
+
+	
+	
+	
+
+	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable

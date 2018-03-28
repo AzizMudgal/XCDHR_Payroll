@@ -1,7 +1,6 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario;
 
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -30,8 +29,8 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-
-public class TestNovReports extends TestSuiteBase {
+public class TestNovReports extends TestSuiteBase
+{
 	String runmodes[] = null;
 	static int count = -1;
 	public static boolean Fail=false;
@@ -39,8 +38,7 @@ public class TestNovReports extends TestSuiteBase {
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
 	public String titlename;
-	
-	
+
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
@@ -64,37 +62,26 @@ public class TestNovReports extends TestSuiteBase {
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		//WebDriver driver = new FirefoxDriver(FirefoxDriverProfile());
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-		/*try
+		closePopupWindow();
+		if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 		{
-			WaitforElement(("Homepage_txt"));
-			if(existsElementchkFor1mts(OR.getProperty("Homepage_txt")))
-			{
-				Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-				System.out.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
-				System.out.println("");
-			}
-		}catch(Throwable t){
-			APP_LOGS.debug("Could not assert the home page title due to unsuccessfull login account");
+			String personalTab = getObject("PersonalTab").getText();
+			System.out.println("Tab name is :"+ personalTab);
+			Assert.assertEquals("Personal", personalTab);
+			System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 			System.out.println("");
-			ErrorUtil.addVerificationFailure(t);
-			CaptureScreenshot("EmployeeProfile"+this.getClass().getSimpleName()+"  Due to this Error Could not Assert Title");
-		}*/
-		
-		/* Added by Swamy*/
+		}
 		try
 		{
 			titlename = driver.getTitle();
@@ -121,37 +108,32 @@ public class TestNovReports extends TestSuiteBase {
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
 		}
-			
-			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
-			{				
-				SearchReport(FirstReportNameInApplication);
-			}
-
-			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
-			{
-				editCustomButton();
-			}
-			
-			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
-			{				
-				UpdateReportPage(Payrolid,Frquency,MonthName);
-			}
-
-			System.out.println("");
-			System.out.println("3> Successfully customized the Report as required");
-		
-			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
-			{
-				RunReport();
-			}
-						
-			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
-			{
-				processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
-				System.out.println("5> Entered the values and processed the Test Remarks");
-			}
-		
+		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+		{				
+			SearchReport(FirstReportNameInApplication);
 		}
+		if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+		{
+			editCustomButton();
+		}
+		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+		{				
+			UpdateReportPage(Payrolid,Frquency,MonthName);
+		}
+
+		System.out.println("");
+		System.out.println("3> Successfully customized the Report as required");
+	
+		if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+		{
+			RunReport();
+		}
+		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+		{
+			processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
+			System.out.println("5> Entered the values and processed the Test Remarks");
+		}
+	}
 		
 		
 	
