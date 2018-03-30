@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite 2WeeklyCatB X]">
+  <test name="1(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.CreateLeaveRequest">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.TestReports">
         <methods>
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="0"/>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
+          <include name="CheckTestSkip"/>
           <include name="CheckSuiteSkip"/>
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.TestReports -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.ProcessPayrollForNIWeekly">
+        <methods>
+          <include name="ReportDataSetResult"/>
+          <include name="ReportTestResult"/>
           <include name="CheckTestSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.CreateLeaveRequest -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.ProcessPayrollForNIWeekly -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B">
+        <methods>
+          <include name="EmpsSetup_WithNICategory" invocation-numbers="9 10 11 12 13 14"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+          <include name="CheckTestSkip"/>
+          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="9 10 11 12 13 14"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- 1(failed) -->
+</suite> <!-- Failed suite [Payroll Suite 2WeeklyCatB X] -->

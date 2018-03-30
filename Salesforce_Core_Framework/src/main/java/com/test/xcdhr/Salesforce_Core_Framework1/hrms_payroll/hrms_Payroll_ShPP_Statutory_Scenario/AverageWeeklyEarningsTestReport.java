@@ -82,14 +82,13 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 
 		try
 		{
-			WaitforElement(("Homepage_txt"));
-			if(existsElement(OR.getProperty("Homepage_txt")))
+			closePopupWindow();
+			if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 			{
-
-				Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-				System.out.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
-				
+				String personalTab = getObject("PersonalTab").getText();
+				System.out.println("Tab name is :"+ personalTab);
+				Assert.assertEquals("Personal", personalTab);
+				System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 				System.out.println("");
 			}
 		}catch(Throwable t)
@@ -167,15 +166,15 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 				System.out.println("firstCellOfBody is :"+firstCellOfBody);
 				//String employeeNI= table.getTBody().getRow(rownum).getCell(1).getText();
 				String averageWeeklyEarnings= table.getTBody().getRow(rownum).getCell(1).getText();
-				System.out.println("employeeNI is :"+averageWeeklyEarnings);
+				System.out.println("averageWeeklyEarnings is :"+averageWeeklyEarnings);
 				String statutoryStandardRate = table.getTBody().getRow(rownum).getCell(2).getText();
-				System.out.println("employeeNI is :"+statutoryStandardRate );// Added by Swamy
+				System.out.println("statutoryStandardRate is :"+statutoryStandardRate );// Added by Swamy
 				//String employerNI= table.getTBody().getRow(rownum).getCell(3).getText();
 				String leaveRequestId = table.getTBody().getRow(rownum).getCell(3).getText();
-				System.out.println("employerNI is :"+leaveRequestId);
+				System.out.println("leaveRequestId is :"+leaveRequestId);
 				//String employeeNIPaidYTD= table.getTBody().getRow(rownum).getCell(4).getText();
 				String leaveYear= table.getTBody().getRow(rownum).getCell(4).getText();
-				System.out.println("employeeNIPaidYTD is :"+leaveYear);
+				System.out.println("leaveYear is :"+leaveYear);
 							
 				//call the function which reads the excel sheet.
 				
