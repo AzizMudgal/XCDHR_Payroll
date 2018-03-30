@@ -279,7 +279,7 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase {
 				else
 				{
 					 Cell cell1 = row.createCell(18);
-					row.createCell(1).setCellValue("FALSE");
+					row.createCell(18).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				
