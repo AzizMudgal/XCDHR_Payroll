@@ -1,7 +1,6 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario;
 
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -30,8 +29,8 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-
-public class TestDecReports extends TestSuiteBase {
+public class TestDecReports extends TestSuiteBase
+{
 	String runmodes[] = null;
 	static int count = -1;
 	public static boolean Fail=false;
@@ -39,8 +38,7 @@ public class TestDecReports extends TestSuiteBase {
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
 	public String titlename;
-	
-	
+
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
@@ -63,16 +61,13 @@ public class TestDecReports extends TestSuiteBase {
 	@Test(dataProvider = "getData")
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-	
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		//WebDriver driver = new FirefoxDriver(FirefoxDriverProfile());
 		openBrowser();
@@ -87,7 +82,7 @@ public class TestDecReports extends TestSuiteBase {
 			System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 			System.out.println("");
 		}
-		/*try
+		try
 		{
 			titlename = driver.getTitle();
 			Assert.assertEquals(driver.getTitle(), titlename);
@@ -99,7 +94,7 @@ public class TestDecReports extends TestSuiteBase {
 			APP_LOGS.debug("Could not assert the home page title, Check for error");
 			System.out.println("");
 			defaultWaitTime();
-		}*/
+		}
 		Thread.sleep(4000L);
 		DownloadReports(EmpName,TestResultExcelFilePath,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestReportworksheetNo); // pn means payroll id. in this case 8512
 	}
@@ -112,39 +107,33 @@ public class TestDecReports extends TestSuiteBase {
 		{
 			getObject("reportTablocator").click();
 			System.out.println("2> Clicked to Report Tab");
-			//driver.navigate().refresh();
 		}
-			
-			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
-			{				
-				SearchReport(FirstReportNameInApplication);
-			}
-
-			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
-			{
-				editCustomButton();
-			}
-			
-			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
-			{				
-				UpdateReportPage(Payrolid,Frquency,MonthName);
-			}
-
-			System.out.println("");
-			System.out.println("3> Successfully customized the Report as required");
-		
-			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
-			{
-				RunReport();
-			}
-						
-			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
-			{
-				processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
-				System.out.println("5> Entered the values and processed the Test Remarks");
-			}
-		
+		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+		{				
+			SearchReport(FirstReportNameInApplication);
 		}
+		if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+		{
+			editCustomButton();
+		}
+		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+		{				
+			UpdateReportPage(Payrolid,Frquency,MonthName);
+		}
+
+		System.out.println("");
+		System.out.println("3> Successfully customized the Report as required");
+	
+		if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+		{
+			RunReport();
+		}
+		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+		{
+			processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
+			System.out.println("5> Entered the values and processed the Test Remarks");
+		}
+	}
 		
 		
 	
@@ -209,7 +198,7 @@ public class TestDecReports extends TestSuiteBase {
 	public void ReadsExpectedData(String EmpName,String TestResultExcelFilePath, String employeeNI, String employerNI, String employeeNIPaidYTD,String TestReportworksheetNo) throws Throwable
 	{
 
-		 double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
+		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		  DecimalFormat df = new DecimalFormat("###.#");
 		  String worksheetNoWithoutDecimal= df.format(worksheetvalue);
 		  int TRwNo=Integer.parseInt(worksheetNoWithoutDecimal);
@@ -219,9 +208,9 @@ public class TestDecReports extends TestSuiteBase {
 			FileInputStream fis = new FileInputStream(excel);
 			org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
 			org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
+				
 	
 		 CellStyle style = wb.createCellStyle();
-		 style.setFillPattern(CellStyle.ALIGN_FILL);
 		 style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
 		 Font font = wb.createFont();	
 		 font.setColor(IndexedColors.BLACK.getIndex());
@@ -229,7 +218,6 @@ public class TestDecReports extends TestSuiteBase {
 		
 		
 		 CellStyle styleFalse = wb.createCellStyle();
-		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
 		 
 				
@@ -247,46 +235,46 @@ public class TestDecReports extends TestSuiteBase {
 					
 			if(value1 != null && value1.equalsIgnoreCase(EmpName))
 			{
-				row.createCell(10).setCellValue(employeeNI);
-				row.createCell(11).setCellValue(employerNI);
-				row.createCell(12).setCellValue(employeeNIPaidYTD);
+				row.createCell(12).setCellValue(employeeNI);
+				row.createCell(13).setCellValue(employerNI);
+				row.createCell(14).setCellValue(employeeNIPaidYTD);
 			
 				if(value2 != null && value2.equalsIgnoreCase(employeeNI))
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}
 				else
 				{
-					 Cell cell1 = row.createCell(13);	
-					row.createCell(13).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(17);	
+					row.createCell(17).setCellValue("FALSE");
 					 cell1.setCellStyle(styleFalse);
 				}
 
 				if(value3 != null && value3.equalsIgnoreCase(employerNI))
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(14);
-					row.createCell(14).setCellValue("FALSE");
+					Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				
 				if(value4 != null && value4.equalsIgnoreCase(employeeNIPaidYTD))
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(19);
+					 row.createCell(19).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}   
 				else
 				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
 				

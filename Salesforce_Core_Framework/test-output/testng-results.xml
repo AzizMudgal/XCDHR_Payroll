@@ -2,16 +2,34 @@
 <testng-results skipped="0" failed="0" ignored="0" total="22" passed="22">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Payroll Suite WeeklyCatH e" duration-ms="850878" started-at="2018-03-30T09:41:50Z" finished-at="2018-03-30T09:56:01Z">
+=======
+  <suite name="Default suite" duration-ms="126580" started-at="2018-03-28T13:15:00Z" finished-at="2018-03-28T13:17:06Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="1" duration-ms="512351" started-at="2018-03-30T09:41:50Z" finished-at="2018-03-30T09:50:23Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatH.NIWeeklyCat_H">
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatH.NIWeeklyCat_H@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="1432" started-at="2018-03-30T15:11:50Z" finished-at="2018-03-30T15:11:52Z">
+=======
+    <test name="Default test" duration-ms="126580" started-at="2018-03-28T13:15:00Z" finished-at="2018-03-28T13:17:06Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2936" started-at="2018-03-28T18:44:57Z" finished-at="2018-03-28T18:45:00Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CheckSuiteSkip -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1159" started-at="2018-03-28T18:45:00Z" finished-at="2018-03-28T18:45:01Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatH.NIWeeklyCat_H@402a079c]" name="EmpsSetup_WithNICategory" duration-ms="75158" started-at="2018-03-30T15:11:53Z" data-provider="getData" finished-at="2018-03-30T15:13:08Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="121058" started-at="2018-03-28T18:45:02Z" data-provider="getData" finished-at="2018-03-28T18:47:03Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <params>
             <param index="0">
               <value>
@@ -467,7 +485,11 @@
             </param>
             <param index="4">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Week-1]]>
+=======
+                <![CDATA[January-2019]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="5">
@@ -487,7 +509,11 @@
             </param>
             <param index="8">
               <value>
+<<<<<<< HEAD
                 <![CDATA[2]]>
+=======
+                <![CDATA[12]]>
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="9">
@@ -496,6 +522,7 @@
               </value>
             </param>
           </params>
+<<<<<<< HEAD
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
@@ -937,18 +964,34 @@
               </value>
             </param>
           </params>
+=======
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatH.TestReports@5649fd9b]" name="ReportDataSetResult" is-config="true" duration-ms="926" started-at="2018-03-30T15:25:59Z" finished-at="2018-03-30T15:26:00Z">
+=======
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1125" started-at="2018-03-28T18:47:03Z" finished-at="2018-03-28T18:47:04Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatH.TestReports@5649fd9b]" name="ReportTestResult" is-config="true" duration-ms="1507" started-at="2018-03-30T15:26:00Z" finished-at="2018-03-30T15:26:01Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2442" started-at="2018-03-28T18:47:04Z" finished-at="2018-03-28T18:47:06Z">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatH.TestReports -->
     </test> <!-- 3 -->
   </suite> <!-- Payroll Suite WeeklyCatH e -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 </testng-results>
