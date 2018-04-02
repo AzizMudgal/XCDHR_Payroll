@@ -2,64 +2,64 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="126580" started-at="2018-03-28T13:15:00Z" finished-at="2018-03-28T13:17:06Z">
+  <suite name="Default suite" duration-ms="137326" started-at="2018-03-30T13:43:18Z" finished-at="2018-03-30T13:45:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="126580" started-at="2018-03-28T13:15:00Z" finished-at="2018-03-28T13:17:06Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2936" started-at="2018-03-28T18:44:57Z" finished-at="2018-03-28T18:45:00Z">
+    <test name="Default test" duration-ms="137326" started-at="2018-03-30T13:43:18Z" finished-at="2018-03-30T13:45:35Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="4309" started-at="2018-03-30T19:13:13Z" finished-at="2018-03-30T19:13:18Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1159" started-at="2018-03-28T18:45:00Z" finished-at="2018-03-28T18:45:01Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1979" started-at="2018-03-30T19:13:18Z" finished-at="2018-03-30T19:13:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="121058" started-at="2018-03-28T18:45:02Z" data-provider="getData" finished-at="2018-03-28T18:47:03Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="128798" started-at="2018-03-30T19:13:22Z" data-provider="getData" finished-at="2018-03-30T19:15:30Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO DIRSMP EMPLOYER]]>
+                <![CDATA[DONT TOUCH AUTO NI4WCA EMPLOYER]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SMP 101]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 494]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[DIRSMP_Payroll]]>
+                <![CDATA[NI4WCA_Payroll]]>
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Monthly]]>
+                <![CDATA[Four Weekly]]>
               </value>
             </param>
             <param index="4">
               <value>
-                <![CDATA[January-2019]]>
+                <![CDATA[Four Week-4]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Payroll Suite StatutoryMaternityPay201819.xlsx]]>
+                <![CDATA[Payroll Suite 4WeeklyCatA201718.xlsx]]>
               </value>
             </param>
             <param index="6">
               <value>
-                <![CDATA[DO NOT TOUCH SMP Maternity Payment]]>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_StatutoryScenarios 201819\\201819 Automation TestResult For Statutory Scenarios.xlsx]]>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201718\\201718 Payroll National Insurance calculation Test result.xlsx]]>
               </value>
             </param>
             <param index="8">
               <value>
-                <![CDATA[12]]>
+                <![CDATA[3]]>
               </value>
             </param>
             <param index="9">
@@ -69,22 +69,22 @@
             </param>
             <param index="10">
               <value>
-                <![CDATA[2]]>
+                <![CDATA[14]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1125" started-at="2018-03-28T18:47:03Z" finished-at="2018-03-28T18:47:04Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1914" started-at="2018-03-30T19:15:30Z" finished-at="2018-03-30T19:15:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2442" started-at="2018-03-28T18:47:04Z" finished-at="2018-03-28T18:47:06Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2725" started-at="2018-03-30T19:15:32Z" finished-at="2018-03-30T19:15:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.TestJan2016Reports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_FourweeklyCatA.TestReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

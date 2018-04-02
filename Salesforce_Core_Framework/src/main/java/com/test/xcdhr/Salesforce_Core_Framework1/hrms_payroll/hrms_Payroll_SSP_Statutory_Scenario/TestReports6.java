@@ -27,6 +27,7 @@ import org.testng.annotations.Test;
 import atu.webdriver.utils.table.WebTable;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
+import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader;
 
 
 
@@ -66,6 +67,10 @@ public class TestReports6 extends TestSuiteBase
 	@Test(dataProvider = "getData")
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
+		/* Code For reading Output file path from Project 
+		/*Xls_Reader outPutPath=new Xls_Reader(
+				System.getProperty("user.dir")
+				+ "//TestOutPutResultFolder//201819 Payroll National Insurance calculation Test result.xlsx");*/
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{

@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-public class ProcessPayrollForAprilMonthSMP extends TestSuiteBase
+public class ProcessPayrollForJulyMonthSMP extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -108,7 +108,7 @@ public class ProcessPayrollForAprilMonthSMP extends TestSuiteBase
 			Thread.sleep(3000L);
 			System.out.println("Since the app is not displaying employee records same"
 					+ " as excel file employees of this Tax worksheet");
-			ProcessPayrollForAprilMonthSMP obj1 = new ProcessPayrollForAprilMonthSMP();
+			ProcessPayrollForJulyMonthSMP obj1 = new ProcessPayrollForJulyMonthSMP();
 			for(Repeat=2; Repeat < 5; Repeat++)
 			{
 				// I have set 3 times to repeat the payroll script so that by the time it processess
@@ -127,7 +127,7 @@ public class ProcessPayrollForAprilMonthSMP extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_Statutory_maternitypay_SuiteXls,"ProcessPayrollForAprilMonthSMP");
+		return Test_Util.getData(Payroll_Statutory_maternitypay_SuiteXls,"ProcessPayrollForJulyMonthSMP");
 	}
 	
 	
