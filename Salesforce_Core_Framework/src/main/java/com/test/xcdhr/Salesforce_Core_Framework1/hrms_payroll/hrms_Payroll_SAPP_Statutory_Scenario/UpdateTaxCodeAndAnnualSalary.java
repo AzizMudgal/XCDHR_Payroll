@@ -66,10 +66,13 @@ public class UpdateTaxCodeAndAnnualSalary extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
