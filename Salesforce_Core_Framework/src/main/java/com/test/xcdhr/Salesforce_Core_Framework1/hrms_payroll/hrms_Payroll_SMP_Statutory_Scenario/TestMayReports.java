@@ -241,7 +241,7 @@ public class TestMayReports extends TestSuiteBase
 
 		int rowNum = ws.getLastRowNum()+1;
 
-		for(int i =3; i< rowNum; i++)
+		for(int i =2; i< rowNum; i++)
 		{
 			Row row = ws.getRow(i);
 			String value1 = cellToString(row.getCell(1));
