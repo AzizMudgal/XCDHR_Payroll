@@ -3,15 +3,25 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.SmallEmployerRelief">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData">
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
+          <include name="ResetEmploymentAndLeaveTab"/>
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
           <include name="CheckTestSkip"/>
           <include name="EmpsSetup_WithNICategory" invocation-numbers="0"/>
+=======
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.SmallEmployerRelief -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData -->
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

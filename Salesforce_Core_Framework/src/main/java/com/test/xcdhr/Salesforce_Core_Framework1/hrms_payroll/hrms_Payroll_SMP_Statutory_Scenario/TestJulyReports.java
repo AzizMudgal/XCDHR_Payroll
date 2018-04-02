@@ -28,7 +28,7 @@ import atu.webdriver.utils.table.WebTable;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-public class TestAprilReports extends TestSuiteBase
+public class TestJulyReports extends TestSuiteBase
 {
 	
 	String runmodes[] = null;
@@ -149,7 +149,6 @@ public class TestAprilReports extends TestSuiteBase
 			processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);
 			System.out.println("5> Entered the values and processed the Test Remarks");
 		}
-		
 
 	}
 	
@@ -241,7 +240,7 @@ public class TestAprilReports extends TestSuiteBase
 
 		int rowNum = ws.getLastRowNum()+1;
 
-		for(int i =2; i< rowNum; i++)
+		for(int i =4; i< rowNum; i++)
 		{
 			Row row = ws.getRow(i);
 			String value1 = cellToString(row.getCell(1));
@@ -311,7 +310,7 @@ public class TestAprilReports extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_Statutory_maternitypay_SuiteXls,"ProcessPayrollForAprilMonthSMP");
+		return Test_Util.getData(Payroll_Statutory_maternitypay_SuiteXls,"ProcessPayrollForJulyMonthSMP");
 	}
 
 

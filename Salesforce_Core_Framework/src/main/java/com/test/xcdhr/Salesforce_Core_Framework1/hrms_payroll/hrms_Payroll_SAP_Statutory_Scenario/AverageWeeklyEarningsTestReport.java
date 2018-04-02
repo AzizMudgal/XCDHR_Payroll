@@ -64,48 +64,34 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 	@Test(dataProvider = "getData")
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
-
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
-
 		}
-
 		//APP_LOGS.debug("Executing the test case");
-		
 		openBrowser();
-
 		logingIntoDesiredORG(OrgFlag);
-
 		driver.manage().window().maximize();
 
 		try
 		{
-			WaitforElement(("Homepage_txt"));
-			if(existsElement(OR.getProperty("Homepage_txt")))
+			closePopupWindow();
+			if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 			{
-
-				Assert.assertEquals(driver.getTitle(), "salesforce.com - Enterprise Edition");
-				System.out.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
-				
+				String personalTab = getObject("PersonalTab").getText();
+				System.out.println("Tab name is :"+ personalTab);
+				Assert.assertEquals("Personal", personalTab);
+				System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 				System.out.println("");
 			}
 		}catch(Throwable t)
 		{
 			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-			//APP_LOGS.debug("Could not assert the home page title due to unsuccessfull login account");
-			System.out.println("");
-			//ErrorUtil.addVerificationFailure(t);
-			//CaptureScreenshot("EmployeeProfile"+this.getClass().getSimpleName()+"  Due to this Error Could not Assert Title");
+
 		}
-
 		DownloadReports(EmpName,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestResultExcelFilePath,TestReportworksheetNo);
-
-
 	}
 
 		public void DownloadReports(String EmpName,String Payrolid,String Frquency,String MonthName,String FirstReportNameInApplication,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
@@ -119,7 +105,6 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 			{				
 				SearchReport(FirstReportNameInApplication);
 			}
-			
 			if(existsElement(OR.getProperty("reportTableLocatorNI")))
 			{
 				processReport(EmpName,TestResultExcelFilePath,TestReportworksheetNo);

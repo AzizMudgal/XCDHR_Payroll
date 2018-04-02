@@ -208,9 +208,10 @@ public class TestNovReports extends TestSuiteBase
 			FileInputStream fis = new FileInputStream(excel);
 			org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
 			org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
-				
-	
+		
+			
 		 CellStyle style = wb.createCellStyle();
+		 style.setFillPattern(CellStyle.ALIGN_FILL);
 		 style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
 		 Font font = wb.createFont();	
 		 font.setColor(IndexedColors.BLACK.getIndex());
@@ -218,6 +219,7 @@ public class TestNovReports extends TestSuiteBase
 		
 		
 		 CellStyle styleFalse = wb.createCellStyle();
+		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
 		 
 				

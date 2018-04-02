@@ -208,12 +208,16 @@ public class TestJan2016Reports extends TestSuiteBase
 		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
 
 		 CellStyle style = wb.createCellStyle();
+		 style.setFillPattern(CellStyle.ALIGN_FILL);
+
 		 style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
 		 Font font = wb.createFont();	
 		 font.setColor(IndexedColors.BLACK.getIndex());
 		 style.setFont(font);
 	
 		 CellStyle styleFalse = wb.createCellStyle();
+		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
+
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
 				
 		FileOutputStream webdata = new FileOutputStream (TestResultExcelFilePath);

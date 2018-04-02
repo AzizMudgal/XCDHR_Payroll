@@ -309,13 +309,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 
-		/*keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
-
-		selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
 		
-		updateFinancialControlFeatures(employeeTaxable,employeeNiable);
-
-		MaternitySavebutton();*/
 	}
 
 
@@ -627,9 +621,9 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
+///	
 	
-	
-	public boolean isemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
+/*	public boolean isemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
 	{
 		if(empTaxableChekbox)
 		{
@@ -694,7 +688,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 
 	
-	
+	*/
 	
 
 	
