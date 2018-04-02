@@ -84,10 +84,8 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase {
 			}
 		}catch(Throwable t)
 		{
-			APP_LOGS.debug("Could not assert the home page title due to unsuccessfull login account");
-			System.out.println("");
-			ErrorUtil.addVerificationFailure(t);
-			CaptureScreenshot("EmployeeProfile"+this.getClass().getSimpleName()+"  Due to this Error Could not Assert Title");
+			System.out.println(t.getMessage().toString());
+
 		}
 
 		DownloadReports(EmpName,Payrolid,Frquency,MonthName,FirstReportNameInApplication,TestResultExcelFilePath,TestReportworksheetNo);

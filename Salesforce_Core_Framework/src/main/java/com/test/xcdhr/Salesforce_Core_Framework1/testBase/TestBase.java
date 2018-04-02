@@ -7879,7 +7879,7 @@ public class TestBase {
 
 
 
-	public int TaxYear = 201718;
+	public int TaxYear = 201819;
 
 
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
@@ -9092,11 +9092,55 @@ public class TestBase {
 				 * 2018-19 Statutory scenario input sheet loacation
 				 * 
 				 */
+				
+				/*
+				 * 	Payroll_Statutory_Adoption_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryAdoptionPay201718.xlsx");
+				Statutory_AdoptionPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryAdoptionPay201718";
+
+				Payroll_Statutory_Paternitypay_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPay201718.xlsx");
+				Statutory_StatutoryPaternityPay_InputExcelFile = "Payroll Suite StatutoryPaternityPay201718";
+
+				Payroll_Statutory_Paternitypay_Case2_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPayCase2201718.xlsx");
+				StatutoryPaternityPayCase2_InputExcelFile = "Payroll Suite StatutoryPaternityPayCase2201718";
+
+				Payroll_Statutory_AdoptionPaternitypay_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory Adoption PaternityPay201718.xlsx");
+				SAPP_InputExcelFile = "Payroll Suite Statutory Adoption PaternityPay201718";
+
+				Payroll_Statutory_SharedParentalpay_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory Shared ParentalPay201718.xlsx");
+				SharedParental_InputExcelFile = "Payroll Suite Statutory Shared ParentalPay201718";
+
+				Payroll_SSP_ProcessPayroll_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP201718.xlsx");
+				SSP_InputExcelFile = "Payroll Suite Statutory SSP201718";
+
+				 * 
+				 * 
+				 * 
+				 * 
+				 * 
+				 * 
+				 */
 					
 				Payroll_Statutory_maternitypay_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryMaternityPay201819.xlsx");
 				Statutory_MaternityPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryMaternityPay201819";
+				
+				Payroll_Statutory_Adoption_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryAdoptionPay201819.xlsx");
+				Statutory_AdoptionPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryAdoptionPay201819";
 				
 				Payroll_Statutory_AdoptionPaternitypay_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -12441,7 +12485,9 @@ public class TestBase {
 				formattedDate = writeFormat.format( date );
 			}
 			System.out.println("The entered date is  " +formattedDate);		
+			//Thread.sleep(4000L);
 			Thread.sleep(4000L);
+
 		}
 		catch(Throwable t)
 		{
@@ -12507,6 +12553,77 @@ public class TestBase {
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
+	
+	/*
+	 * Financial control methods follow for statutory leave record
+	 * 
+	 */
+	
+	public boolean isemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
+	{
+		if(empTaxableChekbox)
+		{
+			System.out.println("From QA Org--employee Taxable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeTaxablecheckboxLocator").click();
+			System.out.println("From QA Org--employee Taxable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empTaxableChekbox;
+	}
+	
+	
+	public boolean isemployeeNiablechecBox(boolean empNiableChekbox)throws Throwable
+	{
+		if(empNiableChekbox)
+		{
+			System.out.println("From QA Org--employee Niable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeNiablecheckboxLocator").click();
+			System.out.println("From QA Org--employee Niable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empNiableChekbox;
+	}
+	
+	
+	public boolean RegressOrgisemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
+	{
+		if(empTaxableChekbox)
+		{
+			System.out.println("From Regress Org--employee Taxable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("RegressOrgemployeeTaxablecheckboxLocator").click();
+			System.out.println("From Regress Org--employee Taxable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empTaxableChekbox;
+	}
+	
+	
+	public boolean RegressOrgisemployeeNiablechecBox(boolean empTaxableChekbox)throws Throwable
+	{
+		if(empTaxableChekbox)
+		{
+			System.out.println("From Regress Org--employee Taxable checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("RegressOrgemployeeNiablecheckboxLocator").click();
+			System.out.println("From Regress Org--employee Taxable checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empTaxableChekbox;
+	}
+
+
+	
 	
 	
 

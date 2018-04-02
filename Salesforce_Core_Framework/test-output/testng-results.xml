@@ -1,45 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="275879" started-at="2018-04-02T06:24:35Z" finished-at="2018-04-02T06:29:11Z">
+  <suite name="Default suite" duration-ms="109228" started-at="2018-04-02T11:57:22Z" finished-at="2018-04-02T11:59:11Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="275879" started-at="2018-04-02T06:24:35Z" finished-at="2018-04-02T06:29:11Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="7680" started-at="2018-04-02T11:54:27Z" finished-at="2018-04-02T11:54:35Z">
+    <test name="Default test" duration-ms="109228" started-at="2018-04-02T11:57:22Z" finished-at="2018-04-02T11:59:11Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2839" started-at="2018-04-02T17:27:19Z" finished-at="2018-04-02T17:27:22Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="2480" started-at="2018-04-02T11:54:35Z" finished-at="2018-04-02T11:54:37Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1040" started-at="2018-04-02T17:27:22Z" finished-at="2018-04-02T17:27:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="259637" started-at="2018-04-02T11:54:40Z" data-provider="getData" finished-at="2018-04-02T11:58:59Z">
+        <test-method status="PASS" signature="EmpsSetup_ForMonthlyTaxRate(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="EmpsSetup_ForMonthlyTaxRate" duration-ms="69581" started-at="2018-04-02T17:27:23Z" data-provider="getData" finished-at="2018-04-02T17:28:33Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION SMP 101]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION SAP 101]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[0]]>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="4132" started-at="2018-04-02T11:58:59Z" finished-at="2018-04-02T11:59:03Z">
+        </test-method> <!-- EmpsSetup_ForMonthlyTaxRate -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="862" started-at="2018-04-02T17:28:33Z" finished-at="2018-04-02T17:28:34Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief@271053e1]" name="ReportTestResult" is-config="true" duration-ms="7248" started-at="2018-04-02T11:59:03Z" finished-at="2018-04-02T11:59:11Z">
+        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="33894" started-at="2018-04-02T17:28:35Z" data-provider="getData" finished-at="2018-04-02T17:29:09Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION SAP 101]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[NT]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[Cumulative]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[20000.0]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="720" started-at="2018-04-02T17:29:09Z" finished-at="2018-04-02T17:29:09Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1469" started-at="2018-04-02T17:29:09Z" finished-at="2018-04-02T17:29:11Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_Statutory_Scenario.SmallEmployerRelief -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.UpdateTaxCodeAndAnnualSalary -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

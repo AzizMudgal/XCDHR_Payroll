@@ -2,6 +2,7 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_
 
 
 
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -79,10 +80,22 @@ public class ProcessPayrollForAugustMonthSAP extends TestSuiteBase
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
 			driver.manage().window().maximize();
-			
-			/*
-			 * 
-			 */
+			try
+			{
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+				{
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+					System.out.println("");
+				}
+			}catch(Throwable t)
+			{
+				System.out.println(t.getMessage().toString());
+
+			}
 			try
 			{
 				System.out

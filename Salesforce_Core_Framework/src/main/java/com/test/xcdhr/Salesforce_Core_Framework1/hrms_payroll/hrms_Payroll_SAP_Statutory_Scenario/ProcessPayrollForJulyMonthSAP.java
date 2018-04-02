@@ -2,6 +2,7 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_
 
 
 
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -84,9 +85,23 @@ public class ProcessPayrollForJulyMonthSAP extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				System.out
-				.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+				{
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+					System.out.println("");
+				}
+			}catch(Throwable t)
+			{
+				System.out.println(t.getMessage().toString());
+
+			}
+			try
+			{
+				
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
 			}
 			catch (Throwable t)

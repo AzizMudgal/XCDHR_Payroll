@@ -3,31 +3,12 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatD.NIMonthlyCat_D">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.AverageWeeklyEarningsTestReport">
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData">
         <methods>
-<<<<<<< HEAD
-          <include name="EmpsSetup_WithAnnualSalary"/>
-=======
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+          <include name="ResetEmploymentAndLeaveTab"/>
           <include name="CheckSuiteSkip"/>
-<<<<<<< HEAD
-          <include name="EmpsSetup_WithNICategory"/>
-=======
-          <include name="CheckTestSkip"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatD.NIMonthlyCat_D -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.AverageWeeklyEarningsTestReport -->
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAP_Statutory_Scenario.ResetData -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -211,6 +211,8 @@ public class TestDecReports extends TestSuiteBase
 				
 	
 		 CellStyle style = wb.createCellStyle();
+		 style.setFillPattern(CellStyle.ALIGN_FILL);
+
 		 style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
 		 Font font = wb.createFont();	
 		 font.setColor(IndexedColors.BLACK.getIndex());
@@ -218,6 +220,8 @@ public class TestDecReports extends TestSuiteBase
 		
 		
 		 CellStyle styleFalse = wb.createCellStyle();
+		 styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
+
 		 styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
 		 
 				
