@@ -163,17 +163,19 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase {
 				EmployeeName= table.getTBody().getRow(rownum).getCell(0).getText();
 				System.out.println("EmployeeName is :"+EmployeeName);
 				String PIW2= table.getTBody().getRow(rownum).getCell(1).getText();
-				 System.out.println("PIW2 is :"+PIW2);
+				System.out.println("PIW2 is :"+PIW2);
 				String AWE= table.getTBody().getRow(rownum).getCell(2).getText();
 				System.out.println("AWE is :"+AWE);
-				String LeaveRequest= table.getTBody().getRow(rownum).getCell(3).getText();
+				String statutoryStandardRate = table.getTBody().getRow(rownum).getCell(3).getText();
+				System.out.println("statutoryStandardRate  is :"+statutoryStandardRate);
+				String LeaveRequest= table.getTBody().getRow(rownum).getCell(4).getText();
 				System.out.println("LeaveRequest is :"+LeaveRequest);
-				String LeaveYear=table.getTBody().getRow(rownum).getCell(4).getText();
+				String LeaveYear=table.getTBody().getRow(rownum).getCell(5).getText();
 				System.out.println("LeaveRequest is :"+LeaveYear);
 				
 				
 				//call the function which reads the excel sheet.
-				ReadsExpectedData(EmployeeName, PIW2, AWE,LeaveRequest,LeaveYear,TestResultExcelFilePath,TestReportworksheetNo);
+				ReadsExpectedData(EmployeeName, PIW2, AWE,statutoryStandardRate,LeaveRequest,LeaveYear,TestResultExcelFilePath,TestReportworksheetNo);
 				//ReadsExpectedData(firstCellOfBody, employeeNI, employerNI,employeeNIPaidYTD,TestResultExcelFilePath,TestReportworksheetNo);
 
 			}
@@ -187,7 +189,7 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase {
 	}
 
 
-	public void ReadsExpectedData(String EmployeeName, String PIW2, String AWE, String LeaveRequest,String LeaveYear,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
+	public void ReadsExpectedData(String EmployeeName, String PIW2, String AWE, String statutoryStandardRate, String LeaveRequest,String LeaveYear,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
 	{
 		 double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		 DecimalFormat df = new DecimalFormat("###.#");
@@ -222,62 +224,38 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase {
 		{
 			Row row = ws.getRow(i);
 			String value1 = cellToString(row.getCell(1));
-			String value2 = cellToString(row.getCell(7));
-			String value4 = cellToString(row.getCell(9));
+			String value2 = cellToString(row.getCell(6));
+			String value3 = cellToString(row.getCell(7));
+			String value4 = cellToString(row.getCell(8));
+			String value5 = cellToString(row.getCell(9));
+			String value6 = cellToString(row.getCell(10));
 		
 			if(value1 != null && value1.equalsIgnoreCase(EmployeeName))
 			{
 				row.createCell(6).setCellValue(PIW2);
-				row.createCell(8).setCellValue(LeaveRequest);
-				row.createCell(10).setCellValue(PIW2);
-				row.createCell(11).setCellValue(AWE);
-				row.createCell(12).setCellValue(LeaveRequest);
-				row.createCell(13).setCellValue(LeaveYear);
+				row.createCell(9).setCellValue(LeaveRequest);
+				row.createCell(11).setCellValue(PIW2);
+				row.createCell(12).setCellValue(AWE);
+				row.createCell(13).setCellValue(statutoryStandardRate);
+				row.createCell(14).setCellValue(LeaveRequest);
+				row.createCell(15).setCellValue(LeaveYear);
 				
-				String piwval = cellToString(row.getCell(10));
-				if(piwval != null && piwval.equalsIgnoreCase(PIW2))
+				//String piwval = cellToString(row.getCell(10));
+				if(value2 != null && value2.equalsIgnoreCase(PIW2))
 				{
-					 Cell cell1 = row.createCell(14);	
-			 		row.createCell(14).setCellValue("TRUE");
+					 Cell cell1 = row.createCell(16);	
+			 		row.createCell(16).setCellValue("TRUE");
 					 cell1.setCellStyle(style);
 				}
 				else
 				{
-					 Cell cell1 = row.createCell(14);	
-					row.createCell(14).setCellValue("FALSE");
+					 Cell cell1 = row.createCell(16);	
+					row.createCell(16).setCellValue("FALSE");
 					 cell1.setCellStyle(styleFalse);
 				}
 				
 				
-				if(value2 != null && value2.equalsIgnoreCase(AWE))
-				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("TRUE");
-					 cell1.setCellStyle(style);
-				}   
-				else
-				{
-					 Cell cell1 = row.createCell(15);
-					row.createCell(15).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				} 
-				
-				
-				String value3 = cellToString(row.getCell(12));
-				if(value3 != null && value3.equalsIgnoreCase(LeaveRequest))
-				{
-					 Cell cell1 = row.createCell(16);
-					row.createCell(16).setCellValue("TRUE");
-					 cell1.setCellStyle(style);
-				}   
-				else
-				{
-					 Cell cell1 = row.createCell(16);
-					row.createCell(16).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				} 
-				
-				if(value4 != null && value4.equalsIgnoreCase(LeaveYear))
+				if(value3 != null && value3.equalsIgnoreCase(AWE))
 				{
 					 Cell cell1 = row.createCell(17);
 					row.createCell(17).setCellValue("TRUE");
@@ -289,6 +267,48 @@ public class AverageWeeklyEarningsTestReprt2 extends TestSuiteBase {
 					row.createCell(17).setCellValue("FALSE");
 					cell1.setCellStyle(styleFalse);
 				} 
+				
+				
+				//String value4 = cellToString(row.getCell(12));
+				if(value4 != null && value4.equalsIgnoreCase(statutoryStandardRate))
+				{
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(18);
+					row.createCell(18).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				
+				if(value5 != null && value5.equalsIgnoreCase(LeaveRequest))
+				{
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(19);
+					row.createCell(19).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				
+				if(value6 != null && value6.equalsIgnoreCase(LeaveYear))
+				{
+					 Cell cell1 = row.createCell(20);
+					row.createCell(20).setCellValue("TRUE");
+					 cell1.setCellStyle(style);
+				}   
+				else
+				{
+					 Cell cell1 = row.createCell(20);
+					row.createCell(20).setCellValue("FALSE");
+					cell1.setCellStyle(styleFalse);
+				} 
+				
 				break;
 			}
 		}	

@@ -9097,9 +9097,16 @@ public class TestBase {
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryMaternityPay201819.xlsx");
 				Statutory_MaternityPay_SuiteXls_InputExcelFile = "Payroll Suite StatutoryMaternityPay201819";
-		
 				
+				Payroll_Statutory_AdoptionPaternitypay_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory Adoption PaternityPay201819.xlsx");
+				SAPP_InputExcelFile = "Payroll Suite Statutory Adoption PaternityPay201819";
 				
+				Payroll_Statutory_SharedParentalpay_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory Shared ParentalPay201819.xlsx");
+				SharedParental_InputExcelFile = "Payroll Suite Statutory Shared ParentalPay201819";
 				
 				
 				

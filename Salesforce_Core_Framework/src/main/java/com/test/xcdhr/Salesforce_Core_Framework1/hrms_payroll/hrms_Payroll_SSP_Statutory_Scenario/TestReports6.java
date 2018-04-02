@@ -183,13 +183,13 @@ public class TestReports6 extends TestSuiteBase
 				{
 					firstCellOfBody= table.getTBody().getRow(rownum).getCell(0).getText();
 					System.out.println("firstCellOfBody is :"+firstCellOfBody);
-					String employeeNI= table.getTBody().getRow(rownum).getCell(1).getText();
-					System.out.println("employeeNI is :"+employeeNI);
-					String employerNI= table.getTBody().getRow(rownum).getCell(2).getText();
-					System.out.println("employerNI is :"+employerNI);
-					String employeeNIPaidYTD= table.getTBody().getRow(rownum).getCell(3).getText();
-					System.out.println("employeeNIPaidYTD is :"+employeeNIPaidYTD);
-					ReadsExpectedData(firstCellOfBody, employeeNI, employerNI,employeeNIPaidYTD,TestResultExcelFilePath,TestReportworksheetNo);
+					String statutorySickPay= table.getTBody().getRow(rownum).getCell(1).getText();
+					System.out.println("Statutory Sick Pay :"+statutorySickPay);
+					String baseSalary= table.getTBody().getRow(rownum).getCell(2).getText();
+					System.out.println("Base Salary is :"+baseSalary);
+					String taxablePay= table.getTBody().getRow(rownum).getCell(3).getText();
+					System.out.println("Taxable Pay is :"+taxablePay);
+					ReadsExpectedData(firstCellOfBody, statutorySickPay, baseSalary,taxablePay,TestResultExcelFilePath,TestReportworksheetNo);
 				}
 				rownum++;
 			}
@@ -205,7 +205,7 @@ public class TestReports6 extends TestSuiteBase
 
 
 
-	public void ReadsExpectedData(String firstCellOfBody, String employeeNI, String employerNI, String employeeNIPaidYTD,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
+	public void ReadsExpectedData(String firstCellOfBody, String statutorySickPay, String baseSalary, String taxablePay,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
 	{
 		  double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 			DecimalFormat df = new DecimalFormat("###.#");
@@ -240,10 +240,10 @@ public class TestReports6 extends TestSuiteBase
 			String value4 = cellToString(row.getCell(9));
 			if(value1 != null && value1.equalsIgnoreCase(firstCellOfBody))
 			{
-				row.createCell(10).setCellValue(employeeNI);
-				row.createCell(11).setCellValue(employerNI);
-				row.createCell(12).setCellValue(employeeNIPaidYTD);
-				if(value2 != null && value2.equalsIgnoreCase(employeeNI))
+				row.createCell(10).setCellValue(statutorySickPay);
+				row.createCell(11).setCellValue(baseSalary);
+				row.createCell(12).setCellValue(taxablePay);
+				if(value2 != null && value2.equalsIgnoreCase(statutorySickPay))
 				{
 					Cell cell1 = row.createCell(13);	
 					row.createCell(13).setCellValue("TRUE");
@@ -256,7 +256,7 @@ public class TestReports6 extends TestSuiteBase
 					cell1.setCellStyle(styleFalse);
 				}
 
-				if(value3 != null && value3.equalsIgnoreCase(employerNI))
+				if(value3 != null && value3.equalsIgnoreCase(baseSalary))
 				{
 					Cell cell1 = row.createCell(14);
 					row.createCell(14).setCellValue("TRUE");
@@ -269,7 +269,7 @@ public class TestReports6 extends TestSuiteBase
 					cell1.setCellStyle(styleFalse);
 				} 
 
-				if(value4 != null && value4.equalsIgnoreCase(employeeNIPaidYTD))
+				if(value4 != null && value4.equalsIgnoreCase(taxablePay))
 				{
 					Cell cell1 = row.createCell(15);
 					row.createCell(15).setCellValue("TRUE");
