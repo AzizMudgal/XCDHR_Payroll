@@ -68,7 +68,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
+	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		count++;
@@ -103,13 +103,13 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 		/*************************************************************************/
 
-		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 
 		/*************************************************************************/
 	}
 
 
-	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
+	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
 	{
 		try
 		{
@@ -189,11 +189,11 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println("");
 		}
 		Thread.sleep(3000L);
-		LeaveTab(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		LeaveTab(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
-	public void LeaveTab(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	public void LeaveTab(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -210,16 +210,16 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		selectLeaveYear(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		selectLeaveYear(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
-	public void selectLeaveYear(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	public void selectLeaveYear(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
 			Thread.sleep(3000L);
-			bookLeave(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+			bookLeave(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 		}
 		catch(Throwable t)
 		{
@@ -229,7 +229,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	}
 
 
-	public void bookLeave(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void bookLeave(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -246,11 +246,11 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 		Thread.sleep(3000L);
-		selectMaternityLeave(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
+		selectMaternityLeave(LeaveYear,LeaveCategory,MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
-	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -293,11 +293,11 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		enterLeaveDates(MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
+		enterLeaveDates(MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
-	public void enterLeaveDates(String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void enterLeaveDates(String MatchingDate, String ExpectedplacementDate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -306,6 +306,14 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("materinityEditbuttonlocator").sendKeys("");
 				getObject("materinityEditbuttonlocator").click();
 			}
+			Thread.sleep(4000L);
+			enterKeyDates(MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate);
+			Thread.sleep(1000L);
+			selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
+			Thread.sleep(1000L);
+			updateFinancialControlFeatures(employeeTaxable,employeeNiable);
+			Thread.sleep(1000L);
+			MaternitySavebutton();
 		}
 		catch(Throwable t)
 		{
@@ -313,9 +321,52 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		selectCheckbox(MatchingDate,ExpectedplacementDate,LeaveStDate,LeaveEndDate);
-		selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,ConditionSatisfied);
-		MaternitySavebutton();
+	}
+	
+	
+	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(1000L);
+			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
+			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
+
+			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
+			
+			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
+			
+			if(valueOfemployeeTaxableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
+				{
+					isemployeeTaxablechecBox(empTaxableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
+				{
+					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
+				}
+			}
+			
+			if(valueOfemployeeNiableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
+				{
+					isemployeeNiablechecBox(empNiableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
+				{
+					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
 	}
 
 
@@ -382,29 +433,40 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 
 
-	public void selectCheckbox(String MatchingDate,String ExpectedplacementDate,String LeaveStDate,String LeaveEndDate)throws Throwable
+	public void enterKeyDates(String MatchingDate,String ExpectedplacementDate,String LeaveStDate,String LeaveEndDate)throws Throwable
 	{
-		
-		if(existsElement(OR.getProperty("keyDatesTablelocator")))
-		{
-			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
-			WebTable table = WebTable.getTable(postsTable);
-			String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
-			inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
-		
-			String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
-			inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
-			System.out.println("The 5nd label name is :"+firstCellOfBody1);
-			System.out.println("The 7th label name is :"+firstCellOfBody2);
-			
-			LeaveReqPageFieldNameStorage.put("Birth due date", firstCellOfBody1);
-			LeaveReqPageFieldNameStorage.put("Baby born date", firstCellOfBody2);
-		
-			datefield1 = LeaveReqPageFieldNameStorage.get("Birth due date");
-			datefield2 = LeaveReqPageFieldNameStorage.get("Baby born date");
-		}
-
 	
+		try
+		{
+			Thread.sleep(1000L);
+			if(existsElement(OR.getProperty("SAPmatchingDate")))
+			{
+				getObject("SAPmatchingDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("SAPmatchingDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Matching date was entered sucessfully");	
+			}
+			else if(existsElement(OR.getProperty("RegressOrgSAPmatchingDate")))
+			{
+				getObject("RegressOrgSAPmatchingDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("RegressOrgSAPmatchingDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Matching date was entered sucessfully");	
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+		
+		
+		///
+		/*
 			try
 			{
 				if(existsElement(OR.getProperty("SAPmatchingDate")))
@@ -449,9 +511,39 @@ public class CreateLeaveRequest extends TestSuiteBase
 			}
 		
 
+*/
 
+		try
+		{
+			Thread.sleep(1000L);
 
-
+			if(existsElement(OR.getProperty("SAPPlacementDate")))
+			{
+				getObject("SAPPlacementDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("SAPPlacementDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Placement date was entered sucessfully");	
+			}
+			else if(existsElement(OR.getProperty("RegressOrgSAPPlacementDate")))
+			{
+				getObject("RegressOrgSAPPlacementDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("RegressOrgSAPPlacementDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Placement date was entered sucessfully");	
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+		
+		
+/*
 		
 			try
 			{
@@ -493,8 +585,68 @@ public class CreateLeaveRequest extends TestSuiteBase
 				System.out.println(t.getMessage().toString());
 				System.out.println(t.getStackTrace().toString());
 			}
+		*/
 		
+		try
+		{
+			Thread.sleep(1000L);
 
+			if(existsElement(OR.getProperty("SAPstDate")))
+			{
+				getObject("SAPstDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("SAPstDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Start date was entered sucessfully");	
+			}
+			else if(existsElement(OR.getProperty("RegressOrgSAPstDate")))
+			{
+				getObject("RegressOrgSAPstDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("RegressOrgSAPstDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The end date was entered sucessfully");	
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+		
+		
+		try
+		{
+			Thread.sleep(1000L);
+
+			if(existsElement(OR.getProperty("SAPendDate")))
+			{
+				getObject("SAPendDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("SAPendDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The Start date was entered sucessfully");	
+			}
+			else if(existsElement(OR.getProperty("RegressOrgSAPendDate")))
+			{
+				getObject("RegressOrgSAPendDate").sendKeys("");
+				String dateStr = MatchingDate;
+				dateFormaterMethod(dateStr);
+				getObject("RegressOrgSAPendDate").sendKeys(formattedDate);
+				System.out.println("");
+				System.out.println("The end date was entered sucessfully");	
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+		
+/*
 		if(existsElement(OR.getProperty("SAPstDate")))
 		{
 
@@ -557,7 +709,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println("The Leave request end date was entered sucessfully");
 			Thread.sleep(3000L);
 		}
-
+*/
 	}
 
 
@@ -640,16 +792,10 @@ public class CreateLeaveRequest extends TestSuiteBase
 								Thread.sleep(2000L);
 								break  outerloop;
 							}
-
-							//
-
 							col_num++;
-
 						}
 						row_num++;
-
 					}
-
 			}
 		}
 		catch(Throwable t)
@@ -658,7 +804,10 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	} 
 
-
+/*
+ * Following methods are not being used currently
+ * 
+ */
 	
 	public void selectDate(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String Conditionsatisfd,String StatutoryPaybasis )throws Throwable
 	{
@@ -849,48 +998,46 @@ public class CreateLeaveRequest extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		return Test_Util.getData(Payroll_Statutory_Adoption_SuiteXls,"CreateLeaveRequest");
 	}
+	
+	
 
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
 
-		if(Skip){
+		if(Skip)
+		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}else if(Fail){
-
+		}
+		else if(Fail)
+		{
 			IsTestPass = false;
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
-		}else{
+		}
+		else
+		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
-
 		Skip=false;
 		Fail=false;
-
-
 	}
 
 
 	@AfterTest
-	public void ReportTestResult() throws Throwable{
+	public void ReportTestResult() throws Throwable
+	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-
-		if(IsTestPass){
-
+		if(IsTestPass)
+		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Pass");
-
-		}else{
-
+		}
+		else
+		{
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Fail");
-
 		}	
-
 		closeBrowser();
 	}
 
