@@ -76,31 +76,17 @@ public class TestSepReports extends TestSuiteBase
 		openBrowser();
 		logingIntoDesiredORG(OrgFlag);
 		driver.manage().window().maximize();
-		/*try
-		{
-			WaitforElement(("Homepage_txt"));
-			if(existsElementchkFor1mts(OR.getProperty("Homepage_txt")))
-			{
-				Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-				System.out.println("1> The test script logged in successfully into salesforce account");
-				System.out.println("");
-			}
-		}
-		catch(Throwable t)
-		{
-			APP_LOGS.debug("1> Could not assert the home page title due to unsuccessfull login account");
-			System.out.println("");
-			ErrorUtil.addVerificationFailure(t);
-			CaptureScreenshot("EmployeeProfile"+this.getClass().getSimpleName()+"  Due to this Error Could not Assert Title");
-		}*/
-		
-		/* Added by Swamy*/
 		try
 		{
-			titlename = driver.getTitle();
-			Assert.assertEquals(driver.getTitle(), titlename);
-			System.out.println("1> The test script logged in successfully into salesforce account and now in Home page");
-			System.out.println("");
+			closePopupWindow();
+			if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+			{
+				String personalTab = getObject("PersonalTab").getText();
+				System.out.println("Tab name is :"+ personalTab);
+				Assert.assertEquals("Personal", personalTab);
+				System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+				System.out.println("");
+			}
 		}
 		catch(Throwable t)
 		{
