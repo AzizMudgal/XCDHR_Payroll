@@ -6,8 +6,6 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-import java.util.HashMap;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -18,10 +16,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import atu.webdriver.utils.table.WebTable;
-
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -35,7 +29,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public String datefield;
-	private HashMap<String,String> LeaveReqPageFieldNameStorage= new  HashMap<String,String>();
 	public String datefield1;
 	public String datefield2;
 	public String inputdateone;
@@ -144,42 +137,42 @@ public class CreateLeaveRequest extends TestSuiteBase
 				java.util.Iterator<WebElement> x = rows.iterator();
 				int rownum = 1;	
 				outerbreak:
-				while(x.hasNext())
-				{
-					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
-					WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-					if(existsWebElement(firstEmployee))
+					while(x.hasNext())
 					{
-						String AppnEmp= firstEmployee.getText();
-						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
-						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
+						String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
+						WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+						if(existsWebElement(firstEmployee))
 						{
-							System.out.println("Employee matched");
-							System.out.println("Employee name is  :"+EmpName);
-							if(existsWebElement(firstEmployee))
+							String AppnEmp= firstEmployee.getText();
+							System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
+							if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 							{
-								firstEmployee.click();
-								System.out.println("The employee namely :"+AppnEmp+"got clicked");
-								break outerbreak;
+								System.out.println("Employee matched");
+								System.out.println("Employee name is  :"+EmpName);
+								if(existsWebElement(firstEmployee))
+								{
+									firstEmployee.click();
+									System.out.println("The employee namely :"+AppnEmp+"got clicked");
+									break outerbreak;
+								}
 							}
+							else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+							{
+								System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+										+ " Required Employee not found hence clicking the"
+										+ " pagination link so that Employee search continues for next page");
+								if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+								{
+									getObject("paginationNextPersonal").sendKeys("");
+									getObject("paginationNextPersonal").click();
+									System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+									Thread.sleep(8000L);
+									rownum = 0;
+								}
+							}
+							rownum++;
 						}
-						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
-						{
-							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
-									+ " Required Employee not found hence clicking the"
-									+ " pagination link so that Employee search continues for next page");
-							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
-							{
-								getObject("paginationNextPersonal").sendKeys("");
-								getObject("paginationNextPersonal").click();
-								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-								Thread.sleep(8000L);
-								rownum = 0;
-							}
-						 }
-						rownum++;
 					}
-				}
 			}
 		}
 		catch(Throwable t)
@@ -269,23 +262,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 					System.out.println("Hence the sick leave got created sucessfully");
 				}
 			}
-			/*Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("submitLeaverqstlocator")))
-			{
-				getObject("submitLeaverqstlocator").sendKeys("");
-				getObject("submitLeaverqstlocator").click();
-				System.out.println("");
-				System.out.println("The submit leave request button got clicked sucessfully");
-			}
-			Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("leaveRequstOkbutton")))
-			{
-				getObject("leaveRequstOkbutton").sendKeys("");
-				getObject("leaveRequstOkbutton").click();
-				System.out.println("");
-				System.out.println("The submit leave request ok button also got clicked sucessfully");
-			}
-			Thread.sleep(9000L);*/
 		}
 		catch(Throwable t)
 		{
@@ -322,8 +298,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
+
+
 	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
 	{
 		try
@@ -334,10 +310,10 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
 			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
-			
+
 			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
 			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
-			
+
 			if(valueOfemployeeTaxableChkbox == 1.0)
 			{
 				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
@@ -349,7 +325,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
 				}
 			}
-			
+
 			if(valueOfemployeeNiableChkbox == 1.0)
 			{
 				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
@@ -409,6 +385,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
+	
 
 	public void MaternitySavebutton()throws Throwable
 	{
@@ -430,20 +407,37 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
-
-
+	
 
 	public void enterKeyDates(String MatchingDate,String ExpectedplacementDate,String LeaveStDate,String LeaveEndDate)throws Throwable
 	{
-	
 		try
 		{
 			Thread.sleep(1000L);
 			if(existsElement(OR.getProperty("SAPmatchingDate")))
 			{
+				System.out.println("matching date got recognised");
 				getObject("SAPmatchingDate").sendKeys("");
 				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
+
 				getObject("SAPmatchingDate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Matching date was entered sucessfully");	
@@ -452,7 +446,25 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				getObject("RegressOrgSAPmatchingDate").sendKeys("");
 				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
+				System.out.println("");
 				getObject("RegressOrgSAPmatchingDate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Matching date was entered sucessfully");	
@@ -463,76 +475,59 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
-		
-		///
-		/*
-			try
-			{
-				if(existsElement(OR.getProperty("SAPmatchingDate")))
-				{
-									
-					getObject("SAPmatchingDate").sendKeys("");
-					
-					String dateStr = MatchingDate;
-					DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-					DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-					Date date = null;				
-					try 
-					{
-						date = readFormat.parse( dateStr.trim() );
-						System.out.println(date.toString());
-					} 
-					catch ( ParseException e ) 
-					{
-						System.out.println(e.getMessage());
-					}
-
-					String formattedDate = null;
-					if( date != null ) 
-					{
-						formattedDate = writeFormat.format( date );
-					}
-					System.out.println("The entered date is  " +formattedDate);		
-					Thread.sleep(4000L);
-					getObject("SAPmatchingDate").sendKeys(formattedDate);
-
-					System.out.println("");
-					System.out.println("The Matching date was entered sucessfully");	
-					Thread.sleep(2000);
-
-				}
-
-			}
-			catch(Throwable t)
-			{
-				System.out.println(t.getMessage().toString());
-				System.out.println(t.getStackTrace().toString());
-			}
-		
-
-*/
 
 		try
 		{
 			Thread.sleep(1000L);
-
 			if(existsElement(OR.getProperty("SAPPlacementDate")))
 			{
 				getObject("SAPPlacementDate").sendKeys("");
-				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				String dateStr = ExpectedplacementDate;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
 				getObject("SAPPlacementDate").sendKeys(formattedDate);
-				System.out.println("");
+
 				System.out.println("The Placement date was entered sucessfully");	
 			}
 			else if(existsElement(OR.getProperty("RegressOrgSAPPlacementDate")))
 			{
 				getObject("RegressOrgSAPPlacementDate").sendKeys("");
-				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				String dateStr = ExpectedplacementDate;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
 				getObject("RegressOrgSAPPlacementDate").sendKeys(formattedDate);
-				System.out.println("");
 				System.out.println("The Placement date was entered sucessfully");	
 			}
 		}
@@ -541,52 +536,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
-		
-/*
-		
-			try
-			{
-				if(existsElement(OR.getProperty("SAPPlacementDate")))
-				{
-					getObject("SAPPlacementDate").sendKeys("");
-					String dateStr = ExpectedplacementDate;
-					DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-					DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-					Date date = null;				
-					try 
-					{
-						date = readFormat.parse( dateStr.trim() );
-						System.out.println(date.toString());
-					} 
-					catch ( ParseException e ) 
-					{
-						System.out.println(e.getMessage());
-					}
 
-					String formattedDate = null;
-					if( date != null ) 
-					{
-						formattedDate = writeFormat.format( date );
-					}
-					System.out.println("The entered date is  " +formattedDate);		
-					Thread.sleep(4000L);
 
-					getObject("SAPPlacementDate").sendKeys(formattedDate);
-					System.out.println("");
-					System.out.println("The Expected placement date was entered sucessfully");	
-					Thread.sleep(2000);
-
-				}
-
-			}
-			catch(Throwable t)
-			{
-				System.out.println(t.getMessage().toString());
-				System.out.println(t.getStackTrace().toString());
-			}
-		*/
-		
 		try
 		{
 			Thread.sleep(1000L);
@@ -594,8 +545,25 @@ public class CreateLeaveRequest extends TestSuiteBase
 			if(existsElement(OR.getProperty("SAPstDate")))
 			{
 				getObject("SAPstDate").sendKeys("");
-				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				String dateStr = LeaveStDate;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
 				getObject("SAPstDate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The Start date was entered sucessfully");	
@@ -603,11 +571,28 @@ public class CreateLeaveRequest extends TestSuiteBase
 			else if(existsElement(OR.getProperty("RegressOrgSAPstDate")))
 			{
 				getObject("RegressOrgSAPstDate").sendKeys("");
-				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				String dateStr = LeaveStDate;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
 				getObject("RegressOrgSAPstDate").sendKeys(formattedDate);
 				System.out.println("");
-				System.out.println("The end date was entered sucessfully");	
+				System.out.println("The start date was entered sucessfully");	
 			}
 		}
 		catch(Throwable t)
@@ -615,8 +600,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
-		
+
+
 		try
 		{
 			Thread.sleep(1000L);
@@ -624,17 +609,50 @@ public class CreateLeaveRequest extends TestSuiteBase
 			if(existsElement(OR.getProperty("SAPendDate")))
 			{
 				getObject("SAPendDate").sendKeys("");
-				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				String dateStr = LeaveEndDate;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
 				getObject("SAPendDate").sendKeys(formattedDate);
 				System.out.println("");
-				System.out.println("The Start date was entered sucessfully");	
+				System.out.println("The end date was entered sucessfully");	
 			}
 			else if(existsElement(OR.getProperty("RegressOrgSAPendDate")))
 			{
 				getObject("RegressOrgSAPendDate").sendKeys("");
-				String dateStr = MatchingDate;
-				dateFormaterMethod(dateStr);
+				String dateStr = LeaveEndDate;
+				DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
+				DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
+				Date date = null;				
+				try 
+				{
+					date = readFormat.parse( dateStr.trim() );
+					System.out.println(date.toString());
+				} 
+				catch ( ParseException e ) 
+				{
+					System.out.println(e.getMessage());
+				}
+				formattedDate = null;
+				if( date != null ) 
+				{
+					formattedDate = writeFormat.format( date );
+				}
 				getObject("RegressOrgSAPendDate").sendKeys(formattedDate);
 				System.out.println("");
 				System.out.println("The end date was entered sucessfully");	
@@ -645,73 +663,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
-/*
-		if(existsElement(OR.getProperty("SAPstDate")))
-		{
-
-			getObject("SAPstDate").sendKeys("");
-			String dateStr = LeaveStDate;
-			DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-			DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-			Date date = null;				
-			try 
-			{
-				date = readFormat.parse( dateStr.trim() );
-				System.out.println(date.toString());
-			} 
-			catch ( ParseException e ) 
-			{
-				System.out.println(e.getMessage());
-			}
-
-			String formattedDate = null;
-			if( date != null ) 
-			{
-				formattedDate = writeFormat.format( date );
-			}
-			System.out.println("The entered date is  " +formattedDate);		
-			Thread.sleep(4000L);
-			getObject("SAPstDate").sendKeys(formattedDate);
-			System.out.println("");
-			System.out.println("The Leave request start date was entered sucessfully");
-			Thread.sleep(3000L);
-		}
-
-
-		if(existsElement(OR.getProperty("SAPendDate")))
-		{
-
-			getObject("SAPendDate").sendKeys("");
-			String dateStr = LeaveEndDate;
-			DateFormat readFormat = new SimpleDateFormat("MM/dd/yyyy");
-			DateFormat writeFormat = new SimpleDateFormat("dd/MM/yyyy");
-			Date date = null;				
-			try 
-			{
-				date = readFormat.parse( dateStr.trim() );
-				System.out.println(date.toString());
-			} 
-			catch ( ParseException e ) 
-			{
-				System.out.println(e.getMessage());
-			}
-
-			String formattedDate = null;
-			if( date != null ) 
-			{
-				formattedDate = writeFormat.format( date );
-			}
-			System.out.println("The entered date is  " +formattedDate);		
-			Thread.sleep(4000L);
-			getObject("SAPendDate").sendKeys(formattedDate);
-			System.out.println("");
-			System.out.println("The Leave request end date was entered sucessfully");
-			Thread.sleep(3000L);
-		}
-*/
 	}
-
 
 
 
@@ -768,8 +720,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 										clkchkbox.sendKeys("");
 										clkchkbox.click();
 										System.out.println("Small Employer relief checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
-										//SickSavebutton();
-										//break  outerloop;
+
 									}
 
 								}	
@@ -804,165 +755,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	} 
 
-/*
- * Following methods are not being used currently
- * 
- */
-	
-	public void selectDate(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String Conditionsatisfd,String StatutoryPaybasis )throws Throwable
-	{
-		try
-		{
-			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("SppCase2LeaveTablelocator")));
-			if(existsWebElement(postsTable))
-			{
-				System.out.println("details table exists");
-				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("SppCase2LeaveTablelocatorRows")));
-				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
-				int row_num,col_num;
-				row_num=1;
-				outerloop:
-					for(WebElement trElement : rows)
-					{
-						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
-						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
-						col_num=1;
 
-						for(WebElement tdElement : td_collection)
-						{
-							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Matching date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								SAPMatchingDate ="//following-sibling::td[1]/span/input[@id='00N58000001tN6J']";
-								WebElement BDD = driver.findElement(By.xpath(SAPMatchingDate));
-								if(existsElement(SAPMatchingDate))
-								{
-									BDD.sendKeys("");
-									toFormatDate(BirthdueDate);		
-									Thread.sleep(4000L);
-									BDD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Birth due date was entered sucessfully");		
-								}
-								col_num++;
-							}
-
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Expected placement date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								SAPMatchingDate ="//following-sibling::td[1]/span/input[@id='00N58000001tN6C']";
-								WebElement BBD = driver.findElement(By.xpath(SAPMatchingDate));
-								if(existsElement(SAPMatchingDate))
-								{
-									BBD.sendKeys("");
-									toFormatDate(BabyBorndate);		
-									Thread.sleep(4000L);
-									BBD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Baby born date was entered sucessfully");	
-								}
-								col_num++;
-							}
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Start date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								SAPMatchingDate ="//following-sibling::td[1]/span/input[@id='00N58000001tMle']";
-								WebElement StD = driver.findElement(By.xpath(SAPMatchingDate));
-								if(existsElement(SAPMatchingDate))
-								{
-									StD.sendKeys("");
-									toFormatDate(LeaveStDate);		
-									Thread.sleep(4000L);
-									StD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Leave Start date was entered sucessfully");	
-								}
-								col_num++;
-							}
-
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("End date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								SAPMatchingDate ="//following-sibling::td[1]/span/input[@id='00N58000001tMlQ']";
-								WebElement EndD = driver.findElement(By.xpath(SAPMatchingDate));
-								if(existsElement(SAPMatchingDate))
-								{
-									EndD.sendKeys("");
-									toFormatDate(LeaveEndDate);		
-									Thread.sleep(4000L);
-									EndD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Leave End date was entered sucessfully");	
-								}
-								//col_num++;
-							}
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory payment conditions")))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								ckbox ="//following-sibling::td["+col_num+"]/input[@id='00N58000001tN66']";//1
-								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
-								boolean	smallERchekbox = clkchkbox.isSelected();
-								if(smallERchekbox)
-								{
-									System.out.println("yes the condition is checked");
-								}
-								double valueOfsmallReliefChkbox = Double.parseDouble(Conditionsatisfd);
-								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
-								if(valueOfsmallReliefChkbox == 1.0)
-								{
-									Thread.sleep(4000L);
-									if(smallERchekbox)
-									{
-										System.out.println("Small Employer relief checkbox was allready checked, Hence our condition got satisfied");
-										break  outerloop;
-									}
-									else
-									{
-										clkchkbox.sendKeys("");
-										clkchkbox.click();
-										System.out.println("Small Employer relief checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
-										break  outerloop;
-									}
-
-								}
-								col_num++;
-							}
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Absence pay basis")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory pay basis")))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								String imglookup ="//following-sibling::td[1]/span/a/img";//1
-								WebElement clkchkbox = driver.findElement(By.xpath(imglookup));
-								clkchkbox.sendKeys("");
-								clkchkbox.click();
-								System.out.println("I clicked Go button");
-								Thread.sleep(5000);
-								String ParentWindow = driver.getWindowHandle(); // To save the parent window
-								// create one more method for reading employee from excel sheet.
-								ReadStatutoryPayBasis(StatutoryPaybasis);
-								Thread.sleep(2000L);
-								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
-								Thread.sleep(2000L);
-								break  outerloop;
-							}
-							col_num++;
-						    } 
-						row_num++;
-					}
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-			ErrorUtil.addVerificationFailure(t);
-			System.out.println("");	
-		}
-	}
-
-	
 
 	public void toFormatDate(String passedDate)throws Throwable
 	{
@@ -988,8 +781,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 		System.out.println("The entered date is  " +formattedDate);		
 	}
 
-	
-	
 
 
 	@DataProvider
@@ -998,8 +789,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		return Test_Util.getData(Payroll_Statutory_Adoption_SuiteXls,"CreateLeaveRequest");
 	}
-	
-	
+
+
 
 	@AfterMethod
 	public void ReportDataSetResult() throws Throwable
@@ -1040,24 +831,5 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}	
 		closeBrowser();
 	}
-
-	
-	/*
-	WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
-	WebTable table = WebTable.getTable(postsTable);
-	String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
-	inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
-
-	String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
-	inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
-	System.out.println("The 5nd label name is :"+firstCellOfBody1);
-	System.out.println("The 7th label name is :"+firstCellOfBody2);
-
-	LeaveReqPageFieldNameStorage.put("Matching date", firstCellOfBody1);
-	LeaveReqPageFieldNameStorage.put("Expected placement date", firstCellOfBody2);
-
-	datefield1 = LeaveReqPageFieldNameStorage.get("Matching date");
-	datefield2 = LeaveReqPageFieldNameStorage.get("Expected placement date");
-	*/
 
 }
