@@ -2,15 +2,26 @@
 <testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="2472" started-at="2018-04-04T09:14:47Z" finished-at="2018-04-04T09:14:49Z">
+=======
+  <suite name="Default suite" duration-ms="120390" started-at="2018-04-03T14:49:32Z" finished-at="2018-04-03T14:51:32Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="2472" started-at="2018-04-04T09:14:47Z" finished-at="2018-04-04T09:14:49Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Statutory_Scenario.ResetData">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Statutory_Scenario.ResetData@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2898" started-at="2018-04-04T14:44:44Z" finished-at="2018-04-04T14:44:47Z">
+=======
+    <test name="Default test" duration-ms="120390" started-at="2018-04-03T14:49:32Z" finished-at="2018-04-03T14:51:32Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.TestReportsForWeekly19">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.TestReportsForWeekly19@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="4166" started-at="2018-04-03T20:19:28Z" finished-at="2018-04-03T20:19:32Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="FAIL" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Statutory_Scenario.ResetData@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2018-04-04T14:44:47Z" finished-at="2018-04-04T14:44:47Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
@@ -44,9 +55,13 @@
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.NullPointerException -->
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.TestReportsForWeekly19@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="1530" started-at="2018-04-03T20:19:32Z" finished-at="2018-04-03T20:19:33Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="SKIP" signature="ResetEmploymentAndLeaveTab(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Statutory_Scenario.ResetData@271053e1]" name="ResetEmploymentAndLeaveTab" duration-ms="0" started-at="2018-04-04T14:44:49Z" data-provider="getData" finished-at="2018-04-04T14:44:49Z">
           <exception class="java.lang.RuntimeException">
             <message>
@@ -92,14 +107,87 @@ Caused by: java.lang.NullPointerException
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.RuntimeException -->
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.TestReportsForWeekly19@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="111232" started-at="2018-04-03T20:19:35Z" data-provider="getData" finished-at="2018-04-03T20:21:26Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO DIRSHPP EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION ShPP 101]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[DIRSHPP_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-19]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite Statutory Shared ParentalPay201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH ShPP GROSS PAYMENTS]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_StatutoryScenarios 201819\\201819 Automation TestResult For Statutory Scenarios.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[15]]>
+              </value>
+            </param>
+          </params>
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- ResetEmploymentAndLeaveTab -->
         <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Statutory_Scenario.ResetData@271053e1]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2018-04-04T14:44:49Z" finished-at="2018-04-04T14:44:49Z">
+=======
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.TestReportsForWeekly19@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2467" started-at="2018-04-03T20:21:26Z" finished-at="2018-04-03T20:21:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.TestReportsForWeekly19@402a079c]" name="ReportTestResult" is-config="true" duration-ms="3636" started-at="2018-04-03T20:21:29Z" finished-at="2018-04-03T20:21:32Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Statutory_Scenario.ResetData -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_ShPP_Statutory_Scenario.TestReportsForWeekly19 -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

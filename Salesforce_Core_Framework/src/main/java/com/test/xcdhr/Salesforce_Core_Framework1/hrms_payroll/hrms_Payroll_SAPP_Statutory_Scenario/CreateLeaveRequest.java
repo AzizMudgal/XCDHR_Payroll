@@ -74,10 +74,13 @@ public class CreateLeaveRequest extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -279,14 +282,23 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
+		Thread.sleep(1000L);
 		keyDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate);
-		statutoryPay(StatutoryPaybasis,Conditionsatisfd);
+		Thread.sleep(1000L);
+		selectStatutoryPayAndCondnSatisfy(StatutoryPaybasis,Conditionsatisfd);
+		Thread.sleep(1000L);
+		//statutoryPay(StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable);
 		updateFinancialControlFeatures(employeeTaxable,employeeNiable);
+		Thread.sleep(1000L);
+		MaternitySavebutton();
+		
 	}
 
 
 	public void keyDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate)throws Throwable
 	{
+		
+		
 		try
 		{
 			if(existsElement(OR.getProperty("sappMatchingDateLocator")))
@@ -437,10 +449,11 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
+		
 	}
 
 
-	public void statutoryPay(String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	public void statutoryPay(String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable)throws Throwable
 	{
 		try
 		{
@@ -451,12 +464,16 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		ProcessStatutorypay(StatutoryPaybasis);
+		//ProcessStatutorypay(StatutoryPaybasis);
+		ReadStatutoryPayBasis(StatutoryPaybasis);
+		Thread.sleep(1000L);
+		updateFinancialControlFeatures(employeeTaxable,employeeNiable);
+		Thread.sleep(1000L);
 		MaternitySavebutton();
 	}
 
 
-	public void ProcessStatutorypay(String StatutoryPaybasis)throws Throwable
+	/*public void ProcessStatutorypay(String StatutoryPaybasis)throws Throwable
 	{
 		Thread.sleep(2000L);
 		getObject("statutoryGobuttonlocator").click();
@@ -468,7 +485,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 		Thread.sleep(2000L);
 		driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
 		Thread.sleep(2000L);
-	}
+	}*/
 
 	public void PymtAmtNIOrTaxpay(String Conditionsatisfd)throws Throwable
 	{
@@ -731,5 +748,87 @@ public class CreateLeaveRequest extends TestSuiteBase
 		return Condnchecked;
 	}
 	 */
+	
+	
+	public void selectStatutoryPayAndCondnSatisfy(String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	{
+		try
+		{
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("SaapLeaveTablelocator")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("details table exists");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("SaapLeaveTablelocatorRows")));
+				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
+				int row_num,col_num;
+				row_num=1;
+				outerloop:
+					for(WebElement trElement : rows)
+					{
+						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
+						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
+						col_num=1;
+						for(WebElement tdElement : td_collection)
+						{
+							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory payment conditions")))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								ckbox ="//following-sibling::td[1]/input[@type='checkbox']";
+								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
+								boolean	smallERchekbox = clkchkbox.isSelected();
+								if(smallERchekbox)
+								{
+									System.out.println("yes the condition is checked");
+								}
+								double valueOfsmallReliefChkbox = Double.parseDouble(Conditionsatisfd);
+								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
+								if(valueOfsmallReliefChkbox == 1.0)
+								{
+									Thread.sleep(2000L);
+									if(smallERchekbox)
+									{
+										System.out.println("Statutory conditions met - make payment checkbox was allready checked, Hence our condition got satisfied");
+										break  outerloop;
+									}
+									else
+									{
+										clkchkbox.sendKeys("");
+										clkchkbox.click();
+										System.out.println("Statutory conditions met - make payment checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
+									}
+								}	
+							}
+
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payment basis")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory pay basis")))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								String imglookup ="//following-sibling::td[1]/span/a/img";
+								WebElement clkchkbox = driver.findElement(By.xpath(imglookup));
+								clkchkbox.sendKeys("");
+								clkchkbox.click();
+								System.out.println("I clicked Go button");
+								Thread.sleep(5000);
+								//Thread.sleep(5000);
+								String ParentWindow = driver.getWindowHandle(); // To save the parent window
+								// create one more method for reading employee from excel sheet.
+								ReadStatutoryPayBasis(StatutoryPaybasis);
+								Thread.sleep(2000L);
+								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
+								Thread.sleep(2000L);
+								break  outerloop;
+							}
+							col_num++;
+						}
+						row_num++;
+					}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace());
+			System.out.println(t.getMessage());
+		}
+	} 
 
 }
