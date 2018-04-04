@@ -89,6 +89,7 @@ public class ProcessPayrolFor11WeeklyShPP extends TestSuiteBase
 
 			try
 			{
+				closePopupWindow();
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();

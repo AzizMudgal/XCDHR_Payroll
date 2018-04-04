@@ -24,6 +24,7 @@ import java.util.List;
 
 
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -98,6 +99,7 @@ public class ResetData extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
+				closePopupWindow();
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();
