@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSPCase2_Statutory_Scenario;
 
 
 import java.util.List;
@@ -39,14 +39,14 @@ public class ProcessPayrolFor24FourWeeklySSP extends TestSuiteBase
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
 
-		if (!Test_Util.IsTestcaseRunMode(Payroll_SSP_ProcessPayroll_SuiteXls, this
+		if (!Test_Util.IsTestcaseRunMode(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 				.getClass().getSimpleName()))
 		{
 			Skip = true;
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 							.getClass().getSimpleName()), "Skipped");
-			// Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls,
+			// Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls,
 			// this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase"
 					+ this.getClass().getSimpleName()
@@ -62,7 +62,7 @@ public class ProcessPayrolFor24FourWeeklySSP extends TestSuiteBase
 		}
 
 		// Load the runmodes of the tests
-		runmodes = Test_Util.getDataSetRunmodes(Payroll_SSP_ProcessPayroll_SuiteXls, this
+		runmodes = Test_Util.getDataSetRunmodes(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 				.getClass().getSimpleName());
 
 	}
@@ -139,7 +139,7 @@ public class ProcessPayrolFor24FourWeeklySSP extends TestSuiteBase
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"ProcessPayrolFor24FourWeeklySSP");
+		return Test_Util.getData(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls,"ProcessPayrolFor24FourWeeklySSP");
 	}
 	
 	
@@ -150,18 +150,18 @@ public class ProcessPayrolFor24FourWeeklySSP extends TestSuiteBase
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		if (Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Skip");
 		}
 		else if (Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Fail");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 					.getClass().getSimpleName(), count + 2, "Pass");
 		}
 		Skip = false;
@@ -180,14 +180,14 @@ public class ProcessPayrolFor24FourWeeklySSP extends TestSuiteBase
 			// for that test case , even if one of the test data specified in
 			// second worksheet fails, the test
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 							.getClass().getSimpleName()), "Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first",
-					Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, "first",
+					Test_Util.GetRowNum(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this
 							.getClass().getSimpleName()), "Fail");
 		}
 		closeBrowser();

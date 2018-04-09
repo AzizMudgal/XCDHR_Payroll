@@ -300,52 +300,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	}
 
 
-	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
-	{
-		try
-		{
-			Thread.sleep(1000L);
-			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
-			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
-
-			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
-			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
-
-			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
-			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
-
-			if(valueOfemployeeTaxableChkbox == 1.0)
-			{
-				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
-				{
-					isemployeeTaxablechecBox(empTaxableChekbox);
-				}
-				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
-				{
-					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
-				}
-			}
-
-			if(valueOfemployeeNiableChkbox == 1.0)
-			{
-				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
-				{
-					isemployeeNiablechecBox(empNiableChekbox);
-				}
-				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
-				{
-					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
-				}
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-
-
+	
 	public void ReadStatutoryPayBasis(String StatutoryPaybasis)throws Throwable
 	{
 
@@ -677,7 +632,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 			{
 				System.out.println("details table exists");
 				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("SaapLeaveTablelocatorRows")));
-
 				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
 				int row_num,col_num;
 				row_num=1;
@@ -687,17 +641,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
 						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
 						col_num=1;
-
 						for(WebElement tdElement : td_collection)
 						{
 							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-
-
 							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory payment conditions")))
 							{
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-
-
 								ckbox ="//following-sibling::td[1]/input[@type='checkbox']";
 								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
 								boolean	smallERchekbox = clkchkbox.isSelected();
@@ -720,9 +669,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 										clkchkbox.sendKeys("");
 										clkchkbox.click();
 										System.out.println("Small Employer relief checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
-
 									}
-
 								}	
 							}
 

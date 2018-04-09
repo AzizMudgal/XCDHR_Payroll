@@ -1,7 +1,7 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Case2_Statutory_Scenario;
 
 
-
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -70,7 +70,6 @@ public class ProcessPayrollForAugMonthSPP extends TestSuiteBase
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-	
 		count++;
 		if (!runmodes[count].equalsIgnoreCase("Y"))
 		{
@@ -88,12 +87,16 @@ public class ProcessPayrollForAugMonthSPP extends TestSuiteBase
 			driver.manage().window().maximize();
 			try
 			{
-				System.out
-				.println("The test script logged in successfully into salesforce account");
-				System.out.println("");
-
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+				{
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+					System.out.println("");
+				}
 				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
-
 			}
 			catch (Throwable t)
 			{
@@ -120,7 +123,6 @@ public class ProcessPayrollForAugMonthSPP extends TestSuiteBase
 				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}
-		
 	}
 
 

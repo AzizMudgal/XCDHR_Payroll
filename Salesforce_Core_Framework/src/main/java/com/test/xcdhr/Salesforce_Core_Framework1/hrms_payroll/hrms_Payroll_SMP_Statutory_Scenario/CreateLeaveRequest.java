@@ -555,51 +555,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 
 
-	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
-	{
-		try
-		{
-			Thread.sleep(4000L);
-			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
-			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
-
-			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
-			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
-
-			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
-			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
-
-			if(valueOfemployeeTaxableChkbox == 1.0)
-			{
-				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
-				{
-					isemployeeTaxablechecBox(empTaxableChekbox);
-				}
-				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
-				{
-					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
-				}
-			}
-
-			if(valueOfemployeeNiableChkbox == 1.0)
-			{
-				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
-				{
-					isemployeeNiablechecBox(empNiableChekbox);
-				}
-				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
-				{
-					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
-				}
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-
 
 
 

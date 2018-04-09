@@ -242,6 +242,8 @@ public class TestBase {
 	public static Xls_Reader Payroll_SAP_CreateLeaveRequest_SuiteXls = null;
 	public static Xls_Reader Payroll_Statutory_SickPay_SuiteXls = null;
 	public static Xls_Reader Payroll_SSP_ProcessPayroll_SuiteXls = null;
+	public static Xls_Reader Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls = null;
+
 	// public static Xls_Reader Payroll_SSP_CreateLeaveRequest_SuiteXls=null;
 	// public static Xls_Reader Payroll_SSP_Create2ndLeaveRequest_SuiteXls=null;
 	public static Xls_Reader Payroll_Statutory_Paternitypay_SuiteXls = null;
@@ -562,6 +564,7 @@ public class TestBase {
 	public String SAPP_InputExcelFile;
 	public String SharedParental_InputExcelFile;
 	public String SSP_InputExcelFile;
+	public String SSPCaseTwo_InputExcelFile;
 
 	public void openNewTab() {
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
@@ -9157,6 +9160,25 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPay201819.xlsx");
 				Statutory_StatutoryPaternityPay_InputExcelFile = "Payroll Suite StatutoryPaternityPay201819";
 
+				Payroll_Statutory_Paternitypay_Case2_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPayCase2201819.xlsx");
+				StatutoryPaternityPayCase2_InputExcelFile = "Payroll Suite StatutoryPaternityPayCase2201819";
+
+				Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP2201819.xlsx");
+				SSPCaseTwo_InputExcelFile = "Payroll Suite Statutory SSP2201819";
+
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 
 				break;
@@ -12627,7 +12649,51 @@ public class TestBase {
 	}
 
 
-	
+	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(1000L);
+			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
+			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
+
+			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
+
+			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
+
+			if(valueOfemployeeTaxableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
+				{
+					isemployeeTaxablechecBox(empTaxableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
+				{
+					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
+				}
+			}
+
+			if(valueOfemployeeNiableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
+				{
+					isemployeeNiablechecBox(empNiableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
+				{
+					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
 	
 	
 
