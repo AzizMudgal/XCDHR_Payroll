@@ -88,10 +88,14 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				closePopupWindow();
+
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}
@@ -395,7 +399,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
 								Thread.sleep(1000L);
 								WebElement clkchkbox;							
-								ckbox = "//following-sibling::td[1]/input[(@id='00N0O00000D0wHW')]";
+								ckbox = "//following-sibling::td[1]/input[(@id='00Nb0000009I7J5')]";
 							
 								
 								if(driver.findElement(By.xpath(ckbox)) != null) 

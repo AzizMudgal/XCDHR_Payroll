@@ -2,53 +2,92 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="172642" started-at="2018-04-11T11:52:01Z" finished-at="2018-04-11T11:54:53Z">
+=======
+  <suite name="Default suite" duration-ms="255970" started-at="2018-04-11T10:39:41Z" finished-at="2018-04-11T10:43:57Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="172642" started-at="2018-04-11T11:52:01Z" finished-at="2018-04-11T11:54:53Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="4342" started-at="2018-04-11T17:21:56Z" finished-at="2018-04-11T17:22:01Z">
+=======
+    <test name="Default test" duration-ms="255970" started-at="2018-04-11T10:39:41Z" finished-at="2018-04-11T10:43:57Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="3164" started-at="2018-04-11T16:09:38Z" finished-at="2018-04-11T16:09:41Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="1779" started-at="2018-04-11T17:22:01Z" finished-at="2018-04-11T17:22:02Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1177" started-at="2018-04-11T16:09:41Z" finished-at="2018-04-11T16:09:42Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="165521" started-at="2018-04-11T17:22:04Z" data-provider="getData" finished-at="2018-04-11T17:24:49Z">
+=======
+        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="249792" started-at="2018-04-11T16:09:43Z" data-provider="getData" finished-at="2018-04-11T16:13:53Z">
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DONT TOUCH AUTO GLTW EMPLOYER]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION SSP 101]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 318]]>
+=======
+                <![CDATA[2018]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[GLTW_Payroll]]>
+=======
+                <![CDATA[Sick Leave]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Weekly]]>
+                <![CDATA[10/26/2018]]>
               </value>
             </param>
             <param index="4">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Week-1]]>
+=======
+                <![CDATA[11/21/2018]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="5">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819.xlsx]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION BASIS - SSP]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="6">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
               </value>
             </param>
@@ -69,22 +108,37 @@
             </param>
             <param index="10">
               <value>
+=======
+>>>>>>> refs/remotes/origin/master
                 <![CDATA[1]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
         <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1285" started-at="2018-04-11T17:24:49Z" finished-at="2018-04-11T17:24:51Z">
+=======
+        </test-method> <!-- EmpsSetup_WithNICategory -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1210" started-at="2018-04-11T16:13:53Z" finished-at="2018-04-11T16:13:54Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="ReportTestResult" is-config="true" duration-ms="2517" started-at="2018-04-11T17:24:51Z" finished-at="2018-04-11T17:24:53Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2694" started-at="2018-04-11T16:13:54Z" finished-at="2018-04-11T16:13:57Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

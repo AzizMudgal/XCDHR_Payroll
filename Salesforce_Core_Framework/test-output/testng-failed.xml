@@ -3,11 +3,19 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite GeneralAndLargeTaxcodeMonthly]">
   <test name="3(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.CreateLeaveRequest">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
           <include name="CheckTestSkip"/>
           <include name="ReportDataSetResult"/>
+=======
+>>>>>>> refs/remotes/origin/master
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
           <include name="ReportTestResult"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports -->
@@ -17,7 +25,11 @@
           <include name="CheckTestSkip"/>
           <include name="ReportTestResult"/>
           <include name="ReportDataSetResult"/>
+=======
+          <include name="EmpsSetup_WithNICategory"/>
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ProcessPayrollForMonthlyTax -->
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.GeneralTaxRateMonthly">
         <methods>
@@ -26,6 +38,9 @@
           <include name="ReportDataSetResult"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.GeneralTaxRateMonthly -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.CreateLeaveRequest -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- 3(failed) -->
 </suite> <!-- Failed suite [Payroll Suite GeneralAndLargeTaxcodeMonthly] -->

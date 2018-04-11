@@ -242,6 +242,8 @@ public class TestBase {
 	public static Xls_Reader Payroll_SAP_CreateLeaveRequest_SuiteXls = null;
 	public static Xls_Reader Payroll_Statutory_SickPay_SuiteXls = null;
 	public static Xls_Reader Payroll_SSP_ProcessPayroll_SuiteXls = null;
+	public static Xls_Reader Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls = null;
+
 	// public static Xls_Reader Payroll_SSP_CreateLeaveRequest_SuiteXls=null;
 	// public static Xls_Reader Payroll_SSP_Create2ndLeaveRequest_SuiteXls=null;
 	public static Xls_Reader Payroll_Statutory_Paternitypay_SuiteXls = null;
@@ -403,6 +405,10 @@ public class TestBase {
 	public static String PayrollRTI_RecognitionS5Report_ReJoin = "DO NOT TOUCH PAYROL RTI SCENRIO5 REJOIN";
 	public static String PayrollRTI_RecognitionS7Report = "DO NOT TOUCH PAYROL RTI SCENRIO7 REPORT";
 	public static String PayrollRTI_RecognitionS7Report_JuneToMarch = "DO NOT TOUCH PAYROL RTI SCENRIO71 REPORT";
+	public static String SSPCaseTwo_2ndReport = "DO NOT TOUCH SSPCaseTwo AWE";
+	public static String SSPCaseTwo_3dReport = "DO NOT TOUCH SSPCASETWO PAYMENT REPORT";
+
+	
 
 	public String EMPLOYERNAMEWeekly = "DO NOT TOUCH AUTO ENROLMENT TEST EMPLOYER 1";
 	public String PayrollIdWeekly = "PN-10679";
@@ -562,6 +568,7 @@ public class TestBase {
 	public String SAPP_InputExcelFile;
 	public String SharedParental_InputExcelFile;
 	public String SSP_InputExcelFile;
+	public String SSPCaseTwo_InputExcelFile;
 
 	public void openNewTab() {
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
@@ -6038,8 +6045,18 @@ public class TestBase {
 				.equalsIgnoreCase(PayrollRTI_RecognitionS7Report_JuneToMarch)) {
 			rpName = "PayrollRTI_RecognitionS7Report_JuneToMarch";
 		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(SSPCaseTwo_2ndReport)) {
+			rpName = "SSPCaseTwo_2ndReport";
+		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(SSPCaseTwo_3dReport)) {
+			rpName = "SSPCaseTwo_3dReport";
+		}
 		return rpName;
 	}
+	
+	
 
 	public void payRunExecution() throws Throwable {
 		try {
@@ -6057,6 +6074,8 @@ public class TestBase {
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
+	
+	
 
 	public void clickToGenerateDraftOnceMore() throws Throwable {
 		try {
@@ -6081,6 +6100,8 @@ public class TestBase {
 	 * FOLLOWING METHODS ARE FOR PAYROLL TAX MODULE : GenerateTaxRateMonthly
 	 * script
 	 */
+	
+	
 
 	public void UpdateEmployeeTaxCodeOld(String empName, String Taxcode,
 			String TaxBasis) throws Throwable {
@@ -9152,11 +9173,40 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory Shared ParentalPay201819.xlsx");
 				SharedParental_InputExcelFile = "Payroll Suite Statutory Shared ParentalPay201819";
 				
+<<<<<<< HEAD
 				Payroll_SSP_ProcessPayroll_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP201819.xlsx");
 				SSP_InputExcelFile = "Payroll Suite Statutory SSP201819";
 
+=======
+				Payroll_Statutory_Paternitypay_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPay201819.xlsx");
+				Statutory_StatutoryPaternityPay_InputExcelFile = "Payroll Suite StatutoryPaternityPay201819";
+
+				Payroll_Statutory_Paternitypay_Case2_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPayCase2201819.xlsx");
+				StatutoryPaternityPayCase2_InputExcelFile = "Payroll Suite StatutoryPaternityPayCase2201819";
+
+				Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP2201819.xlsx");
+				SSPCaseTwo_InputExcelFile = "Payroll Suite Statutory SSP2201819";
+
+				Payroll_SSP_ProcessPayroll_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP201819.xlsx");
+				SSP_InputExcelFile = "Payroll Suite Statutory SSP201819";
+
+				
+				
+				
+				
+				
+				
+>>>>>>> refs/remotes/origin/master
 				
 				
 				
@@ -12629,8 +12679,215 @@ public class TestBase {
 	}
 
 
+	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(1000L);
+			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
+			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
+
+			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
+
+			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
+
+			if(valueOfemployeeTaxableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
+				{
+					isemployeeTaxablechecBox(empTaxableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
+				{
+					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
+				}
+			}
+
+			if(valueOfemployeeNiableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
+				{
+					isemployeeNiablechecBox(empNiableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
+				{
+					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
 	
+	/*
+	 * Financial controls for STATUTORY  SSP SCENARIO
+	 * 
+	 */
 	
+	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable,String Attachable,String AttachableForCouncilTax)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(1000L);
+			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
+			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
+			
+			boolean	empAttachableChekbox = getObject("employeeAttachablecheckboxLocator").isSelected();
+			boolean regrssEmpAttachableChekbox = getObject("regressEmployeeAttachablecheckboxLocator").isSelected();
+			
+			boolean	empAttachableForCouncilTaxChekbox = getObject("employeeAttachableForCouncilTaxcheckboxLocator").isSelected();
+			boolean regressEmpAttachableForCouncilTaxChekbox = getObject("regressEmployeeAttachableForCouncilTaxcheckboxLocator").isSelected();
+			
+			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted employeeTaxable value is :"+valueOfemployeeTaxableChkbox);
+
+			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted employeeNiable value is :"+valueOfemployeeNiableChkbox);
+			
+			double valueOfemployeeAttachableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted employeeAttachable value is :"+valueOfemployeeAttachableChkbox);
+
+			double valueemployeeAttachableForCouncilTaxChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted employeeAttachableForCouncilTax value is :"+valueemployeeAttachableForCouncilTaxChkbox);
+			
+
+			if(valueOfemployeeTaxableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
+				{
+					isemployeeTaxablechecBox(empTaxableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
+				{
+					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
+				}
+			}
+			
+
+			if(valueOfemployeeNiableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
+				{
+					isemployeeNiablechecBox(empNiableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
+				{
+					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
+				}
+			}
+			
+		
+			if(valueOfemployeeAttachableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeAttachablecheckboxLocator")))
+				{
+					employeeAttachablecheckbox(empAttachableChekbox);
+				}
+				else if(existsElement(OR.getProperty("regressEmployeeAttachablecheckboxLocator")))
+				{
+					RegressOrgisemployeeAttachablechecBox(regrssEmpAttachableChekbox);
+				}
+			}
+				
+
+			if(valueemployeeAttachableForCouncilTaxChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeAttachableForCouncilTaxcheckboxLocator")))
+				{
+					employeeAttachableForCouncilTaxcheckbox(empAttachableForCouncilTaxChekbox);
+				}
+				else if(existsElement(OR.getProperty("regressEmployeeAttachableForCouncilTaxcheckboxLocator")))
+				{
+					regressEmployeeAttachableForCouncilTaxcheckbox(regressEmpAttachableForCouncilTaxChekbox);
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+	
+	public boolean employeeAttachablecheckbox(boolean empAttachableChekbox)throws Throwable
+	{
+		if(empAttachableChekbox)
+		{
+			System.out.println("From QA Org--employee empAttachable checkbox was already checked, "
+					+ "hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeAttachablecheckboxLocator").click();
+			System.out.println("From QA Org--employee empAttachable checkbox was now Checked "
+					+ "successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empAttachableChekbox;
+	}
+
+	
+	public boolean RegressOrgisemployeeAttachablechecBox(boolean regrssEmpAttachableChekbox)throws Throwable
+	{
+		if(regrssEmpAttachableChekbox)
+		{
+			System.out.println("From QA Org--employee empAttachable checkbox was already checked, "
+					+ "hence satisfied the condition");
+		}
+		else
+		{
+			getObject("regressEmployeeAttachablecheckboxLocator").click();
+			System.out.println("From QA Org--employee empAttachable checkbox was now Checked "
+					+ "successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return regrssEmpAttachableChekbox;
+	}
+		
+	
+	public boolean employeeAttachableForCouncilTaxcheckbox(boolean valueemployeeAttachableForCouncilTaxChkbox)throws Throwable
+	{
+		if(valueemployeeAttachableForCouncilTaxChkbox)
+		{
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox "
+					+ "checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeAttachableForCouncilTaxcheckboxLocator").click();
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox "
+					+ "checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return valueemployeeAttachableForCouncilTaxChkbox;
+	}
+
+	
+	public boolean regressEmployeeAttachableForCouncilTaxcheckbox(boolean regressEmpAttachableForCouncilTaxChekbox)throws Throwable
+	{
+		if(regressEmpAttachableForCouncilTaxChekbox)
+		{
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox checkbox was"
+					+ " already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("regressEmployeeAttachableForCouncilTaxcheckboxLocator").click();
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox checkbox"
+					+ " was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return regressEmpAttachableForCouncilTaxChekbox;
+	}
+
+
 	
 
 }

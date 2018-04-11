@@ -2,7 +2,7 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SMP_
 
 
 import java.util.List;
-import java.util.HashMap;
+//import java.util.HashMap;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -29,7 +29,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	public static boolean Skip=false;
 	public static boolean IsTestPass=true;
 	public String datefield;
-	private HashMap<String,String> LeaveReqPageFieldNameStorage= new  HashMap<String,String>();
+	//private HashMap<String,String> LeaveReqPageFieldNameStorage= new  HashMap<String,String>();
 	public String datefield1;
 	public String datefield2;
 	public String inputdateone;
@@ -56,6 +56,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 	boolean employeeFirsttimeView = true;
 	boolean compensationFirsttimeView = true;
 	boolean shouldOpenBrowser = true; 
+
 
 
 	@Test(dataProvider = "getData")
@@ -204,28 +205,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
-/*		selectLeaveYear(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
-*/
 		bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
-	
 	}
-
-
-
-	/*public void selectLeaveYear(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
-	{
-		try
-		{
-			Thread.sleep(1000L);
-			bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}*/
 
 
 
@@ -308,8 +289,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
-		
 	}
 
 
@@ -575,123 +554,9 @@ public class CreateLeaveRequest extends TestSuiteBase
 	} 
 
 
-	
-	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable)throws Throwable
-	{
-		try
-		{
-			Thread.sleep(4000L);
-			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
-			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
-
-			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
-			System.out.println("converted smallER value is :"+valueOfemployeeTaxableChkbox);
-			
-			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
-			System.out.println("converted smallER value is :"+valueOfemployeeNiableChkbox);
-			
-			if(valueOfemployeeTaxableChkbox == 1.0)
-			{
-				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
-				{
-					isemployeeTaxablechecBox(empTaxableChekbox);
-				}
-				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
-				{
-					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
-				}
-			}
-			
-			if(valueOfemployeeNiableChkbox == 1.0)
-			{
-				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
-				{
-					isemployeeNiablechecBox(empNiableChekbox);
-				}
-				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
-				{
-					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
-				}
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-
-///	
-	
-/*	public boolean isemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
-	{
-		if(empTaxableChekbox)
-		{
-			System.out.println("From QA Org--employee Taxable checkbox was already checked, hence satisfied the condition");
-		}
-		else
-		{
-			getObject("employeeTaxablecheckboxLocator").click();
-			System.out.println("From QA Org--employee Taxable checkbox was now Checked successfully as per condition");
-			Thread.sleep(2000L);
-		}
-		return empTaxableChekbox;
-	}
-	
-	
-	public boolean isemployeeNiablechecBox(boolean empNiableChekbox)throws Throwable
-	{
-		if(empNiableChekbox)
-		{
-			System.out.println("From QA Org--employee Niable checkbox was already checked, hence satisfied the condition");
-		}
-		else
-		{
-			getObject("employeeNiablecheckboxLocator").click();
-			System.out.println("From QA Org--employee Niable checkbox was now Checked successfully as per condition");
-			Thread.sleep(2000L);
-		}
-		return empNiableChekbox;
-	}
-	
-	
-	public boolean RegressOrgisemployeeTaxablechecBox(boolean empTaxableChekbox)throws Throwable
-	{
-		if(empTaxableChekbox)
-		{
-			System.out.println("From Regress Org--employee Taxable checkbox was already checked, hence satisfied the condition");
-		}
-		else
-		{
-			getObject("RegressOrgemployeeTaxablecheckboxLocator").click();
-			System.out.println("From Regress Org--employee Taxable checkbox was now Checked successfully as per condition");
-			Thread.sleep(2000L);
-		}
-		return empTaxableChekbox;
-	}
-	
-	
-	public boolean RegressOrgisemployeeNiablechecBox(boolean empTaxableChekbox)throws Throwable
-	{
-		if(empTaxableChekbox)
-		{
-			System.out.println("From Regress Org--employee Taxable checkbox was already checked, hence satisfied the condition");
-		}
-		else
-		{
-			getObject("RegressOrgemployeeNiablecheckboxLocator").click();
-			System.out.println("From Regress Org--employee Taxable checkbox was now Checked successfully as per condition");
-			Thread.sleep(2000L);
-		}
-		return empTaxableChekbox;
-	}
 
 
-	
-	*/
-	
 
-	
 
 	@DataProvider
 	public Object[][] getData() throws Throwable

@@ -26,8 +26,8 @@ import atu.webdriver.utils.table.WebTable;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
-public class CreateLeaveRequest extends TestSuiteBase {
-
+public class CreateLeaveRequest extends TestSuiteBase
+{
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
@@ -45,27 +45,23 @@ public class CreateLeaveRequest extends TestSuiteBase {
 	public String sppbirthDueDate;
 	public String formattedDate;
 	public String sppbirthDueDate1;
+	public String RegressOrgsppbirthDueDate;
 
 
 	@BeforeTest
-	public void CheckTestSkip() throws Throwable{
+	public void CheckTestSkip() throws Throwable
+	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Paternitypay_SuiteXls, this.getClass().getSimpleName())){
-
+		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Paternitypay_SuiteXls, this.getClass().getSimpleName()))
+		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Paternitypay_SuiteXls, this.getClass().getSimpleName()),"Skipped");
 			//Test_Util.ReportDataSetResult(Payroll_Statutory_Paternitypay_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
-
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
-
 		}
-
 		// Load the runmodes of the tests
-
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_Statutory_Paternitypay_SuiteXls, this.getClass().getSimpleName());
-
 	}
 
 	public String payfreqncy;
@@ -75,53 +71,47 @@ public class CreateLeaveRequest extends TestSuiteBase {
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
+	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-
 			driver.manage().window().maximize();
-
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
-			}
-			catch(Throwable t)
+			}catch(Throwable t)
 			{
-				APP_LOGS.debug("Could not assert the home page title, Check for error");
-				System.out.println("");
+				System.out.println(t.getMessage().toString());
 			}
-
 		}
-
 		/*************************************************************************/
 
-		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 
 		/*************************************************************************/
-
 	}
 
 
-	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd) throws Throwable
+	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
 	{
 		try
 		{
@@ -156,42 +146,42 @@ public class CreateLeaveRequest extends TestSuiteBase {
 				java.util.Iterator<WebElement> x = rows.iterator();
 				int rownum = 1;	
 				outerbreak:
-				while(x.hasNext())
-				{
-					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
-					WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-					if(existsWebElement(firstEmployee))
+					while(x.hasNext())
 					{
-						String AppnEmp= firstEmployee.getText();
-						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
-						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
+						String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td[4]/div/a/span";
+						WebElement firstEmployee= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+						if(existsWebElement(firstEmployee))
 						{
-							System.out.println("Employee matched");
-							System.out.println("Employee name is  :"+EmpName);
-							if(existsWebElement(firstEmployee))
+							String AppnEmp= firstEmployee.getText();
+							System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
+							if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 							{
-								firstEmployee.click();
-								System.out.println("The employee namely :"+AppnEmp+"got clicked");
-								break outerbreak;
+								System.out.println("Employee matched");
+								System.out.println("Employee name is  :"+EmpName);
+								if(existsWebElement(firstEmployee))
+								{
+									firstEmployee.click();
+									System.out.println("The employee namely :"+AppnEmp+"got clicked");
+									break outerbreak;
+								}
+							}
+							else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+							{
+								System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+										+ " Required Employee not found hence clicking the"
+										+ " pagination link so that Employee search continues for next page");
+								if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+								{
+									getObject("paginationNextPersonal").sendKeys("");
+									getObject("paginationNextPersonal").click();
+									System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+									Thread.sleep(8000L);
+									rownum = 0;
+								}
 							}
 						}
-						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
-						{
-							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
-									+ " Required Employee not found hence clicking the"
-									+ " pagination link so that Employee search continues for next page");
-							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
-							{
-								getObject("paginationNextPersonal").sendKeys("");
-								getObject("paginationNextPersonal").click();
-								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-								Thread.sleep(8000L);
-								rownum = 0;
-							}
-						 }
+						rownum++;
 					}
-					rownum++;
-				}
 			}
 		}
 		catch(Throwable t)
@@ -203,13 +193,13 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println("");
 		}
 		Thread.sleep(3000L);
-		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 		//Thread.sleep(3000L);
 	}
-	
 
 
-	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+
+	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -226,18 +216,16 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
-
-		selectLeaveYear(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+		selectLeaveYear(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
-	public void selectLeaveYear(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd)throws Throwable
+	public void selectLeaveYear(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
 			Thread.sleep(3000L);
-			bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd);
+			bookLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,Conditionsatisfd,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 		}
 		catch(Throwable t)
 		{
@@ -247,7 +235,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 	}
 
 
-	public void bookLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void bookLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -264,11 +252,11 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getStackTrace().toString());
 		}
 		Thread.sleep(3000L);
-		selectMaternityLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
+		selectMaternityLeave(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
-	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void selectMaternityLeave(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -285,23 +273,6 @@ public class CreateLeaveRequest extends TestSuiteBase {
 					System.out.println("Hence the sick leave got created sucessfully");
 				}
 			}
-			/*Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("submitLeaverqstlocator")))
-			{
-				getObject("submitLeaverqstlocator").sendKeys("");
-				getObject("submitLeaverqstlocator").click();
-				System.out.println("");
-				System.out.println("The submit leave request button got clicked sucessfully");
-			}
-			Thread.sleep(3000L);
-			if(existsElement(OR.getProperty("leaveRequstOkbutton")))
-			{
-				getObject("leaveRequstOkbutton").sendKeys("");
-				getObject("leaveRequstOkbutton").click();
-				System.out.println("");
-				System.out.println("The submit leave request ok button also got clicked sucessfully");
-			}
-			Thread.sleep(9000L);*/
 		}
 		catch(Throwable t)
 		{
@@ -309,11 +280,11 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		enterLeaveDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied);
+		enterLeaveDates(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings);
 	}
 
 
-	public void enterLeaveDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void enterLeaveDates(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings)throws Throwable
 	{
 		try
 		{
@@ -330,14 +301,243 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println(t.getStackTrace().toString());
 		}
 		selectDate(BirthdueDate,BabyBorndate,LeaveStDate,LeaveEndDate,ConditionSatisfied,StatutoryPaybasis);
-		MaternitySavebutton();
 
+		updateFinancialControlFeatures(employeeTaxable,employeeNiable);
+
+		MaternitySavebutton();
 	}
+
+
+
+
+	public void selectDate(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String Conditionsatisfd,String StatutoryPaybasis )throws Throwable
+	{
+		try
+		{
+			Thread.sleep(3000L);
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("SppCase2LeaveTablelocator")));
+			if(existsWebElement(postsTable))
+			{
+				System.out.println("details table exists");
+				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("SppCase2LeaveTablelocatorRows")));
+				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
+				int row_num,col_num;
+				row_num=1;
+				outerloop:
+					for(WebElement trElement : rows)
+					{
+						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
+						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
+						col_num=1;
+
+						for(WebElement tdElement : td_collection)
+						{
+							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Birth due date"))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								sppbirthDueDate ="//following-sibling::td["+col_num+"]/span/input[@id='00Nb0000009I7Iy']";
+								WebElement BDD = driver.findElement(By.xpath(sppbirthDueDate));
+
+								/*
+								 * get the latest regress org id of respective date controls etc and paste the same in following statement
+								 */
+								/*RegressOrgsppbirthDueDate = "//following-sibling::td["+col_num+"]/span/input[@id='00Nb0000009I7Iy']";
+								WebElement RegressOrgBDD = driver.findElement(By.xpath(RegressOrgsppbirthDueDate));
+*/
+
+								if(existsElement(sppbirthDueDate))
+								{
+									BDD.sendKeys("");
+									toFormatDate(BirthdueDate);		
+									Thread.sleep(4000L);
+									BDD.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Birth due date was entered sucessfully");		
+								}
+								/*else if(existsElement(RegressOrgsppbirthDueDate))
+								{
+									RegressOrgBDD.sendKeys("");
+									toFormatDate(BirthdueDate);		
+									Thread.sleep(4000L);
+									RegressOrgBDD.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Birth due date was entered sucessfully in Regress Org");		
+								}*/
+								col_num++;
+							}
+
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Baby born date"))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00Nb0000009I7Ix']";
+								WebElement BBD = driver.findElement(By.xpath(sppbirthDueDate));
+
+								/*
+								 * get the latest regress org id of respective date controls
+								 *  etc and paste the same in following statement.
+								 *  I am using the String variable "RegressOrgsppbirthDueDate" mulitiple times 
+								 *  
+								 */
+
+								/*RegressOrgsppbirthDueDate = "//following-sibling::td["+col_num+"]/span/input[@id='00Nb0000009I7Iy']";
+								WebElement RegressOrgBBD = driver.findElement(By.xpath(RegressOrgsppbirthDueDate));
+*/
+								if(existsElement(sppbirthDueDate))
+								{
+									BBD.sendKeys("");
+									toFormatDate(BabyBorndate);		
+									Thread.sleep(4000L);
+									BBD.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Baby born date was entered sucessfully");	
+								}
+								/*else if(existsElement(RegressOrgsppbirthDueDate))
+								{
+									RegressOrgBBD.sendKeys("");
+									toFormatDate(BabyBorndate);		
+									Thread.sleep(4000L);
+									RegressOrgBBD.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Baby born date was entered sucessfully in Regress Org");		
+								}*/
+								col_num++;
+							}
+
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Start date"))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00Nb0000009I7Kl']";
+								WebElement StD = driver.findElement(By.xpath(sppbirthDueDate));
+
+							/*	RegressOrgsppbirthDueDate = "//following-sibling::td["+col_num+"]/span/input[@id='00Nb0000009I7Iy']";
+								WebElement RegressOrgStartDate = driver.findElement(By.xpath(RegressOrgsppbirthDueDate));
+*/
+								if(existsElement(sppbirthDueDate))
+								{
+									StD.sendKeys("");
+									toFormatDate(LeaveStDate);		
+									Thread.sleep(4000L);
+									StD.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Leave Start date was entered sucessfully");	
+								}
+								/*else if(existsElement(RegressOrgsppbirthDueDate))
+								{
+									RegressOrgStartDate.sendKeys("");
+									toFormatDate(LeaveStDate);		
+									Thread.sleep(4000L);
+									RegressOrgStartDate.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Leave Start date was entered sucessfully in Regress Org");	
+								}*/
+								col_num++;
+							}
+
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("End date"))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00Nb0000009I7JO']";
+								WebElement EndD = driver.findElement(By.xpath(sppbirthDueDate));
+
+								/*RegressOrgsppbirthDueDate = "//following-sibling::td["+col_num+"]/span/input[@id='00Nb0000009I7Iy']";
+								WebElement RegressOrgEndDate = driver.findElement(By.xpath(RegressOrgsppbirthDueDate));
+*/
+								if(existsElement(sppbirthDueDate))
+								{
+									EndD.sendKeys("");
+									toFormatDate(LeaveEndDate);		
+									Thread.sleep(4000L);
+									EndD.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Leave End date was entered sucessfully");	
+								}
+								/*else if(existsElement(RegressOrgsppbirthDueDate))
+								{
+									RegressOrgEndDate.sendKeys("");
+									toFormatDate(LeaveEndDate);		
+									Thread.sleep(4000L);
+									RegressOrgEndDate.sendKeys(formattedDate);
+									System.out.println("");
+									System.out.println("The Leave End date was entered sucessfully in Regress Org");	
+								}*/
+							}
+
+							/*
+							 * In case of Statutory conditions met - make payment check box update the 
+							 * locator element of the respective "ORG" since providing code
+							 * for both orgs is quite complex.
+							 * 
+							 */
+
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory payment conditions")))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								ckbox ="//following-sibling::td["+col_num+"]/input[@id='00Nb0000009I7J5']";//1
+								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
+								boolean	smallERchekbox = clkchkbox.isSelected();
+								if(smallERchekbox)
+								{
+									System.out.println("yes the condition is checked");
+								}
+								double valueOfsmallReliefChkbox = Double.parseDouble(Conditionsatisfd);
+								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
+								if(valueOfsmallReliefChkbox == 1.0)
+								{
+									Thread.sleep(4000L);
+									if(smallERchekbox)
+									{
+										System.out.println("Small Employer relief checkbox was allready checked, Hence our condition got satisfied");
+										break  outerloop;
+									}
+									else
+									{
+										clkchkbox.sendKeys("");
+										clkchkbox.click();
+										System.out.println("Small Employer relief checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
+										break  outerloop;
+									}
+
+								}
+								col_num++;
+							}
+							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payment basis")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory pay basis")))
+							{
+								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
+								String imglookup ="//following-sibling::td["+col_num+"]/span/a/img";//1
+								WebElement clkchkbox = driver.findElement(By.xpath(imglookup));
+								clkchkbox.sendKeys("");
+								clkchkbox.click();
+								System.out.println("I clicked Go button");
+								Thread.sleep(5000);
+								String ParentWindow = driver.getWindowHandle(); // To save the parent window
+								// create one more method for reading employee from excel sheet.
+								ReadStatutoryPayBasis(StatutoryPaybasis);
+								Thread.sleep(2000L);
+								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
+								Thread.sleep(2000L);
+								break  outerloop;
+							}
+							col_num++;
+						} 
+						row_num++;
+					}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+			ErrorUtil.addVerificationFailure(t);
+			System.out.println("");	
+		}
+	}
+
+
 
 
 	public void ReadStatutoryPayBasis(String StatutoryPaybasis)throws Throwable
 	{
-
 		String[] handles = driver.getWindowHandles().toArray(new String[0]); // To get the child window(s)
 		driver.switchTo().window(handles[handles.length - 1]); 
 
@@ -400,48 +600,53 @@ public class CreateLeaveRequest extends TestSuiteBase {
 
 
 
+
+	/*
+	 * 
+	 * currently we are not using this  selectCheckbox method in this script.
+	 */
 	public void selectCheckbox(String BirthdueDate,String BabyBorndate,String LeaveStDate,String LeaveEndDate)throws Throwable
 	{
-		
-	if(existsElement(OR.getProperty("keyDatesTablelocator")))
-	{
-		WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
-		WebTable table = WebTable.getTable(postsTable);
-		String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
-		inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
-	
-		String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
-		inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
-		System.out.println("The 5nd label name is :"+firstCellOfBody1);
-		System.out.println("The 7th label name is :"+firstCellOfBody2);
-		
-		LeaveReqPageFieldNameStorage.put("Birth due date", firstCellOfBody1);
-		LeaveReqPageFieldNameStorage.put("Baby born date", firstCellOfBody2);
-	
-		datefield1 = LeaveReqPageFieldNameStorage.get("Birth due date");
-		datefield2 = LeaveReqPageFieldNameStorage.get("Baby born date");
-	}
-	else if(existsElement(OR.getProperty("alternatekeyDatesTablelocator")))
-	{
-		WebElement postsTable1 = driver.findElement(By.xpath(OR.getProperty("alternatekeyDatesTablelocator")));
-		WebTable table1 = WebTable.getTable(postsTable1);
-		String firstCellOfBody1= table1.getTBody().getRow(0).getCell(0).getText(); 
-		inputdateone = table1.getTBody().getRow(0).getCell(1).getText(); 
-	
-		String firstCellOfBody2= table1.getTBody().getRow(0).getCell(2).getText(); 
-		inputdatetwo = table1.getTBody().getRow(0).getCell(3).getText(); 
-		System.out.println("The 5nd label name is :"+firstCellOfBody1);
-		System.out.println("The 7th label name is :"+firstCellOfBody2);
-		
-		LeaveReqPageFieldNameStorage.put("Birth due date", firstCellOfBody1);
-		LeaveReqPageFieldNameStorage.put("Baby born date", firstCellOfBody2);
-	
-		datefield1 = LeaveReqPageFieldNameStorage.get("Birth due date");
-		datefield2 = LeaveReqPageFieldNameStorage.get("Baby born date");
-	}
-		
 
-	
+		if(existsElement(OR.getProperty("keyDatesTablelocator")))
+		{
+			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("keyDatesTablelocator")));
+			WebTable table = WebTable.getTable(postsTable);
+			String firstCellOfBody1= table.getTBody().getRow(0).getCell(0).getText(); 
+			inputdateone = table.getTBody().getRow(0).getCell(1).getText(); 
+
+			String firstCellOfBody2= table.getTBody().getRow(0).getCell(2).getText(); 
+			inputdatetwo = table.getTBody().getRow(0).getCell(3).getText(); 
+			System.out.println("The 5nd label name is :"+firstCellOfBody1);
+			System.out.println("The 7th label name is :"+firstCellOfBody2);
+
+			LeaveReqPageFieldNameStorage.put("Birth due date", firstCellOfBody1);
+			LeaveReqPageFieldNameStorage.put("Baby born date", firstCellOfBody2);
+
+			datefield1 = LeaveReqPageFieldNameStorage.get("Birth due date");
+			datefield2 = LeaveReqPageFieldNameStorage.get("Baby born date");
+		}
+		else if(existsElement(OR.getProperty("alternatekeyDatesTablelocator")))
+		{
+			WebElement postsTable1 = driver.findElement(By.xpath(OR.getProperty("alternatekeyDatesTablelocator")));
+			WebTable table1 = WebTable.getTable(postsTable1);
+			String firstCellOfBody1= table1.getTBody().getRow(0).getCell(0).getText(); 
+			inputdateone = table1.getTBody().getRow(0).getCell(1).getText(); 
+
+			String firstCellOfBody2= table1.getTBody().getRow(0).getCell(2).getText(); 
+			inputdatetwo = table1.getTBody().getRow(0).getCell(3).getText(); 
+			System.out.println("The 5nd label name is :"+firstCellOfBody1);
+			System.out.println("The 7th label name is :"+firstCellOfBody2);
+
+			LeaveReqPageFieldNameStorage.put("Birth due date", firstCellOfBody1);
+			LeaveReqPageFieldNameStorage.put("Baby born date", firstCellOfBody2);
+
+			datefield1 = LeaveReqPageFieldNameStorage.get("Birth due date");
+			datefield2 = LeaveReqPageFieldNameStorage.get("Baby born date");
+		}
+
+
+
 
 		if((datefield1).equalsIgnoreCase("Birth due date"))
 		{
@@ -691,7 +896,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 			System.out.println("The Leave request end date was entered sucessfully");
 			Thread.sleep(3000L);
 		}
-		
+
 		else if(existsElement(OR.getProperty("SAPnewdatefourfieldlocator1")))
 		{
 
@@ -728,7 +933,10 @@ public class CreateLeaveRequest extends TestSuiteBase {
 
 
 
-
+	/*
+	 * 
+	 * currently we are not using this  selectStatutoryPayAndCondnSatisfy method in this script.
+	 */
 	public void selectStatutoryPayAndCondnSatisfy(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
 	{
 		try
@@ -777,7 +985,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 									else
 									{
 										System.out.println("Small Employer relief checkbox was ALLREADY NOT checked, hence Condition now satisfied successfully");
-										
+
 									}
 
 								}	
@@ -816,162 +1024,7 @@ public class CreateLeaveRequest extends TestSuiteBase {
 	} 
 
 
-	public void selectDate(String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String Conditionsatisfd,String StatutoryPaybasis )throws Throwable
-	{
-		try
-		{
-			Thread.sleep(3000L);
-			WebElement postsTable = driver.findElement(By.xpath(OR.getProperty("SppCase2LeaveTablelocator")));
-			if(existsWebElement(postsTable))
-			{
-				System.out.println("details table exists");
-				List<WebElement> rows = postsTable.findElements(By.xpath(OR.getProperty("SppCase2LeaveTablelocatorRows")));
-				System.out.println("NUMBER OF ROWS IN THIS TABLE = "+rows.size());
-				int row_num,col_num;
-				row_num=1;
-				outerloop:
-					for(WebElement trElement : rows)
-					{
-						List<WebElement> td_collection=trElement.findElements(By.xpath("td"));
-						System.out.println("NUMBER OF COLUMNS="+td_collection.size());
-						col_num=1;
 
-						for(WebElement tdElement : td_collection)
-						{
-							System.out.println("row # "+row_num+", col # "+col_num+ "text="+tdElement.getText());
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Birth due date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td["+col_num+"]/span/input[@id='00N0O00000D0wHV']";
-								WebElement BDD = driver.findElement(By.xpath(sppbirthDueDate));
-								if(existsElement(sppbirthDueDate))
-								{
-									BDD.sendKeys("");
-									toFormatDate(BirthdueDate);		
-									Thread.sleep(4000L);
-									BDD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Birth due date was entered sucessfully");		
-								}
-								col_num++;
-							}
-
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Baby born date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00N0O00000D0wHU']";
-								WebElement BBD = driver.findElement(By.xpath(sppbirthDueDate));
-								if(existsElement(sppbirthDueDate))
-								{
-									BBD.sendKeys("");
-									toFormatDate(BabyBorndate);		
-									Thread.sleep(4000L);
-									BBD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Baby born date was entered sucessfully");	
-								}
-								col_num++;
-							}
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Start date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00N0O00000D0vvr']";
-								WebElement StD = driver.findElement(By.xpath(sppbirthDueDate));
-								if(existsElement(sppbirthDueDate))
-								{
-									StD.sendKeys("");
-									toFormatDate(LeaveStDate);		
-									Thread.sleep(4000L);
-									StD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Leave Start date was entered sucessfully");	
-								}
-								col_num++;
-							}
-
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("End date"))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								sppbirthDueDate ="//following-sibling::td[1]/span/input[@id='00N0O00000D0vvd']";
-								WebElement EndD = driver.findElement(By.xpath(sppbirthDueDate));
-								if(existsElement(sppbirthDueDate))
-								{
-									EndD.sendKeys("");
-									toFormatDate(LeaveEndDate);		
-									Thread.sleep(4000L);
-									EndD.sendKeys(formattedDate);
-									System.out.println("");
-									System.out.println("The Leave End date was entered sucessfully");	
-								}
-								//col_num++;
-							}
-							
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory conditions met - make payment")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory payment conditions")))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								ckbox ="//following-sibling::td["+col_num+"]/input[@id='00N0O00000D0wHW']";//1
-								WebElement clkchkbox = driver.findElement(By.xpath(ckbox));
-								boolean	smallERchekbox = clkchkbox.isSelected();
-								if(smallERchekbox)
-								{
-									System.out.println("yes the condition is checked");
-								}
-								double valueOfsmallReliefChkbox = Double.parseDouble(Conditionsatisfd);
-								System.out.println("converted smallER value is :"+valueOfsmallReliefChkbox);
-								if(valueOfsmallReliefChkbox == 1.0)
-								{
-									Thread.sleep(4000L);
-									if(smallERchekbox)
-									{
-										System.out.println("Small Employer relief checkbox was allready checked, Hence our condition got satisfied");
-										break  outerloop;
-									}
-									else
-									{
-										clkchkbox.sendKeys("");
-										clkchkbox.click();
-										System.out.println("Small Employer relief checkbox was NOT checked,and now checked hence Condition now satisfied successfully");
-										break  outerloop;
-									}
-
-								}
-								col_num++;
-							}
-							if(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Payment basis")||(tdElement.getText()!=null && tdElement.getText().equalsIgnoreCase("Statutory pay basis")))
-							{
-								System.out.println("Label name  :"+tdElement.getText()+ "  matched ");
-								String imglookup ="//following-sibling::td["+col_num+"]/span/a/img";//1
-								WebElement clkchkbox = driver.findElement(By.xpath(imglookup));
-								clkchkbox.sendKeys("");
-								clkchkbox.click();
-								System.out.println("I clicked Go button");
-								Thread.sleep(5000);
-								String ParentWindow = driver.getWindowHandle(); // To save the parent window
-								// create one more method for reading employee from excel sheet.
-								ReadStatutoryPayBasis(StatutoryPaybasis);
-								Thread.sleep(2000L);
-								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
-								Thread.sleep(2000L);
-								break  outerloop;
-							}
-							col_num++;
-						    } 
-						row_num++;
-					}
-			}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-			ErrorUtil.addVerificationFailure(t);
-			System.out.println("");	
-		}
-	}
-
-	
-	
 	public void toFormatDate(String passedDate)throws Throwable
 	{
 		String dateStr = passedDate;

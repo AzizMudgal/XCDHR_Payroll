@@ -66,7 +66,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied) throws Throwable
+	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax) throws Throwable
 	{
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
@@ -107,7 +107,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 		/*************************************************************************/
 
-		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied);
+		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 
 		/*************************************************************************/
 	}
@@ -115,7 +115,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 
-	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied) throws Throwable
+	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax) throws Throwable
 	{
 		try
 		{
@@ -204,13 +204,13 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			System.out.println("");
 		}
 		Thread.sleep(3000L);
-		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied);
+		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 	}
 
 
 
 
-	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax)throws Throwable
 	{
 		try
 		{
@@ -239,7 +239,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					payRunExecutionForLeaveYear(StatutoryPaybasis,ConditionSatisfied);
 				}
 			}
-			UpdateLeavedetails(StatutoryPaybasis,ConditionSatisfied);
+			UpdateLeavedetails(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 		}
 		catch(Throwable t)
 		{
@@ -277,7 +277,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 
-	public void UpdateLeavedetails(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void UpdateLeavedetails(String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax)throws Throwable
 	{
 		try
 		{
@@ -301,7 +301,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 							LeavReqRecord.sendKeys("");
 							LeavReqRecord.click();
 							Thread.sleep(4000L);
-							sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied);	
+							sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);	
 							break outerbreak1;
 						}
 				}
@@ -317,7 +317,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 	}
 
 
-	public void sickLeaveRecordEdit(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void sickLeaveRecordEdit(String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax)throws Throwable
 	{
 		try
 		{
@@ -339,6 +339,11 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			{
 				selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
 				StatutoryPaybasis(StatutoryPaybasis);
+				Thread.sleep(1000L);
+				updateFinancialControlFeatures(employeeTaxable,employeeNiable,Attachable,AttachableForCouncilTax);
+				Thread.sleep(1000L);
+				SickSavebutton();
+				System.out.println("Save button got clicked and all data saved sucessfully");
 			}
 		}
 		catch(Throwable t)

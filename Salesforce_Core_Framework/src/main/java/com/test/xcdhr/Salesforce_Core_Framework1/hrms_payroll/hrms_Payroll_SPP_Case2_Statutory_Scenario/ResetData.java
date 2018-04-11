@@ -21,6 +21,7 @@ import java.util.List;
 
 
 
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -96,10 +97,13 @@ public class ResetData extends TestSuiteBase
 
 			try
 			{
-				if(existsElement(OR.getProperty("Homepage_txt")))
+				closePopupWindow();
+				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
-					Assert.assertEquals(driver.getTitle(), "Salesforce - Enterprise Edition");
-					System.out.println("The test script logged in successfully into salesforce account");
+					String personalTab = getObject("PersonalTab").getText();
+					System.out.println("Tab name is :"+ personalTab);
+					Assert.assertEquals("Personal", personalTab);
+					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
 			}

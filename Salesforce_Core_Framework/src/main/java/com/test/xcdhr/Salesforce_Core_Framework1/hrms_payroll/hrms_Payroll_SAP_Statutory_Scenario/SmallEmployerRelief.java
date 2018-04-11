@@ -39,24 +39,19 @@ public class SmallEmployerRelief extends TestSuiteBase
 	public String titlename;
 
 	@BeforeTest
-	public void CheckTestSkip() throws Throwable{
+	public void CheckTestSkip() throws Throwable
+	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName())){
-
+		if(! Test_Util.IsTestcaseRunMode(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()))
+		{
 			Skip=true;
 			Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, "first", Test_Util.GetRowNum(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName()),"Skipped");
 			//Test_Util.ReportDataSetResult(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
-
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
-
 		}
-
 		// Load the runmodes of the tests
-
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_Statutory_Adoption_SuiteXls, this.getClass().getSimpleName());
-
 	}
 
 	public String payfreqncy;
@@ -68,29 +63,23 @@ public class SmallEmployerRelief extends TestSuiteBase
 	@Test(dataProvider="getData")
 	public void EmpsSetup_WithNICategory(String EmpName,String SmallEmployerRelief) throws Throwable
 	{								 
-		
 		//APP_LOGS.debug("Entering the Leave parameters");
 		//APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
+		if(! runmodes[count].equalsIgnoreCase("Y"))
+		{
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
 			shouldOpenBrowser = false;
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
-
-
 			driver.manage().window().maximize();
 			Thread.sleep(6000L);
-
 			try
 			{
 				closePopupWindow();
@@ -102,23 +91,17 @@ public class SmallEmployerRelief extends TestSuiteBase
 					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
 					System.out.println("");
 				}
-			}catch(Throwable t)
+			}
+			catch(Throwable t)
 			{
 				System.out.println(t.getMessage().toString());
-
 			}
-			
-
 		}
-
-
-
 		/*************************************************************************/
 
 		FetchEmployeeRecord(EmpName,SmallEmployerRelief);
 
 		/*************************************************************************/
-
 	}
 
 
@@ -145,12 +128,8 @@ public class SmallEmployerRelief extends TestSuiteBase
 					Thread.sleep(7000L);
 				}
 			}
-
-
 			WebElement tableheader = driver.findElement(By.xpath(OR.getProperty("PersonalAndCompensationHeadingTable")));
-
 			List<WebElement> th=tableheader.findElements(By.tagName("td"));
-
 			for(a=0;a<th.size();a++) 
 			{
 				if("Employee".equalsIgnoreCase(th.get(a).getText()))
@@ -167,42 +146,42 @@ public class SmallEmployerRelief extends TestSuiteBase
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownum = 1;	
 				outerbreak:
-				while(x.hasNext())
-				{
-					//Thread.sleep(2000L);
-					String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
-					if(existsElementchkFor1mts(firstRowOfEmployeeColumn))
+					while(x.hasNext())
 					{
-						WebElement employeeElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
-						String AppnEmp= employeeElement.getText();
-						System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
-						if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
+						//Thread.sleep(2000L);
+						String firstRowOfEmployeeColumn="//div["+rownum+"]/table/tbody/tr/td"+"["+empcolnum+"]"+"/"+"div/a/span";
+						if(existsElementchkFor1mts(firstRowOfEmployeeColumn))
 						{
-							System.out.println("Employee name  :"+AppnEmp+ "  matched ");
-							if(existsWebElement(employeeElement))
+							WebElement employeeElement= driver.findElement(By.xpath(firstRowOfEmployeeColumn));
+							String AppnEmp= employeeElement.getText();
+							System.out.println(AppnEmp+"-------"+EmpName+"------"+rownum);
+							if(AppnEmp!=null && AppnEmp.equalsIgnoreCase(EmpName))
 							{
-								employeeElement.click();
-								System.out.println("The employee namely :"+AppnEmp+"got clicked");
-								break outerbreak;
+								System.out.println("Employee name  :"+AppnEmp+ "  matched ");
+								if(existsWebElement(employeeElement))
+								{
+									employeeElement.click();
+									System.out.println("The employee namely :"+AppnEmp+"got clicked");
+									break outerbreak;
+								}
 							}
+							else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
+							{
+								System.out.println("The row number of the page reached"+ rownum +" to 200 and"
+										+ " Required Employee not found hence clicking the"
+										+ " pagination link so that Employee search continues for next page");
+								if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
+								{
+									getObject("paginationNextPersonal").sendKeys("");
+									getObject("paginationNextPersonal").click();
+									System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+									Thread.sleep(8000L);
+									rownum = 0;
+								}
+							}
+							rownum++;
 						}
-						else if(rownum == lastRowCount && AppnEmp!=null && AppnEmp!=(EmpName))
-						{
-							System.out.println("The row number of the page reached"+ rownum +" to 200 and"
-									+ " Required Employee not found hence clicking the"
-									+ " pagination link so that Employee search continues for next page");
-							if (existsElementchkFor1mts(OR.getProperty("paginationElementPersonal")))
-							{
-								getObject("paginationNextPersonal").sendKeys("");
-								getObject("paginationNextPersonal").click();
-								System.out.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
-								Thread.sleep(8000L);
-								rownum = 0;
-							}
-						 }
-						rownum++;
 					}
-				}
 			}
 			Thread.sleep(3000L);
 			empEmploymentTab(SmallEmployerRelief);
@@ -216,6 +195,7 @@ public class SmallEmployerRelief extends TestSuiteBase
 			System.out.println("");
 		}
 	}
+
 
 	public void empEmploymentTab(String SmallEmployerRelief)throws Throwable
 	{
@@ -295,26 +275,23 @@ public class SmallEmployerRelief extends TestSuiteBase
 			System.out.println("now searching for the employer link");
 
 		}
-			Thread.sleep(5000L);
-			employerClick();
-			Thread.sleep(5000L);
-			selectCheckbox(SmallEmployerRelief);
-  }
+		Thread.sleep(5000L);
+		employerClick();
+		Thread.sleep(5000L);
+		selectCheckbox(SmallEmployerRelief);
+	}
 
-	
+
 
 	public void employerClick() throws Throwable
 	{
 		try
 		{
-			
 			Thread.sleep(4000L);
-
 			WebElement postsTable11 = driver.findElement(By.xpath(OR.getProperty("employerTableLocator")));
 			if(existsWebElement(postsTable11))
 			{
 				System.out.println("eeee");
-
 				List<WebElement> rows11 = postsTable11.findElements(By.xpath(OR.getProperty("employerTableLocatorRows")));
 				java.util.Iterator<WebElement> x1 = rows11.iterator();
 				rownum1 = 1;
@@ -334,20 +311,17 @@ public class SmallEmployerRelief extends TestSuiteBase
 							if(AppnEmp1!=null && AppnEmp1.equalsIgnoreCase("DONT TOUCH AUTO DIRSAP EMPLOYER"))
 							{											
 								System.out.println("Employer name  :"+AppnEmp1+ "  matched ");
-
 								if(existsWebElement(tempElement1))
 								{
 									tempElement1.click();
 									System.out.println("The employee namely :"+AppnEmp1+"got clicked");
 									break;
 								}
-
 							}
 							else
 							{
 								System.out.println("Employer name did not matched");
 							}
-							
 						}
 					}
 					catch(Throwable t)
@@ -362,7 +336,8 @@ public class SmallEmployerRelief extends TestSuiteBase
 		}
 		catch(Throwable t)
 		{
-
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 		Thread.sleep(5000L);
 		if(existsElementchkFor1mts(OR.getProperty("EditButtonLocator")))
