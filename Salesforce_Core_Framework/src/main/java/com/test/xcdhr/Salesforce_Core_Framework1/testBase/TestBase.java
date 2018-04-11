@@ -12717,6 +12717,169 @@ public class TestBase {
 	}
 
 	
+	/*
+	 * Financial controls for STATUTORY  SSP SCENARIO
+	 * 
+	 */
+	
+	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable,String Attachable,String AttachableForCouncilTax)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(1000L);
+			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
+			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
+			
+			boolean	empAttachableChekbox = getObject("employeeAttachablecheckboxLocator").isSelected();
+			boolean regrssEmpAttachableChekbox = getObject("regressEmployeeAttachablecheckboxLocator").isSelected();
+			
+			boolean	empAttachableForCouncilTaxChekbox = getObject("employeeAttachableForCouncilTaxcheckboxLocator").isSelected();
+			boolean regressEmpAttachableForCouncilTaxChekbox = getObject("regressEmployeeAttachableForCouncilTaxcheckboxLocator").isSelected();
+			
+			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted employeeTaxable value is :"+valueOfemployeeTaxableChkbox);
+
+			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted employeeNiable value is :"+valueOfemployeeNiableChkbox);
+			
+			double valueOfemployeeAttachableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted employeeAttachable value is :"+valueOfemployeeAttachableChkbox);
+
+			double valueemployeeAttachableForCouncilTaxChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted employeeAttachableForCouncilTax value is :"+valueemployeeAttachableForCouncilTaxChkbox);
+			
+
+			if(valueOfemployeeTaxableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
+				{
+					isemployeeTaxablechecBox(empTaxableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
+				{
+					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
+				}
+			}
+			
+
+			if(valueOfemployeeNiableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
+				{
+					isemployeeNiablechecBox(empNiableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
+				{
+					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
+				}
+			}
+			
+		
+			if(valueOfemployeeAttachableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeAttachablecheckboxLocator")))
+				{
+					employeeAttachablecheckbox(empAttachableChekbox);
+				}
+				else if(existsElement(OR.getProperty("regressEmployeeAttachablecheckboxLocator")))
+				{
+					RegressOrgisemployeeAttachablechecBox(regrssEmpAttachableChekbox);
+				}
+			}
+				
+
+			if(valueemployeeAttachableForCouncilTaxChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeAttachableForCouncilTaxcheckboxLocator")))
+				{
+					employeeAttachableForCouncilTaxcheckbox(empAttachableForCouncilTaxChekbox);
+				}
+				else if(existsElement(OR.getProperty("regressEmployeeAttachableForCouncilTaxcheckboxLocator")))
+				{
+					regressEmployeeAttachableForCouncilTaxcheckbox(regressEmpAttachableForCouncilTaxChekbox);
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+	
+	public boolean employeeAttachablecheckbox(boolean empAttachableChekbox)throws Throwable
+	{
+		if(empAttachableChekbox)
+		{
+			System.out.println("From QA Org--employee empAttachable checkbox was already checked, "
+					+ "hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeAttachablecheckboxLocator").click();
+			System.out.println("From QA Org--employee empAttachable checkbox was now Checked "
+					+ "successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empAttachableChekbox;
+	}
+
+	
+	public boolean RegressOrgisemployeeAttachablechecBox(boolean regrssEmpAttachableChekbox)throws Throwable
+	{
+		if(regrssEmpAttachableChekbox)
+		{
+			System.out.println("From QA Org--employee empAttachable checkbox was already checked, "
+					+ "hence satisfied the condition");
+		}
+		else
+		{
+			getObject("regressEmployeeAttachablecheckboxLocator").click();
+			System.out.println("From QA Org--employee empAttachable checkbox was now Checked "
+					+ "successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return regrssEmpAttachableChekbox;
+	}
+		
+	
+	public boolean employeeAttachableForCouncilTaxcheckbox(boolean valueemployeeAttachableForCouncilTaxChkbox)throws Throwable
+	{
+		if(valueemployeeAttachableForCouncilTaxChkbox)
+		{
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox "
+					+ "checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeAttachableForCouncilTaxcheckboxLocator").click();
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox "
+					+ "checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return valueemployeeAttachableForCouncilTaxChkbox;
+	}
+
+	
+	public boolean regressEmployeeAttachableForCouncilTaxcheckbox(boolean regressEmpAttachableForCouncilTaxChekbox)throws Throwable
+	{
+		if(regressEmpAttachableForCouncilTaxChekbox)
+		{
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox checkbox was"
+					+ " already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("regressEmployeeAttachableForCouncilTaxcheckboxLocator").click();
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox checkbox"
+					+ " was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return regressEmpAttachableForCouncilTaxChekbox;
+	}
+
+
 	
 
 }

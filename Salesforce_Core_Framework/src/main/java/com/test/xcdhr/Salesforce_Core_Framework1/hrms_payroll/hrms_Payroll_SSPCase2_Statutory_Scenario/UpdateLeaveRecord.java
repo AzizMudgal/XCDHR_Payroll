@@ -545,7 +545,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 	}
 
 	
-	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable,String Attachable,String AttachableForCouncilTax)throws Throwable
+/*	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable,String Attachable,String AttachableForCouncilTax)throws Throwable
 	{
 		try
 		{
@@ -702,7 +702,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 		return regressEmpAttachableForCouncilTaxChekbox;
 	}
 
-
+*/
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
