@@ -292,6 +292,8 @@ public class TestMarchReports extends TestSuiteBase
 
 						String employeeContributionsPayableYTD= table.getTBody().getRow(rownum).getCell(38).getText();
 						System.out.println("employeeContributionsPayableYTD is :"+employeeContributionsPayableYTD);
+						
+						
 						WebElement clkchkbox = driver.findElement(By.xpath(OR.getProperty("pymentCheckbox")));
 
 						String pymtAftrLeavingDate11 = clkchkbox.getAttribute("title");

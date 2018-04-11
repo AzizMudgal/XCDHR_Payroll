@@ -196,7 +196,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 				getObject("leaveTabclk").sendKeys("");
 				getObject("leaveTabclk").click();
 				Thread.sleep(3000L);
-
 			}
 		}
 		catch(Throwable t)
@@ -290,6 +289,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 		}
 	}
 
+	/*
+	 * The locator elements of the Leave start date and 
+	 * Leave end date are taken while creating sick leave. But not from 
+	 * Leave edit mode page. Hence it should work for both orgs 
+	 * as dynamic xpath is implemented.
+	 */
 
 	public void keyDates(String leaveStDate, String LeaveEndDate)throws Throwable
 	{

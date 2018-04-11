@@ -3,14 +3,14 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Case2_Statutory_Scenario.CreateLeaveRequest">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSPCase2_Statutory_Scenario.TestReports4">
         <methods>
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
           <include name="CheckSuiteSkip"/>
-          <include name="CheckTestSkip"/>
           <include name="ReportTestResult"/>
-          <include name="EmpsSetup_WithNICategory"/>
+          <include name="CheckTestSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SPP_Case2_Statutory_Scenario.CreateLeaveRequest -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSPCase2_Statutory_Scenario.TestReports4 -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

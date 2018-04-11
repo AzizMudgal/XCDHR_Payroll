@@ -12,8 +12,8 @@ public class TestSuiteBase extends TestBase
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
 		initialize();
-		APP_LOGS.debug("Checking runmode "+SSP_InputExcelFile);
-		if(! Test_Util.isSuiteRunnable(SuiteXls,SSP_InputExcelFile))
+		APP_LOGS.debug("Checking runmode "+SSPCaseTwo_InputExcelFile);
+		if(! Test_Util.isSuiteRunnable(SuiteXls,SSPCaseTwo_InputExcelFile))
 		{
 			APP_LOGS.debug("Setting the Payroll Suite to OFF as the runmode is set to 'N'");
 			throw new Exception("Payroll suite is not going to execute as its being skipped");

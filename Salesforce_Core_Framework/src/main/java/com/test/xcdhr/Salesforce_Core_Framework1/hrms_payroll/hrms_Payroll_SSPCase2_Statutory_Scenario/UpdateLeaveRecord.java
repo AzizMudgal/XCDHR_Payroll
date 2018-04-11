@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSPCase2_Statutory_Scenario;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -38,23 +38,21 @@ public class UpdateLeaveRecord extends TestSuiteBase
 	public String ckbox;
 
 
-
-
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
 										//Payroll_Statutory_SickPay_SuiteXls
-		if(! Test_Util.IsTestcaseRunMode(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName());
 	}
 
 	public String payfreqncy;
@@ -66,16 +64,14 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied) throws Throwable
+	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax) throws Throwable
 	{
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
-
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
@@ -83,11 +79,9 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
 			driver.manage().window().maximize();
-
 			try
 			{
 				closePopupWindow();
-
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();
@@ -102,12 +96,11 @@ public class UpdateLeaveRecord extends TestSuiteBase
 				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
-
 		}
 
 		/*************************************************************************/
 
-		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied);
+		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 
 		/*************************************************************************/
 	}
@@ -115,7 +108,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 
-	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied) throws Throwable
+	public void FetchEmployeeRecord(String EmpName,String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax) throws Throwable
 	{
 		try
 		{
@@ -132,7 +125,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					System.out.println("The test script verified that it successfully landed into Personal Tab of XCD HR Org.");
 					System.out.println("");
 				}
-
 				if(existsElement(OR.getProperty("EmployeeView")))
 				{
 					System.out.println("I recognised the Employee view");
@@ -204,13 +196,13 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			System.out.println("");
 		}
 		Thread.sleep(3000L);
-		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied);
+		LeaveTab(LeaveYear,LeaveCategory,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 	}
 
 
 
 
-	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void LeaveTab(String LeaveYear,String LeaveCategory,String BirthdueDate, String BabyBorndate,String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax)throws Throwable
 	{
 		try
 		{
@@ -239,7 +231,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					payRunExecutionForLeaveYear(StatutoryPaybasis,ConditionSatisfied);
 				}
 			}
-			UpdateLeavedetails(StatutoryPaybasis,ConditionSatisfied);
+			UpdateLeavedetails(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 		}
 		catch(Throwable t)
 		{
@@ -277,7 +269,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 
-	public void UpdateLeavedetails(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void UpdateLeavedetails(String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax)throws Throwable
 	{
 		try
 		{
@@ -301,7 +293,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 							LeavReqRecord.sendKeys("");
 							LeavReqRecord.click();
 							Thread.sleep(4000L);
-							sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied);	
+							sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);	
 							break outerbreak1;
 						}
 				}
@@ -312,12 +304,10 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
-
 	}
 
 
-	public void sickLeaveRecordEdit(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void sickLeaveRecordEdit(String StatutoryPaybasis,String ConditionSatisfied,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings,String Attachable,String AttachableForCouncilTax)throws Throwable
 	{
 		try
 		{
@@ -337,8 +327,14 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 			if(existsElement(OR.getProperty("sspEditTable")))
 			{
-				selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
+				
+				Thread.sleep(1000L);
 				StatutoryPaybasis(StatutoryPaybasis);
+				Thread.sleep(1000L);
+				updateFinancialControlFeatures(employeeTaxable,employeeNiable,Attachable,AttachableForCouncilTax);
+				Thread.sleep(1000L);
+				SickSavebutton();
+				System.out.println("Save button got clicked and all data saved sucessfully");
 			}
 		}
 		catch(Throwable t)
@@ -400,7 +396,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 										break  outerloop;
 									}
 								}	
-
 								col_num++;
 							}
 							row_num++;
@@ -456,8 +451,9 @@ public class UpdateLeaveRecord extends TestSuiteBase
 								Thread.sleep(2000L);
 								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
 								Thread.sleep(2000L);
-								SickSavebutton();
-								System.out.println("Save button got clicked and all data saved sucessfully");
+								System.out.println("After selecting the pay basis, came back to "
+										+ "parent page of leave record edit mode");
+
 							}
 							col_num++;
 						}
@@ -548,14 +544,170 @@ public class UpdateLeaveRecord extends TestSuiteBase
 		}
 	}
 
+	
+	public void updateFinancialControlFeatures(String employeeTaxable,String employeeNiable,String Attachable,String AttachableForCouncilTax)throws Throwable
+	{
+		try
+		{
+			Thread.sleep(1000L);
+			boolean	empTaxableChekbox = getObject("employeeTaxablecheckboxLocator").isSelected();
+			boolean	empNiableChekbox = getObject("employeeNiablecheckboxLocator").isSelected();
+			
+			boolean	empAttachableChekbox = getObject("employeeAttachablecheckboxLocator").isSelected();
+			boolean regrssEmpAttachableChekbox = getObject("regressEmployeeAttachablecheckboxLocator").isSelected();
+			
+			boolean	empAttachableForCouncilTaxChekbox = getObject("employeeAttachableForCouncilTaxcheckboxLocator").isSelected();
+			boolean regressEmpAttachableForCouncilTaxChekbox = getObject("regressEmployeeAttachableForCouncilTaxcheckboxLocator").isSelected();
+			
+			double valueOfemployeeTaxableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted employeeTaxable value is :"+valueOfemployeeTaxableChkbox);
+
+			double valueOfemployeeNiableChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted employeeNiable value is :"+valueOfemployeeNiableChkbox);
+			
+			double valueOfemployeeAttachableChkbox = Double.parseDouble(employeeTaxable);
+			System.out.println("converted employeeAttachable value is :"+valueOfemployeeAttachableChkbox);
+
+			double valueemployeeAttachableForCouncilTaxChkbox = Double.parseDouble(employeeNiable);
+			System.out.println("converted employeeAttachableForCouncilTax value is :"+valueemployeeAttachableForCouncilTaxChkbox);
+			
+
+			if(valueOfemployeeTaxableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeTaxablecheckboxLocator")))
+				{
+					isemployeeTaxablechecBox(empTaxableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeTaxablecheckboxLocator")))
+				{
+					RegressOrgisemployeeTaxablechecBox(empTaxableChekbox);
+				}
+			}
+			
+
+			if(valueOfemployeeNiableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeNiablecheckboxLocator")))
+				{
+					isemployeeNiablechecBox(empNiableChekbox);
+				}
+				else if(existsElement(OR.getProperty("RegressOrgemployeeNiablecheckboxLocator")))
+				{
+					RegressOrgisemployeeNiablechecBox(empNiableChekbox);
+				}
+			}
+			
+		
+			if(valueOfemployeeAttachableChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeAttachablecheckboxLocator")))
+				{
+					employeeAttachablecheckbox(empAttachableChekbox);
+				}
+				else if(existsElement(OR.getProperty("regressEmployeeAttachablecheckboxLocator")))
+				{
+					RegressOrgisemployeeAttachablechecBox(regrssEmpAttachableChekbox);
+				}
+			}
+				
+
+			if(valueemployeeAttachableForCouncilTaxChkbox == 1.0)
+			{
+				if(existsElement(OR.getProperty("employeeAttachableForCouncilTaxcheckboxLocator")))
+				{
+					employeeAttachableForCouncilTaxcheckbox(empAttachableForCouncilTaxChekbox);
+				}
+				else if(existsElement(OR.getProperty("regressEmployeeAttachableForCouncilTaxcheckboxLocator")))
+				{
+					regressEmployeeAttachableForCouncilTaxcheckbox(regressEmpAttachableForCouncilTaxChekbox);
+				}
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+	
+	public boolean employeeAttachablecheckbox(boolean empAttachableChekbox)throws Throwable
+	{
+		if(empAttachableChekbox)
+		{
+			System.out.println("From QA Org--employee empAttachable checkbox was already checked, "
+					+ "hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeAttachablecheckboxLocator").click();
+			System.out.println("From QA Org--employee empAttachable checkbox was now Checked "
+					+ "successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return empAttachableChekbox;
+	}
+
+	
+	public boolean RegressOrgisemployeeAttachablechecBox(boolean regrssEmpAttachableChekbox)throws Throwable
+	{
+		if(regrssEmpAttachableChekbox)
+		{
+			System.out.println("From QA Org--employee empAttachable checkbox was already checked, "
+					+ "hence satisfied the condition");
+		}
+		else
+		{
+			getObject("regressEmployeeAttachablecheckboxLocator").click();
+			System.out.println("From QA Org--employee empAttachable checkbox was now Checked "
+					+ "successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return regrssEmpAttachableChekbox;
+	}
+		
+	
+	public boolean employeeAttachableForCouncilTaxcheckbox(boolean valueemployeeAttachableForCouncilTaxChkbox)throws Throwable
+	{
+		if(valueemployeeAttachableForCouncilTaxChkbox)
+		{
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox "
+					+ "checkbox was already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("employeeAttachableForCouncilTaxcheckboxLocator").click();
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox "
+					+ "checkbox was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return valueemployeeAttachableForCouncilTaxChkbox;
+	}
+
+	
+	public boolean regressEmployeeAttachableForCouncilTaxcheckbox(boolean regressEmpAttachableForCouncilTaxChekbox)throws Throwable
+	{
+		if(regressEmpAttachableForCouncilTaxChekbox)
+		{
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox checkbox was"
+					+ " already checked, hence satisfied the condition");
+		}
+		else
+		{
+			getObject("regressEmployeeAttachableForCouncilTaxcheckboxLocator").click();
+			System.out.println("From QA Org--employee valueemployeeAttachableForCouncilTaxChkbox checkbox"
+					+ " was now Checked successfully as per condition");
+			Thread.sleep(2000L);
+		}
+		return regressEmpAttachableForCouncilTaxChekbox;
+	}
 
 
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
-		return Test_Util.getData(Payroll_SSP_ProcessPayroll_SuiteXls,"UpdateLeaveRecord");
+		return Test_Util.getData(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls,"UpdateLeaveRecord");
 	}
 
 
@@ -564,17 +716,16 @@ public class UpdateLeaveRecord extends TestSuiteBase
 	public void ReportDataSetResult() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(Skip)
 		{
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}else if(Fail)
 		{
 			IsTestPass = false;
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}else
 		{
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -590,11 +741,11 @@ public class UpdateLeaveRecord extends TestSuiteBase
 		{
 			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
-			Test_Util.ReportDataSetResult(Payroll_SSP_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, "first", Test_Util.GetRowNum(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
 		closeBrowser();
 	}

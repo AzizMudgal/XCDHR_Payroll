@@ -405,6 +405,10 @@ public class TestBase {
 	public static String PayrollRTI_RecognitionS5Report_ReJoin = "DO NOT TOUCH PAYROL RTI SCENRIO5 REJOIN";
 	public static String PayrollRTI_RecognitionS7Report = "DO NOT TOUCH PAYROL RTI SCENRIO7 REPORT";
 	public static String PayrollRTI_RecognitionS7Report_JuneToMarch = "DO NOT TOUCH PAYROL RTI SCENRIO71 REPORT";
+	public static String SSPCaseTwo_2ndReport = "DO NOT TOUCH SSPCaseTwo AWE";
+	public static String SSPCaseTwo_3dReport = "DO NOT TOUCH SSPCASETWO PAYMENT REPORT";
+
+	
 
 	public String EMPLOYERNAMEWeekly = "DO NOT TOUCH AUTO ENROLMENT TEST EMPLOYER 1";
 	public String PayrollIdWeekly = "PN-10679";
@@ -6041,8 +6045,18 @@ public class TestBase {
 				.equalsIgnoreCase(PayrollRTI_RecognitionS7Report_JuneToMarch)) {
 			rpName = "PayrollRTI_RecognitionS7Report_JuneToMarch";
 		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(SSPCaseTwo_2ndReport)) {
+			rpName = "SSPCaseTwo_2ndReport";
+		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(SSPCaseTwo_3dReport)) {
+			rpName = "SSPCaseTwo_3dReport";
+		}
 		return rpName;
 	}
+	
+	
 
 	public void payRunExecution() throws Throwable {
 		try {
@@ -6060,6 +6074,8 @@ public class TestBase {
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
+	
+	
 
 	public void clickToGenerateDraftOnceMore() throws Throwable {
 		try {
@@ -6084,6 +6100,8 @@ public class TestBase {
 	 * FOLLOWING METHODS ARE FOR PAYROLL TAX MODULE : GenerateTaxRateMonthly
 	 * script
 	 */
+	
+	
 
 	public void UpdateEmployeeTaxCodeOld(String empName, String Taxcode,
 			String TaxBasis) throws Throwable {
