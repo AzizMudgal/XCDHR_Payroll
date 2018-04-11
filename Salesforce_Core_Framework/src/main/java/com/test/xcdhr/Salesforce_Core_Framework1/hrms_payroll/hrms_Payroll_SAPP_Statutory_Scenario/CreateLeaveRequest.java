@@ -57,7 +57,7 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate, String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
+	public void EmpsSetup_WithNICategory(String EmpName,String LeaveYear,String LeaveCategry,String BirthdueDate,String BabyBorndate, String LeaveStDate,String LeaveEndDate,String StatutoryPaybasis,String Conditionsatisfd,String employeeTaxable,String employeeNiable,String includeInHolidayEarnings) throws Throwable
 	{
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))

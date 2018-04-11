@@ -26,6 +26,7 @@ import org.testng.annotations.Test;
 import atu.webdriver.utils.table.WebTable;
 
 
+
 //import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
@@ -38,6 +39,7 @@ public class TestReports extends TestSuiteBase
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
 	public String titlename;
+	
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
@@ -88,7 +90,7 @@ public class TestReports extends TestSuiteBase
 			System.out.println("");
 			defaultWaitTime();
 		}
-
+		Thread.sleep(4000L);
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
 			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
@@ -170,7 +172,6 @@ public class TestReports extends TestSuiteBase
 						System.out.println("4> Total count of Employee records displayed in the report are :"+rownum);
 						System.out.println("");
 						System.out.println("5> The script successfully read and output the values and accordingly gave the TEST REMARKS in NI-HMRC Excel file");
-						//CaptureScreenshot("TestReports"+this.getClass().getSimpleName());
 						break gotobreak;
 					} 
 					else
@@ -199,6 +200,7 @@ public class TestReports extends TestSuiteBase
 
 	public void ReadsExpectedData(String EmpName,String statutoryAdoptionPay,String statutoryMaternityPay,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
 	{
+		
 	    	double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 			DecimalFormat df = new DecimalFormat("###.#");
 			String worksheetNoWithoutDecimal= df.format(worksheetvalue);
