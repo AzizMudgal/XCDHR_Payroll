@@ -9173,13 +9173,12 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory Shared ParentalPay201819.xlsx");
 				SharedParental_InputExcelFile = "Payroll Suite Statutory Shared ParentalPay201819";
 				
-<<<<<<< HEAD
+
 				Payroll_SSP_ProcessPayroll_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP201819.xlsx");
 				SSP_InputExcelFile = "Payroll Suite Statutory SSP201819";
 
-=======
 				Payroll_Statutory_Paternitypay_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite StatutoryPaternityPay201819.xlsx");
@@ -9200,13 +9199,7 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP201819.xlsx");
 				SSP_InputExcelFile = "Payroll Suite Statutory SSP201819";
 
-				
-				
-				
-				
-				
-				
->>>>>>> refs/remotes/origin/master
+
 				
 				
 				
