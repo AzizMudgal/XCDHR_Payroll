@@ -77,20 +77,6 @@ public class ResetData extends TestSuiteBase
 			try
 			{
 				closePopupWindow();
-				/*Thread.sleep(5000L);
-				if(existsElementchkFor1mts(OR.getProperty("popupwindowAfterLoginSuccess")))
-				{
-					String oldWindow = driver.getWindowHandle();
-					driver.switchTo().window(driver.getWindowHandle());
-					getObject("popupwindowAfterLoginSuccess").click();
-					//driver.findElement(By.xpath("//div/a[@id='tryLexDialogX']")).click();
-					System.out.println("The Popup window got closed");
-					driver.switchTo().window(oldWindow);
-				}
-				else
-				{
-					System.out.println("The Popwindow does not exist in this Org");
-				}*/
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();

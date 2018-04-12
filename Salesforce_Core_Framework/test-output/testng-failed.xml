@@ -1,16 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite GeneralAndLargeTaxcodeMonthly]">
+  <test name="3(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord">
+=======
+<<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.CreateLeaveRequest">
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
+<<<<<<< HEAD
+          <include name="CheckTestSkip"/>
+          <include name="ReportDataSetResult"/>
+=======
+>>>>>>> refs/remotes/origin/master
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
           <include name="EmpsSetup_WithNICategory"/>
           <include name="CheckTestSkip"/>
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <include name="ReportTestResult"/>
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ProcessPayrollForMonthlyTax">
+        <methods>
+          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
+          <include name="CheckTestSkip"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+=======
+          <include name="EmpsSetup_WithNICategory"/>
+>>>>>>> refs/remotes/origin/master
+        </methods>
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ProcessPayrollForMonthlyTax -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.GeneralTaxRateMonthly">
+        <methods>
+          <include name="CheckTestSkip"/>
+          <include name="ReportTestResult"/>
+          <include name="ReportDataSetResult"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.GeneralTaxRateMonthly -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.CreateLeaveRequest -->
+>>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- 3(failed) -->
+</suite> <!-- Failed suite [Payroll Suite GeneralAndLargeTaxcodeMonthly] -->
