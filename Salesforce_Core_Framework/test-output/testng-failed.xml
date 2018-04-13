@@ -4,10 +4,14 @@
   <test name="3(failed)">
     <classes>
 <<<<<<< HEAD
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord">
+=======
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports">
 =======
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.CreateLeaveRequest">
 >>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
         <methods>
 <<<<<<< HEAD
           <include name="CheckTestSkip"/>
@@ -16,8 +20,16 @@
 >>>>>>> refs/remotes/origin/master
           <include name="CheckSuiteSkip"/>
 <<<<<<< HEAD
+          <include name="EmpsSetup_WithNICategory"/>
+          <include name="CheckTestSkip"/>
+=======
+<<<<<<< HEAD
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
           <include name="ReportTestResult"/>
         </methods>
+<<<<<<< HEAD
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord -->
+=======
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.TestReports -->
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Monthly.ProcessPayrollForMonthlyTax">
         <methods>
@@ -41,6 +53,7 @@
 =======
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.CreateLeaveRequest -->
 >>>>>>> refs/remotes/origin/master
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </classes>
   </test> <!-- 3(failed) -->
 </suite> <!-- Failed suite [Payroll Suite GeneralAndLargeTaxcodeMonthly] -->

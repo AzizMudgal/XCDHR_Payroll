@@ -41,7 +41,7 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 	public String leaveCategory;
 	public String leaveType;
 	public String leaveapprovalStatus;
-	private String applnLeaveStDate="11 December 2017";
+	private String applnLeaveStDate="11 December 2018";
 	private String applnLeaveCategory="Sick Leave";
 	private String applnApprovalStatus="Submitted";
 	public String ckbox;
@@ -50,7 +50,6 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-
 		if(! Test_Util.IsTestcaseRunMode(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
@@ -233,13 +232,19 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 				String LeaveYrconvert= df.format(levyeear);
 				Select selectByValue = new Select(driver.findElement(By.xpath(OR.getProperty("leaveYrVal"))));
 				selectByValue.selectByVisibleText(LeaveYrconvert);
-				System.out.println("The Leave year 2017 now got selected");
+				System.out.println("The Leave year "+LeaveYear+" now got selected");
 				Thread.sleep(1000L);
 				if(existsElementchkFor1mts(OR.getProperty("PlzWaitFor2015leaveYear")))
 				{
 					String prgrssBarText = getObject("PlzWaitFor2015leaveYear").getText();
 					Assert.assertEquals("Please wait...", prgrssBarText);
 					System.out.println("progress bar message got displayed");
+					pleaseWaitRecursiveMethod(LeaveYear,LeaveCategory,LeaveStDate, StatutoryPaybasis,ConditionSatisfied);
+				}
+				else
+				{
+					System.out.println("progress bar message did not got displayed however....");
+
 					pleaseWaitRecursiveMethod(LeaveYear,LeaveCategory,LeaveStDate, StatutoryPaybasis,ConditionSatisfied);
 				}
 			}
@@ -308,17 +313,17 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 					while(x.hasNext())
 					{
 						Thread.sleep(3000L);
-						String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum + 1)+"]/td[2]/a";
+						String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum)+"]/td[2]/a";
 						WebElement firstEmployee= driver.findElement(By.xpath(leaveReqId));
-						leaveRequestId= table.getTBody().getRow(rownum).getCell(1).getText();
-						System.out.println("The leave start date is "+leaveRequestId);
-						leaveStDate= table.getTBody().getRow(rownum).getCell(2).getText();
+						leaveRequestId= table.getTBody().getRow(0).getCell(1).getText();
+						System.out.println("The leave request id is "+leaveRequestId);
+						leaveStDate= table.getTBody().getRow(0).getCell(2).getText();
 						System.out.println("The leave start date is "+leaveStDate);
-						leaveEndDate=table.getTBody().getRow(rownum).getCell(3).getText();
+						leaveEndDate=table.getTBody().getRow(0).getCell(3).getText();
 						System.out.println("The leave Enddate is "+leaveEndDate);
-						leaveCategory=table.getTBody().getRow(rownum).getCell(5).getText();
+						leaveCategory=table.getTBody().getRow(0).getCell(5).getText();
 						System.out.println("The leave category is "+leaveCategory);
-						leaveapprovalStatus=table.getTBody().getRow(rownum).getCell(7).getText();
+						leaveapprovalStatus=table.getTBody().getRow(0).getCell(7).getText();
 						System.out.println("The leave approval status is "+leaveapprovalStatus);
 						if(leaveStDate!=null && leaveStDate.equalsIgnoreCase(applnLeaveStDate)
 								&& leaveCategory!= null && leaveCategory.equalsIgnoreCase(applnLeaveCategory)
@@ -333,6 +338,7 @@ public class UpdateLeaveRecord2 extends TestSuiteBase
 						else
 						{
 							System.out.println("Conditions are not matching to click the leave record and update as per the requirment");
+							rownum++;
 						}
 					}
 				}

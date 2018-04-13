@@ -21,7 +21,6 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 public class UpdateLeaveRecord extends TestSuiteBase
 {
-
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
@@ -37,14 +36,12 @@ public class UpdateLeaveRecord extends TestSuiteBase
 	public String leaveapprovalStatus;
 	public String ckbox;
 
-
-
+	
 
 	@BeforeTest
 	public void CheckTestSkip() throws Throwable
 	{
 		processDesiredTaxYearInputExcelFile(TaxYear);
-										//Payroll_Statutory_SickPay_SuiteXls
 		if(! Test_Util.IsTestcaseRunMode(Payroll_SSP_ProcessPayroll_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
@@ -71,7 +68,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
 		{
-
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
@@ -87,7 +83,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			try
 			{
 				closePopupWindow();
-
 				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
 				{
 					String personalTab = getObject("PersonalTab").getText();
@@ -104,9 +99,8 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			}
 
 		}
-
 		/*************************************************************************/
-
+//12 p
 		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 
 		/*************************************************************************/
@@ -127,8 +121,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 				{
 					String viewText = getObject("viewText").getText();
 					System.out.println("Tab name is :"+ viewText);
-					//	Assert.assertEquals("*"+
-					//"View:", viewText);
 					System.out.println("The test script verified that it successfully landed into Personal Tab of XCD HR Org.");
 					System.out.println("");
 				}
@@ -294,16 +286,16 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					System.out.println("total rows are "+rows.size());
 					int rownum = 0;	
 					outerbreak1:
-						while(x.hasNext())
-						{
-							String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum + 1)+"]/td[2]/a";
-							WebElement LeavReqRecord= driver.findElement(By.xpath(leaveReqId));
-							LeavReqRecord.sendKeys("");
-							LeavReqRecord.click();
-							Thread.sleep(4000L);
-							sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);	
-							break outerbreak1;
-						}
+					while(x.hasNext())
+					{
+						String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum + 1)+"]/td[2]/a";
+						WebElement LeavReqRecord= driver.findElement(By.xpath(leaveReqId));
+						LeavReqRecord.sendKeys("");
+						LeavReqRecord.click();
+						Thread.sleep(4000L);
+						sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);	
+						break outerbreak1;
+					}
 				}
 			}
 		}
@@ -312,8 +304,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-
-
 	}
 
 
@@ -461,8 +451,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 								Thread.sleep(2000L);
 								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
 								Thread.sleep(2000L);
-								SickSavebutton();
-								System.out.println("Save button got clicked and all data saved sucessfully");
 							}
 							col_num++;
 						}

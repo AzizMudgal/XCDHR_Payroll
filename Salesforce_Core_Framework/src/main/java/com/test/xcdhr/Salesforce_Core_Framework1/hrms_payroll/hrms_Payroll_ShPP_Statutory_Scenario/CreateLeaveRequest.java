@@ -257,7 +257,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 					System.out.println("Hence the sick leave got created sucessfully");
 				}
 			}
-
 		}
 		catch(Throwable t)
 		{
@@ -309,7 +308,20 @@ public class CreateLeaveRequest extends TestSuiteBase
 		if(existsElement(OR.getProperty("sspEditTable")))
 		{
 			selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
+<<<<<<< HEAD
+			StatutoryPaybasis(StatutoryPaybasis);
+			/*
+			 * Not updated the below method for the ShPP Scenario.
+			 * 
+			 * For this to update first the input sheets needs to be parameterised as per spec
+			 * then in this script that many parameters needs to be declared and
+			 * finally the following method needs to be called.
+			 */
+			//updateFinancialControlFeatures(employeeTaxable,employeeNiable);
+			//Thread.sleep(1000L);
+=======
 			StatutoryPaybasis(StatutoryPaybasis,employeeTaxable,employeeNiable);
+>>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
 		}
 	}
 
