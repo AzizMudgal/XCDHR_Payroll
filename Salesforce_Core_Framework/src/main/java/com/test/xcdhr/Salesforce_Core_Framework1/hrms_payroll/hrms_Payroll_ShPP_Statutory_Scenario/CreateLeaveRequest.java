@@ -274,7 +274,6 @@ public class CreateLeaveRequest extends TestSuiteBase
 	{
 		try
 		{
-
 			if(existsElement(OR.getProperty("sickLeaveEditbuttnLocator")))
 			{
 				getObject("sickLeaveEditbuttnLocator").sendKeys("");
@@ -308,8 +307,8 @@ public class CreateLeaveRequest extends TestSuiteBase
 		if(existsElement(OR.getProperty("sspEditTable")))
 		{
 			selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
-<<<<<<< HEAD
-			StatutoryPaybasis(StatutoryPaybasis);
+
+		//	StatutoryPaybasis(StatutoryPaybasis);
 			/*
 			 * Not updated the below method for the ShPP Scenario.
 			 * 
@@ -319,9 +318,9 @@ public class CreateLeaveRequest extends TestSuiteBase
 			 */
 			//updateFinancialControlFeatures(employeeTaxable,employeeNiable);
 			//Thread.sleep(1000L);
-=======
+
 			StatutoryPaybasis(StatutoryPaybasis,employeeTaxable,employeeNiable);
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+
 		}
 	}
 
