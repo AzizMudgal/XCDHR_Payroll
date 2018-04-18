@@ -2,159 +2,59 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="124810" started-at="2018-04-12T07:12:27Z" finished-at="2018-04-12T07:14:32Z">
-=======
-<<<<<<< HEAD
-  <suite name="Default suite" duration-ms="172642" started-at="2018-04-11T11:52:01Z" finished-at="2018-04-11T11:54:53Z">
-=======
-  <suite name="Default suite" duration-ms="255970" started-at="2018-04-11T10:39:41Z" finished-at="2018-04-11T10:43:57Z">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+  <suite name="Default suite" duration-ms="186849" started-at="2018-04-16T11:02:12Z" finished-at="2018-04-16T11:05:19Z">
     <groups>
     </groups>
-<<<<<<< HEAD
-    <test name="Default test" duration-ms="124810" started-at="2018-04-12T07:12:27Z" finished-at="2018-04-12T07:14:32Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="3158" started-at="2018-04-12T12:42:24Z" finished-at="2018-04-12T12:42:27Z">
-=======
-<<<<<<< HEAD
-    <test name="Default test" duration-ms="172642" started-at="2018-04-11T11:52:01Z" finished-at="2018-04-11T11:54:53Z">
+    <test name="Default test" duration-ms="186849" started-at="2018-04-16T11:02:12Z" finished-at="2018-04-16T11:05:19Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="4342" started-at="2018-04-11T17:21:56Z" finished-at="2018-04-11T17:22:01Z">
-=======
-    <test name="Default test" duration-ms="255970" started-at="2018-04-11T10:39:41Z" finished-at="2018-04-11T10:43:57Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="3164" started-at="2018-04-11T16:09:38Z" finished-at="2018-04-11T16:09:41Z">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2439" started-at="2018-04-16T16:32:09Z" finished-at="2018-04-16T16:32:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1329" started-at="2018-04-12T12:42:27Z" finished-at="2018-04-12T12:42:29Z">
-=======
-<<<<<<< HEAD
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="1779" started-at="2018-04-11T17:22:01Z" finished-at="2018-04-11T17:22:02Z">
-=======
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="1177" started-at="2018-04-11T16:09:41Z" finished-at="2018-04-11T16:09:42Z">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="576" started-at="2018-04-16T16:32:12Z" finished-at="2018-04-16T16:32:12Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="118434" started-at="2018-04-12T12:42:29Z" data-provider="getData" finished-at="2018-04-12T12:44:28Z">
-=======
-<<<<<<< HEAD
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="165521" started-at="2018-04-11T17:22:04Z" data-provider="getData" finished-at="2018-04-11T17:24:49Z">
-=======
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="249792" started-at="2018-04-11T16:09:43Z" data-provider="getData" finished-at="2018-04-11T16:13:53Z">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="184047" started-at="2018-04-16T16:32:13Z" data-provider="getData" finished-at="2018-04-16T16:35:17Z">
           <params>
             <param index="0">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DONT TOUCH AUTO DIRSSP EMPLOYER]]>
-=======
-<<<<<<< HEAD
                 <![CDATA[DONT TOUCH AUTO GLTW EMPLOYER]]>
-=======
-                <![CDATA[DO NOT TOUCH AUTOMATION SSP 101]]>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="1">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DO NOT TOUCH AUTOMATION SSP 101]]>
-=======
-<<<<<<< HEAD
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 318]]>
-=======
-                <![CDATA[2018]]>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 103]]>
               </value>
             </param>
             <param index="2">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DIRSSP_Payroll]]>
-=======
-<<<<<<< HEAD
                 <![CDATA[GLTW_Payroll]]>
-=======
-                <![CDATA[Sick Leave]]>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="3">
               <value>
-                <![CDATA[Four Weekly]]>
+                <![CDATA[Weekly]]>
               </value>
             </param>
             <param index="4">
               <value>
-<<<<<<< HEAD
-                <![CDATA[Four Week-40]]>
-=======
-<<<<<<< HEAD
                 <![CDATA[Week-1]]>
-=======
-                <![CDATA[11/21/2018]]>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
             <param index="5">
               <value>
-<<<<<<< HEAD
-                <![CDATA[Payroll Suite Statutory SSP201819.xlsx]]>
-=======
-<<<<<<< HEAD
-                <![CDATA[Payroll Suite TaxGeneralAndLargeTaxcodeWeekly201819.xlsx]]>
-=======
-                <![CDATA[DO NOT TOUCH AUTOMATION BASIS - SSP]]>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+                <![CDATA[Payroll Suite ScottishTaxGeneralAndLargeTaxcodeWeekly201819.xlsx]]>
               </value>
             </param>
             <param index="6">
               <value>
-<<<<<<< HEAD
-                <![CDATA[DO NOT TOUCH SSP Payment]]>
-              </value>
-            </param>
-            <param index="7">
-              <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_StatutoryScenarios 201819\\201819 Automation TestResult For Statutory Scenarios.xlsx]]>
-              </value>
-            </param>
-            <param index="8">
-              <value>
-                <![CDATA[15]]>
-              </value>
-            </param>
-            <param index="9">
-              <value>
-                <![CDATA[All]]>
-              </value>
-            </param>
-            <param index="10">
-              <value>
-                <![CDATA[20]]>
-=======
-<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
               </value>
             </param>
             <param index="7">
               <value>
-                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Payroll Net Income tax calculation Test result.xlsx]]>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
               </value>
             </param>
             <param index="8">
@@ -169,51 +69,22 @@
             </param>
             <param index="10">
               <value>
-=======
->>>>>>> refs/remotes/origin/master
                 <![CDATA[1]]>
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1451" started-at="2018-04-12T12:44:28Z" finished-at="2018-04-12T12:44:29Z">
-=======
-<<<<<<< HEAD
-        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="1285" started-at="2018-04-11T17:24:49Z" finished-at="2018-04-11T17:24:51Z">
-=======
-        </test-method> <!-- EmpsSetup_WithNICategory -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="1210" started-at="2018-04-11T16:13:53Z" finished-at="2018-04-11T16:13:54Z">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="489" started-at="2018-04-16T16:35:17Z" finished-at="2018-04-16T16:35:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-<<<<<<< HEAD
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2671" started-at="2018-04-12T12:44:29Z" finished-at="2018-04-12T12:44:32Z">
-=======
-<<<<<<< HEAD
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@402a079c]" name="ReportTestResult" is-config="true" duration-ms="2517" started-at="2018-04-11T17:24:51Z" finished-at="2018-04-11T17:24:53Z">
-=======
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord@271053e1]" name="ReportTestResult" is-config="true" duration-ms="2694" started-at="2018-04-11T16:13:54Z" finished-at="2018-04-11T16:13:57Z">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1330" started-at="2018-04-16T16:35:17Z" finished-at="2018-04-16T16:35:19Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.TestReports6 -->
-=======
-<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SSP_Statutory_Scenario.UpdateLeaveRecord -->
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

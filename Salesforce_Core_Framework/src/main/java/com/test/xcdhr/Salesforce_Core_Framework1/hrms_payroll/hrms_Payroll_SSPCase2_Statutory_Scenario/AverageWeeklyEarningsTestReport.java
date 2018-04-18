@@ -57,6 +57,7 @@ public class AverageWeeklyEarningsTestReport extends TestSuiteBase
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_SSPCaseTwo_ProcessPayroll_SuiteXls, this.getClass().getSimpleName());
 	}
 
+	
 
 	@Test(dataProvider = "getData")
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String ActualEmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
