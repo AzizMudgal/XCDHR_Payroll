@@ -306,14 +306,14 @@ public class CreateLeaveRequest extends TestSuiteBase
 
 		if(existsElement(OR.getProperty("sspEditTable")))
 		{
-<<<<<<< HEAD
+
 			selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
 			//StatutoryPaybasis(StatutoryPaybasis);
-=======
-			selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
+
+			//selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
 
 		//	StatutoryPaybasis(StatutoryPaybasis);
->>>>>>> refs/remotes/origin/master
+
 			/*
 			 * Not updated the below method for the ShPP Scenario.
 			 * 
@@ -324,12 +324,12 @@ public class CreateLeaveRequest extends TestSuiteBase
 			//updateFinancialControlFeatures(employeeTaxable,employeeNiable);
 			//Thread.sleep(1000L);
 
-<<<<<<< HEAD
-			StatutoryPaybasis(StatutoryPaybasis,employeeTaxable,employeeNiable);
-=======
+
 			StatutoryPaybasis(StatutoryPaybasis,employeeTaxable,employeeNiable);
 
->>>>>>> refs/remotes/origin/master
+			//StatutoryPaybasis(StatutoryPaybasis,employeeTaxable,employeeNiable);
+
+
 		}
 	}
 
