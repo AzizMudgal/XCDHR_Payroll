@@ -2,34 +2,34 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="186849" started-at="2018-04-16T11:02:12Z" finished-at="2018-04-16T11:05:19Z">
+  <suite name="Default suite" duration-ms="117676" started-at="2018-04-19T13:11:43Z" finished-at="2018-04-19T13:13:40Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="186849" started-at="2018-04-16T11:02:12Z" finished-at="2018-04-16T11:05:19Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="2439" started-at="2018-04-16T16:32:09Z" finished-at="2018-04-16T16:32:12Z">
+    <test name="Default test" duration-ms="117676" started-at="2018-04-19T13:11:43Z" finished-at="2018-04-19T13:13:40Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="3018" started-at="2018-04-19T18:41:40Z" finished-at="2018-04-19T18:41:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="576" started-at="2018-04-16T16:32:12Z" finished-at="2018-04-16T16:32:12Z">
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="809" started-at="2018-04-19T18:41:43Z" finished-at="2018-04-19T18:41:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="184047" started-at="2018-04-16T16:32:13Z" data-provider="getData" finished-at="2018-04-16T16:35:17Z">
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="113666" started-at="2018-04-19T18:41:44Z" data-provider="getData" finished-at="2018-04-19T18:43:38Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[DONT TOUCH AUTO GLTW EMPLOYER]]>
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[DO NOT TOUCH AUTOMATION EMP 103]]>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 107]]>
               </value>
             </param>
             <param index="2">
               <value>
-                <![CDATA[GLTW_Payroll]]>
+                <![CDATA[Weekly_Payroll]]>
               </value>
             </param>
             <param index="3">
@@ -39,12 +39,12 @@
             </param>
             <param index="4">
               <value>
-                <![CDATA[Week-1]]>
+                <![CDATA[Week-11]]>
               </value>
             </param>
             <param index="5">
               <value>
-                <![CDATA[Payroll Suite ScottishTaxGeneralAndLargeTaxcodeWeekly201819.xlsx]]>
+                <![CDATA[Payroll Suite ScottishTaxWeek11CSBRNTK50PercentRegulatory201819.xlsx]]>
               </value>
             </param>
             <param index="6">
@@ -59,7 +59,7 @@
             </param>
             <param index="8">
               <value>
-                <![CDATA[3]]>
+                <![CDATA[2]]>
               </value>
             </param>
             <param index="9">
@@ -69,22 +69,22 @@
             </param>
             <param index="10">
               <value>
-                <![CDATA[1]]>
+                <![CDATA[23]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="489" started-at="2018-04-16T16:35:17Z" finished-at="2018-04-16T16:35:17Z">
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="772" started-at="2018-04-19T18:43:38Z" finished-at="2018-04-19T18:43:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports@271053e1]" name="ReportTestResult" is-config="true" duration-ms="1330" started-at="2018-04-16T16:35:17Z" finished-at="2018-04-16T16:35:19Z">
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="ReportTestResult" is-config="true" duration-ms="1669" started-at="2018-04-19T18:43:39Z" finished-at="2018-04-19T18:43:40Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_Genrl_and_Large_Taxcod_Weekly.TestReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
