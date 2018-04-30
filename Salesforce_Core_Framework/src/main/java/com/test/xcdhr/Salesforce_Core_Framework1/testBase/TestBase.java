@@ -272,6 +272,10 @@ public class TestBase {
 	public static Xls_Reader Payroll_RecognitionScenarioSeven_SuiteXls = null;
 	
 	
+	public static Xls_Reader Payroll_CourtOrderScenarioOne_SuiteXls = null;
+	public String Payroll_CourtOrderScenarioOne_Inputsheet;
+
+	
 	
 	
 	public static Xls_Reader TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = null;
@@ -9200,9 +9204,16 @@ public class TestBase {
 				SSP_InputExcelFile = "Payroll Suite Statutory SSP201819";
 
 
+				/*
+				 * Court order and student loan statements
+				 * 
+				 */
 				
-				
-				
+				Payroll_CourtOrderScenarioOne_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Statutory SSP201819.xlsx");
+				Payroll_CourtOrderScenarioOne_Inputsheet = "Payroll Suite Statutory SSP201819";
+
 
 				break;
 				
