@@ -8,13 +8,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.SkipException;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
 public class GeneralTaxRateMonthly extends TestSuiteBase
@@ -22,40 +16,11 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
-
-	public static boolean Fail=false;
 	public static boolean Skip=false;
-	public static boolean IsTestPass=true;
-	public int Row_count;
-	public int rownumaz;
-	public int rownum;
-	public int rownumc;
-	public int rowSize;
-	
-	@BeforeTest
-	public void CheckTestSkip() throws Throwable
-	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(! Test_Util.IsTestcaseRunMode(Payroll_CatA_SuiteXls, this.getClass().getSimpleName()))
-		{
-			Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_CatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CatA_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_CatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
-			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
-		}
-		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_CatA_SuiteXls, this.getClass().getSimpleName());
-	}
-
-	public String payfreqncy;
-	boolean employeeFirsttimeView = true;
-	boolean compensationFirsttimeView = true;
 	boolean shouldOpenBrowser = true; 
 
 
-	@Test(dataProvider="getData", priority=1)
-	public void EmpsSetup_WithNICategory1(String EmpName,String NICategory, String AnnualSalary, String PayFrequency) throws Throwable
+	public void setupNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency) throws Throwable
 	{
 		//APP_LOGS.debug("Entering the Leave parameters");
 		APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
@@ -102,7 +67,6 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 
 
-	@Test(dataProvider="getData", priority=2,dependsOnMethods = {"UpdateEmployeeNICategory1"})
 	public void EmpsSetup_WithAnnualSalary(String EmpName,String NICategory, String AnnualSalary, String PayFrequency) throws Throwable
 	{
 		countCompensation++;
@@ -269,7 +233,6 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 	
 	
-	@Test(dataProvider="getData", dependsOnMethods = {"UpdateEmployeeNICategory1"})	
 	public void UpdateAnnualSalary1(String EmpName, String annualSalary,
 			String PayFrequency) throws Throwable {
 		try {
@@ -403,7 +366,6 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 
 	
 
-	@Test(dataProvider="getData", dependsOnMethods = {"UpdateAnnualSalary1"})
 	public void UpdatePayFrequency1(String empName, String AnnualSalary,
 			String PayFrequency) throws Throwable {
 		try {
@@ -442,57 +404,6 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 			ErrorUtil.addVerificationFailure(t);
 		}
 
-	}
-	
-	
-	
-	@DataProvider
-	public Object[][] getData() throws Throwable{
-		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_CatA_SuiteXls,"NIWeeklyCat_A");
-	}
-
-	
-
-	@AfterMethod
-	public void ReportDataSetResult() throws Throwable{
-		processDesiredTaxYearInputExcelFile(TaxYear);
-		if(Skip){
-			Test_Util.ReportDataSetResult(Payroll_CatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
-		}else if(Fail){
-
-			IsTestPass = false;
-
-			Test_Util.ReportDataSetResult(Payroll_CatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
-		}else{
-			Test_Util.ReportDataSetResult(Payroll_CatA_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
-		}
-
-		Skip=false;
-		Fail=false;
-
-
-	}
-
-
-	
-	@AfterTest
-	public void ReportTestResult() throws Throwable
-	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
-
-		if(IsTestPass)
-		{
-			// This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
-			// would be considered as fail.And the same would be updated.
-			Test_Util.ReportDataSetResult(Payroll_CatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CatA_SuiteXls, this.getClass().getSimpleName()),"Pass");
-		}
-		else
-		{
-			Test_Util.ReportDataSetResult(Payroll_CatA_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CatA_SuiteXls, this.getClass().getSimpleName()),"Fail");
-		}	
-
-		closeBrowser();
 	}
 
 
