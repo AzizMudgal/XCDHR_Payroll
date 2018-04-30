@@ -3,13 +3,29 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek3_CSBRNTK50RL.GeneralTaxRateWeekly">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
           <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="0 1 2 3 4 5 6 7 8"/>
           <include name="CheckSuiteSkip"/>
           <include name="EmpsSetup_WithNICategory" invocation-numbers="0 1 2 3 4 5 6 7 8"/>
+=======
+          <include name="ReportTestResult"/>
+          <include name="EmpsSetup_ForMonthlyTaxRate"/>
+          <include name="EmpsSetup_WithAnnualSalary"/>
+          <include name="CheckSuiteSkip"/>
+          <include name="CheckTestSkip"/>
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek3_CSBRNTK50RL.GeneralTaxRateWeekly -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

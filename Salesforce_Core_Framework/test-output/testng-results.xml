@@ -2,9 +2,14 @@
 <testng-results skipped="18" failed="0" ignored="0" total="18" passed="0">
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="4290" started-at="2018-04-27T14:59:43Z" finished-at="2018-04-27T14:59:48Z">
+=======
+  <suite name="Default suite" duration-ms="117676" started-at="2018-04-19T13:11:43Z" finished-at="2018-04-19T13:13:40Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="4290" started-at="2018-04-27T14:59:43Z" finished-at="2018-04-27T14:59:48Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A">
         <test-method status="FAIL" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="CheckSuiteSkip" is-config="true" duration-ms="0" started-at="2018-04-27T20:29:39Z" finished-at="2018-04-27T20:29:39Z">
@@ -37,33 +42,97 @@
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.Exception -->
+=======
+    <test name="Default test" duration-ms="117676" started-at="2018-04-19T13:11:43Z" finished-at="2018-04-19T13:13:40Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="3018" started-at="2018-04-19T18:41:40Z" finished-at="2018-04-19T18:41:43Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="SKIP" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2018-04-27T20:29:43Z" finished-at="2018-04-27T20:29:43Z">
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="809" started-at="2018-04-19T18:41:43Z" finished-at="2018-04-19T18:41:44Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
+<<<<<<< HEAD
         <test-method status="SKIP" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="15" started-at="2018-04-27T20:29:46Z" data-provider="getData" finished-at="2018-04-27T20:29:46Z">
+=======
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="113666" started-at="2018-04-19T18:41:44Z" data-provider="getData" finished-at="2018-04-19T18:43:38Z">
+>>>>>>> refs/remotes/origin/master
           <params>
             <param index="0">
               <value>
+<<<<<<< HEAD
                 <![CDATA[DO NOT TOUCH AUTOMATION EMP 549]]>
+=======
+                <![CDATA[DO NOT TOUCH PAYROLL AUTOMATION EMPLOYER_17/18]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="1">
               <value>
+<<<<<<< HEAD
                 <![CDATA[A  All other employees]]>
+=======
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 107]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="2">
               <value>
+<<<<<<< HEAD
                 <![CDATA[8,424.48]]>
+=======
+                <![CDATA[Weekly_Payroll]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
             <param index="3">
               <value>
+<<<<<<< HEAD
                 <![CDATA[Monthly]]>
+=======
+                <![CDATA[Weekly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[Week-11]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite ScottishTaxWeek11CSBRNTK50PercentRegulatory201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - TAX PAYROLL AUTOMATION]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_Tax_NI_Directors_TestReports 201819\\201819 Scottish Payroll Net Income tax calculation Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[23]]>
+>>>>>>> refs/remotes/origin/master
               </value>
             </param>
           </params>
@@ -98,6 +167,7 @@
           </exception> <!-- java.lang.Exception -->
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- EmpsSetup_WithNICategory -->
         <test-method status="SKIP" signature="EmpsSetup_WithNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="EmpsSetup_WithNICategory" duration-ms="0" started-at="2018-04-27T20:29:46Z" data-provider="getData" finished-at="2018-04-27T20:29:46Z">
           <params>
@@ -155,9 +225,14 @@
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithNICategory -->
         <test-method status="SKIP" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="0" started-at="2018-04-27T20:29:46Z" finished-at="2018-04-27T20:29:46Z">
+=======
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="772" started-at="2018-04-19T18:43:38Z" finished-at="2018-04-19T18:43:39Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
+<<<<<<< HEAD
         <test-method status="SKIP" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="ReportDataSetResult" is-config="true" duration-ms="0" started-at="2018-04-27T20:29:46Z" finished-at="2018-04-27T20:29:46Z">
           <reporter-output>
           </reporter-output>
@@ -985,9 +1060,13 @@
           </reporter-output>
         </test-method> <!-- ReportDataSetResult -->
         <test-method status="SKIP" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="ReportTestResult" is-config="true" duration-ms="0" started-at="2018-04-27T20:29:48Z" finished-at="2018-04-27T20:29:48Z">
+=======
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports@402a079c]" name="ReportTestResult" is-config="true" duration-ms="1669" started-at="2018-04-19T18:43:39Z" finished-at="2018-04-19T18:43:40Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ReportTestResult -->
+<<<<<<< HEAD
         <test-method status="SKIP" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A@271053e1]" name="EmpsSetup_WithAnnualSalary" duration-ms="0" started-at="2018-04-27T20:29:48Z" data-provider="getData" finished-at="2018-04-27T20:29:48Z">
           <params>
             <param index="0">
@@ -1111,6 +1190,9 @@
           </reporter-output>
         </test-method> <!-- EmpsSetup_WithAnnualSalary -->
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek11_CSBRNTK50RL.TestReports -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
