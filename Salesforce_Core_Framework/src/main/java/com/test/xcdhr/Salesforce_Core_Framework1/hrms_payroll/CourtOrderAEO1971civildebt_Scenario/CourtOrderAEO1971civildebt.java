@@ -7,82 +7,73 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.SkipException;
+import org.testng.annotations.DataProvider;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
+import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class GeneralTaxRateMonthly extends TestSuiteBase
+public class CourtOrderAEO1971civildebt extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
 	static int countCompensation = -1;
 	public static boolean Skip=false;
 	boolean shouldOpenBrowser = true; 
-
-
-	public void setupNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency) throws Throwable
+	
+	
+	public void loginIntoDesiredOrg(int OrgFlag)throws Throwable
 	{
-		//APP_LOGS.debug("Entering the Leave parameters");
-		APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
-		count++;
-		if(! runmodes[count].equalsIgnoreCase("Y")){
-
-			Skip=true;
-			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
-		}
-
-		APP_LOGS.debug("Executing the test case");
-		if(shouldOpenBrowser)
+		try
 		{
-			shouldOpenBrowser = false;
-			openBrowser();
-			logingIntoDesiredORG(OrgFlag);
-
-			driver.manage().window().maximize();
-			try
+			if(shouldOpenBrowser)
 			{
-				closePopupWindow();
-				if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+				shouldOpenBrowser = false;
+				/*
+				 * Desired browser is going to get invoked 
+				 */
+				openBrowser();
+				
+				/*
+				 * Desired ORG is going to get invoked 
+				 */
+				logingIntoDesiredORG(OrgFlag);
+				driver.manage().window().maximize();
+				try
 				{
-					String personalTab = getObject("PersonalTab").getText();
-					System.out.println("Tab name is :"+ personalTab);
-					Assert.assertEquals("Personal", personalTab);
-					System.out.println("The test script verified that it successfully logged into XCD HR Org.");
-					System.out.println("");
+					/*
+					 * Temporary pop up window is going to be closed 
+					 */
+					closePopupWindow();
+					
+					/*
+					 * Particular tab is being verified after logging successfully in the Org. 
+					 */
+					if(existsElementchkFor1mts(OR.getProperty("PersonalTab")))
+					{
+						String personalTab = getObject("PersonalTab").getText();
+						System.out.println("Tab name is :"+ personalTab);
+						Assert.assertEquals("Personal", personalTab);
+						System.out.println("The test script verified that it successfully logged into XCD HR Org.");
+						System.out.println("");
+					}
+				}
+				catch(Throwable t)
+				{
+					System.out.println(t.getMessage());
+					System.out.println(t.getStackTrace().toString());
 				}
 			}
-			catch(Throwable t)
-			{
-				APP_LOGS.debug("Could not assert the home page title, Check for error");
-				System.out.println("");
-			}
 		}
-		/*************************************************************************/
-
-		// The script updates the NI Category for the Automation employees
-		UpdateEmployeeNICategory1(EmpName,NICategory);
-
-		/*************************************************************************/
-	}
-
-
-
-	public void EmpsSetup_WithAnnualSalary(String EmpName,String NICategory, String AnnualSalary, String PayFrequency) throws Throwable
-	{
-		countCompensation++;
-		if(! runmodes[countCompensation].equalsIgnoreCase("Y"))
+		catch(Throwable t)
 		{
-			Skip=true;
-			throw new SkipException("Runmode for Test set data is set to 'NO' "+countCompensation);
+			System.out.println(t.getMessage());
+			System.out.println(t.getStackTrace().toString());
 		}
-
-		/*************************************************************************/
-		// The script updates the Annual salary in the compensation Tab for the Automation employees
-		UpdateAnnualSalary1(EmpName,AnnualSalary,PayFrequency);
-		/*************************************************************************/
+		
 	}
 
-	
+
+
 	
 	public void UpdateEmployeeNICategory1(String empName, String NICategory)
 			throws Throwable {
@@ -148,8 +139,8 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 								WebElement tempElement = driver.findElement(By
 										.xpath(firstRowOfEmployeeColumn));
 								String tempEmp = tempElement.getText();
-								System.out.println(tempEmp + "-------" + empName + "------"
-										+ rownum);
+								/*System.out.println(tempEmp + "-------" + empName + "------"
+										+ rownum);*/
 								String firstRowOfTaxCode = "//div[" + rownum + "]" + "/"
 										+ "table/" + "tbody/" + "tr/" + "td["
 										+ niCategoryColumn + "]" + "/" + "div";
@@ -212,7 +203,7 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 									}
 
 								} else
-									System.out.println("incrementing the row number");
+									//System.out.println("incrementing the row number");
 								rownum++;
 							}
 						} catch (Throwable t) {
@@ -393,18 +384,24 @@ public class GeneralTaxRateMonthly extends TestSuiteBase
 						getObject("payFrequencyUpdate").click();
 						System.out
 								.println("The update button got clicked and Pay frequency Category got saved");
+						Thread.sleep(2000L);
 					}
 				}
 			}
-
-		} catch (Throwable t) {
+		} catch (Throwable t)
+		{
 			APP_LOGS.debug("Check the Pay frequency Method for errors");
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
-			ErrorUtil.addVerificationFailure(t);
 		}
-
 	}
-
+	
+	/*
+	@DataProvider
+	public Object[][] getData() throws Throwable
+	{
+		processDesiredTaxYearInputExcelFile(TaxYear);
+		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TestCourtOrderAEO1971civildebt");
+	}*/
 
 }

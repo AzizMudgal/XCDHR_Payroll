@@ -102,7 +102,7 @@ public class Test_Util
 
 
 		xls.setCellData(TestCaseName, "Results", Rownum, Result);
-		System.out.println("successfully updated the result123");
+		System.out.println("successfully updated the result");
 
 	}
 
