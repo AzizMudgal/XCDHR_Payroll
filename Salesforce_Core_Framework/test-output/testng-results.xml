@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="110324" started-at="2018-05-02T11:16:50Z" finished-at="2018-05-02T11:18:40Z">
+  <suite name="Default suite" duration-ms="113605" started-at="2018-05-02T11:50:35Z" finished-at="2018-05-02T11:52:29Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="110324" started-at="2018-05-02T11:16:50Z" finished-at="2018-05-02T11:18:40Z">
+    <test name="Default test" duration-ms="113605" started-at="2018-05-02T11:50:35Z" finished-at="2018-05-02T11:52:29Z">
       <class name="com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="3550" started-at="2018-05-02T16:46:47Z" finished-at="2018-05-02T16:46:50Z">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="3008" started-at="2018-05-02T17:20:32Z" finished-at="2018-05-02T17:20:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="1297" started-at="2018-05-02T16:46:50Z" finished-at="2018-05-02T16:46:51Z">
+        <test-method status="PASS" signature="checkTestSkip()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="checkTestSkip" is-config="true" duration-ms="1243" started-at="2018-05-02T17:20:35Z" finished-at="2018-05-02T17:20:37Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CheckTestSkip -->
-        <test-method status="PASS" signature="gotoOrg(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="gotoOrg" duration-ms="35463" started-at="2018-05-02T16:46:51Z" data-provider="getData" finished-at="2018-05-02T16:47:27Z">
+        </test-method> <!-- checkTestSkip -->
+        <test-method status="PASS" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="toSelectOrgForPerformingAutomationTests" duration-ms="39189" started-at="2018-05-02T17:20:37Z" data-provider="getData" finished-at="2018-05-02T17:21:16Z">
           <params>
             <param index="0">
               <value>
@@ -40,12 +40,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- gotoOrg -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="ReportDataSetResult" is-config="true" duration-ms="16" started-at="2018-05-02T16:47:27Z" finished-at="2018-05-02T16:47:27Z">
+        </test-method> <!-- toSelectOrgForPerformingAutomationTests -->
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="16" started-at="2018-05-02T17:21:16Z" finished-at="2018-05-02T17:21:16Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithNICategory1(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="EmpsSetup_WithNICategory1" duration-ms="30737" started-at="2018-05-02T16:47:27Z" data-provider="getData" depends-on-methods="com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt.gotoOrg" finished-at="2018-05-02T16:47:58Z">
+        </test-method> <!-- toReportDataSetResult -->
+        <test-method status="PASS" signature="toSetEmployeesNICategory(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="toSetEmployeesNICategory" duration-ms="30535" started-at="2018-05-02T17:21:16Z" data-provider="getData" depends-on-methods="com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt.toSelectOrgForPerformingAutomationTests" finished-at="2018-05-02T17:21:46Z">
           <params>
             <param index="0">
               <value>
@@ -70,12 +70,12 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsSetup_WithNICategory1 -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="ReportDataSetResult" is-config="true" duration-ms="10" started-at="2018-05-02T16:47:58Z" finished-at="2018-05-02T16:47:58Z">
+        </test-method> <!-- toSetEmployeesNICategory -->
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="12" started-at="2018-05-02T17:21:46Z" finished-at="2018-05-02T17:21:46Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="EmpsSetup_WithAnnualSalary(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="EmpsSetup_WithAnnualSalary" duration-ms="40719" started-at="2018-05-02T16:47:58Z" data-provider="getData" depends-on-methods="com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt.EmpsSetup_WithNICategory1" finished-at="2018-05-02T16:48:38Z">
+        </test-method> <!-- toReportDataSetResult -->
+        <test-method status="PASS" signature="setEmployeesAnnualSalaryAndPayfrequency(java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="setEmployeesAnnualSalaryAndPayfrequency" duration-ms="40276" started-at="2018-05-02T17:21:46Z" data-provider="getData" depends-on-methods="com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt.toSetEmployeesNICategory" finished-at="2018-05-02T17:22:27Z">
           <params>
             <param index="0">
               <value>
@@ -100,15 +100,15 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- EmpsSetup_WithAnnualSalary -->
-        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="ReportDataSetResult" is-config="true" duration-ms="16" started-at="2018-05-02T16:48:38Z" finished-at="2018-05-02T16:48:38Z">
+        </test-method> <!-- setEmployeesAnnualSalaryAndPayfrequency -->
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="11" started-at="2018-05-02T17:22:27Z" finished-at="2018-05-02T17:22:27Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReportDataSetResult -->
-        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="ReportTestResult" is-config="true" duration-ms="2046" started-at="2018-05-02T16:48:38Z" finished-at="2018-05-02T16:48:40Z">
+        </test-method> <!-- toReportDataSetResult -->
+        <test-method status="PASS" signature="toReportTestResult()[pri:0, instance:com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt@42dafa95]" name="toReportTestResult" is-config="true" duration-ms="2274" started-at="2018-05-02T17:22:27Z" finished-at="2018-05-02T17:22:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ReportTestResult -->
+        </test-method> <!-- toReportTestResult -->
       </class> <!-- com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

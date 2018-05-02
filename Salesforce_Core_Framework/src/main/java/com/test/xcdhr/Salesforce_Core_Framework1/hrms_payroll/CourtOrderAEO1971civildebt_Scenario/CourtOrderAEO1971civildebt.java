@@ -17,9 +17,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	static int countCompensation = -1;
 	public static boolean Skip=false;
 	boolean shouldOpenBrowser = true; 
-	
-	
-	public void loginIntoDesiredOrg(int OrgFlag)throws Throwable
+
+
+	public void toSelectDesiredOrg(int OrgFlag)throws Throwable
 	{
 		try
 		{
@@ -41,7 +41,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					 * Temporary pop up window is going to be closed 
 					 */
 					closePopupWindow();
-					
+
 					/*
 					 * Particular tab is being verified after logging successfully in the Org. 
 					 */
@@ -66,13 +66,12 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getMessage());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
 	}
 
 
 
-	
-	public void UpdateEmployeeNICategory1(String empName, String NICategory)
+
+	public void updateEmployeesNICategory(String empName, String NICategory)
 			throws Throwable {
 		try {
 			if (employeeFirsttimeView) {
@@ -85,7 +84,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						Select selectByValue = new Select(driver.findElement(By
 								.xpath(OR.getProperty("EmployeeView"))));
 						selectByValue
-								.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
+						.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
 						Thread.sleep(2000L);
 						if (existsElementchkFor1mts(OR
 								.getProperty("ViewGoButton"))) {
@@ -151,7 +150,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 												driver.findElement(By.xpath(firstRowOfTaxCode)))
 												.perform();
 										action.moveToElement(getObject("InlineDropdown"))
-												.perform();
+										.perform();
 										// Thread.sleep(2000L);
 										if (existsElementchkFor1mts(OR
 												.getProperty("InlineDropdown"))) {
@@ -164,7 +163,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 													.getProperty("InlineUpdateButn"))) {
 												getObject("InlineUpdateButn").click();
 												System.out
-														.println("The update button got clicked and NI Category got saved");
+												.println("The update button got clicked and NI Category got saved");
 												Thread.sleep(8000L);
 												break outerbreak;
 											}
@@ -174,34 +173,34 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 										&& tempEmp != (empName)) {
 									rownum++;
 									System.out
-											.println("The row number of the page reached"
-													+ rownum
-													+ " to 200 and"
-													+ " Required Employee not found hence clicking the"
-													+ " pagination link so that Employee search continues for next page");
+									.println("The row number of the page reached"
+											+ rownum
+											+ " to 200 and"
+											+ " Required Employee not found hence clicking the"
+											+ " pagination link so that Employee search continues for next page");
 									if (existsElementchkFor1mts(OR
 											.getProperty("paginationElementPersonal"))) {
 										getObject("paginationNextPersonal").sendKeys("");
 										getObject("paginationNextPersonal").click();
 										System.out
-												.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+										.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
 										rownum = 0;
 										Thread.sleep(8000L);
-										
+
 									} else {
 										System.out
-												.println("The employee which you are searching "
-														+ "is not available in all the pages"
-														+ "of this Personal / Compensation Tab "
-														+ "of the Application. Hence the script unfortunately is "
-														+ "not able to execute successfully. Please include the said employee"
-														+ "in the said Tab of the application and run once again the script");
+										.println("The employee which you are searching "
+												+ "is not available in all the pages"
+												+ "of this Personal / Compensation Tab "
+												+ "of the Application. Hence the script unfortunately is "
+												+ "not able to execute successfully. Please include the said employee"
+												+ "in the said Tab of the application and run once again the script");
 										closeBrowser();
 									}
 
 								} else
 									//System.out.println("incrementing the row number");
-								rownum++;
+									rownum++;
 							}
 						} catch (Throwable t) {
 							System.out.println(t.getMessage());
@@ -219,9 +218,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 	}
 
-	
-	
-	public void UpdateAnnualSalary1(String EmpName, String annualSalary,
+
+
+	public void updateEmpAnnualSalaryAndPayFrequency(String EmpName, String annualSalary,
 			String PayFrequency) throws Throwable {
 		try {
 			if (compensationFirsttimeView) {
@@ -290,7 +289,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 								action1.doubleClick(
 										driver.findElement(By
 												.xpath(firstRowOfAnnualsalary)))
-										.perform();
+												.perform();
 								WebElement updatesal = driver
 										.findElement(By.xpath(OR
 												.getProperty("annualSalTextField")));
@@ -305,38 +304,38 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 									getObject("CompnSavebuton").sendKeys("");
 									getObject("CompnSavebuton").click();
 									System.out
-											.println("The annual salary got saved");
+									.println("The annual salary got saved");
 								}
 								Thread.sleep(3000L);
 							}
-							UpdatePayFrequency1(EmpName, annualSalary,
+							updateEmpPayFrequency(EmpName, annualSalary,
 									PayFrequency);
 							break outerbreak;
 						} else if (rownum == lastRowCount && AppnEmp != null
 								&& AppnEmp != (EmpName)) {
 							System.out
-									.println("The row number of the page reached"
-											+ rownum
-											+ " to 200 and"
-											+ " Required Employee not found hence clicking the"
-											+ " pagination link so that Employee search continues for next page");
+							.println("The row number of the page reached"
+									+ rownum
+									+ " to 200 and"
+									+ " Required Employee not found hence clicking the"
+									+ " pagination link so that Employee search continues for next page");
 							if (existsElementchkFor1mts(OR
 									.getProperty("paginationElementPersonal"))) {
 								getObject("paginationNextPersonal")
-										.sendKeys("");
+								.sendKeys("");
 								getObject("paginationNextPersonal").click();
 								System.out
-										.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
+								.println("As the required employees are not found in first page,hence clicked to next page of personal Tab");
 								Thread.sleep(8000L);
 								rownum = 0;
 							} else {
 								System.out
-										.println("The employee which you are searching "
-												+ "is not available in all the pages"
-												+ "of this Personal / Compensation Tab "
-												+ "of the Application. Hence the script unfortunately is "
-												+ "not able to execute successfully. Please include the said employee"
-												+ "in the said Tab of the application and run once again the script");
+								.println("The employee which you are searching "
+										+ "is not available in all the pages"
+										+ "of this Personal / Compensation Tab "
+										+ "of the Application. Hence the script unfortunately is "
+										+ "not able to execute successfully. Please include the said employee"
+										+ "in the said Tab of the application and run once again the script");
 								closeBrowser();
 							}
 						}
@@ -352,26 +351,26 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 	}
 
-	
 
-	public void UpdatePayFrequency1(String empName, String AnnualSalary,
+
+	public void updateEmpPayFrequency(String empName, String AnnualSalary,
 			String PayFrequency) throws Throwable {
 		try {
 			String firstRowOfPayFrequency = "//div[" + rownum + "]" + "/"
 					+ "table/" + "tbody/" + "tr/" + "td["
 					+ compPayfrequencyColumn + "]" + "/" + "div";
-			if (existsElement(firstRowOfPayFrequency)) {
+			if (existsElement(firstRowOfPayFrequency))
+			{
 				Thread.sleep(2000L);
-			
 				Actions action2 = new Actions(driver);
 				action2.doubleClick(
 						driver.findElement(By.xpath(firstRowOfPayFrequency)))
 						.perform();
 				action2.moveToElement(getObject("payFrequencyDropdown"))
-						.perform();
+				.perform();
 				Thread.sleep(2000L);
 				if (existsElement(OR.getProperty("payFrequencyDropdown"))) {
-					
+
 					getObject("payFrequencyDropdown").sendKeys("");
 					getObject("payFrequencyDropdown").sendKeys(PayFrequency);
 					System.out.println("Selected the PayFrequency item as :"
@@ -380,7 +379,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					if (existsElement(OR.getProperty("payFrequencyUpdate"))) {
 						getObject("payFrequencyUpdate").click();
 						System.out
-								.println("The update button got clicked and Pay frequency Category got saved");
+						.println("The update button got clicked and Pay frequency Category got saved");
 						Thread.sleep(2000L);
 					}
 				}
