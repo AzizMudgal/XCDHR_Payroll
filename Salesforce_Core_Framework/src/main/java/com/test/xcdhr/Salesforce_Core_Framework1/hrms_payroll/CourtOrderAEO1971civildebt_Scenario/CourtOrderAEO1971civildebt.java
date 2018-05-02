@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
-import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
 public class CourtOrderAEO1971civildebt extends TestSuiteBase
@@ -32,7 +30,6 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				 * Desired browser is going to get invoked 
 				 */
 				openBrowser();
-				
 				/*
 				 * Desired ORG is going to get invoked 
 				 */
@@ -395,13 +392,4 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	/*
-	@DataProvider
-	public Object[][] getData() throws Throwable
-	{
-		processDesiredTaxYearInputExcelFile(TaxYear);
-		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TestCourtOrderAEO1971civildebt");
-	}*/
-
 }
