@@ -3,16 +3,9 @@ package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.util.List;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.By;
@@ -21,16 +14,11 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import atu.webdriver.utils.table.WebTable;
-
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
-import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.EnumTestClass;
-import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.ModifiedReport;
 
 /*
  * Allready the inputscript methods are working fine.
  * This class will implement payroll methods also a
- *
  *  */
 
 public class CourtOrderAEO1971civildebt extends TestSuiteBase
@@ -104,18 +92,14 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 	public void updateEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
-			throws Throwable
-	{
+			throws Throwable {
 		try {
-			if (employeeFirsttimeView)
-			{
+			if (employeeFirsttimeView) {
 				employeeFirsttimeView = false;
 				getObject("PersonalTab").click();
-				if (existsElementchkFor1mts(OR.getProperty("PersonalText")))
-				{
+				if (existsElementchkFor1mts(OR.getProperty("PersonalText"))) {
 					System.out.println("I am in personal page");
-					if (existsElementchkFor1mts(OR.getProperty("EmployeeView")))
-					{
+					if (existsElementchkFor1mts(OR.getProperty("EmployeeView"))) {
 						System.out.println("I recognised the Employee view");
 						Select selectByValue = new Select(driver.findElement(By
 								.xpath(OR.getProperty("EmployeeView"))));
@@ -123,8 +107,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						.selectByVisibleText("DO NOT TOUCH PAYROLL AUTOMATION TESTING");
 						Thread.sleep(2000L);
 						if (existsElementchkFor1mts(OR
-								.getProperty("ViewGoButton")))
-						{
+								.getProperty("ViewGoButton"))) {
 							getObject("ViewGoButton").sendKeys("");
 							getObject("ViewGoButton").click();
 							System.out.println("The Go button got clicked");
@@ -136,30 +119,23 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			Thread.sleep(2000L);
 			try {
 				if (existsElementchkFor1mts(OR
-						.getProperty("firstRecordOfTaxCodecoulmnTable")))
-				{
+						.getProperty("firstRecordOfTaxCodecoulmnTable"))) {
 					WebElement postsTable = driver.findElement(By.xpath(OR
 							.getProperty("firstRecordOfTaxCodecoulmnTable")));
-					if (existsWebElement(postsTable))
-					{
-						try
-						{
+					if (existsWebElement(postsTable)) {
+						try {
 							WebElement tableheader = driver.findElement(By.xpath(OR
 									.getProperty("PersonalAndCompensationHeadingTable")));
 							List<WebElement> th = tableheader.findElements(By.tagName("td"));
-							for (a = 0; a < th.size(); a++)
-							{
-								if ("Employee".equalsIgnoreCase(th.get(a).getText()))
-								{
+							for (a = 0; a < th.size(); a++) {
+								if ("Employee".equalsIgnoreCase(th.get(a).getText())) {
 									empcolnum = a + 1;
 									break;
 								}
 							}
 
-							for (b = 0; b < th.size(); b++)
-							{
-								if ("NI category".equalsIgnoreCase(th.get(b).getText()))
-								{
+							for (b = 0; b < th.size(); b++) {
+								if ("NI category".equalsIgnoreCase(th.get(b).getText())) {
 									niCategoryColumn = b + 1;
 									break;
 								}
@@ -1015,367 +991,6 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
-	
-	/**************************************************************************************/
-	/*************************************************************************************/
-	
-	
-	/*
-	 * Report methods follows
-	 * 
-	 
-	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
-	{
-		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
-		{
-			getObject("reportTablocator").click();
-			System.out.println("2> Clicked to Report Tab");
-			Thread.sleep(4000L);
-			//driver.navigate().refresh();
-		}
-
-		if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
-		{				
-			SearchReport(FirstReportNameInApplication);
-		}
-
-		if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
-		{
-			editCustomButton();
-		}
-
-		if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
-		{				
-			UpdateReportPage(Payrolid,Frquency,MonthName);
-			System.out.println("");
-		}
-
-		if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
-		{
-			RunReport();
-		}
-
-		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
-		{
-			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
-			System.out.println("7> Entered the values and processed the Test Remarks");
-		}
-	}
-
-
-
-	public void processReport(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo)throws Throwable
-	{
-		try
-		{
-			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
-			{
-				//Get number of rows In table using table/tbody/tr
-				Row_count = driver.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI"))).size();
-				System.out.println("Number Of Rows = "+Row_count);
-				//Get number of columns In table by using Tr/td
-				int Col_count = driver.findElements(By.xpath(OR.getProperty("reportTableColumnsNI"))).size();
-				System.out.println("Number Of Columns = "+Col_count); // DISPLAYING
-			}
-			Thread.sleep(3000L);
-			WebElement threecolms = driver.findElement(By.xpath(OR.getProperty("reportTableLocatorNI")));
-			WebTable table = WebTable.getTable(threecolms);
-			List<WebElement> rows = threecolms.findElements(By.xpath(OR.getProperty("reportTableRowsLocatorNI")));
-			java.util.Iterator<WebElement> x = rows.iterator();
-			int rownum = 1;
-			gotobreak:
-				while(x.hasNext())
-				{
-					if(rownum==(Row_count-2))
-					{	
-						System.out.println("no of rows is equal to expected rows");
-						System.out.println("4> Total count of Employee records displayed in the report are :"+rownum);
-						System.out.println("");
-						System.out.println("5> The script successfully read and output the values and accordingly gave the TEST REMARKS in NI-HMRC Excel file");
-						break gotobreak;
-					} 
-					else
-					{
-						firstCellOfBody= table.getTBody().getRow(rownum).getCell(0).getText();
-						//System.out.println("firstCellOfBody is :"+firstCellOfBody);
-						String statutoryAdoptionPay= table.getTBody().getRow(rownum).getCell(1).getText();
-						System.out.println("statutoryAdoptionPay is :"+statutoryAdoptionPay);
-						String statutoryMaternityPay= table.getTBody().getRow(rownum).getCell(2).getText();
-						System.out.println("statutoryMaternityPay is :"+statutoryMaternityPay);
-						//call the function which reads the excel sheet.
-						ReadsExpectedData(EmpName,statutoryAdoptionPay,statutoryMaternityPay,TestResultExcelFilePath,TestReportworksheetNo);
-					}
-					rownum++;
-				}
-		}
-		catch(Throwable t)
-		{
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-
-
-
-	public void ReadsExpectedData(String EmpName,String statutoryAdoptionPay,String statutoryMaternityPay,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
-	{
-		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
-		DecimalFormat df = new DecimalFormat("###.#");
-		String worksheetNoWithoutDecimal= df.format(worksheetvalue);
-		int TRwNo=Integer.parseInt(worksheetNoWithoutDecimal);
-		System.out.println("The converted post value is  :"+TRwNo);
-	
-		
-		
-		File excel = new File(TestResultExcelFilePath);
-		FileInputStream fis = new FileInputStream(excel);
-		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
-		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
-
-		CellStyle style = wb.createCellStyle();
-		style.setFillPattern(CellStyle.ALIGN_FILL);
-		style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
-		Font font = wb.createFont();	
-		font.setColor(IndexedColors.BLACK.getIndex());
-		style.setFont(font);
-
-		CellStyle styleFalse = wb.createCellStyle();
-		styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
-		styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
-
-		FileOutputStream webdata = new FileOutputStream (TestResultExcelFilePath);
-
-		int rowNum = ws.getLastRowNum()+1;
-
-		for(int i =2; i< rowNum; i++)
-		{
-			Row row = ws.getRow(i);
-			String value1 = cellToString(row.getCell(1));
-			String value2 = cellToString(row.getCell(7));
-			String value3 = cellToString(row.getCell(8));
-
-			if(value1 != null && value1.equalsIgnoreCase(firstCellOfBody))
-			{
-				row.createCell(9).setCellValue(statutoryAdoptionPay);
-				row.createCell(10).setCellValue(statutoryMaternityPay);
-				if(value2 != null && value2.equalsIgnoreCase(statutoryAdoptionPay))
-				{
-					Cell cell1 = row.createCell(11);			
-					row.createCell(11).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				}
-				else
-				{
-					Cell cell1 = row.createCell(11);
-					row.createCell(11).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if(value3 != null && value3.equalsIgnoreCase(statutoryMaternityPay))
-				{
-					Cell cell1 = row.createCell(12);			
-					row.createCell(12).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				}
-				else
-				{
-					Cell cell1 = row.createCell(12);
-					row.createCell(12).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-				break;
-			}
-		}	
-		wb.write(webdata);
-		webdata.close();
-		fis.close();
-	}
-
-
-	public String cellToString(Cell cell)
-	{
-		int type;
-		Object result;
-		type = cell.getCellType();
-		switch(type)
-		{
-		case 0: // to get numeric value from the cell 
-			result = Double.toString(cell.getNumericCellValue());
-			break;
-		case 1: // to get string value from the cell
-			result = cell.getStringCellValue();
-			break;
-		case 2: result=cell.getCellFormula();
-		break;
-		case 3: result= cell==null;
-		break;	
-		case 4: result=cell.getRichStringCellValue();
-		break;
-		default: 
-			throw new RuntimeException("there are no othe values");
-		}
-		return result.toString();
-	}
-
-
-
-	public void SearchReport(String TaxReport) throws Throwable {
-		try {
-			if (existsElementchkFor1mts(OR
-					.getProperty("findReportTextboxLocator"))) {
-				getObject("findReportTextboxLocator").sendKeys("");
-				Thread.sleep(1000L);
-				getObject("findReportTextboxLocator").sendKeys(TaxReport);
-				Thread.sleep(2000L);
-				if (existsElementchkFor1mts(OR
-						.getProperty("ReportTablelocator"))) {
-					System.out.println("Entered FetchReport==========");
-					FetchReport();
-				}
-
-			}
-		} catch (Throwable t) {
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-			SearchReport(TaxReport);
-		}
-	}
-	
-	
-
-	public void FetchReport() throws Throwable {
-
-		try {
-			System.out.println("Entered FetchReport==========");
-			WebElement TableOfReportGrid = driver.findElement(By.xpath(OR
-					.getProperty("ReportTablelocator")));
-			WebTable RTable = WebTable.getTable(TableOfReportGrid);
-			List<WebElement> Table_Report = TableOfReportGrid.findElements(By
-					.xpath(OR.getProperty("ReportTableRows")));
-			java.util.Iterator<WebElement> Rx = Table_Report.iterator();
-			int Reportrownum = 0;
-			while (Rx.hasNext()) {
-				NameOfReprt = RTable.getTBody().getRow(Reportrownum).getCell(2)
-						.getText();
-				System.out.println("Report name is :" + NameOfReprt);
-				System.out.println("Report name is matched");
-				String modifiedReport = getReportNamee(NameOfReprt);
-				if (modifiedReport != null) {
-					ModifiedReport rp = Enum.valueOf(ModifiedReport.class,
-							modifiedReport);
-					EnumTestClass enumTestCls = new EnumTestClass();
-					enumTestCls.runTestReport(rp);
-				}
-			}
-		} catch (Throwable t) {
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-		System.out.println("Exit FetchReport==========");
-	}
-	
-	
-	
-	public void editCustomButton() throws Throwable {
-		try {
-			getObject("reportCustomisebtn").click();
-			System.out.println("custom button got clicked");
-			Thread.sleep(3000L);
-		} catch (Throwable t) {
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-	
-	
-
-	public void UpdateReportPage(String PayrollId, String PayFrequency,
-			String Monthname) throws Throwable {
-
-		Thread.sleep(2000L);
-		if (existsElementchkFor1mts(OR.getProperty("customEditbtn"))) {
-			System.out.println("Custom Edit button exists");
-			getObject("customEditbtn").sendKeys("");
-			getObject("customEditbtn").click();
-			Thread.sleep(1000L);
-		}
-
-		if (existsElementchkFor1mts(OR.getProperty("customPayrollRecordid")))
-		{
-			getObject("customPayrollRecordid").sendKeys("");
-			getObject("customPayrollRecordid").clear();
-			
-			 * temporarily i am not passing parameter for payroll id since the
-			 * report is not taking the 'Monthly_Payroll' as payroll id.
-			 
-			getObject("customPayrollRecordid").sendKeys(PayrollId);
-			Thread.sleep(4000L);
-			getObject("customOkbtn").click();
-			System.out.println("Payrun updated");
-			Thread.sleep(6000L);
-		}
-		getObject("customPayfrequencyEditbtn").sendKeys("");
-		getObject("customPayfrequencyEditbtn").click();
-		Thread.sleep(1000L);
-		getObject("customPayfrqncyTextfield").clear();
-		getObject("customPayfrqncyTextfield").sendKeys(PayFrequency);
-		Thread.sleep(1000L);
-		getObject("2ncustombtn").click();
-		Thread.sleep(6000L);
-
-		getObject("customPayrunEditbtn").click();
-		Thread.sleep(4000L);
-		getObject("customPaytextfield").clear();
-		getObject("customPaytextfield").sendKeys(Monthname);
-		Thread.sleep(4000L);
-		getObject("3dcustomOkbutton").click();
-		Thread.sleep(6000L);
-
-	}
-
-	
-
-	public void RunReport() throws Throwable {
-		try {
-			if (existsElement(OR.getProperty("customRunReport"))) {
-				getObject("customRunReport").click();
-				Thread.sleep(6000L);
-				System.out.println("");
-				System.out
-						.println("3> Successfully customized the Report as required");
-			}
-		} catch (Throwable t) {
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	*/
-	
-	
-	
 	
 }
 
