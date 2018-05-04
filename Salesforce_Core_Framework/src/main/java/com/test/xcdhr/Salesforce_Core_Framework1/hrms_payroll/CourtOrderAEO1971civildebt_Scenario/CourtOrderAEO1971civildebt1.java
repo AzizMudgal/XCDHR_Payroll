@@ -10,7 +10,7 @@ import org.testng.Assert;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 
 
-public class CourtOrderAEO1971civildebt extends TestSuiteBase
+public class CourtOrderAEO1971civildebt1 extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
