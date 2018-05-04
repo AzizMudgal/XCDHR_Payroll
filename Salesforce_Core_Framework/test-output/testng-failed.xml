@@ -1,79 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<<<<<<< HEAD
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite MonthlyCatA a]">
-  <test name="2(failed)">
-    <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
-        <methods>
-=======
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt">
+      <class name="com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt">
         <methods>
-<<<<<<< HEAD
-          <include name="toSelectOrgForPerformingAutomationTests"/>
-          <include name="setEmployeesAnnualSalaryAndPayfrequency"/>
-          <include name="toProcessPayroll"/>
           <include name="toReportTestResult"/>
           <include name="toSetEmployeesNICategory"/>
-=======
-          <include name="ReportDataSetResult"/>
-          <include name="EmpsSetup_WithNICategory1"/>
-          <include name="ReportTestResult"/>
-          <include name="gotoOrg" invocation-numbers="0"/>
-          <include name="EmpsSetup_WithAnnualSalary"/>
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/remotes/origin/master
+          <include name="toSelectOrgForPerformingAutomationTests"/>
           <include name="CheckSuiteSkip"/>
+          <include name="setEmployeesAnnualSalaryAndPayfrequency"/>
           <include name="checkTestSkip"/>
-          <include name="toSelectEmployeesToProcessPayroll"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt -->
-=======
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A">
-        <methods>
-          <include name="EmpsSetup_WithAnnualSalary"/>
-          <include name="EmpsSetup_WithNICategory"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A -->
-=======
       </class> <!-- com.testcase.xcdhr.Salaesforce_Core_Framework1.hrms_payroll.TestCourtOrderAEO1971civildebt_Scenario.TestCourtOrderAEO1971civildebt -->
->>>>>>> refs/remotes/origin/master
->>>>>>> refs/remotes/origin/master
     </classes>
-<<<<<<< HEAD
-  </test> <!-- 2(failed) -->
-  <test name="3(failed)">
-    <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
-        <methods>
-          <include name="CheckSuiteSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly">
-        <methods>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly -->
-    </classes>
-  </test> <!-- 3(failed) -->
-  <test name="4(failed)">
-    <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
-        <methods>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-          <include name="CheckSuiteSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports -->
-    </classes>
-  </test> <!-- 4(failed) -->
-</suite> <!-- Failed suite [Payroll Suite MonthlyCatA a] -->
-=======
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
->>>>>>> refs/remotes/origin/master
