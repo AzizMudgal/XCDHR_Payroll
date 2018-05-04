@@ -1,51 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite IncomeTax__TCWeek9_CSBRNTK50RL]">
-  <test name="1(failed)">
-    <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.TestReports">
-        <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
-          <include name="CheckSuiteSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.TestReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.ProcessPayrollForWeeklyTax">
-        <methods>
-          <include name="CheckTestSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.ProcessPayrollForWeeklyTax -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.GeneralTaxRateWeekly">
-        <methods>
-          <include name="EmpsSetup_ForMonthlyTaxRate"/>
-          <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_WithAnnualSalary"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.GeneralTaxRateWeekly -->
-    </classes>
-  </test> <!-- 1(failed) -->
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite MonthlyCatA a]">
   <test name="2(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.TestReports">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
         <methods>
-          <include name="ReportDataSetResult"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
           <include name="CheckSuiteSkip"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.TestReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.ProcessPayrollForWeeklyTax">
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A">
         <methods>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-          <include name="CheckTestSkip"/>
+          <include name="EmpsSetup_WithAnnualSalary"/>
+          <include name="EmpsSetup_WithNICategory"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.ProcessPayrollForWeeklyTax -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.GeneralTaxRateWeekly">
-        <methods>
-          <include name="CheckTestSkip"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.IncomeTax_TCWeek9_CSBRNTK50RL.GeneralTaxRateWeekly -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A -->
     </classes>
   </test> <!-- 2(failed) -->
-</suite> <!-- Failed suite [Payroll Suite IncomeTax__TCWeek9_CSBRNTK50RL] -->
+  <test name="3(failed)">
+    <classes>
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
+        <methods>
+          <include name="CheckSuiteSkip"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports -->
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly">
+        <methods>
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly -->
+    </classes>
+  </test> <!-- 3(failed) -->
+  <test name="4(failed)">
+    <classes>
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports">
+        <methods>
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+          <include name="CheckSuiteSkip"/>
+        </methods>
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports -->
+    </classes>
+  </test> <!-- 4(failed) -->
+</suite> <!-- Failed suite [Payroll Suite MonthlyCatA a] -->
