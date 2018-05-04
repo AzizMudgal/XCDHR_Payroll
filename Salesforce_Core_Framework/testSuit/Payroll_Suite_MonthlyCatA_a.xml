@@ -10,7 +10,7 @@
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.NIMonthlyCat_A" ></class>  
     </classes>
 </test>
-<test name="3">
+<!-- <test name="3">
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.ProcessPayrollForNIMonthly" ></class>  
     </classes>
@@ -19,5 +19,5 @@
     <classes>
         <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatA.TestReports" ></class>  
     </classes>
-</test>
+</test> -->
 </suite>
