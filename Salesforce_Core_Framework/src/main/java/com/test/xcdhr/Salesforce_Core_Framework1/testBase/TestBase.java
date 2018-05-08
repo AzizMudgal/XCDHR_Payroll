@@ -411,6 +411,7 @@ public class TestBase {
 	public static String PayrollRTI_RecognitionS7Report_JuneToMarch = "DO NOT TOUCH PAYROL RTI SCENRIO71 REPORT";
 	public static String SSPCaseTwo_2ndReport = "DO NOT TOUCH SSPCaseTwo AWE";
 	public static String SSPCaseTwo_3dReport = "DO NOT TOUCH SSPCASETWO PAYMENT REPORT";
+	public static String CourtOrder_Scenario1 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS";
 
 	
 
@@ -1411,47 +1412,57 @@ public class TestBase {
 		}
 	}
 
-	public void Waitingperiod() throws Throwable {
+	public void Waitingperiod() throws Throwable
+	{
 		Thread.sleep(199000L);
 	}
 
-	public void searchTaxSpecificReport() throws Throwable {
+	public void searchTaxSpecificReport() throws Throwable
+	{
 		try {
-			if (existsElement(OR.getProperty("findReportTextboxLocator"))) {
+			if (existsElement(OR.getProperty("findReportTextboxLocator")))
+			{
 				getObject("findReportTextboxLocator").sendKeys("");
 				Thread.sleep(1000L);
 				getObject("findReportTextboxLocator").sendKeys(
 						"DO NOT TOUCH - TAX PAYROLL AUTOMATION");
 				Thread.sleep(4000L);
-				if (existsElement(OR.getProperty("reportNameLocator"))) {
+				if (existsElement(OR.getProperty("reportNameLocator")))
+				{
 					getObject("reportNameLocator").click();
 					System.out.println("");
 					System.out
 							.println("2> Searched successfully specific Report i.e DO NOT TOUCH - PAYROLL AUTOMATION CHECK");
 				}
 
-			} else {
+			}
+			else
+			{
 				getObject("findReportTextboxLocator").clear();
 				Thread.sleep(1000L);
 				getObject("findReportTextboxLocator").sendKeys(
 						"DO NOT TOUCH - TAX PAYROLL AUTOMATION");
 				Thread.sleep(4000L);
-				if (existsElement(OR.getProperty("reportNameLocator"))) {
+				if (existsElement(OR.getProperty("reportNameLocator")))
+				{
 					getObject("reportNameLocator").click();
 					System.out.println("");
 					System.out
 							.println("2> Searched successfully specific Report i.e DO NOT TOUCH - PAYROLL AUTOMATION CHECK");
 				}
 			}
-		} catch (Throwable t) {
+		} catch (Throwable t)
+		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
 
-	public void searchSpecificReport() throws Throwable {
+	public void searchSpecificReport() throws Throwable 
+	{
 		try {
-			if (existsElement(OR.getProperty("findReportTextboxLocator"))) {
+			if (existsElement(OR.getProperty("findReportTextboxLocator")))
+			{
 				getObject("findReportTextboxLocator").sendKeys("");
 				Thread.sleep(1000L);
 				getObject("findReportTextboxLocator").sendKeys(
@@ -1464,7 +1475,9 @@ public class TestBase {
 				System.out
 						.println("2> Searched successfully specific Report i.e DO NOT TOUCH - PAYROLL AUTOMATION DIR NI");
 
-			} else {
+			}
+			else 
+			{
 				driver.navigate().refresh();
 				getObject("findReportTextboxLocator").clear();
 				Thread.sleep(1000L);
@@ -1472,7 +1485,8 @@ public class TestBase {
 						.sendKeys(
 								"2> Searched successfully specific Report i.e DO NOT TOUCH - PAYROLL AUTOMATION DIR NI");
 				Thread.sleep(4000L);
-				if (existsElement(OR.getProperty("ReportDircease"))) {
+				if (existsElement(OR.getProperty("ReportDircease")))
+				{
 					getObject("ReportDircease").sendKeys("");
 					getObject("ReportDircease").click();
 					System.out.println("");
@@ -1481,7 +1495,9 @@ public class TestBase {
 				}
 
 			}
-		} catch (Throwable t) {
+		} 
+		catch (Throwable t)
+		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
@@ -6061,6 +6077,10 @@ public class TestBase {
 		else if ((NameOfReprt)
 				.equalsIgnoreCase(SSPCaseTwo_3dReport)) {
 			rpName = "SSPCaseTwo_3dReport";
+		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_Scenario1)) {
+			rpName = "CourtOrder_Scenario1";
 		}
 		return rpName;
 	}
