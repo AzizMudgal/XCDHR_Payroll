@@ -4,8 +4,6 @@ import org.testng.annotations.BeforeSuite;
 
 import com.test.xcdhr.Salesforce_Core_Framework1.testBase.TestBase;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
-
-
 public class TestSuiteBase extends TestBase{
 
 	@BeforeSuite
