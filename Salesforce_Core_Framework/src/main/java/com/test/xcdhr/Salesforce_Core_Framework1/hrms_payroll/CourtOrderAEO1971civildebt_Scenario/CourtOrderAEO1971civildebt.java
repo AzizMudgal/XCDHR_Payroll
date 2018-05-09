@@ -1021,10 +1021,10 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	/*
 	 * Report methods follows
 	 * 
-	 * These reports are of no use however for Sep month payroll since we are not going to 
+	 * These reports are not for  Sep month payroll since we are not going to 
 	 * validate any reports.
 	 * 
-	 * But definetly they are going to be used in Oct payroll script.
+	 * But definetly they are going to be used in Oct payroll subscenario.
 	 * 
 	 */
 	/******************************************************************************/
