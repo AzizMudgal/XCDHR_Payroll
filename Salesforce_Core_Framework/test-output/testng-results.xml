@@ -1,135 +1,204 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="2" failed="0" ignored="0" total="2" passed="0">
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1966" started-at="2018-05-09T13:38:46Z" finished-at="2018-05-09T13:38:48Z">
+  <suite name="Default suite" duration-ms="106294" started-at="2018-05-09T14:34:26Z" finished-at="2018-05-09T14:36:12Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1966" started-at="2018-05-09T13:38:46Z" finished-at="2018-05-09T13:38:48Z">
+    <test name="Default test" duration-ms="106294" started-at="2018-05-09T14:34:26Z" finished-at="2018-05-09T14:36:12Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="3844" started-at="2018-05-09T19:08:42Z" finished-at="2018-05-09T19:08:46Z">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="3412" started-at="2018-05-09T20:04:22Z" finished-at="2018-05-09T20:04:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="FAIL" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="0" started-at="2018-05-09T19:08:46Z" finished-at="2018-05-09T19:08:46Z">
-          <exception class="java.lang.NullPointerException">
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException
-	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.getRowCount(Xls_Reader.java:51)
-	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.IsTestcaseRunMode(Test_Util.java:42)
-	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.CheckTestSkip(TestReportForOctPayroll.java:28)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:144)
-	at org.testng.TestRunner.beforeRun(TestRunner.java:634)
-	at org.testng.TestRunner.run(TestRunner.java:602)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="CheckTestSkip" is-config="true" duration-ms="1641" started-at="2018-05-09T20:04:26Z" finished-at="2018-05-09T20:04:28Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckTestSkip -->
-        <test-method status="SKIP" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toSelectOrgForPerformingAutomationTests" duration-ms="0" started-at="2018-05-09T19:08:48Z" data-provider="getData" finished-at="2018-05-09T19:08:48Z">
-          <exception class="java.lang.RuntimeException">
-            <message>
-              <![CDATA[java.lang.NullPointerException]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException
-	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
-	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:111)
-	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
-	at org.testng.internal.Invoker.handleParameters(Invoker.java:1293)
-	at org.testng.internal.Invoker.createParameters(Invoker.java:1020)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1110)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-Caused by: java.lang.NullPointerException
-	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.isSheetExist(Xls_Reader.java:459)
-	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.getData(Test_Util.java:77)
-	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.getData(TestReportForOctPayroll.java:84)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
-	... 22 more
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.RuntimeException -->
+        <test-method status="PASS" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toSelectOrgForPerformingAutomationTests" duration-ms="45070" started-at="2018-05-09T20:04:28Z" data-provider="getData" finished-at="2018-05-09T20:05:13Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 108]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[A  All other employees]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[DONT TOUCH AUTO COURTORDERS EMPLOYER]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[COURTORDERS_Payroll]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[October-2018]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTMN COURT ORDER REPORTS]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_CourtOrderScenarios 201819\\201819 Payroll Court order and Student Loan Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Current pay run]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toSelectOrgForPerformingAutomationTests -->
-        <test-method status="SKIP" signature="toReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toReportTestResult" is-config="true" duration-ms="0" started-at="2018-05-09T19:08:48Z" finished-at="2018-05-09T19:08:48Z">
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="15" started-at="2018-05-09T20:05:13Z" finished-at="2018-05-09T20:05:13Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- toReportTestResult -->
-        <test-method status="SKIP" signature="toSearchAndProcessReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toSearchAndProcessReport" duration-ms="0" started-at="2018-05-09T19:08:48Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.toSelectOrgForPerformingAutomationTests" finished-at="2018-05-09T19:08:48Z">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method TestReportForOctPayroll.toSearchAndProcessReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95] depends on not successfully finished methods]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method TestReportForOctPayroll.toSearchAndProcessReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95] depends on not successfully finished methods
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:756)
-	at org.testng.TestRunner.run(TestRunner.java:610)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
-	at org.testng.TestNG.runSuites(TestNG.java:1133)
-	at org.testng.TestNG.run(TestNG.java:1104)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
+        </test-method> <!-- toReportDataSetResult -->
+        <test-method status="PASS" signature="toSearchAndProcessReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toSearchAndProcessReport" duration-ms="57396" started-at="2018-05-09T20:05:13Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.toSelectOrgForPerformingAutomationTests" finished-at="2018-05-09T20:06:10Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 108]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[A  All other employees]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[12000.0]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[DONT TOUCH AUTO COURTORDERS EMPLOYER]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[COURTORDERS_Payroll]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[October-2018]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819.xlsx]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTMN COURT ORDER REPORTS]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[F:\\Automation_TestResults\\Payroll_CourtOrderScenarios 201819\\201819 Payroll Court order and Student Loan Test result.xlsx]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[2]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Current pay run]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[0]]>
+              </value>
+            </param>
+            <param index="13">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="14">
+              <value>
+                <![CDATA[4]]>
+              </value>
+            </param>
+            <param index="15">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toSearchAndProcessReport -->
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="31" started-at="2018-05-09T20:06:10Z" finished-at="2018-05-09T20:06:10Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toReportDataSetResult -->
+        <test-method status="PASS" signature="toReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95]" name="toReportTestResult" is-config="true" duration-ms="2078" started-at="2018-05-09T20:06:10Z" finished-at="2018-05-09T20:06:12Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toReportTestResult -->
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
