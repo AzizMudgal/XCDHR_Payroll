@@ -6490,12 +6490,12 @@ public class TestBase {
 			System.out.println("The payroll tab got clicked");
 		}
 		Thread.sleep(5000L);
-		if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) {
+		/*if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) {
 			Select selectByValue = new Select(driver.findElement(By.xpath(OR
 					.getProperty("payrollViewLocator"))));
 			// This select by value needs to be called from OR.Properties
 			selectByValue.selectByValue(PayrollView);// "Current"
-		}
+		}*/
 		Thread.sleep(2000L);
 		
 		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
@@ -7093,12 +7093,12 @@ public class TestBase {
 		}
 		Thread.sleep(5000L);
 
-		if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) {
+		/*if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) {
 			Select selectByValue = new Select(driver.findElement(By.xpath(OR
 					.getProperty("payrollViewLocator"))));
 			// This select by value needs to be called from OR.Properties
 			selectByValue.selectByValue(PayrollView);// "Current"
-		}
+		}*/
 		Thread.sleep(3000L);
 		/*
 		 * This code clicks to pagination from 1 to last page till it finds the

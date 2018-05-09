@@ -53,7 +53,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	public String type2AmountValue;
 	public String type3AmountValue;
 
-	public String TestResultExcelFilePathFromCode = "C:\\Users\\Admin\\git\\XCDHR_Payroll\\Salesforce_Core_Framework\\TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
+	//public String TestResultExcelFilePathFromCode = "C:\\Users\\Admin\\git\\XCDHR_Payroll\\Salesforce_Core_Framework\\TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
+	public String TestResultExcelFilePathFromCode = System.getProperty("user.dir")+"\\TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
 	public String ExpectedResultRowNumOfTestResultFileFromCode = "3";
 	public String ActualResultRowNumOfTestResultFileFromCode = "4";
 	public String TestRemarkRowNumOfTestResultFileFromCode = "5";
@@ -1196,7 +1197,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		System.out
 		.println("The converted integer TestReportWorksheet value is  :"
 				+ TRwNo);
-
+       // String TestResultExcelFilePathFromCode =System.getProperty("user.dir")+"/TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
 		File excel = new File(TestResultExcelFilePathFromCode);
 		FileInputStream fis = new FileInputStream(excel);
 		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
