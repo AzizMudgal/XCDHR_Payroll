@@ -6,7 +6,7 @@
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtOctPayroll">
         <methods>
           <include name="toProcessPayroll"/>
-          <include name="toSearchAndProcessReportStep1"/>
+          <include name="toSearchAndProcessReport"/>
           <include name="toSelectOrgForPerformingAutomationTests"/>
           <include name="toSelectEmployeesToProcessPayroll"/>
           <include name="toSetEmployeesNICategory"/>

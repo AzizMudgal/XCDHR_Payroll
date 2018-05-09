@@ -1,11 +1,13 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1;
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.*;
+
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -45,9 +47,11 @@ public class TCOAEO1971civildebtOctPayroll extends CourtOrderAEO1971civildebt
 		processDesiredTaxYearInputExcelFile(TaxYear);
 	}
 
-
+//16
 	@Test(dataProvider="getData", priority=1)
-	public void toSelectOrgForPerformingAutomationTests(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	public void toSelectOrgForPerformingAutomationTests(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
+			String ActualResultRowNumOfTestResultFile,
+			String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		//APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
 		count++;
@@ -68,7 +72,9 @@ public class TCOAEO1971civildebtOctPayroll extends CourtOrderAEO1971civildebt
 
 
 	@Test(dataProvider="getData", priority=2,dependsOnMethods = {"toSelectOrgForPerformingAutomationTests"})
-	public void toSetEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	public void toSetEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
+			String ActualResultRowNumOfTestResultFile,
+			String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
@@ -88,7 +94,9 @@ public class TCOAEO1971civildebtOctPayroll extends CourtOrderAEO1971civildebt
 
 
 	@Test(dataProvider="getData", priority=3, dependsOnMethods = {"toSetEmployeesNICategory"})
-	public void setEmployeesAnnualSalaryAndPayfrequency(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	public void setEmployeesAnnualSalaryAndPayfrequency(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
+			String ActualResultRowNumOfTestResultFile,
+			String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		countCompensation++;
 		if(! runmodes[countCompensation].equalsIgnoreCase("Y"))
@@ -106,7 +114,9 @@ public class TCOAEO1971civildebtOctPayroll extends CourtOrderAEO1971civildebt
 	
 	
 	@Test(dataProvider="getData", priority=4,dependsOnMethods = {"setEmployeesAnnualSalaryAndPayfrequency"})
-	public void toProcessPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	public void toProcessPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
+			String ActualResultRowNumOfTestResultFile,
+			String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
@@ -124,7 +134,9 @@ public class TCOAEO1971civildebtOctPayroll extends CourtOrderAEO1971civildebt
 
 
 	@Test(dataProvider="getData", priority=5,dependsOnMethods = {"toProcessPayroll"})
-	public void toSelectEmployeesToProcessPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	public void toSelectEmployeesToProcessPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
+			String ActualResultRowNumOfTestResultFile,
+			String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
@@ -144,18 +156,14 @@ public class TCOAEO1971civildebtOctPayroll extends CourtOrderAEO1971civildebt
 	//Processing the Report.
 	
 	@Test(dataProvider="getData", priority=6,dependsOnMethods = {"toSelectEmployeesToProcessPayroll"})
-	public void toSearchAndProcessReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void toSearchAndProcessReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
 			//System.out.println("The script now going to select the desired employee(s) as per input sheet and updates the NI Category");
-			DownloadReports(EmployerName,EmpName,Payrolid,PayFrequency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,
-					ActualResultRowNumOfTestResultFile,
-					TestRemarkRowNumOfTestResultFile); // pn means payroll id. in this case 8512
+			DownloadReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile); // pn means payroll id. in this case 8512
 		}
 		catch(Throwable t)
 		{

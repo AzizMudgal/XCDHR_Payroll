@@ -27,10 +27,7 @@ import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.EnumTestClass;
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.ModifiedReport;
 
-/*
- * Allready the inputscript methods are working fine.
- * This class will implement payroll methods also a
- *  */
+
 
 public class CourtOrderAEO1971civildebt extends TestSuiteBase
 {
@@ -49,19 +46,18 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	public int Repeat;
 	public int finalRows;
 	public String appEmpName;
-	public String type1 = "Court order administrative cost";
-	public String type2 = "Court order payment to third party";
-	public String type3 = "Court order deduction";
+	public String type1 = "Court order deduction";
+	public String type2 = "Court order administrative cost";
+	public String type3 = "Court order payment to third party";
 	public String type1AmountValue;
 	public String type2AmountValue;
 	public String type3AmountValue;
+
 	public String TestResultExcelFilePathFromCode = "C:\\Users\\Admin\\git\\XCDHR_Payroll\\Salesforce_Core_Framework\\TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
-	public int ExpectedResultRowNumOfTestResultFile = 3;
-	public int ActualResultRowNumOfTestResultFile = 4;
-	public int TestRemarkRowNumOfTestResultFile = 5;
-
-
-
+	public String ExpectedResultRowNumOfTestResultFileFromCode = "3";
+	public String ActualResultRowNumOfTestResultFileFromCode = "4";
+	public String TestRemarkRowNumOfTestResultFileFromCode = "5";
+	public String TestReportworksheetNoFromCode = "0";
 
 	public void toSelectDesiredOrg(int OrgFlag)throws Throwable
 	{
@@ -115,7 +111,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 
-	public void updateEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePathFromCode,String worksheetNo,String PayrollView,String TestReportworksheetNo)
+	public void updateEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
 			throws Throwable {
 		try {
 			if (employeeFirsttimeView) {
@@ -264,7 +260,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 
-	public void updateEmpAnnualSalaryAndPayFrequency(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePathFromCode,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
+	public void updateEmpAnnualSalaryAndPayFrequency(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
 		try {
 			if (compensationFirsttimeView) {
 				compensationFirsttimeView = false;
@@ -351,7 +347,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 								}
 								Thread.sleep(3000L);
 							}
-							updateEmpPayFrequency(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePathFromCode,worksheetNo,PayrollView,TestReportworksheetNo);
+							updateEmpPayFrequency(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 							break outerbreak;
 						} else if (rownum == lastRowCount && AppnEmp != null
 								&& AppnEmp != (EmpName)) {
@@ -395,7 +391,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 
-	public void updateEmpPayFrequency(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePathFromCode,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
+	public void updateEmpPayFrequency(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
 		try {
 			String firstRowOfPayFrequency = "//div[" + rownum + "]" + "/"
 					+ "table/" + "tbody/" + "tr/" + "td["
@@ -432,21 +428,21 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
+
 	//*********************** End of input script methods*************************************
-	
-	
-/******************************************************************************/
+
+
+	/******************************************************************************/
 	/*
 	 * Payroll methods follows:----
 	 */
-/*******************************************************************************/
+	/*******************************************************************************/
 	/*
 	 * Need to update the input excel sheet with payroll and report script parameters also.
 	 * 
 	 */
-	
-	public void processMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePathFromCode,String worksheetNo,String PayrollView,String TestReportworksheetNo)
+
+	public void processMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
 			throws Throwable
 	{
 
@@ -456,7 +452,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println("The payroll tab got clicked");
 		}
 		Thread.sleep(6000L);
-		
+
 		/*Aziz commented on 4th may 2018.
 		 * In QA Org, becuase of HEAP ERROR not able to select the 'All' from view drop
 		 * down list item. hence commented the selection and searching the payrollid AS
@@ -468,7 +464,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		 * comment state only.
 		 * 
 		 */
-		
+
 		/*if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) 
 		{
 			Select selectByValue = new Select(driver.findElement(By.xpath(OR
@@ -477,8 +473,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 			Thread.sleep(4000L);
 
-		*/
-		
+		 */
+
 		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
 		{
 			System.out.println("The payroll search field is displayed");
@@ -486,7 +482,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			getObject("payrollSearchField").sendKeys(Payrolid);
 		}
 		Thread.sleep(5000L);
-	
+
 		try
 		{
 			if (existsElementchkFor1mts(OR.getProperty("payroll2weeklytable")))
@@ -495,9 +491,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						.getProperty("payroll2weeklytable")));
 				if (existsWebElement(table)) {
 					System.out.println("payroll table existt");
-					
+
 					System.out.println("Total pages :");
-				
+
 					for (int i = 2; i <= 50; i++)
 					{
 						List<WebElement> allrows = table
@@ -510,9 +506,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 									EmpName, Payrolid, PayFrequency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePathFromCode, PayrollView);
+									TestResultExcelFilePath, PayrollView);
 							System.out
-									.println("No record matched in first page hence clicked to next page");
+							.println("No record matched in first page hence clicked to next page");
 						}
 
 						if (existsElement(OR.getProperty("paginationElement")))
@@ -529,7 +525,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 									EmpName, Payrolid, PayFrequency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePathFromCode, PayrollView);
+									TestResultExcelFilePath, PayrollView);
 						}
 					}
 				}
@@ -541,14 +537,14 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
+
+
 
 	public void toProcessMonthlyPayrun(String EmployerName,
 			String EmpName, String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePathFromCode, String PayrollView)
-			throws Throwable
+			String TestResultExcelFilePath, String PayrollView)
+					throws Throwable
 	{
 		try {
 			WebElement tableheader = getObject("payroll2weeklytable");
@@ -619,7 +615,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						&& ffr1.equalsIgnoreCase(Frquency))
 				{
 					System.out
-							.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
+					.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
 
 					driver.findElement(By.xpath(payrollRecordId)).click();
 					/*
@@ -635,24 +631,24 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						{
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePathFromCode);
+									TestResultExcelFilePath);
 						}
 						else if (Frquency.equalsIgnoreCase("Two Weekly"))
 						{
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePathFromCode);
+									TestResultExcelFilePath);
 						}
 						else if (Frquency.equalsIgnoreCase("Weekly"))
 						{
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePathFromCode);
+									TestResultExcelFilePath);
 						} else if (Frquency.equalsIgnoreCase("Monthly"))
 						{
 							toProcessMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePathFromCode);
+									TestResultExcelFilePath);
 						}
 						break;
 					}
@@ -671,13 +667,13 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			t.getStackTrace().toString();
 		}
 	}
-	
-	
-	
+
+
+
 	public void toProcessMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePathFromCode)
-			throws Throwable
-		{
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+					throws Throwable
+	{
 		try {
 			if (existsElement(OR.getProperty("payRunWeekTable")))
 			{
@@ -689,8 +685,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						.xpath(OR.getProperty("WeekOneTablerows")));
 				lastRowCount = rows.size();
 				System.out
-						.println("The total pay run records for the page is equal to : "
-								+ lastRowCount);
+				.println("The total pay run records for the page is equal to : "
+						+ lastRowCount);
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownum = 2;
 				counter = 1;
@@ -698,7 +694,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				{
 					// Thread.sleep(2000L);
 					System.out
-							.println("Now the count of Rownum is : " + rownum);
+					.println("Now the count of Rownum is : " + rownum);
 					WebElement MonthPayRun_Record = driver.findElement(By
 							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
 									+ "div/" + "div[" + "2]/" + "table/"
@@ -720,9 +716,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 							// Thread.sleep(1000L);
 							MonthPayRun_Record.click();
 							System.out
-									.println("The Payrun record whose Month name is "
-											+ MonthName
-											+ "successfully clicked for processing payroll");
+							.println("The Payrun record whose Month name is "
+									+ MonthName
+									+ "successfully clicked for processing payroll");
 							break;
 						}
 						System.out.println("The Month name" + PayRunTextName
@@ -732,11 +728,11 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 								&& PayRunTextName != (MonthName))
 						{
 							System.out
-									.println("The row number of the page reached"
-											+ rownum
+							.println("The row number of the page reached"
+									+ rownum
 
-											+ " Required payrun not found hence clicking the"
-											+ " pagination link so that payrun search continues for next page");
+									+ " Required payrun not found hence clicking the"
+									+ " pagination link so that payrun search continues for next page");
 
 							if (existsElementchkFor1mts(OR
 									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
@@ -748,12 +744,12 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 										"payrollMonthWeeekSubPaginToDisplayAllRecords")
 										.click();
 								System.out
-										.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								.println("As the required Payrun is not found in first page,hence clicked to pagination link");
 								Thread.sleep(5000L);
 							}
 						}
 						System.out
-								.println("Payrun not matched hence incrementing the row number");
+						.println("Payrun not matched hence incrementing the row number");
 						rownum++;
 						counter++;
 					}
@@ -766,8 +762,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 	}
 
-	
-	
+
+
 	/******************************************************/
 	/*
 	 * Following is the Method used in the payroll script which selects the
@@ -776,7 +772,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	/******************************************************/
 	public int rowMatchedDD = 0;
 
-	public void excludeIncludeEmp(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePathFromCode,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
+	public void excludeIncludeEmp(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
 		try {
 			System.out.println("entering into ExcludeIncludeEmp method");
 			double worksheetvalue = Double.parseDouble(worksheetNo);
@@ -788,15 +784,15 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			FileInputStream fis = new FileInputStream(
 					new File(
 							System.getProperty("user.dir")
-									+ "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"
-									+ ExcelInputSheet));
+							+ "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"
+							+ ExcelInputSheet));
 
 			XSSFWorkbook workbook = new XSSFWorkbook(fis);
 			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
 			totalRows = spreadsheet.getLastRowNum();
 			System.out
-					.println("Total rows in the processpayrollforMonthlytax worksheet is :"
-							+ totalRows);
+			.println("Total rows in the processpayrollforMonthlytax worksheet is :"
+					+ totalRows);
 			String oldWindow = driver.getWindowHandle();
 
 			if (existsElementchkFor5mts(OR.getProperty("changeToDraft"))) {
@@ -808,15 +804,15 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				windowExclude = false;
 				if (getObject("excludeAllemployees").isDisplayed()) {
 					System.out
-							.println("the exclude include check box is displayed");
+					.println("the exclude include check box is displayed");
 					getObject("excludeAllemployees").click();
 					System.out
-							.println("the exclude include check box got checked");
+					.println("the exclude include check box got checked");
 					Thread.sleep(1000L);
 					if (getObject("excludeAllemployees").isSelected()) {
 						getObject("excludeAllemployees").click();
 						System.out
-								.println("After checking the chckbox onceagain the exclude include check box is made UNchecked");
+						.println("After checking the chckbox onceagain the exclude include check box is made UNchecked");
 						// Thread.sleep(1000L);
 					}
 				}
@@ -831,13 +827,13 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownumx = 1;
 				while (x.hasNext()) {
-					
+
 					WebElement appEmployes = driver
 							.findElement(By
 									.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
 											+ rownumx + "]/td[2]/a"));
-				
-					
+
+
 					String appEmployeesName = appEmployes.getText();
 					System.out.println("empname is  :" + appEmployeesName);
 					if (appEmployeesName != null
@@ -847,9 +843,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 								.findElement(By
 										.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
 												+ rownumx + "]/td/input"));
-					
+
 						System.out.println("empchkBox=====" + empchkBox);
-						
+
 						if (existsWebElement(empchkBox)) {
 							empchkBox.click();
 							System.out.println("");
@@ -860,18 +856,18 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						}
 						if (totalRows == rowMatchedDD) {
 							System.out
-									.println("The employees rows now matched,hence will now exit the window by saving the required employees");
+							.println("The employees rows now matched,hence will now exit the window by saving the required employees");
 							break;
 						}
 					}
 					rownumx++;
 				}
-				
-				
+
+
 				if (existsElementchkFor1mts(OR.getProperty("closeWindow"))) {
 					getObject("closeWindow").click();
 					System.out
-							.println("The save button of the popup window got clicked");
+					.println("The save button of the popup window got clicked");
 					Thread.sleep(1000L);
 				}
 				driver.switchTo().window(oldWindow);
@@ -883,7 +879,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					if (existsElementchkFor1mts(OR.getProperty("progressBar"))) {
 						System.out.println("");
 						System.out
-								.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
+						.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
 						Thread.sleep(4000L);
 						payRunExecution();
 						Thread.sleep(6000L);
@@ -899,13 +895,13 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
-		
+
 		/*
 		 * The following statements gets executed if the payroll could
 		 *  not process properly as per no of employees present in the 
 		 *  input excel sheet.
 		 */
-		
+
 		if (finalRows != dTRows)
 		{
 			Thread.sleep(3000L);
@@ -917,27 +913,27 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
-				
-				processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePathFromCode,worksheetNo,PayrollView,TestReportworksheetNo);
 
-				excludeIncludeEmp(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePathFromCode,worksheetNo,PayrollView,TestReportworksheetNo);
+				processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+
+				excludeIncludeEmp(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 			}
 		}
 	}
-	
+
 	public int dTRows;
 	public int draftTotalRows;
 
 	public void verifyEmpRecordInPaySummaryTable() throws Throwable {
 		try {
 			System.out
-					.println("Now the new method 'verifyEmpRecordInPaySummaryTable()' "
-							+ "would execute to find out the employee record in PaySummary Table after waiting period of 10 seconds");
+			.println("Now the new method 'verifyEmpRecordInPaySummaryTable()' "
+					+ "would execute to find out the employee record in PaySummary Table after waiting period of 10 seconds");
 			Thread.sleep(8000L);
 			if (existsElement(OR
 					.getProperty("emprecordsTableAftergeneratedraft"))) {
 				System.out
-						.println("The script recognised the tax generated employee table locator");
+				.println("The script recognised the tax generated employee table locator");
 				Thread.sleep(9000L);
 				System.out.println("Waited for 9 seconds");
 				WebElement empTableAfterDraftgenerate = getObject("emprecordsTableAftergeneratedraft");
@@ -950,12 +946,12 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				if (totalRows == (draftTotalRows - 1)) {
 					Thread.sleep(1000L);
 					System.out
-							.println("After generating draft payroll the app is displaying employee records same"
-									+ " as excel file employees of this Tax worksheet");
+					.println("After generating draft payroll the app is displaying employee records same"
+							+ " as excel file employees of this Tax worksheet");
 				} else {
 					System.out
-							.println(" the app is not displaying employee records same"
-									+ " as excel file employees of this Tax worksheet");
+					.println(" the app is not displaying employee records same"
+							+ " as excel file employees of this Tax worksheet");
 					finalRows = totalRows;
 					dTRows = draftTotalRows;
 					System.out.println("The Final rows in the table are :"
@@ -970,9 +966,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
-	
+
+
+
 	public void retryForGenerateDraft() throws Throwable
 	{
 		try {
@@ -1004,12 +1000,12 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 							.getProperty("excludeIncludeEmployees"))) {
 						getObject("excludeIncludeEmployees").click();
 						System.out
-								.println("Exclude Include Employees link got clicked");
+						.println("Exclude Include Employees link got clicked");
 						Thread.sleep(5000);
 					}
 				} else {
 					System.out
-							.println("May be the payroll status is still New. Please make this payroll status to Draft and rerun the script");
+					.println("May be the payroll status is still New. Please make this payroll status to Draft and rerun the script");
 				}
 			}
 
@@ -1019,8 +1015,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
+
+
 	/******************************************************************************/
 	/*
 	 * Report methods follows
@@ -1032,12 +1028,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	 * 
 	 */
 	/******************************************************************************/
-	
-	
-	
-	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePathFromCode,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable
+
+
+	public void DownloadReports(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
@@ -1060,7 +1053,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
 			{				
-				UpdateReportPage(Payrolid,Frquency,MonthName);
+				UpdateReportPage(Payrolid,PayFrequency,MonthName);
 				System.out.println("");
 			}
 
@@ -1071,9 +1064,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
 			{
-				processReport1(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePathFromCode,worksheetNo,PayrollVeiw,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,
-						ActualResultRowNumOfTestResultFile,
-						TestRemarkRowNumOfTestResultFile);
+				processReport1(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFileFromCode,ActualResultRowNumOfTestResultFileFromCode,TestRemarkRowNumOfTestResultFileFromCode);
 				System.out.println("7> Entered the values and processed the Test Remarks");
 			}
 		}
@@ -1085,10 +1076,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-
-	public void processReport1(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePathFromCode,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile)throws Throwable
+	public void processReport1(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
 		{
@@ -1120,75 +1108,69 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					} 
 					else
 					{
+						/*
+						 * Capturing the actual values from the corresponding Report
+						 * 
+						 */
 						appEmpName= table.getTBody().getRow(rownum).getCell(0).getText();
 						System.out.println("The application name is :"+appEmpName);
-						
+
 						String tax= table.getTBody().getRow(rownum).getCell(1).getText();
 						System.out.println("The tax is :"+tax);
-						
+
 						String employeeNI= table.getTBody().getRow(rownum).getCell(2).getText();
 						System.out.println("The employeeNI is :"+employeeNI);
-						
+
 						String courtOrders= table.getTBody().getRow(rownum).getCell(3).getText();
 						System.out.println("The courtOrders is :"+courtOrders);
-						
+
 						String attachableEarnings= table.getTBody().getRow(rownum).getCell(4).getText();
 						System.out.println("The attachableEarnings is :"+attachableEarnings);
-						
+
 						String netPay= table.getTBody().getRow(rownum).getCell(5).getText();
 						System.out.println("The netPay is :"+netPay);
-						
+
 						String initialDeductionAmount= table.getTBody().getRow(rownum).getCell(6).getText();
 						System.out.println("The initialDeductionAmount is :"+initialDeductionAmount);
-						
+
 						String attachableEarnings2= table.getTBody().getRow(rownum).getCell(7).getText();
 						System.out.println("The attachableEarnings2 is :"+attachableEarnings2);
-						
+
 						String protectedEarnings= table.getTBody().getRow(rownum).getCell(8).getText();
 						System.out.println("The protectedEarnings is :"+protectedEarnings);
-						
-						String type= table.getTBody().getRow(rownum).getCell(9).getText();
-						System.out.println("The type is :"+type);
-						if(type.equalsIgnoreCase(type1))
+
+						String courtOrderDeductionAmountType= table.getTBody().getRow(rownum).getCell(9).getText();
+						System.out.println("The courtOrderDeductionAmountType is :"+courtOrderDeductionAmountType);
+						if(courtOrderDeductionAmountType.trim().equalsIgnoreCase(type1))
 						{
-							 type1AmountValue= table.getTBody().getRow(rownum).getCell(10).getText();
+							type1AmountValue= table.getTBody().getRow(rownum).getCell(10).getText();
 							System.out.println("The type1AmountValue is :"+type1AmountValue);
 						}
-						
-						String typeTwo = table.getTBody().getRow(rownum).getCell(9).getText();
-						System.out.println("The typeTwo is :"+typeTwo);
-						if(typeTwo.equalsIgnoreCase(type2))
+
+						String CourtOrderAdministrativeType = table.getTBody().getRow(rownum).getCell(9).getText();
+						System.out.println("The CourtOrderAdministrativeType is :"+CourtOrderAdministrativeType);
+						if(CourtOrderAdministrativeType.trim().equalsIgnoreCase(type2))
 						{
-							 type2AmountValue= table.getTBody().getRow(rownum).getCell(10).getText();
+							type2AmountValue= table.getTBody().getRow(rownum).getCell(10).getText();
 							System.out.println("The type2AmountValue is :"+type2AmountValue);
 						}
-						
-						
-						String typeThree = table.getTBody().getRow(rownum).getCell(9).getText();
-						System.out.println("The typeThree is :"+typeThree);
-						if(typeTwo.equalsIgnoreCase(type3))
+
+
+						String CourtOrderPaymentThirdPartyType = table.getTBody().getRow(rownum).getCell(9).getText();
+						System.out.println("The CourtOrderPaymentThirdPartyType is :"+CourtOrderPaymentThirdPartyType);
+						if(CourtOrderPaymentThirdPartyType.trim().equalsIgnoreCase(type3))
 						{
-							 type3AmountValue= table.getTBody().getRow(rownum).getCell(10).getText();
+							type3AmountValue= table.getTBody().getRow(rownum).getCell(10).getText();
 							System.out.println("The type3AmountValue is :"+type3AmountValue);
 						}
-						
-						
-						
 						//call the function which reads the expected result,copy the actual result
 						//and finally process the Test remarks into excel sheet.
-						
-						ReadsExpectedDataFromTestResult(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,type1AmountValue,type2AmountValue,type3AmountValue,TestResultExcelFilePathFromCode,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,
-								ActualResultRowNumOfTestResultFile,
-								TestRemarkRowNumOfTestResultFile);
-						
-						
-						copyActualResultIntoResultSheetFile(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,type1AmountValue,type2AmountValue,type3AmountValue,TestResultExcelFilePathFromCode,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,
-								ActualResultRowNumOfTestResultFile,
-								TestRemarkRowNumOfTestResultFile);
-						
-						toProcessTestRemarks(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,type1AmountValue,type2AmountValue,type3AmountValue,TestResultExcelFilePathFromCode,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,
-								ActualResultRowNumOfTestResultFile,
-								TestRemarkRowNumOfTestResultFile);
+
+						ReadsExpectedDataFromTestResult(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+
+						copyActualResultIntoResultSheetFile(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+
+						toProcessTestRemarks(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 					}
 					rownum++;
 				}
@@ -1199,351 +1181,21 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
-	/////////////////////////////////////////////////////////////////////////////////////////////
-	
-	public void processReport(String EmployerName, String EmpName,
-			String Payrolid, String Frquency, String MonthName,
-			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePathFromCode, String worksheetNo,
-			String PayrollVeiw, String TestReportworksheetNo,
-			String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable {
-		try {
-			if (existsElement(OR.getProperty("reportTableLocatorNI"))) {
-				// Get number of rows In table using table/tbody/tr
-				Row_count = driver.findElements(
-						By.xpath(OR.getProperty("reportTableRowsLocatorNI")))
-						.size();
-				System.out.println("Number Of Rows = " + Row_count);
-				// Get number of columns In table by using Tr/td
-				int Col_count = driver.findElements(
-						By.xpath(OR.getProperty("reportTableColumnsNI")))
-						.size();
-				System.out.println("Number Of Columns = " + Col_count); // DISPLAYING
-			}
-			Thread.sleep(3000L);
-			WebElement threecolms = driver.findElement(By.xpath(OR
-					.getProperty("reportTableLocatorNI")));
-			WebTable table = WebTable.getTable(threecolms);
-			List<WebElement> rows = threecolms.findElements(By.xpath(OR
-					.getProperty("reportTableRowsLocatorNI")));
-			java.util.Iterator<WebElement> x = rows.iterator();
-			int rownum = 1;
-			gotobreak: while (x.hasNext()) {
-				if (rownum == (Row_count - 2)) {
-					System.out.println("no of rows is equal to expected rows");
-					System.out
-							.println("4> Total count of Employee records displayed in the report are :"
-									+ rownum);
-					System.out.println("");
-					System.out
-							.println("5> The script successfully read and output the values and accordingly gave the TEST REMARKS in NI-HMRC Excel file");
-					break gotobreak;
-				} else {
-					firstCellOfBody = table.getTBody().getRow(rownum)
-							.getCell(0).getText();
-					System.out.println("Employee name is :" + firstCellOfBody);
-					String nationalInsurance = table.getTBody().getRow(rownum)
-							.getCell(1).getText();
-					System.out.println("nationalInsurance is :"
-							+ nationalInsurance);
 
-					String Title = table.getTBody().getRow(rownum).getCell(2)
-							.getText();
-					System.out.println("Title is :" + Title);
 
-					String Forename = table.getTBody().getRow(rownum)
-							.getCell(3).getText();
-					System.out.println("Forename is :" + Forename);
-
-					String Surname = table.getTBody().getRow(rownum).getCell(4)
-							.getText();
-					System.out.println("Surname is :" + Surname);
-
-					String addressLine1 = table.getTBody().getRow(rownum)
-							.getCell(5).getText();
-					System.out.println("addressLine1 is :" + addressLine1);
-
-					String addressLine2 = table.getTBody().getRow(rownum)
-							.getCell(6).getText();
-					System.out.println("addressLine2 is :" + addressLine2);
-
-					String ukPostcode = table.getTBody().getRow(rownum)
-							.getCell(7).getText();
-					System.out.println("ukPostcode is :" + ukPostcode);
-
-					String dateOfBirth = table.getTBody().getRow(rownum)
-							.getCell(8).getText();
-					System.out.println("dateOfBirth is :" + dateOfBirth);
-
-					String currentGender = table.getTBody().getRow(rownum)
-							.getCell(9).getText();
-					System.out.println("currentGender is :" + currentGender);
-
-					String payrollId = table.getTBody().getRow(rownum)
-							.getCell(10).getText();
-					System.out.println("payrollId is :" + payrollId);
-
-					String payrollIdChanged = table.getTBody().getRow(rownum)
-							.getCell(11).getText();
-					System.out.println("payrollIdChanged is :"
-							+ payrollIdChanged);
-
-					String oldPayrollId = table.getTBody().getRow(rownum)
-							.getCell(12).getText();
-					System.out.println("oldPayrollId is :" + oldPayrollId);
-
-					String leavingDate = table.getTBody().getRow(rownum)
-							.getCell(13).getText();
-					System.out.println("leavingDate is :" + leavingDate);
-
-					String startDate = table.getTBody().getRow(rownum)
-							.getCell(14).getText();
-					System.out.println("startDate is :" + startDate);
-
-					String startingDeclaration = table.getTBody()
-							.getRow(rownum).getCell(15).getText();
-					System.out.println("startingDeclaration is :"
-							+ startingDeclaration);
-
-					String taxablePay = table.getTBody().getRow(rownum)
-							.getCell(16).getText();
-					System.out.println("taxablePay is :" + taxablePay);
-
-					String totaltax = table.getTBody().getRow(rownum)
-							.getCell(17).getText();
-					System.out.println("totaltax is :" + totaltax);
-
-					String bacsHashcode = table.getTBody().getRow(rownum)
-							.getCell(18).getText();
-					System.out.println("bacsHashcode is :" + bacsHashcode);
-
-					String PayFrequency = table.getTBody().getRow(rownum)
-							.getCell(19).getText();
-					System.out.println("PayFrequency is :" + PayFrequency);
-
-					String paymentDate = table.getTBody().getRow(rownum)
-							.getCell(20).getText();
-					System.out.println("paymentDate is :" + paymentDate);
-
-					String taxMonthNumber = table.getTBody().getRow(rownum)
-							.getCell(21).getText();
-					System.out.println("taxMonthNumber is :" + taxMonthNumber);
-
-					String numberOfEarningsperiodsCovered = table.getTBody()
-							.getRow(rownum).getCell(22).getText();
-					System.out.println("numberOfEarningsperiodsCovered is :"
-							+ numberOfEarningsperiodsCovered);
-
-					String numberOfNormalHoursWorked = table.getTBody()
-							.getRow(rownum).getCell(23).getText();
-					System.out.println("numberOfNormalHoursWorked is :"
-							+ numberOfNormalHoursWorked);
-
-					String taxBasis = table.getTBody().getRow(rownum)
-							.getCell(24).getText();
-					System.out.println("taxBasis is :" + taxBasis);
-
-					String taxCode = table.getTBody().getRow(rownum)
-							.getCell(25).getText();
-					System.out.println("taxCode is :" + taxCode);
-
-					String taxablePayInPeriod = table.getTBody().getRow(rownum)
-							.getCell(26).getText();
-					System.out.println("taxablePayInPeriod is :"
-							+ taxablePayInPeriod);
-
-					String payAfterStatutoryDeductions = table.getTBody()
-							.getRow(rownum).getCell(27).getText();
-					System.out.println("payAfterStatutoryDeductions is :"
-							+ payAfterStatutoryDeductions);
-
-					String taxDeductedORrefunded = table.getTBody()
-							.getRow(rownum).getCell(28).getText();
-					System.out.println("taxDeductedORrefunded is :"
-							+ taxDeductedORrefunded);
-
-					String niCategory = table.getTBody().getRow(rownum)
-							.getCell(29).getText();
-					System.out.println("niCategory is :" + niCategory);
-
-					String grossEarningsNICsInPeriod = table.getTBody()
-							.getRow(rownum).getCell(30).getText();
-					System.out.println("grossEarningsNICsInPeriod is :"
-							+ grossEarningsNICsInPeriod);
-
-					String grossEarningsNICsInYTD = table.getTBody()
-							.getRow(rownum).getCell(31).getText();
-					System.out.println("grossEarningsNICsInYTD is :"
-							+ grossEarningsNICsInYTD);
-
-					String earningsAtLowerEarningslimitYTD = table.getTBody()
-							.getRow(rownum).getCell(32).getText();
-					System.out.println("earningsAtLowerEarningslimitYTD is :"
-							+ earningsAtLowerEarningslimitYTD);
-
-					String earningsLELUpToIncludingPTYTD = table.getTBody()
-							.getRow(rownum).getCell(33).getText();
-					System.out.println("earningsLELUpToIncludingPTYTD is :"
-							+ earningsLELUpToIncludingPTYTD);
-
-					String earningsPTIncludingUELYTD = table.getTBody()
-							.getRow(rownum).getCell(34).getText();
-					System.out.println("earningsPTIncludingUELYTD is :"
-							+ earningsPTIncludingUELYTD);
-
-					String totalOfEmployerContributions = table.getTBody()
-							.getRow(rownum).getCell(35).getText();
-					System.out.println("totalOfEmployerContributions is :"
-							+ totalOfEmployerContributions);
-
-					String totalOfEmployerContributionsYTD = table.getTBody()
-							.getRow(rownum).getCell(36).getText();
-					System.out.println("totalOfEmployerContributionsYTD is :"
-							+ totalOfEmployerContributionsYTD);
-
-					String employeeContributionsPayable = table.getTBody()
-							.getRow(rownum).getCell(37).getText();
-					System.out.println("employeeContributionsPayable is :"
-							+ employeeContributionsPayable);
-
-					String employeeContributionsPayableYTD = table.getTBody()
-							.getRow(rownum).getCell(38).getText();
-					System.out.println("employeeContributionsPayableYTD is :"
-							+ employeeContributionsPayableYTD);
-					WebElement clkchkbox = driver.findElement(By.xpath(OR
-							.getProperty("pymentCheckbox")));
-
-					String pymtAftrLeavingDate11 = clkchkbox
-							.getAttribute("title");
-					System.out.println("the value of the title is :"
-							+ pymtAftrLeavingDate11);
-					if (pymtAftrLeavingDate11.equalsIgnoreCase("Not Checked")) {
-						pymtAftrLeavingDate = "Not applicable for this month";
-						System.out.println("the payment After leaving is :"
-								+ pymtAftrLeavingDate);
-					} else if (pymtAftrLeavingDate11
-							.equalsIgnoreCase("Checked")) {
-						pymtAftrLeavingDate = "Yes";
-						System.out.println("the payment After leaving is :"
-								+ pymtAftrLeavingDate);
-					}
-
-					// call the functions which reads the excel sheet.
-					ReadsExpectedData(EmpName, nationalInsurance, Title,
-							Forename, Surname, addressLine1, addressLine2,
-							ukPostcode, dateOfBirth, currentGender, payrollId,
-							payrollIdChanged, oldPayrollId, leavingDate,
-							startDate, startingDeclaration, taxablePay,
-							totaltax, bacsHashcode, PayFrequency, paymentDate,
-							taxMonthNumber, numberOfEarningsperiodsCovered,
-							numberOfNormalHoursWorked, taxBasis, taxCode,
-							taxablePayInPeriod, payAfterStatutoryDeductions,
-							taxDeductedORrefunded, niCategory,
-							grossEarningsNICsInPeriod, grossEarningsNICsInYTD,
-							earningsAtLowerEarningslimitYTD,
-							earningsLELUpToIncludingPTYTD,
-							earningsPTIncludingUELYTD,
-							totalOfEmployerContributions,
-							totalOfEmployerContributionsYTD,
-							employeeContributionsPayable,
-							employeeContributionsPayableYTD,
-							paymentAfterLeaving, TestResultExcelFilePathFromCode,
-							TestReportworksheetNo,
-							ExpectedResultRowNumOfTestResultFile,
-							ActualResultRowNumOfTestResultFile,
-							TestRemarkRowNumOfTestResultFile);
-
-					ReadsExpectedData1a(EmpName, nationalInsurance, Title,
-							Forename, Surname, addressLine1, addressLine2,
-							ukPostcode, dateOfBirth, currentGender, payrollId,
-							payrollIdChanged, oldPayrollId, leavingDate,
-							startDate, startingDeclaration, taxablePay,
-							totaltax, bacsHashcode, PayFrequency, paymentDate,
-							taxMonthNumber, numberOfEarningsperiodsCovered,
-							numberOfNormalHoursWorked, taxBasis, taxCode,
-							taxablePayInPeriod, payAfterStatutoryDeductions,
-							taxDeductedORrefunded, niCategory,
-							grossEarningsNICsInPeriod, grossEarningsNICsInYTD,
-							earningsAtLowerEarningslimitYTD,
-							earningsLELUpToIncludingPTYTD,
-							earningsPTIncludingUELYTD,
-							totalOfEmployerContributions,
-							totalOfEmployerContributionsYTD,
-							employeeContributionsPayable,
-							employeeContributionsPayableYTD,
-							paymentAfterLeaving, TestResultExcelFilePathFromCode,
-							TestReportworksheetNo,
-							ExpectedResultRowNumOfTestResultFile,
-							ActualResultRowNumOfTestResultFile,
-							TestRemarkRowNumOfTestResultFile);
-
-					ReadsExpectedData1(EmpName, nationalInsurance, Title,
-							Forename, Surname, addressLine1, addressLine2,
-							ukPostcode, dateOfBirth, currentGender, payrollId,
-							payrollIdChanged, oldPayrollId, leavingDate,
-							startDate, startingDeclaration, taxablePay,
-							totaltax, bacsHashcode, PayFrequency, paymentDate,
-							taxMonthNumber, numberOfEarningsperiodsCovered,
-							numberOfNormalHoursWorked, taxBasis, taxCode,
-							taxablePayInPeriod, payAfterStatutoryDeductions,
-							taxDeductedORrefunded, niCategory,
-							grossEarningsNICsInPeriod, grossEarningsNICsInYTD,
-							earningsAtLowerEarningslimitYTD,
-							earningsLELUpToIncludingPTYTD,
-							earningsPTIncludingUELYTD,
-							totalOfEmployerContributions,
-							totalOfEmployerContributionsYTD,
-							employeeContributionsPayable,
-							employeeContributionsPayableYTD,
-							paymentAfterLeaving, TestResultExcelFilePathFromCode,
-							TestReportworksheetNo,
-							ExpectedResultRowNumOfTestResultFile,
-							ActualResultRowNumOfTestResultFile,
-							TestRemarkRowNumOfTestResultFile);
-				}
-				rownum++;
-			}
-		} catch (Throwable t) {
-			System.out.println(t.getMessage().toString());
-			System.out.println(t.getStackTrace().toString());
-		}
-	}
-
-	public void ReadsExpectedData(String EmpName, String nationalInsurance,
-			String Title, String Forename, String Surname, String addressLine1,
-			String addressLine2, String ukPostcode, String dateOfBirth,
-			String currentGender, String payrollId, String payrollIdChanged,
-			String oldPayrollId, String leavingDate, String startDate,
-			String startingDeclaration, String taxablePay, String totaltax,
-			String bacsHashcode, String PayFrequency, String paymentDate,
-			String taxMonthNumber, String numberOfEarningsperiodsCovered,
-			String numberOfNormalHoursWorked, String taxBasis, String taxCode,
-			String taxablePayInPeriod, String payAfterStatutoryDeductions,
-			String taxDeductedORrefunded, String niCategory,
-			String grossEarningsNICsInPeriod, String grossEarningsNICsInYTD,
-			String earningsAtLowerEarningslimitYTD,
-			String earningsLELUpToIncludingPTYTD,
-			String earningsPTIncludingUELYTD,
-			String totalOfEmployerContributions,
-			String totalOfEmployerContributionsYTD,
-			String employeeContributionsPayable,
-			String employeeContributionsPayableYTD, String paymentAfterLeaving,
-			String TestResultExcelFilePathFromCode, String TestReportworksheetNo,
-			String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable
+	public void ReadsExpectedDataFromTestResult(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
+			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
+			String TestResultExcelFilePath,
+			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
-		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
+
+		double worksheetvalue = Double.parseDouble(TestReportworksheetNoFromCode);
 		DecimalFormat df = new DecimalFormat("###.#");
 		String worksheetNoWithoutDecimal = df.format(worksheetvalue);
 		int TRwNo = Integer.parseInt(worksheetNoWithoutDecimal);
 		System.out
-				.println("The converted integer TestReportWorksheet value is  :"
-						+ TRwNo);
+		.println("The converted integer TestReportWorksheet value is  :"
+				+ TRwNo);
 
 		File excel = new File(TestResultExcelFilePathFromCode);
 		FileInputStream fis = new FileInputStream(excel);
@@ -1566,23 +1218,23 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		System.out.println("i am in first method");
 
 		double expectdDataRowNo = Double
-				.parseDouble(ExpectedResultRowNumOfTestResultFile);
+				.parseDouble(ExpectedResultRowNumOfTestResultFileFromCode);
 		DecimalFormat expctdData = new DecimalFormat("###.#");
 		String expctdRowNoWithoutDecimal = expctdData.format(expectdDataRowNo);
 		int expctdRowIntValue = Integer.parseInt(expctdRowNoWithoutDecimal);
 		System.out
-				.println("The converted integer TestReportWorksheet value is  :"
-						+ expctdRowIntValue);
+		.println("The converted integer TestReportWorksheet value is  :"
+				+ expctdRowIntValue);
 
 		for (int i = expctdRowIntValue; i < rowNum1; i++) // getting the
-															// expected data
-															// from expected
-															// result data row
+			// expected data
+			// from expected
+			// result data row
 		{
 			Row row = ws.getRow(i);
 			value1 = cellToString(row.getCell(1)); // and storing each cell
-													// value in each public
-													// variable
+			// value in each public
+			// variable
 			value2 = cellToString(row.getCell(2));
 			value3 = cellToString(row.getCell(3));
 			value4 = cellToString(row.getCell(4));
@@ -1594,44 +1246,12 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			value10 = cellToString(row.getCell(10));
 			value11 = cellToString(row.getCell(11));
 			value12 = cellToString(row.getCell(12));//enough for courtOrders and student loan.
-			
-			
-			
-			
-			
-			value13 = cellToString(row.getCell(13));
-			value14 = cellToString(row.getCell(14));
-			value15 = cellToString(row.getCell(15));
-			value16 = cellToString(row.getCell(16));
-			value17 = cellToString(row.getCell(17));
-			value18 = cellToString(row.getCell(18));
-			value19 = cellToString(row.getCell(19));
-			value20 = cellToString(row.getCell(20));
-			value21 = cellToString(row.getCell(21));
-			value22 = cellToString(row.getCell(22));
-			value23 = cellToString(row.getCell(23));
-			value24 = cellToString(row.getCell(24));
-			value25 = cellToString(row.getCell(25));
-			value26 = cellToString(row.getCell(26));
-			value27 = cellToString(row.getCell(27));
-			value28 = cellToString(row.getCell(28));
-			value29 = cellToString(row.getCell(29));
-			value30 = cellToString(row.getCell(30));
-			value31 = cellToString(row.getCell(31));
-			value32 = cellToString(row.getCell(32));
-			value33 = cellToString(row.getCell(33));
-			value34 = cellToString(row.getCell(34));
-			value35 = cellToString(row.getCell(35));
-			value36 = cellToString(row.getCell(36));
-			value37 = cellToString(row.getCell(37));
-			value38 = cellToString(row.getCell(38));
-			value39 = cellToString(row.getCell(39));
-			value40 = cellToString(row.getCell(40));
 
-			if (value1 != null && value1.equalsIgnoreCase(firstCellOfBody)) {
+
+			if (value1 != null && value1.equalsIgnoreCase(appEmpName)) {
 				System.out.println("The employee name got matched");
 				System.out
-						.println("captured all the values and stored in the global variables");
+				.println("captured all the values and stored in the global variables");
 				break;
 			}
 		}
@@ -1641,388 +1261,18 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		fis.close();
 	}
 
-	public void ReadsExpectedData1a(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
-			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
-			String type1AmountValue,String type2AmountValue,String type3AmountValue,String TestResultExcelFilePathFromCode,
-			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable {
-		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
-		DecimalFormat df = new DecimalFormat("###.#");
-		String worksheetNoWithoutDecimal = df.format(worksheetvalue);
-		int TRwNo = Integer.parseInt(worksheetNoWithoutDecimal);
-		System.out
-				.println("The converted integer TestReportWorksheet value is  :"
-						+ TRwNo);
 
-		File excel = new File(TestResultExcelFilePathFromCode);
-		FileInputStream fis = new FileInputStream(excel);
-		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
-		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
-
-		CellStyle style = wb.createCellStyle();
-		style.setFillPattern(CellStyle.ALIGN_FILL);
-		style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
-		Font font = wb.createFont();
-		font.setColor(IndexedColors.BLACK.getIndex());
-		style.setFont(font);
-
-		CellStyle styleFalse = wb.createCellStyle();
-		styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
-		styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
-
-		FileOutputStream webdata = new FileOutputStream(TestResultExcelFilePathFromCode);
-
-		double actualDataRowNo = Double
-				.parseDouble(ActualResultRowNumOfTestResultFile);
-		DecimalFormat actualData = new DecimalFormat("###.#");
-		String actualRowNoWithoutDecimal = actualData.format(actualDataRowNo);
-		int actualRowIntValue = Integer.parseInt(actualRowNoWithoutDecimal);
-		System.out.println("The converted integer actualRowdataNo value is  :"
-				+ actualRowIntValue);
-
-		int rowNum = ws.getLastRowNum() + 1;
-		for (int i = actualRowIntValue; i < rowNum; i++) // getting the expected
-															// data from
-															// expected result
-															// data row
-		{
-			Row row = ws.getRow(i);
-				if (value1 != null && value1.equalsIgnoreCase(appEmpName))
-				{
-					row.createCell(2).setCellValue(tax);//setting the actual result into test result from Org / corresponding Report file
-					row.createCell(3).setCellValue(employeeNI);
-					row.createCell(4).setCellValue(courtOrders);
-	
-					row.createCell(5).setCellValue(attachableEarnings);
-					row.createCell(6).setCellValue(netPay);
-					row.createCell(7).setCellValue(initialDeductionAmount);
-	
-					row.createCell(8).setCellValue(attachableEarnings2);
-					row.createCell(9).setCellValue(protectedEarnings);
-					row.createCell(10).setCellValue(type1AmountValue);
-	
-					row.createCell(11).setCellValue(type2AmountValue);
-					row.createCell(12).setCellValue(type3AmountValue);
-					System.out
-							.println("pasted actual Result data into the test result excel file");
-				break;
-			}
-		}
-		wb.write(webdata);
-		webdata.close();
-		fis.close();
-	}
-
-	public void ReadsExpectedData1(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
-			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
-			String type1AmountValue,String type2AmountValue,String type3AmountValue,String TestResultExcelFilePathFromCode,
-			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable {
-		System.out.println("This is ReadExpected data1");
-		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
-		DecimalFormat df = new DecimalFormat("###.#");
-		String worksheetNoWithoutDecimal = df.format(worksheetvalue);
-		int TRwNo = Integer.parseInt(worksheetNoWithoutDecimal);
-		System.out
-				.println("The converted integer TestReportWorksheet value is  :"
-						+ TRwNo);
-
-		File excel = new File(TestResultExcelFilePathFromCode);
-		FileInputStream fis = new FileInputStream(excel);
-		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
-		org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
-
-		CellStyle style = wb.createCellStyle();
-		style.setFillPattern(CellStyle.ALIGN_FILL);
-		style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
-		Font font = wb.createFont();
-		font.setColor(IndexedColors.BLACK.getIndex());
-		style.setFont(font);
-
-		CellStyle styleFalse = wb.createCellStyle();
-		styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
-		styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
-
-		FileOutputStream webdata = new FileOutputStream(TestResultExcelFilePathFromCode);
-
-		double testRemarkDataRowNo = Double
-				.parseDouble(TestRemarkRowNumOfTestResultFile);
-		DecimalFormat testRmrkData = new DecimalFormat("###.#");
-		String testRmrkRowNoWithoutDecimal = testRmrkData
-				.format(testRemarkDataRowNo);
-		int testRmrkRowIntValue = Integer.parseInt(testRmrkRowNoWithoutDecimal);
-		System.out.println("The converted integer TestRemarkRowNo value is  :"
-				+ testRmrkRowIntValue);
-		int rowNum = ws.getLastRowNum() + 1;
-		for (int j = testRmrkRowIntValue; j < rowNum; j++)
-		{
-			Row row = ws.getRow(j);
-			System.out.println("the value stored in value1 is :" + value1);
-			if (value1 != null && value1.equalsIgnoreCase(firstCellOfBody)) {
-				System.out.println("the value stored in value2 is :" + value2
-						+ "needs to be compared");
-				if (value2 != null
-						&& value2.equalsIgnoreCase(tax)) {
-					Cell cell1 = row.createCell(2);
-					row.createCell(2).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(2);
-					row.createCell(2).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-				if (value3 != null && value3.equalsIgnoreCase(employeeNI)) {
-					Cell cell1 = row.createCell(3);
-					row.createCell(3).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(3);
-					row.createCell(3).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value4 != null && value4.equalsIgnoreCase(courtOrders)) {
-					Cell cell1 = row.createCell(4);
-					row.createCell(4).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(4);
-					row.createCell(4).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value5 != null && value5.equalsIgnoreCase(attachableEarnings)) {
-					Cell cell1 = row.createCell(5);
-					row.createCell(5).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(5);
-					row.createCell(5).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value6 != null && value6.equalsIgnoreCase(netPay)) {
-					Cell cell1 = row.createCell(6);
-					row.createCell(6).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(6);
-					row.createCell(6).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value7 != null && value7.equalsIgnoreCase(initialDeductionAmount)) {
-					Cell cell1 = row.createCell(7);
-					row.createCell(7).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(7);
-					row.createCell(7).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value8 != null && value8.equalsIgnoreCase(attachableEarnings2)) {
-					Cell cell1 = row.createCell(8);
-					row.createCell(8).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(8);
-					row.createCell(8).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value9 != null && value9.equalsIgnoreCase(protectedEarnings)) {
-					Cell cell1 = row.createCell(9);
-					row.createCell(9).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(9);
-					row.createCell(9).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value10 != null && value10.equalsIgnoreCase(type1AmountValue)) {
-					Cell cell1 = row.createCell(10);
-					row.createCell(10).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(10);
-					row.createCell(10).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value11 != null && value11.equalsIgnoreCase(type2AmountValue)) {
-					Cell cell1 = row.createCell(11);
-					row.createCell(11).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(11);
-					row.createCell(11).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-
-				if (value12 != null
-						&& value12.equalsIgnoreCase(type3AmountValue))
-				{
-					Cell cell1 = row.createCell(12);
-					row.createCell(12).setCellValue("TRUE");
-					cell1.setCellStyle(style);
-				} else {
-					Cell cell1 = row.createCell(12);
-					row.createCell(12).setCellValue("FALSE");
-					cell1.setCellStyle(styleFalse);
-				}
-				break;
-			}
-		}
-		System.out
-				.println("Entered the test remarks into the excel sheet successfully");
-		wb.write(webdata);
-		webdata.close();
-		fis.close();
-	}
-	
-	public String cellToString(Cell cell)
-	{
-		int type;
-		Object result;
-		type = cell.getCellType();
-		switch (type) {
-		case 0: // to get numeric value from the cell
-			result = Double.toString(cell.getNumericCellValue());
-			break;
-		case 1: // to get string value from the cell
-			result = cell.getStringCellValue();
-			break;
-		case 2:
-			result = cell.getCellFormula();
-			break;
-		case 3:
-			result = cell == null;
-			break;
-		case 4:
-			result = cell.getRichStringCellValue();
-			break;
-		case 5:
-			result = cell.getCellType();
-		default:
-			throw new RuntimeException("there are no othe values");
-		}
-		return result.toString();
-	}
-	
-	////////////////////////////////////////////////////////////////////////////////////////////
-
-
-	/*
-	 * 
-	 * public String TestResultExcelFilePathFromCode = "C:\\Users\\Admin\\git\\XCDHR_Payroll\\Salesforce_Core_Framework\\TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
-	 * public int ExpectedResultRowNumOfTestResultFile = 3;
-	 * public int ActualResultRowNumOfTestResultFile = 4;
-	 * public int TestRemarkRowNumOfTestResultFile = 5;
-	 * 
-	 */
-	
-//Restructured correctly.
-	
-	public void ReadsExpectedDataFromTestResult(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
-			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
-			String type1AmountValue,String type2AmountValue,String type3AmountValue,String TestResultExcelFilePathFromCode,
-			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable
-	{
-		
-			double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
-			DecimalFormat df = new DecimalFormat("###.#");
-			String worksheetNoWithoutDecimal = df.format(worksheetvalue);
-			int TRwNo = Integer.parseInt(worksheetNoWithoutDecimal);
-			System.out
-					.println("The converted integer TestReportWorksheet value is  :"
-							+ TRwNo);
-
-			File excel = new File(TestResultExcelFilePathFromCode);
-			FileInputStream fis = new FileInputStream(excel);
-			org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
-			org.apache.poi.ss.usermodel.Sheet ws = wb.getSheetAt(TRwNo);
-
-			CellStyle style = wb.createCellStyle();
-			style.setFillPattern(CellStyle.ALIGN_FILL);
-			style.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
-			Font font = wb.createFont();
-			font.setColor(IndexedColors.BLACK.getIndex());
-			style.setFont(font);
-
-			CellStyle styleFalse = wb.createCellStyle();
-			styleFalse.setFillPattern(CellStyle.ALIGN_FILL);
-			styleFalse.setFillBackgroundColor(IndexedColors.GOLD.getIndex());
-
-			FileOutputStream webdata = new FileOutputStream(TestResultExcelFilePathFromCode);
-			int rowNum1 = ws.getLastRowNum() + 1;
-			System.out.println("i am in first method");
-
-			double expectdDataRowNo = Double
-					.parseDouble(ExpectedResultRowNumOfTestResultFile);
-			DecimalFormat expctdData = new DecimalFormat("###.#");
-			String expctdRowNoWithoutDecimal = expctdData.format(expectdDataRowNo);
-			int expctdRowIntValue = Integer.parseInt(expctdRowNoWithoutDecimal);
-			System.out
-					.println("The converted integer TestReportWorksheet value is  :"
-							+ expctdRowIntValue);
-
-			for (int i = expctdRowIntValue; i < rowNum1; i++) // getting the
-																// expected data
-																// from expected
-																// result data row
-			{
-				Row row = ws.getRow(i);
-				value1 = cellToString(row.getCell(1)); // and storing each cell
-														// value in each public
-														// variable
-				value2 = cellToString(row.getCell(2));
-				value3 = cellToString(row.getCell(3));
-				value4 = cellToString(row.getCell(4));
-				value5 = cellToString(row.getCell(5));
-				value6 = cellToString(row.getCell(6));
-				value7 = cellToString(row.getCell(7));
-				value8 = cellToString(row.getCell(8));
-				value9 = cellToString(row.getCell(9));
-				value10 = cellToString(row.getCell(10));
-				value11 = cellToString(row.getCell(11));
-				value12 = cellToString(row.getCell(12));//enough for courtOrders and student loan.
-			
-
-				if (value1 != null && value1.equalsIgnoreCase(appEmpName)) {
-					System.out.println("The employee name got matched");
-					System.out
-							.println("captured all the values and stored in the global variables");
-					break;
-				}
-			}
-			System.out.println("stored all the values from the first method");
-			wb.write(webdata);
-			webdata.close();
-			fis.close();
-		
-	}
-	
-	//2nd method
-	
 	public void copyActualResultIntoResultSheetFile(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
-			String type1AmountValue,String type2AmountValue,String type3AmountValue,String TestResultExcelFilePathFromCode,
-			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable {
-		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
+			String TestResultExcelFilePath,
+			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable {
+		double worksheetvalue = Double.parseDouble(TestReportworksheetNoFromCode);
 		DecimalFormat df = new DecimalFormat("###.#");
 		String worksheetNoWithoutDecimal = df.format(worksheetvalue);
 		int TRwNo = Integer.parseInt(worksheetNoWithoutDecimal);
 		System.out
-				.println("The converted integer TestReportWorksheet value is  :"
-						+ TRwNo);
+		.println("The converted integer TestReportWorksheet value is  :"
+				+ TRwNo);
 
 		File excel = new File(TestResultExcelFilePathFromCode);
 		FileInputStream fis = new FileInputStream(excel);
@@ -2043,7 +1293,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		FileOutputStream webdata = new FileOutputStream(TestResultExcelFilePathFromCode);
 
 		double actualDataRowNo = Double
-				.parseDouble(ActualResultRowNumOfTestResultFile);
+				.parseDouble(ActualResultRowNumOfTestResultFileFromCode);
 		DecimalFormat actualData = new DecimalFormat("###.#");
 		String actualRowNoWithoutDecimal = actualData.format(actualDataRowNo);
 		int actualRowIntValue = Integer.parseInt(actualRowNoWithoutDecimal);
@@ -2052,29 +1302,28 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 		int rowNum = ws.getLastRowNum() + 1;
 		for (int i = actualRowIntValue; i < rowNum; i++) // getting the expected
-															// data from
-															// expected result
-															// data row
+			// data from
+			// expected result
+			// data row
 		{
 			Row row = ws.getRow(i);
-				if (value1 != null && value1.equalsIgnoreCase(appEmpName))
-				{
-					row.createCell(2).setCellValue(tax);//setting the actual result into test result from Org / corresponding Report file
-					row.createCell(3).setCellValue(employeeNI);
-					row.createCell(4).setCellValue(courtOrders);
-	
-					row.createCell(5).setCellValue(attachableEarnings);
-					row.createCell(6).setCellValue(netPay);
-					row.createCell(7).setCellValue(initialDeductionAmount);
-	
-					row.createCell(8).setCellValue(attachableEarnings2);
-					row.createCell(9).setCellValue(protectedEarnings);
-					row.createCell(10).setCellValue(type1AmountValue);
-	
-					row.createCell(11).setCellValue(type2AmountValue);
-					row.createCell(12).setCellValue(type3AmountValue);
-					System.out
-							.println("pasted actual Result data into the test result excel file");
+			if (value1 != null && value1.equalsIgnoreCase(appEmpName))
+			{
+				//setting the actual result into test result from Org / corresponding Report file
+				row.createCell(2).setCellValue(tax);
+				row.createCell(3).setCellValue(employeeNI);
+				row.createCell(4).setCellValue(courtOrders);
+				row.createCell(5).setCellValue(attachableEarnings);
+				row.createCell(6).setCellValue(netPay);
+				row.createCell(7).setCellValue(initialDeductionAmount);
+				row.createCell(8).setCellValue(attachableEarnings2);
+				row.createCell(9).setCellValue(protectedEarnings);
+				row.createCell(10).setCellValue(type1AmountValue);
+				row.createCell(11).setCellValue(type2AmountValue);
+				row.createCell(12).setCellValue(type3AmountValue);
+
+				System.out
+				.println("pasted actual Result data into the test result excel file");
 				break;
 			}
 		}
@@ -2083,22 +1332,20 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		fis.close();
 	}
 
-	
-	
+
 	public void toProcessTestRemarks(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
-			String type1AmountValue,String type2AmountValue,String type3AmountValue,String TestResultExcelFilePathFromCode,
-			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
-			String ActualResultRowNumOfTestResultFile,
-			String TestRemarkRowNumOfTestResultFile) throws Throwable {
+			String TestResultExcelFilePath,
+			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	{
 		System.out.println("This is ReadExpected data1");
-		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
+		double worksheetvalue = Double.parseDouble(TestReportworksheetNoFromCode);
 		DecimalFormat df = new DecimalFormat("###.#");
 		String worksheetNoWithoutDecimal = df.format(worksheetvalue);
 		int TRwNo = Integer.parseInt(worksheetNoWithoutDecimal);
 		System.out
-				.println("The converted integer TestReportWorksheet value is  :"
-						+ TRwNo);
+		.println("The converted integer TestReportWorksheet value is  :"
+				+ TRwNo);
 
 		File excel = new File(TestResultExcelFilePathFromCode);
 		FileInputStream fis = new FileInputStream(excel);
@@ -2119,7 +1366,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		FileOutputStream webdata = new FileOutputStream(TestResultExcelFilePathFromCode);
 
 		double testRemarkDataRowNo = Double
-				.parseDouble(TestRemarkRowNumOfTestResultFile);
+				.parseDouble(TestRemarkRowNumOfTestResultFileFromCode);
 		DecimalFormat testRmrkData = new DecimalFormat("###.#");
 		String testRmrkRowNoWithoutDecimal = testRmrkData
 				.format(testRemarkDataRowNo);
@@ -2131,7 +1378,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		{
 			Row row = ws.getRow(j);
 			System.out.println("the value stored in value1 is :" + value1);
-			if (value1 != null && value1.equalsIgnoreCase(firstCellOfBody)) {
+			if (value1 != null && value1.equalsIgnoreCase(appEmpName)) {
 				System.out.println("the value stored in value2 is :" + value2
 						+ "needs to be compared");
 				if (value2 != null
@@ -2234,9 +1481,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					cell1.setCellStyle(styleFalse);
 				}
 
-				if (value12 != null
-						&& value12.equalsIgnoreCase(type3AmountValue))
-				{
+				if (value12 != null && value12.equalsIgnoreCase(type3AmountValue)) {
 					Cell cell1 = row.createCell(12);
 					row.createCell(12).setCellValue("TRUE");
 					cell1.setCellStyle(style);
@@ -2249,39 +1494,11 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			}
 		}
 		System.out
-				.println("Entered the test remarks into the excel sheet successfully");
+		.println("Entered the test remarks into the excel sheet successfully");
 		wb.write(webdata);
 		webdata.close();
 		fis.close();
 	}
-
-	
-	
-	/*public String cellToString(Cell cell)
-	{
-		int type;
-		Object result;
-		type = cell.getCellType();
-		switch(type)
-		{
-		case 0: // to get numeric value from the cell 
-			result = Double.toString(cell.getNumericCellValue());
-			break;
-		case 1: // to get string value from the cell
-			result = cell.getStringCellValue();
-			break;
-		case 2: result=cell.getCellFormula();
-		break;
-		case 3: result= cell==null;
-		break;	
-		case 4: result=cell.getRichStringCellValue();
-		break;
-		default: 
-			throw new RuntimeException("there are no othe values");
-		}
-		return result.toString();
-	}
-*/
 
 
 	public void SearchReport(String TaxReport) throws Throwable 
@@ -2309,8 +1526,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			SearchReport(TaxReport);
 		}
 	}
-	
-	
+
 
 	public void FetchReport() throws Throwable
 	{
@@ -2346,9 +1562,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		System.out.println("Exit FetchReport==========");
 	}
-	
-	
-	
+
+
 	public void editCustomButton() throws Throwable
 	{
 		try
@@ -2362,8 +1577,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
+
 
 	public void UpdateReportPage(String PayrollId, String PayFrequency,
 			String Monthname) throws Throwable
@@ -2381,36 +1595,14 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		{
 			getObject("customPayrollRecordid").sendKeys("");
 			getObject("customPayrollRecordid").clear();
-			/*
-			 * temporarily i am not passing parameter for payroll id since the
-			 * report is not taking the 'Monthly_Payroll' as payroll id.
-			 */
 			getObject("customPayrollRecordid").sendKeys(Monthname);
 			Thread.sleep(4000L);
 			getObject("customOkbtn").click();
 			System.out.println("Payrun updated");
 			Thread.sleep(6000L);
 		}
-		
-	/*	getObject("customPayfrequencyEditbtn").sendKeys("");
-		getObject("customPayfrequencyEditbtn").click();
-		Thread.sleep(1000L);
-		getObject("customPayfrqncyTextfield").clear();
-		getObject("customPayfrqncyTextfield").sendKeys(PayFrequency);
-		Thread.sleep(1000L);
-		getObject("2ncustombtn").click();
-		Thread.sleep(6000L);*/
-
-		/*getObject("customPayrunEditbtn").click();
-		Thread.sleep(4000L);
-		getObject("customPaytextfield").clear();
-		getObject("customPaytextfield").sendKeys(Monthname);
-		Thread.sleep(4000L);
-		getObject("3dcustomOkbutton").click();
-		Thread.sleep(6000L);*/
 	}
 
-	
 
 	public void RunReport() throws Throwable
 	{
@@ -2422,7 +1614,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				Thread.sleep(6000L);
 				System.out.println("");
 				System.out
-						.println("3> Successfully customized the Report as required");
+				.println("3> Successfully customized the Report as required");
 			}
 		}
 		catch (Throwable t)
@@ -2431,7 +1623,32 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-	
-	
+
+
+	public String cellToString(Cell cell)
+	{
+		int type;
+		Object result;
+		type = cell.getCellType();
+		switch(type)
+		{
+		case 0: // to get numeric value from the cell 
+			result = Double.toString(cell.getNumericCellValue());
+			break;
+		case 1: // to get string value from the cell
+			result = cell.getStringCellValue();
+			break;
+		case 2: result=cell.getCellFormula();
+		break;
+		case 3: result= cell==null;
+		break;	
+		case 4: result=cell.getRichStringCellValue();
+		break;
+		default: 
+			throw new RuntimeException("there are no othe values");
+		}
+		return result.toString();
+	}
+
 }
 

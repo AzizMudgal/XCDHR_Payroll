@@ -1,5 +1,6 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1;
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.*;
+
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -149,7 +150,7 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
-		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TCOAEO1971civildebtSepPayroll");
+		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TestCourtOrderAEO1971civildebt");
 	}
 
 
