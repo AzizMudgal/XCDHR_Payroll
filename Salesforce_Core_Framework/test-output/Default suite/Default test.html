@@ -55,19 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>Default test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>2/0/0</td>
+<td>Tests passed/Failed/Skipped:</td><td>0/0/2</td>
 </tr><tr>
-<<<<<<< HEAD
-<td>Started on:</td><td>Wed May 09 16:28:27 IST 2018</td>
-=======
-<td>Started on:</td><td>Wed May 09 18:57:29 IST 2018</td>
->>>>>>> refs/remotes/origin/master
+<td>Started on:</td><td>Wed May 09 19:08:46 IST 2018</td>
 </tr>
-<<<<<<< HEAD
-<tr><td>Total time:</td><td>105 seconds (105152 ms)</td>
-=======
-<tr><td>Total time:</td><td>91 seconds (91325 ms)</td>
->>>>>>> refs/remotes/origin/master
+<tr><td>Total time:</td><td>1 seconds (1966 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -75,33 +67,216 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
-<table width='100%' border='1' class='invocation-passed'>
-<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
 <tr><td><b>Test method</b></td>
 <td width="30%"><b>Exception</b></td>
 <td width="10%"><b>Time (seconds)</b></td>
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.toSearchAndProcessReport()'><b>toSearchAndProcessReport</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll<br>Parameters: DO NOT TOUCH AUTOMATION EMP 108, A  All other employees, 12000.0, Monthly, DONT TOUCH AUTO COURTORDERS EMPLOYER, COURTORDERS_Payroll, October-2018, Payroll Suite CourtOrder AEO1971civildebt201819.xlsx, DO NOT TOUCH AUTMN COURT ORDER REPORTS, F:\\Automation_TestResults\\Payroll_CourtOrderScenarios 201819\\201819 Payroll Court order and Student Loan Test result.xlsx, 2, Current pay run, 0, 3, 4, 5</td>
-<td></td>
-<<<<<<< HEAD
-<td>65</td>
-<td>com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@589838eb</td></tr>
-=======
-<td>57</td>
-<td>com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@4cf777e8</td></tr>
->>>>>>> refs/remotes/origin/master
+<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.CheckTestSkip()'><b>CheckTestSkip</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll</td>
+<td><div><pre>java.lang.NullPointerException
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.getRowCount(Xls_Reader.java:51)
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.IsTestcaseRunMode(Test_Util.java:42)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.CheckTestSkip(TestReportForOctPayroll.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:144)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:634)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1658487789", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1658487789'><pre>java.lang.NullPointerException
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.getRowCount(Xls_Reader.java:51)
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.IsTestcaseRunMode(Test_Util.java:42)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.CheckTestSkip(TestReportForOctPayroll.java:28)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:515)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:217)
+	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:144)
+	at org.testng.TestRunner.beforeRun(TestRunner.java:634)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
 <tr>
-<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.toSelectOrgForPerformingAutomationTests()'><b>toSelectOrgForPerformingAutomationTests</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll<br>Parameters: DO NOT TOUCH AUTOMATION EMP 108, A  All other employees, 12000.0, Monthly, DONT TOUCH AUTO COURTORDERS EMPLOYER, COURTORDERS_Payroll, October-2018, Payroll Suite CourtOrder AEO1971civildebt201819.xlsx, DO NOT TOUCH AUTMN COURT ORDER REPORTS, F:\\Automation_TestResults\\Payroll_CourtOrderScenarios 201819\\201819 Payroll Court order and Student Loan Test result.xlsx, 2, Current pay run, 0, 3, 4, 5</td>
+<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.toReportTestResult()'><b>toReportTestResult</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll</td>
 <td></td>
-<<<<<<< HEAD
-<td>37</td>
-<td>com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@589838eb</td></tr>
-=======
-<td>30</td>
-<td>com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@4cf777e8</td></tr>
->>>>>>> refs/remotes/origin/master
+<td>0</td>
+<td>null</td></tr>
+</table><p>
+<table width='100%' border='1' class='invocation-skipped'>
+<tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.toSearchAndProcessReport()'><b>toSearchAndProcessReport</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll</td>
+<td><div><pre>java.lang.Throwable: Method TestReportForOctPayroll.toSearchAndProcessReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div><a href='#' onClick='toggleBox("stack-trace1677543539", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1677543539'><pre>java.lang.Throwable: Method TestReportForOctPayroll.toSearchAndProcessReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95] depends on not successfully finished methods
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1068)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+</pre></div></td>
+<td>0</td>
+<td>null</td></tr>
+<tr>
+<td title='com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.toSelectOrgForPerformingAutomationTests()'><b>toSelectOrgForPerformingAutomationTests</b><br>Test class: com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll</td>
+<td><div><pre>java.lang.RuntimeException: java.lang.NullPointerException
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:111)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1293)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1020)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1110)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.NullPointerException
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.isSheetExist(Xls_Reader.java:459)
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.getData(Test_Util.java:77)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.getData(TestReportForOctPayroll.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
+	... 22 more
+</pre></div><a href='#' onClick='toggleBox("stack-trace472234151", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace472234151'><pre>java.lang.RuntimeException: java.lang.NullPointerException
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
+	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:111)
+	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
+	at org.testng.internal.Invoker.handleParameters(Invoker.java:1293)
+	at org.testng.internal.Invoker.createParameters(Invoker.java:1020)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1110)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
+	at org.testng.TestRunner.privateRun(TestRunner.java:756)
+	at org.testng.TestRunner.run(TestRunner.java:610)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:387)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:382)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1293)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1218)
+	at org.testng.TestNG.runSuites(TestNG.java:1133)
+	at org.testng.TestNG.run(TestNG.java:1104)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:132)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:230)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:76)
+Caused by: java.lang.NullPointerException
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Xls_Reader.isSheetExist(Xls_Reader.java:459)
+	at com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util.getData(Test_Util.java:77)
+	at com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll.getData(TestReportForOctPayroll.java:84)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:104)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
+	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
+	... 22 more
+</pre></div></td>
+<td>0</td>
+<td>com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TestReportForOctPayroll@42dafa95</td></tr>
 </table><p>
 </body>
 </html>
