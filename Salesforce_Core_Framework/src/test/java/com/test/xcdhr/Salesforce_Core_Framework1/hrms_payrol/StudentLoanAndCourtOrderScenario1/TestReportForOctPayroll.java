@@ -120,7 +120,7 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 
 			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
 			{
-				processReport(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+				processSepPayrollReport(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 				System.out.println("7> Entered the values and processed the Test Remarks");
 			}
 		}
@@ -132,9 +132,9 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 	}
 
 	
+/*	
 	
-	
-	public void processReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
+	public void processReport2(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
 		{
@@ -166,10 +166,10 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 					} 
 					else
 					{
-						/*
+						
 						 * Capturing the actual values from the corresponding Report
 						 * 
-						 */
+						 
 						appEmpName= table.getTBody().getRow(rownum).getCell(0).getText();
 						System.out.println("The application name is :"+appEmpName);
 
@@ -557,7 +557,7 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 		webdata.close();
 		fis.close();
 	}
-
+*/
 	
 
 	/*
