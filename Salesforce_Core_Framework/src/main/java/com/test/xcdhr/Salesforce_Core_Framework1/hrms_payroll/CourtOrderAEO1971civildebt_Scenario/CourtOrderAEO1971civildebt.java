@@ -1182,8 +1182,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 	/***************************************************************************************/
 	/********************************Sep payroll Report methods*****************************/
-	
-	
+
+
 	public void processSepPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
@@ -1304,7 +1304,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		System.out
 		.println("The converted integer TestReportWorksheet value is  :"
 				+ TRwNo);
-       // String TestResultExcelFilePathFromCode =System.getProperty("user.dir")+"/TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
+		// String TestResultExcelFilePathFromCode =System.getProperty("user.dir")+"/TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
 		File excel = new File(TestResultExcelFilePathFromCode);
 		FileInputStream fis = new FileInputStream(excel);
 		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
@@ -1608,12 +1608,12 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		fis.close();
 	}
 
-	
-	
-	
+
+
+
 	/*************************************************************************************/
 	/*********October payroll Report methods*****************************************************/
-	
+
 	public void processOctPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
@@ -1701,7 +1701,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 							type3AmountValue= table.getTBody().getRow(rownum).getCell(10).getText();
 							System.out.println("The type3AmountValue is :"+type3AmountValue);
 						}
-						
+
 						String payDayDate= table.getTBody().getRow(rownum).getCell(11).getText();
 						System.out.println("The payDayDate is :"+payDayDate);
 
@@ -1738,7 +1738,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		System.out
 		.println("The converted integer TestReportWorksheet value is  :"
 				+ TRwNo);
-       // String TestResultExcelFilePathFromCode =System.getProperty("user.dir")+"/TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
+		// String TestResultExcelFilePathFromCode =System.getProperty("user.dir")+"/TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
 		File excel = new File(TestResultExcelFilePathFromCode);
 		FileInputStream fis = new FileInputStream(excel);
 		org.apache.poi.ss.usermodel.Workbook wb = WorkbookFactory.create(fis);
@@ -2050,8 +2050,6 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		webdata.close();
 		fis.close();
 	}
-
-
 
 }
 

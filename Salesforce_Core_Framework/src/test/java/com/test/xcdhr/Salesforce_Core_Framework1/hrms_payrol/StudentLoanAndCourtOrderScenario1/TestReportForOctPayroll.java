@@ -1,20 +1,7 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1;
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.*;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.text.DecimalFormat;
-import java.util.List;
-import atu.webdriver.utils.table.WebTable;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.CellStyle;
-import org.apache.poi.ss.usermodel.Font;
-import org.apache.poi.ss.usermodel.IndexedColors;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -51,7 +38,7 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_CourtOrderScenarioOne_SuiteXls, this.getClass().getSimpleName());
 	}
 
-	
+
 	@Test(dataProvider="getData", priority=1)
 	public void toSelectOrgForPerformingAutomationTests(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,
 			String ActualResultRowNumOfTestResultFile,
@@ -68,7 +55,7 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 		System.out.println("");
 		toSelectDesiredOrg(OrgFlag);
 	}
-	
+
 	@Test(dataProvider="getData", priority=2,dependsOnMethods = {"toSelectOrgForPerformingAutomationTests"})
 	public void toSearchAndProcessReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
@@ -131,9 +118,9 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 		}
 	}
 
-	
-/*	
-	
+
+	/*	
+
 	public void processReport2(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
@@ -166,10 +153,10 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 					} 
 					else
 					{
-						
-						 * Capturing the actual values from the corresponding Report
-						 * 
-						 
+
+	 * Capturing the actual values from the corresponding Report
+	 * 
+
 						appEmpName= table.getTBody().getRow(rownum).getCell(0).getText();
 						System.out.println("The application name is :"+appEmpName);
 
@@ -557,8 +544,8 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 		webdata.close();
 		fis.close();
 	}
-*/
-	
+	 */
+
 
 	/*
 	 * To get the data from the specific input excel sheet 
@@ -610,6 +597,6 @@ public class TestReportForOctPayroll extends CourtOrderAEO1971civildebt
 		//After performing all the said functionalities the test script closes the browser.
 		closeBrowser();
 	}
-	
+
 
 }
