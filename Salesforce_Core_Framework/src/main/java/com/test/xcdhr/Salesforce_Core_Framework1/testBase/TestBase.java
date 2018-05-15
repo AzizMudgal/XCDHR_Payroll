@@ -412,6 +412,7 @@ public class TestBase {
 	public static String SSPCaseTwo_2ndReport = "DO NOT TOUCH SSPCaseTwo AWE";
 	public static String SSPCaseTwo_3dReport = "DO NOT TOUCH SSPCASETWO PAYMENT REPORT";
 	public static String CourtOrder_Scenario1 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS";
+	public static String CourtOrder_Scenario1_Report2 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS2";
 
 	
 
@@ -6081,6 +6082,10 @@ public class TestBase {
 		else if ((NameOfReprt)
 				.equalsIgnoreCase(CourtOrder_Scenario1)) {
 			rpName = "CourtOrder_Scenario1";
+		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_Scenario1_Report2)) {
+			rpName = "CourtOrder_Scenario1_Report2";
 		}
 		return rpName;
 	}

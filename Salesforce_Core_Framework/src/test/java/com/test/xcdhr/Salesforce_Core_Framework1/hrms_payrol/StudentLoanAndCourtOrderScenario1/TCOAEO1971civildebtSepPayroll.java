@@ -150,7 +150,7 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
-		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TestCourtOrderAEO1971civildebt");
+		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TCOAEO1971civildebtSepPayroll");
 	}
 
 
