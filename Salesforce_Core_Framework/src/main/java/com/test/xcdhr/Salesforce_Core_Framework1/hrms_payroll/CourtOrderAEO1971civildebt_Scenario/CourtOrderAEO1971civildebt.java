@@ -1181,10 +1181,60 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 	/***************************************************************************************/
-	/********************************Sep payroll Report methods*****************************/
+	/********************************Oct payroll Report methods*****************************/
+
+	
+	public void DownloadOctReports(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	{
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+			{
+				getObject("reportTablocator").click();
+				System.out.println("2> Clicked to Report Tab");
+				Thread.sleep(4000L);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+			{				
+				SearchReport(FirstReportNameInApplication);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+			{
+				editCustomButton();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+			{				
+				UpdateReportPage(Payrolid,PayFrequency,MonthName);
+				System.out.println("");
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+			{
+				RunReport();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+			{
+				processOctPayrollReport(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+				System.out.println("7> Entered the values and processed the Test Remarks");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getCause().toString());
+		}
+	}
 
 
-	public void processSepPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
+
+	
+	
+
+	public void processOctPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
 		{
@@ -1274,11 +1324,11 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						//call the function which reads the expected result,copy the actual result
 						//and finally process the Test remarks into excel sheet.
 
-						ReadsExpectedDataFromTestResultSepPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedDataFromTestResultOctPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						copyActualResultIntoResultSheetFileSepPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						copyActualResultIntoResultSheetFileOctPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						toProcessTestRemarksSepPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						toProcessTestRemarksOctPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 					}
 					rownum++;
 				}
@@ -1291,7 +1341,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-	public void ReadsExpectedDataFromTestResultSepPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
+	public void ReadsExpectedDataFromTestResultOctPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
 			String TestResultExcelFilePath,
 			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
@@ -1370,7 +1420,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-	public void copyActualResultIntoResultSheetFileSepPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
+	public void copyActualResultIntoResultSheetFileOctPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
 			String TestResultExcelFilePath,
 			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable {
@@ -1441,7 +1491,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-	public void toProcessTestRemarksSepPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
+	public void toProcessTestRemarksOctPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,
 			String TestResultExcelFilePath,
 			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
@@ -1614,7 +1664,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	/*************************************************************************************/
 	/*********October payroll Report methods*****************************************************/
 
-	public void processOctPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
+	public void processNovPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
 		{
@@ -1708,11 +1758,11 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						//call the function which reads the expected result,copy the actual result
 						//and finally process the Test remarks into excel sheet.
 
-						ReadsExpectedDataFromTestResultOctPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,payDayDate,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						ReadsExpectedDataFromTestResultNovPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,payDayDate,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						copyActualResultIntoResultSheetFileOctPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,payDayDate,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						copyActualResultIntoResultSheetFileNovPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,payDayDate,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 
-						toProcessTestRemarksOctPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,payDayDate,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+						toProcessTestRemarksNovPayroll(EmpName,tax,employeeNI,courtOrders,attachableEarnings,netPay,initialDeductionAmount,attachableEarnings2,protectedEarnings,payDayDate,TestResultExcelFilePath,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 					}
 					rownum++;
 				}
@@ -1725,7 +1775,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-	public void ReadsExpectedDataFromTestResultOctPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
+	public void ReadsExpectedDataFromTestResultNovPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,String payDayDate,
 			String TestResultExcelFilePath,
 			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
@@ -1804,7 +1854,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-	public void copyActualResultIntoResultSheetFileOctPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
+	public void copyActualResultIntoResultSheetFileNovPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,String payDayDate,
 			String TestResultExcelFilePath,
 			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable {
@@ -1875,7 +1925,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-	public void toProcessTestRemarksOctPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
+	public void toProcessTestRemarksNovPayroll(String EmpName,String tax,String employeeNI,String courtOrders,String attachableEarnings,
 			String netPay,String initialDeductionAmount,String attachableEarnings2,String protectedEarnings,String payDayDate,
 			String TestResultExcelFilePath,
 			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
@@ -2051,5 +2101,62 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		fis.close();
 	}
 
+	
+	
+	public void DownloadNovReports(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	{
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+			{
+				getObject("reportTablocator").click();
+				System.out.println("2> Clicked to Report Tab");
+				Thread.sleep(4000L);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+			{				
+				SearchReport(FirstReportNameInApplication);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+			{
+				editCustomButton();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+			{				
+				UpdateReportPage(Payrolid,PayFrequency,MonthName);
+				System.out.println("");
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+			{
+				RunReport();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+			{
+				processNovPayrollReport(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+				System.out.println("7> Entered the values and processed the Test Remarks");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getCause().toString());
+		}
+	}
+
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }
 
