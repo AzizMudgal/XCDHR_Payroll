@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="3" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="153273" started-at="2018-05-17T09:48:16Z" finished-at="2018-05-17T09:50:49Z">
+  <suite name="Default suite" duration-ms="152774" started-at="2018-05-18T10:35:06Z" finished-at="2018-05-18T10:37:39Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="153273" started-at="2018-05-17T09:48:16Z" finished-at="2018-05-17T09:50:49Z">
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="3074" started-at="2018-05-17T15:18:13Z" finished-at="2018-05-17T15:18:16Z">
+    <test name="Default test" duration-ms="152774" started-at="2018-05-18T10:35:06Z" finished-at="2018-05-18T10:37:39Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="3586" started-at="2018-05-18T16:05:03Z" finished-at="2018-05-18T16:05:06Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="checkTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="checkTestSkip" is-config="true" duration-ms="1242" started-at="2018-05-17T15:18:16Z" finished-at="2018-05-17T15:18:17Z">
+        <test-method status="PASS" signature="checkTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="checkTestSkip" is-config="true" duration-ms="1165" started-at="2018-05-18T16:05:06Z" finished-at="2018-05-18T16:05:07Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkTestSkip -->
-        <test-method status="PASS" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="toSelectOrgForPerformingAutomationTests" duration-ms="33280" started-at="2018-05-17T15:18:17Z" data-provider="getData" finished-at="2018-05-17T15:18:50Z">
+        <test-method status="PASS" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="toSelectOrgForPerformingAutomationTests" duration-ms="36769" started-at="2018-05-18T16:05:07Z" data-provider="getData" finished-at="2018-05-18T16:05:44Z">
           <params>
             <param index="0">
               <value>
@@ -64,7 +64,7 @@
             </param>
             <param index="9">
               <value>
-                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819CollectiveDraft.xlsx]]>
+                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819.xlsx]]>
               </value>
             </param>
             <param index="10">
@@ -131,11 +131,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toSelectOrgForPerformingAutomationTests -->
-        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="15" started-at="2018-05-17T15:18:50Z" finished-at="2018-05-17T15:18:50Z">
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="16" started-at="2018-05-18T16:05:44Z" finished-at="2018-05-18T16:05:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toReportDataSetResult -->
-        <test-method status="PASS" signature="toToProcessOctPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:10, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="toToProcessOctPayrollReport" duration-ms="59949" started-at="2018-05-17T15:18:50Z" data-provider="getData" finished-at="2018-05-17T15:19:50Z">
+        <test-method status="PASS" signature="toToProcessOctPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="toToProcessOctPayrollReport" duration-ms="58745" started-at="2018-05-18T16:05:44Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports.toSelectOrgForPerformingAutomationTests" finished-at="2018-05-18T16:06:43Z">
           <params>
             <param index="0">
               <value>
@@ -184,7 +184,7 @@
             </param>
             <param index="9">
               <value>
-                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819CollectiveDraft.xlsx]]>
+                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819.xlsx]]>
               </value>
             </param>
             <param index="10">
@@ -251,11 +251,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toToProcessOctPayrollReport -->
-        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="16" started-at="2018-05-17T15:19:50Z" finished-at="2018-05-17T15:19:50Z">
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="16" started-at="2018-05-18T16:06:43Z" finished-at="2018-05-18T16:06:43Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toReportDataSetResult -->
-        <test-method status="PASS" signature="toToProcessNovPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:11, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="toToProcessNovPayrollReport" duration-ms="57990" started-at="2018-05-17T15:19:50Z" data-provider="getData" finished-at="2018-05-17T15:20:48Z">
+        <test-method status="PASS" signature="toToProcessNovPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="toToProcessNovPayrollReport" duration-ms="54788" started-at="2018-05-18T16:06:43Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports.toToProcessOctPayrollReport" finished-at="2018-05-18T16:07:38Z">
           <params>
             <param index="0">
               <value>
@@ -304,7 +304,7 @@
             </param>
             <param index="9">
               <value>
-                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819CollectiveDraft.xlsx]]>
+                <![CDATA[Payroll Suite CourtOrder AEO1971civildebt201819.xlsx]]>
               </value>
             </param>
             <param index="10">
@@ -371,15 +371,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toToProcessNovPayrollReport -->
-        <test-method status="PASS" signature="toReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="toReportTestResult" is-config="true" duration-ms="750" started-at="2018-05-17T15:20:48Z" finished-at="2018-05-17T15:20:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- toReportTestResult -->
-        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="0" started-at="2018-05-17T15:20:48Z" finished-at="2018-05-17T15:20:48Z">
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="7" started-at="2018-05-18T16:07:38Z" finished-at="2018-05-18T16:07:38Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toReportDataSetResult -->
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtScenario -->
+        <test-method status="PASS" signature="toReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports@42dafa95]" name="toReportTestResult" is-config="true" duration-ms="1235" started-at="2018-05-18T16:07:38Z" finished-at="2018-05-18T16:07:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toReportTestResult -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

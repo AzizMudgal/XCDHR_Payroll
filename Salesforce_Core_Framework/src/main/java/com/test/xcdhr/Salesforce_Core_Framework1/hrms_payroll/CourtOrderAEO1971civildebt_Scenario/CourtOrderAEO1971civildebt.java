@@ -6,7 +6,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.util.List;
-
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
@@ -20,9 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-
 import atu.webdriver.utils.table.WebTable;
-
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.EnumTestClass;
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.ModifiedReport;
@@ -54,10 +51,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	public String type3AmountValue;
 
 	public String TestResultExcelFilePathFromCode = System.getProperty("user.dir")+"\\TestOutPutResultFolder\\201819 Payroll Court order and Student Loan Test result.xlsx";
-	public String ExpectedResultRowNumOfTestResultFileFromCode = "3";
-	public String ActualResultRowNumOfTestResultFileFromCode = "4";
-	public String TestRemarkRowNumOfTestResultFileFromCode = "5";
-	public String TestReportworksheetNoFromCode = "0";
+
+
 
 	public void toSelectDesiredOrg(int OrgFlag)throws Throwable
 	{
@@ -111,8 +106,15 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 
-	public void updateEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
-			throws Throwable {
+	public void updateEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary,
+			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
+			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
+			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
+			String PayrollView,String TestReportworksheetNo,
+			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
+			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile)
+					throws Throwable {
 		try {
 			if (employeeFirsttimeView) {
 				employeeFirsttimeView = false;
@@ -439,10 +441,10 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	/*******************************************************************************/
 	/*
 	 * Need to update the input excel sheet with payroll and report script parameters also.
-	 * 
+	 ************for single tester script the processMonthlyPayroll method would remain common***********
 	 */
 
-	public void processMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
+	public void processSepMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
 			throws Throwable
 	{
 
@@ -521,7 +523,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 						for (int row = 1; row <= allrows1.size(); row++)
 						{
-							toProcessMonthlyPayrun(EmployerName,
+							toProcessSepMonthlyPayrun(EmployerName,
 									EmpName, Payrolid, PayFrequency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
@@ -540,7 +542,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 
-	public void toProcessMonthlyPayrun(String EmployerName,
+	public void toProcessSepMonthlyPayrun(String EmployerName,
 			String EmpName, String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
 			String TestResultExcelFilePath, String PayrollView)
@@ -646,7 +648,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 									TestResultExcelFilePath);
 						} else if (Frquency.equalsIgnoreCase("Monthly"))
 						{
-							toProcessMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
+							toProcessSepMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
 									FirstReportNameInApplication,
 									TestResultExcelFilePath);
 						}
@@ -670,7 +672,657 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 
-	public void toProcessMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
+	public void toProcessSepMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+					throws Throwable
+	{
+		try {
+			if (existsElement(OR.getProperty("payRunWeekTable")))
+			{
+				System.out.println("Thee table exists");
+
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				lastRowCount = rows.size();
+				System.out
+				.println("The total pay run records for the page is equal to : "
+						+ lastRowCount);
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownum = 2;
+				counter = 1;
+				while (x.hasNext())
+				{
+					// Thread.sleep(2000L);
+					System.out
+					.println("Now the count of Rownum is : " + rownum);
+					WebElement MonthPayRun_Record = driver.findElement(By
+							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+									+ "div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+
+					if (existsWebElement(MonthPayRun_Record))
+					{
+						System.out.println("first payroll table record existt");
+						String PayRunTextName = MonthPayRun_Record.getText();
+						System.out.println("The Month name is :"
+								+ PayRunTextName);
+						if (PayRunTextName != null
+								&& PayRunTextName.equalsIgnoreCase(MonthName))
+						{
+							System.out.println("The Month name"
+									+ PayRunTextName + " matched");
+							MonthPayRun_Record.sendKeys("");
+							// Thread.sleep(1000L);
+							MonthPayRun_Record.click();
+							System.out
+							.println("The Payrun record whose Month name is "
+									+ MonthName
+									+ "successfully clicked for processing payroll");
+							break;
+						}
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 12 && rownum == 6 || rownum > 10
+								&& PayRunTextName != null
+								&& PayRunTextName != (MonthName))
+						{
+							System.out
+							.println("The row number of the page reached"
+									+ rownum
+
+									+ " Required payrun not found hence clicking the"
+									+ " pagination link so that payrun search continues for next page");
+
+							if (existsElementchkFor1mts(OR
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+							{
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.sendKeys("");
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.click();
+								System.out
+								.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+							}
+						}
+						System.out
+						.println("Payrun not matched hence incrementing the row number");
+						rownum++;
+						counter++;
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage());
+		}
+	}
+
+	/*************Oct month pay run execution method****************/
+
+	public void processOctMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
+			throws Throwable
+	{
+
+		if (existsElementchkFor1mts(OR.getProperty("payrollTab"))) 
+		{
+			getObject("payrollTab").click();
+			System.out.println("The payroll tab got clicked");
+		}
+		Thread.sleep(6000L);
+
+		/*Aziz commented on 4th may 2018.
+		 * In QA Org, becuase of HEAP ERROR not able to select the 'All' from view drop
+		 * down list item. hence commented the selection and searching the payrollid AS
+		 * by default the view pick list item is showing 'Current pay run'.
+		 * 
+		 * THIS IS JUST TEMPORARY PHASE . AS soon as heap error is resolved we shall
+		 * have to uncomment the following method.OR as long as we 
+		 * dont have to test 2017-18 Tax year, we can keep the following method 
+		 * comment state only.
+		 * 
+		 */
+
+		/*if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) 
+		{
+			Select selectByValue = new Select(driver.findElement(By.xpath(OR
+					.getProperty("payrollViewLocator"))));
+			selectByValue.selectByValue(PayrollView);
+		}
+			Thread.sleep(4000L);
+
+		 */
+
+		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
+		{
+			System.out.println("The payroll search field is displayed");
+			getObject("payrollSearchField").sendKeys("");
+			getObject("payrollSearchField").sendKeys(Payrolid);
+		}
+		Thread.sleep(5000L);
+
+		try
+		{
+			if (existsElementchkFor1mts(OR.getProperty("payroll2weeklytable")))
+			{
+				WebElement table = driver.findElement(By.xpath(OR
+						.getProperty("payroll2weeklytable")));
+				if (existsWebElement(table)) {
+					System.out.println("payroll table existt");
+
+					System.out.println("Total pages :");
+
+					for (int i = 2; i <= 50; i++)
+					{
+						List<WebElement> allrows = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows.size(); row++) 
+						{
+							ProcessingToWeeklyForStatutory1(EmployerName,
+									EmpName, Payrolid, PayFrequency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+							System.out
+							.println("No record matched in first page hence clicked to next page");
+						}
+
+						if (existsElement(OR.getProperty("paginationElement")))
+						{
+							System.out.println("hence clicked to next page");
+						}
+						List<WebElement> allrows1 = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows1.size(); row++)
+						{
+							toProcessOctMonthlyPayrun(EmployerName,
+									EmpName, Payrolid, PayFrequency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+						}
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+	public void toProcessOctMonthlyPayrun(String EmployerName,
+			String EmpName, String Payrolid, String Frquency, String MonthName,
+			String ExcelInputSheet, String FirstReportNameInApplication,
+			String TestResultExcelFilePath, String PayrollView)
+					throws Throwable
+	{
+		try {
+			WebElement tableheader = getObject("payroll2weeklytable");
+			List<WebElement> th = tableheader.findElements(By.tagName("th"));
+
+			for (int i = 0; i < th.size(); i++)
+			{
+				if ("Payroll".equalsIgnoreCase(th.get(i).getText()))
+				{
+					payrollcol_position = i + 1;
+					break;
+				}
+			}
+
+			for (int j = 0; j < th.size(); j++)
+			{
+				if ("Employer".equalsIgnoreCase(th.get(j).getText()))
+				{
+					Emplpoyercol_position = j + 1;
+					break;
+				}
+
+			}
+
+			for (int k = 0; k < th.size(); k++)
+			{
+				if ("Frequency".equalsIgnoreCase(th.get(k).getText()))
+				{
+					frequencyCol_Postition = k + 1;
+					break;
+				}
+
+			}
+			Thread.sleep(4000L);
+			WebElement niweeklyPayrollTable = getObject("payroll2weeklytable");
+			// need to check webelement exist
+			// WebTable table = WebTable.getTable(niweeklyPayrollTable);
+			List<WebElement> rows = niweeklyPayrollTable.findElements(By
+					.xpath(OR.getProperty("payroll2weeklytablerows")));
+			// //
+			java.util.Iterator<WebElement> x = rows.iterator();
+			rownum = 1;
+			System.out.println("rownum is  :" + rownum);
+			while (x.hasNext())
+			{
+				WebElement emr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + Emplpoyercol_position + "]"));
+				String empr = emr1.getText();
+
+				WebElement ffr = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + frequencyCol_Postition + "]"));
+				String ffr1 = ffr.getText();
+
+				WebElement ppr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]"));
+				String ppr = ppr1.getText();
+				// Thread.sleep(4000L);
+
+				payrollRecordId = "//table/tbody/tr/td/form/div[1]/table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]" + "/" + "a";
+
+				if (empr != null && empr.equalsIgnoreCase(EmployerName)
+						&& ppr.equalsIgnoreCase(Payrolid)
+						&& ffr1.equalsIgnoreCase(Frquency))
+				{
+					System.out
+					.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
+
+					driver.findElement(By.xpath(payrollRecordId)).click();
+					/*
+					 * ENTERING INTO NEXT PAGE
+					 */
+					if (existsElement(OR.getProperty("twoweeklyPayrolldetails")))
+					{
+						String pfrequencey = getObject(
+								"twoweeklyPayrolldetails").getText();
+						System.out.println("the employer name is :"
+								+ pfrequencey);
+						if (Frquency.equalsIgnoreCase("Four Weekly"))
+						{
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if (Frquency.equalsIgnoreCase("Two Weekly"))
+						{
+							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if (Frquency.equalsIgnoreCase("Weekly"))
+						{
+							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						} else if (Frquency.equalsIgnoreCase("Monthly"))
+						{
+							toProcessOctMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						break;
+					}
+					break;
+				}
+				else
+				{
+					System.out.println("payfrequency not matched");
+				}
+				rownum++;
+			}
+		}
+		catch (Throwable t) 
+		{
+			t.getMessage().toString();
+			t.getStackTrace().toString();
+		}
+	}
+
+
+
+
+
+	public void toProcessOctMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+					throws Throwable
+	{
+		try {
+			if (existsElement(OR.getProperty("payRunWeekTable")))
+			{
+				System.out.println("Thee table exists");
+
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				lastRowCount = rows.size();
+				System.out
+				.println("The total pay run records for the page is equal to : "
+						+ lastRowCount);
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownum = 2;
+				counter = 1;
+				while (x.hasNext())
+				{
+					// Thread.sleep(2000L);
+					System.out
+					.println("Now the count of Rownum is : " + rownum);
+					WebElement MonthPayRun_Record = driver.findElement(By
+							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+									+ "div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+
+					if (existsWebElement(MonthPayRun_Record))
+					{
+						System.out.println("first payroll table record existt");
+						String PayRunTextName = MonthPayRun_Record.getText();
+						System.out.println("The Month name is :"
+								+ PayRunTextName);
+						if (PayRunTextName != null
+								&& PayRunTextName.equalsIgnoreCase(MonthName))
+						{
+							System.out.println("The Month name"
+									+ PayRunTextName + " matched");
+							MonthPayRun_Record.sendKeys("");
+							// Thread.sleep(1000L);
+							MonthPayRun_Record.click();
+							System.out
+							.println("The Payrun record whose Month name is "
+									+ MonthName
+									+ "successfully clicked for processing payroll");
+							break;
+						}
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 12 && rownum == 6 || rownum > 10
+								&& PayRunTextName != null
+								&& PayRunTextName != (MonthName))
+						{
+							System.out
+							.println("The row number of the page reached"
+									+ rownum
+
+									+ " Required payrun not found hence clicking the"
+									+ " pagination link so that payrun search continues for next page");
+
+							if (existsElementchkFor1mts(OR
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+							{
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.sendKeys("");
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.click();
+								System.out
+								.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+							}
+						}
+						System.out
+						.println("Payrun not matched hence incrementing the row number");
+						rownum++;
+						counter++;
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage());
+		}
+	}
+
+
+
+
+	/*************Nov month pay run execution method****************/
+
+
+	public void processNovMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
+			throws Throwable
+	{
+
+		if (existsElementchkFor1mts(OR.getProperty("payrollTab"))) 
+		{
+			getObject("payrollTab").click();
+			System.out.println("The payroll tab got clicked");
+		}
+		Thread.sleep(6000L);
+
+		/*Aziz commented on 4th may 2018.
+		 * In QA Org, becuase of HEAP ERROR not able to select the 'All' from view drop
+		 * down list item. hence commented the selection and searching the payrollid AS
+		 * by default the view pick list item is showing 'Current pay run'.
+		 * 
+		 * THIS IS JUST TEMPORARY PHASE . AS soon as heap error is resolved we shall
+		 * have to uncomment the following method.OR as long as we 
+		 * dont have to test 2017-18 Tax year, we can keep the following method 
+		 * comment state only.
+		 * 
+		 */
+
+		/*if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) 
+		{
+			Select selectByValue = new Select(driver.findElement(By.xpath(OR
+					.getProperty("payrollViewLocator"))));
+			selectByValue.selectByValue(PayrollView);
+		}
+			Thread.sleep(4000L);
+
+		 */
+
+		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
+		{
+			System.out.println("The payroll search field is displayed");
+			getObject("payrollSearchField").sendKeys("");
+			getObject("payrollSearchField").sendKeys(Payrolid);
+		}
+		Thread.sleep(5000L);
+
+		try
+		{
+			if (existsElementchkFor1mts(OR.getProperty("payroll2weeklytable")))
+			{
+				WebElement table = driver.findElement(By.xpath(OR
+						.getProperty("payroll2weeklytable")));
+				if (existsWebElement(table)) {
+					System.out.println("payroll table existt");
+
+					System.out.println("Total pages :");
+
+					for (int i = 2; i <= 50; i++)
+					{
+						List<WebElement> allrows = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows.size(); row++) 
+						{
+							ProcessingToWeeklyForStatutory1(EmployerName,
+									EmpName, Payrolid, PayFrequency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+							System.out
+							.println("No record matched in first page hence clicked to next page");
+						}
+
+						if (existsElement(OR.getProperty("paginationElement")))
+						{
+							System.out.println("hence clicked to next page");
+						}
+						List<WebElement> allrows1 = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows1.size(); row++)
+						{
+							toProcessNovMonthlyPayrun(EmployerName,
+									EmpName, Payrolid, PayFrequency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+						}
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+	public void toProcessNovMonthlyPayrun(String EmployerName,
+			String EmpName, String Payrolid, String Frquency, String MonthName,
+			String ExcelInputSheet, String FirstReportNameInApplication,
+			String TestResultExcelFilePath, String PayrollView)
+					throws Throwable
+	{
+		try {
+			WebElement tableheader = getObject("payroll2weeklytable");
+			List<WebElement> th = tableheader.findElements(By.tagName("th"));
+
+			for (int i = 0; i < th.size(); i++)
+			{
+				if ("Payroll".equalsIgnoreCase(th.get(i).getText()))
+				{
+					payrollcol_position = i + 1;
+					break;
+				}
+			}
+
+			for (int j = 0; j < th.size(); j++)
+			{
+				if ("Employer".equalsIgnoreCase(th.get(j).getText()))
+				{
+					Emplpoyercol_position = j + 1;
+					break;
+				}
+
+			}
+
+			for (int k = 0; k < th.size(); k++)
+			{
+				if ("Frequency".equalsIgnoreCase(th.get(k).getText()))
+				{
+					frequencyCol_Postition = k + 1;
+					break;
+				}
+
+			}
+			Thread.sleep(4000L);
+			WebElement niweeklyPayrollTable = getObject("payroll2weeklytable");
+			// need to check webelement exist
+			// WebTable table = WebTable.getTable(niweeklyPayrollTable);
+			List<WebElement> rows = niweeklyPayrollTable.findElements(By
+					.xpath(OR.getProperty("payroll2weeklytablerows")));
+			// //
+			java.util.Iterator<WebElement> x = rows.iterator();
+			rownum = 1;
+			System.out.println("rownum is  :" + rownum);
+			while (x.hasNext())
+			{
+				WebElement emr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + Emplpoyercol_position + "]"));
+				String empr = emr1.getText();
+
+				WebElement ffr = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + frequencyCol_Postition + "]"));
+				String ffr1 = ffr.getText();
+
+				WebElement ppr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]"));
+				String ppr = ppr1.getText();
+				// Thread.sleep(4000L);
+
+				payrollRecordId = "//table/tbody/tr/td/form/div[1]/table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]" + "/" + "a";
+
+				if (empr != null && empr.equalsIgnoreCase(EmployerName)
+						&& ppr.equalsIgnoreCase(Payrolid)
+						&& ffr1.equalsIgnoreCase(Frquency))
+				{
+					System.out
+					.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
+
+					driver.findElement(By.xpath(payrollRecordId)).click();
+					/*
+					 * ENTERING INTO NEXT PAGE
+					 */
+					if (existsElement(OR.getProperty("twoweeklyPayrolldetails")))
+					{
+						String pfrequencey = getObject(
+								"twoweeklyPayrolldetails").getText();
+						System.out.println("the employer name is :"
+								+ pfrequencey);
+						if (Frquency.equalsIgnoreCase("Four Weekly"))
+						{
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if (Frquency.equalsIgnoreCase("Two Weekly"))
+						{
+							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if (Frquency.equalsIgnoreCase("Weekly"))
+						{
+							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						} else if (Frquency.equalsIgnoreCase("Monthly"))
+						{
+							toProcessNovMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						break;
+					}
+					break;
+				}
+				else
+				{
+					System.out.println("payfrequency not matched");
+				}
+				rownum++;
+			}
+		}
+		catch (Throwable t) 
+		{
+			t.getMessage().toString();
+			t.getStackTrace().toString();
+		}
+	}
+
+
+
+	public void toProcessNovMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
 			String FirstReportNameInApplication, String TestResultExcelFilePath)
 					throws Throwable
 	{
@@ -774,6 +1426,12 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 	public void excludeIncludeEmp(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
 		try {
+			Thread.sleep(2000L);
+			if (existsElement(OR.getProperty("changeToDraft")))
+			{
+				System.out.println("yes the Change to Draft button exist");
+				retryForGenerateDraft();
+			}
 			System.out.println("entering into ExcludeIncludeEmp method");
 			double worksheetvalue = Double.parseDouble(worksheetNo);
 			DecimalFormat df = new DecimalFormat("###.#");
@@ -794,31 +1452,30 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			.println("Total rows in the processpayrollforMonthlytax worksheet is :"
 					+ totalRows);
 			String oldWindow = driver.getWindowHandle();
-
-			if (existsElementchkFor5mts(OR.getProperty("changeToDraft"))) {
-				System.out.println("yest the Change to Draft button exist");
-				retryForGenerateDraft();
-			}
 			driver.switchTo().window(driver.getWindowHandle());
-			if (windowExclude) {
+			if(windowExclude) {
 				windowExclude = false;
-				if (getObject("excludeAllemployees").isDisplayed()) {
+				Thread.sleep(1000L);
+				if (getObject("excludeAllemployees").isDisplayed())
+				{
 					System.out
 					.println("the exclude include check box is displayed");
 					getObject("excludeAllemployees").click();
 					System.out
 					.println("the exclude include check box got checked");
 					Thread.sleep(1000L);
-					if (getObject("excludeAllemployees").isSelected()) {
+					if (getObject("excludeAllemployees").isSelected())
+					{
 						getObject("excludeAllemployees").click();
 						System.out
 						.println("After checking the chckbox onceagain the exclude include check box is made UNchecked");
-						// Thread.sleep(1000L);
+
 					}
 				}
 			}
 			if (existsElementchkFor1mts(OR
-					.getProperty("excludeIncludeAllEmployees"))) {
+					.getProperty("excludeIncludeAllEmployees")))
+			{
 				WebElement excludeincludeTable = driver.findElement(By.xpath(OR
 						.getProperty("excludeIncludeAllEmployees")));
 				List<WebElement> rows = excludeincludeTable
@@ -826,8 +1483,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 								.getProperty("excludeIncludeAllEmployeesrows")));
 				java.util.Iterator<WebElement> x = rows.iterator();
 				rownumx = 1;
-				while (x.hasNext()) {
-
+				while (x.hasNext())
+				{
 					WebElement appEmployes = driver
 							.findElement(By
 									.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
@@ -855,6 +1512,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 							System.out.println("The rowMatchedDD------>:" +rowMatchedDD);
 						}
 						if (totalRows == rowMatchedDD) {
+							workbook.close();
+							fis.close();
+							rowMatchedDD=0;
 							System.out
 							.println("The employees rows now matched,hence will now exit the window by saving the required employees");
 							break;
@@ -862,8 +1522,6 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					}
 					rownumx++;
 				}
-
-
 				if (existsElementchkFor1mts(OR.getProperty("closeWindow"))) {
 					getObject("closeWindow").click();
 					System.out
@@ -890,8 +1548,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					}
 				}
 			}
-
-		} catch (Throwable t) {
+		}
+		catch (Throwable t)
+		{
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 		}
@@ -914,12 +1573,14 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
 
-				processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+				processSepMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 
 				excludeIncludeEmp(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 			}
 		}
 	}
+
+
 
 	public int dTRows;
 	public int draftTotalRows;
@@ -973,41 +1634,41 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	{
 		try {
 
-			if (existsElement(OR.getProperty("genratedraftPayroll")))
+			/*if (existsElement(OR.getProperty("genratedraftPayroll")))
+			{*/
+			if (existsElement(OR.getProperty("changeToDraft")))
 			{
-				if (existsElement(OR.getProperty("changeToDraft")))
-				{
-					getObject("changeToDraft").sendKeys("");
-					getObject("changeToDraft").click();
-					Thread.sleep(2000L);
-					if (existsElementchkFor1mts(OR
-							.getProperty("statusPickList"))) {
-						Select selectByValue = new Select(driver.findElement(By
-								.xpath(OR.getProperty("statusPickList"))));
-						selectByValue.selectByVisibleText("Draft");
-					}
-					Thread.sleep(2000L);
-					if (existsElementchkFor1mts(OR
-							.getProperty("payrollDraftSave"))) {
-						getObject("payrollDraftSave").sendKeys("");
-						getObject("payrollDraftSave").click();
-						System.out.println("The Save button got clicked");
-					}
-				}
+				getObject("changeToDraft").sendKeys("");
+				getObject("changeToDraft").click();
+				Thread.sleep(2000L);
 				if (existsElementchkFor1mts(OR
-						.getProperty("genratedraftPayroll"))) {
-					if (existsElementchkFor1mts(OR
-							.getProperty("excludeIncludeEmployees"))) {
-						getObject("excludeIncludeEmployees").click();
-						System.out
-						.println("Exclude Include Employees link got clicked");
-						Thread.sleep(5000);
-					}
-				} else {
-					System.out
-					.println("May be the payroll status is still New. Please make this payroll status to Draft and rerun the script");
+						.getProperty("statusPickList"))) {
+					Select selectByValue = new Select(driver.findElement(By
+							.xpath(OR.getProperty("statusPickList"))));
+					selectByValue.selectByVisibleText("Draft");
+				}
+				Thread.sleep(2000L);
+				if (existsElementchkFor1mts(OR
+						.getProperty("payrollDraftSave"))) {
+					getObject("payrollDraftSave").sendKeys("");
+					getObject("payrollDraftSave").click();
+					System.out.println("The Save button got clicked");
 				}
 			}
+			if (existsElementchkFor1mts(OR
+					.getProperty("genratedraftPayroll"))) {
+				if (existsElementchkFor1mts(OR
+						.getProperty("excludeIncludeEmployees"))) {
+					getObject("excludeIncludeEmployees").click();
+					System.out
+					.println("Exclude Include Employees link got clicked");
+					Thread.sleep(5000);
+				}
+			} else {
+				System.out
+				.println("May be the payroll status is still New. Please make this payroll status to Draft and rerun the script");
+			}
+			//}
 
 		} catch (Throwable t)
 		{
@@ -1016,6 +1677,10 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 	}
 
+
+
+
+	/******************************** payroll Report methods*****************************/
 
 	/******************************************************************************/
 	/*
@@ -1056,6 +1721,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			SearchReport(TaxReport);
 		}
 	}
+
+
 
 
 	public void FetchReport() throws Throwable
@@ -1180,10 +1847,11 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		return result.toString();
 	}
 
+
 	/***************************************************************************************/
 	/********************************Oct payroll Report methods*****************************/
 
-	
+
 	public void DownloadOctReports(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
@@ -1230,9 +1898,6 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
-
-	
-	
 
 	public void processOctPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
@@ -1347,7 +2012,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 
-		double worksheetvalue = Double.parseDouble(TestReportworksheetNoFromCode);
+		double worksheetvalue = Double.parseDouble(TestReportworksheetNo);
 		DecimalFormat df = new DecimalFormat("###.#");
 		String worksheetNoWithoutDecimal = df.format(worksheetvalue);
 		int TRwNo = Integer.parseInt(worksheetNoWithoutDecimal);
@@ -1376,7 +2041,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		System.out.println("i am in first method");
 
 		double expectdDataRowNo = Double
-				.parseDouble(ExpectedResultRowNumOfTestResultFileFromCode);
+				.parseDouble(ExpectedResultRowNumOfTestResultFile);
 		DecimalFormat expctdData = new DecimalFormat("###.#");
 		String expctdRowNoWithoutDecimal = expctdData.format(expectdDataRowNo);
 		int expctdRowIntValue = Integer.parseInt(expctdRowNoWithoutDecimal);
@@ -1451,7 +2116,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		FileOutputStream webdata = new FileOutputStream(TestResultExcelFilePathFromCode);
 
 		double actualDataRowNo = Double
-				.parseDouble(ActualResultRowNumOfTestResultFileFromCode);
+				.parseDouble(ActualResultRowNumOfTestResultFile);
 		DecimalFormat actualData = new DecimalFormat("###.#");
 		String actualRowNoWithoutDecimal = actualData.format(actualDataRowNo);
 		int actualRowIntValue = Integer.parseInt(actualRowNoWithoutDecimal);
@@ -1460,9 +2125,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 		int rowNum = ws.getLastRowNum() + 1;
 		for (int i = actualRowIntValue; i < rowNum; i++) // getting the expected
-			// data from
-			// expected result
-			// data row
+			// data from expected result data row
 		{
 			Row row = ws.getRow(i);
 			if (value1 != null && value1.equalsIgnoreCase(appEmpName))
@@ -1524,7 +2187,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		FileOutputStream webdata = new FileOutputStream(TestResultExcelFilePathFromCode);
 
 		double testRemarkDataRowNo = Double
-				.parseDouble(TestRemarkRowNumOfTestResultFileFromCode);
+				.parseDouble(TestRemarkRowNumOfTestResultFile);
 		DecimalFormat testRmrkData = new DecimalFormat("###.#");
 		String testRmrkRowNoWithoutDecimal = testRmrkData
 				.format(testRemarkDataRowNo);
@@ -1657,7 +2320,6 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		webdata.close();
 		fis.close();
 	}
-
 
 
 
@@ -2101,8 +2763,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		fis.close();
 	}
 
-	
-	
+
+
 	public void DownloadNovReports(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
@@ -2148,15 +2810,332 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 	}
 
+	/***************************************************************************************/
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	public void excludeIncludeEmpForOctPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
+		try {
+			Thread.sleep(2000L);
+			if (existsElement(OR.getProperty("changeToDraft")))
+			{
+				System.out.println("yes the Change to Draft button exist");
+				retryForGenerateDraft();
+			}
+			System.out.println("entering into ExcludeIncludeEmp method");
+			double worksheetvalue = Double.parseDouble(worksheetNo);
+			DecimalFormat df = new DecimalFormat("###.#");
+			String worksheetNoWithoutDecimal = df.format(worksheetvalue);
+			int wNo = Integer.parseInt(worksheetNoWithoutDecimal);
+			System.out.println("The converted post value is  :" + wNo);
+
+			FileInputStream fis = new FileInputStream(
+					new File(
+							System.getProperty("user.dir")
+							+ "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"
+							+ ExcelInputSheet));
+
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
+			totalRows = spreadsheet.getLastRowNum();
+			System.out
+			.println("Total rows in the processpayrollforMonthlytax worksheet is :"
+					+ totalRows);
+			String oldWindow = driver.getWindowHandle();
+			driver.switchTo().window(driver.getWindowHandle());
+			if(windowExclude) {
+				windowExclude = false;
+				Thread.sleep(1000L);
+				if (getObject("excludeAllemployees").isDisplayed())
+				{
+					System.out
+					.println("the exclude include check box is displayed");
+					getObject("excludeAllemployees").click();
+					System.out
+					.println("the exclude include check box got checked");
+					Thread.sleep(1000L);
+					if (getObject("excludeAllemployees").isSelected())
+					{
+						getObject("excludeAllemployees").click();
+						System.out
+						.println("After checking the chckbox onceagain the exclude include check box is made UNchecked");
+
+					}
+				}
+			}
+			if (existsElementchkFor1mts(OR
+					.getProperty("excludeIncludeAllEmployees")))
+			{
+				WebElement excludeincludeTable = driver.findElement(By.xpath(OR
+						.getProperty("excludeIncludeAllEmployees")));
+				List<WebElement> rows = excludeincludeTable
+						.findElements(By.xpath(OR
+								.getProperty("excludeIncludeAllEmployeesrows")));
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownumx = 1;
+				while (x.hasNext())
+				{
+					WebElement appEmployes = driver
+							.findElement(By
+									.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
+											+ rownumx + "]/td[2]/a"));
+
+
+					String appEmployeesName = appEmployes.getText();
+					System.out.println("empname is  :" + appEmployeesName);
+					if (appEmployeesName != null
+							&& appEmployeesName.equalsIgnoreCase(EmpName))
+					{
+						rowMatchedDD++;
+						WebElement empchkBox = driver
+								.findElement(By
+										.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
+												+ rownumx + "]/td/input"));
+
+						System.out.println("empchkBox=====" + empchkBox);
+
+						if (existsWebElement(empchkBox))
+						{
+							empchkBox.click();
+							System.out.println("");
+							System.out.println("The Employee name  : "
+									+ appEmployeesName
+									+ "  check box got clicked");
+							System.out.println("The rowMatchedDD------>:" +rowMatchedDD);
+						}
+						if (totalRows == rowMatchedDD)
+						{
+							workbook.close();
+							fis.close();
+							rowMatchedDD=0;
+							System.out
+							.println("The employees rows now matched,hence will now exit the window by saving the required employees");
+							break;
+						}
+					}
+					rownumx++;
+
+				}
+				if (existsElementchkFor1mts(OR.getProperty("closeWindow")))
+				{
+					getObject("closeWindow").click();
+					System.out
+					.println("The save button of the popup window got clicked");
+					Thread.sleep(1000L);
+				}
+				driver.switchTo().window(oldWindow);
+				Thread.sleep(1000L);
+				if (existsElementchkFor1mts(OR
+						.getProperty("genratedraftPayroll"))) {
+					getObject("genratedraftPayroll").sendKeys("");
+					getObject("genratedraftPayroll").click();
+					if (existsElementchkFor1mts(OR.getProperty("progressBar"))) {
+						System.out.println("");
+						System.out
+						.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
+						Thread.sleep(4000L);
+						payRunExecution();
+						Thread.sleep(6000L);
+						if (existsElementchkFor1mts(OR
+								.getProperty("emprecordsTableRowsAftergeneratedraft"))) {
+							verifyEmpRecordInPaySummaryTable();
+						}
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+
+		/*
+		 * The following statements gets executed if the payroll could
+		 *  not process properly as per no of employees present in the 
+		 *  input excel sheet.
+		 */
+
+		if (finalRows != dTRows)
+		{
+			Thread.sleep(3000L);
+			System.out.println("Since the app is not displaying employee records same"
+					+ " as excel file employees of this Tax worksheet");
+
+			for(Repeat=2; Repeat < 5; Repeat++)
+			{
+				// I have set 3 times to repeat the payroll script so that by the time it processess
+				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
+				System.out.println("The value of Repeat is "+Repeat);
+
+				processOctMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+
+				excludeIncludeEmpForOctPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			}
+		}
+	}
+
+
+	/***********************************************************************************/
+
+	public void excludeIncludeEmpForNovPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
+		try {
+			Thread.sleep(2000L);
+			if (existsElement(OR.getProperty("changeToDraft")))
+			{
+				System.out.println("yes the Change to Draft button exist");
+				retryForGenerateDraft();
+			}
+			System.out.println("entering into ExcludeIncludeEmp method");
+			double worksheetvalue = Double.parseDouble(worksheetNo);
+			DecimalFormat df = new DecimalFormat("###.#");
+			String worksheetNoWithoutDecimal = df.format(worksheetvalue);
+			int wNo = Integer.parseInt(worksheetNoWithoutDecimal);
+			System.out.println("The converted post value is  :" + wNo);
+
+			FileInputStream fis = new FileInputStream(
+					new File(
+							System.getProperty("user.dir")
+							+ "\\src\\main\\java\\com\\test\\xcdhr\\Salesforce_Core_Framework1\\salesforce_XLS_Files\\"
+							+ ExcelInputSheet));
+
+			XSSFWorkbook workbook = new XSSFWorkbook(fis);
+			XSSFSheet spreadsheet = workbook.getSheetAt(wNo);
+			totalRows = spreadsheet.getLastRowNum();
+			System.out
+			.println("Total rows in the processpayrollforMonthlytax worksheet is :"
+					+ totalRows);
+			String oldWindow = driver.getWindowHandle();
+			driver.switchTo().window(driver.getWindowHandle());
+			if(windowExclude) {
+				windowExclude = false;
+				Thread.sleep(1000L);
+				if (getObject("excludeAllemployees").isDisplayed())
+				{
+					System.out
+					.println("the exclude include check box is displayed");
+					getObject("excludeAllemployees").click();
+					System.out
+					.println("the exclude include check box got checked");
+					Thread.sleep(1000L);
+					if (getObject("excludeAllemployees").isSelected())
+					{
+						getObject("excludeAllemployees").click();
+						System.out
+						.println("After checking the chckbox onceagain the exclude include check box is made UNchecked");
+
+					}
+				}
+			}
+			if (existsElementchkFor1mts(OR
+					.getProperty("excludeIncludeAllEmployees")))
+			{
+				WebElement excludeincludeTable = driver.findElement(By.xpath(OR
+						.getProperty("excludeIncludeAllEmployees")));
+				List<WebElement> rows = excludeincludeTable
+						.findElements(By.xpath(OR
+								.getProperty("excludeIncludeAllEmployeesrows")));
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownumx = 1;
+				while (x.hasNext())
+				{
+					WebElement appEmployes = driver
+							.findElement(By
+									.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
+											+ rownumx + "]/td[2]/a"));
+
+
+					String appEmployeesName = appEmployes.getText();
+					System.out.println("empname is  :" + appEmployeesName);
+					if (appEmployeesName != null
+							&& appEmployeesName.equalsIgnoreCase(EmpName)) {
+						rowMatchedDD++;
+						WebElement empchkBox = driver
+								.findElement(By
+										.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
+												+ rownumx + "]/td/input"));
+
+						System.out.println("empchkBox=====" + empchkBox);
+
+						if (existsWebElement(empchkBox)) {
+							empchkBox.click();
+							System.out.println("");
+							System.out.println("The Employee name  : "
+									+ appEmployeesName
+									+ "  check box got clicked");
+							System.out.println("The rowMatchedDD------>:" +rowMatchedDD);
+						}
+						if (totalRows == rowMatchedDD) {
+							workbook.close();
+							fis.close();
+							rowMatchedDD=0;
+							System.out
+							.println("The employees rows now matched,hence will now exit the window by saving the required employees");
+							break;
+						}
+					}
+					rownumx++;
+				}
+				if (existsElementchkFor1mts(OR.getProperty("closeWindow")))
+				{
+					getObject("closeWindow").click();
+					System.out
+					.println("The save button of the popup window got clicked");
+					Thread.sleep(1000L);
+				}
+				driver.switchTo().window(oldWindow);
+				Thread.sleep(1000L);
+				if (existsElementchkFor1mts(OR
+						.getProperty("genratedraftPayroll")))
+				{
+					getObject("genratedraftPayroll").sendKeys("");
+					getObject("genratedraftPayroll").click();
+					if (existsElementchkFor1mts(OR.getProperty("progressBar")))
+					{
+						System.out.println("");
+						System.out
+						.println("The generate draft button got clicked, please wait till draft payroll process gets executed");
+						Thread.sleep(4000L);
+						payRunExecution();
+						Thread.sleep(6000L);
+						if (existsElementchkFor1mts(OR
+								.getProperty("emprecordsTableRowsAftergeneratedraft")))
+						{
+							verifyEmpRecordInPaySummaryTable();
+						}
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+
+		/*
+		 * The following statements gets executed if the payroll could
+		 *  not process properly as per no of employees present in the 
+		 *  input excel sheet.
+		 */
+
+		if (finalRows != dTRows)
+		{
+			Thread.sleep(3000L);
+			System.out.println("Since the app is not displaying employee records same"
+					+ " as excel file employees of this Tax worksheet");
+
+			for(Repeat=2; Repeat < 5; Repeat++)
+			{
+				// I have set 3 times to repeat the payroll script so that by the time it processess
+				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
+				System.out.println("The value of Repeat is "+Repeat);
+
+				processNovMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+
+				excludeIncludeEmpForNovPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			}
+		}
+
+	}
+
 }
 
