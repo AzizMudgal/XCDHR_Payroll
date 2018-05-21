@@ -274,10 +274,48 @@ public class TestBase {
 	
 	public static Xls_Reader Payroll_CourtOrderScenarioOne_SuiteXls = null;
 	public static Xls_Reader Payroll_CourtOrderScenarioTwo_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioThree_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFour_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFive_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSix_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSeven_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioEight_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioNine_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioTen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioEleven_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioTwelve_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioThirteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFourteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFifteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSixteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSeventeen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioEighteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioNinteen_SuiteXls = null;
+
+	
+	
+	
+	
 
 	public String Payroll_CourtOrderScenarioOne_Inputsheet;
 	public String Payroll_CourtOrderScenarioTwo_Inputsheet;
-
+	public String Payroll_CourtOrderScenarioThree_Inputsheet;
+	public String Payroll_CourtOrderScenarioFour_Inputsheet;
+	public String Payroll_CourtOrderScenarioFive_Inputsheet;
+	public String Payroll_CourtOrderScenarioSix_Inputsheet;
+	public String Payroll_CourtOrderScenarioSeven_Inputsheet;
+	public String Payroll_CourtOrderScenarioEight_Inputsheet;
+	public String Payroll_CourtOrderScenarioNine_Inputsheet;
+	public String Payroll_CourtOrderScenarioTen_Inputsheet;
+	public String Payroll_CourtOrderScenarioEleven_Inputsheet;
+	public String Payroll_CourtOrderScenarioTwelve_Inputsheet;
+	public String Payroll_CourtOrderScenarioThirteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioFourteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioFifteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioSixteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioSeventeen_Inputsheet;
+	public String Payroll_CourtOrderScenarioEighteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioNinteen_Inputsheet;
 	
 	
 	public static Xls_Reader TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = null;
@@ -9251,6 +9289,12 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CAEO1971civildebt201819.xlsx");
 				Payroll_CourtOrderScenarioTwo_Inputsheet = "Payroll Suite CourtOrder CAEO1971civildebt201819";
+				
+				Payroll_CourtOrderScenarioThree_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CAPS201819.xlsx");
+				Payroll_CourtOrderScenarioThree_Inputsheet = "Payroll Suite CourtOrder CAPS201819";
+
 
 				break;
 				
