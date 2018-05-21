@@ -273,9 +273,11 @@ public class TestBase {
 	
 	
 	public static Xls_Reader Payroll_CourtOrderScenarioOne_SuiteXls = null;
-	public String Payroll_CourtOrderScenarioOne_Inputsheet;
+	public static Xls_Reader Payroll_CourtOrderScenarioTwo_SuiteXls = null;
 
-	
+	public String Payroll_CourtOrderScenarioOne_Inputsheet;
+	public String Payroll_CourtOrderScenarioTwo_Inputsheet;
+
 	
 	
 	public static Xls_Reader TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = null;
@@ -9245,11 +9247,11 @@ public class TestBase {
 				Payroll_CourtOrderScenarioOne_Inputsheet = "Payroll Suite CourtOrder AEO1971civildebt201819";
 
 
-				/*Payroll_CourtOrderScenarioOne_SuiteXls =  new Xls_Reader(
+				Payroll_CourtOrderScenarioTwo_SuiteXls =  new Xls_Reader(
 						System.getProperty("user.dir")
-						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder AEO1971civildebt201819CollectiveDraft.xlsx");
-				Payroll_CourtOrderScenarioOne_Inputsheet = "Payroll Suite CourtOrder AEO1971civildebt201819CollectiveDraft";
-*/
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CAEO1971civildebt201819.xlsx");
+				Payroll_CourtOrderScenarioTwo_Inputsheet = "Payroll Suite CourtOrder CAEO1971civildebt201819";
+
 				break;
 				
 				
