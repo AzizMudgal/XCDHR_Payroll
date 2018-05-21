@@ -141,7 +141,7 @@ public class CAEO1971civildebtIOAndPayroll extends CourtOrderAEO1971civildebt
 	}
 
 
-
+/*
 	@Test(dataProvider="getData", priority=4,dependsOnMethods = {"setEmployeesAnnualSalaryAndPayfrequency"})
 	public void toProcessSepPayroll(String EmpName,String NICategory, String AnnualSalary,
 			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
@@ -189,14 +189,14 @@ public class CAEO1971civildebtIOAndPayroll extends CourtOrderAEO1971civildebt
 			System.out.println("");
 		}
 	}
-
+*/
 	/*******************************************************************************/
 	/*
 	 * oct payroll methods to execute
 	 */
 	/********************************************************************************/
 
-	@Test(dataProvider="getData", priority=6,dependsOnMethods = {"toSelectEmployeesToProcessSepPayroll"})
+	@Test(dataProvider="getData", priority=6,dependsOnMethods = {"setEmployeesAnnualSalaryAndPayfrequency"})
 	public void toProcessOctPayroll(String EmpName,String NICategory, String AnnualSalary,
 			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
 			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
