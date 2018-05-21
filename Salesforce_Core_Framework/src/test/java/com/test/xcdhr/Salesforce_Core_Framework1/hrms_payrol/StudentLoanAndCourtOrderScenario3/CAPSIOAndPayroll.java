@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario2;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario3;
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.*;
 
 import org.testng.Assert;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class CAEO1971civildebtIOAndPayroll extends CourtOrderAEO1971civildebt
+public class CAPSIOAndPayroll extends CourtOrderAEO1971civildebt
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -308,7 +308,7 @@ public class CAEO1971civildebtIOAndPayroll extends CourtOrderAEO1971civildebt
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
-		return Test_Util.getData(Payroll_CourtOrderScenarioTwo_SuiteXls,"CAEO1971civildebtIOAndPayroll");
+		return Test_Util.getData(Payroll_CourtOrderScenarioTwo_SuiteXls,"CAPSIOAndPayroll");
 	}
 
 
