@@ -1482,6 +1482,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						.findElements(By.xpath(OR
 								.getProperty("excludeIncludeAllEmployeesrows")));
 				java.util.Iterator<WebElement> x = rows.iterator();
+				
 				rownumx = 1;
 				while (x.hasNext())
 				{
@@ -1493,35 +1494,49 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 					String appEmployeesName = appEmployes.getText();
 					System.out.println("empname is  :" + appEmployeesName);
-					if (appEmployeesName != null
-							&& appEmployeesName.equalsIgnoreCase(EmpName)) {
-						rowMatchedDD++;
-						WebElement empchkBox = driver
-								.findElement(By
-										.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
-												+ rownumx + "]/td/input"));
+					//
+					if(x.hasNext()== false)
+					{
+						System.out.println("Desired employee not found in the payroll window, hence existing the test");
+						Assert.assertTrue(false);
 
-						System.out.println("empchkBox=====" + empchkBox);
-
-						if (existsWebElement(empchkBox)) {
-							empchkBox.click();
-							System.out.println("");
-							System.out.println("The Employee name  : "
-									+ appEmployeesName
-									+ "  check box got clicked");
-							System.out.println("The rowMatchedDD------>:" +rowMatchedDD);
-						}
-						if (totalRows == rowMatchedDD) {
-							workbook.close();
-							fis.close();
-							rowMatchedDD=0;
-							System.out
-							.println("The employees rows now matched,hence will now exit the window by saving the required employees");
-							break;
-						}
+						break;
 					}
-					rownumx++;
+					
+					//
+					if (appEmployeesName != null
+							&& appEmployeesName.equalsIgnoreCase(EmpName))
+					{
+							rowMatchedDD++;
+							WebElement empchkBox = driver
+									.findElement(By
+											.xpath("//div[@id='turtle-info']/div/div/div[2]/table[2]/tbody/tr["
+													+ rownumx + "]/td/input"));
+	
+							System.out.println("empchkBox=====" + empchkBox);
+	
+							if (existsWebElement(empchkBox))
+							{
+								empchkBox.click();
+								System.out.println("");
+								System.out.println("The Employee name  : "
+										+ appEmployeesName
+										+ "  check box got clicked");
+								System.out.println("The rowMatchedDD------>:" +rowMatchedDD);
+							}
+							if (totalRows == rowMatchedDD)
+							{
+								workbook.close();
+								fis.close();
+								rowMatchedDD=0;
+								System.out
+								.println("The employees rows now matched,hence will now exit the window by saving the required employees");
+								break;
+							}
+						}
+						rownumx++;
 				}
+				
 				if (existsElementchkFor1mts(OR.getProperty("closeWindow"))) {
 					getObject("closeWindow").click();
 					System.out
