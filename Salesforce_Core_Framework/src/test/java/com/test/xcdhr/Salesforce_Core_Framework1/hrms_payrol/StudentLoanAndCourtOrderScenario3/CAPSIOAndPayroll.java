@@ -140,56 +140,6 @@ public class CAPSIOAndPayroll extends CourtOrderAEO1971civildebt
 		updateEmpAnnualSalaryAndPayFrequency(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,SepMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 	}
 
-
-/*
-	@Test(dataProvider="getData", priority=4,dependsOnMethods = {"setEmployeesAnnualSalaryAndPayfrequency"})
-	public void toProcessSepPayroll(String EmpName,String NICategory, String AnnualSalary,
-			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
-			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
-			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
-			String PayrollView,String TestReportworksheetNo,
-			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
-			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
-			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
-	{
-		try
-		{
-			// The script updates the NI Category for the Automation employees
-			System.out.println("");
-			processSepMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,SepMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
-		}
-		catch(Throwable t)
-		{
-			APP_LOGS.debug("Could not assert the home page title, Check for error");
-			System.out.println("");
-		}
-	}
-
-
-
-	@Test(dataProvider="getData", priority=5,dependsOnMethods = {"toProcessSepPayroll"})
-	public void toSelectEmployeesToProcessSepPayroll(String EmpName,String NICategory, String AnnualSalary,
-			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
-			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
-			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
-			String PayrollView,String TestReportworksheetNo,
-			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
-			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
-			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
-	{
-		try
-		{
-			// The script updates the NI Category for the Automation employees
-			System.out.println("");
-			excludeIncludeEmp(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,SepMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
-		}
-		catch(Throwable t)
-		{
-			APP_LOGS.debug("Could not assert the home page title, Check for error");
-			System.out.println("");
-		}
-	}
-*/
 	/*******************************************************************************/
 	/*
 	 * oct payroll methods to execute

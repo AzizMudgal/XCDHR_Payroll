@@ -9294,6 +9294,26 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CAPS201819.xlsx");
 				Payroll_CourtOrderScenarioThree_Inputsheet = "Payroll Suite CourtOrder CAPS201819";
+				
+				Payroll_CourtOrderScenarioFour_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO1971Maintenance201819.xlsx");
+				Payroll_CourtOrderScenarioFour_Inputsheet = "Payroll Suite CourtOrder PAEO1971Maintenance201819";
+
+				Payroll_CourtOrderScenarioFive_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO1971Fine201819.xlsx");
+				Payroll_CourtOrderScenarioFive_Inputsheet = "Payroll Suite CourtOrder PAEO1971Fine201819";
+
+				Payroll_CourtOrderScenarioSix_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO2003Fine201819.xlsx");
+				Payroll_CourtOrderScenarioSix_Inputsheet = "Payroll Suite CourtOrder PAEO2003Fine201819";
+
+				Payroll_CourtOrderScenarioSeven_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CTAEOCouncilTax201819.xlsx");
+				Payroll_CourtOrderScenarioSeven_Inputsheet = "Payroll Suite CourtOrder CTAEOCouncilTax201819";
 
 
 				break;
