@@ -273,9 +273,49 @@ public class TestBase {
 	
 	
 	public static Xls_Reader Payroll_CourtOrderScenarioOne_SuiteXls = null;
-	public String Payroll_CourtOrderScenarioOne_Inputsheet;
+	public static Xls_Reader Payroll_CourtOrderScenarioTwo_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioThree_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFour_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFive_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSix_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSeven_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioEight_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioNine_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioTen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioEleven_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioTwelve_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioThirteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFourteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioFifteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSixteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioSeventeen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioEighteen_SuiteXls = null;
+	public static Xls_Reader Payroll_CourtOrderScenarioNinteen_SuiteXls = null;
 
 	
+	
+	
+	
+
+	public String Payroll_CourtOrderScenarioOne_Inputsheet;
+	public String Payroll_CourtOrderScenarioTwo_Inputsheet;
+	public String Payroll_CourtOrderScenarioThree_Inputsheet;
+	public String Payroll_CourtOrderScenarioFour_Inputsheet;
+	public String Payroll_CourtOrderScenarioFive_Inputsheet;
+	public String Payroll_CourtOrderScenarioSix_Inputsheet;
+	public String Payroll_CourtOrderScenarioSeven_Inputsheet;
+	public String Payroll_CourtOrderScenarioEight_Inputsheet;
+	public String Payroll_CourtOrderScenarioNine_Inputsheet;
+	public String Payroll_CourtOrderScenarioTen_Inputsheet;
+	public String Payroll_CourtOrderScenarioEleven_Inputsheet;
+	public String Payroll_CourtOrderScenarioTwelve_Inputsheet;
+	public String Payroll_CourtOrderScenarioThirteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioFourteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioFifteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioSixteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioSeventeen_Inputsheet;
+	public String Payroll_CourtOrderScenarioEighteen_Inputsheet;
+	public String Payroll_CourtOrderScenarioNinteen_Inputsheet;
 	
 	
 	public static Xls_Reader TaxPayroll_TaxMonth1CSBRNTK50PercentRegulatory_SuiteXls = null;
@@ -412,6 +452,8 @@ public class TestBase {
 	public static String SSPCaseTwo_2ndReport = "DO NOT TOUCH SSPCaseTwo AWE";
 	public static String SSPCaseTwo_3dReport = "DO NOT TOUCH SSPCASETWO PAYMENT REPORT";
 	public static String CourtOrder_Scenario1 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS";
+	public static String CourtOrder_Scenario1_Report2 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS2";
+	public static String CourtOrder_PAEO1971Maintnce = "DO NOT TOUCH AUTMN COURT PAEO REPORT";
 
 	
 
@@ -6082,6 +6124,14 @@ public class TestBase {
 				.equalsIgnoreCase(CourtOrder_Scenario1)) {
 			rpName = "CourtOrder_Scenario1";
 		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_Scenario1_Report2)) {
+			rpName = "CourtOrder_Scenario1_Report2";
+		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_PAEO1971Maintnce)) {
+			rpName = "CourtOrder_PAEO1971Maintnce";
+		}
 		return rpName;
 	}
 	
@@ -9238,6 +9288,37 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder AEO1971civildebt201819.xlsx");
 				Payroll_CourtOrderScenarioOne_Inputsheet = "Payroll Suite CourtOrder AEO1971civildebt201819";
+
+
+				Payroll_CourtOrderScenarioTwo_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CAEO1971civildebt201819.xlsx");
+				Payroll_CourtOrderScenarioTwo_Inputsheet = "Payroll Suite CourtOrder CAEO1971civildebt201819";
+				
+				Payroll_CourtOrderScenarioThree_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CAPS201819.xlsx");
+				Payroll_CourtOrderScenarioThree_Inputsheet = "Payroll Suite CourtOrder CAPS201819";
+				
+				Payroll_CourtOrderScenarioFour_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO1971Maintenance201819.xlsx");
+				Payroll_CourtOrderScenarioFour_Inputsheet = "Payroll Suite CourtOrder PAEO1971Maintenance201819";
+
+				Payroll_CourtOrderScenarioFive_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO1971Fine201819.xlsx");
+				Payroll_CourtOrderScenarioFive_Inputsheet = "Payroll Suite CourtOrder PAEO1971Fine201819";
+
+				Payroll_CourtOrderScenarioSix_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO2003Fine201819.xlsx");
+				Payroll_CourtOrderScenarioSix_Inputsheet = "Payroll Suite CourtOrder PAEO2003Fine201819";
+
+				Payroll_CourtOrderScenarioSeven_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CTAEOCouncilTax201819.xlsx");
+				Payroll_CourtOrderScenarioSeven_Inputsheet = "Payroll Suite CourtOrder CTAEOCouncilTax201819";
 
 
 				break;

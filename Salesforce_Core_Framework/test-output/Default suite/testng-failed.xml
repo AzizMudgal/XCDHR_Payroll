@@ -3,16 +3,34 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
           <include name="EmpsSetup_WithNICategory" invocation-numbers="9 10 11 12 13 14"/>
           <include name="ReportTestResult"/>
+=======
+          <include name="toSelectOrgForPerformingAutomationTests" invocation-numbers="0"/>
+          <include name="toToProcessNovPayrollReport"/>
+          <include name="toToProcessOctPayrollReport"/>
+>>>>>>> refs/remotes/origin/master
           <include name="CheckSuiteSkip"/>
+<<<<<<< HEAD
           <include name="ReportDataSetResult"/>
           <include name="CheckTestSkip"/>
           <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="9 10 11 12 13 14"/>
+=======
+          <include name="checkTestSkip"/>
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_TwoweeklyCatB.NI2WeeklyCat_B -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

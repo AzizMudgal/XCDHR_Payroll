@@ -50,7 +50,12 @@ public enum ModifiedReport
 	PayrollRTI_RecognitionS7Report_JuneToMarch("PayrollRTI_RecognitionS7ReportLocator_JuneToMarch"),
 	SSPCaseTwo_2ndReport("sspCaseTwo2ndReportlocator"),
 	SSPCaseTwo_3dReport("sspCaseTwo3dReportlocator"),
-	CourtOrder_Scenario1("courtOrderReportLocator");
+	CourtOrder_Scenario1("courtOrderReportLocator"),
+	CourtOrder_Scenario1_Report2("courtOrderReport2Locator"),
+	CourtOrder_PAEO1971Maintnce("courtOrderPAEO1971MaintnceReportLocator");
+	
+	
+	
 	
 	private String ReportName;
 	

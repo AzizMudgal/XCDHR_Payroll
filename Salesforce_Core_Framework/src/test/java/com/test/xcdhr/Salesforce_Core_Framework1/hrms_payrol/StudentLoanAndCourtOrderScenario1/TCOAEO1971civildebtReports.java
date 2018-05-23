@@ -1,6 +1,7 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1;
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.*;
 
+import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -11,7 +12,7 @@ import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
+public class TCOAEO1971civildebtReports extends CourtOrderAEO1971civildebt
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -42,14 +43,22 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_CourtOrderScenarioOne_SuiteXls, this.getClass().getSimpleName());
 		System.out.println("The testcase Runmode is set to YES hence passed the CheckTestSkip method .Now it moves forward to exectute the test scenario");
 		System.out.println("");
-
+	
 		// Please update the Tax year from the Base class as per your Test configuration
 		processDesiredTaxYearInputExcelFile(TaxYear);
 	}
 
 
+
 	@Test(dataProvider="getData", priority=1)
-	public void toSelectOrgForPerformingAutomationTests(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	public void toSelectOrgForPerformingAutomationTests(String EmpName,String NICategory, String AnnualSalary,
+			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
+			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
+			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
+			String PayrollView,String TestReportworksheetNo,
+			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
+			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		//APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
 		count++;
@@ -60,6 +69,9 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 		}
 		System.out.println("Runmode for Test set data is set to YES hence Executing the test case to select the desired Org");
 		System.out.println("");
+		/*
+		 * The Org based on the selection at base class would be invoked.
+		 */
 		toSelectDesiredOrg(OrgFlag);
 	}
 
@@ -69,15 +81,23 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 	boolean shouldOpenBrowser = true; 
 
 
+	/*************************Processing Oct Report***********************************/
+	
 	@Test(dataProvider="getData", priority=2,dependsOnMethods = {"toSelectOrgForPerformingAutomationTests"})
-	public void toSetEmployeesNICategory(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	public void toToProcessOctPayrollReport(String EmpName,String NICategory, String AnnualSalary,
+			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
+			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
+			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
+			String PayrollView,String TestReportworksheetNo,
+			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
+			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			System.out.println("The script now going to select the desired employee(s) as per input sheet and updates the NI Category");
-			updateEmployeesNICategory(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			DownloadOctReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,OctMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,OctExpectedResultRowNumOfTestResultFile,OctActualResultRowNumOfTestResultFile,OctTestRemarkRowNumOfTestResultFile); // pn means payroll id. in this case 8512
 		}
 		catch(Throwable t)
 		{
@@ -85,37 +105,25 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 			System.out.println("");
 		}
 	}
-
-
-
-
-	@Test(dataProvider="getData", priority=3, dependsOnMethods = {"toSetEmployeesNICategory"})
-	public void setEmployeesAnnualSalaryAndPayfrequency(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
-	{
-		countCompensation++;
-		if(! runmodes[countCompensation].equalsIgnoreCase("Y"))
-		{
-			Skip=true;
-			throw new SkipException("Runmode for Test set data is set to 'NO' "+countCompensation);
-		}
-		System.out.println("");
-		System.out.println("The script after updating the NI Category successfuly goes to update the Annual salary and pay frequency for the said employees.");
-
-		// The script updates the Annual salary in the compensation Tab for the Automation employees
-		updateEmpAnnualSalaryAndPayFrequency(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
-	}
+		
 	
 	
-	
-	@Test(dataProvider="getData", priority=4,dependsOnMethods = {"setEmployeesAnnualSalaryAndPayfrequency"})
-	public void toProcessPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
+	@Test(dataProvider="getData", priority=3,dependsOnMethods = {"toToProcessOctPayrollReport"})
+	public void toToProcessNovPayrollReport(String EmpName,String NICategory, String AnnualSalary,
+			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
+			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
+			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
+			String PayrollView,String TestReportworksheetNo,
+			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
+			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			System.out.println("The script now going to select the desired employee(s) as per input sheet and updates the NI Category");
-			processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			DownloadNovReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,NovExpectedResultRowNumOfTestResultFile,NovActualResultRowNumOfTestResultFile,NovTestRemarkRowNumOfTestResultFile); // pn means payroll id. in this case 8512
+			
 		}
 		catch(Throwable t)
 		{
@@ -123,26 +131,7 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 			System.out.println("");
 		}
 	}
-
-
-	@Test(dataProvider="getData", priority=5,dependsOnMethods = {"toProcessPayroll"})
-	public void toSelectEmployeesToProcessPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable
-	{
-		try
-		{
-			// The script updates the NI Category for the Automation employees
-			System.out.println("");
-			//System.out.println("The script now going to select the desired employee(s) as per input sheet and updates the NI Category");
-			excludeIncludeEmp(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
-		}
-		catch(Throwable t)
-		{
-			APP_LOGS.debug("Could not assert the home page title, Check for error");
-			System.out.println("");
-		}
-	}
-
-	
+		
 
 	/*
 	 * To get the data from the specific input excel sheet 
@@ -150,9 +139,8 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
-		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TestCourtOrderAEO1971civildebt");
+		return Test_Util.getData(Payroll_CourtOrderScenarioOne_SuiteXls,"TCOAEO1971civildebtIOAndPayroll");
 	}
-
 
 
 	@AfterMethod
@@ -160,15 +148,20 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 	{
 		if(Skip)
 		{
+			Assert.assertTrue(false);
 			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioOne_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}
 		else if(Fail)
 		{
 			IsTestPass = false;
+			Assert.assertTrue(false);
+
 			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioOne_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
+	        Assert.assertTrue(true);
+
 			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioOne_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
@@ -177,19 +170,24 @@ public class TCOAEO1971civildebtSepPayroll extends CourtOrderAEO1971civildebt
 
 
 	/*
-	 *  This will update the testresult in the first worksheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
+	 *  This will update the test result in the first work sheet where in for that test case , even if one of the test data specified in second worksheet fails, the test 
 		would be considered as fail.And the same would be updated.
 	 */
+	
+	
 	@AfterTest
 	public void toReportTestResult() throws Throwable
 	{
 		if(IsTestPass)
 		{
+	        Assert.assertTrue(true);
+
 			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioOne_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioOne_SuiteXls, this.getClass().getSimpleName()),"Pass");
-			System.out.println("The script successfuly updated the NI Category,Annual salary and Pay frequency for the said employees.");
 		}
 		else
 		{
+			Assert.assertTrue(false);
+
 			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioOne_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioOne_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
 		//After performing all the said functionalities the test script closes the browser.
