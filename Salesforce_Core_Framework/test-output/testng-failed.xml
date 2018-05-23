@@ -3,15 +3,18 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario4.PAEO1971MaintnceReports">
         <methods>
-          <include name="toSelectOrgForPerformingAutomationTests" invocation-numbers="0"/>
-          <include name="toToProcessNovPayrollReport"/>
-          <include name="toToProcessOctPayrollReport"/>
-          <include name="CheckSuiteSkip"/>
+          <include name="toReportTestResult"/>
           <include name="checkTestSkip"/>
+          <include name="toProcessNovPayrollReport"/>
+          <include name="toSelectOrgForPerformingAutomationTests" invocation-numbers="1 2 3 4 5 6"/>
+          <include name="CheckSuiteSkip"/>
+          <include name="toProcessOctPayrollReport"/>
+          <include name="toToProcessDecPayrollReport"/>
+          <include name="toReportDataSetResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario1.TCOAEO1971civildebtReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario4.PAEO1971MaintnceReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
