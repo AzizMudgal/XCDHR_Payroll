@@ -454,8 +454,8 @@ public class TestBase {
 	public static String CourtOrder_Scenario1 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS";
 	public static String CourtOrder_Scenario1_Report2 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS2";
 	public static String CourtOrder_PAEO1971Maintnce = "DO NOT TOUCH AUTMN COURT PAEO REPORT1";
+	public static String CourtOrder_PAEO1971Fine = "DO NOT TOUCH AUTMN CO PAEOFINE REPORT";
 
-	
 
 	public String EMPLOYERNAMEWeekly = "DO NOT TOUCH AUTO ENROLMENT TEST EMPLOYER 1";
 	public String PayrollIdWeekly = "PN-10679";
@@ -6131,6 +6131,10 @@ public class TestBase {
 		else if ((NameOfReprt)
 				.equalsIgnoreCase(CourtOrder_PAEO1971Maintnce)) {
 			rpName = "CourtOrder_PAEO1971Maintnce";
+		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_PAEO1971Fine)) {
+			rpName = "CourtOrder_PAEO1971Fine";
 		}
 		return rpName;
 	}

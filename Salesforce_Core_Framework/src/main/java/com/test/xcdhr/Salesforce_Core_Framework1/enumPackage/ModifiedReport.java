@@ -52,8 +52,8 @@ public enum ModifiedReport
 	SSPCaseTwo_3dReport("sspCaseTwo3dReportlocator"),
 	CourtOrder_Scenario1("courtOrderReportLocator"),
 	CourtOrder_Scenario1_Report2("courtOrderReport2Locator"),
-	CourtOrder_PAEO1971Maintnce("courtOrderPAEO1971MaintnceReportLocator");
-	
+	CourtOrder_PAEO1971Maintnce("courtOrderPAEO1971MaintnceReportLocator"),
+	CourtOrder_PAEO1971Fine("courtOrderPAEO1971FineReportLocator");
 	
 	
 	
