@@ -29,16 +29,16 @@ public class PAEO1971FineReports extends CourtOrderAEO1971civildebt
 	@BeforeTest
 	public void checkTestSkip() throws Throwable
 	{
-		if(! Test_Util.IsTestcaseRunMode(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFour_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFive_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName());
 		System.out.println("The testcase Runmode is set to YES hence passed the CheckTestSkip method .Now it moves forward to exectute the test scenario");
 		System.out.println("");
 
@@ -169,7 +169,7 @@ public class PAEO1971FineReports extends CourtOrderAEO1971civildebt
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
-		return Test_Util.getData(Payroll_CourtOrderScenarioFour_SuiteXls,"PAEO1971MaintnceIOAndPayroll");
+		return Test_Util.getData(Payroll_CourtOrderScenarioFive_SuiteXls,"PAEO1971FineIOAndPayroll");
 	}
 
 
@@ -179,20 +179,20 @@ public class PAEO1971FineReports extends CourtOrderAEO1971civildebt
 		if(Skip)
 		{
 			Assert.assertTrue(false);
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}
 		else if(Fail)
 		{
 			IsTestPass = false;
 			Assert.assertTrue(false);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
 			Assert.assertTrue(true);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -212,13 +212,13 @@ public class PAEO1971FineReports extends CourtOrderAEO1971civildebt
 		{
 			Assert.assertTrue(true);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFour_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFive_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
 			Assert.assertTrue(false);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFour_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioFour_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioFive_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioFive_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
 		//After performing all the said functionalities the test script closes the browser.
 		closeBrowser();
