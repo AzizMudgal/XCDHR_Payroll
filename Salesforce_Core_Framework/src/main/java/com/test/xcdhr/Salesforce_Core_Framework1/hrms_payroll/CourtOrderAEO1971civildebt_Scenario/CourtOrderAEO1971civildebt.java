@@ -826,7 +826,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 						for (int row = 1; row <= allrows.size(); row++) 
 						{
-							ProcessingToWeeklyForStatutory1(EmployerName,
+							toProcessOctMonthlyPayrun(EmployerName,
 									EmpName, Payrolid, PayFrequency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
@@ -839,7 +839,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						{
 							System.out.println("hence clicked to next page");
 						}
-						List<WebElement> allrows1 = table
+						/*List<WebElement> allrows1 = table
 								.findElements(By.xpath(OR
 										.getProperty("payroll2weeklytablerowss")));
 
@@ -850,7 +850,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 									ExcelInputSheet,
 									FirstReportNameInApplication,
 									TestResultExcelFilePath, PayrollView);
-						}
+						}*/
 					}
 				}
 			}
@@ -1094,7 +1094,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	/*************Nov month pay run execution method****************/
 
 
-	public void processNovMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
+	public void processMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
 			throws Throwable
 	{
 
@@ -1154,30 +1154,13 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 						for (int row = 1; row <= allrows.size(); row++) 
 						{
-							ProcessingToWeeklyForStatutory1(EmployerName,
+							toProcessOctMonthlyPayrun(EmployerName,
 									EmpName, Payrolid, PayFrequency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
 									TestResultExcelFilePath, PayrollView);
 							System.out
 							.println("No record matched in first page hence clicked to next page");
-						}
-
-						if (existsElement(OR.getProperty("paginationElement")))
-						{
-							System.out.println("hence clicked to next page");
-						}
-						List<WebElement> allrows1 = table
-								.findElements(By.xpath(OR
-										.getProperty("payroll2weeklytablerowss")));
-
-						for (int row = 1; row <= allrows1.size(); row++)
-						{
-							toProcessNovMonthlyPayrun(EmployerName,
-									EmpName, Payrolid, PayFrequency, MonthName,
-									ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath, PayrollView);
 						}
 					}
 				}
@@ -1414,7 +1397,429 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 	}
 
+/**********Dec month***************************/
+	
+	public void processDecMonthlyPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo)
+			throws Throwable
+	{
 
+		if (existsElementchkFor1mts(OR.getProperty("payrollTab"))) 
+		{
+			getObject("payrollTab").click();
+			System.out.println("The payroll tab got clicked");
+		}
+		Thread.sleep(6000L);
+
+		/*Aziz commented on 4th may 2018.
+		 * In QA Org, becuase of HEAP ERROR not able to select the 'All' from view drop
+		 * down list item. hence commented the selection and searching the payrollid AS
+		 * by default the view pick list item is showing 'Current pay run'.
+		 * 
+		 * THIS IS JUST TEMPORARY PHASE . AS soon as heap error is resolved we shall
+		 * have to uncomment the following method.OR as long as we 
+		 * dont have to test 2017-18 Tax year, we can keep the following method 
+		 * comment state only.
+		 * 
+		 */
+
+		/*if (existsElementchkFor1mts(OR.getProperty("payrollViewLocator"))) 
+		{
+			Select selectByValue = new Select(driver.findElement(By.xpath(OR
+					.getProperty("payrollViewLocator"))));
+			selectByValue.selectByValue(PayrollView);
+		}
+			Thread.sleep(4000L);
+
+		 */
+
+		if (existsElementchkFor1mts(OR.getProperty("payrollSearchField")))
+		{
+			System.out.println("The payroll search field is displayed");
+			getObject("payrollSearchField").sendKeys("");
+			getObject("payrollSearchField").sendKeys(Payrolid);
+		}
+		Thread.sleep(5000L);
+
+		try
+		{
+			if (existsElementchkFor1mts(OR.getProperty("payroll2weeklytable")))
+			{
+				WebElement table = driver.findElement(By.xpath(OR
+						.getProperty("payroll2weeklytable")));
+				if (existsWebElement(table)) {
+					System.out.println("payroll table existt");
+
+					System.out.println("Total pages :");
+
+					for (int i = 2; i <= 50; i++)
+					{
+						List<WebElement> allrows = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows.size(); row++) 
+						{
+							toProcessDecMonthlyPayrun(EmployerName,
+									EmpName, Payrolid, PayFrequency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+							System.out
+							.println("No record matched in first page hence clicked to next page");
+						}
+
+						if (existsElement(OR.getProperty("paginationElement")))
+						{
+							System.out.println("hence clicked to next page");
+						}
+					/*	List<WebElement> allrows1 = table
+								.findElements(By.xpath(OR
+										.getProperty("payroll2weeklytablerowss")));
+
+						for (int row = 1; row <= allrows1.size(); row++)
+						{
+							toProcessDecMonthlyPayrun(EmployerName,
+									EmpName, Payrolid, PayFrequency, MonthName,
+									ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath, PayrollView);
+						}*/
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
+		}
+	}
+
+
+
+	public void toProcessDecMonthlyPayrun(String EmployerName,
+			String EmpName, String Payrolid, String Frquency, String MonthName,
+			String ExcelInputSheet, String FirstReportNameInApplication,
+			String TestResultExcelFilePath, String PayrollView)
+					throws Throwable
+	{
+		try {
+			WebElement tableheader = getObject("payroll2weeklytable");
+			List<WebElement> th = tableheader.findElements(By.tagName("th"));
+
+			for (int i = 0; i < th.size(); i++)
+			{
+				if ("Payroll".equalsIgnoreCase(th.get(i).getText()))
+				{
+					payrollcol_position = i + 1;
+					break;
+				}
+			}
+
+			for (int j = 0; j < th.size(); j++)
+			{
+				if ("Employer".equalsIgnoreCase(th.get(j).getText()))
+				{
+					Emplpoyercol_position = j + 1;
+					break;
+				}
+
+			}
+
+			for (int k = 0; k < th.size(); k++)
+			{
+				if ("Frequency".equalsIgnoreCase(th.get(k).getText()))
+				{
+					frequencyCol_Postition = k + 1;
+					break;
+				}
+
+			}
+			Thread.sleep(4000L);
+			WebElement niweeklyPayrollTable = getObject("payroll2weeklytable");
+			// need to check webelement exist
+			// WebTable table = WebTable.getTable(niweeklyPayrollTable);
+			List<WebElement> rows = niweeklyPayrollTable.findElements(By
+					.xpath(OR.getProperty("payroll2weeklytablerows")));
+			// //
+			java.util.Iterator<WebElement> x = rows.iterator();
+			rownum = 1;
+			System.out.println("rownum is  :" + rownum);
+			while (x.hasNext())
+			{
+				WebElement emr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + Emplpoyercol_position + "]"));
+				String empr = emr1.getText();
+
+				WebElement ffr = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + frequencyCol_Postition + "]"));
+				String ffr1 = ffr.getText();
+
+				WebElement ppr1 = driver.findElement(By.xpath("//table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]"));
+				String ppr = ppr1.getText();
+				// Thread.sleep(4000L);
+
+				payrollRecordId = "//table/tbody/tr/td/form/div[1]/table[2]/"
+						+ "tbody/" + "tr" + "[" + (rownum + 1) + "]" + "/"
+						+ "td[" + payrollcol_position + "]" + "/" + "a";
+
+				if (empr != null && empr.equalsIgnoreCase(EmployerName)
+						&& ppr.equalsIgnoreCase(Payrolid)
+						&& ffr1.equalsIgnoreCase(Frquency))
+				{
+					System.out
+					.println("Finally the Employer name,Payfrequency 'Monthly' and required Payroll matched");
+
+					driver.findElement(By.xpath(payrollRecordId)).click();
+					/*
+					 * ENTERING INTO NEXT PAGE
+					 */
+					if (existsElement(OR.getProperty("twoweeklyPayrolldetails")))
+					{
+						String pfrequencey = getObject(
+								"twoweeklyPayrolldetails").getText();
+						System.out.println("the employer name is :"
+								+ pfrequencey);
+						if (Frquency.equalsIgnoreCase("Four Weekly"))
+						{
+							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if (Frquency.equalsIgnoreCase("Two Weekly"))
+						{
+							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						else if (Frquency.equalsIgnoreCase("Weekly"))
+						{
+							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						} else if (Frquency.equalsIgnoreCase("Monthly"))
+						{
+							toProcessDecMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
+									FirstReportNameInApplication,
+									TestResultExcelFilePath);
+						}
+						break;
+					}
+					break;
+				}
+				else
+				{
+					System.out.println("payfrequency not matched");
+				}
+				rownum++;
+			}
+		}
+		catch (Throwable t) 
+		{
+			t.getMessage().toString();
+			t.getStackTrace().toString();
+		}
+	}
+
+	
+	
+	
+	public void toProcessDecMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+					throws Throwable
+	{
+		try {
+			if (existsElement(OR.getProperty("payRunWeekTable")))
+			{
+				System.out.println("Thee table exists");
+
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				lastRowCount = rows.size();
+				System.out
+				.println("The total pay run records for the page is equal to : "
+						+ lastRowCount);
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownum = 2;
+				counter = 1;
+				while (x.hasNext())
+				{
+					// Thread.sleep(2000L);
+					System.out
+					.println("Now the count of Rownum is : " + rownum);
+					WebElement MonthPayRun_Record = driver.findElement(By
+							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+									+ "div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+
+					if (existsWebElement(MonthPayRun_Record))
+					{
+						System.out.println("first payroll table record existt");
+						String PayRunTextName = MonthPayRun_Record.getText();
+						System.out.println("The Month name is :"
+								+ PayRunTextName);
+						if (PayRunTextName != null
+								&& PayRunTextName.equalsIgnoreCase(MonthName))
+						{
+							System.out.println("The Month name"
+									+ PayRunTextName + " matched");
+							MonthPayRun_Record.sendKeys("");
+							// Thread.sleep(1000L);
+							MonthPayRun_Record.click();
+							System.out
+							.println("The Payrun record whose Month name is "
+									+ MonthName
+									+ "successfully clicked for processing payroll");
+							break;
+						}
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 12 && rownum == 6 || rownum > 10
+								&& PayRunTextName != null
+								&& PayRunTextName != (MonthName))
+						{
+							System.out
+							.println("The row number of the page reached"
+									+ rownum
+
+									+ " Required payrun not found hence clicking the"
+									+ " pagination link so that payrun search continues for next page");
+
+							if (existsElementchkFor1mts(OR
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+							{
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.sendKeys("");
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.click();
+								System.out
+								.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+							}
+						}
+						System.out
+						.println("Payrun not matched hence incrementing the row number");
+						rownum++;
+						counter++;
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage());
+		}
+	}
+
+	
+	/*****************************************************/
+	
+	public void toProcessJanMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
+			String FirstReportNameInApplication, String TestResultExcelFilePath)
+					throws Throwable
+	{
+		try {
+			if (existsElement(OR.getProperty("payRunWeekTable")))
+			{
+				System.out.println("Thee table exists");
+
+				WebElement payRunWeekOneTable = getObject("payRunWeekTable");
+
+				List<WebElement> rows = payRunWeekOneTable.findElements(By
+						.xpath(OR.getProperty("WeekOneTablerows")));
+				lastRowCount = rows.size();
+				System.out
+				.println("The total pay run records for the page is equal to : "
+						+ lastRowCount);
+				java.util.Iterator<WebElement> x = rows.iterator();
+				rownum = 2;
+				counter = 1;
+				while (x.hasNext())
+				{
+					// Thread.sleep(2000L);
+					System.out
+					.println("Now the count of Rownum is : " + rownum);
+					WebElement MonthPayRun_Record = driver.findElement(By
+							.xpath("//div[" + "5" + "]/" + "div[" + "1]/"
+									+ "div/" + "div[" + "2]/" + "table/"
+									+ "tbody/tr[" + (rownum) + "]/" + "th/"
+									+ "a"));
+
+					if (existsWebElement(MonthPayRun_Record))
+					{
+						System.out.println("first payroll table record existt");
+						String PayRunTextName = MonthPayRun_Record.getText();
+						System.out.println("The Month name is :"
+								+ PayRunTextName);
+						if (PayRunTextName != null
+								&& PayRunTextName.equalsIgnoreCase(MonthName))
+						{
+							System.out.println("The Month name"
+									+ PayRunTextName + " matched");
+							MonthPayRun_Record.sendKeys("");
+							// Thread.sleep(1000L);
+							MonthPayRun_Record.click();
+							System.out
+							.println("The Payrun record whose Month name is "
+									+ MonthName
+									+ "successfully clicked for processing payroll");
+							break;
+						}
+						System.out.println("The Month name" + PayRunTextName
+								+ " is not matched");
+						if (counter < 12 && rownum == 6 || rownum > 10
+								&& PayRunTextName != null
+								&& PayRunTextName != (MonthName))
+						{
+							System.out
+							.println("The row number of the page reached"
+									+ rownum
+
+									+ " Required payrun not found hence clicking the"
+									+ " pagination link so that payrun search continues for next page");
+
+							if (existsElementchkFor1mts(OR
+									.getProperty("payrollMonthWeeekSubPaginToDisplayAllRecords")))
+							{
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.sendKeys("");
+								getObject(
+										"payrollMonthWeeekSubPaginToDisplayAllRecords")
+										.click();
+								System.out
+								.println("As the required Payrun is not found in first page,hence clicked to pagination link");
+								Thread.sleep(5000L);
+							}
+						}
+						System.out
+						.println("Payrun not matched hence incrementing the row number");
+						rownum++;
+						counter++;
+					}
+				}
+			}
+		}
+		catch (Throwable t)
+		{
+			System.out.println(t.getMessage());
+		}
+	}
+
+	
+	
+	
+	
+	
 
 	/******************************************************/
 	/*
@@ -2455,7 +2860,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	/*************************************************************************************/
 	/*********December payroll Report methods*****************************************************/
 
-	public void processDecPayrollReport(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
+	public void processPayrollReportForScenarioFour(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
 		try
 		{
@@ -3274,7 +3679,55 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
 			{
-				processDecPayrollReport(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+				processPayrollReportForScenarioFour(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+				System.out.println("7> Entered the values and processed the Test Remarks");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getCause().toString());
+		}
+	}
+	
+	
+	
+	
+	public void DownloadScenarioFiveReports(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	{
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+			{
+				getObject("reportTablocator").click();
+				System.out.println("2> Clicked to Report Tab");
+				Thread.sleep(4000L);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+			{				
+				SearchReport(FirstReportNameInApplication);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+			{
+				editCustomButton();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+			{				
+				UpdateReportPage(Payrolid,PayFrequency,MonthName);
+				System.out.println("");
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+			{
+				RunReport();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+			{
+				processPayrollReportForScenarioFour(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 				System.out.println("7> Entered the values and processed the Test Remarks");
 			}
 		}
@@ -3604,7 +4057,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
 
-				processNovMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+				processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 
 				excludeIncludeEmpForNovPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 			}
