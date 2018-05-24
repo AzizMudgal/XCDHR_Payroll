@@ -97,7 +97,7 @@ public class PAEO1971FineReports extends CourtOrderAEO1971civildebt
 		{
 			// In this method pass the desired Payrun's and corresponding row number of expected,actual and test remarks respectively.
 			System.out.println("");
-			DownloadScenarioFourReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,OctMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,OctExpectedResultRowNumOfTestResultFile,OctActualResultRowNumOfTestResultFile,OctTestRemarkRowNumOfTestResultFile);
+			DownloadScenarioFiveReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,OctMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,OctExpectedResultRowNumOfTestResultFile,OctActualResultRowNumOfTestResultFile,OctTestRemarkRowNumOfTestResultFile);
 		}
 		catch(Throwable t)
 		{
@@ -123,8 +123,7 @@ public class PAEO1971FineReports extends CourtOrderAEO1971civildebt
 		{
 			// In this method pass the desired Payrun's and corresponding row number of expected,actual and test remarks respectively.
 			System.out.println("");
-			DownloadScenarioFourReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,NovExpectedResultRowNumOfTestResultFile,NovActualResultRowNumOfTestResultFile,NovTestRemarkRowNumOfTestResultFile);
-
+			DownloadScenarioFiveReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,NovExpectedResultRowNumOfTestResultFile,NovActualResultRowNumOfTestResultFile,NovTestRemarkRowNumOfTestResultFile);
 		}
 		catch(Throwable t)
 		{
@@ -150,7 +149,7 @@ public class PAEO1971FineReports extends CourtOrderAEO1971civildebt
 		{
 			// In this method pass the desired Payrun's and corresponding row number of expected,actual and test remarks respectively.
 			System.out.println("");
-			DownloadScenarioFourReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,DecMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,DecExpectedResultRowNumOfTestResultFile,DecActualResultRowNumOfTestResultFile,DecTestRemarkRowNumOfTestResultFile);
+			DownloadScenarioFiveReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,DecMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,DecExpectedResultRowNumOfTestResultFile,DecActualResultRowNumOfTestResultFile,DecTestRemarkRowNumOfTestResultFile);
 
 		}
 		catch(Throwable t)
