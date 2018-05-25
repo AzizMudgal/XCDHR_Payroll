@@ -167,7 +167,7 @@ public class PAEO1971FineIOAndPayroll extends CourtOrderAEO1971civildebt
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,OctMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			processNovMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,OctMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 		}
 		catch(Throwable t)
 		{
@@ -218,7 +218,7 @@ public class PAEO1971FineIOAndPayroll extends CourtOrderAEO1971civildebt
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			processNovMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 		}
 		catch(Throwable t)
 		{
@@ -271,7 +271,7 @@ public class PAEO1971FineIOAndPayroll extends CourtOrderAEO1971civildebt
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,DecMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			processNovMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,DecMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 		}
 		catch(Throwable t)
 		{
@@ -323,7 +323,7 @@ public class PAEO1971FineIOAndPayroll extends CourtOrderAEO1971civildebt
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			processMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,JanMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
+			processNovMonthlyPayroll(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,JanMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo);
 		}
 		catch(Throwable t)
 		{
