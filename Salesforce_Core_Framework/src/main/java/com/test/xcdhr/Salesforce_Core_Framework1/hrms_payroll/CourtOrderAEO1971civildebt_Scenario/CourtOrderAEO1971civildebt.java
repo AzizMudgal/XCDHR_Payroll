@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.text.DecimalFormat;
 import java.util.List;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.Font;
@@ -19,7 +20,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+
 import atu.webdriver.utils.table.WebTable;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.EnumTestClass;
 import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.ModifiedReport;
@@ -4213,6 +4216,9 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
 			{
+				
+				
+				
 				processPayrollReportForScenarioFive(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
 				System.out.println("7> Entered the values and processed the Test Remarks");
 			}
@@ -4224,6 +4230,64 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 	}
 
+	
+	
+	/*
+	 * switch case for processing the report based on 
+	 * payruns which have different parameters
+	 * 
+	 * public int TaxYear = 201819;
+
+
+	public void processDesiredTaxYearInputExcelFile(int TaxYear)
+			throws Throwable {
+		try {
+			switch (TaxYear) {
+			case 201516:
+	 */
+	
+	public int OctMonthName = 10;
+	public int NovMonthName = 11;
+	public int DecMonthName = 12;
+	public int JanMonthName = 13;
+
+	
+
+	
+	public void processReportsBasedOnPayrun(int PayRun)throws Throwable
+	{
+		try
+		{
+			switch(PayRun)
+			{
+			case 10:
+				
+				break;
+				
+			case 11:
+				
+				break;
+				
+			case 12:
+				
+				break;
+				
+			case 13:
+				
+				break;
+			
+			default:
+				System.out.println("not specified to select other payruns");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace());
+		}
+	}
+	
+	
+	
 	/***************************************************************************************/
 
 	public void excludeIncludeEmpForOctPayroll(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo) throws Throwable {
