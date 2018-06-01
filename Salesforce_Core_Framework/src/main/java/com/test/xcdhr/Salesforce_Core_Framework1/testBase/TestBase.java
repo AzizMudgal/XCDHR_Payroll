@@ -9318,6 +9318,11 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO1971Fine201819.xlsx");
 				Payroll_CourtOrderScenarioFive_Inputsheet = "Payroll Suite CourtOrder PAEO1971Fine201819";
+				
+				Payroll_CourtOrderScenarioSix_SuiteXls =  new Xls_Reader(
+						System.getProperty("user.dir")
+						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO2003Fine201819.xlsx");
+				Payroll_CourtOrderScenarioSix_Inputsheet = "Payroll Suite CourtOrder PAEO2003Fine201819";
 
 				/*Payroll_CourtOrderScenarioSix_SuiteXls =  new Xls_Reader(
 						System.getProperty("user.dir")

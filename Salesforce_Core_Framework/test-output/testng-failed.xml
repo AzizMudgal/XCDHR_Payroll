@@ -3,17 +3,22 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineIOAndPayroll">
         <methods>
+          <include name="toProcessNovPayroll"/>
+          <include name="toProcessDecPayroll"/>
+          <include name="toSetEmployeesNICategory"/>
+          <include name="toSelectEmployeesToProcessOctPayroll"/>
+          <include name="toSelectEmployeesToProcessNovPayroll"/>
           <include name="checkTestSkip"/>
-          <include name="toReportTestResult"/>
-          <include name="toProcessOctPayrollReport"/>
           <include name="CheckSuiteSkip"/>
+          <include name="toProcessOctPayroll"/>
           <include name="toSelectOrgForPerformingAutomationTests"/>
-          <include name="toReportDataSetResult"/>
-          <include name="toProcessNovPayrollReport"/>
+          <include name="setEmployeesAnnualSalaryAndPayfrequency"/>
+          <include name="toSelectEmployeesToProcessDecPayroll"/>
+          <include name="toReportTestResult"/>
         </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineIOAndPayroll -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
