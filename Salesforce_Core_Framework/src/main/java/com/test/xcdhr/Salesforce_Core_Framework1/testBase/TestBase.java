@@ -453,9 +453,10 @@ public class TestBase {
 	public static String SSPCaseTwo_3dReport = "DO NOT TOUCH SSPCASETWO PAYMENT REPORT";
 	public static String CourtOrder_Scenario1 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS";
 	public static String CourtOrder_Scenario1_Report2 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS2";
-	public static String CourtOrder_PAEO1971Maintnce = "DO NOT TOUCH AUTMN COURT PAEO REPORT";
+	public static String CourtOrder_PAEO1971Maintnce = "DO NOT TOUCH AUTMN COURT PAEO REPORT1";
+	public static String CourtOrder_PAEO1971Fine = "DO NOT TOUCH AUTMN CO PAEOFINE REPORT";
+	public static String CourtOrder_PAEO1971Fine_Report2 = "DO NOT TOUCH AUTMN CO PAEOFINE REPRT TWO";
 
-	
 
 	public String EMPLOYERNAMEWeekly = "DO NOT TOUCH AUTO ENROLMENT TEST EMPLOYER 1";
 	public String PayrollIdWeekly = "PN-10679";
@@ -6133,6 +6134,14 @@ public class TestBase {
 				.equalsIgnoreCase(CourtOrder_PAEO1971Maintnce)) {
 			rpName = "CourtOrder_PAEO1971Maintnce";
 		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_PAEO1971Fine)) {
+			rpName = "CourtOrder_PAEO1971Fine";
+		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_PAEO1971Fine_Report2)) {
+			rpName = "CourtOrder_PAEO1971Fine_Report2";
+		}
 		return rpName;
 	}
 	
@@ -9312,7 +9321,7 @@ public class TestBase {
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO1971Fine201819.xlsx");
 				Payroll_CourtOrderScenarioFive_Inputsheet = "Payroll Suite CourtOrder PAEO1971Fine201819";
 
-				Payroll_CourtOrderScenarioSix_SuiteXls =  new Xls_Reader(
+				/*Payroll_CourtOrderScenarioSix_SuiteXls =  new Xls_Reader(
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO2003Fine201819.xlsx");
 				Payroll_CourtOrderScenarioSix_Inputsheet = "Payroll Suite CourtOrder PAEO2003Fine201819";
@@ -9321,7 +9330,7 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CTAEOCouncilTax201819.xlsx");
 				Payroll_CourtOrderScenarioSeven_Inputsheet = "Payroll Suite CourtOrder CTAEOCouncilTax201819";
-
+                */
 
 				break;
 				

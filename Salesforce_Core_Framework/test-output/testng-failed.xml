@@ -3,13 +3,28 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite WeeklyCatM U]">
   <test name="1(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.TestReports">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
           <include name="CheckTestSkip"/>
           <include name="ReportTestResult"/>
           <include name="CheckSuiteSkip"/>
           <include name="ReportDataSetResult"/>
+=======
+          <include name="checkTestSkip"/>
+          <include name="toReportTestResult"/>
+          <include name="toProcessOctPayrollReport"/>
+          <include name="CheckSuiteSkip"/>
+          <include name="toSelectOrgForPerformingAutomationTests"/>
+          <include name="toReportDataSetResult"/>
+          <include name="toProcessNovPayrollReport"/>
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.TestReports -->
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.ProcessPayrollForNIWeekly">
         <methods>
@@ -27,6 +42,9 @@
           <include name="ReportDataSetResult"/>
         </methods>
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.NIWeeklyCat_M -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- 1(failed) -->
 </suite> <!-- Failed suite [Payroll Suite WeeklyCatM U] -->
