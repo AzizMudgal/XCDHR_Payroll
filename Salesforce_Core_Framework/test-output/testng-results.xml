@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" ignored="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="229255" started-at="2018-06-06T07:40:11Z" finished-at="2018-06-06T07:44:01Z">
+  <suite name="Default suite" duration-ms="226371" started-at="2018-06-06T10:54:23Z" finished-at="2018-06-06T10:58:09Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="229255" started-at="2018-06-06T07:40:11Z" finished-at="2018-06-06T07:44:01Z">
+    <test name="Default test" duration-ms="226371" started-at="2018-06-06T10:54:23Z" finished-at="2018-06-06T10:58:09Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports">
-        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="4263" started-at="2018-06-06T13:10:07Z" finished-at="2018-06-06T13:10:11Z">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="CheckSuiteSkip" is-config="true" duration-ms="3839" started-at="2018-06-06T16:24:19Z" finished-at="2018-06-06T16:24:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
-        <test-method status="PASS" signature="checkTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="checkTestSkip" is-config="true" duration-ms="2628" started-at="2018-06-06T13:10:11Z" finished-at="2018-06-06T13:10:14Z">
+        <test-method status="PASS" signature="checkTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="checkTestSkip" is-config="true" duration-ms="1902" started-at="2018-06-06T16:24:23Z" finished-at="2018-06-06T16:24:25Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- checkTestSkip -->
-        <test-method status="PASS" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toSelectOrgForPerformingAutomationTests" duration-ms="50612" started-at="2018-06-06T13:10:14Z" data-provider="getData" finished-at="2018-06-06T13:11:05Z">
+        <test-method status="PASS" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toSelectOrgForPerformingAutomationTests" duration-ms="48432" started-at="2018-06-06T16:24:25Z" data-provider="getData" finished-at="2018-06-06T16:25:14Z">
           <params>
             <param index="0">
               <value>
@@ -151,11 +151,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toSelectOrgForPerformingAutomationTests -->
-        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="24" started-at="2018-06-06T13:11:05Z" finished-at="2018-06-06T13:11:05Z">
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="16" started-at="2018-06-06T16:25:14Z" finished-at="2018-06-06T16:25:14Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toReportDataSetResult -->
-        <test-method status="PASS" signature="toProcessOctPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toProcessOctPayrollReport" duration-ms="56963" started-at="2018-06-06T13:11:05Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports.toSelectOrgForPerformingAutomationTests" finished-at="2018-06-06T13:12:02Z">
+        <test-method status="PASS" signature="toProcessOctPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:2, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toProcessOctPayrollReport" duration-ms="60049" started-at="2018-06-06T16:25:14Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports.toSelectOrgForPerformingAutomationTests" finished-at="2018-06-06T16:26:14Z">
           <params>
             <param index="0">
               <value>
@@ -291,7 +291,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toProcessOctPayrollReport -->
-        <test-method status="PASS" signature="ToProcessNovPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="ToProcessNovPayrollReport" duration-ms="58418" started-at="2018-06-06T13:12:02Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports.toProcessOctPayrollReport" finished-at="2018-06-06T13:13:00Z">
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="31" started-at="2018-06-06T16:26:14Z" finished-at="2018-06-06T16:26:14Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toReportDataSetResult -->
+        <test-method status="PASS" signature="ToProcessNovPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="ToProcessNovPayrollReport" duration-ms="55636" started-at="2018-06-06T16:26:14Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports.toProcessOctPayrollReport" finished-at="2018-06-06T16:27:10Z">
           <params>
             <param index="0">
               <value>
@@ -427,15 +431,11 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- ToProcessNovPayrollReport -->
-        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="0" started-at="2018-06-06T13:12:02Z" finished-at="2018-06-06T13:12:02Z">
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="6" started-at="2018-06-06T16:27:10Z" finished-at="2018-06-06T16:27:10Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toReportDataSetResult -->
-        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="0" started-at="2018-06-06T13:13:00Z" finished-at="2018-06-06T13:13:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- toReportDataSetResult -->
-        <test-method status="PASS" signature="toProcessDecPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toProcessDecPayrollReport" duration-ms="57426" started-at="2018-06-06T13:13:00Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports.ToProcessNovPayrollReport" finished-at="2018-06-06T13:13:57Z">
+        <test-method status="PASS" signature="toProcessDecPayrollReport(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:3, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toProcessDecPayrollReport" duration-ms="54963" started-at="2018-06-06T16:27:10Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports.ToProcessNovPayrollReport" finished-at="2018-06-06T16:28:05Z">
           <params>
             <param index="0">
               <value>
@@ -571,14 +571,14 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toProcessDecPayrollReport -->
-        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="2" started-at="2018-06-06T13:13:57Z" finished-at="2018-06-06T13:13:57Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- toReportDataSetResult -->
-        <test-method status="PASS" signature="toReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportTestResult" is-config="true" duration-ms="3067" started-at="2018-06-06T13:13:57Z" finished-at="2018-06-06T13:14:01Z">
+        <test-method status="PASS" signature="toReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportTestResult" is-config="true" duration-ms="4681" started-at="2018-06-06T16:28:05Z" finished-at="2018-06-06T16:28:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- toReportTestResult -->
+        <test-method status="PASS" signature="toReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports@42dafa95]" name="toReportDataSetResult" is-config="true" duration-ms="0" started-at="2018-06-06T16:28:05Z" finished-at="2018-06-06T16:28:05Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- toReportDataSetResult -->
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
