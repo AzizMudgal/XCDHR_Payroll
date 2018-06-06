@@ -1,6 +1,5 @@
 package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6;
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.*;
-
 import org.testng.Assert;
 import org.testng.SkipException;
 import org.testng.annotations.AfterMethod;
@@ -8,7 +7,6 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
@@ -53,12 +51,13 @@ public class PAEO2003FineReports extends CourtOrderAEO1971civildebt
 	@Test(dataProvider="getData", priority=1)
 	public void toSelectOrgForPerformingAutomationTests(String EmpName,String NICategory, String AnnualSalary,
 			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
-			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
+			String NovMonthName,String DecMonthName,String ExcelInputSheet,String FirstReportNameInApplication,
 			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
 			String PayrollView,String TestReportworksheetNo,
 			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
 			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
-			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile,String DecExpectedResultRowNumOfTestResultFile,
+			String DecActualResultRowNumOfTestResultFile,String DecTestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		//APP_LOGS.debug(EmpName+"--"+NICategory+"--"+AnnualSalary+"--"+PayFrequency);
 		count++;
@@ -84,14 +83,15 @@ public class PAEO2003FineReports extends CourtOrderAEO1971civildebt
 	/*************************Processing Oct Report***********************************/
 	
 	@Test(dataProvider="getData", priority=2,dependsOnMethods = {"toSelectOrgForPerformingAutomationTests"})
-	public void ToProcessOctPayrollReport(String EmpName,String NICategory, String AnnualSalary,
+	public void toProcessOctPayrollReport(String EmpName,String NICategory, String AnnualSalary,
 			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
-			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
+			String NovMonthName,String DecMonthName,String ExcelInputSheet,String FirstReportNameInApplication,
 			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
 			String PayrollView,String TestReportworksheetNo,
 			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
 			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
-			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile,String DecExpectedResultRowNumOfTestResultFile,
+			String DecActualResultRowNumOfTestResultFile,String DecTestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
@@ -108,21 +108,49 @@ public class PAEO2003FineReports extends CourtOrderAEO1971civildebt
 		
 	
 	
-	@Test(dataProvider="getData", priority=3,dependsOnMethods = {"ToProcessOctPayrollReport"})
-	public void toToProcessNovPayrollReport(String EmpName,String NICategory, String AnnualSalary,
+	@Test(dataProvider="getData", priority=3,dependsOnMethods = {"toProcessOctPayrollReport"})
+	public void ToProcessNovPayrollReport(String EmpName,String NICategory, String AnnualSalary,
 			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
-			String NovMonthName, String ExcelInputSheet,String FirstReportNameInApplication,
+			String NovMonthName,String DecMonthName,String ExcelInputSheet,String FirstReportNameInApplication,
 			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
 			String PayrollView,String TestReportworksheetNo,
 			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
 			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
-			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile) throws Throwable
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile,String DecExpectedResultRowNumOfTestResultFile,
+			String DecActualResultRowNumOfTestResultFile,String DecTestRemarkRowNumOfTestResultFile) throws Throwable
 	{
 		try
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			DownloadNovReports(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,NovExpectedResultRowNumOfTestResultFile,NovActualResultRowNumOfTestResultFile,NovTestRemarkRowNumOfTestResultFile);
+			DownloadOctReportsForScenarioSix(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,NovExpectedResultRowNumOfTestResultFile,NovActualResultRowNumOfTestResultFile,NovTestRemarkRowNumOfTestResultFile);
+			
+		}
+		catch(Throwable t)
+		{
+			APP_LOGS.debug("Could not assert the home page title, Check for error");
+			System.out.println("");
+		}
+	}
+	
+	
+	
+	@Test(dataProvider="getData", priority=3,dependsOnMethods = {"ToProcessNovPayrollReport"})
+	public void toProcessDecPayrollReport(String EmpName,String NICategory, String AnnualSalary,
+			String PayFrequency,String EmployerName,String Payrolid,String SepMonthName,String OctMonthName,
+			String NovMonthName,String DecMonthName,String ExcelInputSheet,String FirstReportNameInApplication,
+			String SecondReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,
+			String PayrollView,String TestReportworksheetNo,
+			String OctExpectedResultRowNumOfTestResultFile,String OctActualResultRowNumOfTestResultFile,
+			String OctTestRemarkRowNumOfTestResultFile,String NovExpectedResultRowNumOfTestResultFile,
+			String NovActualResultRowNumOfTestResultFile,String NovTestRemarkRowNumOfTestResultFile,String DecExpectedResultRowNumOfTestResultFile,
+			String DecActualResultRowNumOfTestResultFile,String DecTestRemarkRowNumOfTestResultFile) throws Throwable
+	{
+		try
+		{
+			// The script updates the NI Category for the Automation employees
+			System.out.println("");
+			DownloadDecReportsForScenarioSix(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,DecMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,DecExpectedResultRowNumOfTestResultFile,DecActualResultRowNumOfTestResultFile,DecTestRemarkRowNumOfTestResultFile);
 			
 		}
 		catch(Throwable t)

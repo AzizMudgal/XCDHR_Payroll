@@ -54,8 +54,8 @@ public enum ModifiedReport
 	CourtOrder_Scenario1_Report2("courtOrderReport2Locator"),
 	CourtOrder_PAEO1971Maintnce("courtOrderPAEO1971MaintnceReportLocator"),
 	CourtOrder_PAEO1971Fine("courtOrderPAEO1971FineReportLocator"),
-	CourtOrder_PAEO1971Fine_Report2("courtOrderPAEO1971FineReport2Locator");
-	//CourtOrder_PAEO1971Fine_Report2
+	CourtOrder_PAEO1971Fine_Report2("courtOrderPAEO1971FineReport2Locator"),
+	CourtOrder_PAEO2003Fine_Report("courtOrderPAEO2003FineReportLocator");
 	
 	
 	private String ReportName;
