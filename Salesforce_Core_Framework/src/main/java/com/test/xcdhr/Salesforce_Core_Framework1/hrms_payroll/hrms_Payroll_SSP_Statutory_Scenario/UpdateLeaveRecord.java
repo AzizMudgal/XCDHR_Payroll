@@ -71,7 +71,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			Skip=true;
 			throw new SkipException("Runmode for Test set data is set to 'NO' "+count);
 		}
-
 		APP_LOGS.debug("Executing the test case");
 		if(shouldOpenBrowser)
 		{
@@ -79,7 +78,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			openBrowser();
 			logingIntoDesiredORG(OrgFlag);
 			driver.manage().window().maximize();
-
 			try
 			{
 				closePopupWindow();
@@ -97,10 +95,10 @@ public class UpdateLeaveRecord extends TestSuiteBase
 				APP_LOGS.debug("Could not assert the home page title, Check for error");
 				System.out.println("");
 			}
-
 		}
+
 		/*************************************************************************/
-//12 p
+
 		FetchEmployeeRecord(EmpName,LeaveYear,LeaveCategry,BirthdueDate,BabyBorndate,StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);
 
 		/*************************************************************************/
@@ -121,10 +119,11 @@ public class UpdateLeaveRecord extends TestSuiteBase
 				{
 					String viewText = getObject("viewText").getText();
 					System.out.println("Tab name is :"+ viewText);
+					//	Assert.assertEquals("*"+
+					//"View:", viewText);
 					System.out.println("The test script verified that it successfully landed into Personal Tab of XCD HR Org.");
 					System.out.println("");
 				}
-
 				if(existsElement(OR.getProperty("EmployeeView")))
 				{
 					System.out.println("I recognised the Employee view");
@@ -286,16 +285,16 @@ public class UpdateLeaveRecord extends TestSuiteBase
 					System.out.println("total rows are "+rows.size());
 					int rownum = 0;	
 					outerbreak1:
-					while(x.hasNext())
-					{
-						String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum + 1)+"]/td[2]/a";
-						WebElement LeavReqRecord= driver.findElement(By.xpath(leaveReqId));
-						LeavReqRecord.sendKeys("");
-						LeavReqRecord.click();
-						Thread.sleep(4000L);
-						sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);	
-						break outerbreak1;
-					}
+						while(x.hasNext())
+						{
+							String leaveReqId="//div[@class='pbBody']/table/tbody/tr["+(rownum + 1)+"]/td[2]/a";
+							WebElement LeavReqRecord= driver.findElement(By.xpath(leaveReqId));
+							LeavReqRecord.sendKeys("");
+							LeavReqRecord.click();
+							Thread.sleep(4000L);
+							sickLeaveRecordEdit(StatutoryPaybasis,ConditionSatisfied,employeeTaxable,employeeNiable,includeInHolidayEarnings,Attachable,AttachableForCouncilTax);	
+							break outerbreak1;
+						}
 				}
 			}
 		}
@@ -316,7 +315,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 				getObject("sickLeaveEditbuttnLocator").sendKeys("");
 				getObject("sickLeaveEditbuttnLocator").click();
 				Thread.sleep(6000L);
-				Thread.sleep(6000L);
 				if(existsElement(OR.getProperty("leaveRecordEditMode")))
 				{
 					String empLabelTxtInLeaveEditMode = getObject("leaveRecordEditMode").getText();
@@ -327,7 +325,8 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 			if(existsElement(OR.getProperty("sspEditTable")))
 			{
-				selectCheckbox(StatutoryPaybasis,ConditionSatisfied);
+				StatutoryConditionsMet(ConditionSatisfied);
+				Thread.sleep(1000L);
 				StatutoryPaybasis(StatutoryPaybasis);
 				Thread.sleep(1000L);
 				updateFinancialControlFeatures(employeeTaxable,employeeNiable,Attachable,AttachableForCouncilTax);
@@ -345,7 +344,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 
-	public void selectCheckbox(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void StatutoryConditionsMet(String ConditionSatisfied)throws Throwable
 	{
 		try
 		{
@@ -395,7 +394,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 										break  outerloop;
 									}
 								}	
-
 								col_num++;
 							}
 							row_num++;
@@ -451,6 +449,9 @@ public class UpdateLeaveRecord extends TestSuiteBase
 								Thread.sleep(2000L);
 								driver.switchTo().window(ParentWindow); // finally switch back to parent window and perform the operations.
 								Thread.sleep(2000L);
+								System.out.println("After selecting the pay basis, came back to "
+										+ "parent page of leave record edit mode");
+
 							}
 							col_num++;
 						}
@@ -540,7 +541,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 			System.out.println(t.getStackTrace().toString());
 		}
 	}
-
 
 
 	@DataProvider

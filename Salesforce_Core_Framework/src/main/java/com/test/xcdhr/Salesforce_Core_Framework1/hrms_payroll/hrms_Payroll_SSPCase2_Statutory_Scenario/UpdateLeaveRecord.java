@@ -316,7 +316,6 @@ public class UpdateLeaveRecord extends TestSuiteBase
 				getObject("sickLeaveEditbuttnLocator").sendKeys("");
 				getObject("sickLeaveEditbuttnLocator").click();
 				Thread.sleep(6000L);
-				Thread.sleep(6000L);
 				if(existsElement(OR.getProperty("leaveRecordEditMode")))
 				{
 					String empLabelTxtInLeaveEditMode = getObject("leaveRecordEditMode").getText();
@@ -327,7 +326,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 			if(existsElement(OR.getProperty("sspEditTable")))
 			{
-				
+				StatutoryConditionsMet(ConditionSatisfied);
 				Thread.sleep(1000L);
 				StatutoryPaybasis(StatutoryPaybasis);
 				Thread.sleep(1000L);
@@ -346,7 +345,7 @@ public class UpdateLeaveRecord extends TestSuiteBase
 
 
 
-	public void selectCheckbox(String StatutoryPaybasis,String ConditionSatisfied)throws Throwable
+	public void StatutoryConditionsMet(String ConditionSatisfied)throws Throwable
 	{
 		try
 		{

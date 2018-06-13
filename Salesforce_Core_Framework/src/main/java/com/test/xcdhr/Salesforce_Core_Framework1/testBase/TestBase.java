@@ -425,7 +425,7 @@ public class TestBase {
 	public static String SAP3dReport = "DO NOT TOUCH SAP Adoption Payment";
 	public static String SSP1stReport = "DO NOT TOUCH SSP GROSS PAYMENTS";
 	public static String SSP2ndReport = "DO NOT TOUCH SSP AVERAGE WEEKLY EARNINGS";
-	public static String SSP3dReport = "DO NOT TOUCH SSP Payment";
+	public static String SSP3dReport = "DO NOT TOUCH SSP Payments";
 	public static String SSP4thReport = "DO NOT TOUCH SSP AVERAGE WEEKLY EARNGS2";
 	public static String SPP1stReport = "DO NOT TOUCH SPP GROSS PAYMENTS";
 	public static String SPP2ndReport = "DO NOT TOUCH SPP AVERAGE WEEKLY EARNINGS";
@@ -6084,7 +6084,8 @@ public class TestBase {
 			rpName = "SSP2ndReport";
 		} else if ((NameOfReprt).equalsIgnoreCase(SSP3dReport)) {
 			rpName = "SSP3dReport";
-		} else if ((NameOfReprt).equalsIgnoreCase(SPP1stReport)) {
+		}
+		else if ((NameOfReprt).equalsIgnoreCase(SPP1stReport)) {
 			rpName = "SPP1stReport";
 		} else if ((NameOfReprt).equalsIgnoreCase(SPP2ndReport)) {
 			rpName = "SPP2ndReport";
@@ -8005,7 +8006,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 0;
+	public int OrgFlag = 1;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
@@ -8039,9 +8040,10 @@ public class TestBase {
 	 * 2017183 = In Regress Org for 201718
 	 */
 
-
+	
 
 	public int TaxYear = 201819;
+	//public int TaxYear = 2018192;
 
 
 	public void processDesiredTaxYearInputExcelFile(int TaxYear)
