@@ -454,9 +454,9 @@ public class TestBase {
 	public static String CourtOrder_Scenario1 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS";
 	public static String CourtOrder_Scenario1_Report2 = "DO NOT TOUCH AUTMN COURT ORDER REPORTS2";
 	public static String CourtOrder_PAEO1971Maintnce = "DO NOT TOUCH AUTMN COURT PAEO REPORT1";
-	public static String CourtOrder_PAEO1971Fine = "DO NOT TOUCH AUTMN CO PAEOFINE REPORT";
+	public static String CourtOrder_PAEO1971Fine = "DO NOT TOUCH AUTMN CO PAEOFINE REPRT";
 	public static String CourtOrder_PAEO1971Fine_Report2 = "DO NOT TOUCH AUTMN CO PAEOFINE REPRT TWO";
-	public static String CourtOrder_PAEO2003Fine_Report = "DO NOT TOUCH AUTMN PAEO2003 REPORTS";
+	public static String CourtOrder_PAEO2003Fine_Report = "DO NOT TOUCH AUTMN PAEO2003 REPORT";
 
 	//DO NOT TOUCH AUTMN PAEO2003 REPORTS
 
@@ -627,13 +627,15 @@ public class TestBase {
 		driver.switchTo().window(tabs.get(0));
 	}
 
-	public boolean isAlertPresent() {
+	public boolean isAlertPresent()throws Throwable {
 		try {
 			Alert alert = driver.switchTo().alert();
 			alert.accept();
 			System.out.println("The ok button of the popup alert dialog box got accepted successfully");
 			return true;
 		} catch (NoAlertPresentException Ex) {
+			System.out.println(Ex.getStackTrace().toString());
+			System.out.println(Ex.getMessage());
 			System.out
 					.println("The exception occured hence alert dialog box did not displayed");
 			return false;
@@ -679,7 +681,6 @@ public class TestBase {
 						+ popup.getTitle());
 				return popup;
 			}
-
 		}
 		System.out.println("Window Title :" + popup.getTitle());
 		System.out.println();
@@ -691,6 +692,8 @@ public class TestBase {
 			try {
 				return Double.parseDouble(strNumber);
 			} catch (Exception e) {
+				System.out.println(e.getStackTrace().toString());
+				System.out.println(e.getMessage());
 				return -1; // or some value to mark this field is wrong. or make
 							// a function validates field first ...
 			}
@@ -893,6 +896,8 @@ public class TestBase {
 			Thread.sleep(4000L);
 
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			ErrorUtil.addVerificationFailure(t);
 
 			// APP_LOGS.debug("id is not present");
@@ -905,6 +910,8 @@ public class TestBase {
 		try {
 			driver.findElement(By.cssSelector(id));
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			ErrorUtil.addVerificationFailure(t);
 
 			APP_LOGS.debug("id is not present");
@@ -1115,6 +1122,15 @@ public class TestBase {
 
 	// Webdriver functions to open the browser.
 	public void openBrowser() throws Exception {
+		try
+		{
+			
+		}
+		catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+			System.out.println(e.getStackTrace().toString());
+		}
 		if (!IsbrowserOpened) {
 			if (CONFIG.getProperty("browserType").equalsIgnoreCase("Mozilla")) {
 				// System.setProperty("webdriver.firefox.marionette","F:\\Automation XCD\\Webdriver\\geckodriver.exe");
@@ -1153,8 +1169,8 @@ public class TestBase {
 							TimeUnit.SECONDS);
 
 		} catch (Throwable t) {
-			t.getMessage();
-			t.getStackTrace();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 	}
 
@@ -1198,6 +1214,8 @@ public class TestBase {
 			Assert.assertEquals(driver.getTitle(), Expectedval);
 
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 			ErrorUtil.addVerificationFailure(t);
 
@@ -1225,6 +1243,8 @@ public class TestBase {
 		try {
 			Assert.assertEquals(ActualVal, Expectedval);
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 			ErrorUtil.addVerificationFailure(t);
 
@@ -1239,6 +1259,8 @@ public class TestBase {
 		try {
 			Assert.assertEquals(ActualVal, Expectedval);
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 			ErrorUtil.addVerificationFailure(t);
 
@@ -1256,6 +1278,8 @@ public class TestBase {
 		try {
 			Assert.assertTrue(count > 0, "No element present");
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("No element present");
 			return false;
@@ -1271,6 +1295,8 @@ public class TestBase {
 		try {
 			Assert.assertTrue(false, "No element present");
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("No element present");
 			return false;
@@ -1303,6 +1329,8 @@ public class TestBase {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By
 					.xpath(OR.getProperty(xpath))));
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("May be due to slow network, could not found the element even after waiting for 10 seconds");
@@ -1320,6 +1348,8 @@ public class TestBase {
 			wait.until(ExpectedConditions.visibilityOfElementLocated(By
 					.xpath(OR.getProperty(xpath))));
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 			ErrorUtil.addVerificationFailure(t);
 			// APP_LOGS.debug("May be due to slow network, could not found the element even after waiting for 10 seconds");
@@ -1366,6 +1396,8 @@ public class TestBase {
 			 */
 
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Login unsuccessfull");
@@ -1392,13 +1424,15 @@ public class TestBase {
 			username.sendKeys("payrollautoregress@xcdhr.com");
 			WebElement password = driver.findElement(By.id(OR
 					.getProperty("login_Password")));
-			password.sendKeys("bristol2018");
+			password.sendKeys("xcdhrms@2018");
 			getObject("Submit_Button").click();
 			Thread.sleep(1000L);
 			System.out.println("Logged into the New Automation Org successfully");
 		} 
 		catch (Throwable t)
 		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Login unsuccessfull");
@@ -1425,6 +1459,8 @@ public class TestBase {
 		}
 		catch (Throwable t)
 		{
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			CaptureScreenshot(this.getClass().getSimpleName());
 			ErrorUtil.addVerificationFailure(t);
 			APP_LOGS.debug("Gmail Login unsuccessfull");
@@ -1438,6 +1474,8 @@ public class TestBase {
 		try {
 			return driver.findElement(By.xpath(OR.getProperty(xpathkey)));
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			APP_LOGS.debug("Cannot find the object " + xpathkey);
 
 			return null;
@@ -1451,6 +1489,8 @@ public class TestBase {
 			return driver
 					.findElement(By.cssSelector(OR.getProperty(csspathkey)));
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			APP_LOGS.debug("Cannot find the object " + csspathkey);
 
 			return null;
@@ -2553,8 +2593,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
 	}
@@ -2833,8 +2873,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 	}
 
@@ -3032,8 +3072,8 @@ public class TestBase {
 				rownum++;
 			}
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
 	}
@@ -3225,8 +3265,8 @@ public class TestBase {
 				rownum++;
 			}
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 	}
 
@@ -3454,8 +3494,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
 	}
@@ -3729,8 +3769,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
 	}
@@ -3769,7 +3809,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			System.out.println(t.getMessage());
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 		}
 	}
@@ -3904,8 +3945,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
 	}
@@ -4159,8 +4200,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
 	}
@@ -6186,6 +6227,8 @@ public class TestBase {
 				}
 			}
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 		}
 	}
@@ -6322,6 +6365,7 @@ public class TestBase {
 
 		} catch (Throwable t) {
 			APP_LOGS.debug(" Check for error in NI Category method");
+			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
@@ -6744,8 +6788,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 
 	}
@@ -6854,7 +6898,8 @@ public class TestBase {
 
 		} catch (Throwable t) {
 			System.out.println("some problem after click of Month link");
-			System.out.println(t.getMessage());
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 		}
 	}
@@ -7556,7 +7601,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			System.out.println(t.getMessage());
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 		}
 	}
@@ -7698,7 +7744,8 @@ public class TestBase {
 		}
 		catch (Throwable t)
 		{
-			System.out.println(t.getMessage());
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 	}
 
@@ -7830,7 +7877,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			System.out.println(t.getMessage());
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 
 		}
 	}
@@ -7976,7 +8024,6 @@ public class TestBase {
 			System.out.println("not specified to run in any org");
 
 		}
-
 	}
 
 	// What Tax year needs to be run is controlled by passing the value for
@@ -9329,18 +9376,13 @@ public class TestBase {
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO2003Fine201819.xlsx");
 				Payroll_CourtOrderScenarioSix_Inputsheet = "Payroll Suite CourtOrder PAEO2003Fine201819";
-
-				/*Payroll_CourtOrderScenarioSix_SuiteXls =  new Xls_Reader(
-						System.getProperty("user.dir")
-						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO2003Fine201819.xlsx");
-				Payroll_CourtOrderScenarioSix_Inputsheet = "Payroll Suite CourtOrder PAEO2003Fine201819";
-
+				
 				Payroll_CourtOrderScenarioSeven_SuiteXls =  new Xls_Reader(
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CTAEOCouncilTax201819.xlsx");
 				Payroll_CourtOrderScenarioSeven_Inputsheet = "Payroll Suite CourtOrder CTAEOCouncilTax201819";
-                */
 
+				
 				break;
 				
 				
@@ -11458,10 +11500,12 @@ public class TestBase {
 					}
 				}
 			} catch (Throwable t) {
+				System.out.println(t.getMessage().toString());
 				System.out.println(t.getStackTrace().toString());
 				System.out.println("");
 			}
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 			System.out.println("");
 		}
@@ -11834,6 +11878,8 @@ public class TestBase {
 				}
 			}
 		} catch (Throwable t) {
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 			APP_LOGS.debug(" Check for error in NI Category method");
 			System.out.println(t.getStackTrace().toString());
 			// ErrorUtil.addVerificationFailure(t);
@@ -12297,6 +12343,7 @@ public class TestBase {
 			}
 		} catch (Throwable t) {
 			APP_LOGS.debug(" Check for error in NI Category method");
+			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
 			ErrorUtil.addVerificationFailure(t);
 			System.out.println("");
@@ -12642,8 +12689,8 @@ public class TestBase {
 			}
 
 		} catch (Throwable t) {
-			System.out.println(t.getMessage());
-
+			System.out.println(t.getMessage().toString());
+			System.out.println(t.getStackTrace().toString());
 		}
 	}
 	
@@ -12662,7 +12709,8 @@ public class TestBase {
 			} 
 			catch ( ParseException e ) 
 			{
-				System.out.println(e.getMessage());
+				System.out.println(e.getMessage().toString());
+				System.out.println(e.getStackTrace().toString());
 			}
 
 			formattedDate = null;

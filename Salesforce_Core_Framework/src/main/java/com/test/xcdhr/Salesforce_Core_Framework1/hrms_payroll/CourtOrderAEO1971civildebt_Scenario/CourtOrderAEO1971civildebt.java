@@ -254,11 +254,13 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 					}
 				}
 			} catch (Throwable t) {
+				System.out.println(t.getMessage());
 				System.out.println(t.getStackTrace().toString());
 				System.out.println("");
 			}
 		} catch (Throwable t) {
 			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getMessage());
 			System.out.println("");
 		}
 	}
@@ -390,7 +392,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 			APP_LOGS.debug("Check the Annual salary Method for errors");
 			System.out.println(t.getMessage().toString());
 			System.out.println(t.getStackTrace().toString());
-			ErrorUtil.addVerificationFailure(t);
+			//ErrorUtil.addVerificationFailure(t);
 		}
 	}
 
@@ -668,8 +670,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t) 
 		{
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getMessage());
 		}
 	}
 
@@ -763,6 +765,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t)
 		{
+			System.out.println(t.getStackTrace().toString());
 			System.out.println(t.getMessage());
 		}
 	}
@@ -990,8 +993,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t) 
 		{
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getMessage());
 		}
 	}
 
@@ -1087,6 +1090,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t)
 		{
+			System.out.println(t.getStackTrace().toString());
 			System.out.println(t.getMessage());
 		}
 	}
@@ -1301,8 +1305,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t) 
 		{
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getMessage());
 		}
 	}
 
@@ -1396,6 +1400,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t)
 		{
+			System.out.println(t.getStackTrace().toString());
 			System.out.println(t.getMessage());
 		}
 	}
@@ -1623,8 +1628,8 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t) 
 		{
-			t.getMessage().toString();
-			t.getStackTrace().toString();
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getMessage());
 		}
 	}
 
@@ -1719,6 +1724,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t)
 		{
+			System.out.println(t.getStackTrace().toString());
 			System.out.println(t.getMessage());
 		}
 	}
@@ -1814,6 +1820,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 		}
 		catch (Throwable t)
 		{
+			System.out.println(t.getStackTrace().toString());
 			System.out.println(t.getMessage());
 		}
 	}
@@ -5156,6 +5163,59 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	}
 
 
+	
+	///     ///
+	
+	public void DownloadOctReportsForScenarioSeven(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
+	{
+		try
+		{
+			if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
+			{
+				getObject("reportTablocator").click();
+				System.out.println("2> Clicked to Report Tab");
+				Thread.sleep(4000L);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("findReportTextboxLocator")))
+			{				
+				SearchReport(FirstReportNameInApplication);
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportCustomisebtn")))
+			{
+				editCustomButton();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customEditbtn")))
+			{				
+				UpdateReportPage(Payrolid,PayFrequency,MonthName);
+				System.out.println("");
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("customRunReport")))
+			{
+				RunReport();
+			}
+
+			if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
+			{
+				/*
+				 * Since same fields are there the following method of sixth scenario works fine.
+				 */
+				processOctPayrollReportForSixthScenario(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,ExpectedResultRowNumOfTestResultFile,ActualResultRowNumOfTestResultFile,TestRemarkRowNumOfTestResultFile);
+				System.out.println("7> Entered the values and processed the Test Remarks");
+			}
+		}
+		catch(Throwable t)
+		{
+			System.out.println(t.getStackTrace().toString());
+			System.out.println(t.getCause().toString());
+		}
+	}
+	
+	
+	
 	
 	public void processOctPayrollReportForSixthScenario(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile)throws Throwable
 	{
