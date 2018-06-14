@@ -40,6 +40,7 @@ public class NIMonthlyCat_A extends TestSuiteBase
 		}
 		// Load the runmodes of the tests
 		runmodes=Test_Util.getDataSetRunmodes(Payroll_MonthlyCatA_SuiteXls, this.getClass().getSimpleName());
+		
 	}
 	
 	
