@@ -5164,7 +5164,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 	
-	///     ///
+
 	
 	public void DownloadOctReportsForScenarioSeven(String EmpName,String NICategory, String AnnualSalary, String PayFrequency,String EmployerName,String Payrolid,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollView,String TestReportworksheetNo,String ExpectedResultRowNumOfTestResultFile,String ActualResultRowNumOfTestResultFile,String TestRemarkRowNumOfTestResultFile) throws Throwable
 	{
@@ -5263,7 +5263,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						System.out.println("The attachableEarnings is :"+attachableEarnings);
 
 						String deductionTableUsed= table.getTBody().getRow(rownum).getCell(3).getText();
-						System.out.println("The netPay is :"+deductionTableUsed);
+						System.out.println("The deductionTableUsed is :"+deductionTableUsed);
 
 						String initialDeductionAmount= table.getTBody().getRow(rownum).getCell(4).getText();
 						System.out.println("The initialDeductionAmount is :"+initialDeductionAmount);

@@ -3,45 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports">
-=======
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.AverageWeeklyEarningsTestReport">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario7.CAPSReports">
         <methods>
-<<<<<<< HEAD
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
+          <include name="toSelectOrgForPerformingAutomationTests" invocation-numbers="0"/>
+          <include name="toProcessOctPayrollReport"/>
+          <include name="ToProcessNovPayrollReport"/>
           <include name="CheckSuiteSkip"/>
-          <include name="CheckTestSkip"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax" invocation-numbers="0"/>
-=======
           <include name="checkTestSkip"/>
-          <include name="ToProcessOctPayrollReport"/>
-          <include name="CheckSuiteSkip"/>
-          <include name="toReportTestResult"/>
-          <include name="toToProcessNovPayrollReport"/>
-          <include name="toSelectOrgForPerformingAutomationTests"/>
-<<<<<<< HEAD
-=======
-          <include name="toReportDataSetResult"/>
-          <include name="toProcessNovPayrollReport"/>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+          <include name="toProcessDecPayrollReport"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports -->
-=======
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.hrms_Payroll_SAPP_Statutory_Scenario.AverageWeeklyEarningsTestReport -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports -->
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario7.CAPSReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

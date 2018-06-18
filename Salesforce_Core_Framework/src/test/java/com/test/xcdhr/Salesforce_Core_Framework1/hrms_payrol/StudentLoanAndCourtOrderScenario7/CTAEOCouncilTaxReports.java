@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class CAPSReports extends CourtOrderAEO1971civildebt
+public class CTAEOCouncilTaxReports extends CourtOrderAEO1971civildebt
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -97,7 +97,7 @@ public class CAPSReports extends CourtOrderAEO1971civildebt
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			DownloadOctReportsForScenarioSix(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,OctMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,OctExpectedResultRowNumOfTestResultFile,OctActualResultRowNumOfTestResultFile,OctTestRemarkRowNumOfTestResultFile);
+			DownloadOctReportsForScenarioSeven(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,OctMonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,OctExpectedResultRowNumOfTestResultFile,OctActualResultRowNumOfTestResultFile,OctTestRemarkRowNumOfTestResultFile);
 		}
 		catch(Throwable t)
 		{
@@ -123,7 +123,7 @@ public class CAPSReports extends CourtOrderAEO1971civildebt
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			DownloadOctReportsForScenarioSix(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,NovExpectedResultRowNumOfTestResultFile,NovActualResultRowNumOfTestResultFile,NovTestRemarkRowNumOfTestResultFile);
+			DownloadOctReportsForScenarioSeven(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,NovMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,NovExpectedResultRowNumOfTestResultFile,NovActualResultRowNumOfTestResultFile,NovTestRemarkRowNumOfTestResultFile);
 			
 		}
 		catch(Throwable t)
@@ -150,7 +150,7 @@ public class CAPSReports extends CourtOrderAEO1971civildebt
 		{
 			// The script updates the NI Category for the Automation employees
 			System.out.println("");
-			DownloadDecReportsForScenarioSix(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,DecMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,DecExpectedResultRowNumOfTestResultFile,DecActualResultRowNumOfTestResultFile,DecTestRemarkRowNumOfTestResultFile);
+			DownloadOctReportsForScenarioSeven(EmpName,NICategory,AnnualSalary,PayFrequency,EmployerName,Payrolid,DecMonthName,ExcelInputSheet,SecondReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollView,TestReportworksheetNo,DecExpectedResultRowNumOfTestResultFile,DecActualResultRowNumOfTestResultFile,DecTestRemarkRowNumOfTestResultFile);
 			
 		}
 		catch(Throwable t)

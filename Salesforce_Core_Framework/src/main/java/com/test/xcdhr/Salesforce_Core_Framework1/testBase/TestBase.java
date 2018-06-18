@@ -457,8 +457,10 @@ public class TestBase {
 	public static String CourtOrder_PAEO1971Fine = "DO NOT TOUCH AUTMN CO PAEOFINE REPRT";
 	public static String CourtOrder_PAEO1971Fine_Report2 = "DO NOT TOUCH AUTMN CO PAEOFINE REPRT TWO";
 	public static String CourtOrder_PAEO2003Fine_Report = "DO NOT TOUCH AUTMN PAEO2003 REPORT";
+	public static String CourtOrder_CTAEOCouncilTax_Report = "DO NOT TOUCH AUTMN CTAEO REPORTS";
+	
 
-	//DO NOT TOUCH AUTMN PAEO2003 REPORTS
+	
 
 	public String EMPLOYERNAMEWeekly = "DO NOT TOUCH AUTO ENROLMENT TEST EMPLOYER 1";
 	public String PayrollIdWeekly = "PN-10679";
@@ -6189,9 +6191,13 @@ public class TestBase {
 				.equalsIgnoreCase(CourtOrder_PAEO2003Fine_Report)) {
 			rpName = "CourtOrder_PAEO2003Fine_Report";
 		}
+		else if ((NameOfReprt)
+				.equalsIgnoreCase(CourtOrder_CTAEOCouncilTax_Report)) {
+			rpName = "CourtOrder_CTAEOCouncilTax_Report";
+		}
 		return rpName;
 	}
-	
+	//CourtOrder_CTAEOCouncilTax_Report
 	
 
 	public void payRunExecution() throws Throwable {
@@ -8006,7 +8012,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 1;
+	public int OrgFlag = 0;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {

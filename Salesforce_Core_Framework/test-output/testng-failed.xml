@@ -1,62 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite guice-stage="DEVELOPMENT" name="Failed suite [Payroll Suite WeeklyCatM U]">
-  <test name="1(failed)">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports">
-=======
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.TestReports">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports">
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario7.CAPSReports">
         <methods>
-<<<<<<< HEAD
-          <include name="CheckTestSkip"/>
-          <include name="ReportTestResult"/>
+          <include name="toSelectOrgForPerformingAutomationTests" invocation-numbers="0"/>
+          <include name="toProcessOctPayrollReport"/>
+          <include name="ToProcessNovPayrollReport"/>
           <include name="CheckSuiteSkip"/>
-          <include name="ReportDataSetResult"/>
-=======
           <include name="checkTestSkip"/>
-          <include name="ToProcessOctPayrollReport"/>
-          <include name="CheckSuiteSkip"/>
-          <include name="toReportTestResult"/>
-          <include name="toToProcessNovPayrollReport"/>
-          <include name="toSelectOrgForPerformingAutomationTests"/>
-<<<<<<< HEAD
-=======
-          <include name="toReportDataSetResult"/>
-          <include name="toProcessNovPayrollReport"/>
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+          <include name="toProcessDecPayrollReport"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario6.PAEO2003FineReports -->
-=======
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.TestReports -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.ProcessPayrollForNIWeekly">
-        <methods>
-          <include name="ReportTestResult"/>
-          <include name="CheckTestSkip"/>
-          <include name="ReportDataSetResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.ProcessPayrollForNIWeekly -->
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.NIWeeklyCat_M">
-        <methods>
-          <include name="EmpsSetup_WithNICategory" invocation-numbers="7 8 9 10 11 12 13 14"/>
-          <include name="CheckTestSkip"/>
-          <include name="EmpsSetup_WithAnnualSalary" invocation-numbers="7 8 9 10 11 12 13 14"/>
-          <include name="ReportTestResult"/>
-          <include name="ReportDataSetResult"/>
-        </methods>
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_weeklyCatM.NIWeeklyCat_M -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario5.PAEO1971FineReports -->
->>>>>>> refs/remotes/origin/master
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario7.CAPSReports -->
     </classes>
-  </test> <!-- 1(failed) -->
-</suite> <!-- Failed suite [Payroll Suite WeeklyCatM U] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
