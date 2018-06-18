@@ -513,7 +513,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 									EmpName, Payrolid, PayFrequency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePath, PayrollView);
+									 PayrollView);
 							System.out
 							.println("No record matched in first page hence clicked to next page");
 						}
@@ -637,25 +637,25 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						if (Frquency.equalsIgnoreCase("Four Weekly"))
 						{
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Two Weekly"))
 						{
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Weekly"))
 						{
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						} else if (Frquency.equalsIgnoreCase("Monthly"))
 						{
 							toProcessSepMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						break;
 					}
@@ -678,7 +678,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 	public void toProcessSepMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			String FirstReportNameInApplication)
 					throws Throwable
 	{
 		try {
@@ -960,25 +960,25 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						if (Frquency.equalsIgnoreCase("Four Weekly"))
 						{
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Two Weekly"))
 						{
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Weekly"))
 						{
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						} else if (Frquency.equalsIgnoreCase("Monthly"))
 						{
 							toProcessOctMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						break;
 					}
@@ -1003,7 +1003,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 
 
 	public void toProcessOctMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			String FirstReportNameInApplication)
 					throws Throwable
 	{
 		try {
@@ -1272,20 +1272,20 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						if (Frquency.equalsIgnoreCase("Four Weekly"))
 						{
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Two Weekly"))
 						{
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Weekly"))
 						{
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						} else if (Frquency.equalsIgnoreCase("Monthly"))
 						{
 							toProcessNovMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
@@ -1595,25 +1595,25 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 						if (Frquency.equalsIgnoreCase("Four Weekly"))
 						{
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Two Weekly"))
 						{
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if (Frquency.equalsIgnoreCase("Weekly"))
 						{
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						} else if (Frquency.equalsIgnoreCase("Monthly"))
 						{
 							toProcessDecMonthlyPayrunFinalStep(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						break;
 					}
@@ -1637,7 +1637,7 @@ public class CourtOrderAEO1971civildebt extends TestSuiteBase
 	
 	
 	public void toProcessDecMonthlyPayrunFinalStep(String MonthName, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			String FirstReportNameInApplication)
 					throws Throwable
 	{
 		try {

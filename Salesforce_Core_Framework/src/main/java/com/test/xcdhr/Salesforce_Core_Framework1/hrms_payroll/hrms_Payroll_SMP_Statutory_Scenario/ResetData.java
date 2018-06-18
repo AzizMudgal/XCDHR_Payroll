@@ -584,20 +584,19 @@ public class ResetData extends TestSuiteBase
 						else if(Frquency.equalsIgnoreCase("Two Weekly"))
 						{
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						else if(Frquency.equalsIgnoreCase("Weekly"))
 						{
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication);
 						}
 						else if(Frquency.equalsIgnoreCase("Monthly"))
 						{
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						break;
 					}

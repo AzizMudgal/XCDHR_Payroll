@@ -619,6 +619,11 @@ public class TestBase {
 	public String SharedParental_InputExcelFile;
 	public String SSP_InputExcelFile;
 	public String SSPCaseTwo_InputExcelFile;
+	public static String exlFilePath=File.separator + "src" + File.separator + "main"
+			+ File.separator + "java" + File.separator + "com"
+			+ File.separator + "test" + File.separator + "xcdhr"
+			+ File.separator + "Salesforce_Core_Framework1" + File.separator
+			+ "salesforce_XLS_Files";
 
 	public void openNewTab() {
 		driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL + "t");
@@ -750,7 +755,7 @@ public class TestBase {
 
 	public boolean existsElementchkFor1mts(String id) {
 		try {
-			WebDriverWait wait = new WebDriverWait(driver,30/*
+			WebDriverWait wait = new WebDriverWait(driver,20/*
 															 * Timeout in
 															 * seconds
 															 */);
@@ -961,7 +966,7 @@ public class TestBase {
 			// "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite GeneralAndLargeTaxcodeMonthly.xlsx");
 
 			/* Weekly Tax Files */
-			Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls = new Xls_Reader(
+			/*Payroll_IncomeTax_TCWeek1_204045VariablePayANDWeekly50RL_SuiteXls = new Xls_Reader(
 					System.getProperty("user.dir")
 							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek1_204045VariablePay&Weekly50RL.xlsx");
 			Payroll_IncomeTax_TCWeek2_204045VariablePayANDWeekly50RL_SuiteXls = new Xls_Reader(
@@ -996,10 +1001,10 @@ public class TestBase {
 							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek11_204045VariablePay&Weekly50RL.xlsx");
 			Payroll_IncomeTax_TCWeek12_204045VariablePayANDWeekly50RL_SuiteXls = new Xls_Reader(
 					System.getProperty("user.dir")
-							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL.xlsx");
+							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite IncomeTax_TCWeek12_204045VariablePay&Weekly50RL.xlsx");*/
 
 			/* Monyhly Tax Files */
-			Payroll_IncomeTax_TCMonth2_204045VariablePayANDMonthly50RL_SuiteXls = new Xls_Reader(
+			/*Payroll_IncomeTax_TCMonth2_204045VariablePayANDMonthly50RL_SuiteXls = new Xls_Reader(
 					System.getProperty("user.dir")
 							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite Month2of204045VariablePayAnd50regulatoryLimit.xlsx");
 			Payroll_IncomeTax_TCMonth3_204045VariablePayANDMonthly50RL_SuiteXls = new Xls_Reader(
@@ -1035,7 +1040,7 @@ public class TestBase {
 
 			Payroll_NI_Director_AtoD_SuiteXls = new Xls_Reader(
 					System.getProperty("user.dir")
-							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director AtoD.xlsx");
+							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite NI Director AtoD.xlsx");*/
 
 			// Payroll_Monthly_Taxable_And_Niable_PayCalcn_SuiteXls=new
 			// Xls_Reader(System.getProperty("user.dir") +
@@ -1083,7 +1088,7 @@ public class TestBase {
 			// Xls_Reader(System.getProperty("user.dir") +
 			// "//src//salesforce_XLS_Files//Payroll Suite ShPP CreateLeaveYear.xlsx");
 
-			Payroll_AutoEnrolment_Initial_Setup_SuiteXls = new Xls_Reader(
+			/*Payroll_AutoEnrolment_Initial_Setup_SuiteXls = new Xls_Reader(
 					System.getProperty("user.dir")
 							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Initial Setup.xlsx");
 			Payroll_AutoEnrolment_Starter_SuiteXls = new Xls_Reader(
@@ -1103,7 +1108,7 @@ public class TestBase {
 							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Join.xlsx");
 			Payroll_AutoEnrolment_Employee_Cease_SuiteXls = new Xls_Reader(
 					System.getProperty("user.dir")
-							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Cease.xlsx");
+							+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite AutoEnrolment Cease.xlsx");*/
 
 			SuiteXls = new Xls_Reader(
 					System.getProperty("user.dir")
@@ -6592,7 +6597,7 @@ public class TestBase {
 	public void PayrollForStatutoryMonthly(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePath, String PayrollView)
+			 String PayrollView)
 			throws Throwable {
 
 		if (existsElementchkFor1mts(OR.getProperty("payrollTab"))) {
@@ -6649,7 +6654,7 @@ public class TestBase {
 									EmpName, Payrolid, Frquency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePath, PayrollView);
+									 PayrollView);
 							System.out
 									.println("No record matched in first page hence clicked to next page");
 
@@ -6671,7 +6676,7 @@ public class TestBase {
 									EmpName, Payrolid, Frquency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePath, PayrollView);
+									 PayrollView);
 						}
 
 					}
@@ -6687,7 +6692,7 @@ public class TestBase {
 	public void ProcessingToWeeklyForStatutory1(String EmployerName,
 			String EmpName, String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePath, String PayrollView)
+			 String PayrollView)
 			throws Throwable {
 		try {
 			WebElement tableheader = getObject("payroll2weeklytable");
@@ -6764,20 +6769,18 @@ public class TestBase {
 								+ pfrequencey);
 						if (Frquency.equalsIgnoreCase("Four Weekly")) {
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						} else if (Frquency.equalsIgnoreCase("Two Weekly")) {
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication);
 						} else if (Frquency.equalsIgnoreCase("Weekly")) {
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication);
 						} else if (Frquency.equalsIgnoreCase("Monthly")) {
 							TaxPayRun_For_Monthly(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 						break;
 					}
@@ -7351,16 +7354,16 @@ public class TestBase {
 								+ pfrequencey);
 						if (Frquency.equalsIgnoreCase("Four Weekly")) {
 							TaxPayRun_For_FourWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						} else if (Frquency.equalsIgnoreCase("Two Weekly")) {
 							TaxPayRun_For_TwoWeek(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						} else if (Frquency.equalsIgnoreCase("Weekly")) {
 							TaxPayRun_For_Week(MonthName, ExcelInputSheet,
-									FirstReportNameInApplication,
-									TestResultExcelFilePath);
+									FirstReportNameInApplication
+									);
 						}
 
 						break;
@@ -7454,8 +7457,8 @@ public class TestBase {
 						// TaxPayRun_For_Week1statFor1stPage(WeekName);
 
 						TaxPayRun_For_FourWeek(WeekName, ExcelInputSheet,
-								FirstReportNameInApplication,
-								TestResultExcelFilePath);
+								FirstReportNameInApplication
+								);
 						break;
 					}
 					break;
@@ -7473,7 +7476,7 @@ public class TestBase {
 	}
 
 	public void TaxPayRun_For_Monthly(String MonthName, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			String FirstReportNameInApplication)
 			throws Throwable {
 		try {/*
 			 * 
@@ -7674,7 +7677,7 @@ public class TestBase {
 	
 	
 	public void TaxPayRun_For_Week(String WeekName, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			String FirstReportNameInApplication)
 			throws Throwable
 	{
 		try {
@@ -7753,7 +7756,7 @@ public class TestBase {
 	
 	
 	public void TaxPayRun_For_TwoWeek(String WeekName, String ExcelInputSheet,
-			String FirstReportNameInApplication, String TestResultExcelFilePath)
+			String FirstReportNameInApplication)
 			throws Throwable {
 		try {
 
@@ -8391,15 +8394,15 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatZ.xlsx");
 				NI_Payroll_4WeeklyCatZ_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatZ";
 
-				Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
+				/*Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatA.xlsx");
-				NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA";
+				NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA";*/
 
-				Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
+				/*Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatB.xlsx");
-				NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB";
+				NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB";*/
 
 				Payroll_MonthlyCatC_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -8799,15 +8802,15 @@ public class TestBase {
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite 4WeeklyCatZ201718.xlsx");
 				NI_Payroll_4WeeklyCatZ_SuiteXls_InputExcelFile = "Payroll Suite 4WeeklyCatZ201718";
 
-				Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
+				/*Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatA201718.xlsx");
-				NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA201718";
+				NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA201718";*/
 
-				Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
+				/*Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatB201718.xlsx");
-				NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB201718";
+				NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB201718";*/
 
 				Payroll_MonthlyCatC_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
@@ -9217,14 +9220,25 @@ public class TestBase {
 			 * 	
 			 */
 				
-				Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
+				/*Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatA201819.xlsx");
 				NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA201819";
+				
+*/
+				Payroll_MonthlyCatA_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ exlFilePath +File.separator + "Payroll Suite MonthlyCatA201819.xlsx");
+				NI_Payroll_MonthlyCatA_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatA201819";
 
-				Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
+				/*Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
 						System.getProperty("user.dir")
 								+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite MonthlyCatB201819.xlsx");
+				NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB201819";*/
+				
+				Payroll_MonthlyCatB_SuiteXls = new Xls_Reader(
+						System.getProperty("user.dir")
+								+ exlFilePath +File.separator + "Payroll Suite MonthlyCatB201819.xlsx");
 				NI_Payroll_MonthlyCatB_SuiteXls_InputExcelFile = "Payroll Suite MonthlyCatB201819";
 
 				Payroll_MonthlyCatC_SuiteXls = new Xls_Reader(
@@ -9379,11 +9393,11 @@ public class TestBase {
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder PAEO2003Fine201819.xlsx");
 				Payroll_CourtOrderScenarioSix_Inputsheet = "Payroll Suite CourtOrder PAEO2003Fine201819";
 				
-				Payroll_CourtOrderScenarioSeven_SuiteXls =  new Xls_Reader(
+				/*Payroll_CourtOrderScenarioSeven_SuiteXls =  new Xls_Reader(
 						System.getProperty("user.dir")
 						+ "//src//main//java//com//test//xcdhr//Salesforce_Core_Framework1//salesforce_XLS_Files//Payroll Suite CourtOrder CTAEOCouncilTax201819.xlsx");
 				Payroll_CourtOrderScenarioSeven_Inputsheet = "Payroll Suite CourtOrder CTAEOCouncilTax201819";
-
+*/
 				
 				break;
 				
@@ -12562,8 +12576,8 @@ public class TestBase {
 	}
 
 	public void TaxPayRun_For_FourWeek(String FourWeekly,
-			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePath) throws Throwable {
+			String ExcelInputSheet, String FirstReportNameInApplication
+			) throws Throwable {
 		try {/*
 			 * 
 			 * if (existsElementchkFor1mts(OR

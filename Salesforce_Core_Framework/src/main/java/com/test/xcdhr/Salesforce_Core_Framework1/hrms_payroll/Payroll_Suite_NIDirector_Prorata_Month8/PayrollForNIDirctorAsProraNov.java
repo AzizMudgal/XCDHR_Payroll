@@ -95,7 +95,7 @@ public class PayrollForNIDirctorAsProraNov extends TestSuiteBase
 				 * 
 				 */
 				//PayrollForMonthlyTax(AprilMonth);
-				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,PayrollVeiw);
 			}
 			catch (Throwable t)
 			{
@@ -119,7 +119,7 @@ public class PayrollForNIDirctorAsProraNov extends TestSuiteBase
 			
 			for(Repeat=0; Repeat < 4; Repeat++)
 			{
-				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,PayrollVeiw);
 
 				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
