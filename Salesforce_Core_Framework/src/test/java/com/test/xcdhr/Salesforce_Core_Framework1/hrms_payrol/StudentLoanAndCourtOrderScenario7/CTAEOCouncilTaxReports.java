@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class CTAEOCouncilTaxReports extends CourtOrderAEO1971civildebt
+public class CTAEOCouncilTaxReports extends CourtOrderSuperClass
 {
 	String runmodes[] = null;
 	static int count = -1;

@@ -29,7 +29,7 @@ import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.ModifiedReport;
 
 
 
-public class CourtOrderAEO1971civildebt extends TestSuiteBase
+public class CourtOrderSuperClass extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
