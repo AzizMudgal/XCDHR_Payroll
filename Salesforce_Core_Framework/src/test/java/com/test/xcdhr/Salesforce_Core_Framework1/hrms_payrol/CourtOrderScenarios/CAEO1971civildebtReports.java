@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.CourtOrderScenarios;
-=======
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario3;
->>>>>>> branch 'master' of https://github.com/AzizMudgal/XCDHR_Payroll.git
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario2;
 import com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario.*;
 
 import org.testng.Assert;
@@ -12,10 +8,11 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
+
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
 
-public class CAPSReports extends CourtOrderAEO1971civildebt
+public class CAEO1971civildebtReports extends CourtOrderAEO1971civildebt
 {
 	String runmodes[] = null;
 	static int count = -1;
@@ -34,16 +31,16 @@ public class CAPSReports extends CourtOrderAEO1971civildebt
 	@BeforeTest
 	public void checkTestSkip() throws Throwable
 	{
-		if(! Test_Util.IsTestcaseRunMode(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName()))
+		if(! Test_Util.IsTestcaseRunMode(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName()))
 		{
 			Skip=true;
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioThree_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName()),"Skipped");
-			//Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioTwo_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName()),"Skipped");
+			//Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 			APP_LOGS.debug("skipping the testcase" +this.getClass().getSimpleName() +" as the runmode is set to 'no' ");// this message would display in logs
 			throw new Exception("Testcase is being skipped" + this.getClass().getSimpleName()+ "as it's Runmode is set to 'NO'"); // this msg would display in Reports.
 		}
 		// Load the runmodes of the tests
-		runmodes=Test_Util.getDataSetRunmodes(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName());
+		runmodes=Test_Util.getDataSetRunmodes(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName());
 		System.out.println("The testcase Runmode is set to YES hence passed the CheckTestSkip method .Now it moves forward to exectute the test scenario");
 		System.out.println("");
 	
@@ -142,7 +139,7 @@ public class CAPSReports extends CourtOrderAEO1971civildebt
 	@DataProvider
 	public Object[][] getData() throws Throwable
 	{
-		return Test_Util.getData(Payroll_CourtOrderScenarioThree_SuiteXls,"CAPSIOAndPayroll");
+		return Test_Util.getData(Payroll_CourtOrderScenarioTwo_SuiteXls,"CAEO1971civildebtIOAndPayroll");
 	}
 
 
@@ -152,20 +149,20 @@ public class CAPSReports extends CourtOrderAEO1971civildebt
 		if(Skip)
 		{
 			Assert.assertTrue(false);
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Skip");
 		}
 		else if(Fail)
 		{
 			IsTestPass = false;
 			Assert.assertTrue(false);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Fail");
 		}
 		else
 		{
 	        Assert.assertTrue(true);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName(), count+2, "Pass");
 		}
 		Skip=false;
 		Fail=false;
@@ -185,13 +182,13 @@ public class CAPSReports extends CourtOrderAEO1971civildebt
 		{
 	        Assert.assertTrue(true);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioThree_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName()),"Pass");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioTwo_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName()),"Pass");
 		}
 		else
 		{
 			Assert.assertTrue(false);
 
-			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioThree_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioThree_SuiteXls, this.getClass().getSimpleName()),"Fail");
+			Test_Util.ReportDataSetResult(Payroll_CourtOrderScenarioTwo_SuiteXls, "first", Test_Util.GetRowNum(Payroll_CourtOrderScenarioTwo_SuiteXls, this.getClass().getSimpleName()),"Fail");
 		}	
 		//After performing all the said functionalities the test script closes the browser.
 		closeBrowser();
