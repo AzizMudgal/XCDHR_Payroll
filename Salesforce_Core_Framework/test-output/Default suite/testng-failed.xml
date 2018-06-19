@@ -3,38 +3,16 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-<<<<<<< HEAD
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll">
-=======
-      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.ProcessPayrollForNIMonthly">
->>>>>>> refs/remotes/origin/master
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario7.CTAEOCouncilTaxReports">
         <methods>
-<<<<<<< HEAD
-          <include name="toProcessJanPayroll"/>
-          <include name="toSelectEmployeesToProcessOctPayroll"/>
-          <include name="toProcessDecPayroll"/>
-          <include name="checkTestSkip"/>
-          <include name="toSelectEmployeesToProcessNovPayroll"/>
           <include name="toSelectOrgForPerformingAutomationTests"/>
-          <include name="toProcessNovPayroll"/>
-          <include name="toSetEmployeesNICategory"/>
-          <include name="toProcessOctPayroll"/>
+          <include name="toProcessDecPayrollReport"/>
           <include name="CheckSuiteSkip"/>
-          <include name="toSelectEmployeesToProcessJanPayroll"/>
-          <include name="setEmployeesAnnualSalaryAndPayfrequency"/>
-          <include name="toSelectEmployeesToProcessDecPayroll"/>
-=======
-          <include name="ReportTestResult"/>
-          <include name="CheckSuiteSkip"/>
-          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
-          <include name="CheckTestSkip"/>
->>>>>>> refs/remotes/origin/master
+          <include name="toProcessOctPayrollReport"/>
+          <include name="ToProcessNovPayrollReport"/>
+          <include name="checkTestSkip"/>
         </methods>
-<<<<<<< HEAD
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll -->
-=======
-      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.ProcessPayrollForNIMonthly -->
->>>>>>> refs/remotes/origin/master
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario7.CTAEOCouncilTaxReports -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
