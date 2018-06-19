@@ -93,7 +93,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase {
 				System.out.println("");
 				PayrollForWeeklyTax(EmployerName, EmpName, Payrolid, Frquency,
 						WeekName, ExcelInputSheet,
-						FirstReportNameInApplication, TestResultExcelFilePath,
+						FirstReportNameInApplication, 
 						worksheetNo, PayrollVeiw);
 			} catch (Throwable t) {
 				System.out.println(t.getMessage().toString());
@@ -117,8 +117,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase {
 				System.out.println("The value of Repeat is " + Repeat);
 				obj1.PayrollForWeeklyTax(EmployerName, EmpName, Payrolid,
 						Frquency, WeekName, ExcelInputSheet,
-						FirstReportNameInApplication, TestResultExcelFilePath,
-						worksheetNo, PayrollVeiw);
+						FirstReportNameInApplication,worksheetNo, PayrollVeiw);
 
 				obj1.ExcludeIncludeEmp112(EmpName, ExcelInputSheet, worksheetNo);
 			}
