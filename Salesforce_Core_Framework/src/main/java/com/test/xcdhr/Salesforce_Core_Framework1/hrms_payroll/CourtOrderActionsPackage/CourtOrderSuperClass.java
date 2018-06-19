@@ -1,4 +1,4 @@
-package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderAEO1971civildebt_Scenario;
+package com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.CourtOrderActionsPackage;
 
 
 import java.io.File;
@@ -29,7 +29,7 @@ import com.test.xcdhr.Salesforce_Core_Framework1.enumPackage.ModifiedReport;
 
 
 
-public class CourtOrderAEO1971civildebt extends TestSuiteBase
+public class CourtOrderSuperClass extends TestSuiteBase
 {
 	String runmodes[] = null;
 	static int count = -1;
