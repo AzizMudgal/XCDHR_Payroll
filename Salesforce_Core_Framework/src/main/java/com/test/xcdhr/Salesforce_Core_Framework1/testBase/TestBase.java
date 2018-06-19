@@ -7203,7 +7203,7 @@ public class TestBase {
 	public void PayrollForWeeklyTax(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePath, String worksheetNo,
+			String worksheetNo,
 			String PayrollView) throws Throwable {
 
 		if (existsElementchkFor1mts(OR.getProperty("payrollTab"))) {
@@ -7267,7 +7267,7 @@ public class TestBase {
 									Payrolid, Frquency, MonthName,
 									ExcelInputSheet,
 									FirstReportNameInApplication,
-									TestResultExcelFilePath, PayrollView);
+									 PayrollView);
 						}
 
 						//
@@ -7285,7 +7285,7 @@ public class TestBase {
 	public void ProcessForWeekTaxrate1(String EmployerName, String EmpName,
 			String Payrolid, String Frquency, String MonthName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePath, String PayrollView)
+			 String PayrollView)
 			throws Throwable {
 		try {
 			WebElement tableheader = getObject("payroll2weeklytable");
@@ -8015,7 +8015,7 @@ public class TestBase {
 	 * loging into desired orgs
 	 */
 
-	public int OrgFlag = 0;
+	public int OrgFlag = 1;
 
 	public void logingIntoDesiredORG(int OrgFlag) throws Throwable {
 		switch (OrgFlag) {
