@@ -96,7 +96,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 				System.out
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
-				PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
+				PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,worksheetNo,PayrollVeiw);
 			}
 			catch (Throwable t)
 			{
@@ -118,7 +118,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
-				obj1.PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw);
+				obj1.PayrollForWeeklyTax(EmployerName,EmpName,Payrolid,Frquency,WeekName,ExcelInputSheet,FirstReportNameInApplication,worksheetNo,PayrollVeiw);
 
 				//obj1.ExcludeIncludeEmp112(EmpName,ExcelInputSheet,worksheetNo);
 			}
