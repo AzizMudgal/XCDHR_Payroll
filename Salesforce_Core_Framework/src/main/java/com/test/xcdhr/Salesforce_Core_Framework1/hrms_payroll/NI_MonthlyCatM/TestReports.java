@@ -27,6 +27,7 @@ import atu.webdriver.utils.table.WebTable;
 
 
 
+
 //import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.ErrorUtil;
 import com.test.xcdhr.Salesforce_Core_Framework1.Salesforce_Util.Test_Util;
 
@@ -39,6 +40,8 @@ public class TestReports extends TestSuiteBase
 	public static boolean IsTestPass=true;
 	public String firstCellOfBody;
 	public String titlename;
+	public String TestResultExcelFilePath = System.getProperty("user.dir") + File.separator + "TestOutPutResultFolder" + File.separator
+			+ "201819 Payroll National Insurance calculation Test result.xlsx";
 	
 
 	@BeforeTest
@@ -60,7 +63,7 @@ public class TestReports extends TestSuiteBase
 
 
 	@Test(dataProvider = "getData")
-	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
+	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		count++;
 		if(! runmodes[count].equalsIgnoreCase("Y"))
@@ -93,7 +96,7 @@ public class TestReports extends TestSuiteBase
 		Thread.sleep(4000L);
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
-			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
+			DownloadReports(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,worksheetNo,PayrollVeiw,TestReportworksheetNo); // pn means payroll id. in this case 8512
 		}
 		else
 		{
@@ -103,7 +106,7 @@ public class TestReports extends TestSuiteBase
 
 
 
-	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
+	public void DownloadReports(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo) throws Throwable
 	{
 		if(existsElementchkFor1mts(OR.getProperty("reportTablocator")))
 		{
@@ -137,14 +140,14 @@ public class TestReports extends TestSuiteBase
 
 		if(existsElementchkFor1mts(OR.getProperty("reportTableLocatorNI")))
 		{
-			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,worksheetNo,PayrollVeiw,TestReportworksheetNo);
+			processReport(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,worksheetNo,PayrollVeiw,TestReportworksheetNo);
 			System.out.println("7> Entered the values and processed the Test Remarks");
 		}
 	}
 
 
 
-	public void processReport(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo)throws Throwable
+	public void processReport(String EmployerName,String EmpName,String Payrolid,String Frquency,String MonthName,String ExcelInputSheet,String FirstReportNameInApplication,String worksheetNo,String PayrollVeiw,String TestReportworksheetNo)throws Throwable
 	{
 		try
 		{
@@ -183,7 +186,7 @@ public class TestReports extends TestSuiteBase
 						String statutoryMaternityPay= table.getTBody().getRow(rownum).getCell(2).getText();
 						System.out.println("statutoryMaternityPay is :"+statutoryMaternityPay);
 						//call the function which reads the excel sheet.
-						ReadsExpectedData(EmpName,statutoryAdoptionPay,statutoryMaternityPay,TestResultExcelFilePath,TestReportworksheetNo);
+						ReadsExpectedData(EmpName,statutoryAdoptionPay,statutoryMaternityPay,TestReportworksheetNo);
 					}
 					rownum++;
 				}
@@ -198,7 +201,7 @@ public class TestReports extends TestSuiteBase
 
 
 
-	public void ReadsExpectedData(String EmpName,String statutoryAdoptionPay,String statutoryMaternityPay,String TestResultExcelFilePath,String TestReportworksheetNo) throws Throwable
+	public void ReadsExpectedData(String EmpName,String statutoryAdoptionPay,String statutoryMaternityPay,String TestReportworksheetNo) throws Throwable
 	{
 		
 	    	double worksheetvalue = Double.parseDouble(TestReportworksheetNo);

@@ -83,7 +83,7 @@ public class ProcessPayrollForDec extends TestSuiteBase
 				.println("The test script logged in successfully into salesforce account");
 				System.out.println("");
 				//PayrollForMonthlyTax(AugustMonth);
-				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+				PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,PayrollVeiw);
 				// in base class need to update the method with new parameter
 			}
 			catch (Throwable t)
@@ -104,7 +104,7 @@ public class ProcessPayrollForDec extends TestSuiteBase
 				// I have set 3 times to repeat the payroll script so that by the time it processess
 				// 4th round 7 minutes would be as per Tutu. the appln should process the generate draft functionality.
 				System.out.println("The value of Repeat is "+Repeat);
-				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,TestResultExcelFilePath,PayrollVeiw);
+				obj1.PayrollForStatutoryMonthly(EmployerName,EmpName,Payrolid,Frquency,MonthName,ExcelInputSheet,FirstReportNameInApplication,PayrollVeiw);
 				obj1.ExcludeIncludeEmp(EmpName,ExcelInputSheet,worksheetNo);
 			}
 		}

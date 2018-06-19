@@ -1,16 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testng-results skipped="11" failed="0" ignored="0" total="11" passed="0">
+=======
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+>>>>>>> refs/remotes/origin/master
   <reporter-output>
   </reporter-output>
+<<<<<<< HEAD
   <suite name="Default suite" duration-ms="31" started-at="2018-06-18T12:24:39Z" finished-at="2018-06-18T12:24:39Z">
+=======
+  <suite name="Default suite" duration-ms="188329" started-at="2018-06-14T13:07:34Z" finished-at="2018-06-14T13:10:43Z">
+>>>>>>> refs/remotes/origin/master
     <groups>
     </groups>
+<<<<<<< HEAD
     <test name="Default test" duration-ms="31" started-at="2018-06-18T12:24:39Z" finished-at="2018-06-18T12:24:39Z">
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll">
         <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll@6500df86]" name="CheckSuiteSkip" is-config="true" duration-ms="3216" started-at="2018-06-18T17:54:35Z" finished-at="2018-06-18T17:54:39Z">
+=======
+    <test name="Default test" duration-ms="188329" started-at="2018-06-14T13:07:34Z" finished-at="2018-06-14T13:10:43Z">
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports">
+        <test-method status="PASS" signature="CheckSuiteSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports@402a079c]" name="CheckSuiteSkip" is-config="true" duration-ms="3807" started-at="2018-06-14T18:37:30Z" finished-at="2018-06-14T18:37:34Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckSuiteSkip -->
+<<<<<<< HEAD
         <test-method status="FAIL" signature="checkTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll@6500df86]" name="checkTestSkip" is-config="true" duration-ms="0" started-at="2018-06-18T17:54:39Z" finished-at="2018-06-18T17:54:39Z">
           <exception class="java.lang.NullPointerException">
             <full-stacktrace>
@@ -44,8 +59,12 @@
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.NullPointerException -->
+=======
+        <test-method status="PASS" signature="CheckTestSkip()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports@402a079c]" name="CheckTestSkip" is-config="true" duration-ms="1961" started-at="2018-06-14T18:37:34Z" finished-at="2018-06-14T18:37:36Z">
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- checkTestSkip -->
         <test-method status="SKIP" signature="toSelectOrgForPerformingAutomationTests(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:1, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll@6500df86]" name="toSelectOrgForPerformingAutomationTests" duration-ms="0" started-at="2018-06-18T17:54:39Z" data-provider="getData" finished-at="2018-06-18T17:54:39Z">
           <exception class="java.lang.RuntimeException">
@@ -92,8 +111,65 @@ Caused by: java.lang.NullPointerException
 ]]>
             </full-stacktrace>
           </exception> <!-- java.lang.RuntimeException -->
+=======
+        </test-method> <!-- CheckTestSkip -->
+        <test-method status="PASS" signature="EmpsPayroll_Setup_ForIncomeTax(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports@402a079c]" name="EmpsPayroll_Setup_ForIncomeTax" duration-ms="175862" started-at="2018-06-14T18:37:38Z" data-provider="getData" finished-at="2018-06-14T18:40:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[DONT TOUCH AUTO NIMCB EMPLOYER]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[DO NOT TOUCH AUTOMATION EMP 558]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[NIMCB_Payroll]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[Monthly]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[April-2018]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Payroll Suite MonthlyCatB201819.xlsx]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[DO NOT TOUCH - PAYROLL AUTOMATION CHECK]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[3]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[All]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[22]]>
+              </value>
+            </param>
+          </params>
+>>>>>>> refs/remotes/origin/master
           <reporter-output>
           </reporter-output>
+<<<<<<< HEAD
         </test-method> <!-- toSelectOrgForPerformingAutomationTests -->
         <test-method status="SKIP" signature="toProcessOctPayroll(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:4, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll@6500df86]" name="toProcessOctPayroll" duration-ms="0" started-at="2018-06-18T17:54:39Z" data-provider="getData" depends-on-methods="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll.toSelectOrgForPerformingAutomationTests" finished-at="2018-06-18T17:54:39Z">
           <exception class="java.lang.Throwable">
@@ -410,6 +486,18 @@ Caused by: java.lang.NullPointerException
           </reporter-output>
         </test-method> <!-- toSelectEmployeesToProcessJanPayroll -->
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll -->
+=======
+        </test-method> <!-- EmpsPayroll_Setup_ForIncomeTax -->
+        <test-method status="PASS" signature="ReportDataSetResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports@402a079c]" name="ReportDataSetResult" is-config="true" duration-ms="2694" started-at="2018-06-14T18:40:34Z" finished-at="2018-06-14T18:40:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportDataSetResult -->
+        <test-method status="PASS" signature="ReportTestResult()[pri:0, instance:com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports@402a079c]" name="ReportTestResult" is-config="true" duration-ms="5953" started-at="2018-06-14T18:40:37Z" finished-at="2018-06-14T18:40:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ReportTestResult -->
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.TestReports -->
+>>>>>>> refs/remotes/origin/master
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

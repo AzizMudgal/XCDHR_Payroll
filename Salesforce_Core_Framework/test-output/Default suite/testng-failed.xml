@@ -3,8 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll">
+=======
+      <class name="com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.ProcessPayrollForNIMonthly">
+>>>>>>> refs/remotes/origin/master
         <methods>
+<<<<<<< HEAD
           <include name="toProcessJanPayroll"/>
           <include name="toSelectEmployeesToProcessOctPayroll"/>
           <include name="toProcessDecPayroll"/>
@@ -18,8 +23,18 @@
           <include name="toSelectEmployeesToProcessJanPayroll"/>
           <include name="setEmployeesAnnualSalaryAndPayfrequency"/>
           <include name="toSelectEmployeesToProcessDecPayroll"/>
+=======
+          <include name="ReportTestResult"/>
+          <include name="CheckSuiteSkip"/>
+          <include name="EmpsPayroll_Setup_ForIncomeTax"/>
+          <include name="CheckTestSkip"/>
+>>>>>>> refs/remotes/origin/master
         </methods>
+<<<<<<< HEAD
       </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payrol.StudentLoanAndCourtOrderScenario8.DEO2003ChildMaintnceIOPayroll -->
+=======
+      </class> <!-- com.test.xcdhr.Salesforce_Core_Framework1.hrms_payroll.NI_MonthlyCatB.ProcessPayrollForNIMonthly -->
+>>>>>>> refs/remotes/origin/master
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
