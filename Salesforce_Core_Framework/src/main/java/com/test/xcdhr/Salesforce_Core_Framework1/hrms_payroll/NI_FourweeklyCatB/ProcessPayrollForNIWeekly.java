@@ -61,7 +61,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase {
 	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,
 			String EmpName, String Payrolid, String Frquency, String WeekName,
 			String ExcelInputSheet, String FirstReportNameInApplication,
-			String TestResultExcelFilePath, String worksheetNo,
+			 String worksheetNo,
 			String PayrollVeiw) throws Throwable {
 		// APP_LOGS.debug(EmpName);
 		count++;

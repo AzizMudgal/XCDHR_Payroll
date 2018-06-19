@@ -64,7 +64,7 @@ public class ProcessPayrollForNIWeekly extends TestSuiteBase
 	boolean shouldOpenBrowser = true;
 
 	@Test(dataProvider = "getData")
-	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String WeekName,String ExcelInputSheet,String FirstReportNameInApplication,String TestResultExcelFilePath,String worksheetNo,String PayrollVeiw) throws Throwable
+	public void EmpsPayroll_Setup_ForIncomeTax(String EmployerName,String EmpName,String Payrolid,String Frquency,String WeekName,String ExcelInputSheet,String FirstReportNameInApplication,String worksheetNo,String PayrollVeiw) throws Throwable
 	{
 		//APP_LOGS.debug(EmpName);
 		count++;
